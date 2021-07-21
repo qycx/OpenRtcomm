@@ -1,0 +1,1695 @@
+<api
+  api-source="class-parse">
+  <package
+    name="org.aviran.cookiebar2"
+    jni-name="org/aviran/cookiebar2">
+    <class
+      abstract="false"
+      deprecated="not deprecated"
+      jni-extends="Ljava/lang/Object;"
+      extends="java.lang.Object"
+      extends-generic-aware="java.lang.Object"
+      final="true"
+      name="BuildConfig"
+      jni-signature="Lorg/aviran/cookiebar2/BuildConfig;"
+      source-file-name="BuildConfig.java"
+      static="false"
+      visibility="public">
+      <constructor
+        deprecated="not deprecated"
+        final="false"
+        name="BuildConfig"
+        static="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="()V" />
+      <field
+        deprecated="not deprecated"
+        final="true"
+        name="BUILD_TYPE"
+        static="true"
+        synthetic="false"
+        transient="false"
+        type="java.lang.String"
+        type-generic-aware="java.lang.String"
+        jni-signature="Ljava/lang/String;"
+        value="&quot;release&quot;"
+        visibility="public"
+        volatile="false" />
+      <field
+        deprecated="not deprecated"
+        final="true"
+        name="DEBUG"
+        static="true"
+        synthetic="false"
+        transient="false"
+        type="boolean"
+        type-generic-aware="boolean"
+        jni-signature="Z"
+        value="false"
+        visibility="public"
+        volatile="false" />
+      <field
+        deprecated="not deprecated"
+        final="true"
+        name="LIBRARY_PACKAGE_NAME"
+        static="true"
+        synthetic="false"
+        transient="false"
+        type="java.lang.String"
+        type-generic-aware="java.lang.String"
+        jni-signature="Ljava/lang/String;"
+        value="&quot;org.aviran.cookiebar2&quot;"
+        visibility="public"
+        volatile="false" />
+    </class>
+    <class
+      abstract="false"
+      deprecated="not deprecated"
+      jni-extends="Landroid/widget/LinearLayout;"
+      extends="android.widget.LinearLayout"
+      extends-generic-aware="android.widget.LinearLayout"
+      final="true"
+      name="Cookie"
+      jni-signature="Lorg/aviran/cookiebar2/Cookie;"
+      source-file-name="Cookie.java"
+      static="false"
+      visibility="">
+      <implements
+        name="android.view.View.OnTouchListener"
+        name-generic-aware="android.view.View.OnTouchListener"
+        jni-type="Landroid/view/View$OnTouchListener;" />
+      <constructor
+        deprecated="not deprecated"
+        final="false"
+        name="Cookie"
+        static="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(Landroid/content/Context;)V">
+        <parameter
+          name="context"
+          type="android.content.Context"
+          jni-type="Landroid/content/Context;"
+          not-null="true" />
+      </constructor>
+      <constructor
+        deprecated="not deprecated"
+        final="false"
+        name="Cookie"
+        static="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(Landroid/content/Context;Landroid/util/AttributeSet;)V">
+        <parameter
+          name="context"
+          type="android.content.Context"
+          jni-type="Landroid/content/Context;"
+          not-null="true" />
+        <parameter
+          name="attrs"
+          type="android.util.AttributeSet"
+          jni-type="Landroid/util/AttributeSet;" />
+      </constructor>
+      <constructor
+        deprecated="not deprecated"
+        final="false"
+        name="Cookie"
+        static="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(Landroid/content/Context;Landroid/util/AttributeSet;I)V">
+        <parameter
+          name="context"
+          type="android.content.Context"
+          jni-type="Landroid/content/Context;"
+          not-null="true" />
+        <parameter
+          name="attrs"
+          type="android.util.AttributeSet"
+          jni-type="Landroid/util/AttributeSet;" />
+        <parameter
+          name="defStyleAttr"
+          type="int"
+          jni-type="I" />
+      </constructor>
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="dismiss"
+        native="false"
+        return="void"
+        jni-return="V"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="()V" />
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="dismiss"
+        native="false"
+        return="void"
+        jni-return="V"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(Lorg/aviran/cookiebar2/CookieBarDismissListener;)V">
+        <parameter
+          name="listener"
+          type="org.aviran.cookiebar2.CookieBarDismissListener"
+          jni-type="Lorg/aviran/cookiebar2/CookieBarDismissListener;" />
+      </method>
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="getDismissListener"
+        native="false"
+        return="org.aviran.cookiebar2.CookieBarDismissListener"
+        jni-return="Lorg/aviran/cookiebar2/CookieBarDismissListener;"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="()Lorg/aviran/cookiebar2/CookieBarDismissListener;" />
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="getLayoutGravity"
+        native="false"
+        return="int"
+        jni-return="I"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="()I" />
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="isRemovalInProgress"
+        native="false"
+        return="boolean"
+        jni-return="Z"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="()Z" />
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="onLayout"
+        native="false"
+        return="void"
+        jni-return="V"
+        static="false"
+        synchronized="false"
+        visibility="protected"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(ZIIII)V">
+        <parameter
+          name="changed"
+          type="boolean"
+          jni-type="Z" />
+        <parameter
+          name="l"
+          type="int"
+          jni-type="I" />
+        <parameter
+          name="t"
+          type="int"
+          jni-type="I" />
+        <parameter
+          name="r"
+          type="int"
+          jni-type="I" />
+        <parameter
+          name="b"
+          type="int"
+          jni-type="I" />
+      </method>
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="onTouch"
+        native="false"
+        return="boolean"
+        jni-return="Z"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(Landroid/view/View;Landroid/view/MotionEvent;)Z">
+        <parameter
+          name="view"
+          type="android.view.View"
+          jni-type="Landroid/view/View;" />
+        <parameter
+          name="motionEvent"
+          type="android.view.MotionEvent"
+          jni-type="Landroid/view/MotionEvent;" />
+      </method>
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="setParams"
+        native="false"
+        return="void"
+        jni-return="V"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(Lorg/aviran/cookiebar2/CookieBar$Params;)V">
+        <parameter
+          name="params"
+          type="org.aviran.cookiebar2.CookieBar.Params"
+          jni-type="Lorg/aviran/cookiebar2/CookieBar$Params;" />
+      </method>
+    </class>
+    <class
+      abstract="false"
+      deprecated="not deprecated"
+      enclosing-method-jni-type="Lorg/aviran/cookiebar2/Cookie;"
+      enclosing-method-name="setParams"
+      enclosing-method-signature="(Lorg/aviran/cookiebar2/CookieBar$Params;)V"
+      jni-extends="Ljava/lang/Object;"
+      extends="java.lang.Object"
+      extends-generic-aware="java.lang.Object"
+      final="false"
+      name="Cookie.1"
+      jni-signature="Lorg/aviran/cookiebar2/Cookie$1;"
+      source-file-name="Cookie.java"
+      static="false"
+      visibility="">
+      <implements
+        name="android.view.View.OnClickListener"
+        name-generic-aware="android.view.View.OnClickListener"
+        jni-type="Landroid/view/View$OnClickListener;" />
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="onClick"
+        native="false"
+        return="void"
+        jni-return="V"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(Landroid/view/View;)V">
+        <parameter
+          name="view"
+          type="android.view.View"
+          jni-type="Landroid/view/View;" />
+      </method>
+    </class>
+    <class
+      abstract="false"
+      deprecated="not deprecated"
+      enclosing-method-jni-type="Lorg/aviran/cookiebar2/Cookie;"
+      enclosing-method-name="setParams"
+      enclosing-method-signature="(Lorg/aviran/cookiebar2/CookieBar$Params;)V"
+      jni-extends="Ljava/lang/Object;"
+      extends="java.lang.Object"
+      extends-generic-aware="java.lang.Object"
+      final="false"
+      name="Cookie.2"
+      jni-signature="Lorg/aviran/cookiebar2/Cookie$2;"
+      source-file-name="Cookie.java"
+      static="false"
+      visibility="">
+      <implements
+        name="java.lang.Runnable"
+        name-generic-aware="java.lang.Runnable"
+        jni-type="Ljava/lang/Runnable;" />
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="run"
+        native="false"
+        return="void"
+        jni-return="V"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="()V" />
+    </class>
+    <class
+      abstract="false"
+      deprecated="not deprecated"
+      enclosing-method-jni-type="Lorg/aviran/cookiebar2/Cookie;"
+      enclosing-method-name="dismiss"
+      enclosing-method-signature="(Lorg/aviran/cookiebar2/CookieBarDismissListener;)V"
+      jni-extends="Ljava/lang/Object;"
+      extends="java.lang.Object"
+      extends-generic-aware="java.lang.Object"
+      final="false"
+      name="Cookie.3"
+      jni-signature="Lorg/aviran/cookiebar2/Cookie$3;"
+      source-file-name="Cookie.java"
+      static="false"
+      visibility="">
+      <implements
+        name="android.view.animation.Animation.AnimationListener"
+        name-generic-aware="android.view.animation.Animation.AnimationListener"
+        jni-type="Landroid/view/animation/Animation$AnimationListener;" />
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="onAnimationEnd"
+        native="false"
+        return="void"
+        jni-return="V"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(Landroid/view/animation/Animation;)V">
+        <parameter
+          name="animation"
+          type="android.view.animation.Animation"
+          jni-type="Landroid/view/animation/Animation;" />
+      </method>
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="onAnimationRepeat"
+        native="false"
+        return="void"
+        jni-return="V"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(Landroid/view/animation/Animation;)V">
+        <parameter
+          name="animation"
+          type="android.view.animation.Animation"
+          jni-type="Landroid/view/animation/Animation;" />
+      </method>
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="onAnimationStart"
+        native="false"
+        return="void"
+        jni-return="V"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(Landroid/view/animation/Animation;)V">
+        <parameter
+          name="animation"
+          type="android.view.animation.Animation"
+          jni-type="Landroid/view/animation/Animation;" />
+      </method>
+    </class>
+    <class
+      abstract="false"
+      deprecated="not deprecated"
+      enclosing-method-jni-type="Lorg/aviran/cookiebar2/Cookie;"
+      enclosing-method-name="removeFromParent"
+      enclosing-method-signature="()V"
+      jni-extends="Ljava/lang/Object;"
+      extends="java.lang.Object"
+      extends-generic-aware="java.lang.Object"
+      final="false"
+      name="Cookie.4"
+      jni-signature="Lorg/aviran/cookiebar2/Cookie$4;"
+      source-file-name="Cookie.java"
+      static="false"
+      visibility="">
+      <implements
+        name="java.lang.Runnable"
+        name-generic-aware="java.lang.Runnable"
+        jni-type="Ljava/lang/Runnable;" />
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="run"
+        native="false"
+        return="void"
+        jni-return="V"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="()V" />
+    </class>
+    <class
+      abstract="false"
+      deprecated="not deprecated"
+      enclosing-method-jni-type="Lorg/aviran/cookiebar2/Cookie;"
+      enclosing-method-name="getDestroyListener"
+      enclosing-method-signature="()Landroid/animation/Animator$AnimatorListener;"
+      jni-extends="Ljava/lang/Object;"
+      extends="java.lang.Object"
+      extends-generic-aware="java.lang.Object"
+      final="false"
+      name="Cookie.5"
+      jni-signature="Lorg/aviran/cookiebar2/Cookie$5;"
+      source-file-name="Cookie.java"
+      static="false"
+      visibility="">
+      <implements
+        name="android.animation.Animator.AnimatorListener"
+        name-generic-aware="android.animation.Animator.AnimatorListener"
+        jni-type="Landroid/animation/Animator$AnimatorListener;" />
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="onAnimationCancel"
+        native="false"
+        return="void"
+        jni-return="V"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(Landroid/animation/Animator;)V">
+        <parameter
+          name="animation"
+          type="android.animation.Animator"
+          jni-type="Landroid/animation/Animator;" />
+      </method>
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="onAnimationEnd"
+        native="false"
+        return="void"
+        jni-return="V"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(Landroid/animation/Animator;)V">
+        <parameter
+          name="animation"
+          type="android.animation.Animator"
+          jni-type="Landroid/animation/Animator;" />
+      </method>
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="onAnimationRepeat"
+        native="false"
+        return="void"
+        jni-return="V"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(Landroid/animation/Animator;)V">
+        <parameter
+          name="animation"
+          type="android.animation.Animator"
+          jni-type="Landroid/animation/Animator;" />
+      </method>
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="onAnimationStart"
+        native="false"
+        return="void"
+        jni-return="V"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(Landroid/animation/Animator;)V">
+        <parameter
+          name="animation"
+          type="android.animation.Animator"
+          jni-type="Landroid/animation/Animator;" />
+      </method>
+    </class>
+    <class
+      abstract="false"
+      deprecated="not deprecated"
+      jni-extends="Ljava/lang/Object;"
+      extends="java.lang.Object"
+      extends-generic-aware="java.lang.Object"
+      final="false"
+      name="CookieBar"
+      jni-signature="Lorg/aviran/cookiebar2/CookieBar;"
+      source-file-name="CookieBar.java"
+      static="false"
+      visibility="public">
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="build"
+        native="false"
+        return="org.aviran.cookiebar2.CookieBar.Builder"
+        jni-return="Lorg/aviran/cookiebar2/CookieBar$Builder;"
+        static="true"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(Landroid/app/Activity;)Lorg/aviran/cookiebar2/CookieBar$Builder;">
+        <parameter
+          name="activity"
+          type="android.app.Activity"
+          jni-type="Landroid/app/Activity;" />
+      </method>
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="dismiss"
+        native="false"
+        return="void"
+        jni-return="V"
+        static="true"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(Landroid/app/Activity;)V">
+        <parameter
+          name="activity"
+          type="android.app.Activity"
+          jni-type="Landroid/app/Activity;" />
+      </method>
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="getView"
+        native="false"
+        return="android.view.View"
+        jni-return="Landroid/view/View;"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="()Landroid/view/View;" />
+      <field
+        deprecated="not deprecated"
+        final="true"
+        name="BOTTOM"
+        static="true"
+        synthetic="false"
+        transient="false"
+        type="int"
+        type-generic-aware="int"
+        jni-signature="I"
+        value="80"
+        visibility="public"
+        volatile="false" />
+      <field
+        deprecated="not deprecated"
+        final="true"
+        name="TOP"
+        static="true"
+        synthetic="false"
+        transient="false"
+        type="int"
+        type-generic-aware="int"
+        jni-signature="I"
+        value="48"
+        visibility="public"
+        volatile="false" />
+    </class>
+    <class
+      abstract="false"
+      deprecated="not deprecated"
+      enclosing-method-jni-type="Lorg/aviran/cookiebar2/CookieBar;"
+      enclosing-method-name="addCookie"
+      enclosing-method-signature="(Landroid/view/ViewGroup;Lorg/aviran/cookiebar2/Cookie;)V"
+      jni-extends="Ljava/lang/Object;"
+      extends="java.lang.Object"
+      extends-generic-aware="java.lang.Object"
+      final="false"
+      name="CookieBar.1"
+      jni-signature="Lorg/aviran/cookiebar2/CookieBar$1;"
+      source-file-name="CookieBar.java"
+      static="false"
+      visibility="">
+      <implements
+        name="org.aviran.cookiebar2.CookieBarDismissListener"
+        name-generic-aware="org.aviran.cookiebar2.CookieBarDismissListener"
+        jni-type="Lorg/aviran/cookiebar2/CookieBarDismissListener;" />
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="onDismiss"
+        native="false"
+        return="void"
+        jni-return="V"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(I)V">
+        <parameter
+          name="dismissType"
+          type="int"
+          jni-type="I" />
+      </method>
+    </class>
+    <class
+      abstract="false"
+      deprecated="not deprecated"
+      jni-extends="Ljava/lang/Object;"
+      extends="java.lang.Object"
+      extends-generic-aware="java.lang.Object"
+      final="false"
+      name="CookieBar.Builder"
+      jni-signature="Lorg/aviran/cookiebar2/CookieBar$Builder;"
+      source-file-name="CookieBar.java"
+      static="true"
+      visibility="public">
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="create"
+        native="false"
+        return="org.aviran.cookiebar2.CookieBar"
+        jni-return="Lorg/aviran/cookiebar2/CookieBar;"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="()Lorg/aviran/cookiebar2/CookieBar;" />
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="setAction"
+        native="false"
+        return="org.aviran.cookiebar2.CookieBar.Builder"
+        jni-return="Lorg/aviran/cookiebar2/CookieBar$Builder;"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(ILorg/aviran/cookiebar2/OnActionClickListener;)Lorg/aviran/cookiebar2/CookieBar$Builder;">
+        <parameter
+          name="resId"
+          type="int"
+          jni-type="I" />
+        <parameter
+          name="onActionClickListener"
+          type="org.aviran.cookiebar2.OnActionClickListener"
+          jni-type="Lorg/aviran/cookiebar2/OnActionClickListener;" />
+      </method>
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="setAction"
+        native="false"
+        return="org.aviran.cookiebar2.CookieBar.Builder"
+        jni-return="Lorg/aviran/cookiebar2/CookieBar$Builder;"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(Ljava/lang/String;Lorg/aviran/cookiebar2/OnActionClickListener;)Lorg/aviran/cookiebar2/CookieBar$Builder;">
+        <parameter
+          name="action"
+          type="java.lang.String"
+          jni-type="Ljava/lang/String;" />
+        <parameter
+          name="onActionClickListener"
+          type="org.aviran.cookiebar2.OnActionClickListener"
+          jni-type="Lorg/aviran/cookiebar2/OnActionClickListener;" />
+      </method>
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="setActionColor"
+        native="false"
+        return="org.aviran.cookiebar2.CookieBar.Builder"
+        jni-return="Lorg/aviran/cookiebar2/CookieBar$Builder;"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(I)Lorg/aviran/cookiebar2/CookieBar$Builder;">
+        <parameter
+          name="actionColor"
+          type="int"
+          jni-type="I" />
+      </method>
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="setAnimationIn"
+        native="false"
+        return="org.aviran.cookiebar2.CookieBar.Builder"
+        jni-return="Lorg/aviran/cookiebar2/CookieBar$Builder;"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(II)Lorg/aviran/cookiebar2/CookieBar$Builder;">
+        <parameter
+          name="topAnimation"
+          type="int"
+          jni-type="I" />
+        <parameter
+          name="bottomAnimation"
+          type="int"
+          jni-type="I" />
+      </method>
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="setAnimationOut"
+        native="false"
+        return="org.aviran.cookiebar2.CookieBar.Builder"
+        jni-return="Lorg/aviran/cookiebar2/CookieBar$Builder;"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(II)Lorg/aviran/cookiebar2/CookieBar$Builder;">
+        <parameter
+          name="topAnimation"
+          type="int"
+          jni-type="I" />
+        <parameter
+          name="bottomAnimation"
+          type="int"
+          jni-type="I" />
+      </method>
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="setBackgroundColor"
+        native="false"
+        return="org.aviran.cookiebar2.CookieBar.Builder"
+        jni-return="Lorg/aviran/cookiebar2/CookieBar$Builder;"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(I)Lorg/aviran/cookiebar2/CookieBar$Builder;">
+        <parameter
+          name="backgroundColor"
+          type="int"
+          jni-type="I" />
+      </method>
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="setCookieListener"
+        native="false"
+        return="org.aviran.cookiebar2.CookieBar.Builder"
+        jni-return="Lorg/aviran/cookiebar2/CookieBar$Builder;"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(Lorg/aviran/cookiebar2/CookieBarDismissListener;)Lorg/aviran/cookiebar2/CookieBar$Builder;">
+        <parameter
+          name="dismissListener"
+          type="org.aviran.cookiebar2.CookieBarDismissListener"
+          jni-type="Lorg/aviran/cookiebar2/CookieBarDismissListener;" />
+      </method>
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="setCookiePosition"
+        native="false"
+        return="org.aviran.cookiebar2.CookieBar.Builder"
+        jni-return="Lorg/aviran/cookiebar2/CookieBar$Builder;"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(I)Lorg/aviran/cookiebar2/CookieBar$Builder;">
+        <parameter
+          name="cookiePosition"
+          type="int"
+          jni-type="I" />
+      </method>
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="setCustomView"
+        native="false"
+        return="org.aviran.cookiebar2.CookieBar.Builder"
+        jni-return="Lorg/aviran/cookiebar2/CookieBar$Builder;"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(I)Lorg/aviran/cookiebar2/CookieBar$Builder;">
+        <parameter
+          name="customView"
+          type="int"
+          jni-type="I" />
+      </method>
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="setCustomViewInitializer"
+        native="false"
+        return="org.aviran.cookiebar2.CookieBar.Builder"
+        jni-return="Lorg/aviran/cookiebar2/CookieBar$Builder;"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(Lorg/aviran/cookiebar2/CookieBar$CustomViewInitializer;)Lorg/aviran/cookiebar2/CookieBar$Builder;">
+        <parameter
+          name="viewInitializer"
+          type="org.aviran.cookiebar2.CookieBar.CustomViewInitializer"
+          jni-type="Lorg/aviran/cookiebar2/CookieBar$CustomViewInitializer;" />
+      </method>
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="setDuration"
+        native="false"
+        return="org.aviran.cookiebar2.CookieBar.Builder"
+        jni-return="Lorg/aviran/cookiebar2/CookieBar$Builder;"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(J)Lorg/aviran/cookiebar2/CookieBar$Builder;">
+        <parameter
+          name="duration"
+          type="long"
+          jni-type="J" />
+      </method>
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="setEnableAutoDismiss"
+        native="false"
+        return="org.aviran.cookiebar2.CookieBar.Builder"
+        jni-return="Lorg/aviran/cookiebar2/CookieBar$Builder;"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(Z)Lorg/aviran/cookiebar2/CookieBar$Builder;">
+        <parameter
+          name="enableAutoDismiss"
+          type="boolean"
+          jni-type="Z" />
+      </method>
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="setIcon"
+        native="false"
+        return="org.aviran.cookiebar2.CookieBar.Builder"
+        jni-return="Lorg/aviran/cookiebar2/CookieBar$Builder;"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(I)Lorg/aviran/cookiebar2/CookieBar$Builder;">
+        <parameter
+          name="iconResId"
+          type="int"
+          jni-type="I" />
+      </method>
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="setIconAnimation"
+        native="false"
+        return="org.aviran.cookiebar2.CookieBar.Builder"
+        jni-return="Lorg/aviran/cookiebar2/CookieBar$Builder;"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(I)Lorg/aviran/cookiebar2/CookieBar$Builder;">
+        <parameter
+          name="iconAnimation"
+          type="int"
+          jni-type="I" />
+      </method>
+      <method
+        abstract="false"
+        deprecated="deprecated"
+        final="false"
+        name="setLayoutGravity"
+        native="false"
+        return="org.aviran.cookiebar2.CookieBar.Builder"
+        jni-return="Lorg/aviran/cookiebar2/CookieBar$Builder;"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(I)Lorg/aviran/cookiebar2/CookieBar$Builder;">
+        <parameter
+          name="layoutGravity"
+          type="int"
+          jni-type="I" />
+      </method>
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="setMessage"
+        native="false"
+        return="org.aviran.cookiebar2.CookieBar.Builder"
+        jni-return="Lorg/aviran/cookiebar2/CookieBar$Builder;"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(I)Lorg/aviran/cookiebar2/CookieBar$Builder;">
+        <parameter
+          name="resId"
+          type="int"
+          jni-type="I" />
+      </method>
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="setMessage"
+        native="false"
+        return="org.aviran.cookiebar2.CookieBar.Builder"
+        jni-return="Lorg/aviran/cookiebar2/CookieBar$Builder;"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(Ljava/lang/String;)Lorg/aviran/cookiebar2/CookieBar$Builder;">
+        <parameter
+          name="message"
+          type="java.lang.String"
+          jni-type="Ljava/lang/String;" />
+      </method>
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="setMessageColor"
+        native="false"
+        return="org.aviran.cookiebar2.CookieBar.Builder"
+        jni-return="Lorg/aviran/cookiebar2/CookieBar$Builder;"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(I)Lorg/aviran/cookiebar2/CookieBar$Builder;">
+        <parameter
+          name="messageColor"
+          type="int"
+          jni-type="I" />
+      </method>
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="setSwipeToDismiss"
+        native="false"
+        return="org.aviran.cookiebar2.CookieBar.Builder"
+        jni-return="Lorg/aviran/cookiebar2/CookieBar$Builder;"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(Z)Lorg/aviran/cookiebar2/CookieBar$Builder;">
+        <parameter
+          name="enableSwipeToDismiss"
+          type="boolean"
+          jni-type="Z" />
+      </method>
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="setTitle"
+        native="false"
+        return="org.aviran.cookiebar2.CookieBar.Builder"
+        jni-return="Lorg/aviran/cookiebar2/CookieBar$Builder;"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(I)Lorg/aviran/cookiebar2/CookieBar$Builder;">
+        <parameter
+          name="resId"
+          type="int"
+          jni-type="I" />
+      </method>
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="setTitle"
+        native="false"
+        return="org.aviran.cookiebar2.CookieBar.Builder"
+        jni-return="Lorg/aviran/cookiebar2/CookieBar$Builder;"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(Ljava/lang/String;)Lorg/aviran/cookiebar2/CookieBar$Builder;">
+        <parameter
+          name="title"
+          type="java.lang.String"
+          jni-type="Ljava/lang/String;" />
+      </method>
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="setTitleColor"
+        native="false"
+        return="org.aviran.cookiebar2.CookieBar.Builder"
+        jni-return="Lorg/aviran/cookiebar2/CookieBar$Builder;"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(I)Lorg/aviran/cookiebar2/CookieBar$Builder;">
+        <parameter
+          name="titleColor"
+          type="int"
+          jni-type="I" />
+      </method>
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="show"
+        native="false"
+        return="org.aviran.cookiebar2.CookieBar"
+        jni-return="Lorg/aviran/cookiebar2/CookieBar;"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="()Lorg/aviran/cookiebar2/CookieBar;" />
+    </class>
+    <interface
+      abstract="true"
+      deprecated="not deprecated"
+      final="false"
+      name="CookieBar.CustomViewInitializer"
+      jni-signature="Lorg/aviran/cookiebar2/CookieBar$CustomViewInitializer;"
+      source-file-name="CookieBar.java"
+      static="true"
+      visibility="public">
+      <method
+        abstract="true"
+        deprecated="not deprecated"
+        final="false"
+        name="initView"
+        native="false"
+        return="void"
+        jni-return="V"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(Landroid/view/View;)V">
+        <parameter
+          name="p0"
+          type="android.view.View"
+          jni-type="Landroid/view/View;" />
+      </method>
+    </interface>
+    <class
+      abstract="false"
+      deprecated="not deprecated"
+      jni-extends="Ljava/lang/Object;"
+      extends="java.lang.Object"
+      extends-generic-aware="java.lang.Object"
+      final="true"
+      name="CookieBar.Params"
+      jni-signature="Lorg/aviran/cookiebar2/CookieBar$Params;"
+      source-file-name="CookieBar.java"
+      static="true"
+      visibility="">
+      <field
+        deprecated="not deprecated"
+        final="false"
+        name="action"
+        static="false"
+        synthetic="false"
+        transient="false"
+        type="java.lang.String"
+        type-generic-aware="java.lang.String"
+        jni-signature="Ljava/lang/String;"
+        visibility="public"
+        volatile="false" />
+      <field
+        deprecated="not deprecated"
+        final="false"
+        name="actionColor"
+        static="false"
+        synthetic="false"
+        transient="false"
+        type="int"
+        type-generic-aware="int"
+        jni-signature="I"
+        visibility="public"
+        volatile="false" />
+      <field
+        deprecated="not deprecated"
+        final="false"
+        name="animationInBottom"
+        static="false"
+        synthetic="false"
+        transient="false"
+        type="int"
+        type-generic-aware="int"
+        jni-signature="I"
+        visibility="public"
+        volatile="false" />
+      <field
+        deprecated="not deprecated"
+        final="false"
+        name="animationInTop"
+        static="false"
+        synthetic="false"
+        transient="false"
+        type="int"
+        type-generic-aware="int"
+        jni-signature="I"
+        visibility="public"
+        volatile="false" />
+      <field
+        deprecated="not deprecated"
+        final="false"
+        name="animationOutBottom"
+        static="false"
+        synthetic="false"
+        transient="false"
+        type="int"
+        type-generic-aware="int"
+        jni-signature="I"
+        visibility="public"
+        volatile="false" />
+      <field
+        deprecated="not deprecated"
+        final="false"
+        name="animationOutTop"
+        static="false"
+        synthetic="false"
+        transient="false"
+        type="int"
+        type-generic-aware="int"
+        jni-signature="I"
+        visibility="public"
+        volatile="false" />
+      <field
+        deprecated="not deprecated"
+        final="false"
+        name="backgroundColor"
+        static="false"
+        synthetic="false"
+        transient="false"
+        type="int"
+        type-generic-aware="int"
+        jni-signature="I"
+        visibility="public"
+        volatile="false" />
+      <field
+        deprecated="not deprecated"
+        final="false"
+        name="cookiePosition"
+        static="false"
+        synthetic="false"
+        transient="false"
+        type="int"
+        type-generic-aware="int"
+        jni-signature="I"
+        visibility="public"
+        volatile="false" />
+      <field
+        deprecated="not deprecated"
+        final="false"
+        name="customViewResource"
+        static="false"
+        synthetic="false"
+        transient="false"
+        type="int"
+        type-generic-aware="int"
+        jni-signature="I"
+        visibility="public"
+        volatile="false" />
+      <field
+        deprecated="not deprecated"
+        final="false"
+        name="dismissListener"
+        static="false"
+        synthetic="false"
+        transient="false"
+        type="org.aviran.cookiebar2.CookieBarDismissListener"
+        type-generic-aware="org.aviran.cookiebar2.CookieBarDismissListener"
+        jni-signature="Lorg/aviran/cookiebar2/CookieBarDismissListener;"
+        visibility="public"
+        volatile="false" />
+      <field
+        deprecated="not deprecated"
+        final="false"
+        name="duration"
+        static="false"
+        synthetic="false"
+        transient="false"
+        type="long"
+        type-generic-aware="long"
+        jni-signature="J"
+        visibility="public"
+        volatile="false" />
+      <field
+        deprecated="not deprecated"
+        final="false"
+        name="enableAutoDismiss"
+        static="false"
+        synthetic="false"
+        transient="false"
+        type="boolean"
+        type-generic-aware="boolean"
+        jni-signature="Z"
+        visibility="public"
+        volatile="false" />
+      <field
+        deprecated="not deprecated"
+        final="false"
+        name="enableSwipeToDismiss"
+        static="false"
+        synthetic="false"
+        transient="false"
+        type="boolean"
+        type-generic-aware="boolean"
+        jni-signature="Z"
+        visibility="public"
+        volatile="false" />
+      <field
+        deprecated="not deprecated"
+        final="false"
+        name="iconAnimator"
+        static="false"
+        synthetic="false"
+        transient="false"
+        type="android.animation.AnimatorSet"
+        type-generic-aware="android.animation.AnimatorSet"
+        jni-signature="Landroid/animation/AnimatorSet;"
+        visibility="public"
+        volatile="false" />
+      <field
+        deprecated="not deprecated"
+        final="false"
+        name="iconResId"
+        static="false"
+        synthetic="false"
+        transient="false"
+        type="int"
+        type-generic-aware="int"
+        jni-signature="I"
+        visibility="public"
+        volatile="false" />
+      <field
+        deprecated="not deprecated"
+        final="false"
+        name="message"
+        static="false"
+        synthetic="false"
+        transient="false"
+        type="java.lang.String"
+        type-generic-aware="java.lang.String"
+        jni-signature="Ljava/lang/String;"
+        visibility="public"
+        volatile="false" />
+      <field
+        deprecated="not deprecated"
+        final="false"
+        name="messageColor"
+        static="false"
+        synthetic="false"
+        transient="false"
+        type="int"
+        type-generic-aware="int"
+        jni-signature="I"
+        visibility="public"
+        volatile="false" />
+      <field
+        deprecated="not deprecated"
+        final="false"
+        name="onActionClickListener"
+        static="false"
+        synthetic="false"
+        transient="false"
+        type="org.aviran.cookiebar2.OnActionClickListener"
+        type-generic-aware="org.aviran.cookiebar2.OnActionClickListener"
+        jni-signature="Lorg/aviran/cookiebar2/OnActionClickListener;"
+        visibility="public"
+        volatile="false" />
+      <field
+        deprecated="not deprecated"
+        final="false"
+        name="title"
+        static="false"
+        synthetic="false"
+        transient="false"
+        type="java.lang.String"
+        type-generic-aware="java.lang.String"
+        jni-signature="Ljava/lang/String;"
+        visibility="public"
+        volatile="false" />
+      <field
+        deprecated="not deprecated"
+        final="false"
+        name="titleColor"
+        static="false"
+        synthetic="false"
+        transient="false"
+        type="int"
+        type-generic-aware="int"
+        jni-signature="I"
+        visibility="public"
+        volatile="false" />
+      <field
+        deprecated="not deprecated"
+        final="false"
+        name="viewInitializer"
+        static="false"
+        synthetic="false"
+        transient="false"
+        type="org.aviran.cookiebar2.CookieBar.CustomViewInitializer"
+        type-generic-aware="org.aviran.cookiebar2.CookieBar.CustomViewInitializer"
+        jni-signature="Lorg/aviran/cookiebar2/CookieBar$CustomViewInitializer;"
+        visibility="public"
+        volatile="false" />
+    </class>
+    <interface
+      abstract="true"
+      deprecated="not deprecated"
+      final="false"
+      name="CookieBarDismissListener"
+      jni-signature="Lorg/aviran/cookiebar2/CookieBarDismissListener;"
+      source-file-name="CookieBarDismissListener.java"
+      static="false"
+      visibility="public">
+      <method
+        abstract="true"
+        deprecated="not deprecated"
+        final="false"
+        name="onDismiss"
+        native="false"
+        return="void"
+        jni-return="V"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(I)V">
+        <parameter
+          name="p0"
+          type="int"
+          jni-type="I" />
+      </method>
+    </interface>
+    <interface
+      abstract="true"
+      deprecated="not deprecated"
+      final="false"
+      name="CookieBarDismissListener.DismissType"
+      jni-signature="Lorg/aviran/cookiebar2/CookieBarDismissListener$DismissType;"
+      source-file-name="CookieBarDismissListener.java"
+      static="true"
+      visibility="public">
+      <implements
+        name="java.lang.annotation.Annotation"
+        name-generic-aware="java.lang.annotation.Annotation"
+        jni-type="Ljava/lang/annotation/Annotation;" />
+      <field
+        deprecated="not deprecated"
+        final="true"
+        name="DURATION_COMPLETE"
+        static="true"
+        synthetic="false"
+        transient="false"
+        type="int"
+        type-generic-aware="int"
+        jni-signature="I"
+        value="0"
+        visibility="public"
+        volatile="false" />
+      <field
+        deprecated="not deprecated"
+        final="true"
+        name="PROGRAMMATIC_DISMISS"
+        static="true"
+        synthetic="false"
+        transient="false"
+        type="int"
+        type-generic-aware="int"
+        jni-signature="I"
+        value="3"
+        visibility="public"
+        volatile="false" />
+      <field
+        deprecated="not deprecated"
+        final="true"
+        name="REPLACE_DISMISS"
+        static="true"
+        synthetic="false"
+        transient="false"
+        type="int"
+        type-generic-aware="int"
+        jni-signature="I"
+        value="4"
+        visibility="public"
+        volatile="false" />
+      <field
+        deprecated="not deprecated"
+        final="true"
+        name="USER_ACTION_CLICK"
+        static="true"
+        synthetic="false"
+        transient="false"
+        type="int"
+        type-generic-aware="int"
+        jni-signature="I"
+        value="2"
+        visibility="public"
+        volatile="false" />
+      <field
+        deprecated="not deprecated"
+        final="true"
+        name="USER_DISMISS"
+        static="true"
+        synthetic="false"
+        transient="false"
+        type="int"
+        type-generic-aware="int"
+        jni-signature="I"
+        value="1"
+        visibility="public"
+        volatile="false" />
+    </interface>
+    <interface
+      abstract="true"
+      deprecated="not deprecated"
+      final="false"
+      name="OnActionClickListener"
+      jni-signature="Lorg/aviran/cookiebar2/OnActionClickListener;"
+      source-file-name="OnActionClickListener.java"
+      static="false"
+      visibility="public">
+      <method
+        abstract="true"
+        deprecated="not deprecated"
+        final="false"
+        name="onClick"
+        native="false"
+        return="void"
+        jni-return="V"
+        static="false"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="()V" />
+    </interface>
+    <class
+      abstract="false"
+      deprecated="not deprecated"
+      jni-extends="Ljava/lang/Object;"
+      extends="java.lang.Object"
+      extends-generic-aware="java.lang.Object"
+      final="false"
+      name="ThemeResolver"
+      jni-signature="Lorg/aviran/cookiebar2/ThemeResolver;"
+      source-file-name="ThemeResolver.java"
+      static="false"
+      visibility="">
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="getColor"
+        native="false"
+        return="int"
+        jni-return="I"
+        static="true"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(Landroid/content/Context;I)I">
+        <parameter
+          name="context"
+          type="android.content.Context"
+          jni-type="Landroid/content/Context;" />
+        <parameter
+          name="attr"
+          type="int"
+          jni-type="I" />
+      </method>
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="getColor"
+        native="false"
+        return="int"
+        jni-return="I"
+        static="true"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(Landroid/content/Context;II)I">
+        <parameter
+          name="context"
+          type="android.content.Context"
+          jni-type="Landroid/content/Context;" />
+        <parameter
+          name="attr"
+          type="int"
+          jni-type="I" />
+        <parameter
+          name="defaultColor"
+          type="int"
+          jni-type="I" />
+      </method>
+      <method
+        abstract="false"
+        deprecated="not deprecated"
+        final="false"
+        name="getDimen"
+        native="false"
+        return="int"
+        jni-return="I"
+        static="true"
+        synchronized="false"
+        visibility="public"
+        bridge="false"
+        synthetic="false"
+        jni-signature="(Landroid/content/Context;II)I">
+        <parameter
+          name="context"
+          type="android.content.Context"
+          jni-type="Landroid/content/Context;" />
+        <parameter
+          name="attr"
+          type="int"
+          jni-type="I" />
+        <parameter
+          name="defaultSize"
+          type="int"
+          jni-type="I" />
+      </method>
+    </class>
+  </package>
+</api>

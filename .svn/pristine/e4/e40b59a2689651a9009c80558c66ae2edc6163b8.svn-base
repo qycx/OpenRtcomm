@@ -1,0 +1,178 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace qy
+{
+    partial class qyFuncs
+{
+		public static void mcThreadProc_mis_toSend(object lpParameter)
+		{
+			MIS_CHANNEL pChannel = (MIS_CHANNEL)lpParameter;
+			if (null==pChannel)
+			{
+				return;
+			}
+			MIS_CNT pMisCnt = pChannel.pMisCnt;
+			if (null==pMisCnt) return;
+			CCtxQmc pProcInfo = (CCtxQmc)pMisCnt.pProcInfoParam;
+			if (null==pProcInfo) return;
+			CCtxQyMc pQyMc = pProcInfo.pQyMc;
+			if (null==pQyMc) return;
+			//
+			int loopCtrl = 0;
+			int i;
+			int j;
+			uint dwThreadId = myGetCurrentThreadId();
+			uint dwRet;
+
+			/*
+			//  unsigned  int					len;
+			CQyMalloc mallocObj;
+			MIS_MSGU* pMsg_o = NULL;
+			//  int							iRet;
+			//  BOOL							bThreadIdFound		=	FALSE;
+			COMMON_PARAM commonParam0;
+			COMMON_PARAM commonParam1;
+			//  nNodes_processed
+			int tmpiRet = -1;
+			TRAN_INFO_MIS tranInfo;
+			//
+			CQyMalloc mallocObj_mixer;
+			MIS_MSG_TASK* pMsgMixer = NULL;
+
+
+			traceLogA("msgThreadProc_mis_toSend:  enters");
+
+#if  0
+	 for  (  i  =  0;  i  <  mycountof(  pProcInfo->misCnts  );  i  ++  )  {
+		  pMisCnt  =  &pProcInfo->misCnts[i];
+		  if  (  !pMisCnt->cfg.dynCfg.cnt.usCntPort  )  continue;
+		  //
+		  for  (  j  =  0;  j  <  mycountof(  pMisCnt->channels  );  j  ++  )  {
+			   pChannel  =  &pMisCnt->channels[j];
+			   if  (  !pChannel->dwThreadId_toSend  )  continue;
+			   if  (  pChannel->dwThreadId_toSend  ==  dwThreadId  )  {
+				   bThreadIdFound  =  TRUE;  break;
+			   }
+		  }
+		  //
+		  if  (  bThreadIdFound  )  break;
+	 }
+
+	 if  (  !bThreadIdFound  )  {
+		 traceLogA(  "Error:  msgCnt not found."  );  goto  errLabel;
+	 }
+#endif
+
+
+			if (!(pMsg_o = (MIS_MSGU*)mallocObj.mallocf(CONST_iAllocType_longTimeMsg, sizeof(MIS_MSGU)))) goto errLabel;
+			switch (pChannel->uiType)
+			{
+				case CONST_channelType_realTimeMedia:
+				case CONST_channelType_media:
+					if (!(pMsgMixer = (MIS_MSG_TASK*)mallocObj_mixer.mallocf(CONST_iAllocType_longTimeMsg, sizeof(MIS_MSG_TASK)))) goto errLabel;
+					break;
+				default:
+					break;
+			}
+
+			LPCTSTR where_showInfo; where_showInfo = qyGetDesByType1(CONST_channelTypeTable, pChannel->uiType);
+
+			GENERIC_Q* pToSendQ = NULL; //  2011/01/23
+
+			for (; bChannelOk(pChannel); loopCtrl++)
+			{
+
+				dwRet = WaitForSingleObject(pChannel->toSendQ2.hEvents[0], 3500);   //  µÈ·¢ËÍÖ¸Áî
+				if (dwRet == WAIT_FAILED) goto errLabel;                            //  ÎªÁË·ÀÖ¹¶ª°ü£¬ÕâÀï²»ÅÐ¶Ï³¬Ê±£¬ÒÔoutputQÀïµÄÊý¾Ý°üÎª×¼
+				if (dwRet == WAIT_TIMEOUT) continue;
+# ifdef  __DEBUG__
+				//  traceLog(  _T(  "toSend: sth waited"  )  );
+#endif
+
+				q2AvoidTriggerTooHigh(0, &pChannel->toSendQ2);
+
+				if (getQ2Nodes_toPostMsg(&pChannel->outputQ2) > 40) continue;                   //  Êä³ö¶ÔÁÐÀï³¬¹ý20¸öÊý¾Ý°ü£¬¾Í²»ÓÃ×ª»»ÁË
+
+				memset(&tranInfo, 0, sizeof(tranInfo));
+				tranInfo.uiTranNo = getuiNextTranNo(0, 0, 0);
+				if (tranInfo.uiTranNo == -1) goto errLabel;
+				mytime(&tranInfo.tNow);
+				tranInfo.pMsg_o = pMsg_o;
+
+				MACRO_makeCommonParam3(pProcInfo, pMisCnt, pChannel, commonParam0);
+				MACRO_makeCommonParam3(&tranInfo, pMsgMixer, 0, commonParam1);
+
+				if (pChannel->uiType == CONST_channelType_realTimeMedia)
+				{
+
+					tmpiRet = pProcInfo->processQ_media.qTraverse(tmpHandler_toSendMedia, &commonParam0, &commonParam1);
+					if (tmpiRet < 0)
+					{
+						qyShowInfo1(CONST_qyShowType_qwmComm, 0, (""), pProcInfo->who_showInfo, 0, where_showInfo, _T(""), _T("mcThreadProc_mis_toSend: tmpHandler_toSendMedia failed."));
+						goto errLabel;
+					}
+
+				}
+				if (pChannel->uiType == CONST_channelType_media)
+				{
+
+					tmpiRet = pProcInfo->processQ_media.qTraverse(tmpHandler_toSendMedia, &commonParam0, &commonParam1);
+					if (tmpiRet < 0)
+					{
+						qyShowInfo1(CONST_qyShowType_qwmComm, 0, (""), pProcInfo->who_showInfo, 0, where_showInfo, _T(""), _T("mcThreadProc_mis_toSend: tmpHandler_toSendMedia failed."));
+						goto errLabel;
+					}
+
+				}
+
+
+				//  printQ_mis(  pToSendQ  );
+
+				tranInfo.uiMaxSendMsgs = 4; //  
+				do
+				{
+					if (!pToSendQ || isQEmpty(pToSendQ))
+					{
+						CQyQ2Help q2Help;
+						pToSendQ = q2Help.getQ_toGetMsg(&pChannel->toSendQ2);
+						if (!pToSendQ) break;
+
+						if (isQEmpty(pToSendQ)) break;
+					}
+
+					tmpiRet = qTraverse(pToSendQ, tmpHandler_toSend, &commonParam0, &commonParam1);
+					if (tmpiRet < 0)
+					{
+						qyShowInfo1(CONST_qyShowType_qwmComm, 0, (""), pProcInfo->who_showInfo, 0, where_showInfo, _T(""), _T("mcThreadProc_mis_toSend: tmpHandler_toSendMedia failed."));
+						goto errLabel;
+					}
+					if (qRemoveMsg(pToSendQ, tmpHandler_needRemoveMsg_cli, 0, &commonParam1) < 0)
+					{
+						traceLog(_T("qRemoveMsg pToSendQ failed, skipped."));
+					}
+				}
+				while (tranInfo.nNodes_processed < pProcInfo->cfg.uiMaxSendMsgs);
+
+				//  printQ_mis(  &pChannel->toSendQ  );	 
+
+			}
+
+			*/
+
+		errLabel:
+
+
+			if (null!=pMisCnt)
+			{
+				pChannel.status.ulbSessionErr = true;
+				pChannel.status.ulbToSendQuit = true;
+			}
+			Console.WriteLine("msgThreadProc_mis_toSend:  leaves");
+
+			return;
+		}
+
+	}
+}

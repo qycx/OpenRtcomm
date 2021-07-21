@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace qy
+{
+    partial class qyFuncs
+{
+
+    public static int getPolicyIsClient(CCtxQmc pProcInfo, out POLICY_isClient p)
+    {
+            p = new POLICY_isClient();
+ 
+            return 0;
+    }
+}
+}

@@ -1,0 +1,34 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace qy
+{
+	public partial class qyFuncs
+	{
+		//  #define		CONST_qnmVer_is								"024705"			//  
+		//  #define		CONST_qnmVer_is								"025401"				//  
+		public const string CONST_qnmVer_is = "02660355";               //  2017/10/19	"02660258"				//  2017/06/15	"02650267"				//  2016/10/12	//  "02630602"				//  2015/08/21	//  "02622960"				//  
+																		//
+
+
+		//
+		public static string qnmVerStr(int iServiceId)
+		{
+			string p = "";
+
+			switch (iServiceId)
+			{
+				case Consts.CONST_qyServiceId_is:
+					p = CONST_qnmVer_is;
+					break;
+				default:
+					break;
+
+			}
+
+			return p;
+		}
+	}
+
+}

@@ -1,0 +1,209 @@
+﻿using Android.App;
+using Android.Content;
+using Android.OS;
+using Android.Runtime;
+using Android.Util;
+using Android.Views;
+using Android.Widget;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+using qy;
+
+//
+namespace qyMessengerApp.Droid
+{
+    public class Fragment_msgList : Android.Support.V4.App.Fragment
+    {
+        List<TableItem_msg> mTableItems = new List<TableItem_msg>();
+        ListView listView;
+
+        public override void OnCreate(Bundle savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
+
+            // Create your fragment here
+
+            /*
+     tableItems.Add(new TableItem() { Heading = "Vegetables", SubHeading = "65 items", ImageResourceId = Resource.Drawable.Vegetables });
+     tableItems.Add(new TableItem() { Heading = "Fruits", SubHeading = "17 items", ImageResourceId = Resource.Drawable.Vegetables });
+     tableItems.Add(new TableItem() { Heading = "Flower Buds", SubHeading = "5 items", ImageResourceId = Resource.Drawable.Vegetables });
+     tableItems.Add(new TableItem() { Heading = "Legumes", SubHeading = "33 items", ImageResourceId = Resource.Drawable.Vegetables });
+     tableItems.Add(new TableItem() { Heading = "Bulbs", SubHeading = "18 items", ImageResourceId = Resource.Drawable.Vegetables });
+     tableItems.Add(new TableItem() { Heading = "Tubers", SubHeading = "43 items", ImageResourceId = Resource.Drawable.Vegetables });
+     */
+            mTableItems.Add(new TableItem_msg() { ui64Id=103,dw = "清扬创新", syr = "王五", ImageResourceId = Resource.Drawable.Vegetables, speaker = "张三", msg = "今天快递了吗" });
+            mTableItems.Add(new TableItem_msg() { ui64Id=105,uiObjType = Consts.CONST_objType_imGrp, grpName = "华北区销售会议", ImageResourceId = Resource.Drawable.Vegetables, speaker = "李四", msg = "任务完成了吗" });
+
+
+
+        }
+
+        public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+        {
+            // Use this to return your custom view for this Fragment
+            // return inflater.Inflate(Resource.Layout.YourFragment, container, false);
+
+            //return base.OnCreateView(inflater, container, savedInstanceState);
+
+            //
+            View view = inflater.Inflate(Resource.Layout.layout_msgList, container, false);
+
+            //
+            listView = (ListView)view.FindViewById(Resource.Id.list);
+
+            //
+            listView.Adapter = new Adapter_msgList(inflater, mTableItems);
+
+            //
+            listView.ItemClick += ListView_ItemClick; ;
+
+            return view;
+
+        }
+
+        //
+        public unsafe int guiProcMsg(MIS_MSGU* pMsg)
+        {
+            int iErr = -1;
+            CCtxQyMc pQyMc = g.g_pQyMc;
+            MainActivity mainActivity = (MainActivity)pQyMc.gui.hMainWnd;
+            QM_dbFuncs pDbFuncs = pQyMc.p_g_dbFuncs;
+
+            switch (pMsg->uiType)
+            {
+                case Consts.CONST_misMsgType_talk:
+                    {
+                        IM_CONTENTU* pContent = (IM_CONTENTU*)pMsg->talk.data.buf;
+                        switch (pContent->uiType)
+                        {
+                            case Consts.CONST_imCommType_htmlContent:
+                                {
+                                    //mainActivity.mAdapter.myFragment_msg
+                                    UInt64 id = pMsg->talk.addr_logicalPeer.idInfo.ui64Id;
+                                    //
+                                    TableItem_msg item = this.mTableItems.Find(x => x.ui64Id == pMsg->talk.addr_logicalPeer.idInfo.ui64Id);
+                                    if ( item==null)
+                                    {
+                                        int kk = 0;
+                                        item = new TableItem_msg();
+                                        item.ui64Id = pMsg->talk.addr_logicalPeer.idInfo.ui64Id;
+                                        //
+                                        QY_MESSENGER_INFO messengerInfo;
+                                        QY_MESSENGER_REGINFO regInfo;
+                                        if ( !pDbFuncs.pf_bGetMessengerInfoBySth(pDbFuncs,pQyMc.gui.pDb,pQyMc.cfg.db.iDbType,ref qyFuncs.CONST_fieldIdTable_en,"",&pMsg->talk.addr_logicalPeer.idInfo,
+                                            0,&messengerInfo,&regInfo,null,null ) )
+                                        {
+                                            goto errLabel;
+                                        }                                        
+                                        item.uiObjType = messengerInfo.uiType;
+                                        if (messengerInfo.uiType == Consts.CONST_objType_imGrp)
+                                        {
+                                            IM_GRP_INFO grpInfo;
+                                            if( !pDbFuncs.pf_bGetImGrpInfoBySth( pQyMc.gui.pDb,pQyMc.cfg.db.iDbType,"",&pMsg->talk.addr_logicalPeer.idInfo,&grpInfo) )
+                                            {
+                                                qyFuncs.mymemset((IntPtr)(byte*)&grpInfo, 0, sizeof(IM_GRP_INFO));
+                                            }
+                                            item.grpName = new string(grpInfo.name);
+                                        }
+                                        else
+                                        {
+                                            item.dw = new string(regInfo.dw);
+                                            item.bm = new string(regInfo.bm);
+                                            item.syr = new string(regInfo.syr);
+                                        }
+                                        //
+                                        item.ImageResourceId = Resource.Drawable.Vegetables;
+                                        //
+                                        QY_MESSENGER_ID idInfo;
+                                        idInfo.ui64Id = pMsg->talk.data.route.idInfo_from.ui64Id;
+                                        if (!pDbFuncs.pf_bGetMessengerInfoBySth(pDbFuncs, pQyMc.gui.pDb, pQyMc.cfg.db.iDbType, ref qyFuncs.CONST_fieldIdTable_en, "", &idInfo,
+                                            0, &messengerInfo, &regInfo, null, null))
+                                        {
+                                            goto errLabel;
+                                        }
+                                        item.speaker = new string(regInfo.syr);
+                                        item.msg = new string(pContent->html.wBuf);
+                                        item.tRecvTime = pMsg->talk.tRecvTime;
+                                        //
+                                        mTableItems.Add(item);
+                                        //
+                                        mTableItems.Sort((x, y) =>  y.tRecvTime.CompareTo( x.tRecvTime) );
+                                        //
+                                        Adapter_msgList adapter = (Adapter_msgList)listView.Adapter;
+                                        adapter.NotifyDataSetChanged();
+
+
+                                    }
+                                    else
+                                    {
+                                        QY_MESSENGER_INFO messengerInfo;
+                                        QY_MESSENGER_REGINFO regInfo;
+                                        QY_MESSENGER_ID idInfo;
+                                        idInfo.ui64Id = pMsg->talk.data.route.idInfo_from.ui64Id;
+                                        if (!pDbFuncs.pf_bGetMessengerInfoBySth(pDbFuncs, pQyMc.gui.pDb, pQyMc.cfg.db.iDbType, ref qyFuncs.CONST_fieldIdTable_en, "", &idInfo,
+                                            0, &messengerInfo, &regInfo, null, null))
+                                        {
+                                            goto errLabel;
+                                        }
+                                        item.speaker = new string(regInfo.syr);
+                                        item.msg = new string(pContent->html.wBuf);
+                                        item.tRecvTime = pMsg->talk.tRecvTime;
+                                        //
+                                        //
+                                        mTableItems.Sort((x, y) => y.tRecvTime.CompareTo(x.tRecvTime));
+                                        //
+                                        Adapter_msgList adapter = (Adapter_msgList)listView.Adapter;
+                                        adapter.NotifyDataSetChanged();
+                                        //
+                                        int kk = 0;
+                                    }
+                                    
+
+
+                                }
+                                break;
+                        }
+
+
+                    }
+                    break;
+                default:
+                    break;
+
+
+            }
+
+
+            iErr = 0;
+            
+        errLabel:
+
+
+
+
+            return iErr;
+
+        }
+
+
+        //
+        private void ListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            //throw new NotImplementedException();
+            Console.WriteLine("{0} clicked", mTableItems[e.Position].ui64Id);
+            //
+            TableItem_msg item_sel = mTableItems[e.Position];
+            //
+                Intent intent = new Intent(Application.Context, typeof(Activity_dlgTalk));
+                intent.PutExtra("ui64Id", (long)item_sel.ui64Id);
+                intent.PutExtra("uiObjType", (int)item_sel.uiObjType);
+                intent.PutExtra("info", "haha");
+                StartActivity(intent);
+
+        }
+
+    }
+}

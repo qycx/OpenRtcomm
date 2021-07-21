@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<api>
+  <package name="com.qycx.gleslibrary" jni-name="com/qycx/gleslibrary">
+    <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="true" name="BuildConfig" static="false" visibility="public" jni-signature="Lcom/qycx/gleslibrary/BuildConfig;">
+      <constructor deprecated="not deprecated" final="false" name="BuildConfig" jni-signature="()V" bridge="false" static="false" type="com.qycx.gleslibrary.BuildConfig" synthetic="false" visibility="public"></constructor>
+      <field deprecated="not deprecated" final="true" name="BUILD_TYPE" jni-signature="Ljava/lang/String;" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;release&quot;" visibility="public" volatile="false"></field>
+      <field deprecated="not deprecated" final="true" name="DEBUG" jni-signature="Z" static="true" transient="false" type="boolean" type-generic-aware="boolean" value="false" visibility="public" volatile="false"></field>
+      <field deprecated="not deprecated" final="true" name="LIBRARY_PACKAGE_NAME" jni-signature="Ljava/lang/String;" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;com.qycx.gleslibrary&quot;" visibility="public" volatile="false"></field>
+    </class>
+    <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="false" name="Drawable2d" static="false" visibility="public" jni-signature="Lcom/qycx/gleslibrary/Drawable2d;">
+      <constructor deprecated="not deprecated" final="false" name="Drawable2d" jni-signature="(Lcom/qycx/gleslibrary/Drawable2d$Prefab;)V" bridge="false" static="false" type="com.qycx.gleslibrary.Drawable2d" synthetic="false" visibility="public">
+        <parameter name="shape" type="com.qycx.gleslibrary.Drawable2d.Prefab" jni-type="Lcom/qycx/gleslibrary/Drawable2d$Prefab;"></parameter>
+      </constructor>
+      <method abstract="false" deprecated="not deprecated" final="false" name="getCoordsPerVertex" jni-signature="()I" bridge="false" native="false" return="int" jni-return="I" static="false" synchronized="false" synthetic="false" visibility="public"></method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="getTexCoordArray" jni-signature="()Ljava/nio/FloatBuffer;" bridge="false" native="false" return="java.nio.FloatBuffer" jni-return="Ljava/nio/FloatBuffer;" static="false" synchronized="false" synthetic="false" visibility="public"></method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="getTexCoordStride" jni-signature="()I" bridge="false" native="false" return="int" jni-return="I" static="false" synchronized="false" synthetic="false" visibility="public"></method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="getVertexArray" jni-signature="()Ljava/nio/FloatBuffer;" bridge="false" native="false" return="java.nio.FloatBuffer" jni-return="Ljava/nio/FloatBuffer;" static="false" synchronized="false" synthetic="false" visibility="public"></method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="getVertexCount" jni-signature="()I" bridge="false" native="false" return="int" jni-return="I" static="false" synchronized="false" synthetic="false" visibility="public"></method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="getVertexStride" jni-signature="()I" bridge="false" native="false" return="int" jni-return="I" static="false" synchronized="false" synthetic="false" visibility="public"></method>
+    </class>
+    <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="false" name="Drawable2d.1" static="true" visibility="" jni-signature="Lcom/qycx/gleslibrary/Drawable2d$1;"></class>
+    <class abstract="false" deprecated="not deprecated" extends="java.lang.Enum" extends-generic-aware="java.lang.Enum&lt;com.qycx.gleslibrary.Drawable2d.Prefab&gt;" jni-extends="Ljava/lang/Enum;" final="true" name="Drawable2d.Prefab" static="true" visibility="public" jni-signature="Lcom/qycx/gleslibrary/Drawable2d$Prefab;">
+      <method abstract="false" deprecated="not deprecated" final="false" name="valueOf" jni-signature="(Ljava/lang/String;)Lcom/qycx/gleslibrary/Drawable2d$Prefab;" bridge="false" native="false" return="com.qycx.gleslibrary.Drawable2d.Prefab" jni-return="Lcom/qycx/gleslibrary/Drawable2d$Prefab;" static="true" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="name" type="java.lang.String" jni-type="Ljava/lang/String;"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="values" jni-signature="()[Lcom/qycx/gleslibrary/Drawable2d$Prefab;" bridge="false" native="false" return="com.qycx.gleslibrary.Drawable2d.Prefab[]" jni-return="[Lcom/qycx/gleslibrary/Drawable2d$Prefab;" static="true" synchronized="false" synthetic="false" visibility="public"></method>
+      <field deprecated="not deprecated" final="true" name="FULL_RECTANGLE" jni-signature="Lcom/qycx/gleslibrary/Drawable2d$Prefab;" static="true" transient="false" type="com.qycx.gleslibrary.Drawable2d.Prefab" type-generic-aware="com.qycx.gleslibrary.Drawable2d.Prefab" visibility="public" volatile="false"></field>
+      <field deprecated="not deprecated" final="true" name="RECTANGLE" jni-signature="Lcom/qycx/gleslibrary/Drawable2d$Prefab;" static="true" transient="false" type="com.qycx.gleslibrary.Drawable2d.Prefab" type-generic-aware="com.qycx.gleslibrary.Drawable2d.Prefab" visibility="public" volatile="false"></field>
+      <field deprecated="not deprecated" final="true" name="TRIANGLE" jni-signature="Lcom/qycx/gleslibrary/Drawable2d$Prefab;" static="true" transient="false" type="com.qycx.gleslibrary.Drawable2d.Prefab" type-generic-aware="com.qycx.gleslibrary.Drawable2d.Prefab" visibility="public" volatile="false"></field>
+    </class>
+    <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="true" name="EglCore" static="false" visibility="public" jni-signature="Lcom/qycx/gleslibrary/EglCore;">
+      <constructor deprecated="not deprecated" final="false" name="EglCore" jni-signature="()V" bridge="false" static="false" type="com.qycx.gleslibrary.EglCore" synthetic="false" visibility="public"></constructor>
+      <constructor deprecated="not deprecated" final="false" name="EglCore" jni-signature="(Landroid/opengl/EGLContext;I)V" bridge="false" static="false" type="com.qycx.gleslibrary.EglCore" synthetic="false" visibility="public">
+        <parameter name="sharedContext" type="android.opengl.EGLContext" jni-type="Landroid/opengl/EGLContext;"></parameter>
+        <parameter name="flags" type="int" jni-type="I"></parameter>
+      </constructor>
+      <method abstract="false" deprecated="not deprecated" final="false" name="createOffscreenSurface" jni-signature="(II)Landroid/opengl/EGLSurface;" bridge="false" native="false" return="android.opengl.EGLSurface" jni-return="Landroid/opengl/EGLSurface;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="width" type="int" jni-type="I"></parameter>
+        <parameter name="height" type="int" jni-type="I"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="createWindowSurface" jni-signature="(Ljava/lang/Object;)Landroid/opengl/EGLSurface;" bridge="false" native="false" return="android.opengl.EGLSurface" jni-return="Landroid/opengl/EGLSurface;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="surface" type="java.lang.Object" jni-type="Ljava/lang/Object;"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="getGlVersion" jni-signature="()I" bridge="false" native="false" return="int" jni-return="I" static="false" synchronized="false" synthetic="false" visibility="public"></method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="isCurrent" jni-signature="(Landroid/opengl/EGLSurface;)Z" bridge="false" native="false" return="boolean" jni-return="Z" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="eglSurface" type="android.opengl.EGLSurface" jni-type="Landroid/opengl/EGLSurface;"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="logCurrent" jni-signature="(Ljava/lang/String;)V" bridge="false" native="false" return="void" jni-return="V" static="true" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="msg" type="java.lang.String" jni-type="Ljava/lang/String;"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="makeCurrent" jni-signature="(Landroid/opengl/EGLSurface;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="eglSurface" type="android.opengl.EGLSurface" jni-type="Landroid/opengl/EGLSurface;"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="makeCurrent" jni-signature="(Landroid/opengl/EGLSurface;Landroid/opengl/EGLSurface;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="drawSurface" type="android.opengl.EGLSurface" jni-type="Landroid/opengl/EGLSurface;"></parameter>
+        <parameter name="readSurface" type="android.opengl.EGLSurface" jni-type="Landroid/opengl/EGLSurface;"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="makeNothingCurrent" jni-signature="()V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public"></method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="queryString" jni-signature="(I)Ljava/lang/String;" bridge="false" native="false" return="java.lang.String" jni-return="Ljava/lang/String;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="what" type="int" jni-type="I"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="querySurface" jni-signature="(Landroid/opengl/EGLSurface;I)I" bridge="false" native="false" return="int" jni-return="I" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="eglSurface" type="android.opengl.EGLSurface" jni-type="Landroid/opengl/EGLSurface;"></parameter>
+        <parameter name="what" type="int" jni-type="I"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="release" jni-signature="()V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public"></method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="releaseSurface" jni-signature="(Landroid/opengl/EGLSurface;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="eglSurface" type="android.opengl.EGLSurface" jni-type="Landroid/opengl/EGLSurface;"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="setPresentationTime" jni-signature="(Landroid/opengl/EGLSurface;J)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="eglSurface" type="android.opengl.EGLSurface" jni-type="Landroid/opengl/EGLSurface;"></parameter>
+        <parameter name="nsecs" type="long" jni-type="J"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="swapBuffers" jni-signature="(Landroid/opengl/EGLSurface;)Z" bridge="false" native="false" return="boolean" jni-return="Z" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="eglSurface" type="android.opengl.EGLSurface" jni-type="Landroid/opengl/EGLSurface;"></parameter>
+      </method>
+      <field deprecated="not deprecated" final="true" name="FLAG_RECORDABLE" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="1" visibility="public" volatile="false"></field>
+      <field deprecated="not deprecated" final="true" name="FLAG_TRY_GLES3" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="2" visibility="public" volatile="false"></field>
+      <field deprecated="not deprecated" final="false" name="mEGLConfig" jni-signature="Landroid/opengl/EGLConfig;" static="false" transient="false" type="android.opengl.EGLConfig" type-generic-aware="android.opengl.EGLConfig" visibility="public" volatile="false"></field>
+      <field deprecated="not deprecated" final="false" name="mEGLContext" jni-signature="Landroid/opengl/EGLContext;" static="false" transient="false" type="android.opengl.EGLContext" type-generic-aware="android.opengl.EGLContext" visibility="public" volatile="false"></field>
+      <field deprecated="not deprecated" final="false" name="mEGLDisplay" jni-signature="Landroid/opengl/EGLDisplay;" static="false" transient="false" type="android.opengl.EGLDisplay" type-generic-aware="android.opengl.EGLDisplay" visibility="public" volatile="false"></field>
+    </class>
+    <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="false" name="EglSurfaceBase" static="false" visibility="public" jni-signature="Lcom/qycx/gleslibrary/EglSurfaceBase;">
+      <constructor deprecated="not deprecated" final="false" name="EglSurfaceBase" jni-signature="(Lcom/qycx/gleslibrary/EglCore;)V" bridge="false" static="false" type="com.qycx.gleslibrary.EglSurfaceBase" synthetic="false" visibility="protected">
+        <parameter name="eglCore" type="com.qycx.gleslibrary.EglCore" jni-type="Lcom/qycx/gleslibrary/EglCore;"></parameter>
+      </constructor>
+      <method abstract="false" deprecated="not deprecated" final="false" name="createOffscreenSurface" jni-signature="(II)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="width" type="int" jni-type="I"></parameter>
+        <parameter name="height" type="int" jni-type="I"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="createWindowSurface" jni-signature="(Ljava/lang/Object;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="surface" type="java.lang.Object" jni-type="Ljava/lang/Object;"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="getHeight" jni-signature="()I" bridge="false" native="false" return="int" jni-return="I" static="false" synchronized="false" synthetic="false" visibility="public"></method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="getWidth" jni-signature="()I" bridge="false" native="false" return="int" jni-return="I" static="false" synchronized="false" synthetic="false" visibility="public"></method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="makeCurrent" jni-signature="()V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public"></method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="makeCurrentReadFrom" jni-signature="(Lcom/qycx/gleslibrary/EglSurfaceBase;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="readSurface" type="com.qycx.gleslibrary.EglSurfaceBase" jni-type="Lcom/qycx/gleslibrary/EglSurfaceBase;"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="releaseEglSurface" jni-signature="()V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public"></method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="saveFrame" jni-signature="(Ljava/io/File;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="file" type="java.io.File" jni-type="Ljava/io/File;"></parameter>
+        <exception name="IOException" type="java.io.IOException"></exception>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="setPresentationTime" jni-signature="(J)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="nsecs" type="long" jni-type="J"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="swapBuffers" jni-signature="()Z" bridge="false" native="false" return="boolean" jni-return="Z" static="false" synchronized="false" synthetic="false" visibility="public"></method>
+      <field deprecated="not deprecated" final="true" name="TAG" jni-signature="Ljava/lang/String;" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;Grafika&quot;" visibility="protected" volatile="false"></field>
+      <field deprecated="not deprecated" final="false" name="mEglCore" jni-signature="Lcom/qycx/gleslibrary/EglCore;" static="false" transient="false" type="com.qycx.gleslibrary.EglCore" type-generic-aware="com.qycx.gleslibrary.EglCore" visibility="public" volatile="false"></field>
+    </class>
+    <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="false" name="FlatShadedProgram" static="false" visibility="public" jni-signature="Lcom/qycx/gleslibrary/FlatShadedProgram;">
+      <constructor deprecated="not deprecated" final="false" name="FlatShadedProgram" jni-signature="()V" bridge="false" static="false" type="com.qycx.gleslibrary.FlatShadedProgram" synthetic="false" visibility="public"></constructor>
+      <method abstract="false" deprecated="not deprecated" final="false" name="draw" jni-signature="([F[FLjava/nio/FloatBuffer;IIII)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="mvpMatrix" type="float[]" jni-type="[F"></parameter>
+        <parameter name="color" type="float[]" jni-type="[F"></parameter>
+        <parameter name="vertexBuffer" type="java.nio.FloatBuffer" jni-type="Ljava/nio/FloatBuffer;"></parameter>
+        <parameter name="firstVertex" type="int" jni-type="I"></parameter>
+        <parameter name="vertexCount" type="int" jni-type="I"></parameter>
+        <parameter name="coordsPerVertex" type="int" jni-type="I"></parameter>
+        <parameter name="vertexStride" type="int" jni-type="I"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="release" jni-signature="()V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public"></method>
+    </class>
+    <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="false" name="FullFrameRect" static="false" visibility="public" jni-signature="Lcom/qycx/gleslibrary/FullFrameRect;">
+      <constructor deprecated="not deprecated" final="false" name="FullFrameRect" jni-signature="(Lcom/qycx/gleslibrary/Texture2dProgram;)V" bridge="false" static="false" type="com.qycx.gleslibrary.FullFrameRect" synthetic="false" visibility="public">
+        <parameter name="program" type="com.qycx.gleslibrary.Texture2dProgram" jni-type="Lcom/qycx/gleslibrary/Texture2dProgram;"></parameter>
+      </constructor>
+      <method abstract="false" deprecated="not deprecated" final="false" name="changeProgram" jni-signature="(Lcom/qycx/gleslibrary/Texture2dProgram;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="program" type="com.qycx.gleslibrary.Texture2dProgram" jni-type="Lcom/qycx/gleslibrary/Texture2dProgram;"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="createTextureObject" jni-signature="()I" bridge="false" native="false" return="int" jni-return="I" static="false" synchronized="false" synthetic="false" visibility="public"></method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="drawFrame" jni-signature="(I[F)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="textureId" type="int" jni-type="I"></parameter>
+        <parameter name="texMatrix" type="float[]" jni-type="[F"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="getProgram" jni-signature="()Lcom/qycx/gleslibrary/Texture2dProgram;" bridge="false" native="false" return="com.qycx.gleslibrary.Texture2dProgram" jni-return="Lcom/qycx/gleslibrary/Texture2dProgram;" static="false" synchronized="false" synthetic="false" visibility="public"></method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="release" jni-signature="(Z)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="doEglCleanup" type="boolean" jni-type="Z"></parameter>
+      </method>
+    </class>
+    <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="false" name="GeneratedTexture" static="false" visibility="public" jni-signature="Lcom/qycx/gleslibrary/GeneratedTexture;">
+      <constructor deprecated="not deprecated" final="false" name="GeneratedTexture" jni-signature="()V" bridge="false" static="false" type="com.qycx.gleslibrary.GeneratedTexture" synthetic="false" visibility="public"></constructor>
+      <method abstract="false" deprecated="not deprecated" final="false" name="createTestTexture" jni-signature="(Lcom/qycx/gleslibrary/GeneratedTexture$Image;)I" bridge="false" native="false" return="int" jni-return="I" static="true" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="which" type="com.qycx.gleslibrary.GeneratedTexture.Image" jni-type="Lcom/qycx/gleslibrary/GeneratedTexture$Image;"></parameter>
+      </method>
+    </class>
+    <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="false" name="GeneratedTexture.1" static="true" visibility="" jni-signature="Lcom/qycx/gleslibrary/GeneratedTexture$1;"></class>
+    <class abstract="false" deprecated="not deprecated" extends="java.lang.Enum" extends-generic-aware="java.lang.Enum&lt;com.qycx.gleslibrary.GeneratedTexture.Image&gt;" jni-extends="Ljava/lang/Enum;" final="true" name="GeneratedTexture.Image" static="true" visibility="public" jni-signature="Lcom/qycx/gleslibrary/GeneratedTexture$Image;">
+      <method abstract="false" deprecated="not deprecated" final="false" name="valueOf" jni-signature="(Ljava/lang/String;)Lcom/qycx/gleslibrary/GeneratedTexture$Image;" bridge="false" native="false" return="com.qycx.gleslibrary.GeneratedTexture.Image" jni-return="Lcom/qycx/gleslibrary/GeneratedTexture$Image;" static="true" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="name" type="java.lang.String" jni-type="Ljava/lang/String;"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="values" jni-signature="()[Lcom/qycx/gleslibrary/GeneratedTexture$Image;" bridge="false" native="false" return="com.qycx.gleslibrary.GeneratedTexture.Image[]" jni-return="[Lcom/qycx/gleslibrary/GeneratedTexture$Image;" static="true" synchronized="false" synthetic="false" visibility="public"></method>
+      <field deprecated="not deprecated" final="true" name="COARSE" jni-signature="Lcom/qycx/gleslibrary/GeneratedTexture$Image;" static="true" transient="false" type="com.qycx.gleslibrary.GeneratedTexture.Image" type-generic-aware="com.qycx.gleslibrary.GeneratedTexture.Image" visibility="public" volatile="false"></field>
+      <field deprecated="not deprecated" final="true" name="FINE" jni-signature="Lcom/qycx/gleslibrary/GeneratedTexture$Image;" static="true" transient="false" type="com.qycx.gleslibrary.GeneratedTexture.Image" type-generic-aware="com.qycx.gleslibrary.GeneratedTexture.Image" visibility="public" volatile="false"></field>
+    </class>
+    <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="false" name="GlUtil" static="false" visibility="public" jni-signature="Lcom/qycx/gleslibrary/GlUtil;">
+      <method abstract="false" deprecated="not deprecated" final="false" name="checkGlError" jni-signature="(Ljava/lang/String;)V" bridge="false" native="false" return="void" jni-return="V" static="true" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="op" type="java.lang.String" jni-type="Ljava/lang/String;"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="checkLocation" jni-signature="(ILjava/lang/String;)V" bridge="false" native="false" return="void" jni-return="V" static="true" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="location" type="int" jni-type="I"></parameter>
+        <parameter name="label" type="java.lang.String" jni-type="Ljava/lang/String;"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="createFloatBuffer" jni-signature="([F)Ljava/nio/FloatBuffer;" bridge="false" native="false" return="java.nio.FloatBuffer" jni-return="Ljava/nio/FloatBuffer;" static="true" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="coords" type="float[]" jni-type="[F"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="createImageTexture" jni-signature="(Ljava/nio/ByteBuffer;III)I" bridge="false" native="false" return="int" jni-return="I" static="true" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="data" type="java.nio.ByteBuffer" jni-type="Ljava/nio/ByteBuffer;"></parameter>
+        <parameter name="width" type="int" jni-type="I"></parameter>
+        <parameter name="height" type="int" jni-type="I"></parameter>
+        <parameter name="format" type="int" jni-type="I"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="createProgram" jni-signature="(Ljava/lang/String;Ljava/lang/String;)I" bridge="false" native="false" return="int" jni-return="I" static="true" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="vertexSource" type="java.lang.String" jni-type="Ljava/lang/String;"></parameter>
+        <parameter name="fragmentSource" type="java.lang.String" jni-type="Ljava/lang/String;"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="loadShader" jni-signature="(ILjava/lang/String;)I" bridge="false" native="false" return="int" jni-return="I" static="true" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="shaderType" type="int" jni-type="I"></parameter>
+        <parameter name="source" type="java.lang.String" jni-type="Ljava/lang/String;"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="logVersionInfo" jni-signature="()V" bridge="false" native="false" return="void" jni-return="V" static="true" synchronized="false" synthetic="false" visibility="public"></method>
+      <field deprecated="not deprecated" final="true" name="IDENTITY_MATRIX" jni-signature="[F" static="true" transient="false" type="float[]" type-generic-aware="float[]" visibility="public" volatile="false"></field>
+      <field deprecated="not deprecated" final="true" name="TAG" jni-signature="Ljava/lang/String;" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;Grafika&quot;" visibility="public" volatile="false"></field>
+    </class>
+    <class abstract="false" deprecated="not deprecated" extends="com.qycx.gleslibrary.EglSurfaceBase" extends-generic-aware="com.qycx.gleslibrary.EglSurfaceBase" jni-extends="Lcom/qycx/gleslibrary/EglSurfaceBase;" final="false" name="OffscreenSurface" static="false" visibility="public" jni-signature="Lcom/qycx/gleslibrary/OffscreenSurface;">
+      <constructor deprecated="not deprecated" final="false" name="OffscreenSurface" jni-signature="(Lcom/qycx/gleslibrary/EglCore;II)V" bridge="false" static="false" type="com.qycx.gleslibrary.OffscreenSurface" synthetic="false" visibility="public">
+        <parameter name="eglCore" type="com.qycx.gleslibrary.EglCore" jni-type="Lcom/qycx/gleslibrary/EglCore;"></parameter>
+        <parameter name="width" type="int" jni-type="I"></parameter>
+        <parameter name="height" type="int" jni-type="I"></parameter>
+      </constructor>
+      <method abstract="false" deprecated="not deprecated" final="false" name="release" jni-signature="()V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public"></method>
+    </class>
+    <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="false" name="Sprite2d" static="false" visibility="public" jni-signature="Lcom/qycx/gleslibrary/Sprite2d;">
+      <constructor deprecated="not deprecated" final="false" name="Sprite2d" jni-signature="(Lcom/qycx/gleslibrary/Drawable2d;)V" bridge="false" static="false" type="com.qycx.gleslibrary.Sprite2d" synthetic="false" visibility="public">
+        <parameter name="drawable" type="com.qycx.gleslibrary.Drawable2d" jni-type="Lcom/qycx/gleslibrary/Drawable2d;"></parameter>
+      </constructor>
+      <method abstract="false" deprecated="not deprecated" final="false" name="draw" jni-signature="(Lcom/qycx/gleslibrary/FlatShadedProgram;[F)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="program" type="com.qycx.gleslibrary.FlatShadedProgram" jni-type="Lcom/qycx/gleslibrary/FlatShadedProgram;"></parameter>
+        <parameter name="projectionMatrix" type="float[]" jni-type="[F"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="draw" jni-signature="(Lcom/qycx/gleslibrary/Texture2dProgram;[F)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="program" type="com.qycx.gleslibrary.Texture2dProgram" jni-type="Lcom/qycx/gleslibrary/Texture2dProgram;"></parameter>
+        <parameter name="projectionMatrix" type="float[]" jni-type="[F"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="getColor" jni-signature="()[F" bridge="false" native="false" return="float[]" jni-return="[F" static="false" synchronized="false" synthetic="false" visibility="public"></method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="getModelViewMatrix" jni-signature="()[F" bridge="false" native="false" return="float[]" jni-return="[F" static="false" synchronized="false" synthetic="false" visibility="public"></method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="getPositionX" jni-signature="()F" bridge="false" native="false" return="float" jni-return="F" static="false" synchronized="false" synthetic="false" visibility="public"></method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="getPositionY" jni-signature="()F" bridge="false" native="false" return="float" jni-return="F" static="false" synchronized="false" synthetic="false" visibility="public"></method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="getRotation" jni-signature="()F" bridge="false" native="false" return="float" jni-return="F" static="false" synchronized="false" synthetic="false" visibility="public"></method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="getScaleX" jni-signature="()F" bridge="false" native="false" return="float" jni-return="F" static="false" synchronized="false" synthetic="false" visibility="public"></method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="getScaleY" jni-signature="()F" bridge="false" native="false" return="float" jni-return="F" static="false" synchronized="false" synthetic="false" visibility="public"></method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="setColor" jni-signature="(FFF)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="red" type="float" jni-type="F"></parameter>
+        <parameter name="green" type="float" jni-type="F"></parameter>
+        <parameter name="blue" type="float" jni-type="F"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="setPosition" jni-signature="(FF)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="posX" type="float" jni-type="F"></parameter>
+        <parameter name="posY" type="float" jni-type="F"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="setRotation" jni-signature="(F)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="angle" type="float" jni-type="F"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="setScale" jni-signature="(FF)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="scaleX" type="float" jni-type="F"></parameter>
+        <parameter name="scaleY" type="float" jni-type="F"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="setTexture" jni-signature="(I)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="textureId" type="int" jni-type="I"></parameter>
+      </method>
+    </class>
+    <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="false" name="Texture2dProgram" static="false" visibility="public" jni-signature="Lcom/qycx/gleslibrary/Texture2dProgram;">
+      <constructor deprecated="not deprecated" final="false" name="Texture2dProgram" jni-signature="(Lcom/qycx/gleslibrary/Texture2dProgram$ProgramType;)V" bridge="false" static="false" type="com.qycx.gleslibrary.Texture2dProgram" synthetic="false" visibility="public">
+        <parameter name="programType" type="com.qycx.gleslibrary.Texture2dProgram.ProgramType" jni-type="Lcom/qycx/gleslibrary/Texture2dProgram$ProgramType;"></parameter>
+      </constructor>
+      <method abstract="false" deprecated="not deprecated" final="false" name="createTextureObject" jni-signature="()I" bridge="false" native="false" return="int" jni-return="I" static="false" synchronized="false" synthetic="false" visibility="public"></method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="draw" jni-signature="([FLjava/nio/FloatBuffer;IIII[FLjava/nio/FloatBuffer;II)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="mvpMatrix" type="float[]" jni-type="[F"></parameter>
+        <parameter name="vertexBuffer" type="java.nio.FloatBuffer" jni-type="Ljava/nio/FloatBuffer;"></parameter>
+        <parameter name="firstVertex" type="int" jni-type="I"></parameter>
+        <parameter name="vertexCount" type="int" jni-type="I"></parameter>
+        <parameter name="coordsPerVertex" type="int" jni-type="I"></parameter>
+        <parameter name="vertexStride" type="int" jni-type="I"></parameter>
+        <parameter name="texMatrix" type="float[]" jni-type="[F"></parameter>
+        <parameter name="texBuffer" type="java.nio.FloatBuffer" jni-type="Ljava/nio/FloatBuffer;"></parameter>
+        <parameter name="textureId" type="int" jni-type="I"></parameter>
+        <parameter name="texStride" type="int" jni-type="I"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="getProgramType" jni-signature="()Lcom/qycx/gleslibrary/Texture2dProgram$ProgramType;" bridge="false" native="false" return="com.qycx.gleslibrary.Texture2dProgram.ProgramType" jni-return="Lcom/qycx/gleslibrary/Texture2dProgram$ProgramType;" static="false" synchronized="false" synthetic="false" visibility="public"></method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="release" jni-signature="()V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public"></method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="setKernel" jni-signature="([FF)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="values" type="float[]" jni-type="[F"></parameter>
+        <parameter name="colorAdj" type="float" jni-type="F"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="setTexSize" jni-signature="(II)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="width" type="int" jni-type="I"></parameter>
+        <parameter name="height" type="int" jni-type="I"></parameter>
+      </method>
+      <field deprecated="not deprecated" final="true" name="KERNEL_SIZE" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="9" visibility="public" volatile="false"></field>
+    </class>
+    <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="false" name="Texture2dProgram.1" static="true" visibility="" jni-signature="Lcom/qycx/gleslibrary/Texture2dProgram$1;"></class>
+    <class abstract="false" deprecated="not deprecated" extends="java.lang.Enum" extends-generic-aware="java.lang.Enum&lt;com.qycx.gleslibrary.Texture2dProgram.ProgramType&gt;" jni-extends="Ljava/lang/Enum;" final="true" name="Texture2dProgram.ProgramType" static="true" visibility="public" jni-signature="Lcom/qycx/gleslibrary/Texture2dProgram$ProgramType;">
+      <method abstract="false" deprecated="not deprecated" final="false" name="valueOf" jni-signature="(Ljava/lang/String;)Lcom/qycx/gleslibrary/Texture2dProgram$ProgramType;" bridge="false" native="false" return="com.qycx.gleslibrary.Texture2dProgram.ProgramType" jni-return="Lcom/qycx/gleslibrary/Texture2dProgram$ProgramType;" static="true" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="name" type="java.lang.String" jni-type="Ljava/lang/String;"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="values" jni-signature="()[Lcom/qycx/gleslibrary/Texture2dProgram$ProgramType;" bridge="false" native="false" return="com.qycx.gleslibrary.Texture2dProgram.ProgramType[]" jni-return="[Lcom/qycx/gleslibrary/Texture2dProgram$ProgramType;" static="true" synchronized="false" synthetic="false" visibility="public"></method>
+      <field deprecated="not deprecated" final="true" name="TEXTURE_2D" jni-signature="Lcom/qycx/gleslibrary/Texture2dProgram$ProgramType;" static="true" transient="false" type="com.qycx.gleslibrary.Texture2dProgram.ProgramType" type-generic-aware="com.qycx.gleslibrary.Texture2dProgram.ProgramType" visibility="public" volatile="false"></field>
+      <field deprecated="not deprecated" final="true" name="TEXTURE_EXT" jni-signature="Lcom/qycx/gleslibrary/Texture2dProgram$ProgramType;" static="true" transient="false" type="com.qycx.gleslibrary.Texture2dProgram.ProgramType" type-generic-aware="com.qycx.gleslibrary.Texture2dProgram.ProgramType" visibility="public" volatile="false"></field>
+      <field deprecated="not deprecated" final="true" name="TEXTURE_EXT_BW" jni-signature="Lcom/qycx/gleslibrary/Texture2dProgram$ProgramType;" static="true" transient="false" type="com.qycx.gleslibrary.Texture2dProgram.ProgramType" type-generic-aware="com.qycx.gleslibrary.Texture2dProgram.ProgramType" visibility="public" volatile="false"></field>
+      <field deprecated="not deprecated" final="true" name="TEXTURE_EXT_FILT" jni-signature="Lcom/qycx/gleslibrary/Texture2dProgram$ProgramType;" static="true" transient="false" type="com.qycx.gleslibrary.Texture2dProgram.ProgramType" type-generic-aware="com.qycx.gleslibrary.Texture2dProgram.ProgramType" visibility="public" volatile="false"></field>
+    </class>
+    <class abstract="false" deprecated="not deprecated" extends="com.qycx.gleslibrary.EglSurfaceBase" extends-generic-aware="com.qycx.gleslibrary.EglSurfaceBase" jni-extends="Lcom/qycx/gleslibrary/EglSurfaceBase;" final="false" name="WindowSurface" static="false" visibility="public" jni-signature="Lcom/qycx/gleslibrary/WindowSurface;">
+      <constructor deprecated="not deprecated" final="false" name="WindowSurface" jni-signature="(Lcom/qycx/gleslibrary/EglCore;Landroid/graphics/SurfaceTexture;)V" bridge="false" static="false" type="com.qycx.gleslibrary.WindowSurface" synthetic="false" visibility="public">
+        <parameter name="eglCore" type="com.qycx.gleslibrary.EglCore" jni-type="Lcom/qycx/gleslibrary/EglCore;"></parameter>
+        <parameter name="surfaceTexture" type="android.graphics.SurfaceTexture" jni-type="Landroid/graphics/SurfaceTexture;"></parameter>
+      </constructor>
+      <constructor deprecated="not deprecated" final="false" name="WindowSurface" jni-signature="(Lcom/qycx/gleslibrary/EglCore;Landroid/view/Surface;Z)V" bridge="false" static="false" type="com.qycx.gleslibrary.WindowSurface" synthetic="false" visibility="public">
+        <parameter name="eglCore" type="com.qycx.gleslibrary.EglCore" jni-type="Lcom/qycx/gleslibrary/EglCore;"></parameter>
+        <parameter name="surface" type="android.view.Surface" jni-type="Landroid/view/Surface;"></parameter>
+        <parameter name="releaseSurface" type="boolean" jni-type="Z"></parameter>
+      </constructor>
+      <method abstract="false" deprecated="not deprecated" final="false" name="recreate" jni-signature="(Lcom/qycx/gleslibrary/EglCore;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="newEglCore" type="com.qycx.gleslibrary.EglCore" jni-type="Lcom/qycx/gleslibrary/EglCore;"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="release" jni-signature="()V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public"></method>
+    </class>
+  </package>
+</api>

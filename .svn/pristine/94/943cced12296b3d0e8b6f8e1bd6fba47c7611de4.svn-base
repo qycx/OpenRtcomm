@@ -1,0 +1,76 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+using Android.App;
+using Android.Content;
+using Android.OS;
+using Android.Runtime;
+using Android.Support.V4.App;
+using Android.Text.Style;
+using Android.Views;
+using Android.Widget;
+
+namespace qyMessengerApp.Droid
+{
+    class FragmentPagerAdapter_main : FragmentPagerAdapter
+    {
+        private int PAGER_COUNT = 3;
+        public Fragment_msgList myFragment_msg = null;
+        public Fragment_imObjList myFragment_imObj = null;
+        public MyFragment1 myFragment3 = null;
+        
+
+        
+        public FragmentPagerAdapter_main(Android.Support.V4.App.FragmentManager fm):base(fm)
+        {
+            myFragment_msg = new Fragment_msgList();
+            myFragment_imObj = new Fragment_imObjList();
+            myFragment3 = new MyFragment1();
+
+
+        }
+
+        public override int Count
+        {
+            get
+            {
+                return PAGER_COUNT;
+            }
+        }
+
+
+        public override Android.Support.V4.App.Fragment GetItem(int position)
+        {
+            Android.Support.V4.App.Fragment fragment = null;
+            switch (position)
+            {
+                case MainActivity.PAGE_ONE:
+                    fragment = myFragment_msg;
+                    break;
+                case MainActivity.PAGE_TWO:
+                    fragment = myFragment_imObj;
+                    break;
+                case MainActivity.PAGE_THREE:
+                    fragment = myFragment3;
+                    break;
+
+                default:
+                    break;
+
+            }
+            return fragment;
+        }
+
+        public override long GetItemId(int position)
+        {
+            return position;
+        }
+
+
+        
+    }
+
+  
+}

@@ -1,0 +1,39 @@
+﻿
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+
+namespace qy
+{
+    partial class qyFuncs
+{
+		public static unsafe int qmcChkTasks_gui(CCtxQmc pProcInfo)           //  2009/09/10
+		{
+			/*
+			if (!pProcInfo) return -1;
+			return pProcInfo->qisChkTasks_gui();
+			*/
+			return 0;
+		}
+
+
+
+
+		public static unsafe int qmcApplyForRemovingInvalidTasks(CCtxQmc pProcInfo, uint uiChannelType)
+		{
+			/*
+			if (!pProcInfo) return -1;
+			return pProcInfo->applyForRemovingInvalidTasks(uiChannelType);
+			*/
+			return 0;
+		}
+
+
+
+
+}
+
+
+}

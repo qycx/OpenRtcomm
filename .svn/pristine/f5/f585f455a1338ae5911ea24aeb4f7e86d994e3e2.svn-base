@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace qy
+{
+	 public struct SYNC_mt_cnt
+	{
+		//
+		public ulong ulTranNo;
+
+		//
+		public long lCnt_used;
+	}
+	;
+
+}

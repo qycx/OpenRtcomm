@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "wqIgss4++fOPXWZ4cV/u0LM834s1Ztgw6NB1MeYEX45+GPiG6SkxJgiqrMnki0GqtNFrXigMGWcwR5m6key/vw==",
+  "success": true,
+  "projectFilePath": "C:\\root\\cliDevelop\\qyMessengerApp\\qyMessengerApp\\qyMessengerApp\\qyMessengerApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\qycx1\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\qycx1\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\qycx1\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
+    "C:\\Users\\qycx1\\.nuget\\packages\\xamarin.forms\\4.7.0.1239\\xamarin.forms.4.7.0.1239.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace qy
+{
+
+	public struct AUDIO_PLAY_CFG
+	{
+		ushort usMinTimeInMsOfAudioDataPlaying;                 //  2009/06/14
+																		//  
+		ushort usAudioDataAddedToPlayEveryTime;                 //  2009/06/16
+																		//
+		ushort usNotifyIntervalInMs_needMoreAudioData;              //  2009/06/14. = CONST_notifyInterval
+																			//
+		ushort usMinTimeInMsToPlay;                             //  2012/01/27
+																		//
+		ushort usMaxTimeInMsToPlay;                             //  2009/06/03
+		ushort usMaxTimeInMsToBeRemoved;                            //  2009/06/03
+	}
+	;
+
+}

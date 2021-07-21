@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+partial class Consts
+{
+    public const int CONST_maxReqDataLen_enc_netMc = 16384;         //  2004/07/26, 
+    public const int CONST_maxReqDataLen_enc_is = 1024 * 1024;	//  2008/03/20, 
+    //
+    public const int CONST_qnmReqBufSize_netMc = 32768;			//  netMc
+
+
+}
+
+namespace qy
+{
+    partial class qyFuncs
+{
+}
+}

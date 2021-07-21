@@ -1,0 +1,1 @@
+<resources><style name="leak_canary_LeakCanary.Base" parent="android:Theme.Material"></style></resources>

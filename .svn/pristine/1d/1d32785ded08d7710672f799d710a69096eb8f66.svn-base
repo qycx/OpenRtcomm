@@ -1,0 +1,56 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace qy
+{
+
+
+	class CCtxQmc_gui : CCtxQmc
+    {
+        public CCtxQmc_gui()
+        {
+
+        }
+        ~CCtxQmc_gui()
+        {
+
+        }
+
+		public unsafe int setQmDbFuncs(int iDbType, QM_dbFuncs pDbFuncs)
+		{
+			return  qyFuncs.setQmDbFuncs_qm(iDbType, pDbFuncs);
+		}
+
+
+		public static unsafe int newVar_isCli_gui(CCtxQyMc pQyMc, ref QY_SERVICEGUI_INFO pSci, IntPtr p2)
+		{
+
+			CCtxQmc p = null;
+
+			p = new CCtxQmc_gui();
+
+			if (null == p) return -1;
+
+			pSci.pVar = p;
+
+			return 0;
+		}
+
+		public static int freeVar_isCli_gui(CCtxQyMc pQyMc, ref QY_SERVICEGUI_INFO pSci, IntPtr p2)
+		{
+
+			if (pSci.pVar != null)
+			{
+				CCtxQmc p = (CCtxQmc)pSci.pVar;
+				//delete p;
+				pSci.pVar = null;
+			}
+
+			return 0;
+		}
+
+
+	}
+
+}

@@ -1,0 +1,14 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+partial class Consts
+{
+    public const int CONST_qyWmParam_misMsg_base = 5000;		//  misMsg wmBuf iType
+
+}
+
+namespace qy
+{
+ 
+}

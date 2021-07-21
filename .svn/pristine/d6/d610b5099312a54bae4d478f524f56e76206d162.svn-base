@@ -1,0 +1,14 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace qy
+{
+    partial class qyFuncs
+{
+        public static int initPolicyAvParams()  //  要在登陆后立即运行此函数. 2011/10/22
+        {
+            return 0;
+        }
+}
+}

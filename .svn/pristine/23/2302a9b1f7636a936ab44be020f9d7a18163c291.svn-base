@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+
+partial class Consts
+{
+    public const int CONST_objQType_null = 0;
+    public const int CONST_objQType_netMc = 1;
+    public const int CONST_objQType_mis = 2;
+    public const int CONST_objQType_misClient = 3;						//  对在messenger的管理端和客户端由于使用的不同，存储方式也不同。故用不同的类型来区分
+
+}
+
+
+namespace qy
+{
+ 
+}

@@ -1,0 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+partial class Consts
+{
+    public const int CONST_usRunningStatus_null = 0;
+    public const int CONST_usRunningStatus_online = 1;
+    public const int CONST_usRunningStatus_offline = 2;
+    public const int CONST_usRunningStatus_away = 3;
+    public const int CONST_usRunningStatus_hide = 4;                                //  2007/06/07, ÔÚÏß£¬ÀëÏß£¬Àë¿ª£¬ÒþÉíµÈ
+    public const int CONST_usRunningStatus_neverLogon = 5;								//  Î´ÉÏÏß¡£Ö¸´Ó·þÎñÆ÷¿ª»úºóÃ»ÓÐÉÏ¹ýÏß
+
+
+}
+
+
+namespace qy
+{
+    class qyCusResPublic
+{
+}
+}

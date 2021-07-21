@@ -1,0 +1,41 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace qy
+{
+   partial class qyFuncs
+{
+
+		public static unsafe int tmpHandler_bNeedRetrieveImGrpMems_myDb(object p0, object p1, object p2)
+		{
+			int iErr = -1;
+			//  p0
+			//  p1
+			QMEM_qyImObj* pMem = (QMEM_qyImObj*)(IntPtr)p2;
+
+			if (pMem->messengerInfo.uiType == Consts.CONST_objType_imGrp
+				&& pMem->messengerInfo.iStatus != Consts.CONST_qyStatus_del)
+			{
+				iErr = 1; goto errLabel;
+			}
+
+			iErr = 0;
+		errLabel:
+			return iErr;
+		}
+
+		public static unsafe bool bNeedRetrieveImGrpMems_myDb(object pDbParam, int iDbType, string misServName)
+		{
+			bool bRet = false;
+			CMyDb pDb = (CMyDb)pDbParam;
+
+
+			bool bImGrpExists = false;
+			if (qTraverse(pDb.m_var_pQ_qyImObjTab, tmpHandler_bNeedRetrieveImGrpMems_myDb, 0, 0) > 0) bRet = true;
+
+			return bRet;
+		}
+
+	}
+}

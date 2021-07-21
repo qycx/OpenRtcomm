@@ -1,0 +1,40 @@
+IsIncrementalBuild=true
+AndroidUseAapt2=True
+UseSharedRuntime=true
+UseFastDeployment=false
+EnableMultidex=False
+EnableProGuard=
+GenerateOnePackagePerABI=
+BundleAssemblies=false
+EnableDeveloperInstrumentation=true
+Debugger=Xamarin
+EnableAOT=false
+UseConcurrentGC=true
+AdditionalSupportedEncodings=
+SupportedArchitectures=arm64-v8a|armeabi-v7a|x86|x86_64
+JavaMaxHeapSize=1G
+HttpClientImplementation=Xamarin.Android.Net.AndroidClientHandler
+TLSImplementation=
+FastDeploymentType=Assemblies
+TargetFramework=v9.0
+ClassParser=
+CodegenTarget=
+AndroidDexTool=d8
+AndroidLinkTool=
+AndroidEnableProfiledAot=false
+AndroidInstallAfterBuild=True
+<<<<<<< .mine
+AndroidSessionId=934a9961-801f-4929-805b-b7bbbf803b91
+||||||| .r37
+AndroidSessionId=b7e675d3-fb51-46fb-9f30-472f5624f399
+=======
+<<<<<<< .mine
+AndroidSessionId=934a9961-801f-4929-805b-b7bbbf803b91
+||||||| .r37
+AndroidSessionId=b7e675d3-fb51-46fb-9f30-472f5624f399
+>>>>>>> .r39
+=======
+AndroidSessionId=ccc9c1f3-529c-4eee-a1ed-b59db340f49a
+>>>>>>> .r38
+BuildConfiguration=Debug
+TemplateName={6968b3a4-1835-46a3-ac5c-1ae33b475983}

@@ -1,0 +1,192 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace qy
+{
+	public struct QMC_threads_status
+    {
+		public bool ulbMgrQuit;                                             //  
+		public bool ulbDisplayQuit;                                         //  display
+		public bool ulbWorkQuit;                                                //  work
+		public bool ulbSchedulerQuit;                                           //  scheduler
+		public bool ulbRobotQuit;                                               //  svr
+		public bool ulbMediaQuit;                                               //  media
+		public bool ulbRealTimeMediaQuit;                                       //  realTimeMedia
+		public bool ulbRtOpQuit;                                                //  2016/12/26
+		public bool ulbLogQuit;                                             //  log
+
+	}
+
+	public struct QMC_status
+	{
+		public bool ulbThreadProcInited;                                        //  mcThreadProc_mis 2007/09/02
+
+		public QMC_threads_status threadsStatus;																					//
+	
+		//
+		/*
+		struct                                     {
+						 bool ulbImGrpExists;                                            //  是否下载了分组信息。2011/04/10.
+		bool ulbContactExists;                                           //  是否下载了contact信息
+																					//
+		bool ulbAllContactsRetrieved;                                    //  是否用户信息都下载了. 2013/08/01
+																					//
+		ushort nTimes_refresh;                                              //  因为access写入较慢,所以,在所有用户信息得到后,需要自动的刷新几次. 比如3次
+		uint dwTickCnt_lastRefreshed;
+	}
+	retrieveImObjList;
+
+					 //
+					 struct                                     {
+						 DWORD dwTickCnt_start;
+	DWORD dwTimeInMs;
+}
+waitToQuit;                                                 //  2011/02/02
+
+//
+DWORD dwTickCnt_toStat;                                         //  2009/10/11
+																//
+struct                                     {                                                            //  for cpu usage. 2009/10/10
+						 LARGE_INTEGER oldIdleTime;
+LARGE_INTEGER oldKernelTime;
+LARGE_INTEGER oldUsrTime;
+//
+DWORD dwTickCnt_start_ce;
+DWORD dwIdleTime_start_ce;
+//
+int iCpuUsage;
+					 }											cpu;
+IM_NET_STAT netStat;                                                    //  2009/10/10
+MEMORYSTATUS memory;                                                        //  201007/28
+
+//
+struct                                     {
+						 DWORD dwTickCnt_lastDisplayed;
+TCHAR tBuf[256];
+int len;
+					 }											notification;
+
+//  2010/08/14
+struct                                     {
+						 HWND hWnd;
+unsigned int uiTranNo;
+//
+unsigned char ucbProgessEnd;
+int nResult;
+						 //
+					 }											progress;
+BOOL bInSequence_showDlgProgress;           //  2014/05/07
+
+//  2012/03/25
+long nThreads_dec;
+long nThreads_dispatch;                     //  2013/08/26
+long nThreads_player;
+long nThreads_aTrans;                       //  2014/03/15
+long nThreads_vTrans;                       //  2014/03/15
+long nThreads_talkerProc;                   //  2016/03/15
+long nThreads_shareDynBmps;                 //  2016/06/15
+
+//  2013/03/07
+DWORD dwTickCnt_chkDb;
+		*/
+
+//  2017/10/03
+public uint dwTickCnt_sendTo_applyForOrgReq;      //  2017/10/03
+
+		/*
+//  2013/07/19
+struct                                     {
+						 int xPos_screen;
+int yPos_screen;
+//
+HWND hParent_ia;								//  2012/05/03					
+						 //
+					 }											param_viewInstantAssistant;
+
+//  2014/02/04
+struct                                     {
+						 struct                                 {
+							 int xPos;
+int yPos;
+//
+DWORD dwLastTickCnt;
+						 }										mousemove,  lButtonDown,  command;
+//  2016/01/15
+struct                                 {
+							 BOOL bSetCaptured;
+unsigned int uiTranNo_wm;
+
+//
+RECT bgScreenRect_wm;
+
+//
+int sx_mouse, sy_mouse;
+
+
+						 }										SetCapture;
+						 //
+					 }											param_d3dWall;
+
+//  2014/02/11
+struct                                     {
+						 int uiQNodes_displayedObjQ;
+					 }											display;                                //  thread_display的状态.
+																										//  2014/05/27
+struct                                     {
+						 int maxiTotal;
+int nTotal;
+					 }											hashTbl_leftView_db;
+
+//  2014/12/22
+struct                                     {
+						 BOOL bFailed_newSharedObj;
+					 }											sysErr;
+
+//  2015/06/18
+struct                                     {
+						 TRANS_pts_info transPtsInfo_sum;
+TRANS_pts_info transPtsInfo_sum_last;
+//
+BOOL bTooManyPtsErr;
+unsigned char ucCnt_bTooManyPtsErr;
+DWORD dwTickCnt_lastModified_bTooManyPtsErr;
+//
+BOOL bWarning;
+
+					 }											ptsStat;
+		*/
+
+//  2018/10/30
+//char vName_1st_webcam[256];	
+
+}		;
+
+
+//
+public abstract class CCtxQmcTmpl : CCtxQyTmpl
+    {
+           public CCtxQyMc pQyMc;
+            //void* pSgiParam;
+
+
+
+        public CCtxQmcTmpl()
+        {
+
+        }
+
+        ~CCtxQmcTmpl()
+        {
+
+        }
+
+        //
+        //MACRO_mcVar_common
+
+        public abstract int setQmDbFuncs(int iDbType, QM_dbFuncs pDbFuncs);
+
+    }
+
+
+}

@@ -1,0 +1,15 @@
+org/aviran/cookiebar2/BuildConfig = Org.Aviran.Cookiebar2.BuildConfig
+  <init>()V = .ctor()
+  BUILD_TYPE = BuildType
+  DEBUG = Debug
+  LIBRARY_PACKAGE_NAME = LibraryPackageName
+org/aviran/cookiebar2/CookieBar = Org.Aviran.Cookiebar2.CookieBar
+  BOTTOM = Bottom
+  TOP = Top
+  getView()Landroid/view/View; = View
+  build(Landroid/app/Activity;)Lorg/aviran/cookiebar2/CookieBar$Builder; = Build(Android.App.Activity)
+  dismiss(Landroid/app/Activity;)V = Dismiss(Android.App.Activity)
+org/aviran/cookiebar2/CookieBarDismissListener = Org.Aviran.Cookiebar2.ICookieBarDismissListener
+  onDismiss(I)V = OnDismiss(int)
+org/aviran/cookiebar2/OnActionClickListener = Org.Aviran.Cookiebar2.IOnActionClickListener
+  onClick()V = OnClick()

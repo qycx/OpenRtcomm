@@ -1,0 +1,31 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace qy
+{
+    partial class qyFuncs
+    {
+        public static QY_DMITEM[] CONST_channelTypeTable = new QY_DMITEM[8]
+        {
+            //new QY_DMITEM(0,"",""),
+            //new QY_DMITEM(1,"kk",""),
+            //new QY_DMITEM(-1,"","")
+            new QY_DMITEM(Consts.CONST_channelType_null,                             (  ""  )),
+            new QY_DMITEM(Consts.CONST_channelType_talking,                          (  "Talk"  ) ),
+            new QY_DMITEM(Consts.CONST_channelType_robot,                            (  "Robot"  )),
+            new QY_DMITEM(Consts.CONST_channelType_webSending,                       (  "WebTalk"  )),
+            new QY_DMITEM(Consts.CONST_channelType_media,                            (  "Video"  ) ),
+            new QY_DMITEM(Consts.CONST_channelType_realTimeMedia,                    (  "Audio"  ) ),
+            new QY_DMITEM(Consts.CONST_channelType_rtOp,                             (  "Op"  )),
+            new QY_DMITEM( -1                                                                            ),
+           };
+
+
+    };
+
+    };
+
+
+    
+

@@ -1,0 +1,14 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace qy
+{
+    static class g {
+        public static CCtxQyMc g_pQyMc;
+        //
+ 
+    }
+
+
+}

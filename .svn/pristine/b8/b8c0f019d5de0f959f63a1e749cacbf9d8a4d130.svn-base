@@ -1,0 +1,744 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace qy
+{
+	partial class qyFuncs
+	{
+		public static unsafe  int initVar_onCreate_mainFrame(IntPtr p0, object hMainWnd, ref QY_MC_mainWndVar pVar)
+		{
+			int iErr = -1;
+
+# if  __DEBUG__
+			traceLogA("initVar_onCreate_mainFrame enters.");
+#endif
+
+			//
+			if (null==hMainWnd ) return -1;
+
+			CCtxQyMc pQyMc = g.g_pQyMc;
+			if (null==pQyMc) return -1;
+			CCtxQmc pProcInfo = pQyMc.get_pProcInfo();
+			if (null==pProcInfo) return -1;
+			if (pProcInfo.m_iCtxType != Consts.CONST_ctxType_qmc) return -1;
+
+
+			{
+
+				//
+				pVar.pMsgBuf_msgArrive = (MIS_MSGU*)mymalloc(sizeof(MIS_MSGU));    //  .pVar  =  pSci->pVar;
+				if (null==pVar.pMsgBuf_msgArrive) goto errLabel;
+
+				
+			}
+
+			//pVar->uiTimerId = SetTimer(hMainWnd, 1, 1000, NULL);
+
+			iErr = 0;
+		errLabel:
+
+			if (0!=iErr) exitVar_onDestroy_mainFrame(p0, hMainWnd, ref pVar);
+
+			return iErr;
+		}
+
+		public static unsafe  int exitVar_onDestroy_mainFrame(IntPtr p0, object hMainWnd, ref QY_MC_mainWndVar pVar)
+		{
+			int iErr = -1;
+
+			if (null==hMainWnd )
+			{
+				traceLogA("exitVar_onDestroy_mainFrame failed: pMainWnd or pVar is null");
+				return -1;
+			}
+
+			CCtxQyMc pQyMc = g.g_pQyMc;
+			if (null==pQyMc) return -1;
+
+
+			traceLogA("exitVar_onDestroy_mainFrame enters.");
+			showInfo_open(0, null, ("exitVar_onDestroy_mainFrame enters."));
+
+			//
+			//if (pVar->uiTimerId) KillTimer(hMainWnd, pVar->uiTimerId);
+
+			if ( pVar.pMsgBuf_msgArrive!=null)
+            {
+				myfree((IntPtr)pVar.pMsgBuf_msgArrive); pVar.pMsgBuf_msgArrive = null;
+            }
+
+			//
+			traceLogA("exitVar_onDestroy_mainFrame leaves.");
+			showInfo_open(0, null, ("exitVar_onDestroy_mainFrame leaves."));
+
+
+			return 0;
+		}
+
+		public static unsafe int mainWnd_OnQyPostComm(object hMainWnd, ref QY_MC_mainWndVar var, int wParam, int lParam)
+		{
+			int lRet = -1;
+			CCtxQyMc pQyMc = g.g_pQyMc;
+			if (null == pQyMc) return -1;
+			CCtxQmc pProcInfo = (CCtxQmc)pQyMc.get_pProcInfo();
+			if (null == pProcInfo) return -1;
+			if (pProcInfo.m_iCtxType != Consts.CONST_ctxType_qmc) return -1;
+
+			//  char				buf[1024]		=	"";
+			uint len;
+			int i;
+
+			//
+			if (pQyMc.bGuiQuit)
+			{
+				showInfo_open(0, null, ("mainWnd_OnQyPostComm failed, bGuiQuit is true"));
+				return -1;
+			}
+			if (pQyMc.bPrepareToGuiQuit)
+			{
+				showInfo_open(0, null, ("mainWnd_OnQyPostComm failed, bPrepareToGuiQuit is true"));
+				return -1;
+			}
+
+
+
+			//
+			switch (wParam)
+			{
+				/*
+				case CONST_qyWmParam_setActiveWindow:
+					if (lParam)  ::PostMessage((HWND)lParam, CONST_qyWm_postComm, wParam, 0);
+					break;
+				*/
+				case Consts.CONST_qyWmParam_msgArrive:
+					{
+						//  CQyMalloc			mallocObj;
+						MIS_MSGU* pMsg = var.pMsgBuf_msgArrive; //  (  MIS_MSGU  *  )mallocObj.malloc(  sizeof(  MIS_MSGU  )  );
+						if (null == pMsg) goto errLabel;
+
+						for (; !pQyMc.bQuit;)
+						{
+							//MACRO_memset_misMsg(pMsg);
+							len = (uint)sizeof(MIS_MSGU);
+							if (0 != qGetMsg(pQyMc.gui.processQ, (IntPtr)pMsg, &len)) break;
+							switch (pMsg->uiType)
+							{
+								case Consts.CONST_misMsgType_talk:
+								case Consts.CONST_misMsgType_task:
+									{
+										object hWnd = null;
+										MIS_CNT pMisCnt = null;
+										MSGR_ADDR addr_logicalPeer;
+										bool bNeedNotShowWnd = false;
+
+										mymemset((IntPtr)(byte*)&addr_logicalPeer, 0, sizeof(MSGR_ADDR));
+										if (pMsg->uiType == Consts.CONST_misMsgType_talk)
+										{
+											//
+											if (null == (pMisCnt = (MIS_CNT)pProcInfo.pMisCnt)) goto errLabel;
+											//
+											if (0 != myGetPeer("", &pMsg->talk.data.route, &pMsg->talk.addr_logicalPeer, &addr_logicalPeer)) goto errLabel;
+
+											//										
+											IM_CONTENTU* pContent = (IM_CONTENTU*)pMsg->talk.data.buf;
+
+											//  2017/07/17
+											if (pContent->uiType == Consts.CONST_imCommType_htmlContent)
+											{
+												/*
+												if (pProcInfo->avConsole.bGotMsg_avConsole)
+												{
+													//
+													__declspec(dllexport)  int doAvConsole_cmd_recvMsg(__int64 ui64Id_from, __int64 ui64Id_to, TCHAR* tTxt);
+
+													doAvConsole_cmd_recvMsg(pMsg->talk.data.route.idInfo_from.ui64Id, pMsg->talk.data.route.idInfo_to.ui64Id, pContent->html.wBuf);
+													//
+													showInfo_open(0, 0, _T("avConsole: bGotMsg_avConsole is true, doAvConsole_cmd_recvMsg called"));
+													//
+													break;
+												}
+												*/
+												qyFuncs.guiShare.pf_mainWndProcMsg((IntPtr)pMsg);
+											}
+
+
+										}
+										else if (pMsg->uiType == Consts.CONST_misMsgType_task)
+										{
+											//
+											if (null == (pMisCnt = (MIS_CNT)pProcInfo.pMisCnt)) goto errLabel;
+											//
+											if (0 != myGetPeer("", &pMsg->task.data.route, &pMsg->task.addr_logicalPeer, &addr_logicalPeer)) goto errLabel;
+
+											//
+											IM_CONTENTU* pContent = (IM_CONTENTU*)pMsg->task.data.buf;
+
+											//
+#if __DEBUG__
+											if (pContent->uiType == CONST_imCommType_imGrp)
+											{
+												int ii = 0;
+											}
+#endif
+
+											//  2009/09/07
+											/*
+											if (pMsg->task.uiTaskType == CONST_imTaskType_viewDynBmp
+												|| pMsg->task.uiTaskType == CONST_imTaskType_viewGps)
+											{
+												//  2014/09/28			
+												if (pContent->uiType == CONST_imCommType_transferAvInfo)
+												{
+													if (pContent->transferAvInfo.idInfo_logicalPeer.ui64Id)
+													{
+														if (findTalker(pQyMc, pMisCnt, &pContent->transferAvInfo.idInfo_logicalPeer, &hWnd))
+														{
+# if  __DEBUG__
+															traceLog(_T("mainWnd_OnPostComm: retrieveDynBmps conf findTalker failed"));
+#endif
+															goto errLabel;
+														}
+														   ::SendMessage(hWnd, CONST_qyWm_comm, 0, (LPARAM)pMsg);
+														break;
+													}
+												}
+
+												//
+												if (!IsWindow(pProcInfo->hWnd_shareDynBmps))
+												{
+													traceLogA("Not finished. hWnd_sharedWebcams is not valid");
+													break;
+												}
+												   ::SendMessage(pProcInfo->hWnd_shareDynBmps, CONST_qyWm_comm, 0, (LPARAM)pMsg);
+
+												break;
+											}
+											*/
+
+											//  2015/06/06
+											/*
+											if (pContent->uiType == CONST_imCommType_ptzControlReq
+												&& pContent->ptzControlReq.ucbReply)
+											{
+												if (findTalker(pQyMc, pMisCnt, &addr_logicalPeer.idInfo, &hWnd))
+												{
+# ifdef  __DEBUG__
+													traceLog(_T("mainWnd_OnPostComm: reply for ptzControlReq, findTalker failed"));
+#endif
+													goto errLabel;
+												}
+												   ::SendMessage(hWnd, CONST_qyWm_comm, 0, (LPARAM)pMsg);
+												break;
+											}
+
+											//  2012/08/08
+											if (pContent->uiType == CONST_imCommType_ptzControlCmd)
+											{
+# ifdef  __DEBUG__
+												traceLog(_T("mainWnd_OnPostComm: ptzControlCmd"));
+#endif
+												//  2016/07/20
+												if (pContent->ptzControlCmd.cmdInfo.obj.uiObjType == CONST_objType_rtspStream)
+												{
+													SendMessage(pProcInfo->hWnd_shareDynBmps, CONST_qyWm_comm, 0, (LPARAM)pMsg);
+													break;
+												}
+
+												//
+												PARAM_viewLocalPtzControl param = { 0 };
+												//
+												doRemotePtzCmd(NULL, &pContent->ptzControlCmd, &param, &pProcInfo->ptzWnd);
+
+												break;
+											}
+											*/
+											//  2015/08/05
+											if (pContent->uiType == Consts.CONST_imCommType_transferFileReq
+												&& pContent->transferFileReq.usSubtype == Consts.CONST_procOfflineResSubtype_download)
+											{
+												if (0 != findTalker(pQyMc, pMisCnt, &addr_logicalPeer.idInfo, ref hWnd))
+												{
+#if __DEBUG__
+													traceLog(_T("mainWnd_OnPostComm: transferFileReq download, findTalker failed"));
+#endif
+													goto errLabel;
+												}
+
+												//									 
+												if (0 != dlgTalk_qPostMsg(hWnd, (IntPtr)pMsg, len)) goto errLabel;
+
+
+												qyFuncs.guiShare.pf_PostMessage(hWnd, Consts.CONST_qyWm_postComm, Consts.CONST_qyWmParam_msgArrive, 0);
+												//
+												break;
+											}
+											//
+											if (0 == pMsg->task.iTaskId)
+											{
+
+#if __DEBUG__
+												traceLog(_T("mainWnd_OnQyPostComm: task.iTaskId is 0"));
+#endif
+
+												//
+												bNeedNotShowWnd = true;
+											}
+
+										}
+										else
+											goto errLabel;
+
+										//
+										hWnd = null;
+
+										//
+										if (null == hWnd)
+										{
+
+											if (0 != pProcInfo.tryToTalkToMessenger_any(addr_logicalPeer.idInfo.ui64Id, bNeedNotShowWnd, false, ref hWnd)) goto errLabel;
+
+										}
+
+										//									 
+										if (0 != dlgTalk_qPostMsg(hWnd, (IntPtr)pMsg, len)) goto errLabel;
+
+
+										qyFuncs.guiShare.pf_PostMessage(hWnd, Consts.CONST_qyWm_postComm, Consts.CONST_qyWmParam_msgArrive, 0);
+
+									}
+									break;
+
+								case Consts.CONST_misMsgType_input:    //  2014/09/05
+									{
+										object hWnd = null;
+										MIS_CNT pMisCnt = null;
+										MSGR_ADDR addr_logicalPeer;
+										if (null == (pMisCnt = (MIS_CNT)pProcInfo.pMisCnt)) goto errLabel;
+
+										IM_CONTENTU* pContent = M_getMsgContent(pMsg->input.ucFlg, &pMsg->input.data);
+
+										//  2014/05/05
+										bool bMsgProcessed = false;
+										switch (pContent->uiType)
+										{
+											case Consts.CONST_imCommType_retrieveDynBmps:
+												bMsgProcessed = true;
+
+												//  2015/06/05
+#if __DEBUG__
+												traceLog(_T("mainWnd_OnPostComm: get retrieveDynBmps from %I64u, bResp %d"), pMsg->input.data.route.idInfo_from.ui64Id, pContent->retrieveDynBmps.ucbResp);
+#endif
+
+												//
+												if (!(isUcFlgTalkData(pMsg->input.ucFlg) || isUcFlgRouteTalkData(pMsg->input.ucFlg)))
+												{
+#if __DEBUG__
+													traceLog(_T("mainWnd_OnPostComm: error: req retrieveDynBmps not from others"));
+#endif
+													goto errLabel;
+												}
+												//  2017/06/11
+												/*
+												if (pContent->retrieveDynBmps.ucbResp
+													&& pContent->retrieveDynBmps.ucbAvConsole)
+												{
+													AvConsole_req_retrieveDynBmps reply = { 0 };
+													reply.iType = CONST_qisMsgType_avConsole;
+													//		
+													reply.usCmd = CONST_avConsole_cmd_retrieveDynBmps;
+													reply.ucbReply = TRUE;
+													//
+													RETRIEVE_DYN_BMPS* pReq = &pContent->retrieveDynBmps;
+													//
+													if (pReq->usCnt > mycountof(pReq->mems)) goto errLabel;
+													for (i = 0; i < pReq->usCnt; i++)
+													{
+														if (reply.usCnt >= mycountof(reply.mems)) break;
+														//
+														reply.mems[reply.usCnt].uiObjType = pReq->mems[i].qisResObj.resObj.uiObjType;
+														reply.mems[reply.usCnt].usIndex_obj = pReq->mems[i].qisResObj.resObj.usIndex_obj;
+														reply.mems[reply.usCnt].usHelp_subIndex = pReq->mems[i].qisResObj.resObj.usHelp_subIndex;
+														safeTcsnCpy(pReq->mems[i].cusName, reply.mems[reply.usCnt].cusName, mycountof(reply.mems[reply.usCnt].cusName));
+														//
+														reply.mems[reply.usCnt].w = pReq->mems[i].usW;
+														reply.mems[reply.usCnt].h = pReq->mems[i].usH;
+														//
+														reply.usCnt++;
+														continue;
+													}
+													//
+													__declspec(dllexport)  int doAvConsole_cmd_retrieveDynBmps(AvConsole_req_retrieveDynBmps* pReq);
+													//
+													doAvConsole_cmd_retrieveDynBmps(&reply);
+													//
+													break;
+												}
+												*/
+												/*
+												//  2014/09/26
+												if (pContent->retrieveDynBmps.conf.idInfo_imGrp_related.ui64Id)
+												{
+													if (findTalker(pQyMc, pMisCnt, &pContent->retrieveDynBmps.conf.idInfo_imGrp_related, &hWnd))
+													{
+# if  __DEBUG__
+														traceLog(_T("mainWnd_OnPostComm: retrieveDynBmps conf findTalker failed"));
+#endif
+														goto errLabel;
+													}
+													   ::SendMessage(hWnd, CONST_qyWm_comm, 0, (LPARAM)pMsg);
+													break;
+												}
+												//
+												if (isUcFlgResp(pMsg->input.ucFlg))
+												{
+													if (findTalker(pQyMc, pMisCnt, &pMsg->input.data.route.idInfo_from, &hWnd))
+													{
+# if  __DEBUG__
+														traceLog(_T("mainWnd_OnPostComm: retrieveDynBmps resp findTalker failed"));
+#endif
+														goto errLabel;
+													}
+													   ::SendMessage(hWnd, CONST_qyWm_comm, 0, (LPARAM)pMsg);
+													break;
+												}
+												//  2014/09/04
+												if (!IsWindow(pProcInfo->hWnd_shareDynBmps))
+												{
+# if  __DEBUG__
+													traceLogA("retrieveDynBmps failed: hWnd_sharedWebcams is not valid");
+#endif
+													showInfo_open(0, 0, _T("retrieveDynBmps failed: hWnd_sharedWebcams is not valid"));
+													break;
+												}
+												   ::SendMessage(pProcInfo->hWnd_shareDynBmps, CONST_qyWm_comm, 0, (LPARAM)pMsg);
+												*/
+												break;
+											/*
+										case Consts.CONST_imCommType_htmlContent:  //  2014/07/12
+											bMsgProcessed = true;
+
+											if (!(isUcFlgTalkData(pMsg->input.ucFlg) || isUcFlgRouteTalkData(pMsg->input.ucFlg)))
+											{
+# if  __DEBUG__
+												traceLog(_T("mainWnd_OnPostComm: error: resp html not from others"));
+#endif
+												goto errLabel;
+											}
+											if (isUcFlgResp(pMsg->input.ucFlg))
+											{
+												if (findTalker(pQyMc, pMisCnt, &pMsg->input.data.route.idInfo_from, &hWnd)) goto errLabel;
+												   ::SendMessage(hWnd, CONST_qyWm_comm, 0, (LPARAM)pMsg);
+												break;
+											}
+# if  __DEBUG__
+											traceLog(_T("Err: request html is not processed here"));
+#endif
+											break;
+
+										case Consts.CONST_imCommType_taskProcReq:  //  2014/10/09
+											if (pContent->taskProcReq.hWnd_task)
+											{
+												bMsgProcessed = TRUE;
+												   //
+												   ::SendMessage(pContent->taskProcReq.hWnd_task, CONST_qyWm_comm, 0, (LPARAM)pMsg);
+											}
+											break;
+
+										case Consts.CONST_imCommType_procOfflineRes:  //  2015/08/03
+											bMsgProcessed = TRUE;
+
+											//  2015/06/05
+# if  __DEBUG__
+											traceLog(_T("mainWnd_OnPostComm: get procOfflineRes from %I64u, bResp %d"), pMsg->input.data.route.idInfo_from.ui64Id, pContent->procOfflineResU.common.ucbResp);
+#endif
+
+											//
+											if (!(isUcFlgTalkData(pMsg->input.ucFlg) || isUcFlgRouteTalkData(pMsg->input.ucFlg)))
+											{
+# if  __DEBUG__
+												traceLog(_T("mainWnd_OnPostComm: error: req retrieveDynBmps not from others"));
+#endif
+												goto errLabel;
+											}
+											//
+											if (pContent->procOfflineResU.common.usSubtype == CONST_procOfflineResSubtype_download)
+											{
+												if (pProcInfo->talkToMessenger(pMsg->input.data.route.idInfo_from.ui64Id, FALSE, FALSE, &hWnd))
+												{
+# if  __DEBUG__
+													traceLog(_T("mainWnd_OnPostComm: procOfflineRes req talkToMessenger failed"));
+#endif
+													goto errLabel;
+												}
+											}
+											else
+											{
+												if (findTalker(pQyMc, pMisCnt, &pMsg->input.data.route.idInfo_from, &hWnd))
+												{
+# ifdef  __DEBUG__
+													traceLog(_T("mainWnd_OnPostComm: procOfflineRes req findTalker failed"));
+#endif
+													goto errLabel;
+												}
+											}
+											   //
+											   ::SendMessage(hWnd, CONST_qyWm_comm, 0, (LPARAM)pMsg);
+
+											//												   
+											break;
+										case CONST_imCommType_imGrp:  //  2017/07/26
+											bMsgProcessed = TRUE;
+											//
+											if ((isUcFlgTalkData(pMsg->input.ucFlg) || isUcFlgRouteTalkData(pMsg->input.ucFlg)))
+											{
+												//  说明时从其他的客户端发过来，通知临时组变化的。直接发到 dlgAvRes_mem_hzj上去显示分组成员。
+												//traceLog(  _T(  "not finished. need to send to dlgAvRes_mem_hzj"  )  );
+												//
+												if (!IsWindow(pProcInfo->hWall_hzj))
+												{
+													traceLog(_T("hWall_hzj is invalid. imGrp can't be processed"));
+													break;
+												}
+												   //
+												   ::SendMessage(pProcInfo->hWall_hzj, CONST_qyWm_comm, 0, (LPARAM)pMsg);
+												//
+												break;
+											}
+
+											//
+											hWnd = pProcInfo->cfgGrp.hWnd_cfgGrp;
+											//
+											if (IsWindow(hWnd))
+											{
+												   ::SendMessage(hWnd, CONST_qyWm_comm, 0, (LPARAM)pMsg);
+												break;
+											}
+											//
+											notifyProgressEnd(pMsg->input.uiTranNo, 0);
+
+											//
+											break;
+											*/
+
+											default:
+												break;
+										}
+										if (bMsgProcessed) break;
+
+										//
+										if (0 == pMsg->input.addr_logicalPeer.idInfo.ui64Id)
+										{
+											/*
+											switch (pContent->uiType)
+											{
+												case Consts.CONST_imCommType_refreshDynBmps:
+												case Consts.CONST_imCommType_verifyViewDynBmp:
+													   ::SendMessage(pProcInfo->hWnd_shareDynBmps, CONST_qyWm_comm, 0, (LPARAM)pMsg);
+													break;
+												case Consts.CONST_imCommType_retrieveCustomerServiceObjListReq:
+													//
+# if  __DEBUG__
+													traceLog(_T("Not finished, CONST_imCommType_retrieveCustomerServiceObjListReq"));
+													for (i = 0; i < pContent->retrieveCustomerServiceObjListReq.usCnt; i++)
+													{
+														traceLog(_T("mems[%d]: %I64u, %s"), i, pContent->retrieveCustomerServiceObjListReq.mems[i].idInfo.ui64Id, pContent->retrieveCustomerServiceObjListReq.mems[i].displayName);
+													}
+#endif
+													//
+													for (i = 0; i < mycountof(pProcInfo->customerService.objs); i++)
+													{
+														if (i < pContent->retrieveCustomerServiceObjListReq.usCnt)
+														{
+															memcpy(&pProcInfo->customerService.objs[i], &pContent->retrieveCustomerServiceObjListReq.mems[i], sizeof(pProcInfo->customerService.objs[i])  );
+	
+														}
+															else
+														{
+																	memset(&pProcInfo->customerService.objs[i], 0, sizeof(pProcInfo->customerService.objs[i])  );
+														}
+													}
+													PostMessage(pQyMc->gui.hMainWnd, WM_COMMAND, MAKEWPARAM(ID_refreshLayout, 0), 0);
+													break;
+											default:
+													     TCHAR tBuf[128];
+														_sntprintf(tBuf, mycountof(tBuf), _T("mainWnd_OnPostComm: msgInput, unprocessed content.type %d"), pContent->uiType);
+														showInfo_open(0, 0, tBuf);
+														break;
+											}
+											*/
+											break;
+										}
+
+										//
+										mymemset((IntPtr)(byte*)&addr_logicalPeer, 0, sizeof(MSGR_ADDR));
+										mylstrcpyn(addr_logicalPeer.misServName, "", Consts.CONST_maxMisServNameLen + 1);
+										addr_logicalPeer.idInfo.ui64Id = pMsg->input.addr_logicalPeer.idInfo.ui64Id;        //  ÔÚÈ¡webMessengerµÄ×´Ì¬Ê±£¬»áÓÃµ½Õâ¸öÀàÐÍ¡£
+																															//  Ã»ÓÐ¶ÀÁ¢Æô¶¯´°¿ÚµÄÄÜÁ¦£¬µ«ÊÇ¿ÉÒÔ·¢ÏÖ´°¿Ú£¬È»ºó½«ÏûÏ¢ËÍµ½´°¿ÚÄÇÀï¡£
+
+
+										hWnd = null;
+
+										//  2013/09/09
+
+										//
+										if (null == hWnd)
+										{
+											//  2014/01/14
+											bool bNeedNotShowWnd = false;
+											if (0 != pProcInfo.tryToTalkToMessenger_any(addr_logicalPeer.idInfo.ui64Id, bNeedNotShowWnd, false, ref hWnd)) goto errLabel;
+										}
+
+										//::SendMessage(hWnd, CONST_qyWm_comm, 0, (LPARAM)pMsg);
+
+									}
+
+									break;
+								/*
+
+															   case  CONST_misMsgType_taskStatus:
+								{
+									HWND hWnd = NULL;
+									MSGR_ADDR addr_logicalPeer;
+									//  QY_MESSENGER_ID			idInfo_peer;
+
+
+									if (pMsg->taskStatus.ucbNotification)
+									{
+										displayNotification(pProcInfo, &pMsg->taskStatus);
+										break;
+									}
+
+									MIS_CNT* pMisCnt = NULL;
+									if (!(pMisCnt = (MIS_CNT*)pMsg->taskStatus.pMisCnt)) goto errLabel;
+
+									memset(&addr_logicalPeer, 0, sizeof(addr_logicalPeer));
+									lstrcpyn(addr_logicalPeer.misServName, pMisCnt->cfg.misServName, mycountof(addr_logicalPeer.misServName));
+									addr_logicalPeer.idInfo.ui64Id = pMsg->taskStatus.idInfo_logicalPeer.ui64Id;
+
+									//
+									if (pMsg->taskStatus.iStatus == CONST_imTaskStatus_err_missingOrgReq
+										|| !addr_logicalPeer.idInfo.ui64Id)
+									{       //  2014/11/21. 这里性能不是很好，因为每次find都要轮询一遍。不过这样处理比较简单
+										qTraverse(&pMisCnt->talkingFriendQ, tmpHandler_findMissingOrgReq, 0, pMsg);
+										//
+										if (pMsg->taskStatus.ucbFound)
+										{
+											addr_logicalPeer.idInfo.ui64Id = pMsg->taskStatus.idInfo_logicalPeer.ui64Id;
+										}
+									}
+
+									//									 
+									//  if  (  talkToMessenger(  pQyMc,  &addr_logicalPeer,  NULL,  TRUE,  FALSE,  &hWnd  )  )  goto  errLabel;
+									if (!findTalker(pQyMc, &addr_logicalPeer, 0, &hWnd))
+									{
+																		 ::SendMessage(hWnd, CONST_qyWm_comm, 0, (LPARAM)pMsg);
+									}
+
+									if ((pMsg->taskStatus.iStatus == CONST_imTaskStatus_err_missingOrgReq && !hWnd)
+										|| pMsg->taskStatus.ucbNeeded_applyForOrgReq)
+									{
+										//
+										TCHAR tBuf[128];
+										//
+										TASK_PROC_REQ taskProcReq;
+										int lenInBytes;
+										memset(&taskProcReq, 0, sizeof(taskProcReq));
+										taskProcReq.uiType = CONST_imCommType_taskProcReq;
+										taskProcReq.usOp = CONST_imOp_recv_applyForOrgReq;
+										//  taskProcReq.tStartTime_org  =  0;
+										taskProcReq.uiTranNo_org = pMsg->taskStatus.uiTranNo;
+										//  taskProcReq.uiSerialNo_org  =  0;
+										taskProcReq.uiContentType_org = pMsg->taskStatus.uiContentType;
+										//	
+										lenInBytes = sizeof(taskProcReq);
+										//					
+										MACRO_prepareForTran();
+
+										//  2017/10/11
+										_sntprintf(tBuf, mycountof(tBuf), _T("taskAvOrgReq not found. send taskProcReq to %I64u. tn %d. kkkk"), pMsg->taskStatus.idInfo_taskSender.ui64Id, uiTranNo);
+								# ifdef  __DEBUG__
+										traceLog(_T("%s"), tBuf);
+								#endif
+										showInfo_open(0, 0, tBuf);
+
+										//
+										if (pProcInfo->postMsgTask2Mgr_mc(pMisCnt, CONST_misMsgType_task, 0, pMsg->taskStatus.cmdCode, tStartTran, uiTranNo, 0, 0, 0, (char*)&taskProcReq, lenInBytes, &addr_logicalPeer.idInfo, NULL, NULL, &pMsg->taskStatus.idInfo_taskSender, 0, NULL, FALSE)) goto errLabel;
+
+										//  2017/10/03
+										pProcInfo->status.dwTickCnt_sendTo_applyForOrgReq = GetTickCount();
+
+									}
+
+
+								}
+								break;
+															   case  CONST_misMsgType_refreshContactsStatus_qmc:
+															   case  CONST_misMsgType_refreshMeStatus_qmc:
+								{
+																	 //  QY_WMBUF
+																	 ::SendMessage(pMsg->refreshContactsStatus_qmc.hWnd, CONST_qyWm_comm, 0, (LPARAM)pMsg);
+								}
+								break;
+															   case  CONST_misMsgType_getDaemonStatus:
+
+																	 ::SendMessage(pMsg->getDaemonStatus.hWnd, CONST_qyWm_comm, 0, (LPARAM)pMsg);
+								break;
+															   case  CONST_misMsgType_applyForPlayer_qmc:
+								pProcInfo->doApplyForPlayer(hMainWnd, pMsg);
+								break;
+
+																	 //  2011/12/10
+															   case  CONST_misMsgType_notifyTaskEnd_qmc:
+
+																	 ::SendMessage(pMsg->notifyTaskEnd.hWnd, CONST_qyWm_comm, 0, (LPARAM)pMsg);
+																	break;
+																*/
+
+								default:
+									//traceLogA("CMainFrame::OnQyPostComm: msgArrive:  unprocessed: msgType: %d", pMsg->uiType);
+									break;
+							}
+						}
+					}
+					break;
+
+				case Consts.CONST_qyWmParam_task_end:
+#if __DEBUG__
+traceLog(_T("CMainFrame: task end, to tryToFreeSharedObjs"));
+#endif
+					tryToFreeSharedObjs(pProcInfo);
+					break;
+
+				case Consts.CONST_qyWmParam_chkTask:
+#if __DEBUG__
+traceLog(_T("CMainFrame: to chk task"));
+#endif
+					qmcChkTasks_gui(pProcInfo);
+					break;
+
+				case Consts.CONST_qyWmParam_toStartLocalAudioPlayer:      //  2013/05/26
+#if __DEBUG__
+traceLog(_T("MainFrm: get Msg toStartLocalAudioPlayer"));
+#endif
+					//startLocalAudioPlayer(pProcInfo);
+					break;
+
+				default:
+#if __DEBUG__
+							traceLog(_T("mainWnd_OnQyPostComm: unknown wParam"));
+#endif
+					break;
+			}
+
+
+			lRet = Consts.QY_RC_WMOK;
+		errLabel:
+			return lRet;
+		}
+
+	}
+}
+
+
+

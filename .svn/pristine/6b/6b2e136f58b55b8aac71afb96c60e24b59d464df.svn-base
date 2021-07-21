@@ -1,0 +1,28 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+//
+partial class Consts
+{
+}
+
+//
+namespace qy
+{
+    public delegate int PF_PostMessage(object wnd, int msgId,int wParm,int lParam);
+    public delegate int PF_mainWndProcMsg(IntPtr pMsgParam);
+
+
+    partial class qyFuncs
+{
+        public static class guiShare
+        {
+            public static PF_PostMessage pf_PostMessage;
+            public static PF_mainWndProcMsg pf_mainWndProcMsg;
+        };
+
+}
+
+
+}

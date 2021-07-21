@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<api>
+  <package name="com.qycx.tmpjavalibrary" jni-name="com/qycx/tmpjavalibrary">
+    <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="true" name="BuildConfig" static="false" visibility="public" jni-signature="Lcom/qycx/tmpjavalibrary/BuildConfig;">
+      <constructor deprecated="not deprecated" final="false" name="BuildConfig" jni-signature="()V" bridge="false" static="false" type="com.qycx.tmpjavalibrary.BuildConfig" synthetic="false" visibility="public"></constructor>
+      <field deprecated="not deprecated" final="true" name="BUILD_TYPE" jni-signature="Ljava/lang/String;" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;release&quot;" visibility="public" volatile="false"></field>
+      <field deprecated="not deprecated" final="true" name="DEBUG" jni-signature="Z" static="true" transient="false" type="boolean" type-generic-aware="boolean" value="false" visibility="public" volatile="false"></field>
+      <field deprecated="not deprecated" final="true" name="LIBRARY_PACKAGE_NAME" jni-signature="Ljava/lang/String;" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;com.qycx.tmpjavalibrary&quot;" visibility="public" volatile="false"></field>
+    </class>
+    <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="false" name="FileUtil" static="false" visibility="public" jni-signature="Lcom/qycx/tmpjavalibrary/FileUtil;">
+      <constructor deprecated="not deprecated" final="false" name="FileUtil" jni-signature="()V" bridge="false" static="false" type="com.qycx.tmpjavalibrary.FileUtil" synthetic="false" visibility="public"></constructor>
+      <method abstract="false" deprecated="not deprecated" final="false" name="saveBitmap" jni-signature="(Landroid/graphics/Bitmap;Ljava/lang/String;)Z" bridge="false" native="false" return="boolean" jni-return="Z" static="true" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="bitmap" type="android.graphics.Bitmap" jni-type="Landroid/graphics/Bitmap;"></parameter>
+        <parameter name="imagePath" type="java.lang.String" jni-type="Ljava/lang/String;"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="saveBytes" jni-signature="([BZLjava/lang/String;Z)Z" bridge="false" native="false" return="boolean" jni-return="Z" static="true" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="bytes" type="byte[]" jni-type="[B"></parameter>
+        <parameter name="bAppend" type="boolean" jni-type="Z"></parameter>
+        <parameter name="imagePath" type="java.lang.String" jni-type="Ljava/lang/String;"></parameter>
+        <parameter name="bDbg" type="boolean" jni-type="Z"></parameter>
+      </method>
+      <field deprecated="not deprecated" final="true" name="SAVE_DIR" jni-signature="Ljava/lang/String;" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;/sdcard/DCIM/Camera2GetPreview/&quot;" visibility="public" volatile="false"></field>
+    </class>
+    <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="false" name="TmpJniUtil" static="false" visibility="public" jni-signature="Lcom/qycx/tmpjavalibrary/TmpJniUtil;">
+      <constructor deprecated="not deprecated" final="false" name="TmpJniUtil" jni-signature="()V" bridge="false" static="false" type="com.qycx.tmpjavalibrary.TmpJniUtil" synthetic="false" visibility="public"></constructor>
+      <method abstract="false" deprecated="not deprecated" final="false" name="allocNativeByteBuffer" jni-signature="(I)Ljava/nio/ByteBuffer;" bridge="false" native="true" return="java.nio.ByteBuffer" jni-return="Ljava/nio/ByteBuffer;" static="true" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="int" jni-type="I"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="freeNativeByteBuffer" jni-signature="(Ljava/nio/ByteBuffer;)V" bridge="false" native="true" return="void" jni-return="V" static="true" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="java.nio.ByteBuffer" jni-type="Ljava/nio/ByteBuffer;"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="hiFromJni" jni-signature="([I)I" bridge="false" native="true" return="int" jni-return="I" static="true" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="int[]" jni-type="[I"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="i420ToRgb" jni-signature="(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;IZIIZ)I" bridge="false" native="true" return="int" jni-return="I" static="true" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="java.nio.ByteBuffer" jni-type="Ljava/nio/ByteBuffer;"></parameter>
+        <parameter name="p1" type="java.nio.ByteBuffer" jni-type="Ljava/nio/ByteBuffer;"></parameter>
+        <parameter name="p2" type="int" jni-type="I"></parameter>
+        <parameter name="p3" type="boolean" jni-type="Z"></parameter>
+        <parameter name="p4" type="int" jni-type="I"></parameter>
+        <parameter name="p5" type="int" jni-type="I"></parameter>
+        <parameter name="p6" type="boolean" jni-type="Z"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="procByteArray" jni-signature="([BI)I" bridge="false" native="true" return="int" jni-return="I" static="true" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="byte[]" jni-type="[B"></parameter>
+        <parameter name="p1" type="int" jni-type="I"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="rgb32To24" jni-signature="(Ljava/nio/ByteBuffer;ZLjava/nio/ByteBuffer;ZII)I" bridge="false" native="true" return="int" jni-return="I" static="true" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="java.nio.ByteBuffer" jni-type="Ljava/nio/ByteBuffer;"></parameter>
+        <parameter name="p1" type="boolean" jni-type="Z"></parameter>
+        <parameter name="p2" type="java.nio.ByteBuffer" jni-type="Ljava/nio/ByteBuffer;"></parameter>
+        <parameter name="p3" type="boolean" jni-type="Z"></parameter>
+        <parameter name="p4" type="int" jni-type="I"></parameter>
+        <parameter name="p5" type="int" jni-type="I"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="rgbToI420" jni-signature="(Ljava/nio/ByteBuffer;IZLjava/nio/ByteBuffer;IIZ)I" bridge="false" native="true" return="int" jni-return="I" static="true" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="java.nio.ByteBuffer" jni-type="Ljava/nio/ByteBuffer;"></parameter>
+        <parameter name="p1" type="int" jni-type="I"></parameter>
+        <parameter name="p2" type="boolean" jni-type="Z"></parameter>
+        <parameter name="p3" type="java.nio.ByteBuffer" jni-type="Ljava/nio/ByteBuffer;"></parameter>
+        <parameter name="p4" type="int" jni-type="I"></parameter>
+        <parameter name="p5" type="int" jni-type="I"></parameter>
+        <parameter name="p6" type="boolean" jni-type="Z"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="rotateI420" jni-signature="(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;IIIZ)I" bridge="false" native="true" return="int" jni-return="I" static="true" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="java.nio.ByteBuffer" jni-type="Ljava/nio/ByteBuffer;"></parameter>
+        <parameter name="p1" type="java.nio.ByteBuffer" jni-type="Ljava/nio/ByteBuffer;"></parameter>
+        <parameter name="p2" type="int" jni-type="I"></parameter>
+        <parameter name="p3" type="int" jni-type="I"></parameter>
+        <parameter name="p4" type="int" jni-type="I"></parameter>
+        <parameter name="p5" type="boolean" jni-type="Z"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="sayHello" jni-signature="(Ljava/lang/String;)Ljava/lang/String;" bridge="false" native="true" return="java.lang.String" jni-return="Ljava/lang/String;" static="true" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="java.lang.String" jni-type="Ljava/lang/String;"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="sumAvg" jni-signature="([I)[D" bridge="false" native="true" return="double[]" jni-return="[D" static="true" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="int[]" jni-type="[I"></parameter>
+      </method>
+    </class>
+  </package>
+</api>

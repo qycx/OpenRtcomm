@@ -1,0 +1,166 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Text;
+using System.Threading;
+
+namespace qy
+{
+    partial class qyFuncs
+{
+		public static unsafe bool bChkQyMcEnv(CCtxQyMc pQyMc)
+        {
+			int bufSize = Consts.CONST_bufSize_routeTalkData;
+			int iSize = sizeof(IM_CONTENTU) + 1024;
+			if (bufSize < iSize)
+			{
+				int ii = sizeof(IM_L_STREAM);
+				//
+				return false;
+			}
+
+
+			return true;
+
+        }
+
+		public static unsafe int getDynCfg_isClient(CCtxQyMc pQyMc, ref QNM_CNT_CFG pDynCfg)
+		{
+			int iErr = -1;
+			//QNM_CNT_CFG cntCfg_sys;
+			//QNM_CNT_CFG cntCfg;
+			int i;
+			//
+			//if (!pDynCfg) return -1;
+
+			fixed( QNM_CNT_CFG* pCfg = &pDynCfg ) {
+
+				pCfg->usCntPort = 8768;
+				safeStrnCpy("127.0.0.1", pCfg->cntIp, Consts.CONST_qyMaxIpLen + 1);			
+			}
+			//mymemset(&pDynCfg, 0, sizeof(QNM_CNT_CFG));
+			//memset(&cntCfg_sys, 0, sizeof(cntCfg_sys));
+			//memset(&cntCfg, 0, sizeof(cntCfg));
+			//
+			/*
+			if (getQnmCntCfg(0, FALSE, pQyMc->iServiceId, HKEY_LOCAL_MACHINE, CQyString(pQyMc->cfg.pSysCfg->rootKey_qnmScheduler), &cntCfg_sys)) goto errLabel;
+			if (!bSupported_devAuth())
+			{
+				if (getQnmCntCfg(0, FALSE, pQyMc->iServiceId, HKEY_CURRENT_USER, CQyString(pQyMc->cfg.pSysCfg->rootKey_qnmScheduler), &cntCfg)) goto errLabel;
+			}
+			//
+			if (bIpValid(cntCfg_sys.cntIp))
+			{
+				safeStrnCpy(cntCfg_sys.cntIp, pDynCfg->cntIp, mycountof(pDynCfg->cntIp));
+				pDynCfg->ucbSys_cntIp = TRUE;
+			}
+			else if (bIpValid(cntCfg.cntIp))
+			{
+				safeStrnCpy(cntCfg.cntIp, pDynCfg->cntIp, mycountof(pDynCfg->cntIp));
+			}
+			//
+			for (i = 0; i < mycountof(cntCfg.cntAddrs); i++)
+			{
+				if (cntCfg_sys.cntAddrs[i][0])
+				{
+					safeStrnCpy(cntCfg_sys.cntAddrs[i], pDynCfg->cntAddrs[i], mycountof(pDynCfg->cntAddrs[i]));
+					pDynCfg->ucbSys_cntAddrs[i] = TRUE;
+				}
+				else if (cntCfg.cntAddrs[i][0])
+				{
+					safeStrnCpy(cntCfg.cntAddrs[i], pDynCfg->cntAddrs[i], mycountof(pDynCfg->cntAddrs[i]));
+				}
+			}
+
+			//  
+			if (cntCfg_sys.usCntPort)
+			{
+				pDynCfg->usCntPort = cntCfg_sys.usCntPort;
+				pDynCfg->ucbSys_cntPort = TRUE;
+			}
+			else if (cntCfg.usCntPort)
+			{
+				pDynCfg->usCntPort = cntCfg.usCntPort;
+			}
+			else
+			{
+				pDynCfg->usCntPort = qnmCntPort(pQyMc->iServiceId);
+			}
+
+			//  2010/07/27
+			if (pQyMc->cfg.bGetPolicyFromIni)
+			{
+				char buf[32];
+
+				if (!getCfgValByName(pQyMc->cfg.iniFullFileName, CONST_regValName_cntIp, buf, sizeof(buf)))
+				{
+					trim(buf);
+					if (bIpValid(buf))
+					{
+						safeStrnCpy(buf, pDynCfg->cntIp, mycountof(pDynCfg->cntIp));
+					}
+				}
+				if (!getCfgValByName(pQyMc->cfg.iniFullFileName, CONST_regValName_cntAddr1, buf, sizeof(buf)))
+				{
+					trim(buf);
+					if (buf[0])
+					{
+						safeStrnCpy(buf, pDynCfg->cntAddrs[0], mycountof(pDynCfg->cntAddrs[0]));
+					}
+				}
+				//
+				if (!getCfgValByName(pQyMc->cfg.iniFullFileName, CONST_regValName_cntPort, buf, sizeof(buf)))
+				{
+					trim(buf);
+					if (buf[0])
+					{
+						pDynCfg->usCntPort = atol(buf);
+					}
+				}
+				if (!pDynCfg->usCntPort) pDynCfg->usCntPort = qnmCntPort(pQyMc->iServiceId);
+
+			}
+			*/
+
+			iErr = 0;
+		errLabel:
+			return iErr;
+		}
+
+
+		static void exitAllDaemonThreads(CCtxQyMc pQM)
+		{
+			int i;
+
+			//traceLogA("exitAllDaemonThreads(  ) enters.");
+
+			if (pQM.bLogon)
+			{
+				//traceLogA("exitAllDaemonThreads: ÕâÀïµÄbQuit±êÖ¾ÎªÊ²Ã´Ã»ÉèÖÃÄØ");
+				Console.WriteLine("Err: exitAllDaemonThreads: bLogon is true");
+			}
+
+			for (i = 0; i < pQM.hDaemonThreads.Length; i++) {
+				if (pQM.hDaemonThreads[i] == null) continue;
+				for (int j = 0; j < 100; j++)
+				{
+					if (pQM.hDaemonThreads[i].IsAlive)
+					{
+						Console.WriteLine("Waiting for daemon thread {0}", i);
+						//waitForObject(&pQM->hDaemonThreads[i], 20000);
+						Thread.Sleep(100);
+						continue;
+					}
+					break;
+				}
+			}
+
+			
+
+			//traceLogA("exitAllDaemonThreads(  ) leaves.");
+
+			return;
+		}
+
+	}
+}

@@ -1,0 +1,1415 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace qy
+{
+    partial class qyFuncs
+{
+
+		public static int tmpHandler_findOrgMsgAndProc_is(object pMsg_toBeSearchedParam, object p1, object pMsgElemParam)
+		{
+
+			int iErr = -1;
+			/*
+			MIS_MSGU* pMsg_toBeSearched = (MIS_MSGU*)pMsg_toBeSearchedParam;
+			//  p1
+			//
+			QY_MC* pQyMc = QY_GET_GBUF();
+			QY_SERVICEGUI_INFO* pSgi = getServiceGuiInfo(pQyMc, CONST_qyServiceId_is);
+			if (!pSgi) return -1;
+			MC_VAR_isCli* pProcInfo = (MC_VAR_isCli*)pSgi->pVar;
+			if (!pProcInfo) return -1;
+			int tmpiRet = 0;
+			QM_dbFuncs* pDbFuncs = pQyMc->p_g_dbFuncs;
+			if (!pDbFuncs) goto errLabel;
+			QM_dbFuncs & g_dbFuncs = *pDbFuncs;
+
+
+			switch (((MIS_MSGU*)pMsgElemParam)->uiType)
+			{
+				case CONST_misMsgType_req:
+					{
+						MIS_MSG_REQ* pMsgElem = (MIS_MSG_REQ*)pMsgElemParam;
+						MIS_CNT* pMisCntElem = (MIS_CNT*)pMsgElem->pMisCnt;
+						IM_CONTENTU* pContentElem = M_getMsgContent(pMsgElem->ucFlg, &pMsgElem->data);
+						//
+						switch (pMsg_toBeSearched->uiType)
+						{
+							case CONST_misMsgType_input:
+								{
+									MIS_MSG_INPUT* pMsgInput = &pMsg_toBeSearched->input;
+									//
+									if (pMsgElem->tStartTime == pMsgInput->tStartTime
+										&& pMsgElem->uiTranNo == pMsgInput->uiTranNo)
+									{
+										pMsgInput->usCode_org = pMsgElem->usCode;
+										iErr = 1; goto errLabel;        //  ÕÒµ½ÁË
+									}
+									//
+								}
+								break;
+							default:
+								break;
+						}
+						//
+					}
+					break;
+				case CONST_misMsgType_task:
+					{
+						MIS_MSG_TASK* pMsgElem = (MIS_MSG_TASK*)pMsgElemParam;
+						MIS_CNT* pMisCntElem = (MIS_CNT*)pMsgElem->pMisCnt;
+						IM_CONTENTU* pContentElem = (IM_CONTENTU*)pMsgElem->data.buf;
+						//
+						switch (pMsg_toBeSearched->uiType)
+						{
+							case CONST_misMsgType_task:
+								{
+									MIS_MSG_TASK* pMsgTask = &pMsg_toBeSearched->task;
+									IM_CONTENTU* pContent = (IM_CONTENTU*)pMsgTask->data.buf;
+
+									//
+# ifdef  __DEBUG__	//  2014/08/28
+									if (pContent->uiType == CONST_imCommType_taskProcReq)
+									{
+										if (pContent->taskProcReq.usOp == CONST_imOp_recv_applyForKeyFrame)
+										{
+											int i;
+											i = 9;
+										}
+									}
+#endif
+
+									//
+									if (!isUcFlgResp(pMsgTask->ucFlg))
+									{
+										if (pContentElem->uiType == CONST_imCommType_transferFileReq)
+										{
+											if (pContent->uiType == CONST_imCommType_transferFileReplyReq)
+											{   //  ÕâÊÇÔÚfile·¢ËÍ¶Ë£¬½ÓÊÕ»Ø¸´À´Ê±µÄ¼ìË÷
+												if (pMsgElem->tStartTime == pContent->transferFileReplyReq.tStartTime_org
+													   && pMsgElem->uiTranNo == pContent->transferFileReplyReq.uiTranNo_org)
+												{
+													//
+# ifdef  __DEBUG__
+													traceLogA("tmpHandler_findOrgMsgAndProc_is: msg - replyReq is matched");
+#endif
+													//
+													pMsgTask->addr_logicalPeer.idInfo.ui64Id = pMsgElem->addr_logicalPeer.idInfo.ui64Id;
+													//
+													iErr = 1; goto errLabel;
+												}
+											}
+											if (pContent->uiType == CONST_imCommType_taskProcReq)
+											{   //  file·¢ËÍ¶Ë£¬×Ô¼ºÓÖ×·¼ÓÁË±ÈÈçÈ¡ÏûµÈ²Ù×÷ºóµÄ¹¤×÷  
+												if (pMsgElem->tStartTime == pContent->taskProcReq.tStartTime_org
+													&& pMsgElem->uiTranNo == pContent->taskProcReq.uiTranNo_org)
+												{
+													//
+# ifdef  __DEBUG__
+													traceLogA("tmpHandler_findOrgMsgAndProc_is: msg - procReq is matched");
+#endif
+													//
+													iErr = 1; goto errLabel;
+												}
+											}
+										}
+										if (pContentElem->uiType == CONST_imCommType_transferFileReplyReq)
+										{   //  file½ÓÊÕ¶Ë
+											if (pContent->uiType == CONST_imCommType_taskProcReq)
+											{
+												if (pContentElem->transferFileReplyReq.tStartTime_org == pContent->taskProcReq.tStartTime_org
+													&& pContentElem->transferFileReplyReq.uiTranNo_org == pContent->taskProcReq.uiTranNo_org)
+												{
+# ifdef  __DEBUG__
+													traceLogA("tmpHandler_findOrgMsgAndProc_is: msg - procReq matched");
+#endif
+													iErr = 1; goto errLabel;
+												}
+											}
+										}
+										//  
+										if (pContentElem->uiType == CONST_imCommType_transferAvInfo)
+										{                               //  media
+											TRANSFER_AV_INFO* pTransferAvInfoElem = &pContentElem->transferAvInfo;
+											PROC_TASK_AV* pTaskElem = get_transferAvInfo_pTask(pTransferAvInfoElem, _T(""));
+											if (!pTaskElem) goto errLabel;
+											int index = 0;
+
+											if (pContent->uiType == CONST_imCommType_transferAvInfo)
+											{                               //  
+												TRANSFER_AV_INFO* pTransferAvInfo = &pContent->transferAvInfo;
+												//
+												if (pMsgElem->tStartTime == pMsgTask->tStartTime
+													&& pMsgElem->uiTranNo == pMsgTask->uiTranNo)
+												{
+													BOOL canGet = FALSE;
+													//
+													if (pTaskElem->ucbVideoConferenceStarter) canGet = TRUE;
+													else if (bApplyForAvProxy(pMisCntElem, pTransferAvInfoElem)) canGet = TRUE;
+													else
+													{
+# ifdef  __DEBUG__
+														//  traceLog(  _T(  "findOrgMsg: 
+														//  让talk来校验
+#endif
+														canGet = TRUE;
+													}
+													//
+# ifdef  __DEBUG__
+													if (!canGet)
+													{
+														traceLog(_T("findOrgMsg: can't get req again, canGot is false"));
+													}
+#endif
+													//
+													if (canGet)
+													{
+														//  note: 2014/11/21. 这里不再直接覆盖输入内容了，而是要求一定要用param_findOrgMsg来输出. 不知道对原来的有没有影响 
+														//  memcpy(  &pContent->transferAvInfo.tranInfo,  &pTransferAvInfoElem->tranInfo,  sizeof(  pContent->transferAvInfo.tranInfo  )  );
+														//
+# ifdef  __DEBUG__
+														traceLogA("findOrgMsgAndProc_mis: get req again");
+#endif
+														PARAM_findOrgMsg* pParam = (PARAM_findOrgMsg*)p1;
+														if (pParam)
+														{
+															if (pParam->pMsgTask_o)
+															{
+																int len = offsetof(MIS_MSG_TASK, data) + pMsgElem->lenInBytes;
+
+																memcpy(pParam->pMsgTask_o, pMsgElem, len);
+															}
+														}
+													}
+
+													iErr = 1; goto errLabel;
+												}
+												//  2014/11/21
+												if (pMsgElem->iTaskId == pMsgTask->iTaskId)
+												{
+													if (pTransferAvInfoElem->proxiedTranInfo.idInfo.ui64Id && pTransferAvInfoElem->proxiedTranInfo.uiObjType)
+													{
+														if (pTransferAvInfoElem->proxiedTranInfo.idInfo.ui64Id == pMsgTask->data.route.idInfo_from.ui64Id)
+														{
+															if (pTransferAvInfoElem->proxiedTranInfo.ti.audio.uiTranNo_openAvDev || pTransferAvInfoElem->proxiedTranInfo.ti.video.uiTranNo_openAvDev)
+															{
+																BOOL bNotMatched = FALSE;
+																if (pTransferAvInfoElem->proxiedTranInfo.ti.audio.uiTranNo_openAvDev)
+																{
+																	if (pTransferAvInfoElem->proxiedTranInfo.ti.audio.uiTranNo_openAvDev != pTransferAvInfo->tranInfo.audio.uiTranNo_openAvDev) bNotMatched = TRUE;
+																}
+																if (pTransferAvInfoElem->proxiedTranInfo.ti.video.uiTranNo_openAvDev)
+																{
+																	if (pTransferAvInfoElem->proxiedTranInfo.ti.video.uiTranNo_openAvDev != pTransferAvInfo->tranInfo.video.uiTranNo_openAvDev) bNotMatched = TRUE;
+																}
+																if (!bNotMatched)
+																{
+# ifdef  __DEBUG__
+																	traceLog(_T("findOrgMsgAndProc_mis: get req content"));
+#endif
+																	PARAM_findOrgMsg* pParam = (PARAM_findOrgMsg*)p1;
+																	if (pParam)
+																	{
+																		if (pParam->pMsgTask_o)
+																		{
+																			int len = offsetof(MIS_MSG_TASK, data) + pMsgElem->lenInBytes;
+
+																			memcpy(pParam->pMsgTask_o, pMsgElem, len);
+																		}
+																	}
+																	iErr = 1; goto errLabel;
+																}
+															}
+														}
+													}
+												}
+												//  2014/11/21
+												if (bApplyForAvProxy(pMisCntElem, pTransferAvInfoElem)
+													&& pTransferAvInfo->proxiedTranInfo.idInfo.ui64Id
+													&& pTransferAvInfo->proxiedTranInfo.uiObjType)
+												{
+													if (pTransferAvInfo->proxiedTranInfo.idInfo.ui64Id == pMisCntElem->idInfo.ui64Id)
+													{
+														if (pTransferAvInfo->proxiedTranInfo.ti.audio.uiTranNo_openAvDev || pTransferAvInfo->proxiedTranInfo.ti.video.uiTranNo_openAvDev)
+														{
+															BOOL bNotMatched = FALSE;
+															if (pTransferAvInfo->proxiedTranInfo.ti.audio.uiTranNo_openAvDev)
+															{
+																if (pTransferAvInfo->proxiedTranInfo.ti.audio.uiTranNo_openAvDev != pTransferAvInfoElem->tranInfo.audio.uiTranNo_openAvDev) bNotMatched = TRUE;
+															}
+															if (pTransferAvInfo->proxiedTranInfo.ti.video.uiTranNo_openAvDev)
+															{
+																if (pTransferAvInfo->proxiedTranInfo.ti.video.uiTranNo_openAvDev != pTransferAvInfoElem->tranInfo.video.uiTranNo_openAvDev) bNotMatched = TRUE;
+															}
+															if (!bNotMatched)
+															{
+# ifdef  __DEBUG__
+																traceLog(_T("proxy reply returned"));
+#endif
+																PARAM_findOrgMsg* pParam = (PARAM_findOrgMsg*)p1;
+																if (pParam)
+																{
+																	if (pParam->bNeedUpdate)
+																	{
+																		pTaskElem->applyForProxy.bRecvd_proxyReply = TRUE;
+																		//
+																		pTaskElem->applyForProxy.proxyReply.proxy.uiTranNo_openAvDev_a = pTransferAvInfo->tranInfo.audio.uiTranNo_openAvDev;
+																		pTaskElem->applyForProxy.proxyReply.proxy.uiTranNo_openAvDev_v = pTransferAvInfo->tranInfo.video.uiTranNo_openAvDev;
+																	}
+																}
+																iErr = 1; goto errLabel;
+															}
+														}
+													}
+												}
+
+											}
+
+											if (pContent->uiType == CONST_imCommType_transferAvReplyInfo)
+											{
+												if (pMsgElem->tStartTime == pContent->transferAvReplyInfo.tStartTime_org
+													&& pMsgElem->uiTranNo == pContent->transferAvReplyInfo.uiTranNo_org)
+												{
+													OutputDebugString(_T("tmpHandler_findOrgMsgAndProc_is . msg - reply is matched\n"));            //  
+
+													procTaskAvReply(pProcInfo, &pMsgElem->addr_logicalPeer, pMsgElem->iTaskId, &pTransferAvInfoElem->tranInfo, pTaskElem, pMsgTask);
+
+													//
+													iErr = 1; goto errLabel;
+												}
+											}
+
+											//  											 
+											if (pContent->uiType == CONST_imCommType_transferVideoData)
+											{                           //  
+																		//
+												tmpiRet = tmpHandler_findOrgMsgAndProcess_mis_procTaskVideoData(pProcInfo, &pMsgElem->addr_logicalPeer, pMsgElem->iTaskId, pMsgTask, &pContent->transferVideoData, pContentElem, pTaskElem);
+												if (tmpiRet)
+												{
+													iErr = tmpiRet; goto errLabel;
+												}
+											}
+											if (pContent->uiType == CONST_imCommType_transferAudioData)
+											{
+												//
+												tmpiRet = tmpHandler_findOrgMsgAndProcess_mis_procTaskAudioData(pProcInfo, &pMsgElem->addr_logicalPeer, pMsgElem->iTaskId, pMsgTask, &pContent->transferAudioData, pContentElem, pTaskElem);
+												if (tmpiRet)
+												{
+													iErr = tmpiRet; goto errLabel;
+												}
+											}
+											if (pContent->uiType == CONST_imCommType_remoteAssistReq)
+											{
+												if (pMsgElem->addr_logicalPeer.idInfo.ui64Id == pMsgTask->addr_logicalPeer.idInfo.ui64Id
+													&& pTransferAvInfoElem->tranInfo.video.uiTranNo_openAvDev == pContent->remoteAssistReq.uiTranNo_openAvDev)
+												{
+# ifdef  __DEBUG__
+													traceLog(_T("RemoteAssist: "));
+#endif
+
+													if (procTaskRemoteAssist(pProcInfo, &pMsgElem->addr_logicalPeer, pMsgElem->iTaskId, pMsgTask, &pContent->remoteAssistReq, &pTransferAvInfoElem->tranInfo, pTaskElem, index)) goto errLabel;
+
+													iErr = 1; goto errLabel;
+												}
+											}
+
+											if (pContent->uiType == CONST_imCommType_taskProcReq)
+											{   //  file·
+												if (pMsgElem->iTaskId && pMsgElem->iTaskId == pMsgTask->iTaskId)
+												{
+# ifdef  __DEBUG__
+													traceLogA("tmpHandler_findOrgMsgAndProc_is: msg - procReq.iTaskId [%d] is matched", pMsgTask->iTaskId);
+#endif
+													//
+													iErr = 1; goto errLabel;
+												}
+
+												if (pMsgElem->tStartTime == pContent->taskProcReq.tStartTime_org
+													&& pMsgElem->uiTranNo == pContent->taskProcReq.uiTranNo_org)
+												{
+# ifdef  __DEBUG__
+													traceLogA("tmpHandler_findOrgMsgAndProc_is: msg - procReq is matched");
+#endif
+													//
+													iErr = 1; goto errLabel;
+												}
+											}
+
+										}  //  ÒÔÉÏÎªmedia·¢Æð¶Ë
+
+										if (pContentElem->uiType == CONST_imCommType_transferAvReplyInfo)
+										{                           //  media»Ø¸´¶Ë
+											TRANSFER_AV_replyInfo* pTransferAvReplyInfoElem = &pContentElem->transferAvReplyInfo;
+											PROC_TASK_AV* pTaskElem = get_transferAvReplyInfo_pTask(pTransferAvReplyInfoElem, _T(""));
+											if (!pTaskElem) goto errLabel;
+											int index = 0;
+
+											//  ÒòÎªaudio¶ÔÊµÊ±ÐÔÒªÇó×î¸ß£¬ËùÒÔ·ÅÔÚµÚÒ»Î»±È½Ï
+											if (pContent->uiType == CONST_imCommType_transferAudioData)
+											{
+												//
+												tmpiRet = tmpHandler_findOrgMsgAndProcess_mis_procTaskAudioData(pProcInfo, &pMsgElem->addr_logicalPeer, pMsgElem->iTaskId, pMsgTask, &pContent->transferAudioData, pContentElem, pTaskElem);
+												if (tmpiRet)
+												{
+													iErr = tmpiRet; goto errLabel;
+												}
+
+											}
+											if (pContent->uiType == CONST_imCommType_transferVideoData)
+											{                           //  ¶Ô·½µÄÊý¾Ý
+																		//
+												tmpiRet = tmpHandler_findOrgMsgAndProcess_mis_procTaskVideoData(pProcInfo, &pMsgElem->addr_logicalPeer, pMsgElem->iTaskId, pMsgTask, &pContent->transferVideoData, pContentElem, pTaskElem);
+												if (tmpiRet)
+												{
+													iErr = tmpiRet; goto errLabel;
+												}
+
+											}
+
+											if (pContent->uiType == CONST_imCommType_transferAvInfo)
+											{       //  ÖØ·¢Ê±ÕâÀïÒªÐ£ÑéµÄ
+												if (pMsgElem->data.route.idInfo_to.ui64Id == pMsgTask->data.route.idInfo_from.ui64Id
+													&& pContentElem->transferAvReplyInfo.tStartTime_org == pMsgTask->tStartTime
+													&& pContentElem->transferAvReplyInfo.uiTranNo_org == pMsgTask->uiTranNo)
+												{
+													//
+# ifdef  __DEBUG__
+													traceLogA("tmpHandler_findOrgMsgAndProc_is: msg - req is matched");
+#endif
+													//
+													iErr = 1; goto errLabel;
+												}
+											}
+											if (pContent->uiType == CONST_imCommType_transferAvReplyInfo)
+											{                           //  ´¦Àí
+												if (pContentElem->transferAvReplyInfo.tStartTime_org == pContent->transferAvReplyInfo.tStartTime_org
+													&& pContentElem->transferAvReplyInfo.uiTranNo_org == pContent->transferAvReplyInfo.uiTranNo_org)
+												{
+													//
+# ifdef  __DEBUG__
+													traceLogA("tmpHandler_findOrgMsgAndProc_is . msg - procReq matched.");
+#endif
+													//
+													iErr = 1; goto errLabel;
+												}
+											}
+											if (pContent->uiType == CONST_imCommType_taskProcReq)
+											{   //  
+												if (pContentElem->transferAvReplyInfo.tStartTime_org == pContent->taskProcReq.tStartTime_org
+													&& pContentElem->transferAvReplyInfo.uiTranNo_org == pContent->taskProcReq.uiTranNo_org)
+												{
+													//
+# ifdef  __DEBUG__
+													traceLogA("tmpHandler_findOrgMsgAndProc_is: msg - procReq is matched");
+#endif
+													//
+													iErr = 1; goto errLabel;
+												}
+											}
+
+										}  //  ÒÔÉÏÎªmedia»Ø¸´¶Ë¡£
+
+										//  2012/04/19
+										if (pContentElem->uiType == CONST_imCommType_transferGpsInfo)
+										{                               //  media·¢Æð¶Ë
+											TRANSFER_GPS_INFO* pTransferGpsInfoElem = &pContentElem->transferGpsInfo;
+											int index = 0;
+
+											if (pContent->uiType == CONST_imCommType_transferGpsInfo)
+											{                               //  ¶ÔÓÚÆ´½ÓÍ¼ÏóÀ´Ëµ£¬ÓÃÍ¬ÑùµÄtStartTimeºÍuiTranNo¿ÉÒÔ°ÑÆ´½ÓrgbºÍÑ¹Ëõ¸ñÊ½¿¼Èë
+												if (pMsgElem->tStartTime == pMsgTask->tStartTime
+													&& pMsgElem->uiTranNo == pMsgTask->uiTranNo)
+												{
+													iErr = 1; goto errLabel;
+												}
+											}
+
+											//											 			
+											if (pContent->uiType == CONST_imCommType_transferGpsReplyInfo)
+											{
+												if (pMsgElem->tStartTime == pContent->transferGpsReplyInfo.tStartTime_org
+													&& pMsgElem->uiTranNo == pContent->transferGpsReplyInfo.uiTranNo_org)
+												{
+													OutputDebugString(_T("tmpHandler_findOrgMsgAndProc_is . msg - gpsReply is matched\n"));         //  »Ø¸´´¦ÀíÊ±
+
+													//
+													iErr = 1; goto errLabel;
+												}
+											}
+
+											//
+											if (pContent->uiType == CONST_imCommType_transferGpsData)
+											{       //  2012/04/20
+												if (pMsgElem->addr_logicalPeer.idInfo.ui64Id == pMsgTask->addr_logicalPeer.idInfo.ui64Id)
+												{
+													//
+#if  0
+														OutputDebugString(  _T(  "tmpHandler_findOrgMsg, gpsData matched\n"  )  );
+#endif
+
+													//  2012/05/07
+													tmpiRet = tmpHandler_findOrgMsgAndProcess_mis_procTaskGpsData(pProcInfo, &pMsgElem->addr_logicalPeer, pMsgElem->iTaskId, pMsgTask, &pContent->transferGpsData, NULL, &pTransferGpsInfoElem->myTask);
+
+													//
+													iErr = 1; goto errLabel;
+												}
+											}
+
+											//
+										}
+
+									}
+									//
+								}
+								break;
+							case CONST_misMsgType_input:
+								{
+									MIS_MSG_INPUT* pMsgInput = &pMsg_toBeSearched->input;
+									IM_CONTENTU* pContent = M_getMsgContent(pMsgInput->ucFlg, &pMsgInput->data);
+									//
+									if (pMsgInput->pMisCnt != pMisCntElem) break;
+
+									//									 
+# ifdef  __DEBUG__	//  2014/08/28
+									if (pContent->uiType == CONST_imCommType_taskProcReq)
+									{
+										if (pContent->taskProcReq.usOp == CONST_imOp_recv_applyForKeyFrame)
+										{
+											int i;
+											i = 9;
+										}
+									}
+#endif
+
+									//
+									if (isUcFlgResp(pMsgInput->ucFlg) && !isUcFlgResp(pMsgElem->ucFlg))
+									{   //  ½ÓÊÕÎÄ¼þµÄ´¦Àí
+										switch (pContentElem->uiType)
+										{
+											case CONST_imCommType_transferAvInfo:
+												{
+													TRANSFER_AV_INFO* pTransferAvInfoElem = &pContentElem->transferAvInfo;
+													PROC_TASK_AV* pTaskElem = get_transferAvInfo_pTask(pTransferAvInfoElem, _T(""));
+													if (!pTaskElem) goto errLabel;
+													//
+													if (pContent->uiType == CONST_imCommType_transferVideoDataResp)
+													{
+#if  0
+														   if  (  pMsgElem->data.route.idInfo_from.ui64Id  ==  pMsgInput->data.route.idInfo_to.ui64Id
+															   &&  pTransferAvInfoElem->tranInfo.video.uiTranNo_openAvDev  ==  pContent->transferVideoDataResp.uiTranNo_openAvDev  )
+														   {															   
+															   //  OutputDebugString(  _T(  "VideoData Resp, ½«µ÷ÕûÊÓÆµ·¢ËÍÆµÂÊ\n"  )  );
+												   															   
+															   if  (  procTaskVideoDataResp(  pProcInfo,  pMsgInput,  &pContent->transferVideoDataResp,  &pTransferAvInfoElem->tranInfo,  pTaskElem  )  )  goto  errLabel;
+
+															   iErr  =  1;  goto  errLabel;
+														   }
+#endif
+														tmpiRet = tmpHandler_find_procTaskVideoDataResp(pProcInfo, pMsgElem, pMsgInput, &pContent->transferVideoDataResp);
+														if (tmpiRet)
+														{
+															iErr = tmpiRet; goto errLabel;
+														}
+													}
+													if (pContent->uiType == CONST_imCommType_transferAudioDataResp)
+													{
+														if (pMsgElem->data.route.idInfo_from.ui64Id == pMsgInput->data.route.idInfo_to.ui64Id
+															&& pTransferAvInfoElem->tranInfo.audio.uiTranNo_openAvDev == pContent->transferAudioDataResp.uiTranNo_openAvDev)
+														{
+															//  OutputDebugString(  _T(  "AudioData Resp, ½«µ÷ÕûÒôÆµ·¢ËÍÆµÂÊ\n"  )  );
+
+															if (procTaskAudioDataResp(pProcInfo, &pTransferAvInfoElem->tranInfo, pTaskElem, pMsgInput, &pContent->transferAudioDataResp)) goto errLabel;
+
+															iErr = 1; goto errLabel;
+														}
+													}
+													//
+												}
+												break;
+											case CONST_imCommType_transferAvReplyInfo:
+												{
+													TRANSFER_AV_replyInfo* pTransferAvProcInfoElem = &pContentElem->transferAvReplyInfo;
+													PROC_TASK_AV* pTaskElem = get_transferAvReplyInfo_pTask(pTransferAvProcInfoElem, _T(""));
+													if (!pTaskElem) goto errLabel;
+													//
+													if (pContent->uiType == CONST_imCommType_transferVideoDataResp)
+													{
+#if  0
+														   if  (  pMsgElem->data.route.idInfo_to.ui64Id  ==  pMsgInput->data.route.idInfo_from.ui64Id
+															   &&  pTransferAvProcInfoElem->tranInfo.video.uiTranNo_openAvDev  ==  pContent->transferVideoDataResp.uiTranNo_openAvDev  )
+														   {
+															   //  OutputDebugString(  _T(  "VideoData Resp, ½«µ÷ÕûÊÓÆµ·¢ËÍÆµÂÊ\n"  )  );
+
+															   if  (  procTaskVideoDataResp(  pProcInfo,  pMsgInput,  &pContent->transferVideoDataResp,  &pTransferAvProcInfoElem->tranInfo,  pTaskElem  )  )  goto  errLabel;
+
+															   iErr  =  1;  goto  errLabel;
+														   }
+#endif
+														tmpiRet = tmpHandler_find_procTaskVideoDataResp(pProcInfo, pMsgElem, pMsgInput, &pContent->transferVideoDataResp);
+														if (tmpiRet)
+														{
+															iErr = tmpiRet; goto errLabel;
+														}
+													}
+													if (pContent->uiType == CONST_imCommType_transferAudioDataResp)
+													{
+														if (pMsgElem->data.route.idInfo_to.ui64Id == pMsgInput->data.route.idInfo_from.ui64Id
+															&& pTransferAvProcInfoElem->tranInfo.audio.uiTranNo_openAvDev == pContent->transferAudioDataResp.uiTranNo_openAvDev)
+														{
+															//  OutputDebugString(  _T(  "AudioDataResp, ½«µ÷ÕûÒôÆµ·¢ËÍÆµÂÊ\n"  )  );
+
+															if (procTaskAudioDataResp(pProcInfo, &pTransferAvProcInfoElem->tranInfo, pTaskElem, pMsgInput, &pContent->transferAudioDataResp)) goto errLabel;
+
+															iErr = 1; goto errLabel;
+														}
+													}
+													//
+												}
+												break;
+											case CONST_imCommType_transferGpsInfo:
+												{
+													TRANSFER_GPS_INFO* pTransferGpsInfoElem = &pContentElem->transferGpsInfo;
+													if (pContent->uiType == CONST_imCommType_transferGpsDataResp)
+													{
+														if (pMsgElem->data.route.idInfo_from.ui64Id == pMsgInput->data.route.idInfo_to.ui64Id)
+														{
+															//
+# ifdef  __DEBUG__
+															traceLog(_T("findOrgMsgAndprocess: gpsDataResp"));
+#endif
+															if (procTaskGpsDataResp(pProcInfo, NULL, &pTransferGpsInfoElem->myTask, pMsgInput, &pContent->transferGpsDataResp)) goto errLabel;
+															//
+															iErr = 1; goto errLabel;
+														}
+													}
+												}
+												break;
+											default:
+												break;
+										}
+
+										if (pMsgInput->tStartTime == pMsgElem->tStartTime
+											&& pMsgInput->uiTranNo == pMsgElem->uiTranNo)
+										{
+											traceLogA("");
+
+											if (p1
+												&& pContentElem->uiType == CONST_imCommType_transferFileReplyReq
+												   && pContent->uiType == CONST_imCommType_simpleResp
+													   && pContent->simpleResp.uiContentType_org == pContentElem->uiType)
+											{
+												TRANSFER_FILE_REPLYREQ* pFileReplyReq = &pContentElem->transferFileReplyReq;
+												TRANSFER_FILEDATA_REQ* pFileDataReq_o = (TRANSFER_FILEDATA_REQ*)p1;
+
+												if (!pFileDataReq_o || !pFileReplyReq->ui64FileLen || !pFileReplyReq->uiSizePerSnd_internal)
+												{
+# ifdef  __DEBUG__
+													traceLogA("tmpHandler_findOrgMsgAndProc_is failed: Ð£ÑéÌõ¼þ²»Âú×ã1");
+#endif
+													goto errLabel;
+												}
+
+												//  ÏÈ½«uiSizePerSndºÍÇëÇó±êÊ¶¸ø¸³ÉÏdataReq
+												pFileDataReq_o->uiSizePerSnd = pFileReplyReq->uiSizePerSnd_internal;
+												pFileDataReq_o->tStartTime_org = pFileReplyReq->tStartTime_org;
+												pFileDataReq_o->uiTranNo_org = pFileReplyReq->uiTranNo_org;
+												pFileDataReq_o->uiSerialNo_org = pFileReplyReq->uiSerialNo_org;
+												//
+												pFileDataReq_o->uiDataBlockIndex = 0;   //  Õâ±íÃ÷ÊÇ´ÓÍ·¿ªÊ¼
+
+												iErr = 1; goto errLabel;
+
+											}
+
+											if (p1
+												&& pContentElem->uiType == CONST_imCommType_transferFileReplyReq
+												   && pContent->uiType == CONST_imCommType_transferFileDataResp)
+											{
+												TRANSFER_FILE_REPLYREQ* pFileReplyReq = &pContentElem->transferFileReplyReq;
+												TRANSFER_FILEDATA_RESP* pFileDataResp = &pContent->transferFileDataResp;
+												IM_CONTENTU* pContent_o = (IM_CONTENTU*)p1;
+												DWORD64 ui64offset = 0;
+												int nWrite = 0;
+
+												if (!pContent_o || !pFileReplyReq->ui64FileLen || !pFileReplyReq->uiSizePerSnd_internal || sizeof(pFileDataResp->buf)  < pFileReplyReq->uiSizePerSnd_internal  )  {
+# ifdef  __DEBUG__
+													traceLogA("tmpHandler_findOrgMsgAndProc_is failed: ");
+#endif
+													goto errLabel;
+												}
+
+												if (pContent_o->uiType == CONST_imCommType_transferFileEndReq)
+												{
+													TRANSFER_FILEEND_REQ* pFileEndReq_o = &pContent_o->transferFileEndReq;
+
+													//  2015/09/08
+													if (pFileEndReq_o->tmpInternal.bChkToRemove_i)
+													{
+														pFileReplyReq->myTask.bNeedRemoved = TRUE;
+														//  2015/09/08
+														pFileEndReq_o->tmpInternal.bNeedRemoved_o = TRUE;
+													}
+
+													//  
+													pFileEndReq_o->tStartTime_org = pFileReplyReq->tStartTime_org;
+													pFileEndReq_o->uiTranNo_org = pFileReplyReq->uiTranNo_org;
+													pFileEndReq_o->uiSerialNo_org = pFileReplyReq->uiSerialNo_org;
+
+													iErr = 1; goto errLabel;
+												}
+
+												if (pContent_o->uiType == CONST_imCommType_transferFileDataReq)
+												{
+
+													TRANSFER_FILEDATA_REQ* pFileDataReq_o = &pContent_o->transferFileDataReq;
+
+													//  ÏÈ½«uiSizePerSndºÍÇëÇó±êÊ¶¸ø¸³ÉÏdataReq
+													pFileDataReq_o->uiSizePerSnd = pFileReplyReq->uiSizePerSnd_internal;
+													pFileDataReq_o->tStartTime_org = pFileReplyReq->tStartTime_org;
+													pFileDataReq_o->uiTranNo_org = pFileReplyReq->uiTranNo_org;
+													pFileDataReq_o->uiSerialNo_org = pFileReplyReq->uiSerialNo_org;
+
+#if  0
+													 if  (  pFileDataResp->uiDataBlockIndex  >  pFileReplyReq->uiLastDataBlockIndex  +  1  )  {
+														 pFileReplyReq->usErrors  ++  ;	//  ÕâÀïÊÇÓÃÔÚ¶ÔÓÚÀûÓÃÐ­Òé½øÐÐ¹¥»÷Ê±£¬ÅÐ¶Ï´íÎóµ½Ò»¶¨³Ì¶È£¬¼´ÖÕÖ¹´«Êä
+														 //  ÖØÐÂ½«uiLastDataBlockIndex¸³¸øreq, ·¢¸ø¿Í»§¶Ë
+														 pFileDataReq_o->uiDataBlockIndex  =  pFileReplyReq->uiLastDataBlockIndex;
+														 iErr  =  1;  goto  errLabel;
+
+													 }
+#endif    //  2009/10/20
+
+													//
+# ifdef  __DEBUG__
+													//qyShowInfo1(  CONST_qyShowType_qwmComm,  0,  (  ""  ),  pProcInfo->who_showInfo,  0,  _T(  ""  ),  _T(  ""  ),  _T(  "pFileDataResp->uiDataBlockIndex %d"  ),  pFileDataResp->uiDataBlockIndex  );															 
+#endif
+
+
+													//
+													{    //  2009/10/20. check whether resp is ok												 
+														BOOL bRespOk = TRUE;
+														if (!pFileDataResp->uiDataBlockIndex)
+														{
+															if (pFileReplyReq->uiLastDataBlockIndex) bRespOk = FALSE;
+														}
+														else
+														{
+															if (pFileDataResp->uiDataBlockIndex != pFileReplyReq->uiLastDataBlockIndex + 1) bRespOk = FALSE;
+														}
+														if (!bRespOk)
+														{
+															//
+# ifdef  __DEBUG__
+															traceLogA("pFileDataResp->uiDataBlockIndex err");
+#endif
+															qyShowInfo1(CONST_qyShowType_qwmComm, 0, (""), pProcInfo->who_showInfo, 0, _T(""), _T(""),
+																		_T("Err: pFileDataResp->uiDataBlockIndex %d, fileReplyReq.uiLastDataBlockIndex %d"),
+																		pFileDataResp->uiDataBlockIndex, pFileReplyReq->uiLastDataBlockIndex);
+															//															 
+															pFileReplyReq->usErrors++;
+															//
+															goto errLabel;
+														}
+													}
+
+
+													ui64offset = ((DWORD64)pFileDataResp->uiDataBlockIndex) * pFileReplyReq->uiSizePerSnd_internal;
+													if (ui64offset >= pFileReplyReq->ui64FileLen)
+													{
+														qyShowInfo1(CONST_qyShowType_qwmComm, 0, (""), pProcInfo->who_showInfo, 0, _T(""), _T(""), _T("ui64offset >= pFileReplyReq->ui64FileLen err"));
+														goto errLabel;
+													}
+
+													//  ÕâÀïÎª½«µÃµ½µÄÊý¾Ý±£´æ³ÉÎÄ¼þ
+													if (!pFileReplyReq->fp)
+													{
+														TCHAR tmpFilePath[MAX_PATH + 1] = _T("");
+														//
+														_sntprintf(tmpFilePath, mycountof(tmpFilePath), _T("%s.tmp"), pFileReplyReq->fullFilePath_save);
+														//
+														pFileReplyReq->fp = _tfopen(tmpFilePath, _T("wb"));
+														if (!pFileReplyReq->fp)
+														{
+# ifdef  __DEBUG__
+															traceLogA("ÎÄ¼þ½¨Á¢Ê§°Ü");
+#endif
+															goto errLabel;
+														}
+														//
+														pFileReplyReq->dwStartTickCnt = GetTickCount();
+														pFileReplyReq->dwLastReportTickCnt = pFileReplyReq->dwStartTickCnt;
+														pFileReplyReq->ucPercent = 0;
+														//
+														//  
+														//
+														showTaskStatus(pMsgElem->pMisCnt, &pMsgElem->addr_logicalPeer.idInfo, &pMsgElem->idInfo_taskSender, &pMsgElem->idInfo_taskReceiver, FALSE, CONST_imCommType_transferFileReq, pMsgElem->iTaskId, CONST_imTaskStatus_receiving, 0, 0, NULL, NULL);
+
+													}
+
+													//  
+													//  if  (  fseek(  pFileReplyReq->fp,  (  long  )ui64offset,  SEEK_SET  )  )  
+													if (my_fseeki64(pFileReplyReq->fp, ui64offset, SEEK_SET))
+													{
+														traceLogA("tmpHandler_findOrgMsgAndProc_is failed:  _fseeki64 err");
+														qyShowInfo1(CONST_qyShowType_qwmComm, 0, (""), pProcInfo->who_showInfo, 0, _T(""), _T(""), _T("_fseeki64 err"));
+														goto errLabel;
+													}
+
+													nWrite = (int)min(pFileReplyReq->ui64FileLen - ui64offset, pFileReplyReq->uiSizePerSnd_internal);
+													if (pFileDataResp->uiLen != nWrite)
+													{
+														traceLogA("pFileDataResp->uiLen  !=  nWrite");
+														qyShowInfo1(CONST_qyShowType_qwmComm, 0, (""), pProcInfo->who_showInfo, 0, _T(""), _T(""), _T("pFileDataResp->uiLen!=nWrite err,%d,%I64u,%I64u,%d,%d"), nWrite, pFileReplyReq->ui64FileLen, ui64offset, pFileReplyReq->uiSizePerSnd_internal, pFileDataResp->uiLen);
+														goto errLabel;
+													}
+
+													if (1 != fwrite(pFileDataResp->buf, pFileDataResp->uiLen, 1, pFileReplyReq->fp))
+													{
+														traceLogA("fwite failed");
+														qyShowInfo1(CONST_qyShowType_qwmComm, 0, (""), pProcInfo->who_showInfo, 0, _T(""), _T(""), _T("fwite err"));
+														goto errLabel;
+													}
+
+													//
+													pFileReplyReq->uiLastDataBlockIndex = pFileDataResp->uiDataBlockIndex;
+
+
+													//  
+													DWORD dwCurTickCnt;
+													//
+													dwCurTickCnt = GetTickCount();
+													if (dwCurTickCnt > pFileReplyReq->dwLastReportTickCnt + 3000)
+													{   //  
+														pFileReplyReq->dwLastReportTickCnt = dwCurTickCnt;
+														//
+														float f = 0;
+														unsigned  char ucPercent;
+														//
+														f = (float)pFileReplyReq->uiLastDataBlockIndex * pFileReplyReq->uiSizePerSnd_internal;
+														f = f / pFileReplyReq->ui64FileLen;
+														ucPercent = (unsigned  char  )(f * 100);
+
+														//  if  (  ucPercent  !=  pFileReplyReq->ucPercent  )  
+														{   //  ±¨¸æ×´Ì¬
+
+															showTaskStatus(pMsgElem->pMisCnt, &pMsgElem->addr_logicalPeer.idInfo, &pMsgElem->idInfo_taskSender, &pMsgElem->idInfo_taskReceiver, FALSE, CONST_imCommType_transferFileReq, pMsgElem->iTaskId, CONST_imTaskStatus_receiving, ucPercent, pFileReplyReq->uiLastDataBlockIndex * pFileReplyReq->uiSizePerSnd_internal, NULL, NULL);
+
+														}
+													}
+
+
+													pFileDataReq_o->uiDataBlockIndex = pFileReplyReq->uiLastDataBlockIndex + 1;
+
+
+													if (pFileDataReq_o->uiDataBlockIndex * pFileReplyReq->uiSizePerSnd_internal >= pFileReplyReq->ui64FileLen)
+													{
+														//  Òª°ÑÁÙÊ±ÎÄ¼þÒÆ³ÉÕýÊ½ÎÄ¼þ
+														TCHAR tmpFilePath[MAX_PATH + 1] = _T("");
+														//
+														qyShowInfo1(CONST_qyShowType_qwmComm, 0, (""), pProcInfo->who_showInfo, 0, _T(""), _T(""), _T("all file data received. to copyfile"));
+														//
+														if (pFileReplyReq->fp)
+														{
+# ifdef  __DEBUG__
+															traceLogA("tmpHandler_findOrgMsgAndProc_is: before fclose");
+#endif
+															fclose(pFileReplyReq->fp); pFileReplyReq->fp = NULL;
+# ifdef  __DEBUG__
+															traceLogA("tmpHandler_findOrgMsgAndProc_is: after fclose");
+#endif
+														}
+														//
+														_sntprintf(tmpFilePath, mycountof(tmpFilePath), _T("%s.tmp"), pFileReplyReq->fullFilePath_save);
+														//
+														if (!CopyFile(tmpFilePath, pFileReplyReq->fullFilePath_save, FALSE))
+														{
+															TCHAR tBuf[256] = _T("");
+# ifdef  __DEBUG__
+															traceLog(_T("CopyFile %s->%s failed"), tmpFilePath, pFileReplyReq->fullFilePath_save);
+#endif
+															qyShowInfo1(CONST_qyShowType_qwmComm, 0, (""), pProcInfo->who_showInfo, 0, _T(""), _T(""), _T("copyfile failed. %s->%s"), tmpFilePath, pFileReplyReq->fullFilePath_save);
+															_sntprintf(tBuf, mycountof(tBuf), _T("Copy failed. %s"), pFileReplyReq->fileName_transferred);
+															showNotification(0, 0, 0, 0, 0, 0, tBuf);
+															goto errLabel;
+														}
+														DeleteFile(tmpFilePath);
+
+														{
+															void* pDb = NULL;
+# ifndef  __NOTSUPPORT_DB__
+															CQnmDb db;
+															if (!db.getAvailableDb(pQyMc->iDsnIndex_mainSys)) goto errLabel;
+															pDb = db.m_pDbMem->pDb;
+#endif
+
+															if (g_dbFuncs.pf_updateTaskStatus(pDb, CONST_imTaskStatus_recvFinished, pMsgElem->iTaskId)) goto errLabel;
+														}
+
+														showTaskStatus(pMsgElem->pMisCnt, &pMsgElem->addr_logicalPeer.idInfo, &pMsgElem->idInfo_taskSender, &pMsgElem->idInfo_taskReceiver, FALSE, CONST_imCommType_transferFileReq, pMsgElem->iTaskId, CONST_imTaskStatus_recvFinished, 100, pFileReplyReq->ui64FileLen, pFileReplyReq->fileName_transferred, pFileReplyReq->fullFilePath_save);
+
+														//
+														pFileDataReq_o->ucbFileEnd = TRUE;
+														traceLogA("bFileEnd is true");
+
+														//
+														qyShowInfo1(CONST_qyShowType_qwmComm, 0, (""), pProcInfo->who_showInfo, 0, _T(""), _T(""), _T("Transfering file ends."));
+
+													}
+
+													iErr = 1; goto errLabel;
+												}
+
+												traceLogA("");
+
+											}
+
+											iErr = 1; goto errLabel;
+										}
+									}
+									if (!isUcFlgResp(pMsgInput->ucFlg) && !isUcFlgResp(pMsgElem->ucFlg))
+									{       //  ·¢ËÍÎÄ¼þ
+										switch (pContent->uiType)
+										{
+											case CONST_imCommType_transferFileDataReq:
+												if (pContentElem->uiType == CONST_imCommType_transferFileReq
+													&& pContent->transferFileDataReq.tStartTime_org == pMsgElem->tStartTime
+														 && pContent->transferFileDataReq.uiTranNo_org == pMsgElem->uiTranNo)
+												{
+													TRANSFER_FILE_REQ* pFileReq = &pContentElem->transferFileReq;
+													TRANSFER_FILEDATA_REQ* pFileDataReq = &pContent->transferFileDataReq;
+													TRANSFER_FILEDATA_RESP* pFileDataResp_o = (TRANSFER_FILEDATA_RESP*)p1;
+													DWORD64 ui64offset = 0;
+													int nRead = 0;
+
+													if (!pFileDataResp_o || !pFileReq->ui64FileLen || !pFileDataReq->uiSizePerSnd || sizeof(pFileDataResp_o->buf)  < pFileDataReq->uiSizePerSnd  )  {
+# ifdef  __DEBUG__
+														traceLogA("tmpHandler_findOrgMsgAndProc_is failed: sizeof(  buf  )  <  uiSizePerSnd");
+#endif
+														qyShowInfo1(CONST_qyShowType_qwmComm, 0, (""), pProcInfo->who_showInfo, 0, _T(""), _T(""), _T("findOrgMsg error: fileDataReq, sizeof(  buf  ) %d < sizePerSnd [%d]"), sizeof(pFileDataResp_o->buf),  pFileDataReq->uiSizePerSnd  );
+														goto errLabel;
+													}
+
+													ui64offset = ((DWORD64)pFileDataReq->uiDataBlockIndex) * pFileDataReq->uiSizePerSnd;
+													if (ui64offset >= pFileReq->ui64FileLen)
+													{
+# ifdef  __DEBUG__
+														traceLog(_T("findOrgMsg error: fileDataReq, blockIndex [%d] * sizePerSnd [%d] > fileLen [%I64u]"), pFileDataReq->uiDataBlockIndex, pFileDataReq->uiSizePerSnd, pFileReq->ui64FileLen);
+#endif
+														qyShowInfo1(CONST_qyShowType_qwmComm, 0, (""), pProcInfo->who_showInfo, 0, _T(""), _T(""), _T("findOrgMsg error: fileDataReq, blockIndex [%d] * sizePerSnd [%d] > fileLen [%I64u]"), pFileDataReq->uiDataBlockIndex, pFileDataReq->uiSizePerSnd, pFileReq->ui64FileLen);
+														goto errLabel;
+													}
+
+
+													//  ÕâÀï¼ÆËãÒ»ÏÂÒÑ¾­·¢ËÍµÄ°Ù·Ö±È
+													DWORD dwCurTickCnt;
+													//
+													dwCurTickCnt = GetTickCount();
+													if (dwCurTickCnt > pFileReq->dwLastReportTickCnt + 3000)
+													{   //  ÎªÁË²»Ó°Ïì½çÃæ²Ù×÷£¬Òª¹ý3Ãë²ÅÄÜ¼ÆËãÒ»´Î
+														pFileReq->dwLastReportTickCnt = dwCurTickCnt;
+														//
+														float f = 0;
+														unsigned  char ucPercent;
+														//
+														f = (float)pFileDataReq->uiDataBlockIndex * pFileDataReq->uiSizePerSnd;
+														f = f / pFileReq->ui64FileLen;
+														ucPercent = (unsigned  char  )(f * 100);
+
+														//  if  (  ucPercent  !=  pFileReq->ucPercent  )  
+														{   //  ±¨¸æ×´Ì¬
+
+															showTaskStatus(pMsgElem->pMisCnt, &pMsgElem->addr_logicalPeer.idInfo, &pMsgElem->idInfo_taskSender, &pMsgElem->idInfo_taskReceiver, FALSE, CONST_imCommType_transferFileReq, pMsgElem->iTaskId, CONST_imTaskStatus_sending, ucPercent, pFileDataReq->uiDataBlockIndex * pFileDataReq->uiSizePerSnd, NULL, NULL);
+
+														}
+													}
+
+# ifdef  __DEBUG__
+													traceLogA("");
+#endif
+
+													if (!pContentElem->transferFileReq.fp)
+													{
+														pContentElem->transferFileReq.fp = _tfopen(pContentElem->transferFileReq.fullFilePath, _T("rb"));
+														if (!pContentElem->transferFileReq.fp)
+														{
+# ifdef  __DEBUG__
+															traceLogA("tmpHandler_findOrgMsgAndProc_is failed: _tfopen {%S} err", pContentElem->transferFileReq.fullFilePath);
+#endif
+															goto errLabel;
+														}
+													}
+													//  ÕâÀïÓ¦¸ÃÓÃ64Î»µÄ²Ù×÷ÒÔ¿ÉÒÔ²Ù×÷´óÎÄ¼þ£¬µ«ÊÇÔÝÊ±ÏÈÓÃ32Î»µÄ
+													//  if  (  fseek(  pFileReq->fp,  (  long  )ui64offset,  SEEK_SET  )  )  
+													if (_fseeki64(pFileReq->fp, ui64offset, SEEK_SET))
+													{
+# ifdef  __DEBUG__
+														traceLogA("tmpHandler_findOrgMsgAndProc_is failed:  _fseeki64 err");
+#endif
+														goto errLabel;
+													}
+													nRead = (int)min(pFileReq->ui64FileLen - ui64offset, pFileDataReq->uiSizePerSnd);
+													if (1 != fread(pFileDataResp_o->buf, nRead, 1, pFileReq->fp)) goto errLabel;
+													pFileDataResp_o->uiLen = nRead;
+													//
+													pFileDataResp_o->uiDataBlockIndex = pFileDataReq->uiDataBlockIndex;
+
+													iErr = 1; goto errLabel;
+												}
+												break;
+											case CONST_imCommType_transferFileEndReq:
+												if (pContentElem->uiType == CONST_imCommType_transferFileReq                    //  ·¢ËÍ·½´¦Àí
+													&& pContent->transferFileEndReq.tStartTime_org == pMsgElem->tStartTime
+														 && pContent->transferFileEndReq.uiTranNo_org == pMsgElem->uiTranNo)
+												{
+													IM_CONTENTU* pContent_o = (IM_CONTENTU*)p1;
+													int iStatus = CONST_imTaskStatus_sendFinished;
+													//
+# ifdef  __DEBUG__
+													traceLogA("transferFileEnd ");
+#endif
+													//
+													if (pContent_o)
+													{
+														if (pContent_o->uiType == CONST_imCommType_transferFileEndResp)
+														{
+															TRANSFER_FILEEND_RESP* pFileEndResp_o = &pContent_o->transferFileEndResp;
+															//														   
+															if (!pContentElem->transferFileReq.bGrpTask)
+															{
+																//  2015/09/08
+																if (pFileEndResp_o->tmpInternal.bChkToRemove_i)
+																{
+																	pContentElem->transferFileReq.myTask.bNeedRemoved = TRUE;
+																	//
+																	pFileEndResp_o->tmpInternal.bNeedRemoved_o = TRUE;
+																}
+																//
+																void* pDb = NULL;
+# ifndef  __NOTSUPPORT_DB__
+																CQnmDb db;
+
+																if (!db.getAvailableDb(pQyMc->iDsnIndex_mainSys)) goto errLabel;
+																pDb = db.m_pDbMem->pDb;
+#endif
+																if (g_dbFuncs.pf_updateTaskStatus(pDb, iStatus, pMsgElem->iTaskId)) goto errLabel;
+																//
+																showTaskStatus(pMsgElem->pMisCnt, &pMsgElem->addr_logicalPeer.idInfo, &pMsgElem->idInfo_taskSender, &pMsgElem->idInfo_taskReceiver, FALSE, CONST_imCommType_transferFileReq, pMsgElem->iTaskId, iStatus, 100, pContentElem->transferFileReq.ui64FileLen, pContentElem->transferFileReq.fullFilePath, pContentElem->transferFileReq.fullFilePath);
+
+															}
+															else
+															{   //  ¶Ô·Ö×é£¬ÓÐÊ²Ã´ÈËÊÕµ½ÁËÎÄ¼þ£¬Ò²ÏÔÊ¾Ò»ÏÂ
+																showTaskStatus(pMsgElem->pMisCnt, &pMsgElem->addr_logicalPeer.idInfo, &pMsgElem->idInfo_taskSender, &pMsgInput->addr_logicalPeer.idInfo, TRUE, CONST_imCommType_transferFileReq, pMsgElem->iTaskId, iStatus, 100, pContentElem->transferFileReq.ui64FileLen, pContentElem->transferFileReq.fullFilePath, pContentElem->transferFileReq.fullFilePath);
+
+															}
+
+														}
+													}
+													//
+													iErr = 1; goto errLabel;
+												}
+												break;
+											case CONST_imCommType_taskProcReq:
+												if (pContentElem->uiType == CONST_imCommType_transferFileReplyReq       //  ½ÓÊÕ·½´¦Àí
+													&& pContent->taskProcReq.tStartTime_org == pContentElem->transferFileReplyReq.tStartTime_org
+														 && pContent->taskProcReq.uiTranNo_org == pContentElem->transferFileReplyReq.uiTranNo_org)
+												{
+													IM_CONTENTU* pContent_o = (IM_CONTENTU*)p1;
+													int iStatus = CONST_imTaskStatus_canceledBySender;
+													//	
+# ifdef  __DEBUG__
+													traceLogA("transferFileProcReq ");
+#endif
+													//
+													if (pContent_o)
+													{
+														if (pContent_o->uiType == CONST_imCommType_taskProcResp)
+														{
+															TRANSFER_FILE_PROCRESP* pFileProcResp = &pContent_o->taskProcResp;
+
+															pFileProcResp->bNeedRemoved = TRUE;
+
+															//									
+															void* pDb = NULL;
+# ifndef  __NOTSUPPORT_DB__
+															CQnmDb db;
+
+															if (!db.getAvailableDb(pQyMc->iDsnIndex_mainSys)) goto errLabel;
+															pDb = db.m_pDbMem->pDb;
+#endif
+															if (g_dbFuncs.pf_updateTaskStatus(pDb, iStatus, pMsgElem->iTaskId)) goto errLabel;
+															//
+															showTaskStatus(pMsgElem->pMisCnt, &pMsgElem->addr_logicalPeer.idInfo, &pMsgElem->idInfo_taskSender, &pMsgElem->idInfo_taskReceiver, FALSE, CONST_imCommType_transferFileReq, pMsgElem->iTaskId, iStatus, 0, pContentElem->transferFileReplyReq.ui64FileLen, pContentElem->transferFileReplyReq.fileName_transferred, pContentElem->transferFileReplyReq.fullFilePath_save);
+														}
+													}
+													//
+													iErr = 1; goto errLabel;
+												}
+												if (pContentElem->uiType == CONST_imCommType_transferFileReq)
+												{       //  ·¢ËÍ·½´¦Àí
+													if (pContent->taskProcReq.tStartTime_org == pMsgElem->tStartTime
+														&& pContent->taskProcReq.uiTranNo_org == pMsgElem->uiTranNo)
+													{
+														IM_CONTENTU* pContent_o = (IM_CONTENTU*)p1;
+														int iStatus = CONST_imTaskStatus_canceledByReceiver;
+														//
+# ifdef  __DEBUG__
+														traceLogA("tmpHandler_findOrgMsgAndProc_is: msg - procReq found");
+#endif
+														//
+														if (pContent_o)
+														{
+															if (pContent_o->uiType == CONST_imCommType_taskProcResp)
+															{
+																TRANSFER_FILE_PROCRESP* pFileProcResp = &pContent_o->taskProcResp;
+
+																if (!pContentElem->transferFileReq.bGrpTask)
+																{
+																	pFileProcResp->bNeedRemoved = TRUE;
+
+																	//
+																	void* pDb = NULL;
+# ifndef  __NOTSUPPORT_DB__
+																	CQnmDb db;
+																	if (!db.getAvailableDb(pQyMc->iDsnIndex_mainSys)) goto errLabel;
+																	pDb = db.m_pDbMem->pDb;
+#endif
+																	if (g_dbFuncs.pf_updateTaskStatus(pDb, iStatus, pMsgElem->iTaskId)) goto errLabel;
+																	//
+																	showTaskStatus(pMsgElem->pMisCnt, &pMsgElem->addr_logicalPeer.idInfo, &pMsgElem->idInfo_taskSender, &pMsgElem->idInfo_taskReceiver, FALSE, CONST_imCommType_transferFileReq, pMsgElem->iTaskId, iStatus, 0, 0, pContentElem->transferFileReq.fileName, pContentElem->transferFileReq.fullFilePath);
+																}
+															}
+														}
+														//
+														iErr = 1; goto errLabel;
+													}
+												}
+												//
+												//  transferAvInfo, 
+												//
+												if (pContentElem->uiType == CONST_imCommType_transferAvReplyInfo)
+												{       //  ½ÓÊÕ·½´¦Àí
+													PROC_TASK_AV* pTaskElem = get_transferAvReplyInfo_pTask(&pContentElem->transferAvReplyInfo, _T(""));
+													if (!pTaskElem) goto errLabel;
+													//
+													if (pContent->taskProcReq.tStartTime_org == pContentElem->transferAvReplyInfo.tStartTime_org
+														 && pContent->taskProcReq.uiTranNo_org == pContentElem->transferAvReplyInfo.uiTranNo_org)
+													{
+														IM_CONTENTU* pContent_o = (IM_CONTENTU*)p1;
+														int iStatus = CONST_imTaskStatus_canceledBySender;
+														//
+# ifdef  __DEBUG__
+														traceLogA("taskProcReq ");
+#endif
+														//
+														if (pContent_o)
+														{
+															if (pContent_o->uiType == CONST_imCommType_taskProcResp)
+															{
+																TASK_PROC_RESP* pFileProcResp = &pContent_o->taskProcResp;
+
+																pFileProcResp->bNeedRemoved = TRUE;
+
+																//															   
+																void* pDb = NULL;
+# ifndef  __NOTSUPPORT_DB__
+																CQnmDb db;
+
+																if (!db.getAvailableDb(pQyMc->iDsnIndex_mainSys)) goto errLabel;
+																pDb = db.m_pDbMem->pDb;
+#endif
+																if (g_dbFuncs.pf_updateTaskStatus(pDb, iStatus, pMsgElem->iTaskId)) goto errLabel;
+																//
+																showTaskStatus(pMsgElem->pMisCnt, &pMsgElem->addr_logicalPeer.idInfo, &pMsgElem->idInfo_taskSender, &pMsgElem->idInfo_taskReceiver, FALSE, CONST_imCommType_transferAvInfo, pMsgElem->iTaskId, iStatus, 0, 0, 0, 0);
+															}
+														}
+														//
+														iErr = 1; goto errLabel;
+													}
+
+													//  2014/08/26
+													if (pContent->taskProcReq.usOp == CONST_imOp_recv_applyForKeyFrame)
+													{
+
+														qyShowInfo1(CONST_qyShowType_qwmComm, 0, (""), pProcInfo->who_showInfo, 0, _T(""), _T(""), _T("recv applyforKeyFrame from %I64u."), pMsgInput->data.route.idInfo_from.ui64Id);
+
+														//
+														if (pContent->taskProcReq.vStream.uiTranNo_openAvDev == pContentElem->transferAvReplyInfo.tranInfo.video.uiTranNo_openAvDev)
+														{
+
+# ifdef  __DEBUG__
+															traceLogA("findOrgMsgAndProcess_mis: get a applyForKeyFrame msg");
+#endif
+
+															//
+															tmpiRet = procTaskProcReq_applyForKeyFrame(pProcInfo, &pMsgElem->addr_logicalPeer, pMsgElem->iTaskId, pMsgElem, &pContent->taskProcReq, pContentElem, pTaskElem);
+															if (tmpiRet)
+															{
+																iErr = tmpiRet; goto errLabel;
+															}
+
+															iErr = 1; goto errLabel;
+														}
+													}
+
+												}
+												if (pContentElem->uiType == CONST_imCommType_transferAvInfo)
+												{       //  ·¢ËÍ·½´¦Àí
+														//
+													PROC_TASK_AV* pTaskElem = get_transferAvInfo_pTask(&pContentElem->transferAvInfo, _T(""));
+													if (!pTaskElem) goto errLabel;
+													//
+													if (pContent->taskProcReq.tStartTime_org == pMsgElem->tStartTime
+														&& pContent->taskProcReq.uiTranNo_org == pMsgElem->uiTranNo)
+													{
+														IM_CONTENTU* pContent_o = (IM_CONTENTU*)p1;
+														//
+# ifdef  __DEBUG__
+														traceLogA("tmpHandler_findOrgMsgAndProc_is: msg - procReq found");
+#endif
+
+														//
+														if (pContent_o)
+														{
+															if (pContent_o->uiType == CONST_imCommType_taskProcResp)
+															{
+																TASK_PROC_RESP* pFileProcResp = &pContent_o->taskProcResp;
+
+																pFileProcResp->idInfo_logicalPeer.ui64Id = pMsgElem->addr_logicalPeer.idInfo.ui64Id;
+
+																if (pContent->taskProcReq.usOp == CONST_imOp_recv_applyForChkTaskAlive)
+																{
+																	iErr = 1; goto errLabel;
+																}
+
+																int iStatus = CONST_imTaskStatus_canceledByReceiver;
+
+																//  2014/12/03
+																BOOL bCanCancel = TRUE;
+																if (pContentElem->transferAvInfo.bGrpTask)
+																{
+																	bCanCancel = FALSE;
+																}
+																if (pTaskElem->doProxy.bExists_avProxy)
+																{
+																	bCanCancel = FALSE;
+																}
+
+																//  2017/09/11
+																if (pContent->taskProcReq.usOp == CONST_imOp_recv_cancel)
+																{
+																	tmp_procTask_recv_cancel(pProcInfo, pTaskElem, pMsgInput, &pContent->taskProcReq);
+																}
+
+																//
+																//if  (  !pContentElem->transferAvInfo.bGrpTask  )  
+																if (bCanCancel)
+																{
+																	pFileProcResp->bNeedRemoved = TRUE;
+
+																	//  2014/12/03
+																	TCHAR tBuf[128] = _T("");
+																	_sntprintf(tBuf, mycountof(tBuf), _T("findOrgMsg: taskProcReq from receiver %I64u, to cancel transferAvInfo"), pMsgInput->data.route.idInfo_from.ui64Id);
+# ifdef  __DEBUG__
+																	traceLog(_T("%s"), tBuf);
+#endif
+																	showInfo_open(0, 0, tBuf);
+
+																	//
+																	void* pDb = NULL;
+# ifndef  __NOTSUPPORT_DB__
+																	CQnmDb db;
+
+																	if (!db.getAvailableDb(pQyMc->iDsnIndex_mainSys)) goto errLabel;
+																	pDb = db.m_pDbMem->pDb;
+#endif
+																	if (g_dbFuncs.pf_updateTaskStatus(pDb, iStatus, pMsgElem->iTaskId)) goto errLabel;
+																	//
+																	showTaskStatus(pMsgElem->pMisCnt, &pMsgElem->addr_logicalPeer.idInfo, &pMsgElem->idInfo_taskSender, &pMsgElem->idInfo_taskReceiver, FALSE, pContentElem->uiType, pMsgElem->iTaskId, iStatus, 0, 0, 0, 0);
+																}
+															}
+														}
+														//
+														iErr = 1; goto errLabel;
+													}
+													//  2014/08/26
+													if (pContent->taskProcReq.usOp == CONST_imOp_recv_applyForKeyFrame)
+													{
+
+														qyShowInfo1(CONST_qyShowType_qwmComm, 0, (""), pProcInfo->who_showInfo, 0, _T(""), _T(""), _T("recv applyforKeyFrame from %I64u, tn_openAvDev %d. matched iTaskId %d"), pMsgInput->data.route.idInfo_from.ui64Id, pContent->taskProcReq.vStream.uiTranNo_openAvDev, pMsgElem->iTaskId);
+
+														BOOL tmp_bFound = FALSE;
+														//
+														if (pTaskElem->ucbVideoConferenceStarter)
+														{
+#if  0	//  这是以后要使用的代理模式，暂时不用。2014/08/28
+																	   if  (  pContent->taskProcReq.vStream.uiTranNo_openAvDev  ==  pContentElem->transferAvInfo.tranInfo.video.uiTranNo_openAvDev  )  {
+																		   tmp_bFound  =  TRUE;
+																	   }
+#endif
+															//  2014/08/28. 暂时采用直接模式
+															if (pContent->taskProcReq.vStream.uiTranNo_openAvDev == pTaskElem->mem0_from.video.tv_recvd.uiTranNo_openAvDev)
+															{
+																tmp_bFound = TRUE;
+															}
+															//  2014/12/06
+															if (pContent->taskProcReq.vStream.uiTranNo_openAvDev == pContentElem->transferAvInfo.confMosaicTranInfo_video.video.uiTranNo_openAvDev
+																|| pContent->taskProcReq.vStream.uiTranNo_openAvDev == pContentElem->transferAvInfo.confMosaicTranInfo_resource.video.uiTranNo_openAvDev)
+															{
+																tmp_bFound = TRUE;
+
+															}
+														}
+														else
+														{
+															if (pContent->taskProcReq.vStream.uiTranNo_openAvDev == pContentElem->transferAvInfo.tranInfo.video.uiTranNo_openAvDev)
+															{
+																tmp_bFound = TRUE;
+															}
+														}
+														//
+														if (tmp_bFound)
+														{
+
+# ifdef  __DEBUG__
+															traceLogA("findOrgMsgAndProcess_mis: get a applyForKeyFrame msg");
+#endif
+
+															//
+															tmpiRet = procTaskProcReq_applyForKeyFrame(pProcInfo, &pMsgElem->addr_logicalPeer, pMsgElem->iTaskId, pMsgElem, &pContent->taskProcReq, pContentElem, pTaskElem);
+															if (tmpiRet)
+															{
+																iErr = tmpiRet; goto errLabel;
+															}
+
+															iErr = 1; goto errLabel;
+														}
+														//
+													}
+													//  2014/10/09
+													if (pContent->taskProcReq.usOp == CONST_imOp_stopSending
+														|| pContent->taskProcReq.usOp == CONST_imOp_requestToSend)
+													{
+														if (pContent->taskProcReq.viewDynBmp.uiObjType)
+														{
+															if (pContentElem->transferAvInfo.viewDynBmp.resObj.uiObjType == pContent->taskProcReq.viewDynBmp.uiObjType
+																&& pContentElem->transferAvInfo.viewDynBmp.resObj.usIndex_obj == pContent->taskProcReq.viewDynBmp.usIndex_obj)
+															{
+# ifdef  __DEBUG__
+																traceLog(_T("findOrgMsgAndProc: get taskProcReq msg"));
+#endif
+
+																pMsgInput->iTaskId = pMsgElem->iTaskId;
+																pMsgInput->addr_logicalPeer.idInfo.ui64Id = pMsgElem->addr_logicalPeer.idInfo.ui64Id;
+
+																//
+																pContent->taskProcReq.hWnd_task = pTaskElem->hWnd_task;
+
+																//
+																qPostMsg(pMsgInput, offsetof(MIS_MSG_INPUT, data) + offsetof(MIS_MSG_routeTalkData, buf) + sizeof(TASK_PROC_REQ), &pQyMc->gui.processQ);
+																PostMessage(g_pQyMc->gui.hMainWnd, CONST_qyWm_postComm, CONST_qyWmParam_msgArrive, 0);
+
+																iErr = 1; goto errLabel;
+															}
+														}
+													}
+													//  2009/10/18
+													if (pContent->taskProcReq.usOp == CONST_imOp_recv_applyForOrgReq)
+													{
+
+														qyShowInfo1(CONST_qyShowType_qwmComm, 0, (""), pProcInfo->who_showInfo, 0, _T(""), _T(""), _T("recv applyforOrgReq from %I64u. _tn %d"), pMsgInput->data.route.idInfo_from.ui64Id, pMsgInput->uiTranNo);
+
+														if (pContent->taskProcReq.uiContentType_org == CONST_imCommType_transferAudioData
+															&& pContent->taskProcReq.uiTranNo_org == pContentElem->transferAvInfo.tranInfo.audio.uiTranNo_openAvDev)
+														{
+# ifdef  __DEBUG__
+															traceLogA("findOrgMsgAndProcess_mis: get a applyForOrgReq msg");
+#endif
+															pMsgInput->iTaskId = pMsgElem->iTaskId;
+															//  2014/11/18
+															if (pContentElem->transferAvInfo.idInfo_logicalPeer.ui64Id)
+															{
+																pMsgInput->addr_logicalPeer.idInfo.ui64Id = pContentElem->transferAvInfo.idInfo_logicalPeer.ui64Id;
+															}
+															else
+															{
+																pMsgInput->addr_logicalPeer.idInfo.ui64Id = pMsgElem->addr_logicalPeer.idInfo.ui64Id;
+															}
+
+															qPostMsg(pMsgInput, offsetof(MIS_MSG_INPUT, data) + offsetof(MIS_MSG_routeTalkData, buf) + sizeof(TASK_PROC_REQ), &pQyMc->gui.processQ);
+															PostMessage(g_pQyMc->gui.hMainWnd, CONST_qyWm_postComm, CONST_qyWmParam_msgArrive, 0);
+
+															iErr = 1; goto errLabel;
+														}
+														//  2010/12/27
+														if (pContent->taskProcReq.uiContentType_org == CONST_imCommType_transferVideoData
+															&& pContent->taskProcReq.uiTranNo_org == pContentElem->transferAvInfo.tranInfo.video.uiTranNo_openAvDev)
+														{
+# ifdef  __DEBUG__
+															traceLogA("findOrgMsgAndProcess_mis: get a applyForOrgReq msg");
+#endif
+															//
+															if (pMsgElem->uiTaskType == CONST_imTaskType_shareDynBmp)
+															{
+																if (pTaskElem->iIndex_sharedObj)
+																{
+																	QY_SHARED_OBJ* pSharedObj = getSharedObjByIndex(pProcInfo, pTaskElem->iIndex_sharedObj);
+																	if (pSharedObj)
+																	{
+																		MIS_CNT* pMisCnt = getMisCntByName(pProcInfo, _T(""));
+																		removeFromMsgrs_sendLocalAv(pProcInfo, pMisCnt, &pMsgInput->data.route.idInfo_from, &pSharedObj->curRoute_sendLocalAv);
+																		qyShowInfo1(CONST_qyShowType_qwmComm, 0, (""), pProcInfo->who_showInfo, 0, _T(""), _T(""), _T("findOrgMsgAndProc: shareDynBmp, index_sharedObj %d, removeFromMsgrs_sendLocalAv, %I64u"), pTaskElem->iIndex_sharedObj, pMsgInput->data.route.idInfo_from);
+																		iErr = 1; goto errLabel;
+																	}
+																}
+															}
+
+															//
+															pMsgInput->iTaskId = pMsgElem->iTaskId;
+															//  2014/11/18
+															if (pContentElem->transferAvInfo.idInfo_logicalPeer.ui64Id)
+															{
+																pMsgInput->addr_logicalPeer.idInfo.ui64Id = pContentElem->transferAvInfo.idInfo_logicalPeer.ui64Id;
+															}
+															else
+															{
+																pMsgInput->addr_logicalPeer.idInfo.ui64Id = pMsgElem->addr_logicalPeer.idInfo.ui64Id;
+															}
+
+															qPostMsg(pMsgInput, offsetof(MIS_MSG_INPUT, data) + offsetof(MIS_MSG_routeTalkData, buf) + sizeof(TASK_PROC_REQ), &pQyMc->gui.processQ);
+															PostMessage(g_pQyMc->gui.hMainWnd, CONST_qyWm_postComm, CONST_qyWmParam_msgArrive, 0);
+
+															iErr = 1; goto errLabel;
+														}
+													}
+												}
+
+												break;
+											default:
+												break;
+										}
+									}
+									//
+								}
+								break;
+							default:
+								break;
+
+						}
+						//
+					}
+					break;
+				default:
+					break;
+			}
+
+			*/
+
+
+			iErr = 0;
+		errLabel:
+			return iErr;
+		}
+
+	}
+}

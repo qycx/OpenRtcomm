@@ -1,0 +1,107 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Threading;
+
+partial class Consts
+{
+	public const int CONST_maxCnt_sema_syncQmObjQ = 10;									//  qmObjQ
+
+	public const string DEFAULT_mutexName_syncQmObjQ = ("m_syncQmObjQ");
+	public const string DEFAULT_semaphoreName_syncQmObjQ = ("sema_syncQmObjQ");
+	//
+	public const string DEFAULT_mutexName_syncQmObjQ_client = ("m_syncQmObjQ_cli");         //  2007/06/03
+	public const string DEFAULT_semaphoreName_syncQmObjQ_client = ("sema_syncQmObjQ_cli");      //  2007/06/03
+
+	public const string DEFAULT_mutexNamePrefix_syncTask = ("m_syncTask");              //  2007/06/27, mutex, prefix + misServName  +  id_send
+
+	public const int CONST_bufSize_publicKeyBlob = 2048;
+	public const int CONST_bufSize_sessionKeyBlob = 1024;
+
+	public const int CONST_dataBufSize_iocp = 129 * 1024;	//  2011/02/13
+
+
+	public const int CONST_qyShowType_qwmComm = 5;
+	public const int CONST_qyShowType_debug = 13;       //
+	public const int CONST_qyShowType_debugWarning = 14;		//  2007/05/07
+	public const int CONST_qyShowType_warning = 15;		//  2007/05/07
+
+}
+
+namespace qy
+{
+
+	public struct IM_NET_STAT
+	{
+		//
+		public UInt64                                  ui64MsgDataLenRecvd;							//  2009/10/10
+				public  UInt64                                  ui64MsgDataLenSent;
+				 //
+				public uint uiInSpeedInKbps;                              //  bps
+		public uint uiOutSpeedInKbps;
+		//
+		//  unsigned  __int64								ui64MsgDataLenRecvd_dec;
+		//  unsigned  __int64								ui64MsgDataLenSent_dec;
+		//
+		//  unsigned  long									nMsgRecvd;
+		//  unsigned  long									nMsgSent;
+		//
+		//
+	}
+	;
+
+	partial class qyFuncs
+    {
+		public static  void waitForThread(ref Thread ph, uint dwMilliseconds)
+		{
+			uint dwRet = 0;
+
+			if (null==ph) return;
+
+			/*
+			dwRet = WaitForSingleObject(*ph, dwMilliseconds);
+			if (dwRet != WAIT_TIMEOUT && dwRet != WAIT_FAILED)
+			{
+
+				CloseHandle(*ph); *ph = NULL;
+
+			}
+			*/
+
+			if (ph!=null)
+			{
+				if ( dwMilliseconds==0)
+                {
+					if ( !ph.IsAlive)
+                    {
+						ph = null;
+						return;
+                    }
+					return;
+                }
+
+				uint maxStep = dwMilliseconds / 100;
+				if (maxStep == 0) maxStep = 1;
+				//
+				for ( int i =0; i < maxStep; i ++)
+                {
+					if (!ph.IsAlive)
+                    {
+						ph = null;
+						return;
+                    }
+					Thread.Sleep(100);
+					continue;
+                }
+
+			}
+
+		
+			return;
+
+		}
+
+
+	}
+
+}

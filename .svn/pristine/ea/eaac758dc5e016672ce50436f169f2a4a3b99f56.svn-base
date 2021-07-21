@@ -1,0 +1,47 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace qy
+{
+    partial class qyFuncs
+{
+
+    public static int qyShowInfo1(int iShowType, string who_from, string who_to, string where, string doStr )
+        {
+            string str;
+
+            if (where == null) where = "";
+            if (doStr == null) doStr = "";
+
+            //
+            if (who_from == null)
+            {
+                if (who_to == null) who_to = "";
+                str = string.Format("{0}:{1},{2}", who_to, where, doStr);
+            }
+            else if (who_to == null)
+            {
+                str = string.Format("{0}:{1},{2}", who_from, where, doStr);
+
+            }
+            else
+            {
+                str = string.Format("{0}->{1}:{2},{3}", who_from, who_to, where, doStr);
+            }
+
+            Console.WriteLine(str);
+            return 0;
+
+        }
+
+
+public static unsafe int qyShowInfo1(int iShowType, uint* puiStep, string clientIp, string who_from, string who_to, string where, string doStr, string fmtStr )
+        {
+            return qyShowInfo1(iShowType, who_from, who_to, where, doStr + fmtStr);
+
+        }
+
+
+}
+}

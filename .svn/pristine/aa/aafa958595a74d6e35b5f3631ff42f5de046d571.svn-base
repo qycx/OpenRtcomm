@@ -1,0 +1,51 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace qy
+{
+    partial class qyFuncs
+{
+        public static unsafe int getCurTime(byte* timeBuf)
+        {
+            /*
+            SYSTEMTIME when;
+
+            GetSystemTime(&when);
+
+            sprintf(timeBuf,
+                        "%04d%02d%02d%02d%02d%02d",
+                            when.wYear,
+                                when.wMonth,
+                                    when.wDay,
+                                        when.wHour,
+                                            when.wMinute,
+                                                when.wSecond);
+            */
+            traceLog("Not finished: GetCurTime");
+
+            return 0;
+
+        }
+
+
+        public static int traceLog(string str  )
+        {
+            Console.WriteLine(str);
+            return 0;
+        }
+
+        public static int traceLog(string str0,string str1)
+        {
+            Console.WriteLine("{0} {1}", str0, str1);
+            return 0;
+        }
+
+        public static int traceLogA(string str)
+        {
+            Console.WriteLine(str);
+            return 0;
+        }
+
+}
+}

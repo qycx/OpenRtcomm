@@ -1,0 +1,127 @@
+﻿using Android.App;
+using Android.Content;
+using Android.OS;
+using Android.Runtime;
+using Android.Support.V4.View;
+using Android.Support.V7.App;
+using Android.Views;
+using Android.Widget;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace qyMessengerApp.Droid
+{
+    [Activity(Label = "Activity_dlgTalk")]
+    public class Activity_dlgTalk : AppCompatActivity,View.IOnClickListener,ViewPager.IOnPageChangeListener
+    {
+        //
+        public UInt64 m_ui64Id;
+        public uint m_uiObjType;
+        //
+        private TextView txt_msg;
+        private TextView txt_detail;
+
+        private ViewPager vPager;
+
+        private FragmentPagerAdapter_dlgTalk mAdapter;
+
+        public const int PAGE_ONE = 0;
+        public const int PAGE_TWO = 1;
+
+        protected override void OnCreate(Bundle savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
+
+            // Create your application here
+            Intent intent = this.Intent;
+            UInt64 ui64Id = (UInt64)intent.GetLongExtra("ui64Id", 0);
+            uint uiObjType = (uint)intent.GetIntExtra("uiObjType", 0);
+            Console.WriteLine("ui64Id {0}", ui64Id);
+            m_ui64Id = ui64Id;
+            m_uiObjType = uiObjType;
+
+            //
+            SetContentView(Resource.Layout.layout_dlgTalk);
+
+            //
+            mAdapter = new FragmentPagerAdapter_dlgTalk(SupportFragmentManager);
+            bindViews();
+        }
+
+        private void bindViews()
+        {
+            txt_msg = (TextView)FindViewById(Resource.Id.txt_msg);
+            txt_detail = (TextView)FindViewById(Resource.Id.txt_detail);
+
+            txt_msg.SetOnClickListener(this);
+            txt_detail.SetOnClickListener(this);
+
+            vPager = (ViewPager)FindViewById(Resource.Id.vpager);
+            vPager.Adapter = mAdapter;
+            //vPager.SetCurrentItem(0,true);
+            vPager.AddOnPageChangeListener(this);
+            //
+            txt_msg.PerformClick();
+        }
+
+        private void clearSelected()
+        {
+            txt_msg.Selected = false;
+            txt_detail.Selected = false;
+
+        }
+
+        public void OnClick(View v)
+        {
+            switch (v.Id)
+            {
+                case Resource.Id.txt_msg:
+                    clearSelected();
+                    txt_msg.Selected = true;
+                    vPager.SetCurrentItem(PAGE_ONE, false);
+                    break;
+                case Resource.Id.txt_detail:
+                    clearSelected();
+                    txt_detail.Selected = true;
+                    vPager.SetCurrentItem(PAGE_TWO, false);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        void ViewPager.IOnPageChangeListener.OnPageScrollStateChanged(int state)
+        {
+            //throw new NotImplementedException();
+            if (state == 2)
+            {
+                switch (vPager.CurrentItem)
+                {
+                    case PAGE_ONE:
+                        clearSelected();
+                        txt_msg.Selected = true;
+                        break;
+                    case PAGE_TWO:
+                        clearSelected();
+                        txt_detail.Selected = true;
+                        break;
+                }
+
+
+            }
+
+        }
+
+        void ViewPager.IOnPageChangeListener.OnPageScrolled(int position, float positionOffset, int positionOffsetPixels)
+        {
+            //throw new NotImplementedException();
+        }
+
+        void ViewPager.IOnPageChangeListener.OnPageSelected(int position)
+        {
+            //throw new NotImplementedException();
+        }
+    }
+}

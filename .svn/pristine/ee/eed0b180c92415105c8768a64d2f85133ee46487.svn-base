@@ -1,0 +1,57 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Runtime.InteropServices;
+
+partial class Consts
+{
+	public const int CONST_bufSize_bPrivateData = 1024 + 256;
+	public const int CONST_bufSize_bExtraData = 512;
+
+}
+
+namespace qy
+{
+	[StructLayout(LayoutKind.Sequential,  Pack = 1)]
+public struct BITMAPINFOHEADER
+	{ 
+  public int biSize;
+	public int biWidth;
+	public int biHeight;
+	public short biPlanes;
+	public short biBitCount;
+	public int biCompression;
+	public int biSizeImage;
+	public int biXPelsPerMeter;
+	public int biYPelsPerMeter;
+	public int biClrUsed;
+	public int biClrImportant;
+};
+
+	public struct WAVEFORMATEX
+	{
+		public ushort wFormatTag;
+		public ushort nChannels;
+		public uint nSamplesPerSec;
+		public uint nAvgBytesPerSec;
+		public ushort nBlockAlign;
+		public ushort wBitsPerSample;
+		public ushort cbSize;
+	}
+	public unsafe struct QY_VIDEO_HEADER
+	{                       //  2009/03/29
+		BITMAPINFOHEADER bih;
+		fixed byte bPrivateData[Consts.CONST_bufSize_bPrivateData];
+	}
+	;
+
+	[StructLayout(LayoutKind.Explicit,Size =530 )]	
+public unsafe struct QY_AUDIO_HEADER
+	{                       //  2009/05/16
+		[FieldOffset(0)]public WAVEFORMATEX wfx;
+		[FieldOffset(18)]public fixed byte bExtraData[Consts.CONST_bufSize_bExtraData];
+	}
+	;
+
+ 
+}

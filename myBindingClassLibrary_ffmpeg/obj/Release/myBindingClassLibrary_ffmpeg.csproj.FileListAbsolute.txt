@@ -1,0 +1,9 @@
+C:\root\cliDevelop\qyMessengerApp\myBindingClassLibrary_ffmpeg\bin\Release\myBindingClassLibrary_ffmpeg.dll
+C:\root\cliDevelop\qyMessengerApp\myBindingClassLibrary_ffmpeg\bin\Release\myBindingClassLibrary_ffmpeg.pdb
+C:\root\cliDevelop\qyMessengerApp\myBindingClassLibrary_ffmpeg\obj\Release\__AndroidLibraryProjects__.zip
+C:\root\cliDevelop\qyMessengerApp\myBindingClassLibrary_ffmpeg\obj\Release\MonoAndroid,Version=v9.0.AssemblyAttributes.cs
+C:\root\cliDevelop\qyMessengerApp\myBindingClassLibrary_ffmpeg\obj\Release\stamp\_BuildLibraryImportsCache.stamp
+C:\root\cliDevelop\qyMessengerApp\myBindingClassLibrary_ffmpeg\obj\Release\myBindingClassLibrary_ffmpeg.csproj.CoreCompileInputs.cache
+C:\root\cliDevelop\qyMessengerApp\myBindingClassLibrary_ffmpeg\obj\Release\myBindingClassLibrary_ffmpeg.dll
+C:\root\cliDevelop\qyMessengerApp\myBindingClassLibrary_ffmpeg\obj\Release\myBindingClassLibrary_ffmpeg.pdb
+C:\root\cliDevelop\qyMessengerApp\myBindingClassLibrary_ffmpeg\obj\Release\myBindingClassLibrary_ffmpeg.csproj.AssemblyReference.cache

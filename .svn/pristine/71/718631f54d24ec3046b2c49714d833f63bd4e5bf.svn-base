@@ -1,0 +1,1842 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Runtime.InteropServices;
+
+
+partial class Consts
+{
+	public const string CONST_filterChars = "'";
+
+	public const int CONST_cntof_utf8Str = 32 * 1024;       //  2010/12/05
+	public const int CONST_cntof_wStr = 32 * 1024;       //  2010/12/05
+
+
+}
+
+
+namespace qy
+{
+	public unsafe delegate int PF_handler_stream2Data(void * p0, void * p1, uint uiStreamId, QY_CFGITEM_ntoh_U  * pItem  );	//  
+
+    partial class qyFuncs
+{
+
+		public static unsafe bool bMessengerIdValid(QY_MESSENGER_ID* pIdInfo)
+		{
+			//  if  (  pIdInfo  &&  pIdInfo->ui64Id  &&  pIdInfo->ui64Id  !=  CONST_invalidMessengerId  )  return  TRUE;
+			ulong invalid = unchecked((ulong)Consts.CONST_invalidMessengerId);
+			if (pIdInfo!=null && pIdInfo->ui64Id != invalid) return true;
+			return false;
+		}
+
+		//  对orgData是WCHAR的情况，orgDataSize表示WCHAR的count
+		//  对这个流要求用CONST_qnmCfgId_null结尾
+		//  *pptr指向下一个空间，而不是输出串
+		//  *pSize为剩余的字节数，不是一共得到了多少
+		public static unsafe int data2Stream(ushort iDataType, ushort usCfgId, void* orgData, uint orgDataSize, byte** pptr_usable, uint* pSize_usable)
+		{
+			int iErr = -1;
+
+			QY_CFGITEM_STR itemStr;
+			QY_CFGITEM_L32 itemLong;
+			QY_CFGITEM_BYTE itemChar;
+			QY_CFGITEM_SHORT itemShort;
+			QY_CFGITEM_L64 itemL64;
+			QY_CFGITEM* pItem = null;
+			uint len;
+			uint size = 0;
+			byte* ptr = null;
+
+			
+			using (CQyMalloc mallocObj = new CQyMalloc())
+			{
+				
+				if (null == pptr_usable || null == *pptr_usable || null == pSize_usable) return -1;
+				if (null == orgData)
+				{
+					switch (iDataType)
+					{
+						case Consts.CONST_qyDataType_l32:
+						case Consts.CONST_qyDataType_char:
+						case Consts.CONST_qyDataType_short:
+							break;
+						default:
+							return -1;  //  非数值的值为地址，不能为空
+					}
+				}
+				if (iDataType == Consts.CONST_qyDataType_l64)
+				{
+					if (orgDataSize != 0 && orgDataSize < 8)
+					{       //  传入0也算了，早期代码都用0。2007/12/11
+							//traceLogA("data2Stream: l64需要传入数据地址，故建议输入数据长度应>=sizeof(  __int64  )");
+					}
+				}
+
+				ptr = *pptr_usable;
+				size = *pSize_usable;
+											
+				switch (iDataType)
+				{
+					case Consts.CONST_qyDataType_l32:
+						itemLong.cfgId = usCfgId;
+						itemLong.dataType = iDataType;
+						itemLong.ulVal = (uint)orgData;
+						pItem = (QY_CFGITEM*)&itemLong;
+						break;
+					case Consts.CONST_qyDataType_char:
+						itemChar.cfgId = usCfgId;
+						itemChar.dataType = iDataType;
+						itemChar.ucVal = (byte)orgData;
+						pItem = (QY_CFGITEM*)&itemChar;
+						break;
+					case Consts.CONST_qyDataType_short:
+						itemShort.cfgId = usCfgId;
+						itemShort.dataType = iDataType;
+						itemShort.usVal = (ushort)orgData;
+						pItem = (QY_CFGITEM*)&itemShort;
+						break;
+					
+						case Consts.CONST_qyDataType_data:
+							{
+								QY_CFGITEM_DATA* pItemData = null;
+								//int tmpSize = offsetof(QY_CFGITEM_DATA, buf) + orgDataSize; //  sizeof(  QY_CFGITEM_DATA  )	//  2010/09/10
+								int tmpSize = (int)(6 + orgDataSize); //  sizeof(  QY_CFGITEM_DATA  )	//  2010/09/10
+																	  //
+								if (null==(pItemData = (QY_CFGITEM_DATA*)mallocObj.mallocf(tmpSize)))
+								{
+									//traceLogA("data2Stream. malloc from QY_CFGITEM_DATA failed."); 
+									goto errLabel;
+								}
+								//
+								pItemData->cfgId = usCfgId;
+								pItemData->dataType = iDataType;
+								//if (orgDataSize > sizeof(pItemData->buf)  )  
+								if (orgDataSize > Consts.CONST_bufSize_cfgItemData)
+								{
+									//traceLogA("data2Stream: dataType_data: too big dataSize"); 
+									goto errLabel;
+								}
+								pItemData->len = (ushort)orgDataSize;
+								if (pItemData->len != orgDataSize)
+								{       //  2008/04/01, 
+										//traceLogA("data2Stream: dataType_data error, buf truncated. data只能装不超过一个short长度的数据。");
+									goto errLabel;
+								}
+								mymemcpy((IntPtr)pItemData->buf, (IntPtr)orgData, pItemData->len);
+								pItem = (QY_CFGITEM*)pItemData;
+							}
+							break;
+						case Consts.CONST_qyDataType_lData:
+							{
+							
+								QY_CFGITEM_LDATA* pItemLData = null;
+							//int tmpSize = offsetof(QY_CFGITEM_LDATA, buf) + orgDataSize;    //  sizeof(  QY_CFGITEM_LDATA  )	//  2010/09/10
+							//int tmpSize = (int)(8 + orgDataSize);    //  sizeof(  QY_CFGITEM_LDATA  )	//  2010/09/10
+							int tmpSize = sizeof(QY_CFGITEM_LDATA);
+																							//
+								if (null==(pItemLData = (QY_CFGITEM_LDATA*)mallocObj.mallocf(tmpSize)))
+								{
+									//traceLogA("data2Stream. malloc from QY_CFGITEM_LDATA failed."); 
+									goto errLabel;
+								}
+															//
+							
+															pItemLData->cfgId = usCfgId;
+							
+															pItemLData->dataType = iDataType;
+							
+															//if (orgDataSize > sizeof(pItemLData->buf)  )  
+															if (orgDataSize > Consts.CONST_bufSize_cfgItemLData)
+															{
+																//traceLogA("data2Stream: dataType_lData: too big dataSize"); 
+																goto errLabel;
+															}
+							
+
+							pItemLData->ulLen = orgDataSize;
+
+							//mymemcpy((IntPtr)pItemLData->buf, (IntPtr)orgData, pItemLData->ulLen);
+							pItemLData->p = (byte*)orgData;
+
+							//
+							pItem = (QY_CFGITEM*)pItemLData;
+						
+
+						}
+						break;
+						
+
+					case Consts.CONST_qyDataType_l64:
+						itemL64.cfgId = usCfgId;
+						itemL64.dataType = iDataType;
+						//mymemcpy(itemL64.buf_l64Val, orgData, sizeof(__int64));
+						mymemcpy((IntPtr)itemL64.buf_l64Val, (IntPtr)orgData, 8);
+						pItem = (QY_CFGITEM*)&itemL64;
+						break;
+					case Consts.CONST_qyDataType_str:
+					case Consts.CONST_qyDataType_utf8Str:
+						{
+							//
+							itemStr.cfgId = usCfgId;
+							itemStr.dataType = iDataType;
+							//itemStr.len = min(sizeof(itemStr.str), orgDataSize);
+							itemStr.len = (ushort)Math.Min(Consts.CONST_cntof_cfgItemStr, orgDataSize);
+							mymemcpy((IntPtr)itemStr.str, (IntPtr)orgData, itemStr.len);
+							pItem = (QY_CFGITEM*)&itemStr;
+						}
+						break;
+					case Consts.CONST_qyDataType_wStr:
+						{
+							char* wStr = (char*)orgData;
+							wStr[orgDataSize] = (char)0;
+							string str_wStr = new string(wStr);
+							//
+							if (orgDataSize < 1024)
+							{
+								itemStr.cfgId = usCfgId;
+								if (null==myWChar2Utf8(str_wStr, itemStr.str, Consts.CONST_cntof_cfgItemStr)) goto errLabel;
+								itemStr.dataType = Consts.CONST_qyDataType_utf8Str;
+								itemStr.len = (ushort)mystrlen(itemStr.str);
+								pItem = (QY_CFGITEM*)&itemStr;
+							}
+							else
+							{  //2010/12/05
+								QY_CFGITEM_DATA* pItemData = null;
+								int tmpBufSize = (int)(orgDataSize + 1) * 2;
+								//int tmpSize = offsetof(QY_CFGITEM_DATA, buf) + tmpBufSize;
+								int tmpSize = 6 + tmpBufSize;
+								////
+								//if (tmpBufSize > sizeof(pItemData->buf)  )  
+								if (tmpBufSize > Consts.CONST_bufSize_cfgItemData)
+								{
+									//traceLogA("data2Stream: dataType_wStr: too big dataSize");
+									goto errLabel;
+								}
+								//
+								if (null==(pItemData = (QY_CFGITEM_DATA*)mallocObj.mallocf(tmpSize)))
+								{
+									//traceLogA("data2Stream. malloc from QY_CFGITEM_DATA failed.");
+									goto errLabel;
+								}
+								//
+								pItemData->cfgId = usCfgId;
+								if (null==myWChar2Utf8(str_wStr, pItemData->buf, (uint)tmpBufSize)) goto errLabel;
+								pItemData->dataType = Consts.CONST_qyDataType_utf8Str;
+								pItemData->len = (ushort)mystrlen(pItemData->buf);
+								pItem = (QY_CFGITEM*)pItemData;
+							}
+						}
+						break;
+				
+
+					default:
+						goto errLabel;
+
+				}
+
+				
+
+				if (null==pItem) goto errLabel;
+				//
+				uint uiPart0Len = 0;
+				byte* pPart1 = null;
+				uint uiPart1Len = 0;
+				len = (uint)qyhtonCfgItem(pItem, &uiPart0Len, &pPart1, &uiPart1Len);
+				if (len <= 0 || size < len)
+				{
+					//traceLogA("getStream_wStr  error."); 
+					goto errLabel;
+				}
+
+				//mymemcpy((IntPtr)ptr, (IntPtr)pItem, len); 
+				mymemcpy((IntPtr)ptr, (IntPtr)pItem, uiPart0Len);
+				if ( pPart1 !=null && uiPart1Len !=0)
+                {
+					mymemcpy((IntPtr)(ptr + uiPart0Len), (IntPtr)pPart1, uiPart1Len);
+                }
+				//				
+				ptr += len; size -= len;
+		
+
+
+			}
+
+
+			iErr = 0;
+		errLabel:
+			if (0==iErr)
+			{
+				*pptr_usable = ptr;
+				*pSize_usable = size;
+			}
+
+			
+				return iErr;
+		}
+
+
+
+		//
+		
+		public static unsafe int stream2Data(byte** pCfgsBuf_usable, uint* pSize_usable, PF_handler_stream2Data pf_filter, PF_handler_stream2Data pf, void* p0, void* p1)
+		{
+			int iErr = -1;
+			uint len;
+			byte* ptr = null;
+			QY_CFGITEM_ntoh_U item_ntoh_U;
+			QY_CFGITEM_ntoh_U* pItem = null;
+			//  QY_CFGITEM_WSTR			itemWStr;
+			//CQyString wStr;
+			int nStarts = 0;
+			//uint uiStreamIds[5] = { 0, };
+			uint []uiStreamIds = { 0,0,0,0,0 };
+			int tmpiRet;
+			byte* cfgsBuf = null;
+			uint size = 0;
+			ushort tmp_cfgId;          //  2010/04/08
+			ushort tmp_dataType;       //  2010/04/08
+
+			if (null==pCfgsBuf_usable || null==pSize_usable) return -1;
+
+			cfgsBuf = *pCfgsBuf_usable;
+			size = *pSize_usable;
+			//
+			if (null==cfgsBuf || 0==size || null==pf_filter || null==pf) return -1;
+
+			//
+			using (CQyMalloc mallocObj_wStr = new CQyMalloc())
+			{
+				int cntof_wStr = Consts.CONST_cntof_wStr;
+				char * wStr = (char *  )mallocObj_wStr.mallocf(cntof_wStr * sizeof(char));
+				if (wStr == null) goto errLabel;
+				//
+				len = 0;
+				ptr = cfgsBuf;
+				for (; size != 0;)
+				{
+					len = (uint)qyntohCfgItem(ptr, &item_ntoh_U);     //  这里要注意：这里qyntohCfgItem(  )返回的是转换前的字节流长度。和qyhtonCfgItem(  )返回的不同
+					pItem = &item_ntoh_U;
+
+					if (len <= 0 || len > size) goto errLabel;
+
+					//memcpy(&tmp_cfgId, &pItem->head.cfgId, sizeof(short));          //  2010/04/08
+					tmp_cfgId = pItem->head.cfgId;
+					//memcpy(&tmp_dataType, &pItem->head.dataType, sizeof(short));        //  2010/04/08
+					tmp_dataType = pItem->head.dataType;
+
+					ptr += len; size -= len;
+
+					if (0 == nStarts)
+					{
+						if (tmp_cfgId != Consts.CONST_qnmCfgId_start) goto errLabel;
+						if (tmp_dataType != Consts.CONST_qyDataType_long) goto errLabel;
+					}
+
+					if (tmp_cfgId == Consts.CONST_qnmCfgId_start)
+					{
+
+						nStarts++;
+						if (nStarts > uiStreamIds.Length) goto errLabel;
+
+						//  uiStreamId  =  (  (  QY_CFGITEM_LONG  *  )pItem  )->ulVal;
+						//memcpy(&uiStreamIds[nStarts - 1], &((QY_CFGITEM_LONG*)pItem)->ulVal, sizeof(uiStreamIds[0]));
+						uiStreamIds[nStarts - 1] = ((QY_CFGITEM_L32*)pItem)->ulVal;
+						//
+						if (0 != (tmpiRet = pf(p0, p1, uiStreamIds[nStarts - 1], pItem)))
+						{       //  这里有利于处理结构起始时初始化，2007/08/01
+							iErr = tmpiRet; goto errLabel;
+						}
+						continue;
+					}
+
+					if (tmp_cfgId == Consts.CONST_qnmCfgId_null)
+					{
+						//
+						if (0 != (tmpiRet = pf(p0, p1, uiStreamIds[nStarts - 1], pItem)))
+						{       //  这里有利于处理结构结束时做结尾工作，2007/08/01
+							iErr = tmpiRet; goto errLabel;
+						}
+						nStarts--;
+						if (0 == nStarts) break;
+						continue;
+					}
+
+					if (tmp_dataType == Consts.CONST_qyDataType_utf8Str)
+					{
+
+						//  #define		CONST_bufSize_utf8Str		4096
+
+						using (CQyMalloc mallocObj_buf = new CQyMalloc())
+						{
+							int bufSize = Consts.CONST_cntof_utf8Str;
+							byte* pBuf = null;
+
+							if (pItem->data.len + 1 > Consts.CONST_cntof_utf8Str)
+							{
+								//traceLog(_T("stream2Data: utf8 too long string"));
+								goto errLabel;
+							}
+							bufSize = pItem->data.len + 1;
+							pBuf = (byte*)mallocObj_buf.mallocf(bufSize);
+							if (null == pBuf) goto errLabel;
+
+							//
+							safeStrnCpy(pItem->data.p, pBuf, (uint)Math.Min(pItem->data.len + 1, bufSize));
+							//
+							//wStr = CQyString(pBuf);
+							myUtf82WChar(pBuf, wStr, (uint)cntof_wStr);
+							pItem->wStr.dataType = Consts.CONST_qyDataType_wStr;
+							pItem->wStr.len = (ushort)mywcslen(wStr);
+							pItem->wStr.pWStr = wStr;
+							//
+						}
+					}
+					if (0!=(tmpiRet = pf_filter(p0, p1, uiStreamIds[nStarts - 1], pItem)))
+					{       //  2008/12/03, 主要是对pItem里的数据进行过滤。不是对结果的
+						iErr = tmpiRet; goto errLabel;
+					}
+					if (0!=(tmpiRet = pf(p0, p1, uiStreamIds[nStarts - 1], pItem)))
+					{
+						iErr = tmpiRet; goto errLabel;
+					}
+				}
+
+			}
+
+			iErr = 0;
+		errLabel:
+
+			if (0==iErr)
+			{
+				*pCfgsBuf_usable = ptr;
+				*pSize_usable = size;
+			}
+
+			return iErr;
+		}
+
+
+		//
+
+		public static unsafe  int getFieldData_l32(QY_CFGITEM_ntoh_U* pItem, int* plVal)
+		{
+			if (null==pItem || null==plVal) return -1;
+
+			ushort tmp_dataType;
+			//memcpy(&tmp_dataType, &pItem->head.dataType, sizeof(tmp_dataType));
+			tmp_dataType = pItem->head.dataType;
+
+			if (tmp_dataType != Consts.CONST_qyDataType_long) return -1;
+
+			//  *plVal  =  (  (  QY_CFGITEM_LONG  *  )pItem  )->ulVal;
+			//memcpy(plVal, &((QY_CFGITEM_LONG*)pItem)->ulVal, sizeof(int));
+			*plVal = (int)((QY_CFGITEM_L32*)pItem)->ulVal;
+
+			return 0;
+		}
+
+		public static unsafe int getFieldData_long(QY_CFGITEM_ntoh_U* pItem, int* plVal)
+        {
+			return getFieldData_l32(pItem, plVal);
+        }
+
+		public static unsafe  int getFieldData_short(QY_CFGITEM_ntoh_U* pItem, short* psVal)
+		{
+			if (null==pItem || null==psVal) return -1;
+
+			ushort tmp_dataType;
+			//memcpy(&tmp_dataType, &pItem->head.dataType, sizeof(tmp_dataType));
+			tmp_dataType = pItem->head.dataType;
+
+			if (tmp_dataType != Consts.CONST_qyDataType_short) return -1;
+
+			//  *psVal  =  (  (  QY_CFGITEM_SHORT  *  )pItem  )->usVal;
+			//memcpy(psVal, &((QY_CFGITEM_SHORT*)pItem)->usVal, sizeof(short));
+			*psVal = (short)((QY_CFGITEM_SHORT*)pItem)->usVal;
+
+			return 0;
+
+		}
+
+		public static unsafe  int getFieldData_byte(QY_CFGITEM_ntoh_U* pItem, byte* pcVal)
+		{
+			if (null==pItem || null==pcVal) return -1;
+
+			ushort tmp_dataType;
+			//memcpy(&tmp_dataType, &pItem->head.dataType, sizeof(tmp_dataType));
+			tmp_dataType = pItem->head.dataType;
+			if (tmp_dataType != Consts.CONST_qyDataType_char) return -1;
+
+			*pcVal = ((QY_CFGITEM_BYTE*)pItem)->ucVal;
+
+			return 0;
+
+		}
+
+
+		public static unsafe  int getFieldData_l64(QY_CFGITEM_ntoh_U* pItem, Int64* pl64Val)
+		{
+			if (null==pItem || null==pl64Val) return -1;
+
+			ushort tmp_dataType;
+			//memcpy(&tmp_dataType, &pItem->head.dataType, sizeof(short));
+			tmp_dataType = pItem->head.dataType;
+			if (tmp_dataType != Consts.CONST_qyDataType_l64) return -1;
+
+			  *pl64Val  =  *(  Int64  *  )(  (  QY_CFGITEM_L64  *  )pItem  )->buf_l64Val;
+			//mymemcpy(pl64Val, ((QY_CFGITEM_L64*)pItem)->buf_l64Val, sizeof(__int64)); //  2010/04/08
+
+			return 0;
+
+		}
+
+		public static unsafe  int getFieldData_data(QY_CFGITEM_ntoh_U* pItem, byte* val, uint* pSize)
+		{
+			if (null==pSize) return -1;
+
+			ushort tmp_dataType;
+			//memcpy(&tmp_dataType, &pItem->head.dataType, sizeof(short));
+			tmp_dataType = pItem->head.dataType;
+			if (tmp_dataType != Consts.CONST_qyDataType_data) return -1;
+
+			//  QY_CFGITEM_DATA *	pItemData	=	(  QY_CFGITEM_DATA  *  )pItem;
+
+			ushort tmp_len;
+			//memcpy(&tmp_len, &pItem->data.len, sizeof(short));
+			tmp_len = pItem->data.len;
+			if (tmp_len > *pSize) return -1;            //  2008/03/23
+
+			mymemcpy((IntPtr)val, (IntPtr)pItem->data.p, tmp_len);
+			//	*pSize  =  pItemData->len;
+			*pSize = tmp_len;
+
+			return 0;
+		}
+
+		public static unsafe int getFieldData_lData(QY_CFGITEM_ntoh_U* pItem, byte* val, uint* pSize)
+		{
+			if (null==pSize) return -1;
+
+			ushort tmp_dataType;
+			//memcpy(&tmp_dataType, &pItem->head.dataType, sizeof(short));
+			tmp_dataType = pItem->head.dataType;
+			if (tmp_dataType != Consts.CONST_qyDataType_lData) return -1;
+
+			//  QY_CFGITEM_LDATA *	pItemData	=	(  QY_CFGITEM_LDATA  *  )pItem;
+
+			uint tmp_ulLen;
+			//memcpy(&tmp_ulLen, &pItem->lData.ulLen, sizeof(long));
+			tmp_ulLen = pItem->lData.ulLen;
+			if (tmp_ulLen > *pSize) return -1;          //  2008/03/23
+
+			mymemcpy((IntPtr)val, (IntPtr)pItem->lData.p, tmp_ulLen);
+			*pSize = tmp_ulLen;
+
+			return 0;
+		}
+		public static unsafe  int getFieldData_str(QY_CFGITEM_ntoh_U* pItem, byte* val, uint size)
+		{
+			ushort tmp_dataType;
+			//memcpy(&tmp_dataType, &pItem->head.dataType, sizeof(short));
+			tmp_dataType = pItem->head.dataType;
+			if (tmp_dataType != Consts.CONST_qyDataType_str) return -1;
+
+			//  QY_CFGITEM_STR	*	pItemStr	=	(  QY_CFGITEM_STR  *  )pItem;
+
+			ushort tmp_len;
+			//memcpy(&tmp_len, &pItem->data.len, sizeof(short));
+			tmp_len = pItem->data.len;
+			safeStrnCpy(pItem->data.p, val, Math.Min((uint)(tmp_len + 1), size)  );
+
+			return 0;
+		}
+		public static unsafe  int getFieldData_wStr(QY_CFGITEM_ntoh_U* pItem, char* val, uint size)
+		{
+			ushort tmp_dataType;
+			//memcpy(&tmp_dataType, &pItem->head.dataType, sizeof(short));
+			tmp_dataType = pItem->head.dataType;
+			if (tmp_dataType != Consts.CONST_qyDataType_wStr) return -1;
+
+			//  QY_CFGITEM_WSTR  *  pItemWStr  =  (  QY_CFGITEM_WSTR  *  )pItem;
+
+			ushort tmp_len;
+			//memcpy(&tmp_len, &pItem->wStr.len, sizeof(short));
+			tmp_len = pItem->wStr.len;
+			safeWcsnCpy(pItem->wStr.pWStr, val, Math.Min((uint)(tmp_len + 1), size)  );
+			return 0;
+		}
+
+
+
+		//  2008/12/03, 为通信加一个过滤规则。
+
+
+		public static unsafe int filterStream_is(void* p0, void* p1, uint uiStreamId, QY_CFGITEM_ntoh_U* pItem)
+		{
+			int iErr = -1;
+			//  QY_CFGITEM				*	pItem		=	(  QY_CFGITEM  *  )p2;
+			ushort tmp_len;
+
+			ushort tmp_dataType;
+			//memcpy(&tmp_dataType, &pItem->head.dataType, sizeof(tmp_dataType));
+			tmp_dataType = pItem->head.dataType;
+
+			/*
+			switch (tmp_dataType)
+			{
+				case Consts.CONST_qyDataType_str:
+				case Consts.CONST_qyDataType_utf8Str:
+					memcpy(&tmp_len, &((QY_CFGITEM_STR*)pItem)->len, sizeof(tmp_len));
+					fwFilterBuf(Consts.CONST_filterChars, pItem->data.p, tmp_len);
+					break;
+				case Consts.CONST_qyDataType_wStr:
+					switch (uiStreamId)
+					{
+						case CONST_imCommType_htmlContent:
+							switch (pItem->head.cfgId)
+							{
+								case CONST_qnmCfgId_hint:
+									iErr = 0; goto errLabel;
+									break;
+								default:
+									break;
+							}
+							break;
+						default:
+							break;
+					}
+					memcpy(&tmp_len, &((QY_CFGITEM_WSTR*)pItem)->len, sizeof(tmp_len));
+					fwFilterTBuf(_T(CONST_filterChars), pItem->wStr.pWStr, tmp_len);
+					break;
+				default:
+					break;
+			}
+			*/
+
+			iErr = 0;
+		errLabel:
+			return iErr;
+		}
+
+		
+
+		public static unsafe		int commAuthInfo2Stream_mis(QY_COMM_AUTHINFO_MIS* pAuthInfo, byte* buf, uint* uiBufSize)
+		{
+			int iErr = -1;
+			int i = 0;
+			byte* ptr = buf;
+			uint len = *uiBufSize;
+
+			if (null==pAuthInfo) return -1;
+			if (null==buf) return -1;
+
+			//
+			
+
+			//
+			if (0!=data2Stream(Consts.CONST_qyDataType_l32, Consts.CONST_qnmCfgId_start, (void*)Consts.CONST_imCommType_auth, 0, &ptr, &len)) goto errLabel;
+			if (pAuthInfo->ver[0]!=0 && 0!=data2Stream(Consts.CONST_qyDataType_str, Consts.CONST_qnmCfgId_clientVer, pAuthInfo->ver, (uint)mystrlen(pAuthInfo->ver), &ptr, &len)) goto errLabel;
+			if (pAuthInfo->ucCmd!=0 && 0!=data2Stream(Consts.CONST_qyDataType_long, Consts.CONST_qnmCfgId_authCmd, (void*)pAuthInfo->ucCmd, 0, &ptr, &len)) goto errLabel;
+			if (pAuthInfo->iAppType!=0 && 0!=data2Stream(Consts.CONST_qyDataType_long, Consts.CONST_qnmCfgId_iAppType, (void*)pAuthInfo->iAppType, 0, &ptr, &len)) goto errLabel;       //  2011/03/27
+			if (pAuthInfo->iCustemId!=0 && 0!=data2Stream(Consts.CONST_qyDataType_long, Consts.CONST_qnmCfgId_iCustemId, (void*)pAuthInfo->iCustemId, 0, &ptr, &len)) goto errLabel;
+			if (pAuthInfo->uiChannelType!=0 && 0!=data2Stream(Consts.CONST_qyDataType_long, Consts.CONST_qnmCfgId_uiChannelType, (void*)pAuthInfo->uiChannelType, 0, &ptr, &len)) goto errLabel;    //  2007/07/08
+
+			//
+			if (pAuthInfo->usLangId!=0 && 0!=data2Stream(Consts.CONST_qyDataType_short, Consts.CONST_qnmCfgId_langId, (void*)pAuthInfo->usLangId, 0, &ptr, &len)) goto errLabel;    //  2007/07/08
+			if (pAuthInfo->uiDevType!=0 && 0!=data2Stream(Consts.CONST_qyDataType_long, Consts.CONST_qnmCfgId_uiDevType_from, (void*)pAuthInfo->uiDevType, 0, &ptr, &len)) goto errLabel;   //  2007/07/08
+
+			//
+			if (pAuthInfo->usAuthType!=0 && 0!=data2Stream(Consts.CONST_qyDataType_short, Consts.CONST_qnmCfgId_usAuthType, (void*)pAuthInfo->usAuthType, 0, &ptr, &len)) goto errLabel;    //  2011/03/22
+
+			//
+			/*
+			for (i = 0; i < mycountof(pAuthInfo->macsInfo.macs); i++)
+			{
+				if (bMacValid((char*)pAuthInfo->macsInfo.macs[i]) && data2Stream(CONST_qyDataType_str, Consts.CONST_qnmCfgId_mac, pAuthInfo->macsInfo.macs[i], sizeof(pAuthInfo->macsInfo.macs[i]),  &ptr,  &len  )  )  goto errLabel;
+		}
+			*/
+			
+	 if  (bIpValid(mytoString(pAuthInfo->ip) )  &&  0!=data2Stream(Consts.CONST_qyDataType_long, Consts.CONST_qnmCfgId_ulIp, (void*  ) myinet_addr(pAuthInfo->ip  ),  0,  &ptr,  &len  )  )  goto  errLabel;
+	 //if  (pAuthInfo->pcName[0]  &&  data2Stream(CONST_qyDataType_wStr, Consts.CONST_qnmCfgId_pcName, pAuthInfo->pcName, wcslen(pAuthInfo->pcName  ),  &ptr,  &len  )  )  goto  errLabel;
+	 //if  (pAuthInfo->domainName[0]  &&  data2Stream(CONST_qyDataType_wStr, Consts.CONST_qnmCfgId_domainName, pAuthInfo->domainName, wcslen(pAuthInfo->domainName  ),  &ptr,  &len  )  )  goto  errLabel;
+	 //if  (pAuthInfo->osUsrName[0]  &&  data2Stream(CONST_qyDataType_wStr, Consts.CONST_qnmCfgId_osUsrName, pAuthInfo->osUsrName, wcslen(pAuthInfo->osUsrName  ),  &ptr,  &len  )  )  goto  errLabel;
+	 
+
+	 //
+	 if  (pAuthInfo->messengerName[0]!=0  &&  0!=data2Stream(Consts.CONST_qyDataType_wStr, Consts.CONST_qnmCfgId_messengerName, pAuthInfo->messengerName, (uint)mywcslen(pAuthInfo->messengerName  ),  &ptr,  &len  )  )  goto  errLabel;
+	 if  (pAuthInfo->messengerPasswd[0]!=0  &&  0!=data2Stream(Consts.CONST_qyDataType_str, Consts.CONST_qnmCfgId_messengerPasswd, pAuthInfo->messengerPasswd, (uint)mystrlen(pAuthInfo->messengerPasswd  ),  &ptr,  &len  )  )  goto  errLabel;
+
+	 //
+	 if  (pAuthInfo->wRndName_serv[0] !=0 &&  0!=data2Stream(Consts.CONST_qyDataType_wStr, Consts.CONST_qnmCfgId_wRndName_serv, (void*  ) pAuthInfo->wRndName_serv, (uint)mywcslen(pAuthInfo->wRndName_serv  ),  &ptr,  &len  )  )  goto  errLabel;  //  2007/11/22
+	 if  (pAuthInfo->uiRnd_cli!=0  &&  0!=data2Stream(Consts.CONST_qyDataType_long, Consts.CONST_qnmCfgId_uiRnd_cli, (void*  ) pAuthInfo->uiRnd_cli,  0,  &ptr,  &len  )  )  goto  errLabel;  //  2007/11/22
+	 //  if  (  pAuthInfo->uiWebSessId  &&  data2Stream(  CONST_qyDataType_long,  Consts.CONST_qnmCfgId_uiWebSessId,  (  void  *  )pAuthInfo->uiWebSessId,  0,  &ptr,  &len  )  )  goto  errLabel;  //  2007/11/22
+	 if  (pAuthInfo->uiLogonId!=0  &&  0!=data2Stream(Consts.CONST_qyDataType_long, Consts.CONST_qnmCfgId_uiLogonId, (void*  ) pAuthInfo->uiLogonId,  0,  &ptr,  &len  )  )  goto  errLabel;  //  2007/11/22
+
+	 //  2008/06/10
+	 if  (pAuthInfo->uiBlobLen_sessionKey!=0  )  {
+		 if  (0!=data2Stream(Consts.CONST_qyDataType_data, Consts.CONST_qnmCfgId_sessionKeyBlob, pAuthInfo->sessionKeyBlob,  pAuthInfo->uiBlobLen_sessionKey,  &ptr,  &len  )  )  goto  errLabel;
+	 }
+
+	 //
+	 if  (0!=data2Stream(Consts.CONST_qyDataType_long, Consts.CONST_qnmCfgId_null,  null,  0,  &ptr,  &len  )  )  goto  errLabel;
+	 
+	 iErr  =  0;
+errLabel:
+	 if  (  0==iErr  )  {
+		 * uiBufSize = *uiBufSize - len;
+}
+return iErr;	 
+}
+
+
+
+ public static unsafe int tmpHandler_stream2CommAuthInfo_mis(void* p0, void* p1, uint uiStreamId, QY_CFGITEM_ntoh_U* pItem)
+{
+	int iErr = -1;
+	//  p0;
+	QY_COMM_AUTHINFO_MIS* pAuthInfo = (QY_COMM_AUTHINFO_MIS*)p1;
+	//  QY_CFGITEM				*	pItem		=	(  QY_CFGITEM  *  )p2;
+	int lVal;
+
+	if (uiStreamId != Consts.CONST_imCommType_auth) goto errLabel;
+
+	ushort tmp_cfgId;
+			//memcpy(&tmp_cfgId, &pItem->head.cfgId, sizeof(short));
+			tmp_cfgId = pItem->head.cfgId;
+	switch (tmp_cfgId)
+	{
+		case Consts.CONST_qnmCfgId_start:  //  2007/12/11
+			break;
+		case Consts.CONST_qnmCfgId_null:       //  2007/12/11
+			break;
+		case Consts.CONST_qnmCfgId_clientVer:
+			getFieldData_str(pItem, pAuthInfo->ver, Consts.CONST_qyMaxVerLen + 1);
+			break;
+		case Consts.CONST_qnmCfgId_authCmd:
+			if (0!=getFieldData_l32(pItem, &lVal)) goto errLabel;
+			pAuthInfo->ucCmd = (byte  )lVal;
+			break;			 
+		case Consts.CONST_qnmCfgId_iAppType:                         //  2011/03/27
+			 if (0!=getFieldData_long(pItem, &lVal)) goto errLabel;
+			 pAuthInfo->iAppType = lVal;
+			 break;
+		case Consts.CONST_qnmCfgId_iCustemId:
+			 if (0!=getFieldData_long(pItem, &lVal)) goto errLabel;
+			 pAuthInfo->iCustemId = lVal;
+			 break;
+		case Consts.CONST_qnmCfgId_uiChannelType:    //  2007/07/08
+			 if (0 != getFieldData_long(pItem, &lVal)) goto errLabel;
+			 pAuthInfo->uiChannelType = (uint)lVal;
+			 break;
+		case Consts.CONST_qnmCfgId_langId:
+			 ushort tmp_dataType;
+					//memcpy(&tmp_dataType, &pItem->head.dataType, sizeof(short));
+					tmp_dataType = pItem->head.dataType;
+					if (tmp_dataType == Consts.CONST_qyDataType_long)
+					{
+						if (0 != getFieldData_long(pItem, &lVal)) goto errLabel;
+						pAuthInfo->usLangId = (ushort  )lVal;
+					}
+					else if (tmp_dataType == Consts.CONST_qyDataType_short)
+			{           //  2007/12/07, 允许usLangId以long或者short的形式发送.
+						if (0 != getFieldData_short(pItem, (short*)&pAuthInfo->usLangId)) goto errLabel;
+					}
+					else
+					{
+						//traceLogA("CONST_qnmCfgId_usLangId的传输类型不对。"); 
+						goto errLabel;
+					}
+					break;
+			 case Consts.CONST_qnmCfgId_uiDevType_from:
+if (0 != getFieldData_long(pItem, &lVal)) goto errLabel;
+pAuthInfo->uiDevType = (uint)lVal;
+break;
+			 case Consts.CONST_qnmCfgId_usAuthType:           //  2011/03/22
+short sVal;
+if (0 != getFieldData_short(pItem, &sVal)) goto errLabel;
+pAuthInfo->usAuthType = (ushort)sVal;
+break;
+			 case Consts.CONST_qnmCfgId_ulIp:
+if (0 != getFieldData_long(pItem, &lVal)) goto errLabel;
+ulIp2Str((uint)lVal, pAuthInfo->ip, Consts.CONST_qyMaxIpLen + 1);
+break;
+			 case Consts.CONST_qnmCfgId_messengerName:
+getFieldData_wStr(pItem, pAuthInfo->messengerName, Consts.CONST_maxMessengerNameLen +1);
+break;
+			 case Consts.CONST_qnmCfgId_messengerPasswd:  //  2010/01/02
+getFieldData_str(pItem, pAuthInfo->messengerPasswd, Consts.CONST_maxMessengerPasswdLen + 1);
+break;
+			 case Consts.CONST_qnmCfgId_wRndName_serv:
+getFieldData_wStr(pItem, pAuthInfo->wRndName_serv, Consts.CONST_cntof_wRndName_serv);
+break;
+			 case Consts.CONST_qnmCfgId_uiRnd_cli:    //  2007/11/22
+if (0 != getFieldData_long(pItem, &lVal)) goto errLabel;
+pAuthInfo->uiRnd_cli = (uint)lVal;
+break;
+			 case Consts.CONST_qnmCfgId_uiLogonId:    //  2007/11/22
+if (0 != getFieldData_long(pItem, &lVal)) goto errLabel;
+pAuthInfo->uiLogonId = (uint)lVal;
+break;
+			 case Consts.CONST_qnmCfgId_sessionKeyBlob:
+pAuthInfo->uiBlobLen_sessionKey = Consts.CONST_bufSize_sessionKeyBlob;
+if (0 != getFieldData_data(pItem, pAuthInfo->sessionKeyBlob, &pAuthInfo->uiBlobLen_sessionKey)) goto errLabel;
+break;
+default:
+				    //traceLogA("tmpHandler_stream2CommAuthInfo_mis: 未处理的cfgId %d", pItem->head.cfgId);
+break;
+	 }
+	 iErr = 0;
+errLabel:
+return iErr;
+}
+
+
+		public static unsafe int authResp2Stream_mis(uint uiStreamId, AUTH_RESP_MIS* pReq, byte* buf, uint* uiBufSize)
+		{
+			int iErr = -1;
+			int i = 0;
+			byte* ptr = buf;
+			uint len = *uiBufSize;
+
+			if (null==pReq) return -1;
+			if (null==buf) return -1;
+
+			if (0!=data2Stream(Consts.CONST_qyDataType_long, Consts.CONST_qnmCfgId_start, (void*)uiStreamId, 0, &ptr, &len)) goto errLabel;
+
+			//  serverHello
+			if (pReq->uiCommEncCtxType!=0)
+			{
+				if (0!=data2Stream(Consts.CONST_qyDataType_long, Consts.CONST_qnmCfgId_uiCommEncCtxType, (void*)pReq->uiCommEncCtxType, 0, &ptr, &len)) goto errLabel;
+			}
+			if (pReq->uiBlobLen_publicKey!=0)
+			{
+				if (0!=data2Stream(Consts.CONST_qyDataType_data, Consts.CONST_qnmCfgId_publicKeyBlob, pReq->publicKeyBlob, pReq->uiBlobLen_publicKey, &ptr, &len)) goto errLabel;
+			}
+
+			//  
+			if (pReq->idInfo.ui64Id!=0)
+			{
+				if (0!=data2Stream(Consts.CONST_qyDataType_l64, Consts.CONST_qnmCfgId_messengerId, &pReq->idInfo.ui64Id, sizeof(ulong),  &ptr,  &len  )  )  goto errLabel;
+			}
+
+			//
+			if (pReq->uiLogonId!=0)
+			{
+				if (0!=data2Stream(Consts.CONST_qyDataType_long, Consts.CONST_qnmCfgId_uiLogonId, (void*)pReq->uiLogonId, 0, &ptr, &len)) goto errLabel;
+			}
+			if (pReq->wRndName_serv[0]!=0)
+			{
+				if (0!=data2Stream(Consts.CONST_qyDataType_wStr, Consts.CONST_qnmCfgId_wRndName_serv, pReq->wRndName_serv, (uint)mywcslen(pReq->wRndName_serv), &ptr, &len)) goto errLabel;
+			}
+
+			//  2009/10/11
+			if (pReq->ucbDaemonDemo)
+			{
+				if (0!=data2Stream(Consts.CONST_qyDataType_char, Consts.CONST_qnmCfgId_ucbDaemonDemo, (void*)(pReq->ucbDaemonDemo?1:0), 0, &ptr, &len)) goto errLabel;
+			}
+			//  2009/11/05
+			if (pReq->usMaxVideoConferenceMems!=0)
+			{
+				if (0!=data2Stream(Consts.CONST_qyDataType_short, Consts.CONST_qnmCfgId_usMaxVideoConferenceMems, (void*)pReq->usMaxVideoConferenceMems, 0, &ptr, &len)) goto errLabel;
+			}
+			if (pReq->ucDays_left!=0)
+			{   //  2010/03/22
+				if (0!=data2Stream(Consts.CONST_qyDataType_char, Consts.CONST_qnmCfgId_ucDays_left, (void*)pReq->ucDays_left, 0, &ptr, &len)) goto errLabel;
+			}
+
+			//  2011/10/22
+			if (pReq->usAppAvLevel_daemon!=0 && 0!=data2Stream(Consts.CONST_qyDataType_short, Consts.CONST_qnmCfgId_usAppAvLevel, (void*)pReq->usAppAvLevel_daemon, 0, &ptr, &len)) goto errLabel;
+
+			//  2017/06/21
+			if (pReq->usSubSystemId_daemon!=0)
+			{
+				if (0!=data2Stream(Consts.CONST_qyDataType_short, Consts.CONST_qnmCfgId_subSystemId, (void*)pReq->usSubSystemId_daemon, 0, &ptr, &len)) goto errLabel;
+			}
+
+			//  2011/04/07
+			if (pReq->talkerDesc[0]!=0)
+			{
+				if (0!=data2Stream(Consts.CONST_qyDataType_wStr, Consts.CONST_qnmCfgId_talkerDesc, pReq->talkerDesc, (uint)mywcslen(pReq->talkerDesc), &ptr, &len)) goto errLabel;
+			}
+
+			//  2016/08/10
+			if (pReq->clientWelcomeMsg[0]!=0)
+			{
+				if (0!=data2Stream(Consts.CONST_qyDataType_wStr, Consts.CONST_qnmCfgId_clientWelcomeMsg, pReq->clientWelcomeMsg, (uint)mywcslen(pReq->clientWelcomeMsg), &ptr, &len)) goto errLabel;
+			}
+
+			//
+			if (pReq->wBuf_hint[0]!=0)
+			{
+				if (0!=data2Stream(Consts.CONST_qyDataType_wStr, Consts.CONST_qnmCfgId_hint, pReq->wBuf_hint, (uint)mywcslen(pReq->wBuf_hint), &ptr, &len)) goto errLabel;
+			}
+
+
+			if (0!=data2Stream(Consts.CONST_qyDataType_long, Consts.CONST_qnmCfgId_null, null, 0, &ptr, &len)) goto errLabel;
+
+			iErr = 0;
+		errLabel:
+			if (0==iErr)
+			{
+				*uiBufSize = *uiBufSize - len;
+			}
+			return iErr;
+
+		}
+
+
+		public static unsafe int tmpHandler_stream2AuthResp_mis(void* p0, void* p1, uint uiStreamId, QY_CFGITEM_ntoh_U* pItem)
+		{
+			int iErr = -1;
+			//  p0
+			AUTH_RESP_MIS* pAuthResp = (AUTH_RESP_MIS*)p1;
+			//  QY_CFGITEM				*	pItem		=	(  QY_CFGITEM  *  )p2;
+
+			if (uiStreamId != Consts.CONST_imCommType_authResp) goto errLabel;
+
+			ushort tmp_cfgId;
+			//memcpy(&tmp_cfgId, &pItem->head.cfgId, sizeof(short));
+			tmp_cfgId = pItem->head.cfgId;
+			switch (tmp_cfgId)
+			{
+				case Consts.CONST_qnmCfgId_uiCommEncCtxType:
+					if (0!=getFieldData_l32(pItem, (int*)&pAuthResp->uiCommEncCtxType)) goto errLabel;
+					break;
+				case Consts.CONST_qnmCfgId_publicKeyBlob:
+					pAuthResp->uiBlobLen_publicKey = Consts.CONST_bufSize_publicKeyBlob;	// sizeof(pAuthResp->publicKeyBlob  );
+					if (0 != getFieldData_data(pItem, pAuthResp->publicKeyBlob, &pAuthResp->uiBlobLen_publicKey)) goto errLabel;
+					break;
+				//
+				case Consts.CONST_qnmCfgId_messengerId:
+					if (0 != getFieldData_l64(pItem, (Int64*)&pAuthResp->idInfo.ui64Id)) goto errLabel;
+					break;
+				case Consts.CONST_qnmCfgId_uiLogonId:
+					if (0 != getFieldData_l32(pItem, (int*)&pAuthResp->uiLogonId)) goto errLabel;
+					break;
+				case Consts.CONST_qnmCfgId_wRndName_serv:
+					if (0 != getFieldData_wStr(pItem, pAuthResp->wRndName_serv, Consts.CONST_cntof_wRndName_serv)) goto errLabel;
+					break;
+				case Consts.CONST_qnmCfgId_ucbDaemonDemo:  //  2009/10/11
+					if (0 != getFieldData_byte(pItem, (byte*)&pAuthResp->ucbDaemonDemo)) goto errLabel;
+					break;
+				case Consts.CONST_qnmCfgId_usMaxVideoConferenceMems:   //  2009/11/05
+					if (0 != getFieldData_short(pItem, (short*)&pAuthResp->usMaxVideoConferenceMems)) goto errLabel;
+					break;
+				case Consts.CONST_qnmCfgId_ucDays_left:                //  2010/03/22
+					if (0 != getFieldData_byte(pItem, (byte*)&pAuthResp->ucDays_left)) goto errLabel;
+					break;
+				//
+				case Consts.CONST_qnmCfgId_usAppAvLevel:       //  2011/10/22
+					getFieldData_short(pItem, (short*)&pAuthResp->usAppAvLevel_daemon);
+					break;
+				//
+				case Consts.CONST_qnmCfgId_subSystemId:
+					getFieldData_short(pItem, (short*)&pAuthResp->usSubSystemId_daemon);
+					break;
+				//
+				case Consts.CONST_qnmCfgId_talkerDesc:
+					if (0 != getFieldData_wStr(pItem, pAuthResp->talkerDesc, Consts.CONST_cntof_talkerDesc)) goto errLabel;
+					break;
+				//
+				case Consts.CONST_qnmCfgId_clientWelcomeMsg:  //  2016/08/10
+					if (0 != getFieldData_wStr(pItem, pAuthResp->clientWelcomeMsg, Consts.CONST_cntof_clientWelcomMsg)) goto errLabel;
+					break;
+				//
+				case Consts.CONST_qnmCfgId_hint:
+					getFieldData_wStr(pItem, pAuthResp->wBuf_hint, Consts.CONST_cntof_hint);
+					break;
+				default:
+					break;
+
+			}
+			iErr = 0;
+		errLabel:
+			return iErr;
+
+		}
+
+
+		///////////////////////////////////////////////////////
+
+		public static unsafe int msgRoute2Stream(uint uiStreamId, MSG_ROUTE* pReq, byte* buf, uint* uiBufSize)
+		{
+			int iErr = -1;
+			int i = 0;
+			byte* ptr = buf;
+			uint len = *uiBufSize;
+
+			if (null==pReq) return -1;
+			if (null==buf) return -1;
+
+			if (0!=data2Stream(Consts.CONST_qyDataType_long, Consts.CONST_qnmCfgId_start, (void*)uiStreamId, 0, &ptr, &len)) goto errLabel;
+
+			if (0 != pReq->idInfo_to.ui64Id)
+			{
+				if (0 != data2Stream(Consts.CONST_qyDataType_l64, Consts.CONST_qnmCfgId_messengerId_to, (void*)&pReq->idInfo_to.ui64Id, sizeof(UInt64),  &ptr,  &len  )  )  goto errLabel;
+			}
+			if (0 != pReq->idInfo_from.ui64Id)
+			{
+				if (0 != data2Stream(Consts.CONST_qyDataType_l64, Consts.CONST_qnmCfgId_messengerId_from, (void*)&pReq->idInfo_from.ui64Id, sizeof(UInt64),  &ptr,  &len  )  )  goto errLabel;
+			}
+			//
+			if (0 != pReq->uiMsgRouteId)
+			{       //  2008/05/27
+				if (0 != data2Stream(Consts.CONST_qyDataType_long, Consts.CONST_qnmCfgId_uiMsgRouteId, (void*)pReq->uiMsgRouteId, 0, &ptr, &len)) goto errLabel;
+			}
+			//
+			if (0 != pReq->uiLogonId)
+			{           //  2007/12/22
+				if (0 != data2Stream(Consts.CONST_qyDataType_long, Consts.CONST_qnmCfgId_uiLogonId, (void*)pReq->uiLogonId, 0, &ptr, &len)) goto errLabel;
+			}
+			//
+			if (0 != pReq->usLangId_from)
+			{
+				if (0 != data2Stream(Consts.CONST_qyDataType_short, Consts.CONST_qnmCfgId_langId, (void*)pReq->usLangId_from, 0, &ptr, &len)) goto errLabel;
+			}
+			//
+			if (0 != pReq->uiDevType_to)
+			{
+				if (0 != data2Stream(Consts.CONST_qyDataType_long, Consts.CONST_qnmCfgId_uiDevType_to, (void*)pReq->uiDevType_to, 0, &ptr, &len)) goto errLabel;
+			}
+			/*
+			 * if (0 != pReq->wDevIdStr_to[0])
+			{
+				if (0 != data2Stream(Consts.CONST_qyDataType_wStr, Consts.CONST_qnmCfgId_wDevIdStr_to, pReq->wDevIdStr_to, lstrlen(pReq->wDevIdStr_to), &ptr, &len)) goto errLabel;
+			}
+			*/
+			if (0 != pReq->uiDevType_from)
+			{
+				if (0 != data2Stream(Consts.CONST_qyDataType_long, Consts.CONST_qnmCfgId_uiDevType_from, (void*)pReq->uiDevType_from, 0, &ptr, &len)) goto errLabel;
+			}
+			/*
+			if (0 != pReq->wDevIdStr_from[0])
+			{
+				if (0 != data2Stream(Consts.CONST_qyDataType_wStr, Consts.CONST_qnmCfgId_wDevIdStr_from, pReq->wDevIdStr_from, lstrlen(pReq->wDevIdStr_from), &ptr, &len)) goto errLabel;
+			}
+			*/
+			//
+			/*	 
+			struct												{
+					QY_MESSENGER_ID							idInfo;
+			}													mems_to[Consts.CONST_maxMsgrs_sendTo];	//  2008/03/27, 可同时发到的若干联系人.
+			*/
+			//  2009/09/12
+			for (i = 0; i < Consts.CONST_maxMsgrs_sendTo; i++)
+			{
+				if (0!=pReq->mems_to_idInfo_ui64Id[i])
+				{
+					if (0!=data2Stream(Consts.CONST_qyDataType_l64, Consts.CONST_qnmCfgId_messengerId_to, (void*)&pReq->mems_to_idInfo_ui64Id[i], sizeof(UInt64),  &ptr,  &len  )  )  goto errLabel;
+		}
+	}
+	 //
+	 if  (0!=pReq->uiObjType_src  )  {
+		 if  (0!=data2Stream(Consts.CONST_qyDataType_long, Consts.CONST_qnmCfgId_uiObjType, (void*  ) pReq->uiObjType_src,  0,  &ptr,  &len  )  )  goto  errLabel;
+	 }
+if (0 != pReq->ulDetectedIp_from)
+{
+	if (0 != data2Stream(Consts.CONST_qyDataType_long, Consts.CONST_qnmCfgId_ulDetectedIp, (void*)pReq->ulDetectedIp_from, 0, &ptr, &len)) goto errLabel;
+}
+/*
+if (0 != pReq->displayName_from[0])
+{
+	if (0 != data2Stream(Consts.CONST_qyDataType_wStr, Consts.CONST_qnmCfgId_displayName, pReq->displayName_from, (uint)mywcslen(pReq->displayName_from), &ptr, &len)) goto errLabel;
+}
+*/
+
+
+
+
+
+if (0!=data2Stream(Consts.CONST_qyDataType_long, Consts.CONST_qnmCfgId_null, null, 0, &ptr, &len)) goto errLabel;
+
+iErr = 0;
+errLabel:
+if (0==iErr)
+{
+	*uiBufSize = *uiBufSize - len;
+}
+return iErr;	 
+
+}
+
+
+ public static unsafe int tmpHandler_stream2MsgRoute(void* p0, void* p1, uint uiStreamId, QY_CFGITEM_ntoh_U* pItem)
+{
+	int iErr = -1;
+	//  p0;
+	MSG_ROUTE* pContent = (MSG_ROUTE*)p1;
+	//  QY_CFGITEM				*	pItem		=	(  QY_CFGITEM  *  )p2;
+	//  long						lVal;
+
+	if (null==pContent) goto errLabel;
+
+	if (uiStreamId != Consts.CONST_imCommType_msgRoute) goto errLabel;
+
+	ushort tmp_cfgId;
+			//memcpy(&tmp_cfgId, &pItem->head.cfgId, sizeof(short));
+			tmp_cfgId = pItem->head.cfgId;
+	switch (tmp_cfgId)
+	{
+				/*
+		case Consts.CONST_qnmCfgId_displayName:
+			if (getFieldData_wStr(pItem, pContent->displayName_from, mycountof(pContent->displayName_from))) goto errLabel;
+			break;
+				*/
+		case Consts.CONST_qnmCfgId_ulDetectedIp:
+			if (0!=getFieldData_long(pItem, (int*)&pContent->ulDetectedIp_from)) goto errLabel;
+			break;
+		case Consts.CONST_qnmCfgId_uiObjType:
+			if (0 != getFieldData_long(pItem, (int*)&pContent->uiObjType_src)) goto errLabel;
+			break;
+		case Consts.CONST_qnmCfgId_uiDevType_from:
+			if (0 != getFieldData_long(pItem, (int*)&pContent->uiDevType_from)) goto errLabel;
+			break;
+					/*
+		case Consts.CONST_qnmCfgId_wDevIdStr_from:
+			if (0 != getFieldData_wStr(pItem, pContent->wDevIdStr_from, mycountof(pContent->wDevIdStr_from))) goto errLabel;
+			break;
+					*/
+		case Consts.CONST_qnmCfgId_uiDevType_to:
+			if (0 != getFieldData_long(pItem, (int*)&pContent->uiDevType_to)) goto errLabel;
+			break;
+					/*
+		case Consts.CONST_qnmCfgId_wDevIdStr_to:
+			if (0 != getFieldData_wStr(pItem, pContent->wDevIdStr_to, mycountof(pContent->wDevIdStr_to))) goto errLabel;
+			break;
+					*/
+		case Consts.CONST_qnmCfgId_langId:
+			if (0 != getFieldData_short(pItem, (short*)&pContent->usLangId_from)) goto errLabel;
+			break;
+		case Consts.CONST_qnmCfgId_uiLogonId:      //  2007/12/22
+			if (0!=getFieldData_long(pItem, (int*)&pContent->uiLogonId)) goto errLabel;
+			break;
+		case Consts.CONST_qnmCfgId_uiMsgRouteId:       //  2008/05/27
+			if (0 != getFieldData_long(pItem, (int*)&pContent->uiMsgRouteId)) goto errLabel;
+			break;
+		case Consts.CONST_qnmCfgId_messengerId_from:
+			if (0 != getFieldData_l64(pItem, (Int64*)&pContent->idInfo_from.ui64Id)) goto errLabel;
+			break;
+		case Consts.CONST_qnmCfgId_messengerId_to:
+			if (0 != pContent->idInfo_to.ui64Id)
+			{
+				if (0 != getFieldData_l64(pItem, (Int64*)&pContent->idInfo_to.ui64Id)) goto errLabel;
+			}
+			else
+			{
+				if (pContent->tmpInternal_usCnt_mems_to >= Consts.CONST_maxMsgrs_sendTo)
+				{
+					traceLogA("stream2MsgRoute: usCnt_mems_to >= mycountof(  mems_to  )");
+					break;
+				}
+				if (0!=getFieldData_l64(pItem, (Int64*)&pContent->mems_to_idInfo_ui64Id[pContent->tmpInternal_usCnt_mems_to])) goto errLabel;
+				pContent->tmpInternal_usCnt_mems_to++;
+			}
+			break;
+
+		//  下面为一些用于性能评估的参数
+
+		//
+		//  case  Consts.CONST_qnmCfgId_dwTickCnt_resp_recved:
+		//	   if  (  getFieldData_long(  pItem,  (  long  *  )&pContent->debugInfo.dwTickCnt_resp_recved  )  )  goto  errLabel;
+		//	   break;
+		//  case  Consts.CONST_qnmCfgId_usElapsed_resp_end:
+		//	   if  (  getFieldData_short(  pItem,  (  short  *  )&pContent->debugInfo.usElapsed_resp_end  )  )  goto  errLabel;
+		//	   break;
+
+
+		default:
+			break;
+	}
+	iErr = 0;
+errLabel:
+	return iErr;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public static unsafe int qyhtonRouteTalkData(MSG_ROUTE* pAddr, byte* pContentParam, uint lenInBytes_content, bool bNeedContentConvrted, byte ucFlg, byte* buf, uint* puiBufSize, char* tHintBuf_showInfo, uint uiCnt_tHintBuf_showInfo)
+		{
+			int iErr = -1;
+			IM_CONTENTU* pContent = (IM_CONTENTU*)pContentParam;
+			int lenInBytes=0;
+			byte* ptr;
+			//  IM_L_STREAM			*		pStream									=	NULL;
+			uint uiBufSize;
+			int lenInBytes_addr = 0;
+			//  long						tmp_l;
+
+			
+			if (null==buf || null==puiBufSize) return -1;
+			uiBufSize = *puiBufSize;
+
+			if (isUcFlgRouteTalkData(ucFlg))
+			{
+
+				lenInBytes_addr = (int)uiBufSize;
+				if (0!=msgRoute2Stream(Consts.CONST_imCommType_msgRoute, pAddr, buf, (uint *  ) & lenInBytes_addr)  )  goto errLabel;
+			}
+			else if (isUcFlgTalkData(ucFlg))
+			{       //  仅用来talkData
+				if (null==pAddr || uiBufSize < sizeof(MSG_SIMPLE_ROUTE)) goto errLabel;
+				MSG_SIMPLE_ROUTE talkDataAddr;
+				MSG_SIMPLE_ROUTE* pTalkDataAddr = &talkDataAddr;
+				//  pTalkDataAddr  =  (  MSG_SIMPLE_ROUTE  *  )buf;
+				pTalkDataAddr->idInfo_from.ui64Id = pAddr->idInfo_from.ui64Id;
+				pTalkDataAddr->idInfo_to.ui64Id = pAddr->idInfo_to.ui64Id;
+				//
+				MACRO_htonl64(ref pTalkDataAddr->idInfo_from.ui64Id);
+				MACRO_htonl64(ref pTalkDataAddr->idInfo_to.ui64Id);
+				//
+				mymemcpy((IntPtr)buf, (IntPtr)pTalkDataAddr, (uint)sizeof(MSG_SIMPLE_ROUTE));
+				//
+				lenInBytes_addr = sizeof(MSG_SIMPLE_ROUTE);
+			}
+
+			
+			//
+			ptr = buf + lenInBytes_addr;
+
+			//  要求不转换的		  
+			//
+			if (!bNeedContentConvrted)
+			{
+
+				if (lenInBytes_content > uiBufSize - lenInBytes_addr)
+				{
+					traceLogA("lenInBytes_content is too large");
+					goto errLabel;
+				}
+				if (null==pContent) lenInBytes = lenInBytes_addr;
+				else
+				{
+					mymemcpy((IntPtr)ptr, (IntPtr)pContent, lenInBytes_content);
+					lenInBytes = (int)(lenInBytes_addr + lenInBytes_content);
+				}
+
+				iErr = 0; goto errLabel;
+			}
+
+			if (null==pContent) goto errLabel;
+
+			
+			switch (pContent->uiType)
+			{
+				case 0:
+					{
+						uint uiType = pContent->uiType;
+						MACRO_htoni(ref uiType);
+						lenInBytes = sizeof(uint);
+						if (uiBufSize - lenInBytes_addr < lenInBytes) goto errLabel;
+						mymemcpy((IntPtr)ptr, (IntPtr)(byte*)&uiType, (uint)lenInBytes);
+						lenInBytes += lenInBytes_addr;
+						iErr = 0; goto errLabel;
+					}
+					break;
+				case Consts.CONST_imCommType_simpleResp:
+					{
+						IM_SIMPLE_RESP simpleResp;
+						mymemcpy((IntPtr)(byte*)&simpleResp,(IntPtr)(byte*) &pContent->simpleResp, (uint)sizeof(IM_SIMPLE_RESP));
+						if ((lenInBytes = qyhtonImSimpleResp(0, &simpleResp)) < 0) goto errLabel;
+						if (uiBufSize - lenInBytes_addr < lenInBytes) goto errLabel;
+						mymemcpy((IntPtr)ptr, (IntPtr)(byte*)&simpleResp, (uint)lenInBytes);
+						lenInBytes += lenInBytes_addr;
+						iErr = 0; goto errLabel;
+					}
+					break;
+				default:
+					break;
+			}
+
+			
+			//
+			IM_L_STREAM_nh stream_hton;
+			byte* stream_pBuf = null;
+			//  pStream  =  (  IM_L_STREAM  *  )ptr;
+
+			if (uiBufSize - lenInBytes_addr < (int)Marshal.OffsetOf<IM_L_STREAM>("buf"))
+			{
+				traceLogA("qyhtonRouteTalkData failed: buf is too small");
+				goto errLabel;  //  怕空间不够了
+			}
+			mymemset((IntPtr)(byte*)&stream_hton, 0, (int)Marshal.OffsetOf<IM_L_STREAM>("buf"));
+			stream_hton.uiType = Consts.CONST_imCommType_lStream;
+			stream_hton.uiContentType = pContent->uiType;
+			stream_pBuf = ptr + (int)Marshal.OffsetOf<IM_L_STREAM>("buf");
+			lenInBytes = (int)(uiBufSize - lenInBytes_addr);       //  sizeof(  pStream->buf  );				
+			switch (pContent->uiType)
+			{
+				/*
+
+				case Consts.CONST_imCommType_htmlContent:
+					if (imHtmlContent2Stream(pContent->uiType, &pContent->html, stream_pBuf, (unsigned  int *  ) & lenInBytes)  )  goto errLabel;
+					break;
+				case Consts.CONST_imCommType_transferFileReq:
+					if (transferFileReq2Stream(pContent->uiType, &pContent->transferFileReq, stream_pBuf, (unsigned  int *  ) & lenInBytes)  )  goto errLabel;
+					break;
+				case Consts.CONST_imCommType_taskProcReq:
+					if (taskProcReq2Stream(pContent->uiType, &pContent->taskProcReq, stream_pBuf, (unsigned  int *  ) & lenInBytes)  )  goto errLabel;
+					break;
+				case Consts.CONST_imCommType_taskProcResp:
+					if (taskProcResp2Stream(pContent->uiType, &pContent->taskProcResp, stream_pBuf, (unsigned  int *  ) & lenInBytes)  )  goto errLabel;
+					break;
+				case Consts.CONST_imCommType_transferFileReplyReq:
+					if (transferFileReplyReq2Stream(pContent->uiType, &pContent->transferFileReplyReq, stream_pBuf, (unsigned  int *  ) & lenInBytes)  )  goto errLabel;
+					break;
+				case Consts.CONST_imCommType_transferFileDataReq:
+					if (transferFileDataReq2Stream(pContent->uiType, &pContent->transferFileDataReq, stream_pBuf, (unsigned  int *  ) & lenInBytes)  )  goto errLabel;
+					break;
+				case Consts.CONST_imCommType_transferFileDataResp:
+					if (transferFileDataResp2Stream(pContent->uiType, &pContent->transferFileDataResp, stream_pBuf, (unsigned  int *  ) & lenInBytes)  )  goto errLabel;
+					break;
+				case Consts.CONST_imCommType_transferFileEndReq:
+					if (transferFileEndReq2Stream(pContent->uiType, &pContent->transferFileEndReq, stream_pBuf, (unsigned  int *  ) & lenInBytes)  )  goto errLabel;
+					break;
+				case Consts.CONST_imCommType_transferFileEndResp:
+					if (transferFileEndResp2Stream(pContent->uiType, &pContent->transferFileEndResp, stream_pBuf, (unsigned  int *  ) & lenInBytes)  )  goto errLabel;
+					break;
+				case Consts.CONST_imCommType_rtcCallReq:
+					if (rtcCallReq2Stream(pContent->uiType, &pContent->rtcCallReq, stream_pBuf, (unsigned  int *  ) & lenInBytes)  )  goto errLabel;
+					break;
+				case Consts.CONST_imCommType_transferAvInfo:
+					if (transferAvInfo2Stream(pContent->uiType, &pContent->transferAvInfo, stream_pBuf, (unsigned  int *  ) & lenInBytes)  )  goto errLabel;
+					break;
+				case Consts.CONST_imCommType_transferAvReplyInfo:
+					if (transferAvReplyInfo2Stream(pContent->uiType, &pContent->transferAvReplyInfo, stream_pBuf, (unsigned  int *  ) & lenInBytes)  )  goto errLabel;
+					break;
+				case Consts.CONST_imCommType_transferVideoData:
+					if (transferVideoData2Stream(pContent->uiType, &pContent->transferVideoData, stream_pBuf, (unsigned  int *  ) & lenInBytes)  )  goto errLabel;
+					break;
+				case Consts.CONST_imCommType_transferVideoDataResp:
+					if (transferVideoDataResp2Stream(pContent->uiType, &pContent->transferVideoDataResp, stream_pBuf, (unsigned  int *  ) & lenInBytes)  )  goto errLabel;
+					break;
+				case Consts.CONST_imCommType_transferAudioData:
+					if (transferAudioData2Stream(pContent->uiType, &pContent->transferAudioData, stream_pBuf, (unsigned  int *  ) & lenInBytes)  )  goto errLabel;
+					break;
+				case Consts.CONST_imCommType_transferAudioDataResp:
+					if (transferAudioDataResp2Stream(pContent->uiType, &pContent->transferAudioDataResp, stream_pBuf, (unsigned  int *  ) & lenInBytes)  )  goto errLabel;
+					break;
+				case Consts.CONST_imCommType_remoteAssistReq:
+					if (remoteAssistReq2Stream(pContent->uiType, &pContent->remoteAssistReq, stream_pBuf, (unsigned  int *  ) & lenInBytes)  )  goto errLabel;
+					break;
+				case Consts.CONST_imCommType_taskInteractionReq:
+					if (taskInteractionReq2Stream(pContent->uiType, &pContent->taskInteractionReq, stream_pBuf, (unsigned  int *  ) & lenInBytes)  )  goto errLabel;
+					break;
+				case Consts.CONST_imCommType_videoConferenceStatus:
+					if (videoConferenceStatus2Stream(pContent->uiType, &pContent->videoConferenceStatus, stream_pBuf, (unsigned  int *  ) & lenInBytes)  )  goto errLabel;
+					break;
+				case Consts.CONST_imCommType_videoConferenceLayout:
+					if (videoConferenceLayout2Stream(pContent->uiType, &pContent->videoConferenceLayout, stream_pBuf, (unsigned  int *  ) & lenInBytes)  )  goto errLabel;
+					break;
+				case Consts.CONST_imCommType_confState:  //  2017/09/17
+					if (confState2Stream(pContent->uiType, &pContent->confState, stream_pBuf, (unsigned  int *  ) & lenInBytes)  )  goto errLabel;
+					break;
+				case Consts.CONST_imCommType_refreshWebContactsInfo:
+					if (refreshWebContactsInfo2Stream(pContent->uiType, &pContent->refreshWebContactsInfo, stream_pBuf, (unsigned  int *  ) & lenInBytes)  )  goto errLabel;
+					break;
+				case Consts.CONST_imCommType_vDevComs:
+					if (qyVDevComs2Stream(pContent->uiType, &pContent->vDevComs, stream_pBuf, (unsigned  int *  ) & lenInBytes)  )  goto errLabel;
+					break;
+				case Consts.CONST_imCommType_retrieveSmPolicy:
+					if (retrieveSmPolicy2Stream(pContent->uiType, &pContent->retrieveSmPolicy, stream_pBuf, (unsigned  int *  ) & lenInBytes)  )  goto errLabel;
+					break;
+				case Consts.CONST_imCommType_retrievePhoneMsgrs:
+					if (retrievePhoneMsgrs2Stream(pContent->uiType, &pContent->retrievePhoneMsgrs, stream_pBuf, (unsigned  int *  ) & lenInBytes)  )  goto errLabel;
+					break;
+				*/
+				case Consts.CONST_imCommType_getCfgsReq:   //  2011/01/30
+					if (0!=qisGetCfgsReq2Stream(pContent->uiType, &pContent->getCfgsReq, stream_pBuf, (uint *  ) & lenInBytes)  )  goto errLabel;
+					break;
+					/*
+				case Consts.CONST_imCommType_retrieveToPaths:
+					if (retrieveToPaths2Stream(pContent->uiType, &pContent->retrieveToPaths, stream_pBuf, (unsigned  int *  ) & lenInBytes)  )  goto errLabel;
+					break;
+				case Consts.CONST_imCommType_refreshDynBmps:
+					if (refreshDynBmps2Stream(pContent->uiType, &pContent->refreshDynBmps, stream_pBuf, (unsigned  int *  ) & lenInBytes)  )  goto errLabel;
+					break;
+				case Consts.CONST_imCommType_verifyViewDynBmp: //  2011/10/31
+					if (verifyViewDynBmp2Stream(pContent->uiType, &pContent->verifyViewDynBmp, stream_pBuf, (unsigned  int *  ) & lenInBytes)  )  goto errLabel;
+					break;
+				case Consts.CONST_imCommType_retrieveDynBmps:
+					if (retrieveDynBmps2Stream(pContent->uiType, &pContent->retrieveDynBmps, stream_pBuf, (unsigned  int *  ) & lenInBytes)  )  goto errLabel;
+					break;
+				case Consts.CONST_imCommType_getDaemonStatusReq:   //  2011/01/09
+					if (getDaemonStatusReq2Stream(pContent->uiType, &pContent->getDaemonStatusReq, stream_pBuf, (unsigned  int *  ) & lenInBytes)  )  goto errLabel;
+					break;
+				case Consts.CONST_imCommType_queryCustomerServiceOfficerReq:   //  2011/04/06
+					if (queryCustomerServiceOfficerReq2Stream(pContent->uiType, &pContent->queryCustomerServiceOfficerReq, stream_pBuf, (unsigned  int *  ) & lenInBytes)  )  goto errLabel;
+					break;
+				case Consts.CONST_imCommType_queryCustomerServiceOfficerReplyReq:  //  2011/04/06
+					if (queryCustomerServiceOfficerReplyReq2Stream(pContent->uiType, &pContent->queryCustomerServiceOfficerReplyReq, stream_pBuf, (unsigned  int *  ) & lenInBytes)  )  goto errLabel;
+					break;
+				case Consts.CONST_imCommType_transferGpsInfo:  //  2012/04/20
+					if (transferGpsInfo2Stream(pContent->uiType, &pContent->transferGpsInfo, stream_pBuf, (unsigned  int *  ) & lenInBytes)  )  goto errLabel;
+					break;
+				case Consts.CONST_imCommType_transferGpsReplyInfo: //  2012/04/20
+					if (transferGpsReplyInfo2Stream(pContent->uiType, &pContent->transferGpsReplyInfo, stream_pBuf, (unsigned  int *  ) & lenInBytes)  )  goto errLabel;
+					break;
+				case Consts.CONST_imCommType_transferGpsData:
+					if (transferGpsData2Stream(pContent->uiType, &pContent->transferGpsData, stream_pBuf, (unsigned  int *  ) & lenInBytes)  )  goto errLabel;
+					break;
+				case Consts.CONST_imCommType_transferGpsDataResp:
+					if (transferGpsDataResp2Stream(pContent->uiType, &pContent->transferGpsDataResp, stream_pBuf, (unsigned  int *  ) & lenInBytes)  )  goto errLabel;
+					break;
+				case Consts.CONST_imCommType_ptzControlReq:    //  2012/08/05
+					if (ptzControlReq2Stream(pContent->uiType, &pContent->ptzControlReq, stream_pBuf, (unsigned  int *  ) & lenInBytes)  )  goto errLabel;
+					break;
+				case Consts.CONST_imCommType_ptzControlCmd:    //  2012/08/05
+					if (ptzControlCmd2Stream(pContent->uiType, &pContent->ptzControlCmd, stream_pBuf, (unsigned  int *  ) & lenInBytes)  )  goto errLabel;
+					break;
+				//
+				case Consts.CONST_imCommType_queryPeerStatus:  //  2014/07/11
+					if (queryPeerStatus2Stream(pContent->uiType, &pContent->queryPeerStatus, stream_pBuf, (unsigned  int *  ) & lenInBytes)  )  goto errLabel;
+					break;
+				//
+				case Consts.CONST_imCommType_procOfflineRes:  //  2015/08/01
+					if (procOfflineResU2Stream(pContent->uiType, &pContent->procOfflineResU, stream_pBuf, (unsigned  int *  ) & lenInBytes)  )  goto errLabel;
+					break;
+				//
+				case Consts.CONST_imCommType_imGrp:  //  2018/10/27
+					if (imGrpEx2Stream(pContent->uiType, &pContent->imGrpEx, stream_pBuf, (unsigned  int *  ) & lenInBytes)  )  goto errLabel;
+					break;
+							 */
+
+				//
+				default:
+					{
+						string str = string.Format(("qyhtonRouteTalkData: uiContentType {0} can't be supported"), pContent->uiType);
+						traceLog(str);
+					}
+					goto errLabel;
+			}
+
+			stream_hton.ulStreamLen = (uint)lenInBytes;
+			lenInBytes += (int)Marshal.OffsetOf<IM_L_STREAM>("buf");
+
+			if ((lenInBytes = qyhtonImLStream(0, (IM_L_STREAM*)&stream_hton)) == -1) goto errLabel;
+			mymemcpy((IntPtr)ptr, (IntPtr)(byte*)&stream_hton, (uint)Marshal.OffsetOf<IM_L_STREAM>("buf"));
+
+			lenInBytes += lenInBytes_addr;
+			
+
+			iErr = 0;
+		errLabel:
+			if (0==iErr)
+			{
+				*puiBufSize = (uint)lenInBytes;
+			}
+			return iErr;
+
+		}
+
+
+
+		//  其中ucFlg用来表示要转换成talkData或addrTalkData
+		public static unsafe int qyntohRouteTalkData(byte ucFlg, byte* data, uint dataLen, MSG_ROUTE* pAddr, IM_CONTENTU* pContent, char* tHintBuf_showInfo, uint uiCnt_tHintBuf_showInfo)
+		{
+			int iErr = -1;
+			int lenInBytes=0;
+			byte* ptr;
+			uint size;
+			//TCHAR tHintBuf[255 + 1] = _T("");
+			uint uiType = 0;
+			uint uiContentType = 0;
+
+			
+			if (null==data || null==pContent) return -1;
+
+			if (isUcFlgRouteTalkData(ucFlg))
+			{
+				//
+				if (null==pAddr) goto errLabel;
+				mymemset((IntPtr)pAddr, 0, sizeof(MSG_ROUTE));
+				//
+				ptr = data;
+				size = dataLen;
+				//
+				if (0!=stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2MsgRoute, null, pAddr))
+				{
+					traceLog(("qyntohRouteTalkData: stream2Data 1 failed.\n"));
+					goto errLabel;
+				}
+				//  剩下的size就是pStream
+			}
+			else if (isUcFlgTalkData(ucFlg))
+			{       //  仅用来talkData
+				if (null==pAddr) goto errLabel;
+				mymemset((IntPtr)pAddr, 0, sizeof(MSG_ROUTE));
+				if (dataLen < sizeof(MSG_SIMPLE_ROUTE)) goto errLabel;
+
+				MSG_SIMPLE_ROUTE* pTalkDataAddr;
+				int lenInBytes_addr;
+
+				pTalkDataAddr = (MSG_SIMPLE_ROUTE*)data;
+				pAddr->idInfo_from.ui64Id = pTalkDataAddr->idInfo_from.ui64Id;
+				pAddr->idInfo_to.ui64Id = pTalkDataAddr->idInfo_to.ui64Id;
+				//
+				MACRO_ntohl64(ref pAddr->idInfo_from.ui64Id);
+				MACRO_ntohl64(ref pAddr->idInfo_to.ui64Id);
+				//
+				lenInBytes_addr = sizeof(MSG_SIMPLE_ROUTE);
+				//
+				ptr = data + lenInBytes_addr;
+				size = (uint)(dataLen - lenInBytes_addr);
+			}
+			else
+			{
+				//  这里是没有addr的数据
+				ptr = data;
+				size = dataLen;
+			}
+
+			//
+			//
+			//  这里应该做一个将contentU转换guo来的工作。
+			//  注意：在qyMc里，有所有的input的数据转换时，都要修改
+			//  另外：要特别注意和老程序的通信的兼容性。老程序的talk和task等结构都是用MIS_MSG_TALKDATA发的。
+			//
+
+			if (size < sizeof(uint)) goto errLabel;
+
+			//  uiType  =  qyntohl(  (  (  IM_CONTENTU  *  )ptr  )->uiType  );
+			//  memcpy(  &uiType,  &(  (  IM_CONTENTU  *  )ptr  )->uiType,  sizeof(  uiType  )  );
+			mymemcpy((IntPtr)(byte*)&uiType, (IntPtr)ptr, sizeof(uint));
+			MACRO_ntohl(ref uiType);
+			switch (uiType)
+			{
+				case 0:
+					if (size < sizeof(uint)  )  goto errLabel;
+					mymemcpy((IntPtr)(byte*)&pContent->uiType, (IntPtr)ptr, sizeof(uint)  );
+					MACRO_ntohl(ref pContent->uiType);
+					lenInBytes = sizeof(uint  );
+					iErr = 0; goto errLabel;
+					break;
+				case Consts.CONST_imCommType_simpleResp:
+					if (size < sizeof(IM_SIMPLE_RESP)) goto errLabel;
+					mymemcpy((IntPtr)(byte*)&pContent->simpleResp, (IntPtr)ptr, (uint)sizeof(IM_SIMPLE_RESP)  );
+					if ((lenInBytes = qyntohImSimpleResp(0, &pContent->simpleResp)) < 0) goto errLabel;
+					iErr = 0; goto errLabel;
+					break;
+					/*
+				case Consts.CONST_imCommType_refreshRecentFriendsReq:
+					//
+					mymemcpy((IntPtr)(byte*)&pContent->refreshRecentFriendsReq, ptr, Math.Min(size, sizeof(pContent->refreshRecentFriendsReq))  );
+					if ((lenInBytes = qyntohRefreshRecentFriendsReq(0, &pContent->refreshRecentFriendsReq)) < 0) goto errLabel;
+					iErr = 0; goto errLabel;
+					*/
+				default:
+					break;
+			}
+
+			 
+
+			if (uiType == Consts.CONST_imCommType_lStream)
+			{
+				//
+				IM_L_STREAM_nh stream_ntoh;
+				IM_L_STREAM_nh* pStream = &stream_ntoh;
+
+				//  pStream  =  (  IM_L_STREAM  *  )ptr;
+
+				if ((lenInBytes = qyntohImLStream(0, ptr, pStream)) < 0) goto errLabel;
+
+				if (size < (uint  )lenInBytes  )  goto errLabel;
+
+				ptr = pStream->p;
+				//  size  =  pStream->ulStreamLen;
+				mymemcpy((IntPtr)(byte*)&size, (IntPtr)(byte*)&pStream->ulStreamLen, sizeof(uint));
+
+				if (size < (int)Marshal.OffsetOf<IM_L_STREAM>("buf")) goto errLabel;
+
+				//  uiContentType  =  pStream->uiContentType;
+				mymemcpy((IntPtr)(byte*)&uiContentType, (IntPtr)(byte*)&pStream->uiContentType, sizeof(uint));
+			}
+			else
+			{
+				string str;
+				str =string.Format("qyntohRouteTalkData 得到了非长流的数据包, uiType {0}, size {1}", uiType, size);
+				traceLog(str);
+				goto errLabel;
+			}
+			
+			
+			{
+				switch (uiContentType)
+				{
+
+					/*
+													case Consts.CONST_imCommType_htmlContent:
+											memset(&pContent->html, 0, sizeof(pContent->html)  );
+											if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2ImHtmlContent, 0, pContent)) goto errLabel;
+											break;
+										case Consts.CONST_imCommType_refreshRecentFriendsResp:
+											memset(&pContent->refreshRecentFriendsResp, 0, sizeof(pContent->refreshRecentFriendsResp)  );
+											if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2RefreshRecentFriendsResp, 0, pContent))
+											{       //  这里，对万一有数据包下发不完整的情况下，做截断处理。不简单退出
+													//  
+													//  qyShowInfo1(  Consts.CONST_qyShowType_qwmComm,  (  ""  ),  _T(  ""  ),  0,  _T(  ""  ),  _T(  ""  ),  _T(  "    stream2Data failed, usCnt is %d, 截断处理"  ),  pContent->refreshRecentFriendsResp.usCnt  );
+												_sntprintf(tHintBuf, mycountof(tHintBuf), _T("stream2Data failed, usCnt is %d, 截断处理"), pContent->refreshRecentFriendsResp.usCnt);
+												//
+												if (pContent->refreshRecentFriendsResp.usCnt_mems) pContent->refreshRecentFriendsResp.usCnt_mems--; //  因为最后一个包不完整，所以要去掉
+												pContent->refreshRecentFriendsResp.usCnt = pContent->refreshRecentFriendsResp.usCnt_mems;
+												//
+											}
+											if (pContent->refreshRecentFriendsResp.usCnt > mycountof(pContent->refreshRecentFriendsResp.mems)) goto errLabel;
+											break;
+					*/
+										case Consts.CONST_imCommType_getCfgsReq:
+											//  memset(  &pContent->intervalParams,  0,  sizeof(  pContent->intervalParams  )  );
+											mymemset((IntPtr)(byte*)&pContent->getCfgsReq, 0, sizeof(QIS_getCfgs_req)  );
+											if (0!=stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2QisGetCfgsReq, null, pContent)) goto errLabel;
+											break;
+						
+										case Consts.CONST_imCommType_retrieveImGrpListResp:
+											mymemset((IntPtr)(byte*)&pContent->retrieveImGrpListResp, 0, sizeof(RETRIEVE_IMGRPLIST_RESP)  );
+											if (0!=stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2RetrieveImGrpListResp, null, &pContent->retrieveImGrpListResp)) goto errLabel;
+											if (pContent->retrieveImGrpListResp.usCnt > Consts.CONST_maxContactUpdateInfos_grp) goto errLabel;
+											break;
+										case Consts.CONST_imCommType_retrieveImGrpMemListResp:
+											mymemset((IntPtr)(byte*)&pContent->retrieveImGrpMemListResp, 0, sizeof(RETRIEVE_IMGRPMEMLIST_RESP)  );
+											if (0!=stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2RetrieveImGrpMemListResp, null, &pContent->retrieveImGrpMemListResp)) goto errLabel;
+											if (pContent->retrieveImGrpMemListResp.usCnt > Consts.CONST_maxContactUpdateInfos_grpMem) goto errLabel;
+											break;
+										case Consts.CONST_imCommType_retrieveContactListResp:
+											mymemset((IntPtr)(byte*)&pContent->retrieveContactListResp, 0, sizeof(RETRIEVE_CONTACTLIST_RESP)  );
+											if (0!=stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2RetrieveContactListResp, null, &pContent->retrieveContactListResp)) goto errLabel;
+											if (pContent->retrieveContactListResp.usCnt > Consts.CONST_maxContactUpdateInfos_contact) goto errLabel;
+											break;
+										case Consts.CONST_imCommType_retrieveImObjListEndResp:
+											mymemset((IntPtr)(byte*)&pContent->retrieveImObjListEndResp, 0, sizeof(RETRIEVE_IMOBJLISTEND_RESP)  );
+											if (0!=stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2RetrieveImObjListEndResp, null, &pContent->retrieveImObjListEndResp)) goto errLabel;
+											break;
+
+					/*
+
+								case Consts.CONST_imCommType_transferFileReq:
+									memset(&pContent->transferFileReq, 0, sizeof(pContent->transferFileReq)  );
+									if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2TransferFileReq, 0, &pContent->transferFileReq)) goto errLabel;
+									break;
+								case Consts.CONST_imCommType_transferFileReplyReq:
+									memset(&pContent->transferFileReplyReq, 0, sizeof(pContent->transferFileReplyReq)  );
+									if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2TransferFileReplyReq, 0, &pContent->transferFileReplyReq)) goto errLabel;
+									break;
+								case Consts.CONST_imCommType_taskProcReq:
+									memset(&pContent->taskProcReq, 0, sizeof(pContent->taskProcReq)  );
+									if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2TaskProcReq, 0, &pContent->taskProcReq)) goto errLabel;
+									break;
+								case Consts.CONST_imCommType_taskProcResp:
+									memset(&pContent->taskProcResp, 0, sizeof(pContent->taskProcResp)  );
+									if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2TaskProcResp, 0, &pContent->taskProcResp)) goto errLabel;
+									break;
+								case Consts.CONST_imCommType_transferFileDataReq:
+									memset(&pContent->transferFileDataReq, 0, sizeof(pContent->transferFileDataReq)  );
+									if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2TransferFileDataReq, 0, &pContent->transferFileDataReq)) goto errLabel;
+									break;
+								case Consts.CONST_imCommType_transferFileDataResp:
+									memset(&pContent->transferFileDataResp, 0, offsetof(TRANSFER_FILEDATA_RESP, buf));  //  把控制数据清空即可
+									if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2TransferFileDataResp, 0, &pContent->transferFileDataResp)) goto errLabel;
+									break;
+								case Consts.CONST_imCommType_transferFileEndReq:
+									memset(&pContent->transferFileEndReq, 0, sizeof(pContent->transferFileEndReq)  );
+									if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2TransferFileEndReq, 0, &pContent->transferFileEndReq)) goto errLabel;
+									break;
+								case Consts.CONST_imCommType_rtcCallReq:
+									memset(&pContent->rtcCallReq, 0, sizeof(pContent->rtcCallReq)  );
+									if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2RtcCallReq, 0, &pContent->rtcCallReq)) goto errLabel;
+									break;
+								case Consts.CONST_imCommType_transferAvInfo:
+									memset(&pContent->transferAvInfo, 0, sizeof(pContent->transferAvInfo)  );
+									if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2TransferAvInfo, 0, &pContent->transferAvInfo)) goto errLabel;
+									break;
+								case Consts.CONST_imCommType_transferAvReplyInfo:
+									memset(&pContent->transferAvReplyInfo, 0, sizeof(pContent->transferAvReplyInfo)  );
+									if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2TransferAvReplyInfo, 0, &pContent->transferAvReplyInfo)) goto errLabel;
+									break;
+								case Consts.CONST_imCommType_transferVideoData:
+									memset(&pContent->transferVideoData, 0, offsetof(TRANSFER_VIDEO_DATA, buf));  //  这里，把控制数据清空即可。
+									if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2TransferVideoData, 0, &pContent->transferVideoData)) goto errLabel;
+									break;
+								case Consts.CONST_imCommType_transferVideoDataResp:
+									memset(&pContent->transferVideoDataResp, 0, sizeof(pContent->transferVideoDataResp)  );  //  这里，把控制数据清空即可。
+									if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2TransferVideoDataResp, 0, &pContent->transferVideoDataResp)) goto errLabel;
+									break;
+								case Consts.CONST_imCommType_transferAudioData:
+									memset(&pContent->transferAudioData, 0, offsetof(TRANSFER_AUDIO_DATA, buf));  //  这里，把控制数据清空即可。
+									if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2TransferAudioData, 0, &pContent->transferAudioData)) goto errLabel;
+									break;
+								case Consts.CONST_imCommType_transferAudioDataResp:
+									memset(&pContent->transferAudioDataResp, 0, sizeof(pContent->transferAudioDataResp)  );
+									if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2TransferAudioDataResp, 0, &pContent->transferAudioDataResp)) goto errLabel;
+									break;
+								case Consts.CONST_imCommType_remoteAssistReq:
+									memset(&pContent->remoteAssistReq, 0, sizeof(pContent->remoteAssistReq)  );
+									if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2RemoteAssistReq, 0, &pContent->remoteAssistReq)) goto errLabel;
+									break;
+								case Consts.CONST_imCommType_taskInteractionReq:
+									memset(&pContent->taskInteractionReq, 0, sizeof(pContent->taskInteractionReq)  );
+									if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2TaskInteractionReq, 0, &pContent->taskInteractionReq)) goto errLabel;
+									break;
+								case Consts.CONST_imCommType_videoConferenceStatus:
+									memset(&pContent->videoConferenceStatus, 0, sizeof(pContent->videoConferenceStatus)  );
+									if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2VideoConferenceStatus, 0, &pContent->videoConferenceStatus)) goto errLabel;
+									break;
+								case Consts.CONST_imCommType_videoConferenceLayout:
+									memset(&pContent->videoConferenceLayout, 0, sizeof(pContent->videoConferenceLayout)  );
+									if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2VideoConferenceLayout, 0, &pContent->videoConferenceLayout)) goto errLabel;
+									break;
+								case Consts.CONST_imCommType_confState:  //  2017/09/17
+									memset(&pContent->confState, 0, sizeof(pContent->confState)  );
+									if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2ConfState, 0, &pContent->confState)) goto errLabel;
+									break;
+								case Consts.CONST_imCommType_refreshWebContactsInfo:
+									memset(&pContent->refreshWebContactsInfo, 0, sizeof(pContent->refreshWebContactsInfo)  );
+									if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2RefreshWebContactsInfo, 0, &pContent->refreshWebContactsInfo)) goto errLabel;
+									break;
+								case Consts.CONST_imCommType_vDevComs:
+									memset(&pContent->vDevComs, 0, sizeof(pContent->vDevComs)  );
+									if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2QyVDevComs, 0, &pContent->vDevComs)) goto errLabel;
+									break;
+								case Consts.CONST_imCommType_retrieveSmPolicy:
+									memset(&pContent->retrieveSmPolicy, 0, sizeof(pContent->retrieveSmPolicy)  );
+									if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2RetrieveSmPolicy, 0, &pContent->retrieveSmPolicy)) goto errLabel;
+									break;
+								case Consts.CONST_imCommType_retrievePhoneMsgrs:
+									memset(&pContent->retrievePhoneMsgrs, 0, sizeof(pContent->retrievePhoneMsgrs)  );
+									if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2RetrievePhoneMsgrs, 0, &pContent->retrievePhoneMsgrs)) goto errLabel;
+									break;
+								case Consts.CONST_imCommType_retrieveToPaths:
+									memset(&pContent->retrieveToPaths, 0, sizeof(pContent->retrieveToPaths)  );
+									if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2RetrieveToPaths, 0, &pContent->retrieveToPaths)) goto errLabel;
+									break;
+								case Consts.CONST_imCommType_refreshDynBmps:
+									memset(&pContent->refreshDynBmps, 0, sizeof(pContent->refreshDynBmps)  );
+									if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2RefreshDynBmps, 0, &pContent->refreshDynBmps)) goto errLabel;
+									break;
+								case Consts.CONST_imCommType_verifyViewDynBmp: //  2011/10/31
+									memset(&pContent->verifyViewDynBmp, 0, sizeof(pContent->verifyViewDynBmp)  );
+									if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2VerifyViewDynBmp, 0, &pContent->verifyViewDynBmp)) goto errLabel;
+									break;
+								case Consts.CONST_imCommType_retrieveDynBmps:
+									memset(&pContent->retrieveDynBmps, 0, sizeof(pContent->retrieveDynBmps)  );
+									if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2RetrieveDynBmps, 0, &pContent->retrieveDynBmps)) goto errLabel;
+									break;
+								case Consts.CONST_imCommType_refreshImObjRulesReq: //  2010/08/15
+									memset(&pContent->refreshImObjRulesReq, 0, sizeof(pContent->refreshImObjRulesReq)  );
+									if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2RefreshImObjRulesReq, 0, &pContent->refreshImObjRulesReq)) goto errLabel;
+									break;
+								case Consts.CONST_imCommType_getDaemonStatusReq:       //  2011/01/09
+									memset(&pContent->getDaemonStatusReq, 0, sizeof(pContent->getDaemonStatusReq)  );
+									if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2GetDaemonStatusReq, 0, &pContent->getDaemonStatusReq)) goto errLabel;
+									break;
+								case Consts.CONST_imCommType_retrieveCustomerServiceObjListReq:    //  2011/04/04
+									memset(&pContent->retrieveCustomerServiceObjListReq, 0, sizeof(pContent->retrieveCustomerServiceObjListReq)  );
+									if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2RetrieveCustomerServiceObjListReq, 0, &pContent->retrieveCustomerServiceObjListReq)) goto errLabel;
+									break;
+								case Consts.CONST_imCommType_queryCustomerServiceOfficerReq:       //  2011/04/06
+									memset(&pContent->queryCustomerServiceOfficerReq, 0, sizeof(pContent->queryCustomerServiceOfficerReq)  );
+									if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2QueryCustomerServiceOfficerReq, 0, &pContent->queryCustomerServiceOfficerReq)) goto errLabel;
+									break;
+								case Consts.CONST_imCommType_queryCustomerServiceOfficerReplyReq:      //  2011/04/06
+									memset(&pContent->queryCustomerServiceOfficerReplyReq, 0, sizeof(pContent->queryCustomerServiceOfficerReplyReq)  );
+									if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2QueryCustomerServiceOfficerReplyReq, 0, &pContent->queryCustomerServiceOfficerReplyReq)) goto errLabel;
+									break;
+								case Consts.CONST_imCommType_transferGpsInfo:      //  2012/04/20
+									memset(&pContent->transferGpsInfo, 0, sizeof(pContent->transferGpsInfo)  );
+									if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2TransferGpsInfo, 0, &pContent->transferGpsInfo)) goto errLabel;
+									break;
+								case Consts.CONST_imCommType_transferGpsReplyInfo:
+									memset(&pContent->transferGpsReplyInfo, 0, sizeof(pContent->transferGpsReplyInfo)  );
+									if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2TransferGpsReplyInfo, 0, &pContent->transferGpsReplyInfo)) goto errLabel;
+									break;
+								case Consts.CONST_imCommType_transferGpsData:
+									memset(&pContent->transferGpsData, 0, sizeof(pContent->transferGpsData)  );
+									if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2TransferGpsData, 0, &pContent->transferGpsData)) goto errLabel;
+									break;
+								case Consts.CONST_imCommType_transferGpsDataResp:
+									memset(&pContent->transferGpsDataResp, 0, sizeof(pContent->transferGpsDataResp)  );
+									if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2TransferGpsDataResp, 0, &pContent->transferGpsDataResp)) goto errLabel;
+									break;
+								case Consts.CONST_imCommType_ptzControlReq:
+									memset(&pContent->ptzControlReq, 0, sizeof(pContent->ptzControlReq)  );
+									if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2PtzControlReq, 0, &pContent->ptzControlReq)) goto errLabel;
+									break;
+								case Consts.CONST_imCommType_ptzControlCmd:
+									memset(&pContent->ptzControlCmd, 0, sizeof(pContent->ptzControlCmd)  );
+									if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2PtzControlCmd, 0, &pContent->ptzControlCmd)) goto errLabel;
+									break;
+								//  
+								case Consts.CONST_imCommType_queryPeerStatus:  //  2014/07/11
+									memset(&pContent->queryPeerStatus, 0, sizeof(pContent->queryPeerStatus)  );
+									if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2QueryPeerStatus, 0, &pContent->queryPeerStatus)) goto errLabel;
+									break;
+								//
+								case Consts.CONST_imCommType_procOfflineRes:  //  2015/08/01
+									memset(&pContent->procOfflineResU, 0, sizeof(pContent->procOfflineResU)  );
+									if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2ProcOfflineResU, 0, &pContent->procOfflineResU)) goto errLabel;
+									break;
+								//
+								case Consts.CONST_imCommType_imGrp:  //  2017/07/26
+									memset(&pContent->imGrpEx, 0, sizeof(pContent->imGrpEx)  );
+									if (stream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2ImGrpEx, 0, &pContent->imGrpEx)) goto errLabel;
+									break;
+						*/
+					//
+					default:
+						{
+							string str;
+							//str = string.Format("qyntohRouteTalkData failed: uiContentType {0} {1}, error"), uiContentType, qyGetDesByType1(CONST_qyCommTypeTable_en, uiContentType));
+							str = string.Format("qyntohRouteTalkData failed: uiContentType {0} error", uiContentType);
+							traceLog(str);
+
+						}
+						goto errLabel;
+				}
+
+				iErr = 0; goto errLabel;
+			}
+
+			
+
+
+			iErr = 0;
+		errLabel:
+			if (iErr!=0)
+			{
+				//  _sntprintf(  tHintBuf,  mycountof(  tHintBuf  ),  _T(  "%scontentType [%s]"  ),  tHintBuf,  qyGetDesByType1(  CONST_qyCommTypeTable,  uiContentType  )  );
+				//traceLogA("qyntohAddrTalkData failed");
+			}
+			if (0==iErr)
+			{
+			}
+			//
+			//if (tHintBuf_showInfo) lstrcpyn(tHintBuf_showInfo, tHintBuf, uiCnt_tHintBuf_showInfo);
+
+			return iErr;
+
+		}
+
+
+
+
+	}
+
+
+}

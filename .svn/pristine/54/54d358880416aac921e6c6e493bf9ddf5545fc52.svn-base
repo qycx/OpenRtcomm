@@ -1,0 +1,61 @@
+﻿using Android.App;
+using Android.Content;
+using Android.OS;
+using Android.Runtime;
+using Android.Util;
+using Android.Views;
+using Android.Widget;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace qyMessengerApp.Droid
+{
+    public class Fragment_msg : Android.Support.V4.App.Fragment
+    {
+        List<TableItem_msg> tableItems = new List<TableItem_msg>();
+        ListView listView;
+
+        public override void OnCreate(Bundle savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
+
+            // Create your fragment here
+        }
+
+        public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+        {
+            // Use this to return your custom view for this Fragment
+            // return inflater.Inflate(Resource.Layout.YourFragment, container, false);
+
+            //return base.OnCreateView(inflater, container, savedInstanceState);
+
+            //
+            View view = inflater.Inflate(Resource.Layout.layout_msg, container, false);
+
+            //
+            listView = (ListView)view.FindViewById(Resource.Id.list);
+
+            /*
+            tableItems.Add(new TableItem() { Heading = "Vegetables", SubHeading = "65 items", ImageResourceId = Resource.Drawable.Vegetables });
+            tableItems.Add(new TableItem() { Heading = "Fruits", SubHeading = "17 items", ImageResourceId = Resource.Drawable.Vegetables });
+            tableItems.Add(new TableItem() { Heading = "Flower Buds", SubHeading = "5 items", ImageResourceId = Resource.Drawable.Vegetables });
+            tableItems.Add(new TableItem() { Heading = "Legumes", SubHeading = "33 items", ImageResourceId = Resource.Drawable.Vegetables });
+            tableItems.Add(new TableItem() { Heading = "Bulbs", SubHeading = "18 items", ImageResourceId = Resource.Drawable.Vegetables });
+            tableItems.Add(new TableItem() { Heading = "Tubers", SubHeading = "43 items", ImageResourceId = Resource.Drawable.Vegetables });
+            */
+            tableItems.Add(new TableItem_msg() { dw = "清扬创新", syr = "王五", ImageResourceId = Resource.Drawable.Vegetables,speaker="张三", msg="今天快递了吗" });
+            tableItems.Add(new TableItem_msg() { uiObjType=Consts.CONST_objType_imGrp, grpName = "华北区销售会议", ImageResourceId = Resource.Drawable.Vegetables, speaker="李四", msg="任务完成了吗" });
+
+
+
+            //
+            listView.Adapter = new Adapter_msg(inflater, tableItems);
+
+
+            return view;
+
+        }
+    }
+}

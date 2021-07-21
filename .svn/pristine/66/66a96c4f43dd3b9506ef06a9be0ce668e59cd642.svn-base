@@ -1,0 +1,43 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace qy
+{
+	public unsafe struct CTX_MC_thread
+	{
+		public CTX_qm_thread common;
+
+		//
+		public CMcSharedQ pProcessQ;
+
+		public uint dwTickCnt_tryToResumeVideoConference; //  2009/10/17
+
+		public MIS_MSGU* pMsgBuf_forInput;                     //  2009/12/11
+		public MIS_MSGU* pMsgBuf;                              //  2009/12/11
+
+	}
+	 ;
+	public struct CTX_MC_work
+	{
+		public CTX_MC_thread common;
+
+		//GENERIC_Q guestQ;
+		//bool bGuestQInited;
+		//void** ppGuests_sortedByDevIdStr;
+		//
+
+	}
+	;
+
+
+public struct CTX_MC_scheduler
+	{       //  2009/09/05				
+		public CTX_MC_thread common;
+
+		//
+
+	}
+	;
+
+}

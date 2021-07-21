@@ -1,0 +1,262 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Net;
+using System.Reflection;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading;
+
+namespace qy
+{
+   partial class qyFuncs
+{
+    public static unsafe int mystrlen( byte* str )
+   {
+
+            if (str == null) return 0;
+            int len = 0;
+            for (; ; )
+            {
+                if (str[len]==0) break;
+                //
+                len++;
+            }
+            
+            return len;
+   }
+
+        public static unsafe int mywcslen(char * str)
+        {
+
+            if (str == null) return 0;
+            int len = 0;
+            for (; ; )
+            {
+                if (str[len] == 0) break;
+                len++;
+            }
+
+            return len;
+        }
+
+
+        public static unsafe    char* mytcsncpy(char* dst, string str_src, int n)
+ {
+            char[] src = str_src.ToCharArray();
+            /*
+  if(n != 0)
+  {
+   char* d = dst;
+
+                char* s = src;
+ 
+   do
+   {
+    if((* d ++ = *s ++) == 0)
+    {
+     while (-- n != 0) *d ++ = (char)0;
+     break;
+    }
+
+    
+}
+while (--n != 0) ;
+  }*/
+
+            if (dst == null) return null;
+            if (src == null) return null;
+            if (n != 0)
+            {
+                int ns = src.Length;
+                //
+                int i;
+                for (i = 0; i < n; i++)
+                {
+                    if  (  i == ns )
+                    {
+                        dst[i] = (char)0;
+                        break;
+                    }
+                    dst[i] = src[i];
+                    if (src[i] == 0) break;
+                }
+                if (i == n) dst[i - 1] = (char)0;
+
+
+            }
+
+  return dst;
+ }
+
+        public static unsafe char* mytcsncpy(char* dst, char * str_src, int n)
+        {
+            if (dst == null || str_src == null) return null;
+            return mytcsncpy(dst, new string(str_src), n);
+        }
+
+
+           public static unsafe void safeStrnCpy(string strIn, byte* strOut, uint size)
+        {
+            if (size==0 || strIn==null || strOut==null) return;
+            byte[] b_strIn = System.Text.Encoding.UTF8.GetBytes(strIn);
+            int len = Math.Min((int)(size - 1), b_strIn.Length  );
+            Marshal.Copy(b_strIn, 0, (IntPtr)strOut, len);
+            strOut[len] = (byte)0;
+            return;
+        }
+
+        public static unsafe void safeStrnCpy(byte * strIn, byte* strOut, uint size)
+        {
+            if (size == 0 || strIn == null || strOut == null) return;
+            int i;
+            for ( i = 0; i < size - 1; i ++)
+            {
+                strOut[i] = strIn[i];
+                if (strIn[i] == 0) break;
+            }
+            if ( i == size - 1 ) strOut[i] = (byte)0;
+            return;
+        }
+
+
+        public static unsafe void safeWcsnCpy(char* strIn, char* strOut, uint size)
+        {
+            if (size == 0 || strIn == null || strOut == null) return;
+            int i;
+            for (i = 0; i < size - 1; i++)
+            {
+                strOut[i] = strIn[i];
+                if (strIn[i] == 0) break;
+            }
+            if (i == size - 1) strOut[i] = (char)0;
+            return;
+        }
+
+        public static unsafe void safeTcsnCpy(char* strIn, char* strOut, uint cntof)
+        {
+            safeWcsnCpy(strIn, strOut, cntof);
+        }
+
+
+
+           public static unsafe int mylstrcmpi( char * lpString1, char * lpString2   )
+        {
+            if (lpString1 == null || lpString2 == null) return -1;
+            string str1 = new string(lpString1);
+            string str2 = new string(lpString2);
+            return string.Compare(str1, str2, true);
+        }
+
+        public static unsafe int mytcsicmp( char * string1,char * string2 )
+        {
+            return mylstrcmpi(string1, string2);
+
+        }
+        public static unsafe int mytcsicmp(string string1, string string2)
+        {
+            return string.Compare(string1, string2, true);
+
+        }
+
+
+
+
+
+        public static DateTime dt1970 = new DateTime(1970, 1, 1, 0, 0, 0);
+
+        public static unsafe Int64 mytime(long* seconds)
+        {
+            DateTime now = DateTime.UtcNow;
+            TimeSpan diff = now - dt1970;
+            long l = (long)diff.TotalSeconds;
+            if (seconds != null)
+            {
+                *seconds = l;
+            }
+            return l;
+        }
+
+        public static unsafe uint myinet_addr(byte* cp)
+        {
+            if (cp == null) return 0;
+            return (uint)IPAddress.Parse(cp->ToString()).Address;
+        }
+
+        public static unsafe string mytoString(byte* p)
+        {
+            int len = mystrlen(p);
+            byte[] a = new byte[len];
+            for (int i = 0; i < len; i++)
+            {
+                a[i] = p[i];
+            }
+            return Encoding.UTF8.GetString(a);
+        }
+   
+        public static bool myWaitOne(WaitHandle s, int millseconds)
+        {
+            bool bRet = false;
+
+            if (s == null) return false;
+            try
+            {
+                bRet = s.WaitOne(millseconds);
+            }
+            catch(Exception e)
+            {
+                goto errLabel;
+
+            }
+            errLabel:
+
+            return bRet;
+        }
+
+        public static bool myEventSet(EventWaitHandle evt)
+        {
+            bool bRet = false;
+            try
+            {
+                bRet = evt.Set();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                goto errLabel;
+            }
+        errLabel:
+            return bRet;
+        }
+
+        public static int mySemaRelease(Semaphore s, int releaseCount )
+        {
+            int iRet = -1;
+            try
+            {
+                iRet = s.Release(releaseCount);
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                goto errLabel;
+            }
+        errLabel:
+            return iRet;
+        }
+
+        public static uint myGetTickCount()
+        {
+            uint aa = (uint)System.Environment.TickCount & Int32.MaxValue;
+            return aa;
+        }
+
+        public static uint myGetCurrentThreadId()
+        {
+            Thread thread = Thread.CurrentThread;
+
+            return (uint)thread.ManagedThreadId;
+        }
+
+
+    }
+}

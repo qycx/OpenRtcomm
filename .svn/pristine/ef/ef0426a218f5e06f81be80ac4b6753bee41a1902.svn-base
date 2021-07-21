@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "nKsHEBobqb1/bdUAgMb7FuNRn7QZJDWCwIubkSqUWiC/2obNjGJV7D86kyoXwSEQGRlujBtYLkiKTdhyqD39XQ==",
+  "success": true,
+  "projectFilePath": "C:\\root\\cliDevelop\\qyMessengerApp\\qyMessengerApp\\qyMessengerApp.iOS\\qyMessengerApp.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
+    "C:\\Users\\qycx1\\.nuget\\packages\\xamarin.forms\\4.7.0.1239\\xamarin.forms.4.7.0.1239.nupkg.sha512"
+  ],
+  "logs": []
+}

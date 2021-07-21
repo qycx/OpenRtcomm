@@ -1,0 +1,49 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+
+partial class Consts
+{
+    public const int CONST_imCommType_base = 3000;
+public const int CONST_imCommType_max									=(  CONST_imCommType_base  +  1999  );	//  每个服务留个2000个结构的类型
+
+
+    //  下面为由第三方可以自定义的区间, 在qyCommProc_open.h中定义
+    //  public const int		CONST_imCommType_custom_base						32000
+    //
+    //  public const int		CONST_imCommType_custom_max							=(  40000  -  1  );
+
+
+
+
+    /////////////////////////////////////////////////
+
+    //  qnmPcComm.h
+    //  public const int		CONST_imCommType_base								3000
+
+    //  
+public const int CONST_imCommType_htmlContent							=(  CONST_imCommType_base  +  1  );		//  2007/05/07
+public const int CONST_imCommType_simpleResp								=(  CONST_imCommType_base  +  2  );		//  2007/05/07
+    //  public const int		CONST_imCommType_streamContent						=(  CONST_imCommType_base  +  3  );		//  2007/08/01	//  2011/01/29
+public const int CONST_imCommType_msgRoute								=(  CONST_imCommType_base  +  4  );		//  2007/11/29
+public const int CONST_imCommType_dataContent							=(  CONST_imCommType_base  +  5  );		//  2008/01/26, 
+public const int CONST_imCommType_lStream								=(  CONST_imCommType_base  +  6  );		//  2008/04/01, 
+
+
+
+    //  
+public const int CONST_imCommType_auth									=(  CONST_imCommType_base  +  100  );		//  2007/08/01
+public const int CONST_imCommType_authResp								=(  CONST_imCommType_base  +  101  );		//  
+public const int CONST_imCommType_mem									=(  CONST_imCommType_base  +  102  );		//  
+public const int CONST_imCommType_struct									=(  CONST_imCommType_base  +  103  );		//  2014/11/09
+    //
+public const int CONST_imCommType_getCfgsReq								=(  CONST_imCommType_base  +  110  );		//  2011/01/30
+
+
+}
+
+
+namespace qy
+{
+}

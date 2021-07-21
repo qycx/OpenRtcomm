@@ -1,0 +1,673 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Runtime.InteropServices;
+using System.Net;
+
+partial class Consts {
+	//  ÒÔÏÂÊÇÊý¾ÝÀàÐÍ, ÓÃÔÚÍ¨ÐÅÀï£¬ÑÏ½ûÐÞ¸Ä
+	public const int CONST_qyDataType_l32 = 1;             //  netMcÀïÒÑÊ¹ÓÃ
+	public const int CONST_qyDataType_long = CONST_qyDataType_l32;
+	public const int CONST_qyDataType_str = 2;              //  netMcÀïÒÑÊ¹ÓÃ, ´ËÀàÐÍÊµ¼Ê·ÇÒÔ0½ØÎ²µÄ×Ö·û´®¡£Êµ¼ÊÊÇÒ»¸ö¶þ½øÖÆÁ÷¡£ÒòÎªÄÚÍø¹ÜÀíÒÑ¾­Ê¹ÓÃ£¬¹ÊÔÝÊ±²»¸Ä¶¯ 
+															//
+	public const int CONST_qyDataType_wStr = 3;             //  2007/03/31
+	public const int CONST_qyDataType_utf8Str = 4;              //  2007/03/31
+	public const int CONST_qyDataType_data = 5;             //  2007/03/31, Êý¾Ý³¤¶ÈÓÃshortÀ´±íÊ¾.
+	public const int CONST_qyDataType_l64 = 6;              //  2007/08/01
+	public const int CONST_qyDataType_byte = 7;             //  2007/08/05
+	public const int CONST_qyDataType_char = CONST_qyDataType_byte;             //  2007/08/05
+	public const int CONST_qyDataType_short = 8;                //  2007/08/05
+	public const int CONST_qyDataType_lData = 9;                //  2008/04/01, Õâ¸öÀàÐÍ¿ÉÌá¹©¸ü³¤µÄÊý¾ÝÃèÊö¡£Êý¾Ý³¤¶ÈÓÃlongÀ´±íÊ¾
+
+	//
+	public const int CONST_bufSize_cfgItemData = 32 * 1024;     //  2007/03/31, ½«»º³åµÄ³¤¶È±ä³¤ÁË
+	public const int CONST_bufSize_cfgItemLData = 1024 * 1024;  //  2008/03/22
+
+	public const int CONST_cntof_cfgItemStr = 4096;
+	public const int CONST_cntof_cfgItemWstr = 4096;
+
+	//
+	public const int CONST_qnmCfgId_null = 0;					//  È¡cfgsµÄ½áÊø·û
+
+
+	// 2007/04/02
+	public const int CONST_qnmCfgId_base_common = 1000;
+	//
+	//  CONST_qnmCfgId_base_common  ->  CONST_qnmCfgId_base_common  +  999
+public const int CONST_qnmCfgId_start						=		(  CONST_qnmCfgId_base_common  +  100  );
+public const int CONST_qnmCfgId_mem							=		(  CONST_qnmCfgId_base_common  +  101  );				//  2007/08/05, 只用在小而快的数据包。一般的包的成员要使用CONST_imCommType_mem
+	//
+	//
+
+	//
+	//
+	//
+	//  
+public const int CONST_qnmCfgId_clientVer					=		(  CONST_qnmCfgId_base_common  +  2009  );
+public const int CONST_qnmCfgId_authCmd						=		(  CONST_qnmCfgId_base_common  +  2010  );
+	//  public const int		CONST_qnmCfgId_uiQwmType							(  CONST_qnmCfgId_base_common  +  2011  );
+public const int CONST_qnmCfgId_uiObjType					=		(  CONST_qnmCfgId_base_common  +  2011  );				//  2007/12/07, qwmType¸objType
+public const int CONST_qnmCfgId_iCustemId					=		(  CONST_qnmCfgId_base_common  +  2012  );
+public const int CONST_qnmCfgId_uiChannelType				=		(  CONST_qnmCfgId_base_common  +  2013  );				//  2007/07/08
+	//  public const int		CONST_qnmCfgId_uiDevType	=					(  CONST_qnmCfgId_base_common  +  2014  );				//  2007/08/03, messenger
+public const int CONST_qnmCfgId_uiDevType_from				=		(  CONST_qnmCfgId_base_common  +  2014  );				//  2007/08/03, messenger
+public const int CONST_qnmCfgId_uiDevType_to				=			(  CONST_qnmCfgId_base_common  +  2015  );				//  2008/01/06, messenger
+public const int CONST_qnmCfgId_wDevIdStr_from				=		(  CONST_qnmCfgId_base_common  +  2016  );				//  2008/01/06, from from uiDevType_from uiDevType
+public const int CONST_qnmCfgId_wDevIdStr_to				=			(  CONST_qnmCfgId_base_common  +  2017  );				//  2008/01/06
+public const int CONST_qnmCfgId_wReversePath				=			(  CONST_qnmCfgId_base_common  +  2018  );				//  2008/02/08
+public const int CONST_qnmCfgId_wForwardPath				=			(  CONST_qnmCfgId_base_common  +  2019  );				//  2008/02/08
+public const int CONST_qnmCfgId_usAuthType					=		(  CONST_qnmCfgId_base_common  +  2020  );				//  2011/03/22
+public const int CONST_qnmCfgId_iAppType					=			(  CONST_qnmCfgId_base_common  +  2021	);				//  2011/03/27
+public const int CONST_qnmCfgId_usAppAvLevel				=			(  CONST_qnmCfgId_base_common  +  2022  );				//  2011/08/15
+public const int CONST_qnmCfgId_shVer						=		(  CONST_qnmCfgId_base_common  +  2023  );				//  2014/09/23
+public const int CONST_qnmCfgId_subSystemId					=		(  CONST_qnmCfgId_base_common  +  2024  );				//  2017/06/21
+
+	//
+public const int CONST_qnmCfgId_uiFieldId					=		(  CONST_qnmCfgId_base_common  +  2100  );				//  2007/07/31
+public const int CONST_qnmCfgId_usCnt						=		(  CONST_qnmCfgId_base_common  +  2101  );				//  2007/08/01
+public const int CONST_qnmCfgId_ucbNext						=		(  CONST_qnmCfgId_base_common  +  2102  );				//  2007/08/03
+public const int CONST_qnmCfgId_ucbEnd						=		(  CONST_qnmCfgId_base_common  +  2103  );				//  2007/08/03
+	//public const int		CONST_qnmCfgId_tStartTime_serv	=					(  CONST_qnmCfgId_base_common  +  2104  );				//  tStartTime_serv uiSerialNo
+public const int CONST_qnmCfgId_uiSerialNo					=		(  CONST_qnmCfgId_base_common  +  2105  );				//  2007/09/01
+public const int CONST_qnmCfgId_ucbResp						=		(  CONST_qnmCfgId_base_common  +  2106  );				//  2007/12/22, 
+public const int CONST_qnmCfgId_ucbNeedDetail				=		(  CONST_qnmCfgId_base_common  +  2107  );				//  2007/12/22, 
+public const int CONST_qnmCfgId_ucbNeedResp					=		(  CONST_qnmCfgId_base_common  +  2108  );				//  2008/04/21, 
+public const int CONST_qnmCfgId_index						=		(  CONST_qnmCfgId_base_common  +  2109  );				//  2008/10/30. 这里的index应理解为某项数据的唯一的标识，不应理解为数组的索引。在网络协议里，数组的索引没有意义。
+public const int CONST_qnmCfgId_uiLen						=		(  CONST_qnmCfgId_base_common  +  2110  );				//  2008/10/30
+public const int CONST_qnmCfgId_ucbRetrieveAll				=		(  CONST_qnmCfgId_base_common  +  2111  );				//  2010/08/17
+	//  
+public const int CONST_qnmCfgId_subtype						=		(  CONST_qnmCfgId_base_common  +  2112  );				//  2011/01/28
+public const int CONST_qnmCfgId_ucbReply					=			(  CONST_qnmCfgId_base_common  +  2113  );				//  2012/08/06
+public const int CONST_qnmCfgId_ucbRetrieveOne				=		(  CONST_qnmCfgId_base_common  +  2114  );				//  2014/09/04. 
+public const int CONST_qnmCfgId_help_subIndex				=		(  CONST_qnmCfgId_base_common  +  2115  );				//  2016/07/23
+public const int CONST_qnmCfgId_ucbAvConsole				=			(  CONST_qnmCfgId_base_common  +  2116  );				//  2017/06/11
+public const int CONST_qnmCfgId_ucbVideoConference			=		(  CONST_qnmCfgId_base_common  +  2117  );				//  2017/08/02
+public const int CONST_qnmCfgId_usConfType					=		(  CONST_qnmCfgId_base_common  +  2118  );              //  2017/08/25
+
+
+public const int CONST_qnmCfgId_mac									=(  CONST_qnmCfgId_base_common  +  2300  );				//  
+public const int CONST_qnmCfgId_ulIp									=(  CONST_qnmCfgId_base_common  +  2301  );				//  ulIp 
+public const int CONST_qnmCfgId_ip6									=(  CONST_qnmCfgId_base_common  +  2302  );				//  reserved
+public const int CONST_qnmCfgId_pcName								=(  CONST_qnmCfgId_base_common  +  2303  );
+public const int CONST_qnmCfgId_domainName							=(  CONST_qnmCfgId_base_common  +  2304  );
+public const int CONST_qnmCfgId_osUsrName							=(  CONST_qnmCfgId_base_common  +  2305  );
+public const int CONST_qnmCfgId_langId								=(  CONST_qnmCfgId_base_common  +  2306  );
+public const int CONST_qnmCfgId_iPlatformId							=(  CONST_qnmCfgId_base_common  +  2307  );
+public const int CONST_qnmCfgId_categoryId							=(  CONST_qnmCfgId_base_common  +  2308  );				//  2011/04/05
+
+	//
+public const int CONST_qnmCfgId_hint									=(  CONST_qnmCfgId_base_common  +  2400  );				//  2007/04/22
+public const int CONST_qnmCfgId_clientWelcomeMsg						=(  CONST_qnmCfgId_base_common  +  2401  );				//  2016/08/10
+	//
+public const int CONST_qnmCfgId_ucbDaemonDemo						=(  CONST_qnmCfgId_base_common  +  2410  );				//  2009/10/11
+public const int CONST_qnmCfgId_usMaxVideoConferenceMems				=(  CONST_qnmCfgId_base_common  +  2411  );				//  2009/11/05
+public const int CONST_qnmCfgId_ucDays_left							=(  CONST_qnmCfgId_base_common  +  2412  );				//  2010/03/22
+	//
+public const int CONST_qnmCfgId_uiCommEncCtxType						=(  CONST_qnmCfgId_base_common  +  2450  );				//  2008/ 06/09
+public const int CONST_qnmCfgId_publicKeyBlob						=(  CONST_qnmCfgId_base_common  +  2451  );				//  2008/06/09
+public const int CONST_qnmCfgId_sessionKeyBlob						=(  CONST_qnmCfgId_base_common  +  2452  );				//  2008/06/10
+	//
+public const int CONST_qnmCfgId_messengerId							=(  CONST_qnmCfgId_base_common  +  2500  );
+public const int CONST_qnmCfgId_idInfo_grp							=(  CONST_qnmCfgId_base_common  +  2501  );				//  2007/08/26
+public const int CONST_qnmCfgId_idInfo_logicalPeer					=(  CONST_qnmCfgId_base_common  +  2502  );				//  2009/10/18
+public const int CONST_qnmCfgId_idInfo_speaker						=(  CONST_qnmCfgId_base_common  +  2503  );				//  2015/07/30. 
+public const int CONST_qnmCfgId_idInfo_resServ						=(  CONST_qnmCfgId_base_common  +  2504  );				//  2015/08/01
+public const int CONST_qnmCfgId_idInfo_sender						=(  CONST_qnmCfgId_base_common  +  2505  );				//  2015/08/07
+public const int CONST_qnmCfgId_idInfo_creator						=(  CONST_qnmCfgId_base_common  +  2506  );             //  2017/07/27
+
+
+	//
+public const int CONST_qnmCfgId_messengerName						=(  CONST_qnmCfgId_base_common  +  2510  );				//  messengerName
+public const int CONST_qnmCfgId_messengerPasswd						=(  CONST_qnmCfgId_base_common  +  2511  );				//  messengerPassword
+	//
+public const int CONST_qnmCfgId_wRndName_serv						=(  CONST_qnmCfgId_base_common  +  2516  );				//  2007/11/22
+public const int CONST_qnmCfgId_uiRnd_cli							=(  CONST_qnmCfgId_base_common  +  2517  );				//  2007/11/22
+	//  public const int		CONST_qnmCfgId_uiWebSessId						=(  CONST_qnmCfgId_base_common  +  2518  );				//  2007/11/22
+public const int CONST_qnmCfgId_uiLogonId							=(  CONST_qnmCfgId_base_common  +  2518  );				//  2007/11/22
+	//
+public const int CONST_qnmCfgId_grpDisplayName						=(  CONST_qnmCfgId_base_common  +  2520  );				//  2007/11/22
+public const int CONST_qnmCfgId_displayName							=(  CONST_qnmCfgId_base_common  +  2521  );				//  2007/11/22
+public const int CONST_qnmCfgId_wAdvertisement						=(  CONST_qnmCfgId_base_common  +  2522  );				//  2008/03/02
+public const int CONST_qnmCfgId_talkerDesc							=(  CONST_qnmCfgId_base_common  +  2523  );				//  2011/04/07
+	//
+	//  ÒÔÏÂÎªMSG_ROUTEµÄ³ÉÔ±
+public const int CONST_qnmCfgId_messengerId_from						=(  CONST_qnmCfgId_base_common  +  2540  );				//  2007/11/29
+public const int CONST_qnmCfgId_messengerId_to						=(  CONST_qnmCfgId_base_common  +  2541  );				//  2007/11/29
+public const int CONST_qnmCfgId_messengerId_replyTo					=(  CONST_qnmCfgId_base_common  +  2542  );				//  2007/11/29
+	//
+public const int CONST_qnmCfgId_uiMsgRouteId							=(  CONST_qnmCfgId_base_common  +  2550  );             //  2008/05/27
+
+
+
+	public const int CONST_qyCmd_talkTo = (CONST_qyCmd_usr + 200);  //  ???2007/04/09
+																	//
+	public const int CONST_qyCmd_refreshImObjListReq = (CONST_qyCmd_usr + 205); //  ??????????2007/05/06????????????imCommType???
+																				//
+	public const int CONST_qyCmd_refreshRecentFriendsReq = (CONST_qyCmd_usr + 207); //  ??????????2007/05/10
+																					//
+	public const int CONST_qyCmd_getNmStatus = (CONST_qyCmd_usr + 210); //  2011/01/08
+																		//
+	public const int CONST_qyCmd_sendTask = (CONST_qyCmd_usr + 220);    //  ???????2007/06/23
+	public const int CONST_qyCmd_sendTaskReply = (CONST_qyCmd_usr + 221);   //  ???????2007/06/23
+	public const int CONST_qyCmd_sendRobotTask = (CONST_qyCmd_usr + 222);   //  ????????
+	public const int CONST_qyCmd_sendRobotTaskReply = (CONST_qyCmd_usr + 223);  //  ????????
+	public const int CONST_qyCmd_sendRobotTaskData = (CONST_qyCmd_usr + 224);   //  ????????????????channel????????????????????????channel????, ????????channel???; ?????????????channel, ???channel????
+																				//
+	public const int CONST_qyCmd_sendMedia = (CONST_qyCmd_usr + 230);   //  ??????
+																		//
+	public const int CONST_qyCmd_lastMsgInSession = (CONST_qyCmd_usr + 240);    //  webMessenger?cgi????????????????????????daemon?????????????????????????????????????2007/12/11
+																				//
+	public const int CONST_qyCmd_sendVDevReq = (CONST_qyCmd_usr + 250);	//  ??????????????????,2008/01/24
+
+
+
+
+}
+
+
+
+namespace qy
+{
+	public struct QY_CFGITEM
+	{
+		public ushort cfgId;
+		public ushort dataType;
+	}
+	;
+
+public struct QY_CFGITEM_L32
+	{
+		public ushort cfgId;
+		public ushort dataType;
+		public uint ulVal;
+	}
+	;
+
+
+public unsafe struct QY_CFGITEM_L64
+	{           //  ÒòÎª´Ó×Ö½ÚË³ÐòÉÏ£¬¿ÉÄÜ__int64ºÍunsigned  short²»ÄÜË³×Ö½Ú´æ·Å£¬¹ÊÖ»ÄÜÓÃÒ»¸öchar»º´æÀ´Ìæ»»
+		public ushort cfgId;
+		public ushort dataType;
+		public fixed byte buf_l64Val[8];   //  unsigned  __int64								ui64Val;
+	}
+	;
+
+public struct QY_CFGITEM_BYTE
+	{           //  2007/08/05
+		public ushort cfgId;
+		public ushort dataType;
+		public byte ucVal;
+	}
+	;
+
+public struct QY_CFGITEM_SHORT
+	{           //  2007/08/05
+		public ushort cfgId;
+		public ushort dataType;
+		public ushort usVal;
+	}
+	;
+
+
+	/*
+	typedef  struct  __qyCfgItemStr_t								{				//  netMcÀïÊ¹ÓÃµÄ£¬ÒòÎªstrµÄ³¤¶È¶ÔisÀ´Ëµ²»¹»ÓÃ£¬¹ÊÀ©µ½ÏÂÃæµÄ³¤¶È¡£µ«ÊÇÒª×¢Òâ£ºÔ­À´µÄ³¤¶ÈÊÇ¡¶1024µÄ
+					 unsigned  short								cfgId;
+					 unsigned  short								dataType;
+					 unsigned  short								len;
+					 char											str[1024];
+	}		 QY_CFGITEM_STR;
+	*/
+
+
+	public unsafe struct QY_CFGITEM_STR
+	{
+		public ushort cfgId;
+		public ushort dataType;
+		public ushort len;
+		public fixed byte str[Consts.CONST_cntof_cfgItemStr];     //  2007/03/31, ½«»º³åµÄ³¤¶È±ä³¤ÁË
+	}
+	;
+
+public unsafe struct QY_CFGITEM_WSTR
+	{               //  2007/03/31
+		public ushort cfgId;
+		public ushort dataType;
+		public ushort len;
+		public fixed char wStr[Consts.CONST_cntof_cfgItemWstr];
+	}
+	;
+
+
+
+public unsafe struct QY_CFGITEM_DATA
+	{
+		public ushort cfgId;
+		public ushort dataType;
+		public ushort len;
+		public fixed byte buf[Consts.CONST_bufSize_cfgItemData + 1];
+	}
+	;
+
+#if false
+	public unsafe struct QY_CFGITEM_LDATA
+	{
+		public ushort cfgId;
+		public ushort dataType;
+		public uint ulLen;
+		public fixed byte buf[Consts.CONST_bufSize_cfgItemLData + 1];
+	};
+#endif
+	public unsafe struct QY_CFGITEM_LDATA
+	{
+		public ushort cfgId;
+		public ushort dataType;
+		public uint ulLen;
+		public fixed byte buf1[1];
+		public byte* p;
+	};
+
+
+	//  2010/07/09
+	[StructLayout(LayoutKind.Explicit)]
+	public struct QY_CFGITEM_ntoh_U
+	{
+		[FieldOffset(0)] public QY_CFGITEM head;
+		[FieldOffset(0)] public QY_CFGITEM_L32 l32;
+		[FieldOffset(0)] public QY_CFGITEM_L64 l64;
+		[FieldOffset(0)] public QY_CFGITEM_BYTE c;
+		[FieldOffset(0)] public QY_CFGITEM_SHORT s;
+		public unsafe struct QY_CFGITEM_ntoh_U_data
+		{
+			public ushort cfgId;
+			public ushort dataType;
+			public ushort len;
+			public fixed byte buf[1];
+			public byte* p;
+		};
+		[FieldOffset(0)] public QY_CFGITEM_ntoh_U_data data;
+		public unsafe struct QY_CFGITEM_ntoh_U_lData
+		{
+			public ushort cfgId;
+			public ushort dataType;
+			public uint ulLen;
+			public fixed byte buf[1];
+			public byte* p;
+		};
+		[FieldOffset(0)] public QY_CFGITEM_ntoh_U_lData lData;
+		public unsafe struct QY_CFGITEM_ntoh_U_wStr
+		{               //  2007/03/31
+			public ushort cfgId;
+			public ushort dataType;
+			public ushort len;
+			public fixed char wBuf[1];
+			public char* pWStr;
+		};
+		[FieldOffset(0)] public QY_CFGITEM_ntoh_U_wStr wStr;
+
+	}		 ;
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	public unsafe struct QNM_CNT_CFG
+	{
+		public bool ucbAutoCntIp;     //  2006/06/29
+		public fixed byte cntIp[Consts.CONST_qyMaxIpLen + 1];
+		public bool ucbSys_cntIp;                         //  ÊÇ·ñhkey_local_machineÀïµÄ¡£2009/01/16
+		public fixed byte cntAddr1[Consts.CONST_maxCntAddrLen + 1];
+		public fixed byte cntAddr2[Consts.CONST_maxCntAddrLen + 1];
+		public fixed bool ucbSys_cntAddrs[2];                      //  ÊÇ·ñhkey_local_machineÀïµÄ¡£2009/01/16
+																   //
+		public ushort usCntPort;
+		public bool ucbSys_cntPort;                           //  hkey_local_machine;  2010/09/24
+															  //
+		public fixed char usr[256];                             //  2019/04/08
+		public fixed char passwd[256];                          //  2019/04/08
+		public bool ucbNoSavePasswd;                      //  2019/04/08
+		public bool ucbNoAutoLogon;                           //  2019/04/08
+	}
+   ;
+
+	public struct QWM_DYN_CFG
+	{                   //  2006/07/01	
+		public QNM_CNT_CFG cnt;
+	}
+	public struct QY_ENV
+	{
+		public int iEnvType;
+		public uint iPlatformId;
+		public ushort usLangId;                            //  ²Ù×÷ÏµÍ³ÓïÑÔÀàÐÍ£¬2005/11/03
+														   //
+		public bool bDebugInfo;                            //  2008/11/19. ÊÇ·ñÏÔÊ¾Ò»Ð©debugÐÅÏ¢£¬¶ÔÔÚrelease°æ±¾ÏÂÏÔÊ¾Ä³Ð©ÐÅÏ¢ÓÐÓÃ
+
+
+	};
+
+	partial class qyFuncs
+{
+
+
+		 public static unsafe byte* myWChar2Utf8(string wStr, byte* buf, uint bufSize)
+		{
+			int iErr = -1;
+			int bufSizeNeeded = 0;
+			/*
+						UINT uiCodePage = CP_UTF8;
+
+						bufSizeNeeded = WideCharToMultiByte(uiCodePage, 0, wStr, -1, buf, 0, NULL, NULL);
+						if (bufSizeNeeded > (int)bufSize) goto errLabel;
+						if (bufSizeNeeded != WideCharToMultiByte(uiCodePage, 0, wStr, -1, buf, bufSize, NULL, NULL)) goto errLabel;
+			*/
+			char[] pw = wStr.ToCharArray();
+			string str = Encoding.UTF8.GetString(
+				Encoding.Convert(
+					Encoding.Unicode,
+					Encoding.UTF8,
+					Encoding.Unicode.GetBytes(pw)));
+
+			safeStrnCpy(str, buf, bufSize);
+
+			iErr = 0;
+		errLabel:
+			return (iErr!=0) ? null : buf;
+		}
+
+		public static unsafe char* myUtf82WChar(string str, char* wBuf, uint cntof_wBuf)
+		{
+			int iErr = -1;
+			int wBufSizeNeeded = 0;
+			/*
+			UINT uiCodePage = CP_UTF8;
+
+			wBufSizeNeeded = MultiByteToWideChar(uiCodePage, 0, str, -1, wBuf, 0);
+			if (wBufSizeNeeded > (int)wBufSize) goto errLabel;
+			if (wBufSizeNeeded != MultiByteToWideChar(uiCodePage, 0, str, -1, wBuf, wBufSize)) goto errLabel;
+			*/
+			char[] pw = str.ToCharArray();
+			string wstr = Encoding.Unicode.GetString(
+				Encoding.Convert(
+					Encoding.UTF8,
+					Encoding.Unicode,
+					Encoding.UTF8.GetBytes(pw)));
+			mytcsncpy(wBuf, wstr, (int)cntof_wBuf);
+
+			iErr = 0;
+		errLabel:
+			return iErr!=0 ? null : wBuf;
+		}
+
+		
+
+
+		//  ·µ»Ø×ª»¯ºóµÄ×Ö½ÚÁ÷³¤¶È, 0 ±íÊ§°Ü
+		public static unsafe  int qyhtonCfgItem(QY_CFGITEM* pItem, uint * puiPart0Len, byte **ppPart1Data, uint *puiPart1DataLen )
+		{
+			int len = 0;
+
+			if (null == puiPart0Len) return -1;
+			if (null==ppPart1Data) return -1;
+			if (null==puiPart1DataLen) return -1;
+
+			*puiPart0Len = 0;
+			*ppPart1Data = null;
+			*puiPart1DataLen = 0;
+
+			bool bGot_puiPart0Len = false;
+
+			//
+			pItem->cfgId = qyhtons(pItem->cfgId);
+
+			switch (pItem->dataType)
+			{
+				case Consts.CONST_qyDataType_long:
+					{
+						QY_CFGITEM_L32* pLong = (QY_CFGITEM_L32*)pItem;
+
+						len = 2 + 2 + 4;
+						pLong->dataType = qyhtons(pLong->dataType);
+						pLong->ulVal = qyhtoni(pLong->ulVal);
+					}
+					break;
+				case Consts.CONST_qyDataType_char:
+					{
+						QY_CFGITEM_BYTE* pChar = (QY_CFGITEM_BYTE*)pItem;
+						//
+						len = 2 + 2 + 1;
+						pChar->dataType=qyhtons(pChar->dataType);
+						//
+					}
+					break;
+				case Consts.CONST_qyDataType_short:
+					{
+						QY_CFGITEM_SHORT* pShort = (QY_CFGITEM_SHORT*)pItem;
+						//
+						len = 2 + 2 + 2;
+						pShort->dataType=qyhtons(pShort->dataType);
+						pShort->usVal = qyhtons(pShort->usVal);
+					}
+					break;
+				case Consts.CONST_qyDataType_l64:
+					{
+						QY_CFGITEM_L64* pL64 = (QY_CFGITEM_L64*)pItem;
+						//
+						len = 2 + 2 + 8;
+						pL64->dataType = qyhtons(pL64->dataType);
+						*(UInt64*)pL64->buf_l64Val=qyhtonl64(*(UInt64*)pL64->buf_l64Val);
+						//				   
+					}
+					break;
+				case Consts.CONST_qyDataType_data:
+				case Consts.CONST_qyDataType_str:
+				case Consts.CONST_qyDataType_utf8Str:
+					{
+						QY_CFGITEM_STR* pStr = (QY_CFGITEM_STR*)pItem;
+
+						len = 2 + 2 + 2 + pStr->len;
+						pStr->dataType = qyhtons(pStr->dataType);
+						pStr->len = qyhtons(pStr->len);
+					}
+					break;
+				case Consts.CONST_qyDataType_lData:
+					{       //  2008/04/01
+						QY_CFGITEM_LDATA* pLData = (QY_CFGITEM_LDATA*)pItem;
+
+						//
+						*puiPart0Len = 2 + 2 + 4;
+						bGot_puiPart0Len = true;
+						*ppPart1Data = pLData->p;
+						*puiPart1DataLen = pLData->ulLen;
+
+						//
+						len = (int)(2 + 2 + 4 + pLData->ulLen);
+						pLData->dataType=qyhtons(pLData->dataType);
+						pLData->ulLen=qyhtoni(pLData->ulLen);
+
+						
+					}
+					break;
+				default:
+					len = 0;
+					break;
+			}
+
+			if ( !bGot_puiPart0Len )
+            {
+				*puiPart0Len = (uint)len;
+            }
+
+			return len;
+
+		}
+
+		//  
+
+		//  2010/07/09
+		
+		public static unsafe int qyntohCfgItem(byte* p, QY_CFGITEM_ntoh_U * pItem)
+		{
+			int len = 0;
+			int headLen = sizeof(QY_CFGITEM);
+			int dataLen = 0;
+
+			//  pItem->cfgId  =  qyntohs(  pItem->cfgId  );
+			//  pItem->dataType  =  qyntohs(  pItem->dataType  );
+			mymemset((IntPtr)pItem, 0, sizeof(QY_CFGITEM_ntoh_U)  );
+			mymemcpy((IntPtr)pItem, (IntPtr)p, (uint)sizeof(QY_CFGITEM));
+			pItem->head.cfgId=qyntohs(pItem->head.cfgId);
+			pItem->head.dataType=qyntohs(pItem->head.dataType);
+
+			switch (pItem->head.dataType)
+			{
+				case Consts.CONST_qyDataType_long:
+					{
+
+						dataLen = 4;
+						mymemcpy((IntPtr)(((byte*)pItem) + headLen), (IntPtr)p + headLen, (uint)dataLen);
+
+						QY_CFGITEM_L32* pLong = (QY_CFGITEM_L32*)pItem;
+
+						//  pLong->ulVal  =  qyntohl(  pLong->ulVal  );
+						pLong->ulVal=qyntohi(pLong->ulVal);
+						//
+						int iVal = (int)pLong->ulVal;
+
+						//
+						len = 2 + 2 + 4;
+					}
+					break;
+				case Consts.CONST_qyDataType_char:
+					{
+
+						dataLen = 1;
+						mymemcpy((IntPtr)(((byte*)pItem) + headLen), (IntPtr)p + headLen, (uint)dataLen);
+
+						QY_CFGITEM_BYTE* pChar = (QY_CFGITEM_BYTE*)pItem;
+						//
+						len = 2 + 2 + 1;
+						//
+					}
+					break;
+				case Consts.CONST_qyDataType_short:
+					{
+
+						dataLen = 2;
+						mymemcpy((IntPtr)((byte*)pItem) + headLen, (IntPtr)p + headLen, (uint)dataLen);
+
+						QY_CFGITEM_SHORT* pShort = (QY_CFGITEM_SHORT*)pItem;
+						//
+						pShort->usVal=qyntohs(pShort->usVal);
+
+						len = 2 + 2 + 2;
+					}
+					break;
+				case Consts.CONST_qyDataType_l64:
+					{
+
+						dataLen = 8;
+						mymemcpy((IntPtr)((byte*)pItem) + headLen, (IntPtr)p + headLen, (uint)dataLen);
+
+						QY_CFGITEM_L64* pL64 = (QY_CFGITEM_L64*)pItem;
+						//
+						*(UInt64*)pL64->buf_l64Val=qyntohl64(*(UInt64*)pL64->buf_l64Val);
+
+						len = 2 + 2 + 8;
+					}
+					break;
+				case Consts.CONST_qyDataType_data:
+				case Consts.CONST_qyDataType_str:
+				case Consts.CONST_qyDataType_utf8Str:
+					{
+
+						dataLen = 2;
+						mymemcpy((IntPtr)((byte*)pItem) + headLen, (IntPtr)p + headLen, (uint)dataLen);
+						pItem->data.p = p + headLen + dataLen;
+
+						QY_CFGITEM_STR* pStr = (QY_CFGITEM_STR*)pItem;
+
+						//  pStr->len  =  qyntohs(  pStr->len  );
+						pStr->len=qyntohs(pStr->len);
+
+
+						//  len  =  2  +  2  +  2  +  pStr->len;
+						ushort tmp_us;
+						//memcpy(&tmp_us, &pStr->len, sizeof(short));
+						tmp_us = pStr->len;
+						len = 2 + 2 + 2 + tmp_us;
+					}
+					break;
+				case Consts.CONST_qyDataType_lData:
+					{       //  2008/04/01
+
+						dataLen = 4;
+						mymemcpy((IntPtr)((byte*)pItem) + headLen, (IntPtr)p + headLen, (uint)dataLen);
+						pItem->lData.p = p + headLen + dataLen;
+
+						QY_CFGITEM_LDATA* pLData = (QY_CFGITEM_LDATA*)pItem;
+						//
+						pLData->ulLen=qyntohi(pLData->ulLen);
+
+						//  len  =  2  +  2  +  4  +  pLData->ulLen;
+						uint tmp_ul;
+						//memcpy(&tmp_ul, &pLData->ulLen, sizeof(long));
+						tmp_ul = pLData->ulLen;
+						len = (int)(2 + 2 + 4 + tmp_ul);
+					}
+					break;
+				default:
+					len = 0;
+					break;
+			}
+
+
+			return len;
+
+		}
+
+
+		public static unsafe int getIpFromName(string name, byte* ip, uint size)
+		{
+			int iErr = -1;
+
+			if (name == null) return -1;
+			if (ip == null || size <= Consts.CONST_qyMaxIpLen) return -1;
+
+			try
+			{
+				IPHostEntry hostInfo = Dns.GetHostByName(name);
+				IPAddress[] address = hostInfo.AddressList;
+				if (address == null || address.Length == 0) goto errLabel;
+				safeStrnCpy(address[0].ToString(), ip, size);
+			}
+			catch(Exception e)
+            {
+				goto errLabel;
+            }
+	 
+	iErr  =  0;
+errLabel:
+	 return  iErr;
+}
+
+
+public static int getQyEnv(IntPtr pDynLibs, ref QY_ENV pEnv)
+        {
+			pEnv.usLangId = Consts.CONST_langId_PRC;
+
+			return 0;
+        }
+
+}
+}

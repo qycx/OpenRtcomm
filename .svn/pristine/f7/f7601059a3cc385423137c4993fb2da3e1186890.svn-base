@@ -1,0 +1,1846 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Threading;
+
+partial class Consts
+{
+	public const int DEFAULT_usTimeoutInMs_player_a = 5000; //  2017/07/03	//  10000					//  2010/06/25
+	public const int DEFAULT_usTimeoutInMs_player_v = 10000;
+
+	public const int DEFAULT_loopCtrl_timer_dlgTalk_chkRecvdTasks = 7;  //  30				//  2010/06/26
+	public const int DEFAULT_loopCtrl_chkPlayers = 5;	//10						//  2010/06/26
+
+}
+
+
+
+namespace qy
+{
+
+	public struct  QMC_cfg_envVar
+    {
+		public				 ushort usMaxQNodes_mediaQ;
+		public ushort usQNodes_warningInterval_mediaQ;
+		public ushort usMaxQNodes_rtMediaQ;
+		public ushort usQNodes_warningInterval_rtMediaQ;
+		public ushort usMaxQNodes_rtOpQ;                                           //  2016/12/26
+		public ushort usQNodes_warningInterval_rtOpQ;
+
+		//
+		public ushort usMaxQNodes_playSoundQ;
+		public ushort usMaxQNodes_playVideoQ;                                      //  2012/11/09
+		public ushort usMaxQNodes_displayVideoQ;                                   //  2012/11/09
+
+		//
+		public ushort usMaxQNodes_dlgTalk_processQ;                                //  2010/07/22
+		public ushort usMaxnItems_dlgTalk_list;                                    //  2010/07/22
+																				   //
+		public ushort usMaxQNodes_imMsgLogQ;
+
+		//  2017/08/15
+		public bool default_ucbLetConfMgrSetMicOn;
+
+
+
+
+};
+
+	public struct Policy_notification
+    {
+		public bool ucbPermitEveryOneNotify;                     //  允许任何人呼叫
+		public bool ucbNotNotifyDuringConference;                 //  禁止会议中有通知消息
+		public bool ucbNotNotify;                                 //  禁止任何通知消息
+																  //
+		public bool ucbBeep;
+		//
+		public ushort usTimeInMsToPop;                             //  pop窗口弹出要花多少时间
+		public int iW_pic;
+		public int iH_pic;
+		public int iH_static;
+	};
+
+public unsafe struct POLICY_isClient
+	{
+		public bool ucbRunAsAdvertisingPlayer;                            //  2013/11/14. 是否做为广告机运行
+
+		//  
+		public bool ucbDlgShareDynBmps_autopopupandhideOnStartup;
+
+		//
+		//
+		public bool ucbUseGlobalVWall;                                    //  2012/04/02. 是否使用GlobalVWall
+																		  //
+		public byte ucRuleIfMsgArrive;
+		public fixed char dirToSaveFile[Consts.MAX_PATH + 1];
+
+		//
+		public bool ucbSaveMsg;
+		public fixed char dirToSaveMsg[Consts.MAX_PATH + 1];                       //  2014/04/26
+
+		//
+		public uint uiTimeOfVideoFileInS;
+		public fixed char dirToSaveVideo[Consts.MAX_PATH + 1];                     //  2014/08/03				
+
+		//  2014/03/29
+		public byte ucHardwareAccl;
+		//
+
+		//  2011/03/28
+		//  unsigned  char									snmpbShowMsgBox;
+		public bool ucbShowNotification;
+		public bool ucbScrollForEnlagedImg;                               //  2012/04/07. 对双击放大图像是否不滚动
+
+		//
+		public uint uiCamCapType;                                     //  2010/07/26
+																	  //
+																	  //  unsigned  char								ucSeconds_perFrame_videoConference;				//  ºÜÂýÊ±£¬ÓÃ¼¸ÃëÒ»Ö¡. Õâ¸ö²ÎÊýÖ»ÓÃÔÚ·¢ËÍ¶Ë£¬½ÓÊÕ¶Ë²»ÐèÒªÓÃµÄ¡£
+																	  //  unsigned  short							usFrames_perSecond_videoConference;				//  Ò»Ãë¼¸èå
+
+
+		public uint uiRecordType;                                     //  2010/08/02
+																	  //
+
+		//  2014/07/31
+		public bool ucbNot_selectDefaultRecorder;
+
+
+		//
+		public ushort usTimeoutInMsToSwitch;                           //  2008/10/28, media realTimeMedia daemon 
+		public ushort usTimeoutInMsToSwitch_rt;                        //  rt
+
+		//  2012/03/31
+		public ushort usMax_nPlayers;                                  //  2012/03/30
+		public ushort usMax_nPlayers_gps;                              //  2012/05/07
+		public ushort usMax_nThreads_dec;
+		public uint uiMaxQNodes_vwRuleQ;
+
+		//  2009/02/25
+		public bool ucbManullyPermitToSpeakOnVideoConference;     //  2009/02//24
+
+		//  2016/02/15
+		public uint uiCmd_autoAnswer_av;
+		//  2017/07/07
+		public bool ucbLetConfMgrSetMicOn;
+		//
+
+		//  2010/08/24
+		public Policy_notification notification;
+
+		//  2010/09/03
+		public bool dlgTalk_ucbShowImGrpMems;
+		//  
+		public bool dlgTalk_snmpbShowMsgBox;
+
+		//  2012/08/01
+		//  COM_PORT_cfg									comPort_ptz;
+
+		//  2012/06/25
+		public bool ucbPreferCuda;                                //  进行视频压缩硬加速时优先采用cuda
+																  //  2012/11/06
+		public bool ucbLooping_mediaFile;						//  循环播放媒体文件
+
+}		 ;
+
+
+public unsafe struct QMC_cfg
+	{
+
+		public uint uiMaxSendMsgs;                                             //  
+		public ushort usMaxMsgrRecentFriends;                                      //  2007/06/04
+
+		//
+		public uint uiSizePerSnd_file_noAv;                                        //  2014/07/13
+		public uint uiSizePerSnd_file_avExists;                                    //  2014/07/13
+
+		//
+		public uint uiSizePerSnd_media;                                            //  2008/04/01
+		public ushort usNeedShowFrameInfoIntervalInS;                              //  
+
+		public uint uiBufSize_myDrawVideoData;                                 //  2010/04/24
+		public uint uiBufSize_myPlayAudioData;                                 //  2010/04/24
+
+		//
+		public QMC_cfg_envVar envVar;
+
+
+		//		
+		public GENERIC_Q_cfgEx mgrQEx;
+		public GENERIC_Q_CFG displayQ, workQ, schedulerQ, robotQ, mediaQ, realTimeMediaQ, rtOpQ;       //  svrThreadÍ¨³£ÓÃÀ´ÏòÆäËûµÄcontactÌá¹©ÐÅÏ¢£¬±ÈÈç´«ÎÄ¼þµÈ
+																											   //  
+		public GENERIC_Q_CFG processQ_robot;
+		//
+		public GENERIC_Q_CFG processQ_media;                                               //  
+
+		public GENERIC_Q_CFG outputQ_toMix_audio;                                      //  ÒôÆµµÄÊä³ö¶ÓÁÐ¡£
+		public GENERIC_Q_CFG outputQ_toMix_video;                                      //  2009/07/26
+
+		//
+		public GENERIC_Q_CFG playSoundQ;
+		public GENERIC_Q_CFG playVideoQ;                                                   //  2009/05/02
+		public GENERIC_Q_CFG displayVideoQ;                                                //  2009/07/25
+
+		//
+		//GENERIC_Q_CFG								preTransformQ;												//  2011/12/09
+		public GENERIC_Q_CFG transformQ;                                                   //  2009/05/12
+
+		//
+		//GENERIC_Q_CFG								vCamQ;														//  2010/06/18
+
+		//  2017/01/29
+		public GENERIC_Q_CFG appQ;                                                     //  2017/01/29
+																							   //
+		public GENERIC_Q_CFG vppQ;                                                     //  2011/12/04
+
+		//
+		public GENERIC_Q_CFG toShareAudioQ;                                                //  2011/01/21
+		public GENERIC_Q_CFG toShareVideoQ;                                                //  2011/01/21
+
+		//
+		public GENERIC_Q_CFG toShareVideo_postQ;                                           //  2011/12/06
+
+		//
+		public GENERIC_Q_CFG dispatchQ;                                                    //  2009/06/17
+
+		//  2016/03/15
+		public GENERIC_Q_CFG talkerThreadQ;                                                //  2016/03/15
+
+		//  2016/06/15
+		public GENERIC_Q_CFG shareDynBmpsQ;                                                //  2016/06/15
+
+		//
+		public GENERIC_Q_CFG guestQ;                                                       //  2008/01/18, 
+																								   //GENERIC_Q_CFG								phoneMsgrQ;													//  2008/02/10, phoneMessengerQ
+		public GENERIC_Q_CFG dynBmpQ;                                                  //  2009/09/05
+
+
+		public POLICY_isClient policy;
+		//
+		//
+		//
+		public fixed char mutexName_syncSendAv[Consts.cntof_mutexName];
+		public fixed char mutexName_syncActiveMem_prefix1[Consts.cntof_mutexName_prefix];                  //  2009/05/31
+		public fixed char mutexName_syncStartAv[Consts.cntof_mutexName];
+
+		//  2014/09/22
+		public bool ucb__SUPPORT_shareDynBmps__;
+
+		//  2008/05/17
+		//unsigned  char								ucbNeedShowFrameInfo_forVideoConference;
+		//
+		public bool ucb__SUPPORT_dmoToDec__;                                  //  2010/08/05
+																			  //  2014/04/03
+		public bool ucb__USE_hdEnc_conf__;
+
+
+		//  2012/05/15
+		public bool ucbTestGps;
+		//  2015/05/18
+		public bool ucbPlayLocalAudio_captured;                                   //  2015/05/18
+		public bool ucbPlayRemoteAudio_viewDynBmp;                                //  2015/05/19		 
+
+		//
+		public bool ucb__USE_d2dToRenderTxt__;                                    //  2016/05/18
+
+		//
+		public ushort usMaxCnt_capProcInfoBmps;
+		public ushort usMaxCnt_capProcInfoAudios;
+
+		public ushort usMaxCnt_pSharedObjs;                                        //  2008/10/04
+
+
+		//  2015/11/10
+		public ushort usMaxCnt_qmcObjVarInfos;                                     //  2015/11/10
+																				   //  2014/09/23
+		public ushort usMaxCnt_taskInfos;
+
+		//
+		public ushort usTimeoutInMs_player_a;                                      //  2010/06/25
+		public ushort usTimeoutInMs_player_v;
+
+		public ushort loopCtrl_chkPlayers;                                     //  default 10. 2010/06/26
+		public ushort loopCtrl_timer_dlgTalk_chkRecvdTasks;                        //  default 30. 2010/06/26. 
+
+		/*
+
+	//
+	QMC_cfg_debugStatusInfo debugStatusInfo;    //  2015/01/23
+
+	//  2016/08/10
+	TCHAR clientWelcomeMsg[128];
+		*/
+	}
+;
+
+
+
+	public abstract class CCtxQmc : CCtxQmcTmpl
+	{
+		public QMC_cfg cfg;
+		//
+		public uint uiDevType;                                                 //  2007/08/03
+
+		//
+		public QY_COMM_AUTHINFO_MIS authInfo;
+
+
+		//
+		uint uiLastTranNo;
+
+		//
+		public bool bQuit_threadProc_isCli;
+		//
+		public Thread hThread_mgr;
+		//DWORD dwThreadId_mgr;
+		
+		
+		//
+		public Thread hThread_display;                                         //  2007/06/09		
+		//DWORD dwThreadId_display;
+		//
+		public Thread hThread_work;
+		//DWORD dwThreadId_work;
+		//
+		public Thread hThread_scheduler;
+		//DWORD dwThreadId_scheduler;
+		//
+		public Thread hThread_robot;                                               //  2007/07/04
+		//DWORD dwThreadId_robot;
+		//
+		public Thread hThread_media;
+		//DWORD dwThreadId_media;
+		//
+		public Thread hThread_realTimeMedia;
+		//DWORD dwThreadId_realTimeMedia;
+		//  2016/12/26
+		public Thread hThread_rtOp;
+		//DWORD dwThreadId_rtOp;
+		
+
+		//
+		public GENERIC_Q mgrQ;                                                     //  
+																				   //
+		public GENERIC_Q displayQ;                                                 //  
+		public GENERIC_Q workQ;                                                        //  
+		public GENERIC_Q schedulerQ;                                                   //  
+		public GENERIC_Q robotQ;
+		public QY_Q2 mediaQ2;
+		public QY_Q2 realTimeMediaQ2;
+		public QY_Q2 rtOpQ2;                   //  2016/12/26
+
+		//  2015/12/04
+		//ZONE_objs* pGZone_activeTalkers;
+
+		//  2016/06/03
+		//ZONE_objs* pGZone_d3dWalls;                                         //  2016/06/03
+
+		//
+		public CMcSharedQ processQ_media;                                              //  
+
+
+		/*
+		//
+		GENERIC_Q imMsgLogQ;                                                    //  2010/07/17
+
+		//
+		PolicyAvParams* p_gAvParams;
+		void* pFuncs_for_isCliHelp;                                     //  2013/06/08
+
+		//  2016/09/05
+		//void									*		p_g_dbFuncs;
+
+		//
+		unsigned char ucb_doInitRecordSound;                                        //  2010/08/03
+
+
+		*/
+		
+
+		//  av, 2008/03/18
+		public unsafe struct QMC_av                                        {
+
+			
+			//	'
+			public bool bMediaChannelReady;                                           //  media
+			public bool bRealtimeMediaChannelReady;
+			public bool bRtOpChannelReady;                                         //  2016/12/26
+
+			//
+			public struct                                     QMC_localAv {
+
+				//CAP_procInfo_video videoCaptureProcInfo;                                       //  200903/18
+
+				//
+				public QY_MESSENGER_ID idInfo_curConference;                                       //  (idInfo)
+				public uint uiTaskType_curConference;                                  //  
+																					   //
+																					   //CAP_procInfo_recordSound recordSoundProcInfo;                                       //  2009/02/11
+
+				//  
+				public QY_PLAYER player;
+
+				//  2014/04/07
+				//HWND hWnd_selectAvCompressor;
+
+			};
+			public QMC_localAv localAv;
+					 //
+					 //
+			
+
+					 //  
+			public ushort usCnt_players;
+			public QY_PLAYER[] pPlayers;
+			//
+			public bool bNeedChkPlayers;                   //  2018/06/16
+		};
+		public QMC_av av;
+
+	/*
+//  gps  2012/05/07
+struct                                         {
+
+					 //  2012/05/07
+unsigned short usCnt_players;
+QY_PLAYER_gps* pPlayers;
+
+				 }												gps;
+
+
+//	
+CAP_procInfo_bmpU* pCapProcInfoBmps;
+CAP_procInfo_audioU* pCapProcInfoAudios;
+
+//  
+void* pSharedObjSyncs;                                          //  2014/09/30
+
+//  2015/11/10
+void* pQmcObjVarInfos;                                          //  2015/11/10
+																//  2014/09/24
+void* pQmcTaskInfos;
+
+		*/
+
+		//
+		//  2015/07/01
+		//unsigned char ucCnt_misCnts;
+		public MIS_CNT pMisCnt;
+
+		/*
+//  2011/04/05
+struct                                         {
+					 CUSTOMER_service_obj objs[1];
+//
+struct                                     {
+						 QY_MESSENGER_ID idInfo;
+TCHAR talkerDesc[32];
+					 }											called;
+				 }												customerService;
+
+//  2009/12/21
+struct                                         {
+					 unsigned short usMaxCnt_qmCmds;
+unsigned int uiBufSize_qmShm;
+//
+HANDLE hMap;
+char* pBuf;
+				 }												cmdsShm;
+
+
+
+//
+QIS_ptz_wnd ptzWnd;
+
+//  2013/09/26
+struct                                         {
+					 HWND hWnd_dlgImg;
+				 }												chromaKey;
+
+//  2013/03/09
+struct                                         {
+					 HWND hWnd_videoTagCfg;
+//
+SUBTITLES_cfg webcam;
+SUBTITLES_cfg d3dWall;													//  d3dWall需要设置字体。先这么使用 . 2013/12/10
+				 }												subtitles;
+
+//
+OfflineRes_var offlineRes;
+
+
+//  2017/07/18
+struct                                         {
+					 TCHAR unique_wndTitle_parent[64];          //  必须是独一无二的窗口题头。
+																//
+BOOL bGotMsg_avConsole;
+				 }												avConsole;
+
+//  2017/07/26
+struct                                         {
+					 HWND hWnd_cfgGrp;
+				 }												cfgGrp;
+
+//
+HWND hWnd_shareDynBmps;                                         //  2009/08/13								
+																//
+unsigned char ucbAutoHideOnStartup;
+unsigned char ucbAutoOpenChked;                                         //  2017/06/10
+
+
+//
+//  HWND											hFrame_sharedDynBmpList;									//  2009/09/03
+DWORD dwTickCnt_toRetrieveSharedDynBmps;
+//BOOL											bInited_mcProcResp_retrieveDynBmps;							//  2011/10/31
+time_t tLastRefreshedTime_misServ_sharedDynBmps;
+//
+HWND hWnd_notification;                                         //  2010/08/24
+
+//
+HWND hWnd_imObjView;                                                //  2017/01/04
+
+//
+HWND g_hVWall;                                                  //  2012/04/02
+int iWndContentType_g_hVWall;                                   //  2013/07/11
+
+//  2018/10/28
+HWND hWall_hzj;                                                 //  2018/10/28
+struct                                         {
+					 QY_MESSENGER_ID idInfo_tmpGrp;
+BOOL bConfStarted;
+				 }												hzj;
+
+		*/
+
+
+		//
+		public QMC_status status;
+
+
+		//
+
+
+
+
+		public CCtxQmc()
+		{;
+			m_iCtxType = Consts.CONST_ctxType_qmc;
+		}
+
+		~CCtxQmc()
+		{
+
+		}
+
+		public override unsafe int setQmDbFuncs(int iDbType, QM_dbFuncs pDbFuncs)
+        {
+			return -1;
+        }
+
+		abstract public unsafe int postMsg2Mgr_mc(MIS_CNT pMIS_CNT, MSG_ROUTE* pRoute, uint uiMisMsgType, byte ucFlg, ushort usCode, Int64 tStartTime, uint uiTranNo, uint uiSeqNo, byte* data, uint dataLen, QY_MESSENGER_ID* pIdInfo_logicalPeer, QY_MESSENGER_ID* pIdInfo_dst, uint uiChannelType, MIS_MSGU* pMsgBuf, bool bLog);
+
+
+		abstract public unsafe int recoverMessenger(QM_dbFuncs pDbFuncs, object pDb, int iDbType, ref QY_DMITEM[] pFieldIdTable, QY_MESSENGER_INFO* pObj, QY_MESSENGER_REGINFO* pRegInfo, Int64 tLastModifiedTime, bool bLog, GENERIC_Q pLogQ);
+		//abstract public unsafe int recoverImObjRules(QM_dbFuncs pDbFuncs, object pDb, int iDbType, string misServName, QY_MESSENGER_ID* pIdInfo, REFRESH_imObjRules_req* pReq, time_t tLastModifiedTime)  =  NULL;
+		abstract public unsafe int recoverImGrp(QM_dbFuncs pDbFuncs, object pDb, int iDbType, ref QY_DMITEM []pFieldIdTable, uint uiObjType, IM_GRP_INFO* pGrpInfo, Int64 tLastModifiedTime, bool bNoGrpName);
+		abstract public unsafe int recoverImGrpMem(QM_dbFuncs pDbFuncs, object pDb, int iDbType, IM_GRP_MEM* pGrpMem, Int64 tLastModifiedTime);
+
+
+	}
+
+
+	partial class qyFuncs
+	{
+		public static bool bQThreadExists(ref PLAY_AUDIO_procInfo p)
+        {
+			Console.WriteLine("not finished bQThreadExists");
+			return false;
+        }
+
+		public static bool bQThreadExists(ref PLAY_VIDEO_procInfo p)
+		{
+			Console.WriteLine("not finished bQThreadExists");
+			return false;
+		}
+
+
+		public unsafe static int initVar_isGui(CCtxQyMc pQyMc, ref QY_SERVICEGUI_INFO pSci, IntPtr p2)
+		{
+			int iErr = -1;
+			int i;
+
+
+			if (pQyMc.iServiceId != Consts.CONST_qyServiceId_is) return 0;
+
+			//  2010/10/01
+
+			QM_dbFuncs pDbFuncs = pQyMc.p_g_dbFuncs;
+			if (null == pDbFuncs) goto errLabel;
+			QM_dbFuncs g_dbFuncs = pDbFuncs;
+
+			//  2009/12/21
+			//
+			CCtxQmc pProcInfo = (CCtxQmc)pSci.pVar;
+
+			ulong len;
+
+
+			pProcInfo.pQyMc = pQyMc;
+			//pProcInfo.pSgiParam = pSci;
+
+
+			//  2013/06/08
+			/*
+			pProcInfo.p_gAvParams = get_g_pAvParams();//&gAvParams;
+			if (!pProcInfo.p_gAvParams) goto errLabel;
+			memset(pProcInfo.p_gAvParams, 0, sizeof(PolicyAvParams));
+			*/
+			//
+			//
+
+
+
+			//
+			//_sntprintf(pProcInfo.who_showInfo, mycountof(pProcInfo.who_showInfo), _T("%s"), pQyMc.who_showInfo);
+			pProcInfo.str_who_showInfo = "qmc";
+
+			//
+			pProcInfo.cfg.uiMaxSendMsgs = Consts.CONST_maxSendMsgs_isClient;
+			pProcInfo.cfg.usMaxMsgrRecentFriends = Consts.CONST_usMaxMsgrRecentFriends;
+
+			//  2014/07/13
+			pProcInfo.cfg.uiSizePerSnd_file_noAv = Consts.DEFAULT_uiSizePerSnd_file_noAv;
+			pProcInfo.cfg.uiSizePerSnd_file_avExists = Consts.DEFAULT_uiSizePerSnd_file_avExists;
+
+			//
+			pProcInfo.cfg.uiSizePerSnd_media = Consts.DEFAULT_uiSizePerSnd_media_isCli;       //  2008/04/01
+			pProcInfo.cfg.usNeedShowFrameInfoIntervalInS = Consts.DEFAULT_usNeedShowFrameInfoIntervalInS;
+
+			//
+			pProcInfo.cfg.uiBufSize_myDrawVideoData = Consts.CONST_bufSize_myDrawVideoData_4k;    //  2014/06/01
+																								  //if (!b4Core() || bLikeXp()) pProcInfo.cfg.uiBufSize_myDrawVideoData = CONST_bufSize_myDrawVideoData_2k;    //  2014/06/01
+																								  //
+			pProcInfo.cfg.uiBufSize_myPlayAudioData = Consts.CONST_bufSize_myPlayAudioData;   //  2010/04/24
+
+			//  2010/06/26	 
+
+			pProcInfo.cfg.envVar.usMaxQNodes_mediaQ = Consts.CONST_uiMaxQNodes_mediaQ_x64;
+
+			pProcInfo.cfg.envVar.usQNodes_warningInterval_mediaQ = Consts.CONST_uiQNodes_warningInterval_mediaQ;
+			//
+			pProcInfo.cfg.envVar.usMaxQNodes_rtMediaQ = Consts.CONST_uiMaxQNodes_mediaQ_x64;
+			pProcInfo.cfg.envVar.usQNodes_warningInterval_rtMediaQ = Consts.CONST_uiQNodes_warningInterval_mediaQ;
+			//  2016/12/26
+			pProcInfo.cfg.envVar.usMaxQNodes_rtOpQ = pProcInfo.cfg.envVar.usMaxQNodes_rtMediaQ;
+			pProcInfo.cfg.envVar.usQNodes_warningInterval_rtOpQ = pProcInfo.cfg.envVar.usQNodes_warningInterval_rtMediaQ;
+
+			//
+			//pProcInfo.cfg.envVar.usMaxQNodes_vCamQ  =  CONST_uiMaxQNodes_vCamQ;
+			//
+			pProcInfo.cfg.envVar.usMaxQNodes_playSoundQ = Consts.CONST_uiMaxQNodes_playSoundQ;
+			//  2012/11/09
+			pProcInfo.cfg.envVar.usMaxQNodes_playVideoQ = Consts.CONST_uiMaxQNodes_playVideoQ;
+			pProcInfo.cfg.envVar.usMaxQNodes_displayVideoQ = Consts.CONST_uiMaxQNodes_displayVideoQ;
+
+			//
+			pProcInfo.cfg.envVar.usMaxQNodes_dlgTalk_processQ = 200;       //  
+
+			pProcInfo.cfg.envVar.usMaxQNodes_imMsgLogQ = 200;
+
+
+			//  2017/08/15
+			pProcInfo.cfg.envVar.default_ucbLetConfMgrSetMicOn = false;
+
+			//  2014/09/22
+			pProcInfo.cfg.ucb__SUPPORT_shareDynBmps__ = false;
+
+			//
+			//
+			//
+
+			//  2010/08/05
+			//  if  (  bLikeXp(  )  )  
+			pProcInfo.cfg.ucb__SUPPORT_dmoToDec__ = false;      //  2012/03/22, 因为filterGraph有死锁现象,所以,这里选择使用dmo.
+
+
+
+			//
+			pProcInfo.cfg.ucb__USE_hdEnc_conf__ = false;   //  2015/10/05	//  true;	//  FALSE;	//  2014/04/03
+
+
+			/*
+						//  2015/12/04
+						int size;
+						size = sizeof(ZONE_objs);
+						pProcInfo.pGZone_activeTalkers = (ZONE_objs*)mymalloc(size);
+						if (!pProcInfo.pGZone_activeTalkers) goto errLabel;
+						memset(pProcInfo.pGZone_activeTalkers, 0, size);
+						pProcInfo.pGZone_activeTalkers->iIndex_enlarged1 = -1;     //  2016/03/25
+
+						//  2016/03
+						size = sizeof(ZONE_objs);
+						pProcInfo.pGZone_d3dWalls = (ZONE_objs*)mymalloc(size);
+						if (!pProcInfo.pGZone_d3dWalls) goto errLabel;
+						memset(pProcInfo.pGZone_d3dWalls, 0, size);
+						pProcInfo.pGZone_d3dWalls->iIndex_enlarged1 = -1;
+			*/
+
+
+
+			//
+			//  2017/06/18
+			init_webRtc();
+
+
+			//
+			if (getPolicyIsClient(pProcInfo, out pProcInfo.cfg.policy) != 0) goto errLabel;
+
+
+			/*
+			//  2016/04/28
+			pProcInfo.m_pf_doDecodeVideo_dvtCli = doDecodeVideo_dvtCli;
+			//
+			pProcInfo.m_pf_qdcInitCompressVideo_evtCli = qdcInitCompressVideo_evtCli;
+			pProcInfo.m_pf_qdcExitCompressVideo_evtCli = qdcExitCompressVideo_evtCli;
+			//
+			pProcInfo.m_pf_qdcGetSpsPps_evtCli = qdcGetSpsPps_evtCli;
+			//
+			pProcInfo.m_pf_doEncodeVideo_evtCli_run = doEncodeVideo_evtCli_run;
+			*/
+
+
+			//
+			//
+			//
+			pProcInfo.uiDevType = Consts.CONST_objType_pc;        //  2007/08/03
+
+			//  authInfo
+
+			//				
+			fixed (QY_COMM_AUTHINFO_MIS* pAuthInfo = &pProcInfo.authInfo)
+			{
+				pAuthInfo->iAppType = pQyMc.iAppType;
+
+
+				qyFuncs.safeStrnCpy(qyFuncs.qnmVerStr(pSci.cfg.iServiceId), pAuthInfo->ver, Consts.CONST_qyMaxVerLen + 1);
+
+				//
+				pAuthInfo->usLangId = pQyMc.env.usLangId;
+				pAuthInfo->uiDevType = pProcInfo.uiDevType;
+				//
+				pAuthInfo->usAuthType = Consts.CONST_authType_logon;       //  2011/02/23
+
+			}//
+
+			/*
+			//  2015/07/01
+			pProcInfo.ucCnt_misCnts = CONST_maxMisCnts;
+			size = pProcInfo.ucCnt_misCnts * sizeof(MIS_CNT);
+			pProcInfo.pMisCnts = (MIS_CNT*)malloc(size);
+			if (!pProcInfo.pMisCnts) goto errLabel;
+			memset(pProcInfo.pMisCnts, 0, size);
+			*/
+			pProcInfo.pMisCnt = new MIS_CNT();
+			if (pProcInfo.pMisCnt == null) goto errLabel;
+
+
+			//
+			MIS_CNT pMisCnt = pProcInfo.pMisCnt;    // getMisCntByIndex(0, pProcInfo, i);
+			if (null == pMisCnt) goto errLabel;
+
+			{
+				i = 0;
+				//  pProcInfo.misCnts[index].cfg.dynCfg.cnt.usCntPort  =  DEFAULT_qyPort_mis;
+				//  char  *  pServIp  =  "192.168.1.12";  //  CONST_ip_localhost
+				//  safeStrnCpy(  pServIp,  pProcInfo.misCnts[index].cfg.dynCfg.cnt.cntIp,  mycountof(  pProcInfo.misCnts[index].cfg.dynCfg.cnt.cntIp  )  );
+				//  2015/07/01
+				//memcpy(&pMisCnt.cfg.dynCfg, &pQyMc.cfg.dynCfg, sizeof(pMisCnt.cfg.dynCfg)  );
+				pMisCnt.cfg.dynCfg = pQyMc.cfg.dynCfg;
+			}
+
+
+			//  2015/09/06
+			fixed (char* pName = pProcInfo.cfg.mgrQEx.common.name)
+			{
+				mytcsncpy(pName, "mgrQ", Consts.cntof_qCfg_name);
+			}
+			pProcInfo.cfg.mgrQEx.common.uiMaxQNodes = Consts.CONST_uiMaxQNodes_mgrQ_isCli;
+			//_sntprintf(pProcInfo.cfg.mgrQEx.common.mutexName_prefix, mycountof(pProcInfo.cfg.mgrQEx.common.mutexName_prefix), _T("qMgrQ_isCli"));
+			fixed (char* pName = pProcInfo.cfg.mgrQEx.common.mutexName_prefix)
+			{
+				mytcsncpy(pName, ("qMgrQ_isCli"), Consts.cntof_qCfg_mutexName_prefix);
+			}
+			pProcInfo.cfg.mgrQEx.common.bUseEvt = true;
+			pProcInfo.cfg.mgrQEx.pfQElemNew = mymalloc;
+			pProcInfo.cfg.mgrQEx.pfQElemFree = myfree;
+			//
+			fixed (char* pName = pProcInfo.cfg.displayQ.name) { 
+				mytcsncpy(pName, ("displayQ"),Consts.cntof_q2Cfg_name);		
+			}
+			fixed (char* pName = pProcInfo.cfg.displayQ.mutexName_prefix) {
+				mytcsncpy(pName, ("qDispQ"), Consts.cntof_qCfg_mutexName_prefix);
+			}
+			pProcInfo.cfg.displayQ.uiMaxCnt_semaTrigger = Consts.CONST_uiMaxCnt_semaTrigger_displayQ;
+			pProcInfo.cfg.displayQ.uiMaxQNodes = Consts.CONST_uiMaxQNodes_displayQ;
+			//			  
+			fixed (char* pName = pProcInfo.cfg.workQ.name) {
+				mytcsncpy(pName, "workQ", Consts.cntof_q2Cfg_name);
+			}
+			fixed (char* pName = pProcInfo.cfg.workQ.mutexName_prefix) {
+				mytcsncpy(pName, ("qWorkQ"), Consts.cntof_qCfg_mutexName_prefix);
+			}
+			pProcInfo.cfg.workQ.uiMaxCnt_semaTrigger = Consts.CONST_uiMaxCnt_semaTrigger_workQ;
+			pProcInfo.cfg.workQ.uiMaxQNodes = Consts.CONST_uiMaxQNodes_workQ;
+			//
+			fixed (char* pName = pProcInfo.cfg.schedulerQ.name)
+			{
+				mytcsncpy(pName, ("schedulerQ"), Consts.cntof_q2Cfg_name);
+			}
+			fixed (char* pName = pProcInfo.cfg.schedulerQ.mutexName_prefix) {
+				mytcsncpy(pName, "qSchQ", Consts.cntof_qCfg_mutexName_prefix);
+			}
+			pProcInfo.cfg.schedulerQ.uiMaxCnt_semaTrigger = Consts.CONST_uiMaxCnt_semaTrigger_schedulerQ;
+			pProcInfo.cfg.schedulerQ.uiMaxQNodes = Consts.CONST_uiMaxQNodes_schedulerQ;
+			//  2007/07/04	 			  
+			fixed (char* pName = pProcInfo.cfg.robotQ.name) {
+				mytcsncpy(pName, "robotQ", Consts.cntof_q2Cfg_name);
+			}
+			fixed (char* pName = pProcInfo.cfg.robotQ.mutexName_prefix) {
+				mytcsncpy(pName, ("qRobotQ"), Consts.cntof_qCfg_mutexName_prefix);
+			}
+			pProcInfo.cfg.robotQ.uiMaxCnt_semaTrigger = Consts.CONST_uiMaxCnt_semaTrigger_robotQ;
+			pProcInfo.cfg.robotQ.uiMaxQNodes = Consts.CONST_uiMaxQNodes_robotQ;
+			//
+			fixed (char* pName = pProcInfo.cfg.mediaQ.name) {
+				mytcsncpy(pName, ("mediaQ"), Consts.cntof_q2Cfg_name);
+			}
+			fixed (char* pName = pProcInfo.cfg.mediaQ.mutexName_prefix) {
+				mytcsncpy(pName, ("qMediaQ"), Consts.cntof_qCfg_mutexName_prefix);
+			}
+			pProcInfo.cfg.mediaQ.uiMaxQNodes = pProcInfo.cfg.envVar.usMaxQNodes_mediaQ;
+			//
+			//  2008/04/25
+			fixed (char* pName = pProcInfo.cfg.realTimeMediaQ.name) {
+				mytcsncpy(pName, ("rtMediaQ"),Consts.cntof_qCfg_mutexName_prefix);
+			}
+			fixed (char* pName = pProcInfo.cfg.realTimeMediaQ.mutexName_prefix) {
+				mytcsncpy(pName, ("qRtMediaQ"), Consts.cntof_qCfg_mutexName_prefix);
+			}
+			pProcInfo.cfg.realTimeMediaQ.uiMaxQNodes = pProcInfo.cfg.envVar.usMaxQNodes_rtMediaQ;
+
+			//  2016/12/26
+			fixed (char* pName = pProcInfo.cfg.rtOpQ.name) {
+				mytcsncpy(pName, ("rtOpQ"), Consts.cntof_q2Cfg_name);
+			}
+			fixed (char* pName = pProcInfo.cfg.rtOpQ.mutexName_prefix) {
+				mytcsncpy(pName, ("qRtOpQ"), Consts.cntof_qCfg_mutexName_prefix);
+			}
+			pProcInfo.cfg.rtOpQ.uiMaxQNodes = pProcInfo.cfg.envVar.usMaxQNodes_rtOpQ;
+
+			//
+			//  2007/07/04
+			//
+			fixed (char* pName = pProcInfo.cfg.processQ_robot.name) {
+				mytcsncpy(pName, ("processQ_robot"), Consts.cntof_q2Cfg_name);
+			}
+			pProcInfo.cfg.processQ_robot.uiMaxQNodes = Consts.CONST_uiMaxQNodes_processQ_robot;
+			//
+			fixed (char* pName = pProcInfo.cfg.processQ_media.name) {
+				mytcsncpy(pName, ("processQ_media"), Consts.cntof_q2Cfg_name);
+			}
+			pProcInfo.cfg.processQ_media.uiMaxQNodes = Consts.CONST_uiMaxQNodes_processQ_media;
+
+			//  2008/05/23
+			fixed (char* pName = pProcInfo.cfg.outputQ_toMix_audio.name) {
+				mytcsncpy(pName, ("output_mixQ_a"), Consts.cntof_q2Cfg_name);
+			}
+			fixed (char* pName = pProcInfo.cfg.outputQ_toMix_audio.mutexName_prefix) {
+				mytcsncpy(pName, ("qoutput_mixQ_a"), Consts.cntof_qCfg_mutexName_prefix);
+			}
+			pProcInfo.cfg.outputQ_toMix_audio.uiMaxQNodes = Consts.CONST_uiMaxQNodes_outputQ_toMix_audio;
+
+			//  2009/07/26
+			fixed (char* pName = pProcInfo.cfg.outputQ_toMix_video.name) {
+				mytcsncpy(pName, ("output_mixQ_v"), Consts.cntof_q2Cfg_name);
+			}
+			fixed (char* pName = pProcInfo.cfg.outputQ_toMix_video.mutexName_prefix) {
+				mytcsncpy(pName, ("qOutput_mixQ_v"), Consts.cntof_qCfg_mutexName_prefix);
+			}
+			pProcInfo.cfg.outputQ_toMix_video.uiMaxQNodes = Consts.CONST_uiMaxQNodes_outputQ_toMix_video;
+
+			//	 2008/04/17
+			fixed (char* pName = pProcInfo.cfg.playSoundQ.name) {
+				mytcsncpy(pName, ("playSoundQ"), Consts.cntof_q2Cfg_name);
+			}
+			fixed (char* pName = pProcInfo.cfg.playSoundQ.mutexName_prefix) {
+				mytcsncpy(pName, ("playSoundQ"), Consts.cntof_qCfg_mutexName_prefix);
+			}
+			pProcInfo.cfg.playSoundQ.uiMaxQNodes = pProcInfo.cfg.envVar.usMaxQNodes_playSoundQ;   //  isMem512(  )  ?  CONST_uiMaxQNodes_playSoundQ_256  :  CONST_uiMaxQNodes_playSoundQ;
+
+			fixed (char* pName = pProcInfo.cfg.playVideoQ.name) {
+				mytcsncpy(pName, ("playVideoQ"), Consts.cntof_q2Cfg_name);
+			}
+			fixed (char* pName = pProcInfo.cfg.playVideoQ.mutexName_prefix) {
+				mytcsncpy(pName, ("playVideoQ"), Consts.cntof_qCfg_mutexName_prefix);
+			}
+			pProcInfo.cfg.playVideoQ.uiMaxQNodes = pProcInfo.cfg.envVar.usMaxQNodes_playVideoQ;   //  isMem512(  )  ?  CONST_uiMaxQNodes_playVideoQ_256  :  CONST_uiMaxQNodes_playVideoQ;
+
+			fixed (char* pName = pProcInfo.cfg.displayVideoQ.name) {
+				mytcsncpy(pName, ("displayVQ"), Consts.cntof_q2Cfg_name);
+			}
+			fixed (char* pName = pProcInfo.cfg.displayVideoQ.mutexName_prefix) {
+				mytcsncpy(pName, ("displayVQ"), Consts.cntof_qCfg_mutexName_prefix);
+			}
+			pProcInfo.cfg.displayVideoQ.uiMaxQNodes = pProcInfo.cfg.envVar.usMaxQNodes_displayVideoQ; //  CONST_uiMaxQNodes_displayVideoQ;
+
+			
+			//  2011/12/09
+			//  2009/05/12
+			//
+			//char tName[128];  //  2015/05/23
+							  //_sntprintf(  tName,  mycountof(  tName  ),  _T(  "transQ-%d"  ),  GetCurrentProcessId(  )  );
+							  //getTransformQName(tName, mycountof(tName));
+			fixed (char* pName = pProcInfo.cfg.transformQ.name) {
+				mytcsncpy(pName, "transQ", Consts.cntof_q2Cfg_name);
+			}
+			fixed (char* pName = pProcInfo.cfg.transformQ.mutexName_prefix) {
+				mytcsncpy(pName, "transQ", Consts.cntof_qCfg_mutexName_prefix);
+			}
+			//
+			pProcInfo.cfg.transformQ.uiMaxQNodes = Consts.CONST_uiMaxQNodes_transformQ;
+
+			//  2010/06/18
+
+			//  2017/01/29
+			fixed (char* pName = pProcInfo.cfg.appQ.name) {
+				mytcsncpy(pName, ("appQ"), Consts.cntof_q2Cfg_name);
+			}
+			fixed (char* pName = pProcInfo.cfg.appQ.mutexName_prefix) {
+				mytcsncpy(pName, ("appQ"), Consts.cntof_qCfg_mutexName_prefix);
+			}
+			pProcInfo.cfg.appQ.uiMaxQNodes = Consts.CONST_uiMaxQNodes_appQ;
+
+
+			//  2011/12/04
+			fixed (char* pName = pProcInfo.cfg.vppQ.name) {
+				mytcsncpy(pName, ("vppQ"), Consts.cntof_q2Cfg_name);
+			}
+			fixed (char* pName = pProcInfo.cfg.vppQ.mutexName_prefix) {
+				mytcsncpy(pName, ("vppQ"), Consts.cntof_qCfg_mutexName_prefix);
+			}
+			pProcInfo.cfg.vppQ.uiMaxQNodes = Consts.CONST_uiMaxQNodes_vppQ;
+
+			//  2011/01/21
+			fixed (char* pName = pProcInfo.cfg.toShareAudioQ.name) {
+				mytcsncpy(pName, ("shareAQ"), Consts.cntof_q2Cfg_name);
+			}
+			fixed (char* pName = pProcInfo.cfg.toShareAudioQ.mutexName_prefix) {
+				mytcsncpy(pName, ("shareAQ"), Consts.cntof_qCfg_mutexName_prefix);
+			}
+			pProcInfo.cfg.toShareAudioQ.uiMaxQNodes = Consts.CONST_uiMaxQNodes_toShareAudioQ;
+			//  2009/05/12
+			fixed (char* pName = pProcInfo.cfg.toShareVideoQ.name) {
+				mytcsncpy(pName, ("shareVQ"), Consts.cntof_q2Cfg_name);
+			}
+			fixed (char* pName = pProcInfo.cfg.toShareVideoQ.mutexName_prefix) {
+				mytcsncpy(pName, ("shareVQ"), Consts.cntof_qCfg_mutexName_prefix);
+			}
+			pProcInfo.cfg.toShareVideoQ.uiMaxQNodes = Consts.CONST_uiMaxQNodes_toShareVideoQ;
+
+			//  2011/12/06
+			fixed (char* pName = pProcInfo.cfg.toShareVideo_postQ.name) {
+				mytcsncpy(pName, ("shareVPostQ"), Consts.cntof_q2Cfg_name);
+			}
+			fixed (char* pName = pProcInfo.cfg.toShareVideo_postQ.mutexName_prefix) {
+				mytcsncpy(pName, ("shareVPostQ"), Consts.cntof_qCfg_mutexName_prefix);
+			}
+			pProcInfo.cfg.toShareVideo_postQ.uiMaxQNodes = Consts.CONST_uiMaxQNodes_toShareVideo_postQ;
+
+			//  2009/06/17
+			fixed (char* pName = pProcInfo.cfg.dispatchQ.name) {
+				mytcsncpy(pName, ("dispatchQ"), Consts.cntof_q2Cfg_name);
+			}
+			fixed (char* pName = pProcInfo.cfg.dispatchQ.mutexName_prefix) {
+				mytcsncpy(pName, ("dsptchQ"), Consts.cntof_qCfg_mutexName_prefix);
+			}
+			pProcInfo.cfg.dispatchQ.uiMaxQNodes = Consts.CONST_uiMaxQNodes_dispatchQ;
+
+			//  2016/03/15
+			fixed (char* pName = pProcInfo.cfg.talkerThreadQ.name) {
+				mytcsncpy(pName, ("talkerThreadQ"), Consts.cntof_q2Cfg_name);
+			}
+			fixed (char* pName = pProcInfo.cfg.talkerThreadQ.mutexName_prefix) {
+				mytcsncpy(pName, ("talkerThreadQ"), Consts.cntof_qCfg_mutexName_prefix);
+			}
+			pProcInfo.cfg.talkerThreadQ.uiMaxQNodes = Consts.CONST_uiMaxQNodes_talkerThreadQ;
+
+			//  2016/06/15
+			fixed (char* pName = pProcInfo.cfg.shareDynBmpsQ.name) {
+				mytcsncpy(pName, ("shareDynBmpsQ"), Consts.cntof_q2Cfg_name);
+			}
+			fixed (char* pName = pProcInfo.cfg.shareDynBmpsQ.mutexName_prefix) {
+				mytcsncpy(pName, ("shareDynBmpsQ"), Consts.cntof_qCfg_mutexName_prefix);
+			}
+			pProcInfo.cfg.shareDynBmpsQ.uiMaxQNodes = Consts.CONST_uiMaxQNodes_shareDynBmpsQ;
+
+			//
+			fixed (char* pName = pProcInfo.cfg.guestQ.name) {
+				mytcsncpy(pName, ("guestQ"), Consts.cntof_q2Cfg_name);
+			}
+			pProcInfo.cfg.guestQ.uiMaxQNodes = Consts.CONST_uiMaxQNodes_guestQ;
+			//
+			//
+			fixed (char* pName = pProcInfo.cfg.dynBmpQ.name) {
+				mytcsncpy(pName, ("dynBmpQ"), Consts.cntof_q2Cfg_name);
+			}
+			fixed (char* pName = pProcInfo.cfg.dynBmpQ.mutexName_prefix) {
+				mytcsncpy(pName, ("dynBmpQ"), Consts.cntof_qCfg_mutexName_prefix);
+			}
+			pProcInfo.cfg.dynBmpQ.uiMaxQNodes = Consts.CONST_uiMaxQNodes_dynBmpQ;
+
+			//
+			fixed (char* pName = pProcInfo.cfg.mutexName_syncSendAv) {
+				mytcsncpy(pName, ("qySyncSendAv"), Consts.cntof_mutexName);
+			}
+			fixed (char* pName = pProcInfo.cfg.mutexName_syncActiveMem_prefix1) {
+				mytcsncpy(pName, ("qySyncAct"), Consts.cntof_mutexName_prefix);
+			}
+			fixed (char* pName = pProcInfo.cfg.mutexName_syncStartAv) {
+				mytcsncpy(pName, ("qyStartAv"), Consts.cntof_mutexName);
+			}
+
+			//
+			//  if  (  initGenericQ((  &pProcInfo.cfg.mgrQ,  mallocMemory,  NULL,  0,  0,  freeMemory,  NULL,  NULL,  &pProcInfo.mgrQ  )  )  goto  errLabel; 
+			//  2015/09/06
+			pProcInfo.cfg.mgrQEx.pfQElemNewEx = mallocMemory;
+			pProcInfo.cfg.mgrQEx.pfQElemFreeEx = freeMemory;
+			pProcInfo.mgrQ = new GENERIC_Q();
+			if (initGenericQ(pProcInfo.cfg.mgrQEx, pProcInfo.mgrQ)!=0) goto errLabel;
+			//
+			//  2007/07/04	 			  
+			pProcInfo.robotQ = new GENERIC_Q();
+			if (initGenericQ(pProcInfo.cfg.robotQ, mymalloc, null, null, myfree, null, pProcInfo.robotQ)!=0) goto errLabel;
+			pProcInfo.displayQ = new GENERIC_Q();
+			if (initGenericQ(pProcInfo.cfg.displayQ, mymalloc, null, null, myfree, null, pProcInfo.displayQ)!=0) goto errLabel;
+			pProcInfo.workQ = new GENERIC_Q();
+			if (initGenericQ(pProcInfo.cfg.workQ, mymalloc, null, null, myfree, null, pProcInfo.workQ)!=0) goto errLabel;
+			pProcInfo.schedulerQ = new GENERIC_Q();
+			if (initGenericQ(pProcInfo.cfg.schedulerQ, mymalloc, null, null, myfree, null, pProcInfo.schedulerQ)!=0) goto errLabel;
+
+
+			pProcInfo.mediaQ2 = new QY_Q2();
+			if (initQyQ2(pProcInfo.cfg.mediaQ, pQyMc.cfg.rwLockParam, 1, null, mallocMemory, mymalloc, null, null, freeMemory, myfree, null, pProcInfo.mediaQ2)!=0) goto errLabel;
+			pProcInfo.realTimeMediaQ2 = new QY_Q2();
+			if (initQyQ2(pProcInfo.cfg.realTimeMediaQ, pQyMc.cfg.rwLockParam, 1, null, mallocMemory, mymalloc, null, null, freeMemory, myfree, null, pProcInfo.realTimeMediaQ2)!=0) goto errLabel;
+
+			//  2016/12/26
+			pProcInfo.rtOpQ2 = new QY_Q2();
+			if (initQyQ2(pProcInfo.cfg.rtOpQ, pQyMc.cfg.rwLockParam, 1, null, mallocMemory, mymalloc, null, null, freeMemory, myfree, null, pProcInfo.rtOpQ2)!=0) goto errLabel;
+
+
+			//
+			//  ×¢Òâ£º ÏÂÃæµÄ5±íÊ¾×î¶àÓÐ5¸ö²¢·¢Ïß³Ì¿ÉÒÔÓÃ¡£Ò²Ðí²»¹»ÄØ¡£2008/05/18
+			//
+			//
+			pProcInfo.processQ_media = new CMcSharedQ();
+			if (!pProcInfo.processQ_media.bSetQInfo(("mcSyncMedia"), 10, 10000, 10000, 10000, 10000)) goto errLabel;
+			if (pProcInfo.processQ_media.initQ(pProcInfo.cfg.processQ_media, mallocMemory, mymalloc, initMisMsg, exitMisMsg, freeMemory, myfree)!=0) goto errLabel;
+
+
+			//  2010/04/22
+
+			//
+			//if (initGenericQ(_T("ImMsgLogQ"), _T("ImMsgLogQ"), 0, pProcInfo.cfg.envVar.usMaxQNodes_imMsgLogQ, mymalloc, myfree, &pProcInfo.imMsgLogQ)) goto errLabel;
+
+			//
+			//  2008/02/01
+
+			//
+			pMisCnt = pProcInfo.pMisCnt;
+
+				//
+				pMisCnt.pProcInfoParam = pProcInfo;    //  2009/09/07
+
+			//
+			pMisCnt.channels = new MIS_CHANNEL[Consts.CONST_maxConnsPerCli_mis];
+
+			//
+			pMisCnt.channels[0] = new MIS_CHANNEL();
+			pMisCnt.channels[0].uiType = Consts.CONST_channelType_talking;
+			pMisCnt.channels[1] = new MIS_CHANNEL();
+			pMisCnt.channels[1].uiType = Consts.CONST_channelType_robot;
+			pMisCnt.channels[2] = new MIS_CHANNEL();
+			pMisCnt.channels[2].uiType = Consts.CONST_channelType_media;
+			pMisCnt.channels[3] = new MIS_CHANNEL();
+			pMisCnt.channels[3].uiType = Consts.CONST_channelType_realTimeMedia;  //  2008/04/17
+			pMisCnt.channels[4] = new MIS_CHANNEL();
+			pMisCnt.channels[4].uiType = Consts.CONST_channelType_rtOp;   //  2008/04/17
+
+			
+			//
+			if (pMisCnt.cfg.dynCfg.cnt.usCntPort!=0)
+			{
+
+				//  2007/06/03
+				pMisCnt.cfg.iObjQType = Consts.CONST_objQType_misClient;
+				fixed (char* pName = pMisCnt.cfg.mutexName_syncQmObjQ)
+				{
+					mytcsncpy(pName, Consts.DEFAULT_mutexName_syncQmObjQ_client, Consts.cntof_mutexName); //  2007/01/16
+				}
+				fixed (char* pName = pMisCnt.cfg.semaphoreName_syncQmObjQ)
+				{
+					mytcsncpy(pName, Consts.DEFAULT_semaphoreName_syncQmObjQ_client, Consts.cntof_semName); //  2007/01/16
+				}
+				pMisCnt.cfg.uiMaxCnt_semaphore_qmObjQ = Consts.CONST_maxCnt_sema_syncQmObjQ;
+
+				//
+				//  pMisCnt.cfg.uiMaxCnt_semaTrigger_input	=	CONST_uiMaxCnt_semaTrigger_input;
+				//
+				//  2008/04/02			 
+				fixed (char* pName = pMisCnt.cfg.inCacheQ.name)
+				{
+					mytcsncpy(pName, ("inCacheQ"), Consts.cntof_q2Cfg_name);
+				}
+				fixed (char* pName = pMisCnt.cfg.inCacheQ.mutexName_prefix)
+				{
+					mytcsncpy(pName, ("qmcInCacheQ"), Consts.cntof_qCfg_mutexName_prefix);
+				}
+				pMisCnt.cfg.inCacheQ.uiMaxQNodes = Consts.CONST_uiMaxQNodes_inCacheQ_isCli;
+				//
+
+				//
+				fixed (char* pName = pMisCnt.cfg.toSendQ.name)
+				{
+					mytcsncpy(pName, ("toSendQ"), Consts.cntof_q2Cfg_name);
+				}
+				fixed (char* pName = pMisCnt.cfg.toSendQ.mutexName_prefix)
+				{
+					mytcsncpy(pName, ("qmcToSendQ"), Consts.cntof_qCfg_mutexName_prefix);
+				}
+					//  pMisCnt.cfg.toSendQ.uiMaxCnt_semaTrigger  =  CONST_uiMaxCnt_semaTrigger_toSendQ;				  
+					pMisCnt.cfg.toSendQ.uiMaxQNodes = Consts.CONST_uiMaxQNodes_toSendQ;
+
+				//
+				fixed (char* pName = pMisCnt.cfg.outputQ.name)
+				{
+					mytcsncpy(pName, ("outputQ"), Consts.cntof_q2Cfg_name);
+				}
+				fixed (char* pName = pMisCnt.cfg.outputQ.mutexName_prefix)
+				{
+					mytcsncpy(pName, ("qmcOutputQ"), Consts.cntof_qCfg_mutexName_prefix);
+				}
+					//  pMisCnt.cfg.outputQ.uiMaxCnt_semaTrigger  =  CONST_uiMaxCnt_semaTrigger_outputQ;
+					pMisCnt.cfg.outputQ.uiMaxQNodes = Consts.CONST_uiMaxQNodes_outputQ;
+
+				//  2007/07/04
+				//
+				fixed (char* pName = pMisCnt.cfg.talkingFriendQ.name)
+				{
+					mytcsncpy(pName, ("talkingFriendQ"), Consts.cntof_q2Cfg_name);
+				}
+				fixed (char* pName = pMisCnt.cfg.talkingFriendQ.mutexName_prefix) {
+					mytcsncpy(pName, ("qyMcTalkQ"), Consts.cntof_q2Cfg_name);
+						};
+				pMisCnt.cfg.talkingFriendQ.uiMaxQNodes = Consts.CONST_uiMaxQNodes_talkingFriendQ;
+				//
+				fixed (char* pName = pMisCnt.cfg.recentFriendQ.name)
+				{
+					mytcsncpy(pName, ("recentFriendQ"), Consts.cntof_q2Cfg_name);
+				}
+				fixed (char* pName = pMisCnt.cfg.recentFriendQ.mutexName_prefix)
+				{
+					mytcsncpy(pName, ("qyMcRecentQ"), Consts.cntof_qCfg_mutexName_prefix);
+				}
+				pMisCnt.cfg.recentFriendQ.uiMaxQNodes = Consts.CONST_uiMaxQNodes_recentFriendQ;
+
+				//  2007/06/06
+				pMisCnt.cfg.usIntervalInS_getIntervalParams = Consts.CONST_usIntervalInS_getIntervalParams;
+				//
+				pMisCnt.cfg.usMaxMsgrRecentFriends = pProcInfo.cfg.usMaxMsgrRecentFriends;
+				pMisCnt.cfg.usIntervalInS_refreshRecentFriends = Consts.CONST_usIntervalInS_refreshRecentFriends;
+				pMisCnt.cfg.usIntervalInS_refreshContactList = Consts.CONST_usIntervalInS_refreshContactList;
+				//
+				pMisCnt.cfg.usMaxContactUpdateInfosPerSnd_grp = Consts.CONST_maxContactUpdateInfos_grp;   //  2014/02/06.	CONST_usMaxContactUpdateInfosPerSnd_isCli;			  	
+				pMisCnt.cfg.usMaxContactUpdateInfosPerSnd_grpMem = Consts.CONST_maxContactUpdateInfos_grpMem; //  2014/02/06.	CONST_usMaxContactUpdateInfosPerSnd_isCli;
+				pMisCnt.cfg.usMaxContactUpdateInfosPerSnd_contact = Consts.CONST_maxContactUpdateInfos_contact;   //  2014/02/06.	CONST_usMaxContactUpdateInfosPerSnd_isCli;
+
+				//
+				pMisCnt.cfg.usIntervalInS_tryToReg = Consts.CONST_usIntervalInS_tryToReg;
+				pMisCnt.cfg.usIntervalInS_tryToSndDevInfo = Consts.CONST_usIntervalInS_tryToSndDevInfo;   //  2007/
+
+				//  2007/06/27
+				fixed (char* pName = pMisCnt.cfg.mutexNamePrefix_syncTask)
+				{
+					mytcsncpy(pName, Consts.DEFAULT_mutexNamePrefix_syncTask, Consts.cntof_qCfg_mutexName_prefix);
+				}
+
+				//  2007/07/16
+				//  
+
+
+				/////////////////
+				//
+				//
+
+#if false
+				//  2007/06/03
+				if (!(pMisCnt.pObjQ = mymalloc(sizeof(QM_OBJQ))))
+				{       //  2007/04/01
+					traceLogA("initVar_misClient(  ):  malloc for objQ failed");
+					goto errLabel;
+				}
+				memset(pMisCnt.pObjQ, 0, sizeof(QM_OBJQ));
+				if (initQmObjQ(0, &pQyMc.licenseCtx, pMisCnt.cfg.iObjQType, CQyString(pMisCnt.cfg.misServName) + _T("qmObjQ"), pMisCnt.cfg.mutexName_syncQmObjQ, pMisCnt.cfg.semaphoreName_syncQmObjQ, pMisCnt.cfg.uiMaxCnt_semaphore_qmObjQ, myCompare_misClient, (PF_commonHandler)exitQMem_misClient, (PF_fillQmObjMemInfo)fillQmObjMemInfo_misClient, (PF_commonHandler)tmp_addToQmObjQ_misClient, (QM_OBJQ*)pMisCnt.pObjQ))
+				{       //  2006/12/07
+					qyShowInfo1(CONST_qyShowType_qwmComm, 0, (""), _T("127.0.0.1"), 0, _T("(Server)"), _T("initQmObjQ failed"), _T(""));
+					traceLogA("initQmObjQ(  ) failed.");
+					goto errLabel;
+				}
+				((QM_OBJQ*)pMisCnt.pObjQ)->pfPrintQ = (PF_commonHandler)printQmObjQ_isClient;
+				pMisCnt.ucbQmObjQInited = true;
+				qyShowInfo1(CONST_qyShowType_qwmComm, 0, (""), pProcInfo.who_showInfo, 0, pMisCnt.cfg.misServName, _T("initQmObjQ OK"), _T(""));
+#endif
+				//
+				int j;
+				GENERIC_Q_CFG tmpqCfg;
+
+				for (j = 0; j < pMisCnt.channels.Length; j++)
+				{
+					MIS_CHANNEL pChannel = pMisCnt.channels[j];
+					if (pChannel == null) continue;
+
+					//  2016/09/09
+					pChannel.pMisCnt = pMisCnt;
+					string str;
+					//  
+					//memcpy(&tmpqCfg, &pMisCnt.cfg.inCacheQ, sizeof(tmpqCfg));
+					tmpqCfg = pMisCnt.cfg.inCacheQ;
+					//_sntprintf(tmpqCfg.name, mycountof(tmpqCfg.name), _T("%s-%u"), tmpqCfg.name, j);
+					str = String.Format("{0}-{1}", new string(tmpqCfg.name), j);
+					mytcsncpy(tmpqCfg.name, str, Consts.cntof_q2Cfg_name);
+					//_sntprintf(tmpqCfg.mutexName_prefix, mycountof(tmpqCfg.mutexName_prefix), _T("%s-%u"), tmpqCfg.mutexName_prefix, j);
+					str = string.Format("{0}-{1}", new string(tmpqCfg.mutexName_prefix), j);
+					mytcsncpy(tmpqCfg.mutexName_prefix, str, Consts.cntof_qCfg_mutexName_prefix);
+					pChannel.inCacheQ = new GENERIC_Q();
+					if (initGenericQ(tmpqCfg, mymalloc, null, null, myfree, null, pChannel.inCacheQ)!=0) goto errLabel;
+
+					//  2015/09/09
+
+					//
+					//memcpy(&tmpqCfg, &pMisCnt.cfg.toSendQ, sizeof(tmpqCfg));
+					tmpqCfg = pMisCnt.cfg.toSendQ;
+					//_sntprintf(tmpqCfg.name, mycountof(tmpqCfg.name), _T("%s-%u"), tmpqCfg.name, j);
+					//_sntprintf(tmpqCfg.mutexName_prefix, mycountof(tmpqCfg.mutexName_prefix), _T("%s-%u"), tmpqCfg.mutexName_prefix, j);
+					//  if  (  initGenericQ(  &tmpqCfg,  mymalloc,  0,  0,  myfree,  &pChannel->toSendQ  )  )  goto  errLabel;
+					str = String.Format("{0}-{1}", new string(tmpqCfg.name), j);
+					mytcsncpy(tmpqCfg.name, str, Consts.cntof_q2Cfg_name);
+					str = string.Format("{0}-{1}", new string(tmpqCfg.mutexName_prefix), j);
+					mytcsncpy(tmpqCfg.mutexName_prefix, str, Consts.cntof_qCfg_mutexName_prefix);
+					pChannel.toSendQ2 = new QY_Q2();
+					if (initQyQ2(tmpqCfg, pQyMc.cfg.rwLockParam, 1, null, mallocMemory, mymalloc, null, null, freeMemory, myfree, null, pChannel.toSendQ2)!=0) goto errLabel;
+
+					//
+					//memcpy(&tmpqCfg, &pMisCnt.cfg.outputQ, sizeof(tmpqCfg));
+					tmpqCfg = pMisCnt.cfg.outputQ;
+					//_sntprintf(tmpqCfg.name, mycountof(tmpqCfg.name), _T("%s-%u"), tmpqCfg.name, j);
+					//_sntprintf(tmpqCfg.mutexName_prefix, mycountof(tmpqCfg.mutexName_prefix), _T("%s-%u"), tmpqCfg.mutexName_prefix, j);
+					//  if  (  initGenericQ(  &tmpqCfg,  mymalloc,  0,  0,  myfree,  &pChannel->outputQ  )  )  goto  errLabel;  
+					str = String.Format("{0}-{1}", new string(tmpqCfg.name), j);
+					mytcsncpy(tmpqCfg.name, str, Consts.cntof_q2Cfg_name);
+					str = string.Format("{0}-{1}", new string(tmpqCfg.mutexName_prefix), j);
+					mytcsncpy(tmpqCfg.mutexName_prefix, str, Consts.cntof_qCfg_mutexName_prefix);
+					pChannel.outputQ2 = new QY_Q2();
+					if (initQyQ2(tmpqCfg, pQyMc.cfg.rwLockParam, 1, null, mallocMemory, mymalloc, null, null, freeMemory, myfree, null, pChannel.outputQ2)!=0) goto errLabel;
+
+
+				}
+				//
+				pMisCnt.talkingFriendQ = new GENERIC_Q();
+				if (initGenericQ(pMisCnt.cfg.talkingFriendQ, mymalloc, null, null, myfree, null, pMisCnt.talkingFriendQ)!=0) goto errLabel;
+				pMisCnt.recentFriendQ = new GENERIC_Q();
+				if (initGenericQ(pMisCnt.cfg.recentFriendQ, mymalloc, null, null, myfree, null, pMisCnt.recentFriendQ)!=0) goto errLabel;
+
+
+				//  2007/08/07, ¸³ÎÒµÄÈ±Ê¡Öµ
+				//lstrcpyn(pMisCnt.displayName, getResStr(0, &pQyMc.cusRes, CONST_resId_objIdStr_me), mycountof(pMisCnt.displayName));
+
+			}
+
+			
+
+			//  2012/05/08
+			//if (pProcInfo.initCapSubWnds1(DEFAULT_usMaxCnt_capSubWnds, &pMisCnt.subWnds)) goto errLabel;
+
+			//
+
+
+
+		//  2009/02/11
+
+		GENERIC_Q_cfgEx qCfgEx=new GENERIC_Q_cfgEx(); //  2012/11/10
+													  //
+													  //  if  (  initGenericQ(  &pProcInfo.cfg.playSoundQ,  mymalloc,  0,  0,  myfree,  &pProcInfo.av.localAv.player.audio.q  )  )  goto  errLabel;
+			pProcInfo.av.localAv.player.audio.q2 = new QY_Q2();
+		if (0!=initQyQ2(pProcInfo.cfg.playSoundQ, pQyMc.cfg.rwLockParam, 2, null, mallocMemory, mymalloc, null, null, freeMemory, myfree, (PF_qElemRemove)clean_myPLAY_AUDIO_DATA, pProcInfo.av.localAv.player.audio.q2)) goto errLabel;
+		pProcInfo.av.localAv.player.audio.bQInited = true;
+			//
+			//  if  (  initQyQ2(  &pProcInfo.cfg.playVideoQ,  &pQyMc.cfg.rwLockParam,  mycountof(  pProcInfo.av.localAv.player.video.q2.hEvents  ),  null,  mallocMemory,  mymalloc,  0,  0,  freeMemory,  myfree,  ( PF_qElemRemove  )clean_myDRAW_VIDEO_DATA,  &pProcInfo.av.localAv.player.video.q2  )  )  goto  errLabel;
+			//memset(&qCfgEx, 0, sizeof(qCfgEx));
+			//memcpy(&qCfgEx.common, &pProcInfo.cfg.playVideoQ, sizeof(qCfgEx.common));
+			qCfgEx.common = pProcInfo.cfg.playVideoQ;
+		qCfgEx.pfQElemNewEx = mallocMemory;
+		qCfgEx.pfQElemNew = mymalloc;
+		qCfgEx.pfQElemFreeEx = freeMemory;
+		qCfgEx.pfQElemFree = myfree;
+		qCfgEx.pf_QElemRemoveEx = (PF_qElemRemoveEx)cleanEx_myDRAW_VIDEO_DATA;
+		qCfgEx.pfQElemRemove = (PF_qElemRemove)clean_myDRAW_VIDEO_DATA;
+			pProcInfo.av.localAv.player.video.q2 = new QY_Q2();
+		if (initQyQ2(qCfgEx, pQyMc.cfg.rwLockParam, 2, null, pProcInfo.av.localAv.player.video.q2)!=0) goto errLabel;
+		pProcInfo.av.localAv.player.video.bQInited = true;
+			//
+			//  if  (  initQyQ2(  &pProcInfo.cfg.displayVideoQ,  &pQyMc.cfg.rwLockParam,  0,  null,  mallocMemory,  mymalloc,  0,  0,  freeMemory,  myfree,  (  PF_qElemRemove  )clean_MIS_MSG_procVideo_qmc,  &pProcInfo.av.localAv.player.video.displayQ2  )  )  goto  errLabel;
+			//memset(&qCfgEx, 0, sizeof(qCfgEx));
+			//memcpy(&qCfgEx.common, &pProcInfo.cfg.displayVideoQ, sizeof(qCfgEx.common));
+			qCfgEx.common = pProcInfo.cfg.displayVideoQ;
+		qCfgEx.pfQElemNewEx = mallocMemory;
+		qCfgEx.pfQElemNew = mymalloc;
+		qCfgEx.pfQElemFreeEx = freeMemory;
+		qCfgEx.pfQElemFree = myfree;
+		qCfgEx.pf_QElemRemoveEx = cleanEx_MIS_MSG_procVideo_qmc;
+		qCfgEx.pfQElemRemove = (PF_qElemRemove)clean_MIS_MSG_procVideo_qmc;
+			pProcInfo.av.localAv.player.video.displayQ2 = new QY_Q2();
+		if (initQyQ2(qCfgEx, pQyMc.cfg.rwLockParam, 0, null, pProcInfo.av.localAv.player.video.displayQ2)!=0) goto errLabel;
+		pProcInfo.av.localAv.player.video.ucbDisplayQInited = true;
+
+
+		//  Æô¶¯ÒôÆµ³Ø
+		pProcInfo.av.usCnt_players = pProcInfo.cfg.policy.usMax_nPlayers;     //  isWinCe(  )  ?  DEFAULT_maxusCnt_players_ce  :  DEFAULT_maxusCnt_players;	
+			pProcInfo.av.pPlayers = new QY_PLAYER[pProcInfo.av.usCnt_players];// (QY_PLAYER*)mymalloc(sizeof(QY_PLAYER) * pProcInfo.av.usCnt_players);
+		if (null==pProcInfo.av.pPlayers) goto errLabel;
+			//memset(pProcInfo.av.pPlayers, 0, sizeof(QY_PLAYER) * pProcInfo.av.usCnt_players);
+			
+			for ( i = 0; i < pProcInfo.av.usCnt_players; i++)
+		{
+			GENERIC_Q_CFG tmpCfg;
+				//
+				//memcpy(&tmpCfg, &pProcInfo.cfg.playSoundQ, sizeof(tmpCfg));
+				tmpCfg = pProcInfo.cfg.playSoundQ;
+				string str;
+				str = string.Format("{0}{1}", new string(tmpCfg.name), i);
+				//_sntprintf(tmpCfg.name, mycountof(tmpCfg.name), _T("%s%d"), tmpCfg.name, i);
+				mytcsncpy(tmpCfg.name, str, Consts.cntof_q2Cfg_name);
+				//_sntprintf(tmpCfg.mutexName_prefix, mycountof(tmpCfg.mutexName_prefix), _T("%s%d"), tmpCfg.mutexName_prefix, i);
+				str = string.Format("{0}{1}", new string(tmpCfg.mutexName_prefix), i);
+				mytcsncpy(tmpCfg.mutexName_prefix, str, Consts.cntof_qCfg_mutexName_prefix);
+				//  if  (  initGenericQ(  &tmpCfg,  mymalloc,  0,  0,  free,  &pProcInfo.av.pPlayers[i].audio.q  )  )  goto  errLabel;
+				pProcInfo.av.pPlayers[i].audio.q2 = new QY_Q2();
+			if (initQyQ2(tmpCfg, pQyMc.cfg.rwLockParam, 2, null, mallocMemory, mymalloc, null, null, freeMemory, myfree, (PF_qElemRemove)clean_myPLAY_AUDIO_DATA, pProcInfo.av.pPlayers[i].audio.q2)!=0) goto errLabel;
+			pProcInfo.av.pPlayers[i].audio.bQInited = true;
+				//
+				//memcpy(&tmpCfg, &pProcInfo.cfg.playVideoQ, sizeof(tmpCfg));
+				tmpCfg = pProcInfo.cfg.playVideoQ;
+				str = string.Format("{0}{1}", new string(tmpCfg.name), i);
+				//_sntprintf(tmpCfg.name, mycountof(tmpCfg.name), _T("%s%d"), tmpCfg.name, i);
+				mytcsncpy(tmpCfg.name, str, Consts.cntof_q2Cfg_name);
+				//_sntprintf(tmpCfg.mutexName_prefix, mycountof(tmpCfg.mutexName_prefix), _T("%s%d"), tmpCfg.mutexName_prefix, i);
+				str = string.Format("{0}{1}", new string(tmpCfg.mutexName_prefix), i);
+				mytcsncpy(tmpCfg.mutexName_prefix, str, Consts.cntof_qCfg_mutexName_prefix);
+				//  if  (  initQyQ2(  &tmpCfg,  &pQyMc.cfg.rwLockParam,  mycountof(  pProcInfo.av.pPlayers[i].video.q2.hEvents  ),  null,  mallocMemory,  mymalloc,  0,  0,  freeMemory,  myfree,  (  PF_qElemRemove  )clean_myDRAW_VIDEO_DATA,  &pProcInfo.av.pPlayers[i].video.q2  )  )  goto  errLabel;
+				//memset(&qCfgEx, 0, sizeof(qCfgEx));
+				//memcpy(&qCfgEx.common, &tmpCfg, sizeof(qCfgEx.common));
+				qCfgEx.common = tmpCfg;
+			qCfgEx.pfQElemNewEx = mallocMemory;
+			qCfgEx.pfQElemNew = mymalloc;
+			qCfgEx.pfQElemFreeEx = freeMemory;
+			qCfgEx.pfQElemFree = myfree;
+			qCfgEx.pf_QElemRemoveEx = cleanEx_myDRAW_VIDEO_DATA;
+			qCfgEx.pfQElemRemove = (PF_qElemRemove)clean_myDRAW_VIDEO_DATA;
+				pProcInfo.av.pPlayers[i].video.q2 = new QY_Q2();
+			if (initQyQ2(qCfgEx, pQyMc.cfg.rwLockParam, 2, null, pProcInfo.av.pPlayers[i].video.q2)!=0) goto errLabel;
+			pProcInfo.av.pPlayers[i].video.bQInited = true;
+				//
+				//memcpy(&tmpCfg, &pProcInfo.cfg.displayVideoQ, sizeof(tmpCfg));
+				tmpCfg = pProcInfo.cfg.displayVideoQ;
+				//_sntprintf(tmpCfg.name, mycountof(tmpCfg.name), _T("%s%d"), tmpCfg.name, i);
+				str = string.Format("{0}{1}", new string(tmpCfg.name), i);
+				mytcsncpy(tmpCfg.name, str, Consts.cntof_q2Cfg_name);
+				//_sntprintf(tmpCfg.mutexName_prefix, mycountof(tmpCfg.mutexName_prefix), _T("%s%d"), tmpCfg.mutexName_prefix, i);
+				str = string.Format("{0}{1}", new string(tmpCfg.mutexName_prefix), i);
+				mytcsncpy(tmpCfg.mutexName_prefix, str, Consts.cntof_qCfg_mutexName_prefix);
+				//  if  (  initQyQ2(  &tmpCfg,  &pQyMc.cfg.rwLockParam,  0,  null,  mallocMemory,  mymalloc,  0,  0,  freeMemory,  myfree,  (  PF_qElemRemove  )clean_MIS_MSG_procVideo_qmc,  &pProcInfo.av.pPlayers[i].video.displayQ2  )  )  goto  errLabel;
+				//memset(&qCfgEx, 0, sizeof(qCfgEx));
+				//memcpy(&qCfgEx.common, &tmpCfg, sizeof(qCfgEx.common));
+				qCfgEx.common = tmpCfg;
+			qCfgEx.pfQElemNewEx = mallocMemory;
+			qCfgEx.pfQElemNew = mymalloc;
+			qCfgEx.pfQElemFreeEx = freeMemory;
+			qCfgEx.pfQElemFree = myfree;
+			qCfgEx.pf_QElemRemoveEx = cleanEx_MIS_MSG_procVideo_qmc;
+			qCfgEx.pfQElemRemove = (PF_qElemRemove)clean_MIS_MSG_procVideo_qmc;
+				pProcInfo.av.pPlayers[i].video.displayQ2 = new QY_Q2();
+			if (initQyQ2(qCfgEx, pQyMc.cfg.rwLockParam, 0, null, pProcInfo.av.pPlayers[i].video.displayQ2)!=0) goto errLabel;
+			pProcInfo.av.pPlayers[i].video.ucbDisplayQInited = true;
+		}
+
+		//  2012/05/07
+
+
+
+
+		//if (pProcInfo.bUse_sharedObj())
+		{
+#if false
+				//  2008/10/04. 
+				pProcInfo.cfg.usMaxCnt_pSharedObjs = isWinCe() ? DEFAULT_usMaxCnt_pSharedObjs_ce : DEFAULT_usMaxCnt_pSharedObjs;
+			len = sizeof(QY_sharedObj_sync) * pProcInfo.cfg.usMaxCnt_pSharedObjs;
+			if (!(pProcInfo.pSharedObjSyncs = mymalloc(len))) goto errLabel;
+			memset(pProcInfo.pSharedObjSyncs, 0, len);
+
+			//
+			pProcInfo.cfg.usMaxCnt_capProcInfoBmps = pProcInfo.cfg.usMaxCnt_pSharedObjs;      //  DEFAULT_usMaxCnt_pSharedObjs;
+			len = sizeof(CAP_procInfo_bmpU) * pProcInfo.cfg.usMaxCnt_capProcInfoBmps;
+			if (!(pProcInfo.pCapProcInfoBmps = (CAP_procInfo_bmpU*)mymalloc(len))) goto errLabel;
+			memset(pProcInfo.pCapProcInfoBmps, 0, len);
+
+			pProcInfo.cfg.usMaxCnt_capProcInfoAudios = pProcInfo.cfg.usMaxCnt_pSharedObjs;        //  DEFAULT_usMaxCnt_pSharedObjs;
+			len = sizeof(CAP_procInfo_audioU) * pProcInfo.cfg.usMaxCnt_capProcInfoAudios;
+			if (!(pProcInfo.pCapProcInfoAudios = (CAP_procInfo_audioU*)mymalloc(len))) goto errLabel;
+			memset(pProcInfo.pCapProcInfoAudios, 0, len);
+
+#endif
+
+		}
+
+	
+
+
+		//  2010/06/25
+		pProcInfo.cfg.usTimeoutInMs_player_a = Consts.DEFAULT_usTimeoutInMs_player_a;
+		pProcInfo.cfg.usTimeoutInMs_player_v = Consts.DEFAULT_usTimeoutInMs_player_v;
+
+		pProcInfo.cfg.loopCtrl_timer_dlgTalk_chkRecvdTasks = Consts.DEFAULT_loopCtrl_timer_dlgTalk_chkRecvdTasks;
+		pProcInfo.cfg.loopCtrl_chkPlayers = Consts.DEFAULT_loopCtrl_chkPlayers;
+
+
+		//  2015/02/17
+		
+		//
+
+
+
+
+
+
+					
+
+			//
+			iErr = 0;
+		errLabel:
+
+			if (iErr != 0) exitVar_isGui(pQyMc, ref pSci, p2);
+
+			return iErr;
+		}
+
+
+		public static int init_afterLogon_isGui(CCtxQyMc pQyMc, ref QY_SERVICEGUI_INFO pSci, IntPtr p2)
+		{
+			int iErr = -1;
+			//QY_MC* pQyMc = (QY_MC*)p0;
+			//QY_SERVICEGUI_INFO* pSci = (QY_SERVICEGUI_INFO*)p1;
+			//  p2
+
+			/*
+			 * 
+	if (pQyMc.iServiceId != CONST_qyServiceId_is) return 0;
+	if (pQyMc.iAppType != CONST_qyAppType_client) return 0;
+
+	MC_VAR_isCli* pProcInfo = (MC_VAR_isCli*)pSci->pVar;
+
+
+#if  10  //  2013/08/23
+	 HWND		hMainWnd  =  pQyMc.gui.hMainWnd;
+	 
+	 QNM_cusRes_moduleMem  *  pResMem  =  getCurCusResModuleMem(  &pQyMc.cusRes  );
+	 if  (  !pResMem  )  goto  errLabel;
+
+	 HMENU		hMainMenu  =  ::GetMenu(  hMainWnd  );
+	 if  (  hMainMenu  )  {
+		 QY_DMITEM	*	pItem;
+		 int  iResId  =  CONST_resId_mainMenu;
+		 //if  (  qyGetAppAvLevel_qyMc(  )  ==  CONST_qyAppAvLevel_mini  )  iResId  =  CONST_resId_mainMenu_mini;
+		 //  if  (  !(  pItem  =  (  QY_DMITEM  *  )qyGetDesByType(  pResMem->pCusMenuTable,  CONST_resId_mainMenu  )  )  )  goto  errLabel;
+		 if  (  !(  pItem  =  (  QY_DMITEM  *  )qyGetDesByType(  pResMem->pCusMenuTable,  iResId  )  )  )  goto  errLabel;
+		 if  (  makeDynaMenu(  &pQyMc.cusRes,  hMainMenu,  pItem,  getMenuStatus_frame,  pQyMc,  0  )  )  goto  errLabel;
+	 }
+
+	 //
+#if  0  //  2017/06/21
+	 if  (  qyGetSubSystemId_isCli(  )  ==  CONST_subSystemId_basic  )  {
+
+		 //
+		 TCHAR  tBuf[128];
+		 GetWindowText(  hMainWnd,  tBuf,  mycountof(  tBuf  )  );
+		 //
+		 HMENU  hMenu  =  GetSubMenu(  hMainMenu,  1  );
+		 if  (  hMenu  )  {
+			 RemoveMenu(  hMainMenu,  2,  MF_BYPOSITION  );
+
+		 }
+		 //
+		 //RemoveMenu(  hMainMenu,  8,  MF_BYPOSITION  );
+
+	 }
+#endif
+
+#endif
+
+
+
+	//  2009/12/21	 
+# ifdef  __DEBUG__
+	if (!pQyMc.ucbUseNamedShm)
+	{
+		traceLogA("Not finished: unnamed shared memory shall be used");
+		goto errLabel;
+	}
+#endif
+				pProcInfo.cmdsShm.usMaxCnt_qmCmds = CONST_maxCnt_qmCmds;
+	if (pProcInfo.cmdsShm.usMaxCnt_qmCmds < pProcInfo.cfg.usMaxCnt_pSharedObjs)
+	{
+		traceLogA(("initVar_isGui failed: usMaxCnt_qmCmds %d < usMaxCnt_pSharedObjs %d"), pProcInfo.cmdsShm.usMaxCnt_qmCmds, pProcInfo.cfg.usMaxCnt_pSharedObjs);
+		qyShowInfo1(CONST_qyShowType_qwmComm, 0, (""), _T("IsClient"), 0, _T(""), _T(""), _T("initVar_isGui failed: usMaxCnt_qmCmds %d < usMaxCnt_pSharedObjs %d"), pProcInfo.cmdsShm.usMaxCnt_qmCmds, pProcInfo.cfg.usMaxCnt_pSharedObjs);
+		goto errLabel;
+	}
+	pProcInfo.cmdsShm.uiBufSize_qmShm = sizeof(QM_SHM_CMDS);
+	if (!pProcInfo.cmdsShm.uiBufSize_qmShm) goto errLabel;
+	pProcInfo.cmdsShm.hMap = CreateFileMapping(
+				INVALID_HANDLE_VALUE,                       // use paging file
+				null,                                       // default security 
+				PAGE_READWRITE,                         // read/write access
+				0,                                          // max. object size 
+				pProcInfo.cmdsShm.uiBufSize_qmShm,             // buffer size  
+				CQyString(pQyMc.appParams.appObjPrefix) + CONST_shmName_qm_cmd);                       // name of mapping object 
+	if (pProcInfo.cmdsShm.hMap == null)
+	{
+		traceLogA("Could not create file mapping object (%d).\n", GetLastError());
+		goto errLabel;
+	}
+	pProcInfo.cmdsShm.pBuf = (char*)MapViewOfFile(pProcInfo.cmdsShm.hMap,   // handle to map object
+											   FILE_MAP_ALL_ACCESS,         // read/write permission
+											   0,
+											   0,
+											   pProcInfo.cmdsShm.uiBufSize_qmShm);
+	if (pProcInfo.cmdsShm.pBuf == null)
+	{
+		traceLogA("Could not map view of file (%d).\n", GetLastError());
+		goto errLabel;
+	}
+	memset(pProcInfo.cmdsShm.pBuf, 0, pProcInfo.cmdsShm.uiBufSize_qmShm);
+# ifdef  __DEBUG__
+	QM_SHM_CMDS* pShm = (QM_SHM_CMDS*)pProcInfo.cmdsShm.pBuf;
+	lstrcpyn(pShm->hint, _T("Hello"), mycountof(pShm->hint));
+#endif
+
+
+	QM_SHM_CMDS* pShmCmds = (QM_SHM_CMDS*)pProcInfo.cmdsShm.pBuf;
+	if (pShmCmds)
+	{
+		pShmCmds->hWnd_main = pQyMc.gui.hMainWnd;
+	}
+
+	//	 2013/12/24
+	if (pQyMc.usAppAvLevel_daemon != pQyMc.usAppAvLevel_default    )
+	{
+		//
+		//  2015/06/07. hd以上(含hd)支持hwAccl,和sd不完全兼容
+		//  
+		if ((pQyMc.usAppAvLevel_daemon < CONST_qyAppAvLevel_hd && pQyMc.usAppAvLevel_default >= CONST_qyAppAvLevel_hd)
+			|| (pQyMc.usAppAvLevel_daemon >= CONST_qyAppAvLevel_hd && pQyMc.usAppAvLevel_default < CONST_qyAppAvLevel_hd))
+		{
+			//  2017/07/11
+			//  qyMessageBox(  pQyMc.gui.hMainWnd,  getResStr(  0,  &pQyMc.cusRes,  CONST_resId_versionErr  ),  _T(  "www.qycx.com"  ),  MB_OK,  10,  null  );
+			//showNotification(  0,  0,  0,  0,  0,  0,  getResStr(  0,  &pQyMc.cusRes,  CONST_resId_versionErr  )  );
+			showInfo_open(0, _T("init_afterLogon"), getResStr(0, &pQyMc.cusRes, CONST_resId_versionErr));
+		}
+	}
+	//  2014/07/03
+#if  0
+	 if  (  qyGetAppAvLevel_qyMc(  )  >=  CONST_qyAppAvLevel_fullHd  )  {
+		 if  (  !bAppX64(  )  )  {
+			 qyMessageBox(  pQyMc.gui.hMainWnd,  _T(  "high版客户端必须在64位系统上运行"  ),  _T(  "www.qycx.com"  ),  MB_OK,  10,  null  );
+			 goto  errLabel;
+		 }
+	 }
+#endif
+
+	//  2013/03/10
+	SUBTITLES_cfg tmp_subtitlesCfg;
+	//
+#if  0
+	 getSubtitlesCfg(  CONST_capType_av,  0,  0,  &tmp_subtitlesCfg  );
+	 //
+	 subtitlesCfg_modify(  &tmp_subtitlesCfg,  GetTickCount(  ),  FALSE,  &pProcInfo.subtitles.localVideoInConf,  null  );
+#endif
+	//
+	getSubtitlesCfg(CONST_capType_av, CONST_subCapType_webcam, 0, &tmp_subtitlesCfg);
+	subtitlesCfg_modify(&tmp_subtitlesCfg, GetTickCount(), FALSE, &pProcInfo.subtitles.webcam, null);
+	//  2013/12/10
+
+			*/
+
+			//
+			iErr = 0;
+		errLabel:
+
+			return iErr;
+		}
+
+		public static unsafe int exitVar_isGui(CCtxQyMc pQyMc, ref QY_SERVICEGUI_INFO pSci, IntPtr p2)
+		{
+			//QY_MC* pQyMc = (QY_MC*)p0;
+			//QY_SERVICEGUI_INFO* pSci = (QY_SERVICEGUI_INFO*)p1;
+			//  p2
+			int i;
+
+			
+
+	if (pQyMc.iServiceId != Consts.CONST_qyServiceId_is) return 0;
+
+	Console.WriteLine("exitVar_isGui enters.");
+
+			/*
+	//  2010/10/01
+	if (pQyMc.iAppType != CONST_qyAppType_client)
+	{
+		exitVar_isGui_mgr(p0, p1, p2);
+		return 0;
+	}*/
+
+
+	//
+	CCtxQmc pProcInfo = (CCtxQmc)pSci.pVar;
+
+
+			
+	//  2010/08/05
+	pProcInfo.processQ_media.emptyQ();
+	//pProcInfo.processQ_robot.emptyQ(  );
+
+			/*
+			
+	//  2009/12/21
+	if (pProcInfo.cmdsShm.pBuf)
+	{
+		UnmapViewOfFile(pProcInfo.cmdsShm.pBuf);
+		pProcInfo.cmdsShm.pBuf = null;
+	}
+	if (pProcInfo.cmdsShm.hMap)
+	{
+		CloseHandle(pProcInfo.cmdsShm.hMap); pProcInfo.cmdsShm.hMap = null;
+	}
+
+	//  2008/10/04
+	if (bNoSharedObjExists(pProcInfo))
+	{
+		MACRO_safeFree(pProcInfo.pCapProcInfoAudios);
+		MACRO_safeFree(pProcInfo.pCapProcInfoBmps);
+		MACRO_safeFree(pProcInfo.pSharedObjSyncs);
+		//
+	}
+	else
+	{
+		traceLogA("exitVar_isGui error: shared obj already exists.");
+	}
+
+	//  2014/09/24
+	tryToFreeTaskInfos(pProcInfo);
+	//
+	//  2014/09/24
+	if (bNoTaskInfoExists(pProcInfo))
+	{
+		MACRO_safeFree(pProcInfo.pQmcTaskInfos);
+	}
+
+	//  2015/11/15
+	tryToFreeQmcObjVarInfos(pProcInfo);
+
+	//  2015/11/10
+	if (bNoObjVarInfoExists(pProcInfo))
+	{
+		MACRO_safeFree(pProcInfo.pQmcObjVarInfos);
+	}
+
+
+	//  2012/05/07
+	if (pProcInfo.gps.pPlayers)
+	{
+		for (i = 0; i < pProcInfo.gps.usCnt_players; i++)
+		{
+			if (pProcInfo.gps.pPlayers[i].bQInited) exitQyQ2(&pProcInfo.gps.pPlayers[i].q2);
+		}
+		free(pProcInfo.gps.pPlayers);
+	}
+			*/
+
+	//  ÊÍ·ÅÒôÆµ³Ø	 
+	if (pProcInfo.av.pPlayers!=null)
+	{  //  ÕâÀï»¹Ã»ÅªºÃ£¬ÔõÃ´À´²»Ò»¿ªÊ¼Æô¶¯Ïß³ÌÄØ¡£¶ø´ï¡£¡£¡£¡£¡£
+
+		for (i = 0; i < pProcInfo.av.usCnt_players; i++)
+		{
+			if (!bQThreadExists(ref pProcInfo.av.pPlayers[i].audio))
+			{
+						if (pProcInfo.av.pPlayers[i].audio.bQInited)
+						{
+							exitQyQ2(pProcInfo.av.pPlayers[i].audio.q2);
+							pProcInfo.av.pPlayers[i].audio.q2 = null;
+						}
+			}
+			else
+			{
+			}
+					if (pProcInfo.av.pPlayers[i].video.bQInited)
+					{
+						exitQyQ2(pProcInfo.av.pPlayers[i].video.q2);
+						pProcInfo.av.pPlayers[i].video.q2 = null;
+					}
+					if (pProcInfo.av.pPlayers[i].video.ucbDisplayQInited)
+					{
+						exitQyQ2(pProcInfo.av.pPlayers[i].video.displayQ2);
+						pProcInfo.av.pPlayers[i].video.displayQ2 = null;
+					}
+		}
+
+				//free(pProcInfo.av.pPlayers);
+				pProcInfo.av.pPlayers = null;
+	}
+
+	if (!bQThreadExists(ref pProcInfo.av.localAv.player.audio))
+	{
+				if (pProcInfo.av.localAv.player.audio.bQInited)
+				{
+					exitQyQ2(pProcInfo.av.localAv.player.audio.q2);
+					pProcInfo.av.localAv.player.audio.q2 = null;
+				}
+	}
+	else
+	{
+	}
+			if (pProcInfo.av.localAv.player.video.bQInited)
+			{
+				exitQyQ2(pProcInfo.av.localAv.player.video.q2);
+				pProcInfo.av.localAv.player.video.q2 = null;
+			}
+			if (pProcInfo.av.localAv.player.video.ucbDisplayQInited)
+			{
+				exitQyQ2(pProcInfo.av.localAv.player.video.displayQ2);  //  2009/07/25
+				pProcInfo.av.localAv.player.video.displayQ2 = null;
+			}
+
+			//for  (  int  i  =  0;  i  <  mycountof(  pProcInfo.misCnts  );  i  ++  )  
+			{
+				MIS_CNT pMisCnt = pProcInfo.pMisCnt;   //  getMisCntByIndex(0, pProcInfo, i);//&pProcInfo.misCnts[i];
+				if (pMisCnt != null) { 
+				//
+				if (pMisCnt.cfg.dynCfg.cnt.usCntPort!=0)
+				{
+
+					/*
+
+					//  ¹Ø±Õ¹ÜÀí¶ÓÁÐ
+					if (pMisCnt.ucbQmObjQInited)
+					{       //  2006/12/07
+						exitQmObjQ(0, (QM_OBJQ*)pMisCnt.pObjQ); pMisCnt.ucbQmObjQInited = FALSE;
+					}
+					if (pMisCnt.pObjQ)
+					{   //  2007/04/01
+						free(pMisCnt.pObjQ); pMisCnt.pObjQ = null;
+					}
+					*/
+
+					//  ¹Ø±Õ´¥·¢ÐÅºÅµÆ
+					int j;
+					for (j = 0; j < pMisCnt.channels.Length; j++)
+					{
+						MIS_CHANNEL pChannel = pMisCnt.channels[j];
+							if (pChannel == null) continue;
+						//  
+						//
+						exitQyQ2(pChannel.outputQ2); pChannel.outputQ2 = null;
+						exitQyQ2(pChannel.toSendQ2); pChannel.toSendQ2 = null;
+						//
+						exitGenericQ(pChannel.inCacheQ); pChannel.inCacheQ = null;
+
+							//
+							pMisCnt.channels[j] = null;
+					}
+						pMisCnt.channels = null;
+
+					//
+					exitGenericQ(pMisCnt.recentFriendQ); pMisCnt.recentFriendQ = null;
+					exitGenericQ(pMisCnt.talkingFriendQ); pMisCnt.talkingFriendQ = null;
+					//
+					//
+				}
+
+			}
+
+		//  2012/05/08
+	}
+			//  2015/07/02
+			//MACRO_safeFree(pProcInfo.pMisCnts);
+			pProcInfo.pMisCnt = null;
+	
+
+	//
+
+	//
+
+	//exitGenericQ(&pProcInfo.imMsgLogQ);        //  2010/07/17
+
+	//
+	pProcInfo.processQ_media.exitQ();
+	//pProcInfo.processQ_robot.exitQ(  );
+
+	//
+	exitGenericQ(pProcInfo.mgrQ);
+	exitGenericQ(pProcInfo.robotQ);           //  2007/07/04
+	exitGenericQ(pProcInfo.displayQ);
+	exitGenericQ(pProcInfo.workQ);
+	exitGenericQ(pProcInfo.schedulerQ);
+	//  exitGenericQ(  &pProcInfo.mediaQ  );
+	//  exitGenericQ(  &pProcInfo.realTimeMediaQ  );
+	exitQyQ2(pProcInfo.mediaQ2);
+	exitQyQ2(pProcInfo.realTimeMediaQ2);
+	exitQyQ2(pProcInfo.rtOpQ2);   //  2016/12/26
+
+	//  2010/04/25
+
+
+	//  2010/09/16
+	//
+
+	//  2017/06/18
+	exit_webRtc();
+
+
+	//  2016/09/08
+
+
+	//  2016/06/03
+	//
+	Console.WriteLine("exitVar_isGui leaves.");
+
+
+			return 0;
+		}
+
+
+		//
+	
+
+}
+
+
+}
+

@@ -1,0 +1,99 @@
+﻿
+#define __PRINT_imObj__
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+
+namespace qy
+{
+    partial class qyFuncs
+{
+
+		public static unsafe int printRetrieveImGrpListResp(RETRIEVE_IMGRPLIST_RESP* pResp)
+		{
+#if DEBUG
+
+#if __PRINT_imObj__
+			int i;
+			string str;
+			str=string.Format("printRetrieveImGrpListResp: enters, usCnt is {0}", pResp->usCnt);
+
+			qyShowInfo1(Consts.CONST_qyShowType_qwmComm, null, (""), ("isClient"), null, (""), (""), str);
+				
+			for (i = 0; i < pResp->usCnt; i++)
+			{
+				IM_GRP_INFO* pMems = (IM_GRP_INFO*)pResp->buf_imGrpInfo_mems;
+				str=string.Format("grp ({0})", pMems[i].idInfo.ui64Id);
+				qyShowInfo1(Consts.CONST_qyShowType_qwmComm, null, (""), ("isClient"), null, (""), (""), str);
+					
+			}
+			qyShowInfo1(Consts.CONST_qyShowType_qwmComm, null, (""), ("isClient"), null, (""), (""), ("printRetrieveImGrpListResp:leaves"));
+#endif
+
+#endif
+
+			return 0;
+		}
+
+
+		public static unsafe int printRetrieveImGrpMemListResp(RETRIEVE_IMGRPMEMLIST_RESP* pResp)
+		{
+
+# if  DEBUG
+# if  __PRINT_imObj__
+			int i;
+			string str;
+
+			str=string.Format("printRetrieveImGrpMemListResp: enters, usCnt is {0}", pResp->usCnt);
+
+			qyShowInfo1(Consts.CONST_qyShowType_qwmComm, null, (""), ("isClient"), null, (""), (""), str);
+				
+			for (i = 0; i < pResp->usCnt; i++)
+			{
+				IM_GRP_MEM* pMems = (IM_GRP_MEM*)pResp->buf_imGrpMem_mems;
+				str = string.Format("grp ( {0} ), mem ( {1} )", pMems[i].idInfo_grp.ui64Id, pMems[i].idInfo_mem.ui64Id);
+
+				qyShowInfo1(Consts.CONST_qyShowType_qwmComm, null, (""), ("isClient"), null, (""), (""), str);
+					}
+
+			qyShowInfo1(Consts.CONST_qyShowType_qwmComm, null, (""), ("isClient"), null, (""), (""), ("printRetrieveImGrpMemListResp: leaves"));
+#endif
+#endif
+
+
+			return 0;
+		}
+
+		public static unsafe int printRetrieveContactListResp(RETRIEVE_CONTACTLIST_RESP* p)
+		{
+# if  DEBUG
+# if  __PRINT_imObj__
+			int i;
+			//TCHAR tBuf[1024] = ("");
+			//char idStr[128] = "";
+			//char lastModifiedTime_regInfo[128] = "";
+			string str;
+			str=string.Format("printRetrieveContactListResp: enters, usCnt is {0}", p->usCnt);
+			qyShowInfo1(Consts.CONST_qyShowType_qwmComm, null, (""), ("isClient"), null, (""), (""), str); 
+			for (i = 0; i < p->usCnt; i++)
+			{
+				RETRIEVE_contact_mem* pMems = (RETRIEVE_contact_mem*)p->buf_retrieveContactMem_mems;
+
+				//tBuf[0] = 0;
+				//idInfo2Str(&p->mems[i].addr.idInfo, idStr, mycountof(idStr));
+				//_sntprintf(tBuf, mycountof(tBuf), ("第%d条, %S: %S"), i, idStr, lastModifiedTime_regInfo);
+				str=string.Format("第{0}条, {1}: {2}", i, pMems[i].regInfo.addr.idInfo.ui64Id, "");
+				qyShowInfo1(Consts.CONST_qyShowType_qwmComm, null, (""), ("isClient"), null, (""), (""), str);
+			}
+			qyShowInfo1(Consts.CONST_qyShowType_qwmComm, null, (""), ("isClient"), null, (""), (""), ("printRetrieveContactListResp: leaves"));
+#endif
+
+#endif
+			return 0;
+		}
+
+
+	}
+}

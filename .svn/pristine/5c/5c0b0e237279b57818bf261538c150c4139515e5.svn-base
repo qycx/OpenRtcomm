@@ -1,0 +1,1615 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using Xamarin.Forms;
+using System.Runtime.InteropServices;
+
+
+partial class Consts
+{
+	public const int cntof_tHintBuf = 255 + 1;
+
+}
+
+
+
+
+namespace qy
+{
+    partial class qyFuncs
+{
+
+
+		public static unsafe int procMsgReq_mgr(CCtxQmc pProcInfo, MIS_MSG_REQ* pMsgReq, uint lenInBytes_msg, ref CTX_MC_thread pCtx)
+		{
+			int iErr = -1;
+			CCtxQyMc pQyMc = (CCtxQyMc)pProcInfo.pQyMc;
+			//QY_SERVICEGUI_INFO* pSci = (QY_SERVICEGUI_INFO*)pProcInfo->pSgiParam;
+			int dataLen = 0;
+			uint uiMsgLen = (uint)Marshal.OffsetOf<MIS_MSG_REQ>("data");
+			//char tBuf[1024] = _T("");
+			IM_CONTENTU* pContent = (IM_CONTENTU*)&pMsgReq->data;
+			int lenInBytes = 0;
+
+			/*
+			if (!pCtx)
+			{
+				traceLogA("procMsgReq_mgr failed: pCtx is null");
+				return -1;
+			}
+
+			//  CQyMalloc					mallocObj;
+			MIS_MSG_REQ* pMsg = (MIS_MSG_REQ*)pCtx->pMsgBuf_forInput;   //  mallocObj.malloc(  sizeof(  MIS_MSG_REQ  )  );
+			if (!pMsg) return -1;
+			MIS_CHANNEL* pChannel = NULL;
+
+
+			//  traceLogA(  "procMsgReq_mgr£º·¢ËÍÖ®Ç°Ó¦¸Ã´¦ÀíÊý¾Ý£¬±ÈÈç£º×ª»»Êý¾Ý×Ö½ÚË³ÐòµÈ: ´¦ÀíÇëÇó %S ",  qyGetDesByType1(  CONST_qyCmdTable,  pMsg->usCode  )  );
+
+			memcpy(pMsg, pMsgReq, offsetof(MIS_MSG_REQ, data));
+			lenInBytes = sizeof(pMsg->data  );
+
+			switch (pMsgReq->usCode)
+			{
+				case CONST_qyCmd_refreshImObjListReq:
+					//				   
+					if ((dataLen = qyhtonImContentU(0, (IM_CONTENTU*)&pMsgReq->data)) < 0) goto errLabel;
+					break;
+				case CONST_qyCmd_refreshRecentFriendsReq:
+					switch (pContent->uiType)
+					{
+						case CONST_imCommType_refreshWebContactsInfo:
+							if (qyhtonRouteTalkData(NULL, (char*)&pMsgReq->data, 0, TRUE, pMsgReq->ucFlg, (char*)&pMsg->data, (unsigned  int *  ) & lenInBytes,  NULL,  0  )  )  goto errLabel;
+							pMsg->lenInBytes = lenInBytes;
+							lenInBytes += offsetof(MIS_MSG_REQ, data);
+							//
+							dataLen = pMsg->lenInBytes; //  ÕâÊÇÎªÁË¼æÈÝÐÔ¡£µÈ¹ýÒ»Õó£¬½«ÉÏÃæºÍÏÂÃæµÄ¼¯³ÉÆðÀ´¡£2007/12/22
+							pMsgReq = pMsg;
+							break;
+						case CONST_imCommType_refreshRecentFriendsReq:
+
+# ifdef  __DEBUG__
+							{
+								REFRESH_RECENTFRIENDS_REQ* p = (REFRESH_RECENTFRIENDS_REQ*)&pMsgReq->data;
+								int i;
+								//
+								_sntprintf(tBuf, mycountof(tBuf), _T("uiType is %d, tLast is %I64u, usCnt is %d"), p->uiType, p->tLastRefreshedTime_misServ, p->usCnt);
+								for (i = 0; i < p->usCnt; i++)
+								{
+									_sntprintf(tBuf, mycountof(tBuf), _T("%s,µÚ[%d]¸ö,id %I64u, t %I64u"), tBuf, i, p->mems[i].idInfo.ui64Id, p->mems[i].tLastRefreshedTime_misServ);
+								}
+								//
+								qyShowInfo1(CONST_qyShowType_debug, 0, (""), pProcInfo->who_showInfo, NULL, _T(""), _T(""), _T(""));
+								qyShowInfo1(CONST_qyShowType_debug, 0, (""), pProcInfo->who_showInfo, NULL, _T(""), _T(""), _T("tn %d,  %s"), pMsgReq->uiTranNo, tBuf);
+								//
+								if (p->usCnt) qyShowInfo1(CONST_qyShowType_qwmComm, 0, (""), pProcInfo->who_showInfo, NULL, _T(""), _T(""), _T("usCnt %d, tn %d"), p->usCnt, pMsgReq->uiTranNo);
+							}
+#endif
+
+							if ((dataLen = qyhtonRefreshRecentFriendsReq(0, (REFRESH_RECENTFRIENDS_REQ*)&pMsgReq->data)) < 0) goto errLabel;
+							break;
+						default:
+							break;
+					}
+					break;
+				case CONST_qyCmd_sendVDevReq:
+					if (qyhtonRouteTalkData(NULL, (char*)&pMsgReq->data, 0, TRUE, pMsgReq->ucFlg, (char*)&pMsg->data, (unsigned  int *  ) & lenInBytes,  NULL,  0  )  )  goto errLabel;
+					pMsg->lenInBytes = lenInBytes;
+					lenInBytes += offsetof(MIS_MSG_REQ, data);
+					//
+					dataLen = pMsg->lenInBytes; //  2007/12/22
+					pMsgReq = pMsg;
+					break;
+				case CONST_qyCmd_getCfgs:
+					switch (pContent->uiType)
+					{
+						case 0:
+							//  
+							break;
+						case CONST_imCommType_getCfgsReq:
+						case CONST_imCommType_retrieveToPaths:
+						default:
+							if (qyhtonRouteTalkData(NULL, (char*)&pMsgReq->data, 0, TRUE, pMsgReq->ucFlg, (char*)&pMsg->data, (unsigned  int *  ) & lenInBytes,  NULL,  0  )  )  goto errLabel;
+							pMsg->lenInBytes = lenInBytes;
+							lenInBytes += offsetof(MIS_MSG_REQ, data);
+							//
+							dataLen = pMsg->lenInBytes; //  2007/12/22
+							pMsgReq = pMsg;
+							//
+							//  traceLogA(  "procMsgReq_mgr:  CONST_qyCmd_getCfgs:  contentType is %d",  pContent->uiType  );
+							break;
+					}
+					break;
+				default:
+					break;
+
+			}
+
+			pMsgReq->lenInBytes = dataLen;
+			//
+			uiMsgLen += dataLen;
+
+
+			if (!pMsgReq->pMisCnt)
+			{
+				traceLogA("procMsgReq_mgr error: pMisCnt is null"); goto errLabel;
+			}
+			if (!(pChannel = getChannelByType((MIS_CNT*)pMsgReq->pMisCnt, CONST_channelType_talking))) goto errLabel;
+
+			if (postMsg2OutputQ_mc((MIS_CNT*)pMsgReq->pMisCnt, (MIS_MSGU*)pMsgReq, uiMsgLen, pChannel))
+			{
+				//  qyShowInfo1(  CONST_qyShowType_debugWarning,  0,  (  ""  ),  pProcInfo->who_showInfo,  0,  _T(  ""  ),  _T(  ""  ),  _T(  ""  )  );
+				traceLogA("postMsg2OutputQ_mc failed");
+				goto errLabel;
+			}
+
+			*/
+
+			iErr = 0;
+
+		errLabel:
+
+			if (0!=iErr)
+			{
+			}
+
+			return iErr;
+		}
+
+
+
+
+
+
+
+
+
+		static unsafe void mcThreadProc_mis_mgr(object  lpParameter)
+		{
+			int iErr = -1;
+			CCtxQyMc pQyMc = g.g_pQyMc;
+			CCtxQmc pProcInfo = pQyMc.get_pProcInfo();
+			int loopCtrl = 0;
+			//DWORD dwThreadId = GetCurrentThreadId();
+			MIS_MSGU* pMsg = null;
+			uint len;
+			uint dwRet;
+			//  long							lPrev;
+			CTX_MC_thread ctx;
+			//
+			uint uiChannelType = Consts.CONST_channelType_talking;
+
+
+			//
+			//mymemset(&ctx, 0, sizeof(ctx));
+			ctx = new CTX_MC_thread();
+			ctx.pProcessQ = pProcInfo.processQ_media;  //  2015/09/06
+			using (CQyMalloc mallocObj_pMsgBuf_forInput = new CQyMalloc()) {
+				using (CQyMalloc mallocObj = new CQyMalloc()) {
+
+					ctx.pMsgBuf_forInput = (MIS_MSGU*)mallocObj_pMsgBuf_forInput.mallocf(Consts.CONST_iAllocType_longTimeMsg, sizeof(MIS_MSGU));
+					if (null == ctx.pMsgBuf_forInput) goto errLabel;
+
+
+					if (null==(pMsg = (MIS_MSGU*)mallocObj.mallocf(Consts.CONST_iAllocType_longTimeMsg, sizeof(MIS_MSGU)))) goto errLabel;
+
+					//  2015/09/10
+					//ctx.pProcessQ.m_var.dwThreadId_mgr = GetCurrentThreadId();
+
+					//
+					for (; !pProcInfo.bQuit_threadProc_isCli; loopCtrl++)
+					{
+
+						/*
+						dwRet = WaitForSingleObject(pProcInfo->mgrQ.hEvent, 3500);
+						if (dwRet == WAIT_FAILED)
+						{
+							goto errLabel;
+						}
+						*/
+						myWaitOne(pProcInfo.mgrQ.hEvent, 3500);
+						//
+						for (; !pProcInfo.bQuit_threadProc_isCli;)
+						{
+							len = (uint)sizeof(MIS_MSGU);
+							if (qGetMsg(pProcInfo.mgrQ, (IntPtr)pMsg, &len)!=0) break;
+							mymemset((IntPtr)(((byte *)pMsg) + len), 0, (int)Math.Min(256, sizeof(MIS_MSGU) - len));
+							switch (pMsg->uiType)
+							{
+								case Consts.CONST_misMsgType_input:
+									{
+										MIS_CNT pMisCnt = null;
+										MIS_CHANNEL pChannel = null;
+
+										pMisCnt = (MIS_CNT)pProcInfo.pMisCnt;// getMisCntBySth( pProcInfoMsg->input.pMisCnt;
+										if (null == pMisCnt)
+										{
+											break;
+										}
+										if (null==(pChannel = getChannelByType(pMisCnt, uiChannelType))) break;
+
+										if (isUcFlgResp(pMsg->input.ucFlg))
+										{
+											if (0!=procMsgInput_mgr_resp(pQyMc, pProcInfo, &pMsg->input, len, ref ctx, pChannel)) break;
+										}
+										else
+										{
+											if (0!=procMsgInput_mgr_req(pQyMc, pProcInfo, &pMsg->input, len, ref ctx, pChannel)) break;
+										}
+
+										//
+									}
+									break;
+								
+
+							case Consts.CONST_misMsgType_req:
+
+								
+								if (procMsgReq_mgr(pProcInfo, &pMsg->req, len, ref ctx)!=0) break;
+
+								break;
+								/*
+							case CONST_misMsgType_talk:
+
+								if (!pMsg->talk.pMisCnt)
+								{
+									traceLogA("mcThreadProc_mis_mgr: talk pMisCnt is null");
+									break;
+								}
+
+								if (procMsgTalk_mc_mgr(pQyMc, pSci, pProcInfo, (MIS_CNT*)pMsg->talk.pMisCnt, &pMsg->talk, len, &ctx)) break;
+
+								break;
+							case CONST_misMsgType_task:
+								{
+									MIS_CNT* pMisCnt = (MIS_CNT*)pMsg->task.pMisCnt;
+									MIS_CHANNEL* pChannel;
+
+									if (!pMisCnt)
+									{
+										break;
+									}
+									if (!(pChannel = getChannelByType(pMisCnt, uiChannelType))) break;
+
+
+									//  if  (  procMsgTask2Output_mc(  pProcInfo,  (  MIS_CNT  *  )pMsg->task.pMisCnt,  &pMsg->task,  len,  pChannel,  _T(  "thread_mgr"  )  )  )  break;
+									if (procMsgTask_mc_mgr(pQyMc, pSci, pProcInfo, &pMsg->task, len, FALSE, &ctx, pChannel)) break;
+
+
+								}
+								break;
+
+							case CONST_misMsgType_applyForRemovingInvalidTasks_qmc:     //  2009/09/10
+																						//
+								qmcRemoveInvalidTasks(pProcInfo);
+								break;
+								*/
+
+								default:
+									break;
+							}
+
+									//  dwRet  =  WaitForSingleObject(  pProcInfo->mgrQ.hSemaTrigger,  50  );
+									//  if  (  dwRet  ==  WAIT_FAILED  )  goto  errLabel;			   
+							}
+
+
+							//  if  (  !(  loopCtrl  %  20  )  )  traceLogA(  "ÕâÀï»¹Ó¦¸ÃÓÐÒ»¸ö¶¨ÆÚ£¨±ÈÈç30·ÖÖÓÒ»´ÎµÄ£¬ÇåÀíprocessQµÄ¹¤×÷£¬ÒÔ·ÀÖ¹processQÀïÓÐµÄ½ÚµãÊ§È¥±»´¦ÀíµÄ¿ÉÄÜµÄ¡£¾ÍÒª°ÑÕâÐ©À¬»ø½ÚµãÇåµô"  );
+
+
+						}
+				}
+			}
+
+			iErr = 0;
+
+		errLabel:
+
+			//
+			//showInfo_open(0, 0, _T("thread_mgr: start to empty taskQ"));
+
+			//
+			/*
+			if (ctx.pProcessQ)
+			{
+				ctx.pProcessQ->emptyQ();
+			}
+			*/
+
+			//
+			//showInfo_open(0, 0, _T("thread_mgr: taskQ is empty"));
+
+			//
+			pProcInfo.status.threadsStatus.ulbMgrQuit = true;
+
+//traceLogA("msgThreadProc_mis_mgr:  leaves");
+
+//return iErr;
+return;
+		}
+
+
+		static unsafe int procMsgInput_mgr_resp(CCtxQyMc pQyMcParam, CCtxQmc pProcInfo, MIS_MSG_INPUT* pMsgInput, uint lenInBytes_msg, ref CTX_MC_thread pCTX_MC_THREAD, MIS_CHANNEL pChannel)
+		{
+			int iErr = -1;
+
+			/*
+			QY_MC* pQyMc = (QY_MC*)pQyMcParam;
+			QY_SERVICEGUI_INFO* pSci = (QY_SERVICEGUI_INFO*)pSgiParam;
+			CTX_MC_THREAD* pCtx = (CTX_MC_THREAD*)pCTX_MC_THREAD;
+
+			//  int						dataLen			=	0;
+			int msgLen = 0;
+			MIS_CNT* pMisCnt = 0;
+			//MIS_MSG_routeTalkData	*	pAddrTalkData	=	NULL;		
+			IM_CONTENTU* pContent = NULL;
+			//
+			if (!pCtx)
+			{
+# ifdef  __DEBUG__
+				traceLogA("procMsgInput_mgr_resp failed: pCtx is null");
+#endif
+				return -1;
+			}
+
+			//  CQyMalloc					mallocObj;
+			MIS_MSG_INPUT* pMsg = (MIS_MSG_INPUT*)pCtx->pMsgBuf_forInput;   //  (  MIS_MSG_INPUT  *  )mallocObj.malloc(  sizeof(  MIS_MSG_INPUT  )  );
+			if (!pMsg)
+			{
+# ifdef  __DEBUG__
+				traceLogA("procMsgInput_mgr_resp failed: pMsgBuf is null");
+#endif
+				return -1;
+			}
+			//
+			TCHAR tHintBuf[255 + 1] = _T("");
+
+			if (!pMsgInput->pMisCnt) return -1;
+
+			if (sizeof(pMsgInput->data)  < sizeof(MIS_MSG_routeTalkData)  )  {
+# ifdef  __DEBUG__
+				traceLogA("procMsgInput_mgr_resp:  pMsgInput->buf µÄ´óÐ¡ {%d} Ã»ÓÐ >=  sizeof(  MIS_MSG_routeTalkData  ) {%d}", sizeof(pMsgInput->data),  sizeof(MIS_MSG_routeTalkData)  );
+#endif
+				goto errLabel;
+			}
+
+			pMisCnt = (MIS_CNT*)pMsgInput->pMisCnt;
+
+			if (!isUcFlgResp(pMsgInput->ucFlg)) goto errLabel;
+
+			//  traceLogA(  ""  );
+			if (!pMsgInput->ucbConvrted)
+			{
+
+				MACRO_memset_misMsgInput(pMsg);
+				memcpy(pMsg, pMsgInput, offsetof(MIS_MSG_INPUT, data));
+				msgLen = offsetof(MIS_MSG_INPUT, data);
+
+				if (isUcFlgTalkData(pMsgInput->ucFlg) || isUcFlgRouteTalkData(pMsgInput->ucFlg))
+				{
+					MIS_MSG_routeTalkData* pAddrTalkData = (MIS_MSG_routeTalkData*)&pMsg->data;
+					//
+					if (qyntohRouteTalkData(pMsgInput->ucFlg, (char*)&pMsgInput->data, pMsgInput->lenInBytes, &pAddrTalkData->route, (IM_CONTENTU*)pAddrTalkData->buf, tHintBuf, mycountof(tHintBuf))) goto errLabel;
+					if (tHintBuf[0]) qyShowInfo1(CONST_qyShowType_qwmComm, 0, (""), _T(""), 0, _T(""), _T(""), _T("    %s"), tHintBuf);
+					//
+					msgLen += offsetof(MIS_MSG_routeTalkData, buf);
+					pContent = (IM_CONTENTU*)pAddrTalkData->buf;
+				}
+				else
+				{
+					if (!pMsgInput->lenInBytes)
+					{
+# ifdef  __DEBUG__
+						traceLogA("procMsgInput_mgr_resp failed: msgInput.lenInBytes is 0");
+#endif
+						goto errLabel;
+					}
+
+					if (qyntohRouteTalkData(pMsgInput->ucFlg, (char*)&pMsgInput->data, pMsgInput->lenInBytes, NULL, (IM_CONTENTU*)&pMsg->data, tHintBuf, mycountof(tHintBuf))) goto errLabel;
+					if (tHintBuf[0]) qyShowInfo1(CONST_qyShowType_qwmComm, 0, (""), _T(""), 0, _T(""), _T(""), _T("    %s"), tHintBuf);
+					//
+					pContent = (IM_CONTENTU*)&pMsg->data;
+				}
+				pMsg->ucbConvrted = TRUE;
+
+				//	
+				pMsgInput = pMsg;
+			}
+
+			//
+#if  0
+	 pAddrTalkData  =  MACRO_msgRouteTalkData(  pMsgInput->ucFlg,  &pMsgInput->data  );
+	 if  (  !pAddrTalkData  )  {
+# ifdef  __DEBUG__
+				 MACRO_qyAssert(  0,  _T(  "procMsgInput_mgr_resp failed: pAddrTalkData is null"  )  );  
+#endif
+			goto errLabel;
+		}
+#endif
+
+		//
+		pContent  =  M_getMsgContent(pMsgInput->ucFlg,  &pMsgInput->data  );
+	 if  (  !pContent  )  {
+		 #ifdef  __DEBUG__
+				 MACRO_qyAssert(  0, _T(  "procMsgInput_mgr_resp failed: pContent is null"  )  );  
+		 #endif
+		 goto  errLabel;
+	 }
+
+	//
+	BOOL bNeedProcess = FALSE;
+	 
+	 //  ÏÂÃæ´¦ÀíÏìÓ¦
+	 //	
+	 switch  (pContent->uiType  )  {
+ 			 case  CONST_imCommType_simpleResp:  {  
+				   //
+				   qyShowInfo1(CONST_qyShowType_debug,  0, (  ""  ),  pProcInfo->who_showInfo,  NULL,  _T(  ""  ),  _T(  ""  ),  _T(  "    simpleResp¦%s,  %d"  ),  qyGetDesByType1(CONST_qyRcTable, pMsgInput->usCode  ),  pMsgInput->uiTranNo  );
+
+				   //
+				   if  (  !pCtx->pProcessQ  )  goto  errLabel;
+				   
+				   //
+				   msgLen  +=  sizeof(pContent->simpleResp  );
+				   switch  (pContent->simpleResp.usCmd_org  )  {
+						   case  CONST_qyCmd_sendRobotTaskReply:
+							     qPostMsgAndTrigger(pMsg, msgLen,  &pProcInfo->robotQ  );							     
+							     break;
+						   case  CONST_qyCmd_sendMedia:  {
+							     CQyQ2Help q2Help;
+
+	q2Help.qPostMsgAndTrigger(pMsg, msgLen,  &pProcInfo->mediaQ2  );
+								 }
+break;
+
+						   case  CONST_qyCmd_refreshImObjListReq:
+qPostMsgAndTrigger(pMsg, msgLen, &pProcInfo->schedulerQ);
+break;
+default:
+								  //
+								  bNeedProcess = TRUE;
+
+# ifdef  __DEBUG__
+traceLogA("procMsgInput_mgr_resp: simpleResp, unprocessed cmd %S", qyGetDesByType1(CONST_qyCmdTable, pContent->simpleResp.usCmd_org));
+#endif
+break;
+				   }
+
+				   }
+				   break;
+				   
+			 case  CONST_imCommType_taskProcResp:
+{
+
+	msgLen += sizeof(pContent->taskProcResp  );
+	switch (pContent->taskProcResp.usCmd_org)
+	{
+		case CONST_qyCmd_sendMedia:
+			q2PostMsgAndTrigger(pMsg, msgLen, &pProcInfo->mediaQ2);
+			break;
+		default:
+			//
+			bNeedProcess = TRUE;
+
+# ifdef  __DEBUG__
+			traceLogA("procMsgInput_mgr_resp: taskProcResp, unprocessed cmd %S", qyGetDesByType1(CONST_qyCmdTable, pContent->taskProcResp.usCmd_org));
+#endif
+			break;
+	}
+
+}
+break;
+
+			 //  case  CONST_imCommType_intervalParams:
+			 case  CONST_imCommType_getCfgsReq:
+if (!isRcOk(pMsgInput->usCode)) goto errLabel;
+//
+msgLen += sizeof(pContent->getCfgsReq  );
+//
+if (qPostMsgAndTrigger(pMsg, msgLen, &pProcInfo->schedulerQ))
+{
+	traceLogA("qPostMsgAndTrigger failed"); goto errLabel;
+}
+//
+break;
+			 case  CONST_imCommType_retrieveToPaths:
+if (!isRcOk(pMsgInput->usCode)) goto errLabel;
+//
+msgLen += sizeof(pContent->retrieveToPaths  );
+//
+if (qPostMsgAndTrigger(pMsg, msgLen, &pProcInfo->schedulerQ))
+{
+	traceLogA("qPostMsgAndTrigger failed"); goto errLabel;
+}
+//
+break;
+
+			 case  CONST_imCommType_retrieveImGrpListResp:
+if (!isRcOk(pMsgInput->usCode)) goto errLabel;
+//
+msgLen += sizeof(pContent->retrieveImGrpListResp  );
+//
+if (qPostMsgAndTrigger(pMsg, msgLen, &pProcInfo->schedulerQ))
+{
+	traceLogA("qPostMsgAndTrigger failed"); goto errLabel;
+}
+break;
+			 case  CONST_imCommType_retrieveImGrpMemListResp:
+if (!isRcOk(pMsgInput->usCode)) goto errLabel;
+//
+msgLen += sizeof(pContent->retrieveImGrpMemListResp  );
+//
+if (qPostMsgAndTrigger(pMsg, msgLen, &pProcInfo->schedulerQ))
+{
+	traceLogA("qPostMsgAndTrigger failed"); goto errLabel;
+}
+break;
+			 case  CONST_imCommType_retrieveContactListResp:
+if (!isRcOk(pMsgInput->usCode)) goto errLabel;
+//
+msgLen += sizeof(pContent->retrieveContactListResp  );
+//
+if (qPostMsgAndTrigger(pMsg, msgLen, &pProcInfo->schedulerQ))
+{
+	traceLogA("qPostMsgAndTrigger failed"); goto errLabel;
+}
+break;
+			 case  CONST_imCommType_retrieveImObjListEndResp:
+if (!isRcOk(pMsgInput->usCode)) goto errLabel;
+//
+msgLen += sizeof(pContent->retrieveImObjListEndResp  );
+//
+if (qPostMsgAndTrigger(pMsg, msgLen, &pProcInfo->schedulerQ))
+{
+	traceLogA("qPostMsgAndTrigger failed"); goto errLabel;
+}
+break;
+			 case  CONST_imCommType_refreshRecentFriendsResp:
+if (!isRcOk(pMsgInput->usCode)) goto errLabel;
+//
+msgLen += sizeof(pContent->refreshRecentFriendsResp  );
+//
+if (qPostMsgAndTrigger(pMsg, msgLen, &pProcInfo->displayQ))
+{
+	traceLogA("qPostMsgAndTrigger failed"); goto errLabel;
+}
+break;
+			 case  CONST_imCommType_refreshWebContactsInfo:
+if (!isRcOk(pMsgInput->usCode)) goto errLabel;
+//
+msgLen += sizeof(pContent->refreshWebContactsInfo  );
+//
+if (qPostMsgAndTrigger(pMsg, msgLen, &pProcInfo->workQ)) goto errLabel;
+
+break;
+			 case  CONST_imCommType_htmlContent:
+if (!isRcOk(pMsgInput->usCode)) goto errLabel;
+
+//  qyShowInfo1(  CONST_qyShowType_debugWarning,  0,  (  ""  ),  pProcInfo->who_showInfo,  _T(  ""  ),  _T(  "procMsgInput_mgr_resp"  ),  _T(  "resp of html. %s"  ),  CQyString(  (  char  *  )&pMsgInput->data  )  );
+
+//  2014/07/12
+msgLen += sizeof(pContent->html  );
+//
+if (qPostMsgAndTrigger(pMsg, msgLen, &pProcInfo->workQ)) goto errLabel;
+
+break;			 
+			 case  CONST_imCommType_vDevComs:
+if (!isRcOk(pMsgInput->usCode)) goto errLabel;
+//
+msgLen += sizeof(pContent->vDevComs  );
+//
+if (qPostMsgAndTrigger(pMsg, msgLen, &pProcInfo->workQ)) goto errLabel;
+
+break;
+			 case  CONST_imCommType_retrieveSmPolicy:
+if (!isRcOk(pMsgInput->usCode)) goto errLabel;
+//
+msgLen += sizeof(pContent->retrieveSmPolicy  );
+//
+if (qPostMsgAndTrigger(pMsg, msgLen, &pProcInfo->workQ)) goto errLabel;
+
+break;
+			 case  CONST_imCommType_retrievePhoneMsgrs:
+if (!isRcOk(pMsgInput->usCode)) goto errLabel;
+//
+msgLen += sizeof(pContent->retrievePhoneMsgrs  );
+//
+if (qPostMsgAndTrigger(pMsg, msgLen, &pProcInfo->schedulerQ)) goto errLabel;
+
+break;
+				   //
+				   //
+			 case  CONST_imCommType_refreshDynBmps:     //  2009/08/31
+if (!isRcOk(pMsgInput->usCode)) goto errLabel;
+//
+msgLen += sizeof(pContent->refreshDynBmps  );
+//
+#if  0	//  2011/10/31. 直接发到gui比较简洁
+				   if  (  qPostMsgAndTrigger(  pMsg,  msgLen,  &pProcInfo->workQ  )  )  goto  errLabel;				  
+#endif
+
+qPostMsg(pMsg, msgLen, &pQyMc->gui.processQ);
+PostMessage(pQyMc->gui.hMainWnd, CONST_qyWm_postComm, CONST_qyWmParam_msgArrive, 0);
+break;
+			 case  CONST_imCommType_verifyViewDynBmp:       //  2011/10/31
+if (!isRcOk(pMsgInput->usCode)) goto errLabel;
+//
+msgLen += sizeof(pContent->verifyViewDynBmp  );
+
+//
+qPostMsg(pMsg, msgLen, &pQyMc->gui.processQ);
+PostMessage(pQyMc->gui.hMainWnd, CONST_qyWm_postComm, CONST_qyWmParam_msgArrive, 0);
+break;
+			 case  CONST_imCommType_retrieveDynBmps:    //  2009/09/05
+if (!isRcOk(pMsgInput->usCode)) goto errLabel;
+//
+msgLen += sizeof(pContent->retrieveDynBmps  );
+
+//
+if (isUcFlgTalkData(pMsgInput->ucFlg) || isUcFlgRouteTalkData(pMsgInput->ucFlg))
+{
+	//
+	qPostMsg(pMsg, msgLen, &pQyMc->gui.processQ);
+	PostMessage(pQyMc->gui.hMainWnd, CONST_qyWm_postComm, CONST_qyWmParam_msgArrive, 0);
+	break;
+}
+//
+if (qPostMsgAndTrigger(pMsg, msgLen, &pProcInfo->schedulerQ)) goto errLabel;
+break;
+			 case  CONST_imCommType_refreshImObjRulesReq:   //  2010/08/15
+if (!isRcOk(pMsgInput->usCode)) goto errLabel;
+//
+msgLen += sizeof(pContent->refreshImObjRulesReq  );
+//
+if (qPostMsgAndTrigger(pMsg, msgLen, &pProcInfo->schedulerQ)) goto errLabel;
+break;
+			 case  CONST_imCommType_retrieveCustomerServiceObjListReq:      //  2011/04/04
+if (!isRcOk(pMsgInput->usCode)) goto errLabel;
+//
+msgLen += sizeof(pContent->retrieveCustomerServiceObjListReq  );
+//
+qPostMsg(pMsg, msgLen, &pQyMc->gui.processQ);
+PostMessage(pQyMc->gui.hMainWnd, CONST_qyWm_postComm, CONST_qyWmParam_msgArrive, 0);
+break;
+			 case  CONST_imCommType_procOfflineRes:  //  2015/08/02
+													 //if  (  !isRcOk(  pMsgInput->usCode  )  )  goto  errLabel;
+													 //
+msgLen += sizeof(pContent->procOfflineResU  );
+//
+//
+if (isUcFlgTalkData(pMsgInput->ucFlg) || isUcFlgRouteTalkData(pMsgInput->ucFlg))
+{
+	//
+	qPostMsg(pMsg, msgLen, &pQyMc->gui.processQ);
+	PostMessage(pQyMc->gui.hMainWnd, CONST_qyWm_postComm, CONST_qyWmParam_msgArrive, 0);
+	break;
+}
+//
+if (qPostMsgAndTrigger(pMsg, msgLen, &pProcInfo->schedulerQ)) goto errLabel;
+break;
+			 case  CONST_imCommType_imGrp:  //  2017/07/26
+msgLen += sizeof(pContent->imGrpEx  );
+//
+qPostMsg(pMsg, msgLen, &pQyMc->gui.processQ);
+PostMessage(pQyMc->gui.hMainWnd, CONST_qyWm_postComm, CONST_qyWmParam_msgArrive, 0);
+break;
+default:
+				    //
+				    bNeedProcess = TRUE;
+//
+# ifdef  __DEBUG__
+traceLog(_T("procMsgInput_mgr_resp(  ):  unprocessed imCommType[%d] - %s"), pContent->uiType, qyGetDesByType1(CONST_qyCmdTable, pMsgInput->usCode_org));
+#endif
+qyShowInfo1(CONST_qyShowType_debugWarning, 0, (""), pProcInfo->who_showInfo, _T(""), _T(""), _T(""), _T("procMsgInput_mgr_resp: unprocessed imCommType %d - %s"), pContent->uiType, qyGetDesByType1(CONST_qyCmdTable, pMsgInput->usCode_org));
+break;
+	 }
+	 //
+	 if (!bNeedProcess)
+{
+	iErr = 0; goto errLabel;
+}
+
+//
+switch (pContent->uiType)
+{
+
+	case CONST_imCommType_simpleResp:
+		{
+			//
+			qyShowInfo1(CONST_qyShowType_debug, 0, (""), pProcInfo->who_showInfo, NULL, _T(""), _T(""), _T("    simpleResp¦%s,  %d"), qyGetDesByType1(CONST_qyRcTable, pMsgInput->usCode), pMsgInput->uiTranNo);
+
+			msgLen += sizeof(pContent->simpleResp  );
+			switch (pContent->simpleResp.usCmd_org)
+			{
+				case CONST_qyCmd_sendRobotTaskReply:
+					qPostMsgAndTrigger(pMsg, msgLen, &pProcInfo->robotQ);
+					break;
+				case CONST_qyCmd_sendMedia:
+					{
+						CQyQ2Help q2Help;
+
+						q2Help.qPostMsgAndTrigger(pMsg, msgLen, &pProcInfo->mediaQ2);
+					}
+					break;
+				case CONST_qyCmd_refreshImObjListReq:
+					qPostMsgAndTrigger(pMsg, msgLen, &pProcInfo->schedulerQ);
+					break;
+				default:
+# ifdef  __DEBUG__
+					traceLogA("procMsgInput_mgr_resp: simpleResp, unprocessed cmd %S", qyGetDesByType1(CONST_qyCmdTable, pContent->simpleResp.usCmd_org));
+#endif
+					break;
+			}
+
+		}
+		break;
+
+	case CONST_imCommType_taskProcResp:
+		{   //  2009/10/19
+
+			msgLen += sizeof(pContent->taskProcResp  );
+			switch (pContent->taskProcResp.usCmd_org)
+			{
+				case CONST_qyCmd_sendMedia:
+					q2PostMsgAndTrigger(pMsg, msgLen, &pProcInfo->mediaQ2);
+					break;
+				default:
+					traceLogA("procMsgInput_mgr_resp: taskProcResp, unprocessed cmd %S", qyGetDesByType1(CONST_qyCmdTable, pContent->taskProcResp.usCmd_org));
+					break;
+			}
+
+		}
+		break;
+	case CONST_imCommType_transferFileDataResp:
+		//
+		msgLen += sizeof(pContent->transferFileDataResp  );
+		//
+		if (qPostMsgAndTrigger(pMsg, msgLen, &pProcInfo->robotQ)) goto errLabel;
+
+		break;
+
+
+	default:
+		break;
+}
+
+*/
+
+
+iErr = 0;
+
+errLabel:
+
+if (0!=iErr)
+{
+}
+return iErr;
+}
+
+
+		
+		public unsafe struct TMP_tHintBuf
+        {
+			public fixed char tHintBuf[Consts.cntof_tHintBuf];
+        }
+		public unsafe struct TMP_tBuf128
+        {
+			public fixed char tBuf[128];
+        }
+
+ //int  procMsgInput_mgr_req(  MC_VAR_isCli  *  pProcInfo,  MIS_MSG_INPUT  *  pMsgInput,  unsigned  int  lenInBytes_msg,  CTX_MC_THREAD  *  pCtx  )
+ static unsafe int procMsgInput_mgr_req(CCtxQyMc pQyMcParam, CCtxQmc pProcInfo, MIS_MSG_INPUT* pMsgInput, uint lenInBytes_msg, ref CTX_MC_thread pCtx, MIS_CHANNEL pChannel)
+{
+	int iErr = -1;
+	
+	CCtxQyMc pQyMc = (CCtxQyMc)pQyMcParam;
+	//QY_SERVICEGUI_INFO* pSci = (QY_SERVICEGUI_INFO*)pSgiParam;
+	
+	int len;
+			//
+			//char tHintBuf[255 + 1] = _T("");
+			TMP_tHintBuf tHintBuf;
+			//TCHAR tBuf[128] = _T("");
+			TMP_tBuf128 tBuf;
+
+
+	if (isUcFlgResp(pMsgInput->ucFlg)) return -1;
+
+			
+	//  
+
+	//  2017/10/11  
+
+	//	
+	//  2015/09/07
+	bool bNeedProcess = false;
+
+			
+	//
+	switch (pMsgInput->usCode)
+	{
+		case Consts.CONST_qyCmd_talkTo:
+			{
+				//  CQyMalloc		mallocObj;
+				MIS_MSGU* pMsg1 = pCtx.pMsgBuf_forInput;    //  (  MIS_MSGU  *  )mallocObj.malloc(  sizeof(  MIS_MSGU  )  );
+				if (null==pMsg1)
+				{
+					goto errLabel;
+				}
+
+				MACRO_memset_misMsgTalk(&pMsg1->talk);
+
+				pMsg1->talk.uiType = Consts.CONST_misMsgType_talk;
+				pMsg1->talk.ucFlg = pMsgInput->ucFlg;
+				//
+				pMsg1->talk.usCode = pMsgInput->usCode;
+				pMsg1->talk.tStartTime = pMsgInput->tStartTime;
+				pMsg1->talk.uiTranNo = pMsgInput->uiTranNo;
+				pMsg1->talk.usSeqNo = pMsgInput->usSeqNo;
+				//
+				//pMsg->talk.pMisCnt = pMsgInput->pMisCnt;
+				//
+				pMsg1->talk.tRecvTime = pMsgInput->tRecvTime;
+				//				  
+				if (0!=qyntohRouteTalkData(pMsgInput->ucFlg, (byte*)&pMsgInput->data, pMsgInput->lenInBytes, &pMsg1->talk.data.route, (IM_CONTENTU*)pMsg1->talk.data.buf, tHintBuf.tHintBuf, Consts.cntof_tHintBuf))
+				{
+					//showInfo_open(0, 0, _T("procMsgInput_mgr_req failed, qyntohRouteTalkData failed"));
+					goto errLabel;
+				}
+				//if (tHintBuf[0]) qyShowInfo1(CONST_qyShowType_qwmComm, 0, (""), _T(""), 0, _T(""), _T(""), _T("    %s"), tHintBuf);
+
+				IM_HTML_CONTENT* pHtmlContent;
+
+				pHtmlContent = (IM_HTML_CONTENT*)pMsg1->talk.data.buf;
+				len = (int)Marshal.OffsetOf<IM_HTML_CONTENT>("wBuf") + Math.Min(Consts.cntof_imHtmlContent_wBuf *sizeof(char),  (mywcslen(pHtmlContent->wBuf) + 1) * sizeof(char  )  );
+
+				//
+				{
+				//traceLogA("talk str is [%S]", pHtmlContent->wBuf);
+				}
+				//
+				pMsg1->talk.lenInBytes = (uint)(len + (int)Marshal.OffsetOf<MIS_MSG_routeTalkData>("buf"));
+
+				len = (int)pMsg1->talk.lenInBytes + (int)Marshal.OffsetOf<MIS_MSG_TALK>("data");
+				if (0!=qPostMsgAndTrigger((IntPtr)pMsg1, (uint)len, pProcInfo.workQ)) goto errLabel;
+				  
+				  }
+				  break;
+			case  Consts.CONST_qyCmd_sendTask:
+			case  Consts.CONST_qyCmd_sendTaskReply:
+
+
+					if (0!=qPostMsgAndTrigger((IntPtr)pMsgInput, lenInBytes_msg, pProcInfo.workQ)) goto errLabel;
+
+					break;
+
+			default:
+					bNeedProcess = true;
+					break;
+	}
+	if (!bNeedProcess)
+{
+	iErr = 0; goto errLabel;
+}
+
+
+			
+
+//
+MIS_CNT pMisCnt = null;
+MIS_MSG_routeTalkData* pAddrTalkData = null;
+int msgLen = 0;
+IM_CONTENTU* pContent = null;
+
+//  CQyMalloc					mallocObj;	
+MIS_MSG_INPUT* pMsg = (MIS_MSG_INPUT*)pCtx.pMsgBuf_forInput;   //  (  MIS_MSG_INPUT  *  )mallocObj.malloc(  sizeof(  MIS_MSG_INPUT  )  );
+if (null  ==  pMsg)
+{
+	goto errLabel;
+}
+
+
+//
+int lenInBytes = 0;
+//
+bool bRemoveIfErr = true;
+//  2008/11/19
+MSG_ROUTE route;
+byte ucFlg = 0;
+
+QM_dbFuncs pDbFuncs = pQyMc.p_g_dbFuncs;
+if (null==pDbFuncs) goto errLabel;
+QM_dbFuncs  g_dbFuncs = pDbFuncs;
+
+
+//if (!pMsgInput->pMisCnt) return -1;
+
+//if (sizeof(pMsgInput->data)  < sizeof(MIS_MSG_routeTalkData)  )  {
+//	goto errLabel;
+//}
+
+
+pMisCnt = (MIS_CNT)pProcInfo.pMisCnt;
+
+if (isUcFlgResp(pMsgInput->ucFlg)) goto errLabel;
+
+//  traceLogA(  ""  );
+
+
+if (!pMsgInput->ucbConvrted)
+{
+
+	MACRO_memset_misMsgInput(pMsg);
+	mymemcpy((IntPtr)pMsg, (IntPtr)pMsgInput, (uint)Marshal.OffsetOf<MIS_MSG_INPUT>( "data"));
+	msgLen = (int)Marshal.OffsetOf<MIS_MSG_INPUT>("data");
+
+	if (isUcFlgTalkData(pMsgInput->ucFlg) || isUcFlgRouteTalkData(pMsgInput->ucFlg))
+	{
+		pAddrTalkData = (MIS_MSG_routeTalkData*)&pMsg->data;
+		//
+		if (0!=qyntohRouteTalkData(pMsgInput->ucFlg, (byte*)&pMsgInput->data, pMsgInput->lenInBytes, &pAddrTalkData->route, (IM_CONTENTU*)pAddrTalkData->buf, tHintBuf.tHintBuf, Consts.cntof_tHintBuf))
+		{
+			//showInfo_open(0, 0, _T("procMsgInput_mgr_req failed, qyntohRouteTalkData failed"));
+			goto errLabel;
+		}
+		//if (tHintBuf[0]) qyShowInfo1(CONST_qyShowType_qwmComm, 0, (""), _T(""), 0, _T(""), _T(""), _T("    %s"), tHintBuf);
+		//
+		msgLen += (int)Marshal.OffsetOf<MIS_MSG_routeTalkData>("buf");
+		//
+		pContent = (IM_CONTENTU*)pAddrTalkData->buf;
+	}
+	else
+	{
+		if (0==pMsgInput->lenInBytes)
+		{
+			goto errLabel;
+		}
+
+		if (0!=qyntohRouteTalkData(pMsgInput->ucFlg, (byte*)&pMsgInput->data, pMsgInput->lenInBytes, null, (IM_CONTENTU*)&pMsg->data, tHintBuf.tHintBuf, Consts.cntof_tHintBuf))
+		{
+			//showInfo_open(0, 0, _T("procMsgInput_mgr_req failed, qyntohRouteTalkData failed sssssss"));
+			goto errLabel;
+		}
+		//if (tHintBuf[0]) qyShowInfo1(CONST_qyShowType_qwmComm, 0, (""), _T(""), 0, _T(""), _T(""), _T("    %s"), tHintBuf);
+		//
+		pContent = (IM_CONTENTU*)&pMsg->data;
+	}
+	pMsg->ucbConvrted = true;
+
+	//
+	pMsgInput = pMsg;
+
+}
+
+pAddrTalkData = MACRO_msgRouteTalkData(pMsgInput->ucFlg, &pMsgInput->data);
+if (null==pAddrTalkData)
+{
+	goto errLabel;
+}
+//
+pContent = M_getMsgContent(pMsgInput->ucFlg, &pMsgInput->data);
+if (null==pContent)
+{
+	goto errLabel;
+}
+
+
+//  2017/10/11  
+/*
+if (pQyMc->env.bDebugInfo && pProcInfo->cfg.debugStatusInfo.ucbViewMgrStatus)
+{
+	_sntprintf(tBuf, mycountof(tBuf), _T("procMsgInput_mgr_req: tn %d. after ntoh"), pMsgInput->uiTranNo);
+	showInfo_open(0, 0, tBuf);
+}
+*/
+
+
+//
+bNeedProcess = false;
+
+/*
+//
+switch (pContent->uiType)
+{
+	case CONST_imCommType_transferFileReq:
+		{
+			TRANSFER_FILE_REQ* pReq = NULL;
+			//
+			pMsgInput->lenInBytes = min(sizeof(pMsgInput->data),  offsetof(MIS_MSG_routeTalkData, buf) + sizeof(TRANSFER_FILE_REQ)  );
+			//
+			pReq = (TRANSFER_FILE_REQ*)&pContent->transferFileReq;
+			//
+			//  ÏÂÃæÊÇÄÚ²¿´¦Àí±äÁ¿
+			lstrcpyn(pReq->fullFilePath, pReq->fileName, mycountof(pReq->fullFilePath));
+			//
+			pMsgInput->uiType = CONST_misMsgType_task;
+			//
+			pMsgInput->idInfo_taskSender.ui64Id = pAddrTalkData->route.idInfo_from.ui64Id;
+			pMsgInput->idInfo_taskReceiver.ui64Id = pAddrTalkData->route.idInfo_to.ui64Id;
+			//
+			len = offsetof(MIS_MSG_TASK, data) + pMsgInput->lenInBytes;
+			//
+			if (procMsgTask_mc_mgr(pQyMc, pSci, pProcInfo, pMsgInput, len, TRUE, pCtx, pChannel)) goto errLabel;
+		}
+		break;
+
+	case CONST_imCommType_transferFileReplyReq:
+		{
+			TRANSFER_FILE_REPLYREQ* pReq = NULL;
+			//
+			pMsgInput->lenInBytes = min(sizeof(pMsgInput->data),  offsetof(MIS_MSG_routeTalkData, buf) + sizeof(TRANSFER_FILE_REPLYREQ)  );
+			//
+			pReq = (TRANSFER_FILE_REPLYREQ*)&pContent->transferFileReplyReq;
+			//
+			pMsgInput->uiType = CONST_misMsgType_task;
+			//
+			pMsgInput->idInfo_taskSender.ui64Id = pAddrTalkData->route.idInfo_to.ui64Id;
+			pMsgInput->idInfo_taskReceiver.ui64Id = pAddrTalkData->route.idInfo_from.ui64Id;
+			//
+			len = offsetof(MIS_MSG_TASK, data) + pMsgInput->lenInBytes;
+
+			if (procMsgTask_mc_mgr(pQyMc, pSci, pProcInfo, pMsgInput, len, TRUE, pCtx, pChannel)) goto errLabel;
+		}
+		break;
+	case CONST_imCommType_transferFileDataReq:
+		{
+
+			msgLen += sizeof(pContent->transferAudioData  );
+			if (qPostMsgAndTrigger(pMsg, msgLen, &pProcInfo->robotQ)) goto errLabel;
+
+#if  0
+				  //  TRANSFER_FILEDATA_REQ		req;
+				  //
+				  //  memset(  &req,  0,  sizeof(  req  )  );
+				  //  if  (  stream2Data(  &ptr,  &size,  tmpHandler_stream2TransferFileDataReq,  0,  &req  )  )  goto  errLabel;
+				  //  memcpy(  pContent,  &req,  min(  sizeof(  pContent[0]  ),  sizeof(  req  )  )  );
+				  // 
+				  pMsgInput->lenInBytes  =  min(  sizeof(  pMsgInput->data  ),  offsetof(  MIS_MSG_routeTalkData,  buf  )  +  sizeof(  TRANSFER_FILEDATA_REQ  )  );
+
+				  TRANSFER_FILEDATA_RESP		resp;
+				  //
+				  memset(  &resp,  0, sizeof(  resp  )  );
+				  resp.uiType  =  CONST_imCommType_transferFileDataResp;
+
+				  if  (  !pCtx->pProcessQ  )  goto  errLabel;
+				  printQ_mis(  &pCtx->pProcessQ->m_q,  0  );
+				  traceLogA(  "Now print pMsgInput"  );
+				  printMisMsg(  0,  0,  (  MIS_MSGU  *  )pMsgInput  );
+
+				  if  (  pCtx->pProcessQ->qTraverse(  tmpHandler_findOrgMsgAndProc_is,  pMsgInput,  &resp  )  <=  0  )  {
+					  traceLogA(  "Ã»ÓÐÕÒµ½Ïà¹ØµÄÈÎÎñ½Úµã»ò´¦Àí³ö´í£¬²»ÄÜ¼ÌÐø"  );
+					  goto  errLabel;				   
+				  }
+				  lenInBytes  =  sizeof(  resp  );
+				  
+				  //  2009/02/25
+				  startChannel(  pProcInfo,  pMisCnt,  pChannel,  _T(  "proc transferFileDataReq"  )  );    
+
+				  //
+				  ucFlg  =  0;
+				  memset(  &route,  0,  sizeof(  route  )  );
+				  route.idInfo_from.ui64Id  =  pMisCnt->idInfo.ui64Id;
+				  if  (  1  )  {
+					   ucFlg  |=  CONST_commFlg_routeTalkData;
+					   route.debugInfo.dwTickCnt_me_start  =  GetTickCount(  );	
+					   time_t	tNow;	mytime(  &tNow  );  route.debugInfo.tTime_start  =  tNow;
+				  }
+				  ucFlg  |=  CONST_commFlg_resp;		//  ×¢Òâ£¬ÕâÀïÊÇÏìÓ¦
+				  route.debugInfo.index  =  resp.uiDataBlockIndex;
+
+				  if  (  postMsg2Mgr_mc(  pMisCnt,  &route,  CONST_misMsgType_outputTask,  ucFlg,  CONST_qyCmd_sendRobotTaskData, pMsgInput->tStartTime,  pMsgInput->uiTranNo,  0,  (  char  *  )&resp,  lenInBytes,  &pMsgInput->addr_logicalPeer.idInfo,  &pAddrTalkData->route.idInfo_from,  uiChannelType,  NULL,  FALSE  )  )  goto  errLabel;
+#endif
+		}
+		break;
+	case CONST_imCommType_transferFileEndReq:
+		{
+
+			//  TRANSFER_FILEEND_REQ    req;
+
+			traceLogA("transferFileEndReq");
+
+			//  memset(  &req,  0,  sizeof(  req  )  );
+			//  if  (  stream2Data(  &ptr,  &size,  tmpHandler_stream2TransferFileEndReq,  0,  &req  )  )  goto  errLabel;                                 
+			//  memcpy(  pContent,  &req,  min(  sizeof(  pContent[0]  ),  sizeof(  req  )  )  );
+
+			pMsgInput->lenInBytes = min(sizeof(pMsgInput->data),  offsetof(MIS_MSG_routeTalkData, buf) + sizeof(TRANSFER_FILEDATA_REQ)  );
+
+			if (!pCtx->pProcessQ) goto errLabel;
+			//
+			//printQ_mis(  &pCtx->pProcessQ->m_q,  0  );
+
+			//
+			printMisMsg(0, 0, (MIS_MSGU*)pMsgInput);
+
+			TRANSFER_FILEEND_RESP resp;
+			//
+			memset(&resp, 0, sizeof(resp));
+			resp.uiType = CONST_imCommType_transferFileEndResp;
+			//  2015/09/08
+			resp.tmpInternal.bChkToRemove_i = TRUE;
+			//
+			if (pCtx->pProcessQ->qTraverse(tmpHandler_findOrgMsgAndProc_is, pMsgInput, &resp) <= 0) break;
+			if (resp.tmpInternal.bNeedRemoved_o)
+			{
+				//pCtx->pProcessQ->qRemoveMsg(  tmpHandler_findOrgMsgAndProc_is,  pMsgInput,  0  );
+				qmcApplyForRemovingInvalidTasks(pProcInfo, 0);  //  2015/09/07
+			}
+
+			//
+			//printQ_mis(  &pCtx->pProcessQ->m_q,  0  );
+
+			traceLogA("Î´Íê³É£ºÊµ¼ÊÉÏÕâÀï»¹Ó¦¸Ã·¢Ò»¸öendÏìÓ¦°ü");
+
+		}
+		break;
+
+	case CONST_imCommType_taskProcReq:
+		{
+
+			//  
+# ifdef  __DEBUG__
+			traceLogA("procMsgInput_mgr_req: taskProcReq");
+#endif
+
+			//
+			pMsgInput->lenInBytes = min(sizeof(pMsgInput->data),  offsetof(MIS_MSG_routeTalkData, buf) + sizeof(TRANSFER_FILE_PROCREQ)  );
+
+			if (!pCtx->pProcessQ)
+			{
+# ifdef  __DEBUG__
+				traceLogA("procMsgInput_mgr_req error: taskProcReq: pProcessQ is null");
+#endif
+				goto errLabel;
+			}
+# ifdef  __DEBUG__
+			//  printQ_mis(  &pCtx->pProcessQ->m_q,  0  );
+			//  printMisMsg(  0,  0,  (  MIS_MSGU  *  )pMsgInput  );
+			if (pContent->taskProcReq.usOp == CONST_imOp_recv_cancel)
+			{
+				int ii = 0;
+			}
+#endif
+
+			//
+			TASK_PROC_RESP resp;
+			//  
+			memset(&resp, 0, sizeof(resp));
+			resp.uiType = CONST_imCommType_taskProcResp;
+			if (pCtx->pProcessQ->qTraverse(tmpHandler_findOrgMsgAndProc_is, pMsgInput, &resp) <= 0)
+			{
+				//  
+				//  
+				if (pContent->taskProcReq.usOp == CONST_imOp_send_cancel)
+				{
+					void* pDb = NULL;
+					CE_TASK_MEM taskMem;
+					int iStatus = CONST_imTaskStatus_canceledBySender;
+					CQyString subject;
+					CQyString content;
+
+# ifndef  __NOTSUPPORT_DB__
+					CQnmDb db;
+					if (!db.getAvailableDb(pQyMc->iDsnIndex_mainSys)) goto errLabel;
+					pDb = db.m_pDbMem->pDb;
+
+					IM_TASK_RCD rcd;
+					if (!g_dbFuncs.pf_bGetImTaskRcdBySth(pDb, pSci->cfg.iDbType, FALSE, pMisCnt->cfg.misServName, &pAddrTalkData->route.idInfo_from, (time_t)pContent->taskProcReq.tStartTime_org, pContent->taskProcReq.uiTranNo_org, 0, &rcd)) goto errLabel;
+
+					memset(&taskMem, 0, sizeof(taskMem));
+					taskMem.iStatus = rcd.iStatus;
+					taskMem.iTaskId = rcd.id;
+					taskMem.idInfo_send.ui64Id = rcd.idInfo_send.ui64Id;
+					taskMem.idInfo_recv.ui64Id = rcd.idInfo_recv.ui64Id;
+					subject = rcd.subject;
+					content = rcd.content;
+#else
+					if (getCeTaskMem(pDb, pSci->cfg.iDbType, pMisCnt, &pAddrTalkData->route.idInfo_from, pContent->taskProcReq.tStartTime_org, pContent->taskProcReq.uiTranNo_org, 0, &taskMem)) goto errLabel;
+#endif
+
+					//  2014/11/22
+					switch (taskMem.iStatus)
+					{
+						case CONST_imTaskStatus_applyToRecv:
+						case CONST_imTaskStatus_resp:
+						case CONST_imTaskStatus_waitToRecv:
+							break;
+						default:
+							iErr = 0; goto errLabel;
+							break;  //  
+					}
+
+					//  
+					if (g_dbFuncs.pf_updateTaskStatus(pDb, iStatus, taskMem.iTaskId)) goto errLabel;
+					//
+#if  0	//  2014/11/22. 在代理的工作模式下，不能用route得到logicalpeer
+						  if  (  !pMsgInput->addr_logicalPeer.idInfo.ui64Id  )  {	//  
+							  if  (  getIdInfo_logicalPeer(  pSci,  pMisCnt,  &pMsgInput->data.route,  &pMsgInput->addr_logicalPeer  )  )  {
+# ifdef  __DEBUG__
+										  traceLogA(  "procMsgInput_other_req: getIdInfo_logicalPeer failed."  );  
+#endif
+					goto errLabel;
+				}
+			}
+#endif
+
+			//
+			showTaskStatus(pMisCnt, &pMsgInput->addr_logicalPeer.idInfo, &taskMem.idInfo_send, &taskMem.idInfo_recv, FALSE, pContent->taskProcReq.uiContentType_org, taskMem.iTaskId, iStatus, 0, 0, subject, content);
+
+			//  2015/10/08  
+			break;
+		}
+
+		break;      //  
+}
+
+if (pContent->taskProcReq.usOp == CONST_imOp_recv_applyForChkTaskAlive)
+{
+
+	qyShowInfo1(CONST_qyShowType_qwmComm, 0, (""), pProcInfo->who_showInfo, NULL, _T(""), _T(""), _T("Resp to %I64u, task is alive"), pMsgInput->data.route.idInfo_from.ui64Id);
+
+	resp.tStartTime_org = pContent->taskProcReq.tStartTime_org;
+	resp.uiTranNo_org = pContent->taskProcReq.uiTranNo_org;
+	resp.usCmd_org = pMsgInput->usCode;
+	resp.usOp_org = pContent->taskProcReq.usOp;
+	//
+	lenInBytes = sizeof(resp);
+	//
+	ucFlg = 0;
+	ucFlg |= CONST_commFlg_resp;        //  ×¢Òâ£¬ÕâÀïÊÇÏìÓ¦
+
+	if (postMsg2Mgr_mc(pMisCnt, NULL, CONST_misMsgType_outputTask, ucFlg, CONST_qyRc_ok, pMsgInput->tStartTime, pMsgInput->uiTranNo, 0, (char*)&resp, lenInBytes, &pMsgInput->addr_logicalPeer.idInfo, &pAddrTalkData->route.idInfo_from, pMsgInput->uiChannelType, pCtx->pMsgBuf, FALSE)) goto errLabel;
+
+	break;
+}
+
+if (resp.bNeedRemoved)
+{
+#if  0	//  2012/03/24. 这里不直接删除任务,都统一转移到chkTasks, 以便异步处理.
+							pCtx->pProcessQ->qRemoveMsg(  tmpHandler_findOrgMsgAndProc_is,  pMsgInput,  0  );
+#endif
+# ifdef  __DEBUG__
+	traceLog(_T("Need removed"));
+#endif
+}
+
+				  #ifdef  __DEBUG__
+						  //  printQ_mis(  &pCtx->pProcessQ->m_q,  0  );
+				  #endif
+
+				  }
+				  break;
+	
+			case  CONST_imCommType_transferAvInfo:
+{
+	TRANSFER_AV_INFO* pReq = NULL;
+	//
+#if  0
+				  if  (  pChannel->uiType  ==  CONST_channelType_realTimeMedia  )  {	//  realTimeMedia 
+					  qyShowInfo1(  CONST_qyShowType_qwmComm,  0,  (  ""  ),  pProcInfo->who_showInfo,  NULL,  _T(  ""  ),  _T(  ""  ),  _T(  "Error: %s ÊÕµ½ %I64u µÄ %s"  ),  qyGetDesByType1(  CONST_channelTypeTable,  pChannel->uiType  ),  pMsgInput->data.route.idInfo_from.ui64Id,  qyGetDesByType1(  getResTable(  0,  &pQyMc->cusRes,  CONST_resId_qyCommTypeTable  ),  pContent->uiType  )  );
+					  goto  errLabel;
+				  }
+#endif
+	//  2014/04/28
+	qyShowInfo1(CONST_qyShowType_qwmComm, 0, (""), pProcInfo->who_showInfo, NULL, _T(""), _T("procMsgInput_mgr_req"), _T(": recv transferAvInfo from %I64u..... tn %d"), pMsgInput->data.route.idInfo_from.ui64Id, pMsgInput->uiTranNo);
+
+	//
+	pMsgInput->lenInBytes = min(sizeof(pMsgInput->data),  offsetof(MIS_MSG_routeTalkData, buf) + sizeof(TRANSFER_AV_INFO)  );
+	//
+	pReq = (TRANSFER_AV_INFO*)&pContent->transferAvInfo;
+	//  2014/09/28
+	if (pReq->idInfo_logicalPeer.ui64Id)
+	{
+		if (pContent->transferAvInfo.uiTaskType == CONST_imTaskType_viewDynBmp)
+		{
+
+			pMsgInput->uiType = CONST_misMsgType_task;
+			pMsgInput->uiTaskType = pContent->transferAvInfo.uiTaskType;
+
+			//	
+			pMsgInput->idInfo_taskSender.ui64Id = pAddrTalkData->route.idInfo_from.ui64Id;
+			pMsgInput->idInfo_taskReceiver.ui64Id = pAddrTalkData->route.idInfo_to.ui64Id;
+			//
+			len = offsetof(MIS_MSG_TASK, data) + pMsgInput->lenInBytes;
+
+			if (pReq->idInfo_logicalPeer.ui64Id)
+			{
+				if (!pMisCnt) goto errLabel;
+				if (pReq->idInfo_logicalPeer.ui64Id == pMisCnt->idInfo.ui64Id)
+				{
+					showInfo_open(0, 0, _T("procMsgInput_other_req failed, viewDynBmp, req.idInfo_logicalPeer is me"));
+					goto errLabel;
+				}
+				pMsgInput->addr_logicalPeer.idInfo.ui64Id = pReq->idInfo_logicalPeer.ui64Id;
+			}
+			else
+			{
+				pMsgInput->addr_logicalPeer.idInfo.ui64Id = pAddrTalkData->route.idInfo_from.ui64Id;
+			}
+
+			if (qPostMsg(pMsgInput, len, &pQyMc->gui.processQ))
+			{
+				traceLogA("mcThreadProc_mis_work(  ): qPostMsg(  ) failed");
+				goto errLabel;
+			}
+			PostMessage(pQyMc->gui.hMainWnd, CONST_qyWm_postComm, CONST_qyWmParam_msgArrive, 0);
+
+			iErr = 0; goto errLabel;
+		}
+	}
+
+	//
+#if  0	//  2014/11/19. 不能修改req.idInfo_logicalPeer以及to,from。因为在avproxy时，需要用这几个参数来判断是否需要proxy. 处理时要利用addr_logicalPeer或者req.idInfo_logicalPeer
+				  if  (  pReq->idInfo_logicalPeer.ui64Id  )  {
+					  traceLogA(  "procMsgInput_other_req: transferAvInfo, use idInfo_logicalPeer to set idInfo_to"  );
+					  pAddrTalkData->route.idInfo_to.ui64Id  =  pReq->idInfo_logicalPeer.ui64Id;
+					  pReq->idInfo_logicalPeer.ui64Id  =  0;
+				  }
+#endif
+	//
+#if  10
+				  if  (  pReq->idInfo_logicalPeer.ui64Id  )  {
+					  if  (  !pMisCnt  )  goto  errLabel;
+					  if  (  pReq->idInfo_logicalPeer.ui64Id  ==  pMisCnt->idInfo.ui64Id  )  {
+						  showInfo_open(  0,  0,  _T(  "procMsgInput_other_req failed, req.idInfo_logicalPeer is me"  )  );
+						  goto  errLabel;
+					  }
+					  pMsgInput->addr_logicalPeer.idInfo.ui64Id  =  pReq->idInfo_logicalPeer.ui64Id;
+				  }
+#endif
+	//
+	pMsgInput->uiType = CONST_misMsgType_task;
+	//
+	pMsgInput->idInfo_taskSender.ui64Id = pAddrTalkData->route.idInfo_from.ui64Id;
+	pMsgInput->idInfo_taskReceiver.ui64Id = pAddrTalkData->route.idInfo_to.ui64Id;
+	//
+	len = offsetof(MIS_MSG_TASK, data) + pMsgInput->lenInBytes;
+	//
+	//  if  (  procMsgTask_mc_media(  pQyMc,  pSci,  pProcInfo,  pMsgInput,  len,  TRUE,  pCtx,  pChannel  )  )  goto  errLabel;
+	if (procMsgTask_mc_mgr(pQyMc, pSci, pProcInfo, pMsgInput, len, TRUE, pCtx, pChannel)) goto errLabel;
+}
+break;
+
+			case  CONST_imCommType_transferAvReplyInfo:
+{
+	TRANSFER_AV_replyInfo* pReq = NULL;
+	//
+	if (pChannel->uiType == CONST_channelType_realTimeMedia)
+	{   //  realTimeMedia 
+		qyShowInfo1(CONST_qyShowType_qwmComm, 0, (""), pProcInfo->who_showInfo, NULL, _T(""), _T(""), _T("Error: %s ÊÕµ½ %I64u µÄ %s"), qyGetDesByType1(CONST_channelTypeTable, pChannel->uiType), pMsgInput->data.route.idInfo_from.ui64Id, qyGetDesByType1(getResTable(0, &pQyMc->cusRes, CONST_resId_qyCommTypeTable), pContent->uiType));
+		goto errLabel;
+	}
+	//
+	pMsgInput->lenInBytes = min(sizeof(pMsgInput->data),  offsetof(MIS_MSG_routeTalkData, buf) + sizeof(TRANSFER_AV_replyInfo)  );
+	//
+	pReq = (TRANSFER_AV_replyInfo*)&pContent->transferAvReplyInfo;
+	//
+	pMsgInput->uiType = CONST_misMsgType_task;
+	//
+	pMsgInput->idInfo_taskSender.ui64Id = pAddrTalkData->route.idInfo_to.ui64Id;
+	pMsgInput->idInfo_taskReceiver.ui64Id = pAddrTalkData->route.idInfo_from.ui64Id;
+	//
+	len = offsetof(MIS_MSG_TASK, data) + pMsgInput->lenInBytes;
+
+	if (procMsgTask_mc_mgr(pQyMc, pSci, pProcInfo, pMsgInput, len, TRUE, pCtx, pChannel)) goto errLabel;
+}
+break;
+
+			case  CONST_imCommType_transferVideoData:
+{
+	CQyQ2Help q2Help;
+
+# ifdef  __DEBUG__
+	traceLogA("mm");
+#endif
+
+	msgLen += sizeof(pContent->transferVideoData  );
+	if (q2Help.qPostMsgAndTrigger(pMsg, msgLen, &pProcInfo->mediaQ2)) goto errLabel;
+}
+break;
+
+			case  CONST_imCommType_transferAudioData:
+{
+	CQyQ2Help q2Help;
+
+	msgLen += sizeof(pContent->transferAudioData  );
+	if (q2Help.qPostMsgAndTrigger(pMsg, msgLen, &pProcInfo->realTimeMediaQ2)) goto errLabel;
+}
+break;
+
+default:
+					bNeedProcess = TRUE;
+break;
+	}
+	if (!bNeedProcess)
+{
+	iErr = 0; goto errLabel;
+}
+
+
+
+
+//		
+switch (pContent->uiType)
+{
+	case CONST_imCommType_transferAvInfo:
+		{
+			CQyQ2Help q2Help;
+			//
+			msgLen += sizeof(pContent->transferAvInfo  );
+			//
+			if (q2Help.qPostMsgAndTrigger(pMsg, msgLen, &pProcInfo->mediaQ2)) goto errLabel;
+		}
+		break;
+	case CONST_imCommType_transferAvReplyInfo:
+		{
+			CQyQ2Help q2Help;
+
+			msgLen += sizeof(pContent->transferAvReplyInfo  );
+			if (q2Help.qPostMsgAndTrigger(pMsg, msgLen, &pProcInfo->mediaQ2)) goto errLabel;
+		}
+		break;
+	case CONST_imCommType_transferVideoData:
+		{
+			CQyQ2Help q2Help;
+
+# ifdef  __DEBUG__
+			traceLogA("mm");
+#endif
+
+			msgLen += sizeof(pContent->transferVideoData  );
+			if (q2Help.qPostMsgAndTrigger(pMsg, msgLen, &pProcInfo->mediaQ2)) goto errLabel;
+		}
+		break;
+	case CONST_imCommType_transferVideoDataResp:
+		{
+			CQyQ2Help q2Help;
+
+			msgLen += sizeof(pContent->transferVideoDataResp  );
+			if (q2Help.qPostMsgAndTrigger(pMsg, msgLen, &pProcInfo->mediaQ2)) goto errLabel;
+		}
+		break;
+	case CONST_imCommType_transferAudioData:
+		{
+			CQyQ2Help q2Help;
+
+			msgLen += sizeof(pContent->transferAudioData  );
+			if (q2Help.qPostMsgAndTrigger(pMsg, msgLen, &pProcInfo->realTimeMediaQ2)) goto errLabel;
+		}
+		break;
+	case CONST_imCommType_transferAudioDataResp:
+		{
+			CQyQ2Help q2Help;
+
+			msgLen += sizeof(pContent->transferAudioDataResp  );
+			if (q2Help.qPostMsgAndTrigger(pMsg, msgLen, &pProcInfo->realTimeMediaQ2)) goto errLabel;
+		}
+		break;
+	case CONST_imCommType_remoteAssistReq:
+		{
+			CQyQ2Help q2Help;
+
+			msgLen += sizeof(pContent->remoteAssistReq  );
+			//  if  (  q2Help.qPostMsgAndTrigger(  pMsg,  msgLen,  &pProcInfo->mediaQ2  )  )  goto  errLabel;				   				
+			if (q2Help.qPostMsgAndTrigger(pMsg, msgLen, &pProcInfo->rtOpQ2)) goto errLabel;
+		}
+		break;
+	case CONST_imCommType_taskProcReq:
+		{
+			CQyQ2Help q2Help;
+
+			msgLen += sizeof(pContent->taskProcReq  );
+			if (q2Help.qPostMsgAndTrigger(pMsg, msgLen, &pProcInfo->mediaQ2)) goto errLabel;
+		}
+		break;
+	case CONST_imCommType_taskProcResp:
+		{
+			CQyQ2Help q2Help;
+
+			msgLen += sizeof(pContent->taskProcResp  );
+			if (q2Help.qPostMsgAndTrigger(pMsg, msgLen, &pProcInfo->mediaQ2)) goto errLabel;
+		}
+		break;
+	case CONST_imCommType_transferGpsInfo:
+		{   //  2012/04/20
+			CQyQ2Help q2Help;
+
+			msgLen += sizeof(pContent->transferGpsInfo  );
+			if (q2Help.qPostMsgAndTrigger(pMsg, msgLen, &pProcInfo->mediaQ2)) goto errLabel;
+		}
+		break;
+	case CONST_imCommType_transferGpsReplyInfo:
+		{
+			CQyQ2Help q2Help;
+
+			msgLen += sizeof(pContent->transferGpsReplyInfo  );
+			if (q2Help.qPostMsgAndTrigger(pMsg, msgLen, &pProcInfo->mediaQ2)) goto errLabel;
+		}
+		break;
+	case CONST_imCommType_transferGpsData:
+		{
+			CQyQ2Help q2Help;
+
+			msgLen += sizeof(pContent->transferGpsData  );
+			if (q2Help.qPostMsgAndTrigger(pMsg, msgLen, &pProcInfo->mediaQ2)) goto errLabel;
+		}
+		break;
+	case CONST_imCommType_ptzControlReq:
+		{   //  2012/08/06
+			CQyQ2Help q2Help;
+
+			msgLen += sizeof(pContent->ptzControlReq  );
+			if (q2Help.qPostMsgAndTrigger(pMsg, msgLen, &pProcInfo->mediaQ2)) goto errLabel;
+		}
+		break;
+	case CONST_imCommType_ptzControlCmd:
+		{   //  2012/08/06
+			CQyQ2Help q2Help;
+
+			msgLen += sizeof(pContent->ptzControlCmd  );
+			if (q2Help.qPostMsgAndTrigger(pMsg, msgLen, &pProcInfo->mediaQ2)) goto errLabel;
+		}
+		break;
+
+	//  2014/05/03
+	case CONST_imCommType_retrieveDynBmps:
+# ifdef  __DEBUG__
+		traceLog(_T("procMsgInput_mgr_req: retrieveDynBmps"));
+#endif
+		msgLen += sizeof(pContent->retrieveDynBmps  );
+		if (qPostMsg(pMsg, msgLen, &pQyMc->gui.processQ)) goto errLabel;
+		PostMessage(pQyMc->gui.hMainWnd, CONST_qyWm_postComm, CONST_qyWmParam_msgArrive, 0);
+		//
+		break;
+
+	//  2015/08/02
+	case CONST_imCommType_procOfflineRes:
+# ifdef  __DEBUG__
+		traceLog(_T("procMsgInput_mgr_req: procOfflineRes"));
+#endif
+		msgLen += sizeof(pContent->procOfflineResU  );
+		//
+		if (pContent->procOfflineResU.common.usSubtype == CONST_procOfflineResSubtype_download)
+		{
+			if (qPostMsg(pMsg, msgLen, &pQyMc->gui.processQ)) goto errLabel;
+			PostMessage(pQyMc->gui.hMainWnd, CONST_qyWm_postComm, CONST_qyWmParam_msgArrive, 0);
+			break;
+		}
+		//
+		qPostMsgAndTrigger(pMsg, msgLen, &pProcInfo->schedulerQ);
+		//
+		break;
+
+	//  2018/10/27
+	case CONST_imCommType_imGrp:
+# ifdef  __DEBUG__
+		traceLog(_T("procMsgInput_mgr_req: imGrp"));
+#endif
+		msgLen += sizeof(pContent->imGrpEx  );
+		//
+		if (qPostMsg(pMsg, msgLen, &pQyMc->gui.processQ)) goto errLabel;
+		PostMessage(pQyMc->gui.hMainWnd, CONST_qyWm_postComm, CONST_qyWmParam_msgArrive, 0);
+
+
+		break;
+
+	default:
+# ifdef  __DEBUG__
+		traceLog(_T("procMsgInput_mgr_req: unprocessed contentType %d"), pContent->uiType);
+#endif
+		qyShowInfo1(CONST_qyShowType_qwmComm, 0, (""), _T("IsClient"), 0, _T(""), _T(""), _T("procMsgInput_mgr_req: unprocessed contentType %d"), pContent->uiType);
+		break;
+
+
+
+}
+	*/
+
+iErr = 0;
+
+errLabel:
+
+return iErr;
+}
+
+	}
+}

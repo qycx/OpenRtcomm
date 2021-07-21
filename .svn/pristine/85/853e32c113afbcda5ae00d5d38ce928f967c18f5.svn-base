@@ -1,0 +1,158 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+
+partial class Consts
+{
+    public const int CONST_imCommType_base = 3000;
+public const int CONST_imCommType_max									=(  CONST_imCommType_base  +  1999  );	//  每个服务留个2000个结构的类型
+
+
+    //  下面为由第三方可以自定义的区间, 在qyCommProc_open.h中定义
+    //  public const int		CONST_imCommType_custom_base						32000
+    //
+    //  public const int		CONST_imCommType_custom_max							=(  40000  -  1  );
+
+
+
+
+    /////////////////////////////////////////////////
+
+    //  qnmPcComm.h
+    //  public const int		CONST_imCommType_base								3000
+
+    //  
+public const int CONST_imCommType_htmlContent							=(  CONST_imCommType_base  +  1  );		//  2007/05/07
+public const int CONST_imCommType_simpleResp								=(  CONST_imCommType_base  +  2  );		//  2007/05/07
+    //  public const int		CONST_imCommType_streamContent						=(  CONST_imCommType_base  +  3  );		//  2007/08/01	//  2011/01/29
+public const int CONST_imCommType_msgRoute								=(  CONST_imCommType_base  +  4  );		//  2007/11/29
+public const int CONST_imCommType_dataContent							=(  CONST_imCommType_base  +  5  );		//  2008/01/26, 
+public const int CONST_imCommType_lStream								=(  CONST_imCommType_base  +  6  );		//  2008/04/01, 
+
+
+
+    //  
+public const int CONST_imCommType_auth									=(  CONST_imCommType_base  +  100  );		//  2007/08/01
+public const int CONST_imCommType_authResp								=(  CONST_imCommType_base  +  101  );		//  
+public const int CONST_imCommType_mem									=(  CONST_imCommType_base  +  102  );		//  
+public const int CONST_imCommType_struct									=(  CONST_imCommType_base  +  103  );		//  2014/11/09
+    //
+public const int CONST_imCommType_getCfgsReq								=(  CONST_imCommType_base  +  110  );       //  2011/01/30
+
+   //  
+    //  
+public const int CONST_imCommType_retrieveImGrpListReq					=(  CONST_imCommType_base  +  200  );
+public const int CONST_imCommType_retrieveImGrpListResp					=(  CONST_imCommType_base  +  201  );		//  2007/08/27
+public const int CONST_imCommType_retrieveImGrpMemListReq				=(  CONST_imCommType_base  +  202  );
+public const int CONST_imCommType_retrieveImGrpMemListResp				=(  CONST_imCommType_base  +  203  );
+public const int CONST_imCommType_retrieveContactListReq					=(  CONST_imCommType_base  +  204  );
+public const int CONST_imCommType_retrieveContactListResp				=(  CONST_imCommType_base  +  205  );
+public const int CONST_imCommType_retrieveImObjListEndReq				=(  CONST_imCommType_base  +  206  );
+public const int CONST_imCommType_retrieveImObjListEndResp				=(  CONST_imCommType_base  +  207  );
+
+    //  
+public const int CONST_imCommType_messengerRegInfo						=(  CONST_imCommType_base  +  220  );
+public const int CONST_imCommType_messengerPcInfo						=(  CONST_imCommType_base  +  221  );
+public const int CONST_imCommType_messengerAccount						=(  CONST_imCommType_base  +  222  );		//  2010/01/06
+
+
+    //  
+public const int CONST_imCommType_refreshRecentFriendsReq				=(  CONST_imCommType_base  +  230  );  
+public const int CONST_imCommType_refreshRecentFriendsResp				=(  CONST_imCommType_base  +  231  );  
+
+    //  
+public const int CONST_imCommType_transferFileReq						=(  CONST_imCommType_base  +  250  );		//  2007/06/23
+public const int CONST_imCommType_transferFileReplyReq					=(  CONST_imCommType_base  +  251  );
+public const int CONST_imCommType_transferFileDataReq					=(  CONST_imCommType_base  +  252  );		//  2007/06/23,
+public const int CONST_imCommType_transferFileDataResp					=(  CONST_imCommType_base  +  253  );		//  2007/06/23,
+public const int CONST_imCommType_transferFileEndReq						=(  CONST_imCommType_base  +  254  );		//  2007/06/23,
+public const int CONST_imCommType_transferFileEndResp					=(  CONST_imCommType_base  +  255  );		//  2007/06/23,
+    //
+public const int CONST_imCommType_taskProcReq							=(  CONST_imCommType_base  +  256  );		//  2008/05/29
+public const int CONST_imCommType_taskProcResp							=(  CONST_imCommType_base  +  257  );		//  2008/05/29
+
+    //
+public const int CONST_imCommType_rtcCallReq								=(  CONST_imCommType_base  +  260  );		//  2007/10/07, rtcè??????ó
+
+    //  ó?ò?êó?μ???óoí???′
+public const int CONST_imCommType_transferAvInfo							=(  CONST_imCommType_base  +  265  );		//  2008/03/15, 
+public const int CONST_imCommType_transferAvReplyInfo					=(  CONST_imCommType_base  +  266  );		//  2008/03/16, 
+public const int CONST_imCommType_transferVideoData						=(  CONST_imCommType_base  +  267  );		//  2008/03/15, 
+public const int CONST_imCommType_transferVideoDataResp					=(  CONST_imCommType_base  +  268  );		//  2008/03/15, 
+    //
+public const int CONST_imCommType_transferAudioData						=(  CONST_imCommType_base  +  271  );		//  2008/04/16, 
+public const int CONST_imCommType_transferAudioDataResp					=(  CONST_imCommType_base  +  272  );		//  2008/04/21, 
+
+public const int CONST_imCommType_remoteAssistReq						=(  CONST_imCommType_base  +  280  );		//  2008/11/15, 
+
+public const int CONST_imCommType_taskInteractionReq						=(  CONST_imCommType_base  +  290  );		//  2009/02/23
+public const int CONST_imCommType_videoConferenceStatus					=(  CONST_imCommType_base  +  291  );		//  2009/02/23
+public const int CONST_imCommType_videoConferenceLayout					=(  CONST_imCommType_base  +  292  );		//  2010/12/27
+public const int CONST_imCommType_confState								=(  CONST_imCommType_base  +  293  );		//  2017/09/17
+
+    //
+public const int CONST_imCommType_transferGpsInfo						=(  CONST_imCommType_base  +  300  );		//  2012/04/19
+public const int CONST_imCommType_transferGpsReplyInfo					=(  CONST_imCommType_base  +  301  );		//  2012/04/19
+public const int CONST_imCommType_transferGpsData						=(  CONST_imCommType_base  +  302  );		//  2012/04/20
+public const int CONST_imCommType_transferGpsDataResp					=(  CONST_imCommType_base  +  303  );		//  2012/04/20
+
+    //  2012/08/05
+public const int CONST_imCommType_ptzControlReq							=(  CONST_imCommType_base  +  310  );
+public const int CONST_imCommType_ptzControlCmd							=(  CONST_imCommType_base  +  311  );
+
+    //
+public const int CONST_imCommType_imGrp									=(  CONST_imCommType_base  +  350  );		//  2017/07/29
+public const int CONST_imCommType_refreshImGrp							=(  CONST_imCommType_base  +  351  );		//  2007/08/23
+
+    //  
+public const int CONST_imCommType_retrieveWebContactListReq				=(  CONST_imCommType_base  +  400  );		//  2007/11/25￡?2é?ˉí???áa?μè?μ????ó
+public const int CONST_imCommType_retrieveWebContactListResp				=(  CONST_imCommType_base  +  401  );		//  2007/11/25￡?2é?ˉí???áa?μè?μ??ìó|
+    //
+public const int CONST_imCommType_refreshWebContactsInfo					=(  CONST_imCommType_base  +  402  );		//  2007/12/22
+public const int CONST_imCommType_ipKnowledge							=(  CONST_imCommType_base  +  403  );		//  2007/12/23, ipμ??aê??a.
+    //
+
+    //  
+public const int CONST_imCommType_retrieveCustomerServiceObjListReq		=(  CONST_imCommType_base  +  406  );		//  2011/04/04
+public const int CONST_imCommType_queryCustomerServiceOfficerReq			=(  CONST_imCommType_base  +  407  );		//  2011/04/04
+public const int CONST_imCommType_queryCustomerServiceOfficerReplyReq	=(  CONST_imCommType_base  +  408  );		//  2011/04/04
+
+    //
+public const int CONST_imCommType_queryPeerStatus						=(  CONST_imCommType_base  +  420  );		//  2014/07/11
+
+
+
+    //  gsmμ??ìD???ê?
+public const int CONST_imCommType_smPkt									=(  CONST_imCommType_base  +  500  );		//  2008/01/05
+public const int CONST_imCommType_phoneGuest								=(  CONST_imCommType_base  +  501  );		//  2008/01/20
+public const int CONST_imCommType_vDevComs								=(  CONST_imCommType_base  +  502  );		//  2008/01/24, 3502, ìá??COM×′ì?
+public const int CONST_imCommType_retrieveSmPolicy						=(  CONST_imCommType_base  +  503  );		//  2008/01/24, 3503, ??è?SM2????￡?÷òaê?smContacts
+public const int CONST_imCommType_retrievePhoneMsgrs						=(  CONST_imCommType_base  +  504  );		//  2008/01/24, 3504, ??è?ê??úmessengeráD±í
+public const int CONST_imCommType_retrieveToPaths						=(  CONST_imCommType_base  +  505  );		//  2008/01/24, 3505, ??è?·￠?íí¨μàáD±í
+    //
+public const int CONST_imCommType_refreshDynBmps							=(  CONST_imCommType_base  +  506  );		//  2009/08/24
+public const int CONST_imCommType_retrieveDynBmps						=(  CONST_imCommType_base  +  507  );		//  2009/09/04
+public const int CONST_imCommType_refreshImObjRulesReq					=(  CONST_imCommType_base  +  508  );		//  2010/08/14
+public const int CONST_imCommType_verifyViewDynBmp						=(  CONST_imCommType_base  +  509  );		//  2011/10/31, 校验查看该共享源的请求是否有效
+    //
+public const int CONST_imCommType_vDevData								=(  CONST_imCommType_base  +  510  );		//  2008/01/24, 3503, 
+    //
+public const int CONST_imCommType_procOfflineRes							=(  CONST_imCommType_base  +  511  );		//  2015/08/01
+
+
+    //  
+public const int CONST_imCommType_getDaemonStatusReq						=(  CONST_imCommType_base  +  550  );		//  2011/01/08
+public const int CONST_imCommType_testSpeedReq							=(  CONST_imCommType_base  +  551  );		//  2016/12/28
+
+
+    //  for internal use. 2015/08/24
+public const int CONST_imCommType_qyCommSession							=(  CONST_imCommType_base  +  1500  );	//  2015/08/24
+
+
+}
+
+
+namespace qy
+{
+}

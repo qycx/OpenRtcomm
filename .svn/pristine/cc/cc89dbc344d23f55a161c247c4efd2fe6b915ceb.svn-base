@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+//
+partial class Consts
+{
+    public const int MSG_login_canceled = 1;
+    public const int MSG_allContactsRetrieved = 2;
+}
+
+//
+namespace qy
+{
+    public delegate int PF_guiSendMessage(object wnd, int msgId);
+
+    partial class qyFuncs
+{
+        public static class guiShare
+        {
+            public static PF_guiSendMessage pf_guiSendMessage;
+        };
+
+}
+
+
+}

@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace qy
+{
+    partial class qyFuncs
+{
+    public static int showInfo_open(object p0, string tWhere, string hint)
+    {
+            if (tWhere == null) tWhere = "";
+            if (hint == null) hint = "";
+
+            Console.WriteLine("{0}:{1}", tWhere, hint);
+
+            return 0;
+    }
+
+}
+}

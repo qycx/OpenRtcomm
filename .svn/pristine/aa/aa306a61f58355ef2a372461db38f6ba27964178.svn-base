@@ -1,0 +1,73 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace qy
+{
+
+
+	class CCtxQmc_gui : CCtxQmc
+    {
+        public CCtxQmc_gui()
+        {
+
+        }
+        ~CCtxQmc_gui()
+        {
+
+        }
+
+		public override unsafe int setQmDbFuncs(int iDbType, QM_dbFuncs pDbFuncs)
+		{
+			return  qyFuncs.setQmDbFuncs_qm(iDbType, pDbFuncs);
+		}
+
+
+		public static unsafe int newVar_isCli_gui(CCtxQyMc pQyMc, ref QY_SERVICEGUI_INFO pSci, IntPtr p2)
+		{
+
+			CCtxQmc p = null;
+
+			p = new CCtxQmc_gui();
+
+			if (null == p) return -1;
+
+			pSci.pVar = p;
+
+			return 0;
+		}
+
+		public static int freeVar_isCli_gui(CCtxQyMc pQyMc, ref QY_SERVICEGUI_INFO pSci, IntPtr p2)
+		{
+
+			if (pSci.pVar != null)
+			{
+				CCtxQmc p = (CCtxQmc)pSci.pVar;
+				//delete p;
+				pSci.pVar = null;
+			}
+
+			return 0;
+		}
+
+		
+		public override unsafe int postMsg2Mgr_mc(MIS_CNT pMIS_CNT, MSG_ROUTE* pRoute, uint uiMisMsgType, byte ucFlg, ushort usCode, Int64 tStartTime, uint uiTranNo, uint uiSeqNo, byte* data, uint dataLen, QY_MESSENGER_ID* pIdInfo_logicalPeer, QY_MESSENGER_ID* pIdInfo_dst, uint uiChannelType, MIS_MSGU* pMsgBuf, bool bLog)
+		{
+			return  postMsg2Mgr_mc(pMIS_CNT, pRoute, uiMisMsgType, ucFlg, usCode, tStartTime, uiTranNo, uiSeqNo, data, dataLen, pIdInfo_logicalPeer, pIdInfo_dst, uiChannelType, pMsgBuf, bLog);
+		}
+
+
+		//
+		/*
+		int postMsgTask2Mgr_mc(void* pMIS_CNT, unsigned  int uiMisMsgType, unsigned  char ucFlg, unsigned  short usCode, time_t tStartTime, unsigned  int uiTranNo, unsigned  int uiSeqNo, int iTaskId, unsigned  int uiTaskType, char* data, unsigned  int dataLen, QY_MESSENGER_ID* pIdInfo_logicalPeer, QY_MESSENGER_ID* pIdInfo_taskSender, QY_MESSENGER_ID* pIdInfo_taskReceiver, QY_MESSENGER_ID* pIdInfo_dst, unsigned  int uiChannelType, MIS_MSGU* pMsgBuf, BOOL bLog)
+		{
+			return  ::postMsgTask2Mgr_mc(pMIS_CNT, uiMisMsgType, ucFlg, usCode, tStartTime, uiTranNo, uiSeqNo, iTaskId, uiTaskType, data, dataLen, pIdInfo_logicalPeer, pIdInfo_taskSender, pIdInfo_taskReceiver, pIdInfo_dst, uiChannelType, pMsgBuf, bLog);
+		}
+		*/
+
+
+
+
+	}
+
+}

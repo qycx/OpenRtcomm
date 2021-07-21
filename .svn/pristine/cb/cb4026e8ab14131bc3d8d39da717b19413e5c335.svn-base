@@ -1,0 +1,618 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace qy
+{
+	partial class qyFuncs
+	{
+
+		public static unsafe int procMsgInput_scheduler_req(ref MT_SUBTHREADINFO pSubThreadInfo, CCtxQmc pProcInfo, MIS_CNT pMisCnt, MIS_MSG_INPUT* pMsgInput, uint lenInBytes_input, ref CTX_MC_thread pCtx)
+		{
+			int iErr = -1;
+			/*
+			IM_CONTENTU* pContent = NULL;
+			TCHAR sqlBuf[CONST_maxSqlBufLen + 1] = _T("");
+			char timeBuf[CONST_qyTimeLen + 1] = "";
+			//
+			if (!pProcInfo) return -1;
+			QY_MC* pQyMc = pProcInfo->pQyMc;
+			QM_dbFuncs* pDbFuncs = pQyMc->p_g_dbFuncs;
+			if (!pDbFuncs) return -1;
+			QM_dbFuncs & g_dbFuncs = *pDbFuncs;
+
+			if (!pMisCnt) return -1;
+
+# ifdef  __DEBUG__
+			traceLogA("procMsgInput_scheduler_req called");
+#endif
+
+			if (isUcFlgResp(pMsgInput->ucFlg))
+			{
+# ifdef  __DEBUG__
+				traceLogA("procMsgInput_scheduler_req failed, not req");
+#endif
+				goto errLabel;
+			}
+			if (!pMsgInput->ucbConvrted)
+			{
+# ifdef  __DEBUG__
+				traceLogA("procMsgInput_scheduler_req: not converted");
+#endif
+				goto errLabel;
+			}
+			pContent = M_getMsgContent(pMsgInput->ucFlg, &pMsgInput->data);
+
+
+			switch (pContent->uiType)
+			{
+
+				//  2015/08/01
+				case CONST_imCommType_procOfflineRes:
+					if (mcProcReq_procOfflineRes(pSubThreadInfo, pSci, pMisCnt, pMsgInput, (CTX_MC_scheduler*)pCtx)) goto errLabel;
+					break;
+				//
+				default:
+# ifdef  __DEBUG__
+					traceLogA("procMsgInput_scheduler_req: unprocessed contentType, %s", pContent->uiType);
+#endif
+					break;
+
+			}
+			*/
+
+			iErr = 0;
+		errLabel:
+
+			if (0!=iErr)
+			{
+			}
+
+
+			return iErr;
+		}
+
+		//
+		public static unsafe int procMsgInput_scheduler_resp(ref MT_SUBTHREADINFO pSubThreadInfo, CCtxQmc pProcInfo, MIS_CNT pMisCnt, MIS_MSG_INPUT* pMsgInput, uint lenInBytes_input, ref CTX_MC_thread pCtx)
+		{
+			int iErr = -1;
+			/*
+			IM_CONTENTU* pContent = NULL;
+			TCHAR sqlBuf[CONST_maxSqlBufLen + 1] = _T("");
+			char timeBuf[CONST_qyTimeLen + 1] = "";
+			//
+			if (!pProcInfo) return -1;
+			QY_MC* pQyMc = pProcInfo->pQyMc;
+			QM_dbFuncs* pDbFuncs = pQyMc->p_g_dbFuncs;
+			if (!pDbFuncs) return -1;
+			QM_dbFuncs & g_dbFuncs = *pDbFuncs;
+
+			if (!pMisCnt) return -1;
+
+# ifdef  __DEBUG__
+			traceLogA("procMsgInput_scheduler_resp called");
+#endif
+
+			if (!isUcFlgResp(pMsgInput->ucFlg))
+			{
+# ifdef  __DEBUG__
+				traceLogA("procMsgInput_scheduler_resp failed, not resp");
+#endif
+				goto errLabel;
+			}
+			if (!pMsgInput->ucbConvrted)
+			{
+# ifdef  __DEBUG__
+				traceLogA("procMsgInput_scheduler_resp: not converted");
+#endif
+				goto errLabel;
+			}
+			if (isUcFlgRouteTalkData(pMsgInput->ucFlg) || isUcFlgTalkData(pMsgInput->ucFlg))
+			{
+# ifdef  __DEBUG__
+				traceLogA("procMsgInput_scheduler_resp: not addrTalkData or talkData");
+#endif
+				goto errLabel;
+			}
+			pContent = (IM_CONTENTU*)&pMsgInput->data;
+
+
+			switch (pContent->uiType)
+			{
+
+				case CONST_imCommType_simpleResp:
+					switch (pContent->simpleResp.uiContentType_org)
+					{
+						case CONST_imCommType_messengerRegInfo:
+							{
+								traceLogA("messengerRegInfo");
+
+#if  0
+								 char						idStr[CONST_qyMessengerIdStrLen  +  1]	=	"";	
+								 if  (  !idInfo2Str(  &pMisCnt->idInfo,  idStr,  mycountof(  idStr  )  )  )  goto  errLabel;
+#endif
+
+# ifndef  __NOTSUPPORT_DB__
+#if  0
+								 getCurTime(  timeBuf  );
+								 _sntprintf(  sqlBuf,  mycountof(  sqlBuf  ),  _T(  "update %s set tCommitTime='%s' where misServName=%s and idStr='%s'"  ),  CONST_tabName_qyImObjRegInfoTab1,  CString(  timeBuf  ),  getDbValStr(  pSci->cfg.iDbType,  CONST_iDataType_misServName,  pMisCnt->cfg.misServName  ),  CString(  idStr  )  );
+								 if  (  !bQyExecSql(  pSubThreadInfo->pDb,  sqlBuf  )  )  {
+									 traceLogA(  ""  );  goto  errLabel;
+								 }
+#endif
+								if (!g_dbFuncs.pf_bUpdateImObjRegInfo_procMsgInput_scheduler(pSubThreadInfo->pDb, pSci, pMisCnt, &pMisCnt->idInfo)) goto errLabel;
+#endif
+								//
+							}
+							break;
+						case CONST_imCommType_messengerPcInfo:
+							traceLogA("procMsgInput_scheduler: resp, messengerPcInfo");
+							//
+							pMisCnt->ucbNeedSndDevInfo = FALSE;
+							break;
+						case CONST_imCommType_messengerAccount:
+							traceLogA("procMsgInput_scheduler: resp, messengerAccount");
+							//
+							//  pProcInfo->bInProgress_toSetPasswd  =  FALSE;
+							notifyProgressEnd(pMsgInput->uiTranNo, 0);
+							break;
+						default:
+							break;
+
+					}
+					//
+					break;
+
+				case CONST_imCommType_retrieveImGrpListResp:
+				case CONST_imCommType_retrieveImGrpMemListResp:
+				case CONST_imCommType_retrieveContactListResp:
+				case CONST_imCommType_retrieveImObjListEndResp:
+					if (mcProcResp_retrieveImObjListReq(pSubThreadInfo, pSci, pMisCnt, pMsgInput, pCtx)) goto errLabel;
+					break;
+				//  case  CONST_imCommType_intervalParams:
+				case CONST_imCommType_getCfgsReq:
+				case CONST_imCommType_retrieveToPaths:
+					if (mcProcResp_getCfgs(pSubThreadInfo, pSci, pMisCnt, pMsgInput, pCtx)) goto errLabel;
+					break;
+				case CONST_imCommType_retrievePhoneMsgrs:
+					if (mcProcResp_retrievePhoneMsgrs(pSubThreadInfo, pSci, pMisCnt, pMsgInput, pCtx)) goto errLabel;
+					break;
+				case CONST_imCommType_retrieveDynBmps:
+					if (mcProcResp_retrieveDynBmps(pSubThreadInfo, pSci, pMisCnt, pMsgInput, (CTX_MC_scheduler*)pCtx)) goto errLabel;
+					break;
+				case CONST_imCommType_refreshImObjRulesReq:
+					if (mcProcResp_refreshImObjRulesReq(pSubThreadInfo, pSci, pMisCnt, pMsgInput, (CTX_MC_scheduler*)pCtx)) goto errLabel;
+					break;
+				//  2015/08/01
+				case CONST_imCommType_procOfflineRes:
+					if (mcProcResp_procOfflineRes(pSubThreadInfo, pSci, pMisCnt, pMsgInput, (CTX_MC_scheduler*)pCtx)) goto errLabel;
+					break;
+				//
+				default:
+# ifdef  __DEBUG__
+					traceLogA("procMsgInput_scheduler_resp: unprocessed contentType, %s", pContent->uiType);
+#endif
+					break;
+
+			}
+			*/
+
+			iErr = 0;
+		errLabel:
+
+			if (0!=iErr)
+			{
+			}
+
+
+			return iErr;
+		}
+
+
+		public static unsafe void mcThreadProc_mis_scheduler(object lpParameter)
+		{
+			CCtxQyMc pQyMc = g.g_pQyMc;
+			CCtxQmc pProcInfo = pQyMc.get_pProcInfo();
+			MIS_CNT pMisCnt = pProcInfo.pMisCnt;
+
+			int loopCtrl = 0;
+			//uint dwThreadId = GetCurrentThreadId();
+			MIS_MSGU* pMsg = null;
+			uint len;
+			uint dwRet;
+			//CQnmDb db=new CQnmDb();
+			MT_SUBTHREADINFO subThreadInfo;
+			uint dwCurTickCnt = 0;
+			int i;
+			CTX_MC_scheduler ctx;
+			//
+			uint uiChannelType = Consts.CONST_channelType_talking;
+
+
+			//traceLogA("mcThreadProc_mis_scheduler:  enters");
+
+			using (CQyMalloc mallocObj = new CQyMalloc())
+			{
+				using (CQyMalloc mallocObj_pMsgBuf_forInput = new CQyMalloc())
+				{
+					using (CQyMalloc mallocObj_pMsgBuf = new CQyMalloc())
+					{
+						using (CQnmDb db = new CQnmDb())
+						{
+
+							//mymemset((IntPtr)&subThreadInfo, 0, sizeof(MT_SUBTHREADINFO));
+							//mymemset(&ctx, 0, sizeof(CTX_MC_scheduler));
+							subThreadInfo = new MT_SUBTHREADINFO();
+							ctx = new CTX_MC_scheduler();
+							ctx.common.pMsgBuf_forInput = (MIS_MSGU*)mallocObj_pMsgBuf_forInput.mallocf(Consts.CONST_iAllocType_longTimeMsg, sizeof(MIS_MSGU));
+							if (null == ctx.common.pMsgBuf_forInput) goto errLabel;
+							ctx.common.pMsgBuf = (MIS_MSGU*)mallocObj_pMsgBuf.mallocf(Consts.CONST_iAllocType_longTimeMsg, sizeof(MIS_MSGU));
+							if (null == ctx.common.pMsgBuf) goto errLabel;
+
+							if (null == (pMsg = (MIS_MSGU*)mallocObj.mallocf(Consts.CONST_iAllocType_longTimeMsg, sizeof(MIS_MSGU)))) goto errLabel;
+
+
+
+							if (!bObjDbAvail(pQyMc.procedObjDb))
+							{
+								goto errLabel;
+							}
+							if (null == db.getAvailableDb(pQyMc.iDsnIndex_mainSys)) goto errLabel;
+
+							subThreadInfo.pParentParam = pQyMc;
+							subThreadInfo.iServiceId = pQyMc.iServiceId;
+							subThreadInfo.pDb = pQyMc.gui.pDb;  // db.m_pDbMem->pDb;
+
+							/*
+						# ifdef  __DEBUG__
+							testSendMsg(pQyMc, pSci);
+						#endif
+							*/
+
+							//
+							for (; !pProcInfo.bQuit_threadProc_isCli; loopCtrl++)
+							{
+
+								//dwRet = WaitForSingleObject(pProcInfo->schedulerQ.hSemaTrigger, 1000);
+								//if (dwRet == WAIT_FAILED) goto errLabel;
+								myWaitOne(pProcInfo.schedulerQ.hSemaTrigger, 1000);
+
+								//
+								for (; !pProcInfo.bQuit_threadProc_isCli;)
+								{
+
+									len = (uint)sizeof(MIS_MSGU);
+									if (0 != qGetMsg(pProcInfo.schedulerQ, (IntPtr)pMsg, &len)) break;
+									mymemset((IntPtr)(((byte*)pMsg) + len), 0, (int)Math.Min(256, sizeof(MIS_MSGU) - len));
+
+									switch (pMsg->uiType)
+									{
+										case Consts.CONST_misMsgType_input:
+
+											if (!isUcFlgResp(pMsg->input.ucFlg))
+											{
+												procMsgInput_scheduler_req(ref subThreadInfo, pProcInfo, pMisCnt, &pMsg->input, len, ref ctx.common);
+											}
+											else
+											{
+												procMsgInput_scheduler_resp(ref subThreadInfo, pProcInfo, pMisCnt, &pMsg->input, len, ref ctx.common);
+											}
+											//
+											break;
+#if false
+									   case  CONST_misMsgType_imMsgRcd:
+													  logImMsg(  subThreadInfo.pDb,  pSci->cfg.iDbType,  getResTable(  0,  &pQyMc->cusRes,  CONST_resId_fieldIdTable  ),  &pMsg->imMsgRcd.rcd  );
+											break;
+										case CONST_misMsgType_event:
+											logEvent_is(pQyMc->p_g_dbFuncs, subThreadInfo.pDb, pSci->cfg.iDbType, NULL, &pMsg->event.event  );
+											 break;
+#endif
+										default:
+											break;
+
+									}
+
+
+
+								}
+
+								/*
+								#ifndef  __NOTSUPPORT_DB__
+								  //  to log imMsg in db
+								  if  (  !isQEmpty(  &pProcInfo->imMsgLogQ  )  )  {
+									  procImMsgLogQ_scheduler(  &subThreadInfo, pProcInfo, pMsg  );
+								}
+								#endif
+								*/
+
+
+
+								//
+								dwCurTickCnt = myGetTickCount();
+
+								/*
+								//
+								//for  (  i  =  0;  i  <  mycountof(  pProcInfo->misCnts  );  i  ++  )  
+								//for (i = 0; i < pProcInfo->ucCnt_misCnts; i++)
+								{
+								MIS_CNT pMisCnt = pProcInfo.pMisCnt
+								MIS_CHANNEL* pChannel = NULL;
+								//
+								if (!pMisCnt) continue;
+								//
+								if (!pMisCnt->cfg.dynCfg.cnt.usCntPort) continue;
+								//
+								if (!(pChannel = getChannelByType(pMisCnt, uiChannelType))) continue;
+
+								if (!bChannelOk(pChannel)) continue;
+								//
+								if (!pMisCnt->bIntervalParamsGot && dwCurTickCnt > pMisCnt->dwLastTickCnt_getIntervalParams + pMisCnt->cfg.usIntervalInS_getIntervalParams * 1000)
+								{
+								MACRO_prepareForTran();
+								QIS_getCfgs_req req;
+								//
+								memset(&req, 0, sizeof(req));
+								req.uiType = CONST_imCommType_getCfgsReq;
+								req.uiSizePerSnd_media = pProcInfo->cfg.uiSizePerSnd_media;
+								//
+								len = sizeof(req);
+								pProcInfo->postMsg2Mgr_mc(pMisCnt, NULL, CONST_misMsgType_req, 0, CONST_qyCmd_getCfgs, tStartTran, uiTranNo, 0, (char*)&req, len, NULL, 0, 0, NULL, FALSE);
+								//
+								pMisCnt->dwLastTickCnt_getIntervalParams = dwCurTickCnt;
+								}
+
+								# ifndef  __WINCE__
+								if (pMisCnt->bIntervalParamsGot && !pMisCnt->bToPathsRetrieved && dwCurTickCnt > pMisCnt->dwLastTickCnt_retrieveToPaths + pMisCnt->cfg.usIntervalInS_getIntervalParams * 1000)
+								{
+								MACRO_prepareForTran();
+								RETRIEVE_TO_PATHS req;
+								//
+								memset(&req, 0, sizeof(req));
+								req.uiType = CONST_imCommType_retrieveToPaths;
+								req.usMaxMemsPerSnd = mycountof(req.mems);
+								//
+								len = offsetof(RETRIEVE_TO_PATHS, mems) + req.usCnt * sizeof(req.mems[0]);
+								pProcInfo->postMsg2Mgr_mc(pMisCnt, NULL, CONST_misMsgType_req, 0, CONST_qyCmd_getCfgs, tStartTran, uiTranNo, 0, (char*)&req, len, NULL, 0, 0, NULL, 0);
+								pMisCnt->dwLastTickCnt_retrieveToPaths = dwCurTickCnt;
+								}
+								#endif
+
+								unsigned  int usIntervalInS_refreshContactList = pMisCnt->cfg.usIntervalInS_refreshContactList;
+								#if  1	//  2014/05/03. def  __WINCE__
+											   if  (  !pMisCnt->refreshContactList.tLastRefreshedTime_misServ  )  usIntervalInS_refreshContactList  =  20;
+											   else  usIntervalInS_refreshContactList  =  pMisCnt->cfg.usIntervalInS_refreshContactList;
+								# ifdef  __DEBUG__
+								#if  0
+															traceLog(  _T(  "for test."  )  );
+															usIntervalInS_refreshContactList  =  20;
+								#endif
+								#endif
+								#endif
+								//  2014/02/11. 需要考虑正在处理中的retrieve, 当下载的messenger非常多时，就下载过程会很长。判断下dwLastTickCnt_respRecvd可以避免重复发起请求
+								if (dwCurTickCnt - pMisCnt->refreshContactList.dwLastTickCnt_respRecvd > 20000
+								&& dwCurTickCnt > pMisCnt->refreshContactList.dwLastTickCnt_startToRetrieve + usIntervalInS_refreshContactList * 1000)
+								{
+								RETRIEVE_IMOBJLIST_REQ req;
+								IM_L_STREAM* pStream = NULL;
+
+								MACRO_prepareForTran();
+								//
+								# ifdef  __DEBUG__
+								traceLogA("scheduler: start to refreshContactList");
+								#endif
+								qyShowInfo1(CONST_qyShowType_qwmComm, 0, (""), pProcInfo->who_showInfo, 0, _T(""), _T(""), _T("Start to retrieveImObjList, tn %d, %s"), uiTranNo, bRefreshAllContacts(pMisCnt) ? _T("全面") : _T("增量"));
+								# ifdef  __WINCE__
+								showNotification(pMisCnt, NULL, 0, 0, 0, 0, _T("Start to refresh contact list"));
+								#endif
+
+								//
+								pMisCnt->refreshContactList.tStartTime = tStartTran;
+								pMisCnt->refreshContactList.uiTranNo = uiTranNo;
+								pMisCnt->refreshContactList.idInfo_lastRefreshed.ui64Id = 0;    //  ±íÃ÷ÊÇ´ÓÍ·¿ªÊ¼Ë¢ÐÂ
+																								//
+								memset(&req, 0, sizeof(req));
+								req.uiType = CONST_imCommType_retrieveImGrpListReq;
+								req.tLastRefreshedTime_contactList_misServ = pMisCnt->refreshContactList.tLastRefreshedTime_misServ;
+								req.usMaxContactUpdateInfosPerSnd = pMisCnt->cfg.usMaxContactUpdateInfosPerSnd_grp;
+								//				   
+								if (sizeof(IM_L_STREAM) > sizeof(ctx.common.pMsgBuf_forInput[0])) goto errLabel;
+								pStream = (IM_L_STREAM*)ctx.common.pMsgBuf_forInput;    //  tmpMallocObj.malloc(  sizeof(  IM_STREAM_CONTENT  )  );
+								if (pStream)
+								{
+									MACRO_memset_imLStream(pStream);
+									pStream->uiType = CONST_imCommType_lStream;
+									pStream->uiContentType = req.uiType;
+									len = sizeof(pStream->buf  );
+								if (retrieveImObjListReq2Stream(pStream->uiContentType, &req, pStream->buf, &len)) goto errLabel;
+								pStream->ulStreamLen = len;
+								len += offsetof(IM_L_STREAM, buf);
+								//
+								pProcInfo->postMsg2Mgr_mc(pMisCnt, NULL, CONST_misMsgType_req, 0, CONST_qyCmd_refreshImObjListReq, tStartTran, uiTranNo, 0, (char*)pStream, len, NULL, 0, 0, ctx.common.pMsgBuf, FALSE); 
+										   }
+										   //
+										   pMisCnt->refreshContactList.dwLastTickCnt_startToRetrieve = dwCurTickCnt;
+									   }
+
+									   if (pMisCnt->refreshContactList.tLastRefreshedTime_misServ)
+								{
+								if (!pMisCnt->refreshImObjRules.tLastRefreshedTime)
+								{
+								if (dwCurTickCnt > pMisCnt->refreshImObjRules.dwLastTickCnt + 20000)
+								{
+									pMisCnt->refreshImObjRules.dwLastTickCnt = dwCurTickCnt;
+									//
+									mytime(&pMisCnt->refreshImObjRules.tStart_toRetrieveAll);       //  2011/11/12
+																									//
+									MACRO_prepareForTran();
+
+									//
+								# ifdef  __DEBUG__
+									traceLog(_T("scheduler: start to refreshImObjRules"));
+								#endif
+									qyShowInfo1(CONST_qyShowType_qwmComm, 0, (""), pProcInfo->who_showInfo, 0, _T(""), _T(""), _T("Start to refreshImObjRules, tn %d"), uiTranNo);
+								# ifdef  __WINCE__
+									showNotification(pMisCnt, NULL, 0, 0, 0, 0, _T("Start to refresh rules"));
+								#endif
+
+									//
+									REFRESH_imObjRules_req req;
+									IM_L_STREAM* pStream = NULL;
+
+
+									memset(&req, 0, sizeof(req));
+									req.uiType = CONST_imCommType_refreshImObjRulesReq;
+									req.ucbRetrieveAll = TRUE;
+									req.usMaxMemsPerSnd = mycountof(req.mems);
+
+									if (sizeof(IM_L_STREAM) > sizeof(ctx.common.pMsgBuf_forInput[0])) goto errLabel;
+									pStream = (IM_L_STREAM*)ctx.common.pMsgBuf_forInput;    //  tmpMallocObj.malloc(  sizeof(  IM_STREAM_CONTENT  )  );
+									MACRO_memset_imLStream(pStream);
+									pStream->uiType = CONST_imCommType_lStream;
+									pStream->uiContentType = req.uiType;
+									len = sizeof(pStream->buf  );
+									if (refreshImObjRulesReq2Stream(pStream->uiContentType, &req, pStream->buf, (unsigned  int *  ) & len)  )  goto errLabel;
+									pStream->ulStreamLen = len;
+									len += offsetof(IM_L_STREAM, buf);
+
+									//
+									pProcInfo->postMsg2Mgr_mc(pMisCnt, NULL, CONST_misMsgType_req, 0, CONST_qyCmd_refreshImObjListReq, tStartTran, uiTranNo, 0, (char*)pStream, len, NULL, 0, 0, NULL, 0);
+
+								}
+								}
+								}
+
+								# ifndef  __WINCE__
+								if (pMisCnt->ucTriesToReg)
+								{
+								if (dwCurTickCnt > pMisCnt->dwLastTickCnt_tryToReg + pMisCnt->cfg.usIntervalInS_tryToReg * 1000)
+								{
+								sndMsgNeedReg_qmc(&subThreadInfo, pSci, pProcInfo, pMisCnt);
+								pMisCnt->dwLastTickCnt_tryToReg = dwCurTickCnt;
+								}
+								}
+								#endif
+
+								if (pMisCnt->ucbNeedSndDevInfo)
+								{
+								if (dwCurTickCnt > pMisCnt->dwLastTickCnt_tryToSndDevInfo + pMisCnt->cfg.usIntervalInS_tryToSndDevInfo * 1000)
+								{
+								sndDevInfo_qmc(&subThreadInfo, pSci, pProcInfo, pMisCnt);
+								pMisCnt->dwLastTickCnt_tryToSndDevInfo = dwCurTickCnt;
+								}
+								}
+
+								#if  0		   //  2010/12/04
+									   if  (  dwCurTickCnt  >  pMisCnt->dwLastTickCnt_chkChannels  +  16000  )  {		//  2008/06/01
+										   MIS_MSG_applyForChkChannels_qmc	msg_applyForChkChannels_qmc;
+
+										   //  ¼ì²érobotÍ¨µÀ
+										   memset(  &msg_applyForChkChannels_qmc,  0,  sizeof(  msg_applyForChkChannels_qmc  )  );
+										   msg_applyForChkChannels_qmc.uiType  =  CONST_misMsgType_applyForChkChannels_qmc;
+										   msg_applyForChkChannels_qmc.pMisCnt  =  pMisCnt;
+										   if  (  bRobotTaskExists(  pProcInfo,  pMisCnt,  &msg_applyForChkChannels_qmc  )  )  {
+											   MIS_CHANNEL  *  pChannel_robot;
+
+											   pChannel_robot  =  getChannelByType(  pMisCnt,  CONST_channelType_robot  );
+											   if  (  !pChannel_robot->hThread_io  ||  msg_applyForChkChannels_qmc.bTaskNeedRestart  )  {
+												   //
+												   qPostMsgAndTrigger(  &msg_applyForChkChannels_qmc,  sizeof(  msg_applyForChkChannels_qmc  ),  &pProcInfo->robotQ  );
+											   }
+										   }
+
+										   //
+										   pMisCnt->dwLastTickCnt_chkChannels  =  dwCurTickCnt;
+									   }
+								#endif
+
+									#ifndef  __WINCE__
+								#if  0  //  2016/06/15
+									   if  (  pProcInfo->bPhoneModuleLoaded  )  {				//  2008/02/01
+										   if  (  !pProcInfo->bSmServiceProhibited  )  {			  
+											   if  (  (  !pProcInfo->bPhoneMsgrListDownloaded  &&  dwCurTickCnt  >  pMisCnt->retrievePhoneMsgrs.dwLastTickCnt  +  60  *  1000  )
+												   ||  pProcInfo->bPhoneMsgrListNeedRefreshed  )
+											   {
+												   //  Çå¿ÕÖØÐÂÏÂÔØ±êÖ¾
+												   pProcInfo->bPhoneMsgrListNeedRefreshed  =  FALSE;
+
+												   //  ÏÈÇå¿Õ¶ÓÁÐ¡£Õâ·½±ãÖØÐÂÏÂÔØ
+												   emptyGenericQ(  &pProcInfo->phoneMsgrQ  );
+
+												   //  Ïò·þÎñÆ÷·¢ÆðÒªÇó¿ªÊ¼ÏÂÔØÊÖ»úÁÐ±íµÄÇëÇó
+												   RETRIEVE_PHONE_MSGRS		req;
+												   MACRO_prepareForTran(  );
+												   //
+												   memset(  &req,  0,  sizeof(  req  )  );
+												   req.uiType  =  CONST_imCommType_retrievePhoneMsgrs;
+												   req.usMaxPhoneMsgrsPerSnd  =  mycountof(  req.mems  );
+												   //
+												   len  =  offsetof(  RETRIEVE_PHONE_MSGRS,  mems  )  +  req.usCnt  *  sizeof(  req.mems[0]  );
+												   //
+												   postMsg2Mgr_mc(  pMisCnt,  NULL,  CONST_misMsgType_req,  0,   CONST_qyCmd_sendVDevReq,  tStartTran,  uiTranNo,  0,  (  char  *  )&req,  len,  NULL,  0,  0,  NULL,  0  ); 
+												   //
+												   pMisCnt->retrievePhoneMsgrs.dwLastTickCnt  =  dwCurTickCnt;				   
+											   }
+										   }
+										   //
+										   if  (  pProcInfo->bPhoneMsgrListDownloaded  &&  !pProcInfo->bPhoneMsgrListVerified  &&  dwCurTickCnt  >  pProcInfo->dwTickCnt_toVerifyPhoneMsgrList  +  30  *  1000  )  {
+											   //
+											   //  CWnd					*		pMainWnd						=	AfxGetApp(  )->m_pMainWnd;
+											   HWND								hMainWnd						=	pQyMc->gui.hMainWnd;
+											   //
+											   if  (  IsWindow(  hMainWnd  )  )  {
+								#if  0  //  2015/07/03
+												   PostMessage(  hMainWnd,  WM_COMMAND,  MAKELONG(  ID_qyVerifiedPhoneList,  0  ),  0  );
+								#endif
+											   }
+											   //
+											   pProcInfo->dwTickCnt_toVerifyPhoneMsgrList  =  dwCurTickCnt;
+										   }
+										   //
+									   }
+								#endif
+									#endif
+
+								  }
+
+								  //  for cpu usage. 2009/10/11
+								  if (dwCurTickCnt > pProcInfo->status.dwTickCnt_toStat + 1000)
+								{
+								getCpuUsage(&pQyMc->env, pProcInfo);
+								getNetStat_isCli(pProcInfo, dwCurTickCnt - pProcInfo->status.dwTickCnt_toStat);
+								//  2015/06/18
+								getPtsStat_isCli(pProcInfo, dwCurTickCnt - pProcInfo->status.dwTickCnt_toStat);
+								//
+								GlobalMemoryStatus(&pProcInfo->status.memory);
+
+								# ifdef  __DEBUG__
+								//  printShmMemory(  );
+								#endif
+
+								pProcInfo->status.dwTickCnt_toStat = dwCurTickCnt;
+								}
+
+								  //  if  (  !(  loopCtrl  %  20  )  )  traceLogA(  "ÕâÀï»¹Ó¦¸ÃÓÐÒ»¸ö¶¨ÆÚ£¨±ÈÈç30·ÖÖÓÒ»´ÎµÄ£¬ÇåÀíprocessQµÄ¹¤×÷£¬ÒÔ·ÀÖ¹processQÀïÓÐµÄ½ÚµãÊ§È¥±»´¦ÀíµÄ¿ÉÄÜµÄ¡£¾ÍÒª°ÑÕâÐ©À¬»ø½ÚµãÇåµô"  );
+
+								}
+
+								//  traceLogA(  "mcThreadProc_mis_scheduler:  Î´Íê³É"  );
+
+									*/
+							}
+
+						}
+					}
+				}
+
+			errLabel:
+
+
+				pProcInfo.status.ulbSchedulerQuit = true;
+
+				Console.WriteLine("mcThreadProc_mis_scheduler:  leaves");
+
+				return;
+			}
+
+		}
+	}
+}

@@ -1,0 +1,341 @@
+﻿using System;
+
+using Android.App;
+using Android.Content.PM;
+using Android.Runtime;
+using Android.Views;
+using Android.Widget;
+using Android.OS;
+using Android.Support.V7.App;
+using Android.Content;
+using Android.Support.V4.View;
+
+using qy;
+
+
+
+//
+namespace qyMessengerApp.Droid
+{
+    [Activity(Label = "qyMessengerApp", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize )]
+    //public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+    public class MainActivity:AppCompatActivity,View.IOnClickListener,ViewPager.IOnPageChangeListener
+    {
+        
+
+        qyFuncs.QY_MC_mainWndVar var_common;
+        //ZONE_objs_info wall;
+        
+        //
+        private TextView txt_topbar;
+        private TextView txt_msg;
+        private TextView txt_contact;
+        private TextView txt_me;
+        private ViewPager vPager;
+
+        //Fragment Object
+        //private MyFragment fg1, fg2, fg3, fg4;
+        private FragmentPagerAdapter_main mAdapter;
+
+        public const int PAGE_ONE = 0;
+        public const int PAGE_TWO = 1;
+        public const int PAGE_THREE = 2;
+
+        //
+        public MyHandler mHandler = null;
+
+        //
+        public object hCurTalk = null;
+
+
+        //
+        public class MyHandler : Handler
+        {
+            public override void HandleMessage(Message msg)
+            {
+                CCtxQyMc pQyMc = g.g_pQyMc;
+                if (pQyMc == null) return;
+                MainActivity mainActivity = (MainActivity)pQyMc.gui.hMainWnd;
+
+                switch (msg.Arg1)
+                {
+                    case Consts.CONST_qyWmParam_login_canceled:
+                         if ( !pQyMc.bLogon )
+                        {
+                            //
+                            mainActivity.Finish();
+                        }
+                        break;
+                    case Consts.CONST_qyWmParam_allContactsRetrieved:
+                        mainActivity.mAdapter.mFragment_imObj.fillList_imObj();
+                         
+                        break;
+                    case Consts.CONST_qyWmParam_msgArrive:
+                        qyFuncs.mainWnd_OnQyPostComm(pQyMc.gui.hMainWnd, ref mainActivity.var_common, msg.Arg1, msg.Arg2);
+                        break;
+                    default:
+                        break;
+                }
+
+            }
+
+        };
+
+
+        //
+
+        int guiPostMessage(object wnd, int msgId, int wParam, int lParam )
+        {
+            CCtxQyMc pQyMc = g.g_pQyMc;
+
+            if (wnd == pQyMc.gui.hMainWnd)
+            {
+                MainActivity mainWnd = (MainActivity)wnd;
+                Message msg = mainWnd.mHandler.ObtainMessage();
+                msg.What = msgId;
+                msg.Arg1 = wParam;
+                msg.Arg2 = lParam;
+                mainWnd.mHandler.SendMessage(msg);
+                return 0;
+            }
+
+
+            return 0;
+        }
+
+        //
+        public static unsafe int guiProcMsg(IntPtr pMsgParam)
+        {
+            int iErr = -1;
+            MIS_MSGU* pMsg = (MIS_MSGU*)pMsgParam;
+            CCtxQyMc pQyMc = g.g_pQyMc;
+            MainActivity mainActivity = (MainActivity)pQyMc.gui.hMainWnd;
+
+            switch( pMsg->uiType)
+            {
+                case Consts.CONST_misMsgType_talk:
+                    {
+                        IM_CONTENTU* pContent = (IM_CONTENTU*)pMsg->talk.data.buf;
+                        switch(pContent->uiType)
+                        {
+                            case Consts.CONST_imCommType_htmlContent:
+                                {
+                                    mainActivity.mAdapter.mFragment_msg.guiProcMsg(pMsg);
+                                }
+                                break;
+                        }
+
+
+                    }
+                    break;
+                default:
+                    break;
+
+
+            }
+
+
+
+
+
+            return iErr;
+
+        }
+
+        public static unsafe int guiFindTalker(MSGR_ADDR* pAddr, uint unused, ref object phWnd)
+        {
+            int iErr = -1;
+            CCtxQyMc pQyMc = g.g_pQyMc;
+
+            Activity hTalk = null;
+            MainActivity mainActivity = (MainActivity)pQyMc.gui.hMainWnd;
+
+
+            return iErr;
+        }
+
+
+
+        /*
+        protected override void OnCreate(Bundle savedInstanceState)
+        {
+            TabLayoutResource = Resource.Layout.Tabbar;
+            ToolbarResource = Resource.Layout.Toolbar;
+
+            base.OnCreate(savedInstanceState);
+
+            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+            global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            LoadApplication(new App());
+        }*/
+        protected override void OnCreate(Bundle savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
+            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+            SetContentView(Resource.Layout.activity_main);
+            //
+            mAdapter = new FragmentPagerAdapter_main(SupportFragmentManager);
+            bindViews();
+            //
+            mHandler = new MyHandler();            
+
+            //
+            qy.qyFuncs.test();
+
+            //
+            qyFuncs.guiShare.pf_PostMessage = guiPostMessage;
+            qyFuncs.guiShare.pf_mainWndProcMsg = guiProcMsg;
+
+            //
+            qyFuncs.InitInstance((IntPtr)null, 0);
+
+            //
+            qyFuncs.initVar_onCreate_mainFrame(IntPtr.Zero, this, ref this.var_common);
+
+            //
+            CCtxQyMc pQyMc = g.g_pQyMc;
+            pQyMc.gui.hMainWnd = this;
+                
+
+            //
+            StartActivity(new Intent(Application.Context, typeof(Activity_qmcLogin)));
+
+
+        }
+
+        private void bindViews()
+        {
+            txt_topbar = (TextView)FindViewById(Resource.Id.txt_topbar);
+            txt_msg = (TextView)FindViewById(Resource.Id.txt_msg);
+            txt_contact = (TextView)FindViewById(Resource.Id.txt_contact);
+            txt_me = (TextView)FindViewById(Resource.Id.txt_me);
+            
+            txt_msg.SetOnClickListener(this);
+            txt_contact.SetOnClickListener(this);
+            txt_me.SetOnClickListener(this);
+
+            vPager = (ViewPager)FindViewById(Resource.Id.vpager);
+            vPager.Adapter = mAdapter;
+            //vPager.SetCurrentItem(0,true);
+            vPager.AddOnPageChangeListener(this);
+            //
+            txt_msg.PerformClick();
+        }
+
+        private void clearSelected()
+        {
+            txt_msg.Selected = false;
+            txt_contact.Selected = false;
+            txt_me.Selected = false;
+
+        }
+
+        public void OnClick(View v)
+        {
+            switch (v.Id)
+            {
+                case Resource.Id.txt_msg:
+                    clearSelected();
+                    txt_msg.Selected = true;
+                    vPager.SetCurrentItem(PAGE_ONE,false);
+                    break;
+                case Resource.Id.txt_contact:
+                    clearSelected();
+                    txt_contact.Selected = true;
+                    vPager.SetCurrentItem(PAGE_TWO, false);
+                    break;
+                case Resource.Id.txt_me:
+                    clearSelected();
+                    txt_me.Selected = true;
+                    vPager.SetCurrentItem(PAGE_THREE, false);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+
+
+
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
+        {
+            Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+
+            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
+        public override void OnBackPressed()
+        {
+            //
+            base.OnBackPressed();
+        }
+
+        protected override void OnPause()
+        {
+            Console.WriteLine("jjjjjjjjjjjjjjjOnPause");
+            if ( IsFinishing)
+            {
+                Console.WriteLine("jjjjjjOnPause, isFinishing");
+                //
+                qyFuncs.exitVar_onDestroy_mainFrame(IntPtr.Zero, this, ref var_common);
+                //
+                qy.qyFuncs.ExitInstance((IntPtr)null);
+            }
+
+            base.OnPause();
+        }
+
+
+        protected override void OnStop()
+        {
+            int i = 1;
+            Console.WriteLine("kkkkkkkkkkkkkkkkkkk.OnStop");
+
+            base.OnStop();
+        }
+
+        protected override void OnDestroy()
+        {
+            int i = 1;
+            Console.WriteLine("MainActivity.OnDestroy");
+
+            base.OnDestroy();
+        }
+
+
+
+        void ViewPager.IOnPageChangeListener.OnPageScrollStateChanged(int state)
+        {
+            //throw new NotImplementedException();
+            if (state == 2)
+            {
+                switch (vPager.CurrentItem)
+                {
+                    case PAGE_ONE:
+                        clearSelected();
+                        txt_msg.Selected = true;
+                        break;
+                    case PAGE_TWO:
+                        clearSelected();
+                        txt_contact.Selected = true;
+                        break;
+                    case PAGE_THREE:
+                        clearSelected();
+                        txt_me.Selected = true;
+                        break;
+                }
+
+                
+            }
+        }
+        void ViewPager.IOnPageChangeListener.OnPageScrolled(int position, float positionOffset, int positionOffsetPixels)
+        {
+            //throw new NotImplementedException();
+        }
+
+        void ViewPager.IOnPageChangeListener.OnPageSelected(int position)
+        {
+            //throw new NotImplementedException();
+        }
+    }
+}

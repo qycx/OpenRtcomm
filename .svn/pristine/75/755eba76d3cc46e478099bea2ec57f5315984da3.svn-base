@@ -1,0 +1,139 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+using Android.App;
+using Android.Content;
+using Android.OS;
+using Android.Runtime;
+using Android.Util;
+using Android.Views;
+using Android.Widget;
+
+using qy;
+
+//
+namespace qyMessengerApp.Droid
+{
+    public class Fragment_imObjList : Android.Support.V4.App.Fragment
+    {
+        List<TableItem_imObj> tableItems = new List<TableItem_imObj>();
+        ListView listView;
+
+        //
+        unsafe int th_fillList_imObj(object p0, object p1, object p2)
+        {
+            int iErr = -1;
+            QMEM_qyImObj* pMem = (QMEM_qyImObj*)(IntPtr)p2;
+            CCtxQyMc pQyMc = g.g_pQyMc;
+            QM_dbFuncs pDbFuncs = pQyMc.p_g_dbFuncs;
+
+            QY_MESSENGER_INFO msgrInfo;
+            QY_MESSENGER_REGINFO regInfo;
+
+            if (!pDbFuncs.pf_bGetMessengerInfoBySth(pDbFuncs, pQyMc.gui.pDb, pQyMc.cfg.db.iDbType, ref qyFuncs.CONST_fieldIdTable_en, "", &pMem->messengerInfo.idInfo, 0, &msgrInfo, &regInfo, null, null))
+            {
+                goto errLabel;
+            }
+
+            //
+            TableItem_imObj item = new TableItem_imObj();
+            item.ui64Id = pMem->messengerInfo.idInfo.ui64Id;
+            item.uiObjType = pMem->messengerInfo.uiType;
+
+            if (msgrInfo.uiType == Consts.CONST_objType_imGrp)
+            {
+                IM_GRP_INFO grpInfo;
+                if (!pDbFuncs.pf_bGetImGrpInfoBySth(pQyMc.gui.pDb, pQyMc.cfg.db.iDbType, "", &pMem->messengerInfo.idInfo, &grpInfo))
+                {
+                    qyFuncs.mymemset((IntPtr)(byte*)&grpInfo, 0, sizeof(IM_GRP_INFO));
+                }
+                //
+                item.grpName = new string(grpInfo.name);
+                //
+            }
+            else { 
+
+                 //           
+                 item.dw = new string(regInfo.dw);
+                 item.bm = new string(regInfo.bm);
+                 item.syr = new string(regInfo.syr);
+        
+            }
+            item.ImageResourceId = Resource.Drawable.Vegetables;
+
+            //TableItem
+            tableItems.Add(item);
+
+
+            iErr = 0;
+            errLabel:
+            
+            return iErr;
+        }
+
+        //
+        public int fillList_imObj()
+        {
+            CCtxQyMc pQyMc = g.g_pQyMc;
+            CMyDb pDb = (CMyDb)pQyMc.gui.pDb;
+            qyFuncs.qTraverse(pDb.m_var_pQ_qyImObjTab, th_fillList_imObj, null, null);
+
+            //
+            Adapter_imObjList adapter = (Adapter_imObjList)listView.Adapter;
+            adapter.NotifyDataSetChanged();
+
+            return 0;
+        }
+
+
+
+
+        //
+        public override void OnCreate(Bundle savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
+
+            // Create your fragment here
+        }
+
+        public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+        {
+            // Use this to return your custom view for this Fragment
+            // return inflater.Inflate(Resource.Layout.YourFragment, container, false);
+
+            //return base.OnCreateView(inflater, container, savedInstanceState);
+
+            //
+            View view = inflater.Inflate(Resource.Layout.layout_imObjList, container, false);
+
+            //
+            listView = (ListView)view.FindViewById(Resource.Id.list);
+
+            /*
+            tableItems.Add(new TableItem() { Heading = "Vegetables", SubHeading = "65 items", ImageResourceId = Resource.Drawable.Vegetables });
+            tableItems.Add(new TableItem() { Heading = "Fruits", SubHeading = "17 items", ImageResourceId = Resource.Drawable.Vegetables });
+            tableItems.Add(new TableItem() { Heading = "Flower Buds", SubHeading = "5 items", ImageResourceId = Resource.Drawable.Vegetables });
+            tableItems.Add(new TableItem() { Heading = "Legumes", SubHeading = "33 items", ImageResourceId = Resource.Drawable.Vegetables });
+            tableItems.Add(new TableItem() { Heading = "Bulbs", SubHeading = "18 items", ImageResourceId = Resource.Drawable.Vegetables });
+            tableItems.Add(new TableItem() { Heading = "Tubers", SubHeading = "43 items", ImageResourceId = Resource.Drawable.Vegetables });
+            */
+
+            listView.Adapter = new Adapter_imObjList(inflater, tableItems);
+
+            //
+            listView.ItemClick += ListView_ItemClick;
+
+            return view;
+
+        }
+
+        private void ListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            //throw new NotImplementedException();
+            Console.WriteLine("{0} clicked", tableItems[e.Position].ui64Id);
+
+        }
+    }
+}

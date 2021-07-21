@@ -1,0 +1,9 @@
+C:\root\cliDevelop\qyMessengerApp\myBindingClassLibrary\bin\Debug\myBindingClassLibrary.dll
+C:\root\cliDevelop\qyMessengerApp\myBindingClassLibrary\bin\Debug\myBindingClassLibrary.pdb
+C:\root\cliDevelop\qyMessengerApp\myBindingClassLibrary\obj\Debug\MonoAndroid,Version=v9.0.AssemblyAttributes.cs
+C:\root\cliDevelop\qyMessengerApp\myBindingClassLibrary\obj\Debug\stamp\_BuildLibraryImportsCache.stamp
+C:\root\cliDevelop\qyMessengerApp\myBindingClassLibrary\obj\Debug\myBindingClassLibrary.csproj.CoreCompileInputs.cache
+C:\root\cliDevelop\qyMessengerApp\myBindingClassLibrary\obj\Debug\myBindingClassLibrary.dll
+C:\root\cliDevelop\qyMessengerApp\myBindingClassLibrary\obj\Debug\myBindingClassLibrary.pdb
+C:\root\cliDevelop\qyMessengerApp\myBindingClassLibrary\obj\Debug\__AndroidLibraryProjects__.zip
+C:\root\cliDevelop\qyMessengerApp\myBindingClassLibrary\obj\Debug\myBindingClassLibrary.csproj.AssemblyReference.cache

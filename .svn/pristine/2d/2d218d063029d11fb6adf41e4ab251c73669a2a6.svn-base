@@ -1,0 +1,30 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace qy
+{
+    partial class qyFuncs
+{
+		public unsafe struct QY_MC_mainWndVar
+		{                               //  2010/04/13
+			//CCtxQyMc pQyMc;                           //  2016/09/21
+													//  void						*				pProcInfo;
+
+			//
+			public uint uiTimerId;
+
+			//
+			public MIS_MSGU* pMsgBuf_msgArrive;                //  2009/12/10
+
+
+			//WND_guiData_main guiData;
+
+			//
+			//unsigned char ucbVisible;                       //  2012/07/17
+
+		}
+		;
+
+}
+}

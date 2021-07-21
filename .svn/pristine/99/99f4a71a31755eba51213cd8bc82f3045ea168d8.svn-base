@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace qy
+{
+
+    public unsafe struct QY_LOGICAL_SERVER
+    {
+        public fixed byte ip[Consts.CONST_qyMaxIpLen + 1];
+        public ushort port;
+    }
+    ;
+
+}

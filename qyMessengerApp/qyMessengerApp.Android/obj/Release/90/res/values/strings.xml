@@ -1,0 +1,1 @@
+<resources><string name="picture">Picture</string><string name="request">Request</string><string name="av">AV</string><string name="request_permission">This app needs camera permission.</string><string name="camera_error">This device doesn\'t support Camera2 API.</string></resources>

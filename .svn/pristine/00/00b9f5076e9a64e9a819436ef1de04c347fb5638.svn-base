@@ -1,0 +1,1353 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
+using System.Threading;
+
+partial class Consts
+{
+	public const int CONST_misMsgType_null = 0;
+	public const int CONST_misMsgType_base = CONST_qyWmParam_misMsg_base;
+	public const int CONST_misMsgType_resp_onlySock = (CONST_misMsgType_base + 1);  //  
+	public const int CONST_misMsgType_quit = (CONST_misMsgType_base + 2);
+	public const int CONST_misMsgType_closeSession = (CONST_misMsgType_base + 3);
+	public const int CONST_misMsgType_input = (CONST_misMsgType_base + 4);
+	public const int CONST_misMsgType_send = (CONST_misMsgType_base + 5);   //  
+	public const int CONST_misMsgType_processSelf = (CONST_misMsgType_base + 6);    //  
+	public const int CONST_misMsgType_processBt = (CONST_misMsgType_base + 7);  //  2011/04/18
+																				//public const int		CONST_misMsgType_processSelf_sendFinished			(  CONST_misMsgType_base  +  8	)	//  2015/08/18
+	public const int CONST_misMsgType_processSelf_new = (CONST_misMsgType_base + 9);    //  2015/08/21
+	public const int CONST_misMsgType_inputArrive = (CONST_misMsgType_base + 10);   //  2015/08/24
+																					//public const int		CONST_misMsgType_resp1								(  CONST_misMsgType_base  +  11	 )	//  2015/08/25. 暂时用来替换resp,以帮助发现未加密的resp
+	public const int CONST_misMsgType_resp2 = (CONST_misMsgType_base + 12); //  2015/08/25. resp的处理标识已经是网络字节流顺序，resp2表明不是网络顺序
+
+
+	//  
+	//  public const int		CONST_misMsgType_resumeToSend					(  CONST_misMsgType_base  +  16  )	//	
+	//  
+	public const int CONST_misMsgType_req = (CONST_misMsgType_base + 30);   //  messenger·
+	public const int CONST_misMsgType_resp = (CONST_misMsgType_base + 31);  //  iocp·
+	public const int CONST_misMsgType_talk = (CONST_misMsgType_base + 32);  //  
+	public const int CONST_misMsgType_task = (CONST_misMsgType_base + 33);  //  
+																			//
+																			//
+	public const int CONST_misMsgType_isSendOk = (CONST_misMsgType_base + 50);  //  iocp iocp tranNo. messenger outputQ iocp,tranNo starttime
+	public const int CONST_misMsgType_sendOk = (CONST_misMsgType_base + 51);    //  MGR tranNo. messenger iocp, tranNoºÍstarttime
+																				//  mgr·
+																				//
+	public const int CONST_misMsgType_sendFinished = (CONST_misMsgType_base + 52);  //  mgr
+																					//
+																					//  public const int		CONST_misMsgType_closeChannel					(  CONST_misMsgType_base  +  53  )	//  2007/12/20, QMemMessenge
+	public const int CONST_misMsgType_closeChannelByCliIndex = (CONST_misMsgType_base + 53);    //  2007/12/20, 
+	public const int CONST_misMsgType_chkChannelByType_mgr = (CONST_misMsgType_base + 54);  //  2015/08/26, 
+																							//
+	public const int CONST_misMsgType_applyForWork = (CONST_misMsgType_base + 55);  //  
+																					//////
+	public const int CONST_misMsgType_taskStatus = (CONST_misMsgType_base + 60);    //  
+	public const int CONST_misMsgType_imMsgRcd = (CONST_misMsgType_base + 61);  //  
+	public const int CONST_misMsgType_event = (CONST_misMsgType_base + 62); //  
+
+	//  ÒÔÉÏÊÇ°üÀàÐÍ
+	public const int CONST_misMsgType_talkingFriend_qmc = (CONST_misMsgType_base + 70); //	talkingFriendQ
+	public const int CONST_misMsgType_recentFriend_qmc = (CONST_misMsgType_base + 71);  //	recentFriendQ
+	public const int CONST_misMsgType_displayedElem_qmc = (CONST_misMsgType_base + 72); //  
+	public const int CONST_misMsgType_refreshContactsStatus_qmc = (CONST_misMsgType_base + 73); //  messenger display
+	public const int CONST_misMsgType_refreshMeStatus_qmc = (CONST_misMsgType_base + 74);   //  diplay
+	public const int CONST_misMsgType_applyForPlayer_qmc = (CONST_misMsgType_base + 75);    //  
+	public const int CONST_misMsgType_applyForChkChannels_qmc = (CONST_misMsgType_base + 76);   //  
+	public const int CONST_misMsgType_applyForRemovingInvalidTasks_qmc = (CONST_misMsgType_base + 77);  //  2009/09/10
+	public const int CONST_misMsgType_applyForTalkerShadow_qmc = (CONST_misMsgType_base + 78);  //  2012/04/23. 由墙发起,请求dlgTalk生成一个影子窗口
+
+	//
+	public const int CONST_misMsgType_procVideo_qmc = (CONST_misMsgType_base + 80); //  2009/03/24
+	public const int CONST_misMsgType_notifyTaskEnd_qmc = (CONST_misMsgType_base + 81); //  2009/04/28
+	public const int CONST_misMsgType_procGps_qmc = (CONST_misMsgType_base + 82);   //  2012/04/20
+																					//
+	public const int CONST_misMsgType_getDaemonStatus = (CONST_misMsgType_base + 85);   //  2011/01/12
+																						//
+	public const int CONST_misMsgType_outputTask = (CONST_misMsgType_base + 90);    //  robot
+	public const int CONST_misMsgType_outputTask_toMix = (CONST_misMsgType_base + 91);  //  2011/01/23
+
+
+	//  2008/05/26
+	public const int CONST_misMsgType_grp = (CONST_misMsgType_base + 200);	//  ×éºÏ°ü¡£×éºÏ°üÓÐÊ±ºÜ´ó.²»Òª½«MIS_MSGUºÍ×éºÏ°ü»ìÆðÀ´¡£·ñÔò£¬Ó°ÏìÍ¨³£µÄMIS_MSGUµÄÄÚ´æ·ÖÅä¡£
+
+	public const int CONST_maxContactUpdateInfos_grp = 128;                                         //  2014/02/06
+	public const int CONST_maxContactUpdateInfos_grpMem = 2048;                                     //  2014/02/06
+	public const int CONST_maxContactUpdateInfos_contact = 128 * 3;                                 //  2014/02/09
+
+	public const int CONST_maxMessengerNameLen = 255;
+	public const int CONST_maxMessengerPasswdLen = 255;
+
+	public const int CONST_maxMisServNameLen = 32;                  //  2010/08/05
+
+	//
+	public const int CONST_qyMessengerIdStrLen = 18;                    //  
+																		//
+	public const Int64 CONST_invalidMessengerId = -1;                   //  2007/07/28 
+
+	public const int CONST_cntof_wRndName_serv=255+1;
+	public const int CONST_cntof_talkerDesc = 32;
+	public const int CONST_cntof_clientWelcomMsg=128;
+	public const int CONST_cntof_hint=255+1;
+
+	//
+	public const int CONST_maxMsgrs_sendTo = 32;                    //  
+
+	//
+	public const int CONST_bufSize_talkData = 900 * 1024;//pc 2443304;
+	public const int CONST_bufSize_routeTalkData = 900 * 1024;
+
+	//
+	public const int cntof_imHtmlContent_wBuf = 16 * 1024;
+
+
+}
+
+
+namespace qy
+{
+	public struct PLAYER_ID
+	{
+		int index_player;
+		uint uiTranNo_player;
+	}
+	;
+	public struct MSG_SIMPLE_ROUTE
+	{                                       //  
+		QY_MESSENGER_ID idInfo_to;
+		QY_MESSENGER_ID idInfo_from;
+	}
+	 ;
+
+	public struct MSG_DEBUG_INFO
+	{
+		Int64 tTime_serv_startToRecv;                 //  iocpÆðÊ¼ÊÕ°üÊ±¼ä( s )
+		/*
+		ushort usElapsed_serv_recved;                   //  ÊÕÍê
+		ushort usElapsed_serv_startToProcess;           //  ¿ªÊ¼´¦Àí		
+		ushort usElapsed_serv_toFindDst;                //  ÔÚÑ°ÕÒÄ¿±ê¶ÔÏóÖ®Ç°¡£
+		ushort usElapsed_serv_toBeSwitched;         //  ·ÖÈë
+		ushort usElapsed_serv_toSend;                   //  ×¼±¸·¢ËÍ
+		*/
+	}
+	;
+
+
+	public struct ROUTE_DEBUG_INFO
+	{                                       //  ´Ë½á¹¹ÎªÁËÁË½âÊý¾Ý°üµÄ´«Êä¹ý³Ì¶øÉè¼Æ.Í¨³£,dwTickCnt...ÊÇ²»ÓÃ´«ÊäµÄ.
+
+		
+		// 发起端
+		public uint dwTickCnt_me_start;                       //  clientÆðÊ¼·¢ËÍÇëÇó
+															  //
+		public Int64 tTime_start;                            //  ¿ªÊ¼·¢ËÍ
+		public ushort usElapsed_toSend;                        //  ×¼±¸·¢ËÍ
+
+		//  2008/11/19
+		public int index;                                  //  uiDataBlockIndex
+
+		//
+		public uint dwTickCnt_serv_startToRecv;               //  iocp ( ms ). 
+
+		//  2015/08/15
+		public uint dwTickCnt_processQ;
+		public uint dwTickCnt_processQ2Grp;
+		//
+		public uint dwTickCnt_postMsg2OutputQ_imGrp;
+		//
+		public uint dwTickCnt_doMisMgr_processSelf_imGrp;
+		//
+		public uint dwTickCnt_tmpHandler_talkToGrpMem_bt;
+		public uint dwTickCnt_postMsg2OutputQ_messenger;
+
+		//  server转发请求
+		public MSG_DEBUG_INFO req;
+
+
+		//  接受并响应端
+		public uint dwTickCnt_peer_recved;
+		public Int64 tTime_peer_recved;
+		public ushort usElapsed_peer_resp_toSend;
+
+		//  server转发响应
+		public MSG_DEBUG_INFO resp;
+
+		//  响应回到发起端
+		public uint dwTickCnt_resp_recved;
+		public ushort usElapsed_resp_end;
+
+		//  2011/12/08
+		//DEBUG_myDRAW_VIDEO_DATA debug_myDRAW_VIDEO_DATA;                //  2011/12/08
+
+		//
+		public uint uiStep_showInfo;                       //  ÎªÁË¸øshowInfoÌá¹©Çø·ÖÍ¬Ò»¸öÊ±¿Ì(ms)µÄÔç³ÙµÄ²ÎÊý
+		
+	}
+	;
+
+
+
+	public unsafe struct MSG_ROUTE
+	{                               //  
+		public QY_MESSENGER_ID idInfo_to;                      //  2007/11/30, TALKDATA_ADDR
+		public QY_MESSENGER_ID idInfo_from;                    //	
+															   //
+		public uint uiDevType_to;                  //
+												   //WCHAR wDevIdStr_to[128];                //	2008/01/04, 
+		public uint uiDevType_from;                    //
+													   //WCHAR wDevIdStr_from[128];          //  2008/01/04
+													   //  
+													   //  path mailto:qycx@qycx.com|sm:13001101101|http://www.qycx.com/			
+													   //																					
+													   //
+													   //
+		public fixed Int64 idInfo_mems_to[Consts.CONST_maxMsgrs_sendTo];
+
+		//
+		public uint uiMsgRouteId;                 //  2008/05/27, msgRoute
+
+		//																					//  peer.
+		//  uint									uiWebSessId;					//  webMessenger
+		public uint uiLogonId;                     //  webMessenger
+												   //
+		public uint uiObjType_src;                    //  messengerType, 
+													  //
+		public ushort usLangId_from;                   //  
+		public uint ulDetectedIp_from;
+		public fixed char displayName_from[64 + 1];
+		//
+
+		//  2008/05/15
+		public ROUTE_DEBUG_INFO debugInfo;
+
+		//  2009/09/12
+		//struct                                             {
+		public ushort tmpInternal_usCnt_mems_to;
+	//}tmpInternal;
+
+}		 ;
+
+	public unsafe struct MSGR_ADDR
+	{
+		public QY_MESSENGER_ID idInfo;
+		//
+		public fixed char misServName[Consts.CONST_maxMisServNameLen + 1];
+		//
+		public uint uiDevType;                     //
+												   //WCHAR wDevIdStr[128];                   //   2008/01/04,
+												   //WCHAR wPath[510 + 1];               //  
+												   //																					//  
+												   //  uint									uiWebSessId;					//  webMessenger
+		public uint uiLogonId;                     //  webMessenger
+												   //
+		public uint uiObjType;
+		//
+		public fixed char displayName[64 + 1];
+		//
+		//
+		//  2008/02/12, MSGR_ADDR messenger
+		//  
+		public bool bInNoticeMode;                 //  2008/01/22, 
+												   //				
+												   //				
+		public Int64 tStartTime_notice;               //  tStartTime_notice uiTranNo_notice
+		public uint uiTranNo_notice;               //
+
+		//  2012/04/20
+		public uint uiTranNo_shadow;               //  用来标识辅助talker窗口,为0时为主窗口
+
+		//  2013/07/31
+		//int												iNo_debug;						//  用来标识talker类实例,用来debug用. 2013/07/31
+
+	}
+	;
+
+
+public unsafe struct QY_COMM_AUTHINFO_MIS
+	{
+
+		public byte ucCmd;
+
+		public int iAppType;                               //  2011/03/27
+		public int iCustemId;
+		public uint uiChannelType;                         //  2007/07/08
+
+		public fixed byte ver[Consts.CONST_qyMaxVerLen + 1];            //  
+																		//
+
+		public ushort usLangId;
+		public uint uiDevType;
+		//
+		public ushort usAuthType;                              //  2011/03/22
+															   //
+
+		//QWM_MACS_INFO macsInfo;
+		public fixed byte ip[Consts.CONST_qyMaxIpLen + 1];
+		//WCHAR pcName[128 + 1];
+		//WCHAR domainName[128 + 1];
+		//WCHAR osUsrName[128 + 1];
+		//
+
+		//
+		public fixed char messengerName[Consts.CONST_maxMessengerNameLen + 1];               //  messenger
+		public fixed byte messengerPasswd[Consts.CONST_maxMessengerPasswdLen + 1];
+		//
+		public fixed char wRndName_serv[255 + 1];               //  
+		public uint uiRnd_cli;                             //  web 2007/11/22
+														   //
+														   //  uint								uiWebSessId;							//  web2007/11/22
+		public uint uiLogonId;                             //  2011/02/02
+														   //  
+
+
+		// ----------------------------------------
+
+		public uint uiBlobLen_sessionKey;                  //  »á»°ÃÜÔ¿
+		public fixed byte sessionKeyBlob[Consts.CONST_bufSize_sessionKeyBlob];
+								
+	}
+	;
+
+	//  ÈÏÖ¤ÏìÓ¦
+	public unsafe struct AUTH_RESP_MIS
+	{
+		public QY_MESSENGER_ID idInfo;
+		//
+		public fixed char wRndName_serv[Consts.CONST_cntof_wRndName_serv];               //  webMessenger
+																//  uint								uiWebSessId;							//  webMessenger
+																//
+		public uint uiLogonId;                             //  
+														   //
+		public uint uiCommEncCtxType;                      //  
+		public uint uiBlobLen_publicKey;
+		public fixed byte publicKeyBlob[Consts.CONST_bufSize_publicKeyBlob];                   //  serverHello
+
+		//
+		public bool ucbDaemonDemo;                            //  2009/10/11
+		public ushort usMaxVideoConferenceMems;                //  2009/11/05
+		public byte ucDays_left;                          //  2010/03/22
+														  //
+		public ushort usAppAvLevel_daemon;                 //  2011/10/22
+														   //
+		public ushort usSubSystemId_daemon;                    //  2017/06/21
+
+		//
+		public fixed char talkerDesc[Consts.CONST_cntof_talkerDesc];                           //  2011/04/07
+		
+		public fixed char wBuf_hint[Consts.CONST_cntof_hint];
+
+		//
+		public fixed char clientWelcomeMsg[Consts.CONST_cntof_clientWelcomMsg];                    //  2016/08/10
+	}
+	;
+
+	 public unsafe struct QY_imAm_RCD
+	{
+		int id;
+		fixed char misServName[255 + 1];
+		QY_MESSENGER_ID idInfo;
+		fixed char messengerName[255 + 1];
+		fixed sbyte messengerPasswd[255 + 1];
+		int iPasswdType;
+		fixed sbyte salt[Consts.CONTS_passwdSaltLen + 1];
+		int iStatus;
+		fixed sbyte startTime[14 + 1];
+		fixed sbyte tLastModifiedTime[14 + 1];
+	}
+	;
+
+
+	public unsafe struct QY_MESSENGER_INFO
+	{
+
+		uint uiType;                                        //  messengerType, me, messenger, group
+
+		int iRcdId;                                     //  qyMessengerTab id
+
+		fixed char misServName[Consts.CONST_maxMisServNameLen + 1];
+		QY_MESSENGER_ID idInfo;
+
+		//
+		uint uiLogonId;                                 //  2007/12/22
+		long tTime_logon;                             //  2022/02/02
+		
+		//
+		fixed char ip[Consts.CONST_qyMaxIpLen + 1];
+		fixed char detectedIp[Consts.CONST_qyMaxIpLen + 1];
+
+		ushort usLangId;
+		//
+		uint uiDevType;
+		//
+		fixed 		char messengerName[64 + 1];
+
+		//
+		int iRole;                                      //  2017/08/14
+
+		//
+		long startTime;
+		//
+		ushort usRunningStatus;                         //  2007/06/07 
+
+		long tLastModifiedTime;
+
+		fixed byte clientVer[Consts.CONST_qyMaxVerLen + 1];
+		//
+		ushort shClientVer;             // clientVer[0-3];
+		byte blClientVer;               // clientVer[4-5];		//  2005/05/23, lhQwmVer  =  atol(  qwmVer  )  /  100;  llQwmVer  =  atol(  qwmVer  )  %  100;
+		byte b_mantissa_clientVer;      // clientVer[6-7]
+
+		//
+		int iStatus;
+
+	}
+	;
+
+
+	//  2014/09/04
+
+
+	//  2016/07/23
+	public struct RES_OBJ
+	{
+		//M_resObj_common
+		//
+
+public 				uint					uiObjType;					
+	public	ushort usIndex_obj;				
+public		ushort usHelp_subIndex;
+
+	}
+	;
+
+//
+public struct QIS_RES_OBJ
+	{
+		//
+		QY_MESSENGER_ID idInfo;                     //  2016/07/24
+		RES_OBJ resObj;
+		//
+	}
+	
+//
+public unsafe struct QIS_dynBmp_info
+	{
+		//
+		QIS_RES_OBJ qisResObj;                      //  2016/07/23
+													//
+		fixed char name[32];                     //  name used to mean device id or unique name for dynBmp
+		fixed char cusName[32];                  //  cusName used to mean a friendly comment for dynBmp
+											//
+		ushort usW, usH;
+		//
+	}
+	;
+
+
+
+	public struct TRANSFER_AUDIO_dataMemHead
+	{
+		//unsigned  short									usIndex_ii;							//  2013/07/18. 将被逐渐弃用
+
+		QY_MESSENGER_ID idInfo;                             //  会议时,发言人的id
+
+		//
+		uint uiTranNo_openAvDev;                    //  2013/08/04. 当会议参会人,断开会议,修改策略,重新参会时,需要有tn来标识不同的视频流,所以要加这个成员
+
+
+		struct TRANSFER_AUDIO_dataMemHead_tmpInternal
+		{
+					 uint uiTranNo_org;                     //  Ô­Ê¼°üµÄ
+		ulong dwTickCnt_videoConferenceRecved;  //  ÊÓÆµ»áÒé·þÎñÆ÷ÊÕµ½µÄÊ±¼ä¡£ÓÃÀ´µ÷ÊÔºÍÁË½âÒôÆµ´«ÊäÐÔÄÜ¡£
+	};
+		TRANSFER_AUDIO_dataMemHead_tmpInternal		tmpInternal;						//  ÁÙÊ±Ê¹ÓÃµÄ±äÁ¿£¬²»ÄÜÓÃÔÚÍ¨ÐÅÖÐ
+
+				 uint uiSampleTimeInMs;                 //  2009/05/02
+	uint ui_rtTimeLen;                      //  2009/05/27
+
+	//  2015/09/10
+	uint uiPts;                             //  2015/09/10
+
+	//
+	uint uiLen;
+}
+;
+
+
+//
+//  2011/01/26
+public struct TRANSFER_videoData_stat
+	{
+		Int64 tLastTime_showFrameInfo_020534;     //  
+
+		//
+		Int64 tSelectTime;                        //  2008/12/05
+		ushort usCnt_pkts;                          //  tSelectTime. 020534 tLastTime_showFrameInfo->tStartTime
+		ushort usFps;                               //  
+
+		//
+		int iVal_dbg;                           //  2017/09/04
+
+	}
+	;
+
+
+
+
+//
+public struct TRANSFER_VIDEO_dataMemHead
+	{
+		//unsigned  short									usIndex_ii;							//  2013/07/18. 将被逐步弃用
+
+		QY_MESSENGER_ID idInfo;                             //  2009/05/31
+															//
+		uint uiTranNo_openAvDev;                    //  2012/01/09
+
+		//
+		uint uiSampleTimeInMs;                  //  2009/05/02
+														//uint									uiSampleTimeInMs_org;				//  2009/05/27
+
+		//  2015/01/15
+		uint uiPts;                             //  2015/01/15
+
+		//  2016/12/26
+		//uint										uiEventId_lastRecvd_unused;				//  2013/11/15, 表示从remoteAssist收到了事件的id
+
+		//
+		uint uiLen;                             //  ¶ÔÓ¦µÄÊý¾Ý³¤¶È
+
+		//
+		TRANSFER_videoData_stat stat;                               //  2017/09/05
+
+		//
+	}
+	;
+
+
+	public struct myDRAW_VIDEO_DATA_input
+	{
+		//
+		bool bRtsp;                                    //  2015/03/14
+
+		//
+		ulong tStartTran;                              //  2011/08/30
+
+	};
+
+	public struct myDRAW_VIDEO_DATA_vpp
+	{
+		uint uiCnt_vpp0;
+		//
+	};
+
+	public struct myDRAW_VIDEO_DATA_decInfo
+	{
+		int index_pMems_from;
+		//  2016/12/27
+		uint uiEventId_lastRecvd_unused;                    //  2008/11/22
+
+		//  2014/09/04
+		QIS_RES_OBJ dynBmp;                                 //  2014/10/12
+
+		//
+		bool ucbUnresizable;                            //  2015/10/23
+
+	};
+
+	public struct myDRAW_VIDEO_DATA
+	{
+		public uint uiType_unused;
+		//
+		//uint										uiTranNo_openAvDev_unused;				//  2014/11/26.tranNo.
+
+		//
+		public uint uiCapType;
+		public int iIndex_capBmp;
+
+		public myDRAW_VIDEO_DATA_input input;
+
+		//  2015/05/07
+
+		public myDRAW_VIDEO_DATA_vpp vpp;
+
+		//  2016/12/27
+		public uint uiEventId_lastRecvd_unused;
+
+		//
+		public IntPtr hWnd_task;
+		public int iTaskId;
+		public uint uiTaskType;                                //  2014/10/01
+
+		//
+		public QY_MESSENGER_ID idInfo_peer;
+
+		//  2011/12/09
+		public myDRAW_VIDEO_DATA_decInfo decInfo;                                //  
+
+		//  2011/12/08
+		//DEBUG_myDRAW_VIDEO_DATA debugInfo;
+
+		//  
+		public long lPktId_alloc;                          //  2014/03/26.一个不重的序号. 分配内存的标识
+
+		//
+		public TRANSFER_VIDEO_dataMemHead head;                                    //  head.len表示pBuf中的缓冲长度, head.len和bih.biSizeImage不一定相等
+		public ushort usIndex_activeMems_from;             //  2013/07/18.
+
+		//  2015/09/30
+		public ushort usPktResType;                            //  2015/09/30
+
+		//  2015/09/30
+		//PKT_sharedTex_info pktSharedTexInfo;
+
+		//  2011/12/06
+		public uint uiSize_dec;                                //  pBuf中分为2个区，一个为未压缩数据区，大小为uiSize_dec. uiSize_dec应<=head.len
+		public BITMAPINFOHEADER bih;                                   //  2011/12/04. 此bih表明了未压缩区中的图像格式, bih.sizeImage应该<=uiSize_dec
+																	   //
+		public uint uiOffset_enc;
+		public uint uiLen_enc;                             //  另一个为压缩数据区，大小为head.len - uiSize_dec，包含一个包头uiOffset_enc，紧跟一个压缩数据. 真实大小为uiLen_enc
+														   //
+														   //  2014/02/24. 当bRtsp为true, p->uiLen_enc  =  offsetof(  TRANSFER_VIDEO_DATA,  buf  )  +  BufferLen;
+
+
+		//  char											*	pBuf;								//  2009/12/07, len is in head
+		public QY_MEMORY memory;									//  2010/04/23
+
+				 //
+
+}		 ;
+
+
+	/// <summary>
+	/// ////////////////////////////////////////////////////////////////////////
+	/// </summary>
+	/// 
+
+	public struct IM_SIMPLE_RESP
+	{
+		uint uiType;
+		ushort usCmd_org;
+		uint uiContentType_org;
+		int iStatus;
+		//
+	}
+	;
+
+	public unsafe struct IM_HTML_CONTENT
+	{                                   //  
+		public uint uiType;                                //  
+														   //
+		public byte ucbResp;                          //  2014/07/11
+													  //
+													  //  2015/02/16
+													  //unsigned  char										ucbNotification;
+		public QY_MESSENGER_ID idInfo_logicalPeer;                 //  2015/02/16
+
+		//  time_t											tStartTime_serv;					//  
+		public uint uiSerialNo;                            //  
+		public fixed char wBuf[Consts.cntof_imHtmlContent_wBuf];
+	}
+	;
+
+
+
+
+
+	[StructLayout(LayoutKind.Explicit)]
+
+	public struct IM_CONTENTU
+	{                                   //  ÄÚ²¿´¦ÀíÊ±£¬¶¼²ÉÓÃwcharÀàÐÍ£¬·¢ËÍÒÔutf8·¢ËÍ
+		[FieldOffset(0)]		public              uint uiType;                               //  ´ËÀàÐÍ¿ÉÒÔ¶à¸öÖµ£¬Çø·Öhtml,txtµÈ¸ñÊ½
+		/*
+	IM_SIMPLE_RESP simpleResp;
+	//  IM_STREAM_CONTENT									stream;							//  2011/01/29
+	IM_DATA_CONTENT data;
+	IM_L_STREAM lStream;
+	// 
+	TRANSFER_FILE_REQ transferFileReq;
+	TRANSFER_FILE_REPLYREQ transferFileReplyReq;                //  2007/07/06
+	TRANSFER_FILEDATA_REQ transferFileDataReq;
+	TRANSFER_FILEDATA_RESP transferFileDataResp;
+	TRANSFER_FILEEND_REQ transferFileEndReq;
+	TRANSFER_FILEEND_RESP transferFileEndResp;
+	//
+	TASK_PROC_REQ taskProcReq;
+	TASK_PROC_RESP taskProcResp;
+	//
+	//
+	REFRESH_RECENTFRIENDS_REQ refreshRecentFriendsReq;          //  2007/07/12
+	REFRESH_RECENTFRIENDS_RESP refreshRecentFriendsResp;
+	//
+	RTC_CALL_REQ rtcCallReq;                            //  2007/10/07
+														//
+	TRANSFER_AV_INFO transferAvInfo;                        //  2008/03/15
+	TRANSFER_AV_replyInfo transferAvReplyInfo;
+	TRANSFER_VIDEO_DATA transferVideoData;
+	TRANSFER_VIDEO_dataResp transferVideoDataResp;
+	TRANSFER_AUDIO_DATA transferAudioData;                  //  2008/04/16
+	TRANSFER_AUDIO_dataResp transferAudioDataResp;              //  2008/04/16
+																//
+	REMOTE_ASSIST_REQ remoteAssistReq;                  //  2008/11/15
+														//
+	TASK_INTERACTION_REQ taskInteractionReq;                    //  2009/02/23
+	VIDEO_CONFERENCE_STATUS videoConferenceStatus;
+	VIDEO_CONFERENCE_LAYOUT videoConferenceLayout;              //  2010/12/27
+	CONF_state confState;                           //  2017/09/17
+													//
+	TRANSFER_GPS_INFO transferGpsInfo;                  //  2012/04/19
+	TRANSFER_GPS_replyInfo transferGpsReplyInfo;                //  2012/04/19
+	TRANSFER_GPS_DATA transferGpsData;                  //  2012/04/20
+	TRANSFER_GPS_dataResp transferGpsDataResp;              //  2012/04/20
+															//
+															//  stream
+															//
+	IM_HTML_CONTENT html;
+	//
+	//  QIS_INTERVAL_PARAMS							intervalParams;						//  2007/12/01
+	QIS_getCfgs_req getCfgsReq;                         //  2011/01/30
+														//
+	RETRIEVE_IMOBJLIST_REQ retrieveImObjListReq;
+	RETRIEVE_IMGRPLIST_RESP retrieveImGrpListResp;
+	RETRIEVE_IMGRPMEMLIST_RESP retrieveImGrpMemListResp;
+	RETRIEVE_CONTACTLIST_RESP retrieveContactListResp;
+	RETRIEVE_IMOBJLISTEND_RESP retrieveImObjListEndResp;
+	//
+	IM_GRP_EX imGrpEx;
+	//
+	RETRIEVE_customerServiceObjList_req retrieveCustomerServiceObjListReq;  //  2011/04/04
+	QUERY_customerServiceOfficer_req queryCustomerServiceOfficerReq;        //  2011/04/06
+	QUERY_customerServiceOfficer_replyReq queryCustomerServiceOfficerReplyReq;//  2011/04/06
+																			  //
+	RETRIEVE_WEBCONTACTLIST_RESP retrieveWebContactListResp;
+	REFRESH_WEBCONTACTS_INFO refreshWebContactsInfo;                //  2007/12/22
+																	//
+	QY_VDEV_COMS vDevComs;
+	RETRIEVE_SM_POLICY retrieveSmPolicy;
+	RETRIEVE_PHONE_MSGRS retrievePhoneMsgrs;                    //  2008/01/02
+	RETRIEVE_TO_PATHS retrieveToPaths;                  //  2008/02/09
+														//
+	REFRESH_DYN_BMPS refreshDynBmps;                        //  2009/08/24
+	VERIFY_viewDynBmp verifyViewDynBmp;                 //  2011/10/31
+	RETRIEVE_DYN_BMPS retrieveDynBmps;                  //  2009/09/04
+	REFRESH_imObjRules_req refreshImObjRulesReq;                //  2010/08/15
+																//
+	PROC_offlineRes_u procOfflineResU;                  //  2015/08/01
+
+
+	//
+	PTZ_control_req ptzControlReq;                      //  2012/08/05
+	PTZ_control_cmd ptzControlCmd;
+
+	//
+	QUERY_peer_status queryPeerStatus;                  //  2014/07/11
+
+	//
+	QY_VDEV_DATA vDevData;
+
+	//
+	GET_daemonStatus_req getDaemonStatusReq;                    //  2011/01/08
+
+		*/
+}
+;
+
+
+	[StructLayout(LayoutKind.Explicit)]
+
+	public struct IM_CONTENTU_nh
+	{									//  2010/07/29
+				 [FieldOffset (0)]public uint										uiType;                             //  
+				//IM_SIMPLE_RESP simpleResp;
+				//IM_L_STREAM_nh lStream;
+}		 ;
+
+
+	public unsafe struct MIS_MSG_TALKDATA
+	{
+		public MSG_SIMPLE_ROUTE route; //  TALKDATA_ADDR									addr;
+								//
+								//fixed char buf[sizeof(IM_CONTENTU) + 1024];   //  ×¢Òâ£¬ÔÚ·ÅÈë¶ÓÁÐÀï£¬²»ÒªÓÃsizeof(  data  ),  Ó¦¸ÃÊ¹ÓÃoffsetof(  ,  data  )  +  dataLen, ÒÔ½ÚÔ¼ÄÚ´æ
+		public fixed byte buf[Consts.CONST_bufSize_talkData];
+	}
+	;
+
+	public unsafe struct MIS_MSG_routeTalkData
+	{
+		public MSG_ROUTE route;
+		//
+		//char buf[sizeof(IM_CONTENTU) + 1024];
+		public fixed byte buf[Consts.CONST_bufSize_routeTalkData];
+	}
+	;
+
+
+
+
+
+	/// <summary>
+	/// /////////////////////////////////////////
+	/// </summary>
+
+
+	public struct MIS_MSG_TALK
+	{                                   //  2007/11/29, addressable talk
+		public uint uiType;
+		//
+		public uint uiCliIndex;                           //  input daemon
+														  //  2008/01/05, vDev_coms uiCliIndex
+
+		public uint uiSessionId;
+		public uint uiStep;                                //  2008/04/28
+
+		public bool ucbConvrted;                      //  input 2007/7/14
+
+		public bool ucbConvrted_msgRoute;             //  daemon input 
+		public ushort lenInBytes_msgRouteInDataBuf;        //  daemon input data.route route data.buf
+														   //  lenInBytes_msgRouteInDataBuf data.buf route
+
+		//  mc MisCnt qmd uiCliIndex, 2007/06/10
+		//void* pMisCnt;                          //  misCntµÄ, 2007/06/02
+		public MSGR_ADDR addr_logicalPeer;                 //  messenger. 
+
+		//
+		public byte ucFlg;
+		//
+		public ushort usCode;
+		public ushort usCode_org;                          //  
+		public Int64 tStartTime;
+		public uint uiTranNo;
+		public ushort usSeqNo;
+
+		public Int64 tStartTime_processed;                //  iocp uiTranNo_mgr iocp
+		public uint uiTranNo_processed;
+		public uint nTimes_tryToSend;                  //  mgr iocp 
+													   //
+		public Int64 tTime_alive;                     //  2014/12/09. 当没有找到新的视频数据时，刷新此变量，也可以表明任务是活跃的
+													  //
+		public Int64 tTime_applyForChkTaskAlive;          //  2010/10/30
+		public byte nTimes_applyForChkTaskAlive;      //  2014/12/09
+
+		//
+		public uint uiTaskMode_unused;                 //  2009/08/23
+
+		//
+		public int iTaskId;                            //  
+		public uint uiTaskType;                            //  
+		public QY_MESSENGER_ID idInfo_taskSender;                  //  
+		public QY_MESSENGER_ID idInfo_taskReceiver;                //  
+		public int iStatus;                            //  2007/07/18
+		public Int64 tLastModifiedTime;                   //  2014/05/01
+
+		//  
+		public Int64 tRecvTime;                           //  
+		public uint dwTickCnt_start;                  //  ( ms ). 
+		public uint dwTickCnt_toSend;                 //  2011/01/22. start->toSendQ
+													  //  
+		public ushort usElapsed_recved;                    //  
+		public ushort usElapsed_serv_startToProcess;       //  mtMgrThreadProc_is 
+		public int index_debugInfo;                    //  debugInfo index, debugInfo 2008/11/19
+
+		//
+		public uint uiChannelType;                     //  2008/04/17, 
+													   //
+		public uint uiChannelType_input;               //  2017/10/03
+
+		//
+		public uint lenInBytes;
+		//
+		public MIS_MSG_routeTalkData data;                             //  sizeof(  data  ),  offsetof(  ,  data  )  +  offsetof(  MIS_MSG_TALKDATA,  buf  )  +  bufLen
+	};
+	//MIS_MSG_TALK, MIS_MSG_INPUT, MIS_MSG_TASK, MIS_MSG_REQ;	
+
+	public struct MIS_MSG_INPUT
+	{                                   //  2007/11/29, addressable talk
+		public uint uiType;
+		//
+		public uint uiCliIndex;                           //  input daemon
+														  //  2008/01/05, vDev_coms uiCliIndex
+
+		public uint uiSessionId;
+		public uint uiStep;                                //  2008/04/28
+
+		public bool ucbConvrted;                      //  input 2007/7/14
+
+		public bool ucbConvrted_msgRoute;             //  daemon input 
+		public ushort lenInBytes_msgRouteInDataBuf;        //  daemon input data.route route data.buf
+														   //  lenInBytes_msgRouteInDataBuf data.buf route
+
+		//  mc MisCnt qmd uiCliIndex, 2007/06/10
+		//void* pMisCnt;                          //  misCntµÄ, 2007/06/02
+		public MSGR_ADDR addr_logicalPeer;                 //  messenger. 
+
+		//
+		public byte ucFlg;
+		//
+		public ushort usCode;
+		public ushort usCode_org;                          //  
+		public Int64 tStartTime;
+		public uint uiTranNo;
+		public ushort usSeqNo;
+
+		public Int64 tStartTime_processed;                //  iocp uiTranNo_mgr iocp
+		public uint uiTranNo_processed;
+		public uint nTimes_tryToSend;                  //  mgr iocp 
+													   //
+		public Int64 tTime_alive;                     //  2014/12/09. 当没有找到新的视频数据时，刷新此变量，也可以表明任务是活跃的
+													  //
+		public Int64 tTime_applyForChkTaskAlive;          //  2010/10/30
+		public byte nTimes_applyForChkTaskAlive;      //  2014/12/09
+
+		//
+		public uint uiTaskMode_unused;                 //  2009/08/23
+
+		//
+		public int iTaskId;                            //  
+		public uint uiTaskType;                            //  
+		public QY_MESSENGER_ID idInfo_taskSender;                  //  
+		public QY_MESSENGER_ID idInfo_taskReceiver;                //  
+		public int iStatus;                            //  2007/07/18
+		public Int64 tLastModifiedTime;                   //  2014/05/01
+
+		//  
+		public Int64 tRecvTime;                           //  
+		public uint dwTickCnt_start;                  //  ( ms ). 
+		public uint dwTickCnt_toSend;                 //  2011/01/22. start->toSendQ
+													  //  
+		public ushort usElapsed_recved;                    //  
+		public ushort usElapsed_serv_startToProcess;       //  mtMgrThreadProc_is 
+		public int index_debugInfo;                    //  debugInfo index, debugInfo 2008/11/19
+
+		//
+		public uint uiChannelType;                     //  2008/04/17, 
+													   //
+		public uint uiChannelType_input;               //  2017/10/03
+
+		//
+		public uint lenInBytes;
+		//
+		public MIS_MSG_routeTalkData data;                             //  sizeof(  data  ),  offsetof(  ,  data  )  +  offsetof(  MIS_MSG_TALKDATA,  buf  )  +  bufLen
+	};
+	
+
+	public struct MIS_MSG_TASK
+	{                                   //  2007/11/29, addressable talk
+		public uint uiType;
+		//
+		public uint uiCliIndex;                           //  input daemon
+														  //  2008/01/05, vDev_coms uiCliIndex
+
+		public uint uiSessionId;
+		public uint uiStep;                                //  2008/04/28
+
+		public bool ucbConvrted;                      //  input 2007/7/14
+
+		public bool ucbConvrted_msgRoute;             //  daemon input 
+		public ushort lenInBytes_msgRouteInDataBuf;        //  daemon input data.route route data.buf
+														   //  lenInBytes_msgRouteInDataBuf data.buf route
+
+		//  mc MisCnt qmd uiCliIndex, 2007/06/10
+		//void* pMisCnt;                          //  misCntµÄ, 2007/06/02
+		public MSGR_ADDR addr_logicalPeer;                 //  messenger. 
+
+		//
+		public byte ucFlg;
+		//
+		public ushort usCode;
+		public ushort usCode_org;                          //  
+		public Int64 tStartTime;
+		public uint uiTranNo;
+		public ushort usSeqNo;
+
+		public Int64 tStartTime_processed;                //  iocp uiTranNo_mgr iocp
+		public uint uiTranNo_processed;
+		public uint nTimes_tryToSend;                  //  mgr iocp 
+													   //
+		public Int64 tTime_alive;                     //  2014/12/09. 当没有找到新的视频数据时，刷新此变量，也可以表明任务是活跃的
+													  //
+		public Int64 tTime_applyForChkTaskAlive;          //  2010/10/30
+		public byte nTimes_applyForChkTaskAlive;      //  2014/12/09
+
+		//
+		public uint uiTaskMode_unused;                 //  2009/08/23
+
+		//
+		public int iTaskId;                            //  
+		public uint uiTaskType;                            //  
+		public QY_MESSENGER_ID idInfo_taskSender;                  //  
+		public QY_MESSENGER_ID idInfo_taskReceiver;                //  
+		public int iStatus;                            //  2007/07/18
+		public Int64 tLastModifiedTime;                   //  2014/05/01
+
+		//  
+		public Int64 tRecvTime;                           //  
+		public uint dwTickCnt_start;                  //  ( ms ). 
+		public uint dwTickCnt_toSend;                 //  2011/01/22. start->toSendQ
+													  //  
+		public ushort usElapsed_recved;                    //  
+		public ushort usElapsed_serv_startToProcess;       //  mtMgrThreadProc_is 
+		public int index_debugInfo;                    //  debugInfo index, debugInfo 2008/11/19
+
+		//
+		public uint uiChannelType;                     //  2008/04/17, 
+													   //
+		public uint uiChannelType_input;               //  2017/10/03
+
+		//
+		public uint lenInBytes;
+		//
+		public MIS_MSG_routeTalkData data;                             //  sizeof(  data  ),  offsetof(  ,  data  )  +  offsetof(  MIS_MSG_TALKDATA,  buf  )  +  bufLen
+	};
+	
+
+
+	public struct MIS_MSG_REQ
+	{                                   //  2007/11/29, addressable talk
+		public uint uiType;
+		//
+		public uint uiCliIndex;                           //  input daemon
+														  //  2008/01/05, vDev_coms uiCliIndex
+
+		public uint uiSessionId;
+		public uint uiStep;                                //  2008/04/28
+
+		public bool ucbConvrted;                      //  input 2007/7/14
+
+		public bool ucbConvrted_msgRoute;             //  daemon input 
+		public ushort lenInBytes_msgRouteInDataBuf;        //  daemon input data.route route data.buf
+														   //  lenInBytes_msgRouteInDataBuf data.buf route
+
+		//  mc MisCnt qmd uiCliIndex, 2007/06/10
+		//void* pMisCnt;                          //  misCntµÄ, 2007/06/02
+		public MSGR_ADDR addr_logicalPeer;                 //  messenger. 
+
+		//
+		public byte ucFlg;
+		//
+		public ushort usCode;
+		public ushort usCode_org;                          //  
+		public Int64 tStartTime;
+		public uint uiTranNo;
+		public ushort usSeqNo;
+
+		public Int64 tStartTime_processed;                //  iocp uiTranNo_mgr iocp
+		public uint uiTranNo_processed;
+		public uint nTimes_tryToSend;                  //  mgr iocp 
+													   //
+		public Int64 tTime_alive;                     //  2014/12/09. 当没有找到新的视频数据时，刷新此变量，也可以表明任务是活跃的
+													  //
+		public Int64 tTime_applyForChkTaskAlive;          //  2010/10/30
+		public byte nTimes_applyForChkTaskAlive;      //  2014/12/09
+
+		//
+		public uint uiTaskMode_unused;                 //  2009/08/23
+
+		//
+		public int iTaskId;                            //  
+		public uint uiTaskType;                            //  
+		public QY_MESSENGER_ID idInfo_taskSender;                  //  
+		public QY_MESSENGER_ID idInfo_taskReceiver;                //  
+		public int iStatus;                            //  2007/07/18
+		public Int64 tLastModifiedTime;                   //  2014/05/01
+
+		//  
+		public Int64 tRecvTime;                           //  
+		public uint dwTickCnt_start;                  //  ( ms ). 
+		public uint dwTickCnt_toSend;                 //  2011/01/22. start->toSendQ
+													  //  
+		public ushort usElapsed_recved;                    //  
+		public ushort usElapsed_serv_startToProcess;       //  mtMgrThreadProc_is 
+		public int index_debugInfo;                    //  debugInfo index, debugInfo 2008/11/19
+
+		//
+		public uint uiChannelType;                     //  2008/04/17, 
+													   //
+		public uint uiChannelType_input;               //  2017/10/03
+
+		//
+		public uint lenInBytes;
+		//
+		public MIS_MSG_routeTalkData data;                             //  sizeof(  data  ),  offsetof(  ,  data  )  +  offsetof(  MIS_MSG_TALKDATA,  buf  )  +  bufLen
+	};
+	
+
+
+	public struct MIS_MSG_procVideo_qmc
+{                                   //  2008/03/18
+	//MACRO_misMsg_common
+	public uint uiType;
+		//
+		//		void* pMisCnt;
+		public QY_MESSENGER_ID idInfo_peer;
+	//
+						UInt64                       ui64Id_idInfo_sender;
+		//
+		//
+		public uint uiTranNo_openAvDev;
+		public ushort usIndex;
+		//
+		public int iTaskId;
+		public IntPtr hWnd_task;                         //  2009/09/14
+														 //
+		public uint uiEventId_lastRecvd_unused;            //  2016/12/26	//  2008/11/22
+
+		//
+		public uint uiCapType;
+		public int iIndex_capProcInfo;
+		public BITMAPINFOHEADER bih;
+
+		//
+		//QY_MEMORY									memory;
+
+		//  2014/09/23
+		public myDRAW_VIDEO_DATA pkt;
+
+		//
+		//  int										index_player;						//  2009/10/03
+		public PLAYER_ID playerId;                         //  2016/02/18
+
+		//
+
+		//
+		public bool ucbDisplayAllFrames;              //  2009/07/25
+
+//
+
+//  
+
+}		;
+
+
+	[StructLayout(LayoutKind.Explicit)]
+
+	public struct  MIS_MSGU										{
+		[FieldOffset(0)] public uint uiType;
+		/*
+		MIS_MSG_RESULT result;
+		MIS_MSG_RESP resp;
+		*/
+		[FieldOffset(0)] public MIS_MSG_INPUT input;
+		[FieldOffset(0)] public MIS_MSG_REQ req;
+		[FieldOffset(0)] public MIS_MSG_TALK talk;
+		[FieldOffset(0)] public MIS_MSG_TASK task;                      //  2007/07/08
+		
+		/*
+		//
+	MIS_MSG_GRP grp;                        //  2008/05/27
+											//
+	MIS_MSG_inputArrive inputArrive;                //  2015/08/24
+	MIS_MSG_send send;                      //  2015/09/02
+	MIS_MSG_sendFinished sendFinished;              //  2007/05/30
+	MIS_MSG_processSelf processSelf;                //  2007/05/30
+	MIS_MSG_processBt processBt;                    //  2011/04/18
+	MIS_MSG_isSendOk isSendOk;
+	MIS_MSG_sendOk sendOk;
+	MIS_MSG_chkChannel chkChannel;                  //  2007/12/20
+	MIS_MSG_applyForWork applyForWork;              //  2007/09/03
+													//
+	MIS_MSG_NEEDREG_QMC needReg_qmc;
+	//
+	MIS_MSG_TASKSTATUS taskStatus;                  //  2007/07/17
+	MIS_MSG_imMsgRcd imMsgRcd;                  //  2007/08/12
+	MIS_MSG_EVENT event;
+	//
+	MIS_MSG_TALKINGFRIEND_QMC talkingFriend_qmc;
+	MIS_MSG_RECENTFRIEND_QMC recentFriend_qmc;
+	MIS_MSG_DISPLAYEDELEM_QMC displayedElem_qmc;            //  2007/06/10
+	MIS_MSG_REFRESHCONTACTSSTATUS_QMC refreshContactsStatus_qmc;
+	MIS_MSG_REFRESHMESTATUS_QMC refreshMeStatus_qmc;        //  2007/06/20
+	MIS_MSG_applyForPlayer_qmc applyForPlayer_qmc;          //  2008/05/09
+	MIS_MSG_applyForChkChannels_qmc applyForChkChannels_qmc;    //  2008/06/01
+	MIS_MSG_applyForRemovingInvalidTasks_qmc applyForRemovingInvalidTasks_qmc;      //  2009/09/10
+	MIS_MSG_applyForTalkerShadow_qmc applyForTalkerShadow_qmc;  //  2012/04/23
+																//
+	MIS_MSG_procVideo_qmc procVideo;                    //  2009/03/24
+	MIS_MSG_procGps_qmc procGps;                    //  2012/04/20
+													//
+	MIS_MSG_notifyTaskEnd_qmc notifyTaskEnd;                //  2009/04/28
+															//
+	MIS_MSG_getDaemonStatus getDaemonStatus;            //  2011/01/12
+	*/
+
+	}
+	;
+
+
+
+	partial class qyFuncs
+	{
+		public unsafe struct TMP_ip
+		{
+			public fixed byte ip[Consts.CONST_qyMaxIpLen + 1];
+		}
+		public static unsafe int qnmOpenSession_mis(string servIp, ushort usPort, ref QY_COMM_AUTHINFO_MIS pAuthInfo, byte ucAuthCmd, uint uiChannelType, string clientIp, int iServiceId, string serviceVer, ref ENC_CTX_session pCommEncCtx, ref QY_COMM_SESSION pSession, ref QY_SOCK pSock, SOCK_TIMEOUT pTo, byte* data, uint* piDataSize)
+		{
+			int iErr = -1;
+			QY_COMM_AUTHINFO_MIS authInfo;
+			TMP_ip ip;
+			byte* pIp = ip.ip;
+			QY_MSG_HEAD tmpResp; tmpResp.uiLen = 0;
+			TMP_buf4096 tmpBuf4096;
+			uint len;
+
+			if (0 == usPort) return -1;
+			if (0 == ucAuthCmd)
+			{
+				/*
+				if (!pAuthInfo)
+				{
+					traceLogA("qnmOpenSession_mis failed: pAuthInfo is null");
+					return -1;
+				}
+				*/
+			}
+
+			//if (pAuthInfo) memcpy(&authInfo, pAuthInfo, sizeof(authInfo));
+			//else memset(&authInfo, 0, sizeof(authInfo));
+			authInfo = pAuthInfo;
+			//
+			if (!bQySockOpen(ref pSock))
+			{       //  Èç¹ûÇ°ÃæÒÑ½¨Á¢Á¬½Ó£¬Ôò²»ÐèÒª½¨Á¢ÐÂÁ¬½Ó
+				if (qyConnect(servIp, usPort, ref pTo, ref pSock) != 0) goto errLabel;
+			}
+			authInfo.ucCmd = ucAuthCmd;
+			authInfo.uiChannelType = uiChannelType; //  2007/07/08
+													//
+			if (bIpValid(clientIp)) safeStrnCpy(clientIp, (byte*)authInfo.ip, Consts.CONST_qyMaxIpLen + 1);
+			else
+			{
+				if (getLocalIpBySocket(ref pSock, ip.ip) != 0) goto errLabel;
+				safeStrnCpy(mytoString(pIp), authInfo.ip, Consts.CONST_qyMaxIpLen + 1);
+			}
+
+			//  ½«»á»°ÃÜÔ¿·ÅÈëauthInfoÁ÷ÖÐ£¬2008/06/10
+			//if (pCommEncCtx )
+			{
+				ref ENC_CTX_session pEncCtx = ref pCommEncCtx;
+				if (pEncCtx.common.type == Consts.CONST_qyEncType_rsa
+					&& pEncCtx.uiBlobLen_sessionKey != 0)
+				{
+					authInfo.uiBlobLen_sessionKey = Math.Min(pEncCtx.uiBlobLen_sessionKey, Consts.CONST_bufSize_sessionKeyBlob);
+					fixed (byte* psrc = pEncCtx.sessionKeyBlob)
+					{
+						byte* pdst = authInfo.sessionKeyBlob;
+						mymemcpy((IntPtr)pdst, (IntPtr)psrc, authInfo.uiBlobLen_sessionKey);
+					}
+				}
+				//  2015/08/28
+			}
+			//
+			len = Consts.CONST_bufSize_4096;// sizeof(tmpBuf);
+			if (0 != commAuthInfo2Stream_mis(&authInfo, tmpBuf4096.buf, &len)) goto errLabel;
+
+			fixed (byte* pclientIp = pSession.clientIp)
+			{
+				safeStrnCpy(mytoString(pIp), pclientIp, Consts.CONST_qyMaxIpLen + 1); //  2007/08/03
+			}
+
+			//MACRO_prepareForTran()
+			Int64 tStartTran; uint uiTranNo; mytime(&tStartTran); uiTranNo = getuiNextTranNo(null, 0, null);
+
+
+			//  if  (  qyTellService_msg(  iServiceId,  serviceVer,  CONST_qyCmd_tellService,  pCommEncCtx,  tmpBuf,  len,  pSock,  pTo,  pSession  )  )  goto  errLabel;
+			if (0 != qyTellService_msg((uint)iServiceId, serviceVer, ref pCommEncCtx.common, Consts.CONST_qyCmd_tellService, tStartTran, uiTranNo, tmpBuf4096.buf, (int)len, pSock, pTo, pSession)) goto errLabel;
+			if (0 != qyRecvMsg(ref pSession, ref pSock, pTo, &tmpResp, tmpBuf4096.buf, Consts.CONST_bufSize_4096)) goto errLabel;
+			//  traceLogA(  "qwmOpenSession: get respCode of qyTellService is %s",  qyGetDesByType1(  CONST_qyRcTable,  tmpResp.head.usCode  )  );
+
+			//  2011/10/27
+			if (tmpResp.i64StartTime != tStartTran
+				|| tmpResp.uiTranNo != uiTranNo)
+			{
+
+				goto errLabel;
+			}
+
+			//  if  (  !isRcOk(  tmpResp.head.usCode  )  )  goto  errLabel; 
+
+			iErr = 0;
+
+		errLabel:
+
+			if (0 != iErr)
+			{
+				if (bQySockOpen(ref pSock)) qyDisconnect(ref pSock);
+			}
+			else
+			{
+				if (piDataSize != null && data != null)
+				{
+					*piDataSize = Math.Min(*piDataSize, tmpResp.uiLen);
+					mymemcpy((IntPtr)data, (IntPtr)tmpBuf4096.buf, *piDataSize);
+				}
+			}
+
+			return iErr;
+		}
+
+
+		//
+		public static unsafe void MACRO_memset_misMsgTalk(MIS_MSG_TALK* pMsgTalk) {
+			//memset(  (  pMsgTalk  ),  0,  offsetof(  MIS_MSG_TALK,  data  )  +  offsetof(  MIS_MSG_routeTalkData,  buf  )  +  sizeof(  unsigned  int  )  );
+			mymemset((IntPtr)pMsgTalk, 0, sizeof(MIS_MSG_TALK) - Consts.CONST_bufSize_routeTalkData);
+		}
+		public static unsafe void MACRO_memset_misMsgInput(MIS_MSG_INPUT* pMsgInput) {
+			//memset(  (  pMsgInput  ),  0,  offsetof(  MIS_MSG_INPUT,  data  )  +  offsetof(  MIS_MSG_routeTalkData,  buf  )  +  sizeof(  unsigned  int  )  );
+			mymemset((IntPtr)pMsgInput, 0, sizeof(MIS_MSG_INPUT) - Consts.CONST_bufSize_routeTalkData);
+		}
+		public static unsafe void MACRO_memset_misMsgTask(MIS_MSG_TASK* pMsgTask) {
+			//memset(  (  pMsgTask  ),  0,  offsetof(  MIS_MSG_TASK,  data  )  +  offsetof(  MIS_MSG_routeTalkData,  buf  )  +  sizeof(  unsigned  int  )  );
+			mymemset((IntPtr)pMsgTask, 0, sizeof(MIS_MSG_TASK) - Consts.CONST_bufSize_routeTalkData);
+		}
+		public static unsafe void MACRO_memset_misMsgReq(MIS_MSG_REQ* pMsgReq)
+		{
+			//memset(  (  pMsgReq  ),  0,  offsetof(  MIS_MSG_REQ,  data  )  +  offsetof(  MIS_MSG_routeTalkData,  buf  )  +  sizeof(  unsigned  int  )  );
+			mymemset((IntPtr)pMsgReq, 0, sizeof(MIS_MSG_REQ) - Consts.CONST_bufSize_routeTalkData);
+		}
+
+		public static unsafe MIS_MSG_routeTalkData* MACRO_msgRouteTalkData(byte ucFlg, MIS_MSG_routeTalkData* pMsgData)
+		{
+			//(  (  isUcFlgRouteTalkData(  ucFlg  )  ||  isUcFlgTalkData(  ucFlg  )  )  ?  pMsgBuf  :  NULL  )
+			return ((isUcFlgRouteTalkData(ucFlg) || isUcFlgTalkData(ucFlg)) ? pMsgData : null);
+		}
+		//  2014/09/28
+		//  #define		M_getMsgContent(  ucFlg,  pMsgBuf  )				(  (  isUcFlgRouteTalkData(  ucFlg  )  ||  isUcFlgTalkData(  ucFlg  )  )  ?  (  (  IM_CONTENTU  *  )(  (  MIS_MSG_routeTalkData  *  )pMsgBuf  )->buf  )  :  (  IM_CONTENTU  *  )pMsgBuf  )
+		public static unsafe IM_CONTENTU* M_getMsgContent(byte ucFlg, void* pMsgData)
+		{
+			//(  (  isUcFlgRouteTalkData(  ucFlg  )  ||  isUcFlgTalkData(  ucFlg  )  )  ?  (  (  IM_CONTENTU  *  )(  (  MIS_MSG_routeTalkData  *  )pMsgData  )->buf  )  :  (  IM_CONTENTU  *  )pMsgData  )
+			return ((isUcFlgRouteTalkData(ucFlg) || isUcFlgTalkData(ucFlg)) ? ((IM_CONTENTU*)((MIS_MSG_routeTalkData*)pMsgData)->buf) : (IM_CONTENTU*)pMsgData);
+		}
+
+		//
+		public static unsafe void MACRO_qyNullThread(ref Thread h)
+		{
+			//if  (  h  )  {	::WaitForSingleObject(h, INFINITE  );	CloseHandle(h  ); h	=	NULL;	}												
+			if (h != null)
+			{
+				int i;
+				int maxStep = 10000;
+				for (i = 0; i < maxStep; i++)
+				{
+					if (!h.IsAlive) break;
+					Thread.Sleep(100);
+					continue;
+
+				}
+				if (i == maxStep)
+				{
+					int ii = 0;
+					showInfo_open(null, "MACRO_qyNullThread", "failed, serious err");
+				}
+				h = null;
+			}
+			return;
+		}
+
+	}																}
+
+	
+
+	
+
+
+

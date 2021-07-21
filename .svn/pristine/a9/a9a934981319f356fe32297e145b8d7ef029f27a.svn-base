@@ -1,0 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+partial class Consts
+{
+    public const int CONST_maxTriesToStartSession_mis = 5;
+
+    //
+    public const int CONST_iAllocType_msg = (CONST_iAllocType_user + 1);
+    public const int CONST_iAllocType_audio = (CONST_iAllocType_user + 2);
+    public const int CONST_iAllocType_video = (CONST_iAllocType_user + 3);
+    public const int CONST_iAllocType_longTimeMsg = (CONST_iAllocType_user + 4);
+
+
+}
+
+namespace qy
+{
+    partial class qyFuncs
+{
+}
+}

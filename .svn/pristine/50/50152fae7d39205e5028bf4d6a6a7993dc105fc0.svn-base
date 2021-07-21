@@ -1,0 +1,91 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace qy
+{
+    partial class qyFuncs
+{
+
+		public static unsafe int tryToFreeSharedObjs(CCtxQmc pProcInfo)
+		{
+
+			if (null==pProcInfo) return -1;
+			CCtxQyMc pQyMc = pProcInfo.pQyMc;    //  
+			if (null==pQyMc) return -1;
+
+			/*
+
+# ifdef  __DEBUG__
+			traceLogA("tryToFreeSharedObjs(  ) enters");
+#endif
+
+			//
+			for (int index = 0; index < pProcInfo->cfg.usMaxCnt_pSharedObjs; index++)
+			{
+				QY_SHARED_OBJ* pSharedObj = getSharedObjByIndex(pProcInfo, index);
+
+				if (!pSharedObj->bUsed) continue;
+
+				//  try to find sharedObj whick need be stopped
+				if (bSharedObjActive(pProcInfo, index))
+				{
+
+					//
+					BOOL tmp_bExists = FALSE;
+					if (!getVal_bExists_sharedObjUsr(pProcInfo, index, &tmp_bExists))
+					{
+						if (!tmp_bExists)
+						{
+# ifdef  __DEBUG__
+							traceLogA("tryToFreeSharedObjs: objs[%d] no hWnd_starter, shall be stopped.", index);
+#endif
+							askSharedObjToStop(pProcInfo, pSharedObj, NULL, _T("tryToFreeSharedObjs. no usr"));
+						}
+					}
+
+				}
+
+				//
+				if (!bSharedObjActive(pProcInfo, index))
+				{
+# ifdef  __DEBUG__
+					traceLog(_T("freeSharedObjByIndex(  ): index is %d\n"), index);
+#endif
+
+					//  2014/09/28
+					if (!pSharedObj->bSlave)
+					{
+						if (bExists_slave(pProcInfo, index))
+						{
+							QY_SHARED_OBJ* pSharedObj_master = pSharedObj;
+							int iIndex_slave = pSharedObj_master->master.slaveKey.iIndex_sharedObj;
+							QY_SHARED_OBJ* pSharedObj_slave = getSharedObjByIndex(pProcInfo, iIndex_slave);
+
+							//
+							shareDynBmp_closeTaskAv((SHARE_dyn_bmp*)pSharedObj_master->master.pShareDynBmp_slave);
+							//
+							askSharedObjToStop(pProcInfo, pSharedObj_slave, NULL, _T("tryToFreeSharedObjs. slave exists ."));
+							continue;
+						}
+					}
+
+					//
+					freeSharedObjByIndex(pProcInfo, index);
+					continue;
+				}
+
+				//
+				continue;
+			}
+
+# ifdef  __DEBUG__
+			traceLogA("tryToFreeSharedObjs(  ) leaves");
+#endif
+			*/
+
+			return 0;
+		}
+
+	}
+}

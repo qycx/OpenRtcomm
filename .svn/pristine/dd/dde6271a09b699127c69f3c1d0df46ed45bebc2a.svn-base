@@ -1,0 +1,61 @@
+﻿using Android.App;
+using Android.Content;
+using Android.OS;
+using Android.Runtime;
+using Android.Support.V4.App;
+using Android.Views;
+using Android.Widget;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace qyMessengerApp.Droid
+{
+    class FragmentPagerAdapter_dlgTalk : FragmentPagerAdapter
+    {
+        private int PAGER_COUNT = 2;
+        public Fragment_dlgTalk_msgList myFragment1 = null;
+        public MyFragment1 myFragment2 = null;
+
+        public FragmentPagerAdapter_dlgTalk(Android.Support.V4.App.FragmentManager fm):base(fm)
+        {
+            myFragment1 = new Fragment_dlgTalk_msgList();
+            myFragment2 = new MyFragment1();
+        }
+
+        public override int Count
+        {
+            get
+            {
+                return PAGER_COUNT;
+            }
+
+        }
+
+        public override Android.Support.V4.App.Fragment GetItem(int position)
+        {
+            Android.Support.V4.App.Fragment fragment = null;
+            switch (position)
+            {
+                case Activity_dlgTalk.PAGE_ONE:
+                    fragment = myFragment1;
+                    break;
+                case Activity_dlgTalk.PAGE_TWO:
+                    fragment = myFragment2;
+                    break;
+                default:
+                    break;
+            }
+            return fragment;
+        }
+
+        public override long GetItemId(int position)
+        {
+            return position;
+        }
+
+      
+    }
+
+}

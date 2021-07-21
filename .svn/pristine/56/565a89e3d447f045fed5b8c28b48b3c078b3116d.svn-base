@@ -1,0 +1,149 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+using Android.App;
+using Android.Content;
+using Android.OS;
+using Android.Runtime;
+using Android.Views;
+using Android.Widget;
+
+using qy;
+
+
+//
+namespace qyMessengerApp.Droid
+{
+    [Activity(Label = "Activity_qmcLogin")]
+    public class Activity_qmcLogin : Activity, View.IOnClickListener
+    {
+        EditText edit_server;
+        EditText edit_usrName;
+        EditText edit_passwd;
+        Button btn_login;
+        Context mContext;
+
+        //
+        AlertDialog m_alert = null;
+
+        //
+        protected override void OnCreate(Bundle savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
+
+            // Create your application here
+            SetContentView(Resource.Layout.layout_qmcLogin);
+            
+            //
+            mContext = this;
+
+            edit_server = (EditText)FindViewById(Resource.Id.editText_server);
+            edit_usrName = (EditText)FindViewById(Resource.Id.editText_usrName);
+            edit_passwd = (EditText)FindViewById(Resource.Id.editText_passwd);
+            btn_login = (Button)FindViewById(Resource.Id.button_login);
+            if (btn_login != null)
+            {
+                btn_login.SetOnClickListener(this);
+            }
+        }
+
+        public void OnClick(View v)
+        {
+            switch (v.Id)
+            {
+                case Resource.Id.button_login:
+                    string str_server = edit_server.Text;
+                    string str_usrName = edit_usrName.Text;
+                    string str_passwd = edit_passwd.Text;
+                    if ( 0!=qy.qyFuncs.doMcClientLogonOK(IntPtr.Zero, str_server, str_usrName, str_passwd))
+                    {
+                        displayHint(this,"登录失败","服务器地址错，或者用户名密码错");
+                        return;
+                    }
+                    Finish();
+                    return;
+                    break;
+                case Resource.Id.button_close:
+                    if (m_alert != null)
+                    {
+                        m_alert.Dismiss();
+                        m_alert = null;
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        public void displayHint(View.IOnClickListener lsn,string title, string hint )
+        {
+            AlertDialog.Builder builder = null;
+
+            builder = new AlertDialog.Builder(mContext);
+
+            LayoutInflater inflater = (LayoutInflater)mContext.GetSystemService(Context.LayoutInflaterService);
+            View view_custom = inflater.Inflate(Resource.Layout.layout_alert1, null, false);
+            builder.SetView(view_custom);
+            builder.SetCancelable(false);
+            m_alert = builder.Create();
+            Window wnd = m_alert.Window;
+            wnd.SetGravity(GravityFlags.Center | GravityFlags.Bottom);
+            //this.WindowManager.LayoutParams lp = wnd.Attributes;
+
+            TextView txt_title = (TextView)view_custom.FindViewById(Resource.Id.textView_title);
+            if(txt_title!=null)
+            {
+                txt_title.Text = title;
+            }
+
+            TextView txt_hint = (TextView)view_custom.FindViewById(Resource.Id.textView_hint);
+            if ( txt_hint!=null)
+            {
+                txt_hint.Text = hint;
+            }
+
+            /*
+            //
+
+        view_custom.findViewById(R.id.btn_blog).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+        {
+            Toast.makeText(getApplicationContext(), "访问博客", Toast.LENGTH_SHORT).show();
+            Uri uri = Uri.parse("http://blog.csdn.net/coder_pig");
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
+            alert.dismiss();
+        }
+    });
+            */
+
+            Button btn_close = (Button)view_custom.FindViewById(Resource.Id.button_close);
+            if (btn_close != null) btn_close.SetOnClickListener(lsn);
+            
+
+
+    
+            //    
+            m_alert.Show();
+
+
+        }
+
+        public override void OnBackPressed()
+        {
+            int i = 0;
+            CCtxQyMc pQyMc = g.g_pQyMc;
+
+            qyFuncs.guiShare.pf_PostMessage(pQyMc.gui.hMainWnd, Consts.CONST_qyWm_postComm, Consts.CONST_qyWmParam_login_canceled, 0);
+
+            //
+            Finish();
+            //
+            return;
+        }
+    }
+
+}

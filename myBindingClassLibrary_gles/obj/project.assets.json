@@ -1,0 +1,66 @@
+{
+  "version": 3,
+  "targets": {
+    "MonoAndroid,Version=v9.0": {},
+    "MonoAndroid,Version=v9.0/win": {},
+    "MonoAndroid,Version=v9.0/win-x64": {},
+    "MonoAndroid,Version=v9.0/win-x86": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    "MonoAndroid,Version=v9.0": []
+  },
+  "packageFolders": {
+    "C:\\Users\\qycx\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\root\\cliDevelop\\openRtComm\\myBindingClassLibrary_gles\\myBindingClassLibrary_gles.csproj",
+      "projectName": "myBindingClassLibrary_gles",
+      "projectPath": "C:\\root\\cliDevelop\\openRtComm\\myBindingClassLibrary_gles\\myBindingClassLibrary_gles.csproj",
+      "packagesPath": "C:\\Users\\qycx\\.nuget\\packages\\",
+      "outputPath": "C:\\root\\cliDevelop\\openRtComm\\myBindingClassLibrary_gles\\obj\\",
+      "projectStyle": "PackageReference",
+      "skipContentFileWrite": true,
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\qycx\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "monoandroid90"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "monoandroid90": {
+          "projectReferences": {}
+        }
+      }
+    },
+    "frameworks": {
+      "monoandroid90": {}
+    },
+    "runtimes": {
+      "win": {
+        "#import": []
+      },
+      "win-x64": {
+        "#import": []
+      },
+      "win-x86": {
+        "#import": []
+      }
+    }
+  }
+}

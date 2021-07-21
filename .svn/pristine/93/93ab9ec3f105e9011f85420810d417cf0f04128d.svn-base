@@ -1,0 +1,61 @@
+﻿using Android.App;
+using Android.Content;
+using Android.OS;
+using Android.Runtime;
+using Android.Util;
+using Android.Views;
+using Android.Widget;
+using AndroidX.RecyclerView.Widget;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace qyMessengerApp.Droid
+{
+    public class Fragment_dlgTalk_msgList : Android.Support.V4.App.Fragment
+    {
+        List<TableItem_dlgTalk_msg> tableItems = new List<TableItem_dlgTalk_msg>();
+        RecyclerView mRecyclerView;
+        RecyclerView.LayoutManager mLayoutManager;
+        Adapter_dlgTalk_msgList mAdapter;
+
+
+        public override void OnCreate(Bundle savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
+
+            // Create your fragment here
+
+            tableItems.Add(new TableItem_dlgTalk_msg() { ui64Id = 103, dw = "清扬创新", bm="技术部", syr = "王五", ImageResourceId = Resource.Drawable.Vegetables, msg = "今天快递了吗" });
+            tableItems.Add(new TableItem_dlgTalk_msg() { ui64Id = 105, dw="微软",bm="销售部门",syr="张三", ImageResourceId = Resource.Drawable.Vegetables, msg = "任务完成了吗？我说，今天任务没完成，我的时间都花在看抖音了。这是不对的。要说了很多话怎么办？你吃饭了吗？吃了是什么呢，吃的是鱼还是肉？" });
+
+        }
+
+        public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+        {
+            // Use this to return your custom view for this Fragment
+            // return inflater.Inflate(Resource.Layout.YourFragment, container, false);
+
+            //return base.OnCreateView(inflater, container, savedInstanceState);
+
+
+            View view = inflater.Inflate(Resource.Layout.layout_dlgTalk_msgList,container,false);
+
+            mRecyclerView = view.FindViewById<RecyclerView>(Resource.Id.recyclerView);
+            mLayoutManager = new LinearLayoutManager(inflater.Context);
+            mRecyclerView.SetLayoutManager(mLayoutManager);
+            mAdapter = new Adapter_dlgTalk_msgList(this.Activity, tableItems);
+
+            //
+            //mAdapter.ItemClick += OnItemClick;
+
+            //
+            mRecyclerView.SetAdapter(mAdapter);
+
+
+
+            return view;
+        }
+    }
+}
