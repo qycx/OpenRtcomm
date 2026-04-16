@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="qyCusRes2010_en">
+</Property><Property Name="Solution File" Value="D:\qycx4\develop6\srcRoot\qyCusSrc\qyCusRes\en\qyCusRes2010_en.sln">
+</Property><Property Name="User Options File" Value="D:\qycx4\develop6\srcRoot\qyCusSrc\qyCusRes\en\qyCusRes2010_en.suo">
+</Property><Property Name="Date" Value="2012年9月13日">
+</Property><Property Name="Time" Value="0:58">
+</Property><Property Name="Log Number" Value="2">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="qyCusRes2010_en.sln" Description="File successfully backed up as D:\qycx4\develop6\srcRoot\qyCusSrc\qyCusRes\en\qyCusRes2010_en.sln.old">
+</Event><Event ErrorLevel="0" Project="" Source="qyCusRes2010_en.suo" Description="File successfully backed up as D:\qycx4\develop6\srcRoot\qyCusSrc\qyCusRes\en\qyCusRes2010_en.suo.old">
+</Event><Event ErrorLevel="0" Project="qyCusRes2010_en" Source="qyCusRes2010_en.vcproj" Description="Converting project file 'D:\qycx4\develop6\srcRoot\qyCusSrc\qyCusRes\en\qyCusRes2010_en.vcproj'.">
+</Event><Event ErrorLevel="1" Project="qyCusRes2010_en" Source="qyCusRes2010_en.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="0" Project="qyCusRes2010_en" Source="qyCusRes2010_en.vcproj" Description="Done converting to new project file 'D:\qycx4\develop6\srcRoot\qyCusSrc\qyCusRes\en\qyCusRes2010_en.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="qyCusRes2010_en" Source="qyCusRes2010_en.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="qyCusRes2010_en.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="qyCusRes2010_en.sln" Description="Converted">
+</Event></UpgradeLog>

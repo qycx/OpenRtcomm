@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{CB15F2E1-127A-4D63-A48C-083D0DA1D23C}</ProjectGuid>
+    <RootNamespace>qyCusRes2010_en</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\..\..\..\VS2010\$(Platform)\$(Configuration)\bin</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\..\..\..\..\VS2010\$(Platform)\$(Configuration)\bin</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\..\..\..\..\VS2010\$(Platform)\o\$(ProjectName)\$(Configuration)</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\..\..\..\..\..\VS2010\$(Platform)\o\$(ProjectName)\$(Configuration)</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\..\..\..\VS2010\$(Platform)\$(Configuration)\bin</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\..\..\..\..\VS2010\$(Platform)\$(Configuration)\bin</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\..\..\..\..\VS2010\$(Platform)\o\$(ProjectName)\$(Configuration)</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\..\..\..\..\..\VS2010\$(Platform)\o\$(ProjectName)\$(Configuration)</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">qyCusRes</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">qyCusRes</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">qyCusRes</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">qyCusRes</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;QYCUSRES2010_EN_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <AdditionalIncludeDirectories>..\include;include;.;..\..\..\..\qyOpen\include;..\..\..\qisOpen\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;QYCUSRES2010_EN_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalIncludeDirectories>..\include;include;.;..\..\..\..\qyOpen\include;..\..\..\qisOpen\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;QYCUSRES2010_EN_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalIncludeDirectories>..\include;include;.;..\..\..\..\qyOpen\include;..\..\..\qisOpen\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;QYCUSRES2010_EN_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalIncludeDirectories>..\include;include;.;..\..\..\..\qyOpen\include;..\..\..\qisOpen\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\shared\qnmCustomDlg_isCliHelp.cpp" />
+    <ClCompile Include="..\shared\qnmCustomDlg_qisGuiPublic.cpp" />
+    <ClCompile Include="..\shared\qnmCustomDlg_qyMessengerHelp.cpp" />
+    <ClCompile Include="..\shared\qnmCustomMenu_isCliHelp.cpp" />
+    <ClCompile Include="..\shared\qnmCustomMenu_isCli_noMfc.cpp" />
+    <ClCompile Include="..\shared\qnmCustomMenu_popup_isCliHelp.cpp" />
+    <ClCompile Include="..\shared\qnmCustomMenu_qisGuiPublic.cpp" />
+    <ClCompile Include="..\shared\qnmCustomMenu_qmdCliHelp.cpp" />
+    <ClCompile Include="..\shared\qnmCustomMenu_qyMessengerHelp.cpp" />
+    <ClCompile Include="..\shared\qnmCustomSearch_isCliHelp.cpp" />
+    <ClCompile Include="..\shared\qnmCustomStr_isCliHelp.cpp" />
+    <ClCompile Include="..\shared\qnmCustomStr_isCli_noMfc.cpp" />
+    <ClCompile Include="..\shared\qnmCustomStr_qisGuiPublic.cpp" />
+    <ClCompile Include="..\shared\qnmCustomStr_qmdCliHelp.cpp" />
+    <ClCompile Include="..\shared\qnmCustomStr_qyMessengerHelp.cpp" />
+    <ClCompile Include="qyCusRes.cpp" />
+    <ClCompile Include="StdAfx.cpp" />
+    <ClCompile Include="..\shared\qnmCustomDlg.cpp" />
+    <ClCompile Include="..\shared\qnmCustomDlg_isCli.cpp" />
+    <ClCompile Include="..\shared\qnmCustomDlg_ts.cpp" />
+    <ClCompile Include="..\shared\qnmCustomEventTypeTable_is.cpp" />
+    <ClCompile Include="..\shared\qnmCustomEventTypeTable_netMc.cpp" />
+    <ClCompile Include="..\shared\qnmCustomGui_qwm.cpp" />
+    <ClCompile Include="..\shared\qnmCustomGui_rtcTool.cpp" />
+    <ClCompile Include="..\shared\qnmCustomGui_statusTool.cpp" />
+    <ClCompile Include="..\shared\qnmCustomGui_vDevComs.cpp" />
+    <ClCompile Include="..\shared\qnmCustomGui_warningTool.cpp" />
+    <ClCompile Include="..\shared\qnmCustomMenu.cpp" />
+    <ClCompile Include="..\shared\qnmCustomMenu_assetMgr.cpp" />
+    <ClCompile Include="..\shared\qnmCustomMenu_bhb.cpp" />
+    <ClCompile Include="..\shared\qnmCustomMenu_isCli_ts.cpp" />
+    <ClCompile Include="..\shared\qnmCustomMenu_isMgr.cpp" />
+    <ClCompile Include="..\shared\qnmCustomMenu_netMc2.cpp" />
+    <ClCompile Include="..\shared\qnmCustomMenu_nms.cpp" />
+    <ClCompile Include="..\shared\qnmCustomMenu_popup_is_ts.cpp" />
+    <ClCompile Include="..\shared\qnmCustomMenu_popup_isCli.cpp" />
+    <ClCompile Include="..\shared\qnmCustomMenu_popup_isMgr.cpp" />
+    <ClCompile Include="..\shared\qnmCustomMenu_popup_netMc.cpp" />
+    <ClCompile Include="..\shared\qnmCustomMenu_secChk.cpp" />
+    <ClCompile Include="..\shared\qnmCustomQuery.cpp" />
+    <ClCompile Include="..\shared\qnmCustomQuery_mis.cpp" />
+    <ClCompile Include="..\shared\qnmCustomSearch_main.cpp" />
+    <ClCompile Include="..\shared\qnmCustomStr_isMgr.cpp" />
+    <ClCompile Include="..\shared\qnmCustomStr_netMc.cpp" />
+    <ClCompile Include="..\shared\qnmCustomStr_ts.cpp" />
+    <ClCompile Include="..\shared\qyCusResCommon.cpp" />
+    <ClCompile Include="..\shared\qyMcCustomRootProc.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="qyCusRes.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\qnmCustomStr_common.h" />
+    <ClInclude Include="include\qnmCustomStr_is.h" />
+    <ClInclude Include="include\qnmCustomStr_netMc.h" />
+    <ClInclude Include="..\include\qnmResDefs.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="..\include\myresource_main.h" />
+    <ClInclude Include="..\include\qyCusResPublic.h" />
+    <ClInclude Include="..\include\qyCusResTemp.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

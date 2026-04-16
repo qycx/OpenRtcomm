@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\shared\qnmCustomDlg_isCliHelp.cpp" />
+    <ClCompile Include="..\shared\qnmCustomMenu_isCliHelp.cpp" />
+    <ClCompile Include="..\shared\qnmCustomMenu_isCli_noMfc.cpp" />
+    <ClCompile Include="..\shared\qnmCustomMenu_popup_isCliHelp.cpp" />
+    <ClCompile Include="..\shared\qnmCustomMenu_qyMessengerHelp.cpp" />
+    <ClCompile Include="..\shared\qnmCustomStr_isCliHelp.cpp" />
+    <ClCompile Include="..\shared\qnmCustomStr_isCli_noMfc.cpp" />
+    <ClCompile Include="..\shared\qnmCustomStr_qyMessengerHelp.cpp" />
+    <ClCompile Include="qyCusRes.cpp" />
+    <ClCompile Include="StdAfx.cpp" />
+    <ClCompile Include="..\shared\qnmCustomDlg.cpp" />
+    <ClCompile Include="..\shared\qnmCustomDlg_isCli.cpp" />
+    <ClCompile Include="..\shared\qnmCustomDlg_ts.cpp" />
+    <ClCompile Include="..\shared\qnmCustomEventTypeTable_is.cpp" />
+    <ClCompile Include="..\shared\qnmCustomEventTypeTable_netMc.cpp" />
+    <ClCompile Include="..\shared\qnmCustomGui_qwm.cpp" />
+    <ClCompile Include="..\shared\qnmCustomGui_rtcTool.cpp" />
+    <ClCompile Include="..\shared\qnmCustomGui_statusTool.cpp" />
+    <ClCompile Include="..\shared\qnmCustomGui_vDevComs.cpp" />
+    <ClCompile Include="..\shared\qnmCustomGui_warningTool.cpp" />
+    <ClCompile Include="..\shared\qnmCustomMenu.cpp" />
+    <ClCompile Include="..\shared\qnmCustomMenu_assetMgr.cpp" />
+    <ClCompile Include="..\shared\qnmCustomMenu_bhb.cpp" />
+    <ClCompile Include="..\shared\qnmCustomMenu_isCli_ts.cpp" />
+    <ClCompile Include="..\shared\qnmCustomMenu_isMgr.cpp" />
+    <ClCompile Include="..\shared\qnmCustomMenu_netMc2.cpp" />
+    <ClCompile Include="..\shared\qnmCustomMenu_nms.cpp" />
+    <ClCompile Include="..\shared\qnmCustomMenu_popup_is_ts.cpp" />
+    <ClCompile Include="..\shared\qnmCustomMenu_popup_isCli.cpp" />
+    <ClCompile Include="..\shared\qnmCustomMenu_popup_isMgr.cpp" />
+    <ClCompile Include="..\shared\qnmCustomMenu_popup_netMc.cpp" />
+    <ClCompile Include="..\shared\qnmCustomMenu_secChk.cpp" />
+    <ClCompile Include="..\shared\qnmCustomQuery.cpp" />
+    <ClCompile Include="..\shared\qnmCustomQuery_mis.cpp" />
+    <ClCompile Include="..\shared\qnmCustomSearch_main.cpp" />
+    <ClCompile Include="..\shared\qnmCustomStr_isMgr.cpp" />
+    <ClCompile Include="..\shared\qnmCustomStr_netMc.cpp" />
+    <ClCompile Include="..\shared\qnmCustomStr_ts.cpp" />
+    <ClCompile Include="..\shared\qyCusResCommon.cpp" />
+    <ClCompile Include="..\shared\qyMcCustomRootProc.cpp" />
+    <ClCompile Include="..\shared\qnmCustomMenu_qisGuiPublic.cpp">
+      <Filter>shared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\shared\qnmCustomStr_qisGuiPublic.cpp">
+      <Filter>shared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\shared\qnmCustomMenu_qmdCliHelp.cpp">
+      <Filter>shared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\shared\qnmCustomStr_qmdCliHelp.cpp">
+      <Filter>shared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\shared\qnmCustomDlg_qisGuiPublic.cpp">
+      <Filter>shared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\shared\qnmCustomDlg_qyMessengerHelp.cpp" />
+    <ClCompile Include="..\shared\qnmCustomSearch_isCliHelp.cpp" />
+    <ClCompile Include="..\..\..\src6\qyCustom\qnmCustomStr.cpp">
+      <Filter>qyCustom</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\qnmCustomStr_common.h" />
+    <ClInclude Include="include\qnmCustomStr_is.h" />
+    <ClInclude Include="include\qnmCustomStr_netMc.h" />
+    <ClInclude Include="..\include\qnmResDefs.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="..\include\myresource_main.h" />
+    <ClInclude Include="..\include\qyCusResPublic.h" />
+    <ClInclude Include="..\include\qyCusResTemp.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="qyCusRes.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="shared">
+      <UniqueIdentifier>{40df357d-ed22-4357-b754-2b991baa6454}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyCustom">
+      <UniqueIdentifier>{7ab8542c-40ae-4bda-90c6-39fba7f6de84}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

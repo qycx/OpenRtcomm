@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="qyVDev_coms">
+</Property><Property Name="Solution File" Value="D:\qycx4\develop6\srcRoot\componentsSrc\qyVDev_coms\qyVDev_coms.sln">
+</Property><Property Name="Date" Value="Monday, March 02, 2009">
+</Property><Property Name="Time" Value="21:10 PM">
+</Property><Property Name="Log Number" Value="2">
+</Property></Properties><Event ErrorLevel="0" Project="qyVDevApi" Source="..\qyVDevApi\qyVDevApi.vcproj" Description="Web deployment to the local IIS server is no longer supported. The Web Deployment build tool has been removed from your project settings.">
+</Event><Event ErrorLevel="1" Project="qyVDevApi" Source="..\qyVDevApi\qyVDevApi.vcproj" Description="This application has been updated to include settings related to the User Account Control (UAC) feature of Windows Vista. By default, when run on Windows Vista with UAC enabled, this application is marked to run with the same privileges as the process that launched it. This marking also disables the application from running with virtualization. You can change UAC related settings from the Property Pages of the project.">
+</Event><Event ErrorLevel="0" Project="qyVDevApi" Source="..\qyVDevApi\qyVDevApi.vcproj" Description="Project upgraded successfully.">
+</Event><Event ErrorLevel="3" Project="qyVDevApi" Source="..\qyVDevApi\qyVDevApi.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="qyVDevSample" Source="..\qyVDevSample\qyVDevSample.vcproj" Description="Web deployment to the local IIS server is no longer supported. The Web Deployment build tool has been removed from your project settings.">
+</Event><Event ErrorLevel="1" Project="qyVDevSample" Source="..\qyVDevSample\qyVDevSample.vcproj" Description="This application has been updated to include settings related to the User Account Control (UAC) feature of Windows Vista. By default, when run on Windows Vista with UAC enabled, this application is marked to run with the same privileges as the process that launched it. This marking also disables the application from running with virtualization. You can change UAC related settings from the Property Pages of the project.">
+</Event><Event ErrorLevel="0" Project="qyVDevSample" Source="..\qyVDevSample\qyVDevSample.vcproj" Description="Project upgraded successfully.">
+</Event><Event ErrorLevel="3" Project="qyVDevSample" Source="..\qyVDevSample\qyVDevSample.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="qyVDev_coms" Source="qyVDev_coms.vcproj" Description="Web deployment to the local IIS server is no longer supported. The Web Deployment build tool has been removed from your project settings.">
+</Event><Event ErrorLevel="1" Project="qyVDev_coms" Source="qyVDev_coms.vcproj" Description="This application has been updated to include settings related to the User Account Control (UAC) feature of Windows Vista. By default, when run on Windows Vista with UAC enabled, this application is marked to run with the same privileges as the process that launched it. This marking also disables the application from running with virtualization. You can change UAC related settings from the Property Pages of the project.">
+</Event><Event ErrorLevel="0" Project="qyVDev_coms" Source="qyVDev_coms.vcproj" Description="Project upgraded successfully.">
+</Event><Event ErrorLevel="3" Project="qyVDev_coms" Source="qyVDev_coms.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="qyVDev_coms.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="qyVDev_coms.sln" Description="Converted">
+</Event></UpgradeLog>
