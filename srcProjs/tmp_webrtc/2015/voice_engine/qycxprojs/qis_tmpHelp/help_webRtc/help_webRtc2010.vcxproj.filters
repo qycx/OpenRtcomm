@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="help_webRtc.cpp" />
+    <ClCompile Include="public\playAudioProc_webRtc.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="..\..\qisOpen\public\playFunc_dx.cpp">
+      <Filter>qisOpen\public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qisOpen\public\qyTick.cpp">
+      <Filter>qisOpen\public</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{b85a63b2-5470-4838-996d-8ebc4597c32e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qisOpen">
+      <UniqueIdentifier>{4359ed6c-cd23-4f13-97fc-8e92c14ab599}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qisOpen\public">
+      <UniqueIdentifier>{5568831a-504a-4f3e-8289-a846914598f0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
