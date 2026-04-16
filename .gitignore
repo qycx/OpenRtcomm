@@ -1,0 +1,41 @@
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+*.dll
+*.exe
+
+
+# Executables
+
+*.out
+*.app
+
+.vs/
+/VS2012
+/srcProjs/srcRoot/src6/d3d/DXUT/Optional/Bin/Desktop_2019_Win10/Win32/Debug/DXUTOpt.lib
+/srcProjs/srcRoot/src6/d3d/Effects11/Bin/Desktop_2019_Win10/Win32/Debug/Effects11d.lib
+/srcProjs/srcRoot/src6/d3d/DXUT/Core/Bin/Desktop_2019_Win10/Win32/Debug/DXUT.lib
+/srcProjs/srcRoot/src6/thirdParty/ipcProc/dh/dhDeviceControl/bin
+/srcProjs/srcRoot/src6/qyMessenger/qyMessenger_ts_noMfc/qrc.sln
+/srcProjs
+/VS2010/Win32/Debug/tools/rtspCli
+/VS2010/Win32/o/myOpenRtsp/Debug
+/VS2010/Win32/o/myTestRtspClient
+/VS2010/Win32/o/qisCompress_ff/Debug
+/VS2010/Win32/o/rtspCli/Debug/rtspCli.tlog
+/VS2010/Win32/o/rtspCli/Debug
+/VS2010/Win32/o/rtspCli/Release
+/VS2010/Win32/o/rtspCliHelp

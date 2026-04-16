@@ -1,0 +1,14 @@
+prefix=/home/Windows/ffmpeg-4.1.6/nv
+exec_prefix=${prefix}
+libdir=/home/Windows/ffmpeg-4.1.6/nv/lib
+includedir=/home/Windows/ffmpeg-4.1.6/nv/include
+
+Name: libswresample
+Description: FFmpeg audio resampling library
+Version: 3.3.100
+Requires: 
+Requires.private: libavutil >= 56.22.100
+Conflicts:
+Libs: -L${libdir}  -lswresample 
+Libs.private: 
+Cflags: -I${includedir}

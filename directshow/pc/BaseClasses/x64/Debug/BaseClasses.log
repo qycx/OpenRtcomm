@@ -1,0 +1,83 @@
+﻿Build started 2012/9/13 0:03:57.
+     1>Project "D:\qycx4\develop6\directshow\pc\BaseClasses\BaseClasses.vcxproj" on node 3 (rebuild target(s)).
+     1>InitializeBuildStatus:
+         Creating "x64\Debug\BaseClasses.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\CL.exe /c /I. /Zi /nologo /W3 /WX- /Od /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc100.pdb" /Gd /TP /errorReport:prompt amextra.cpp amfilter.cpp amvideo.cpp arithutil.cpp combase.cpp cprop.cpp ctlutil.cpp ddmm.cpp dllentry.cpp dllsetup.cpp mtype.cpp outputq.cpp perflog.cpp pstream.cpp pullpin.cpp refclock.cpp renbase.cpp schedule.cpp seekpt.cpp source.cpp strmctl.cpp sysclock.cpp transfrm.cpp transip.cpp videoctl.cpp vtrans.cpp winctrl.cpp winutil.cpp wxdebug.cpp wxlist.cpp wxutil.cpp
+         wxutil.cpp
+         wxlist.cpp
+         wxdebug.cpp
+         winutil.cpp
+         winctrl.cpp
+         vtrans.cpp
+         videoctl.cpp
+         transip.cpp
+         transfrm.cpp
+         sysclock.cpp
+         strmctl.cpp
+         source.cpp
+         seekpt.cpp
+         schedule.cpp
+         renbase.cpp
+         refclock.cpp
+         pullpin.cpp
+         pstream.cpp
+         perflog.cpp
+         outputq.cpp
+         Generating Code...
+         Compiling...
+         mtype.cpp
+         dllsetup.cpp
+         dllentry.cpp
+         ddmm.cpp
+         ctlutil.cpp
+         cprop.cpp
+         combase.cpp
+         arithutil.cpp
+         amvideo.cpp
+         amfilter.cpp
+         amextra.cpp
+         Generating Code...
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppBuild.targets(1151,5): warning MSB8012: TargetPath(D:\qycx4\develop6\directshow\pc\BaseClasses\x64\Debug\BaseClasses.lib) does not match the Library's OutputFile property value (D:\qycx4\develop6\directshow\pc\BaseClasses\x64\Debug\strmbasd.lib). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Lib.OutputFile).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppBuild.targets(1153,5): warning MSB8012: TargetName(BaseClasses) does not match the Library's OutputFile property value (strmbasd). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Lib.OutputFile).
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\Lib.exe /OUT:"x64\Debug\strmbasd.lib" strmiids.lib /NOLOGO x64\Debug\amextra.obj
+         x64\Debug\amfilter.obj
+         x64\Debug\amvideo.obj
+         x64\Debug\arithutil.obj
+         x64\Debug\combase.obj
+         x64\Debug\cprop.obj
+         x64\Debug\ctlutil.obj
+         x64\Debug\ddmm.obj
+         x64\Debug\dllentry.obj
+         x64\Debug\dllsetup.obj
+         x64\Debug\mtype.obj
+         x64\Debug\outputq.obj
+         x64\Debug\perflog.obj
+         x64\Debug\pstream.obj
+         x64\Debug\pullpin.obj
+         x64\Debug\refclock.obj
+         x64\Debug\renbase.obj
+         x64\Debug\schedule.obj
+         x64\Debug\seekpt.obj
+         x64\Debug\source.obj
+         x64\Debug\strmctl.obj
+         x64\Debug\sysclock.obj
+         x64\Debug\transfrm.obj
+         x64\Debug\transip.obj
+         x64\Debug\videoctl.obj
+         x64\Debug\vtrans.obj
+         x64\Debug\winctrl.obj
+         x64\Debug\winutil.obj
+         x64\Debug\wxdebug.obj
+         x64\Debug\wxlist.obj
+         x64\Debug\wxutil.obj
+         BaseClasses.vcxproj -> D:\qycx4\develop6\directshow\pc\BaseClasses\x64\Debug\BaseClasses.lib
+       FinalizeBuildStatus:
+         Deleting file "x64\Debug\BaseClasses.unsuccessfulbuild".
+         Touching "x64\Debug\BaseClasses.lastbuildstate".
+     1>Done Building Project "D:\qycx4\develop6\directshow\pc\BaseClasses\BaseClasses.vcxproj" (rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:24.52

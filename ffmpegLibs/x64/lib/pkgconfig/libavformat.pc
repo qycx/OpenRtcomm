@@ -1,0 +1,14 @@
+prefix=/home/Windows/ffmpeg-4.1.6/nv
+exec_prefix=${prefix}
+libdir=/home/Windows/ffmpeg-4.1.6/nv/lib
+includedir=/home/Windows/ffmpeg-4.1.6/nv/include
+
+Name: libavformat
+Description: FFmpeg container format library
+Version: 58.20.100
+Requires: 
+Requires.private: libavcodec >= 58.35.100, libswresample >= 3.3.100, libavutil >= 56.22.100
+Conflicts:
+Libs: -L${libdir}  -lavformat 
+Libs.private: secur32.lib ws2_32.lib
+Cflags: -I${includedir}

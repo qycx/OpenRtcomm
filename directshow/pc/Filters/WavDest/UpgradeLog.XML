@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="wavdest">
+</Property><Property Name="Solution File" Value="D:\qycx4\testProjs\DirectShow\Filters\WavDest\wavdest.sln">
+</Property><Property Name="Date" Value="Sunday, June 13, 2010">
+</Property><Property Name="Time" Value="7:15 AM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="wavdest.sln" Description="File successfully backed up as D:\qycx4\testProjs\DirectShow\Filters\WavDest\wavdest.sln.old">
+</Event><Event ErrorLevel="0" Project="WavDest" Source="WavDest.vcproj" Description="Project upgraded successfully.">
+</Event><Event ErrorLevel="3" Project="WavDest" Source="WavDest.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="wavdest.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="wavdest.sln" Description="Converted">
+</Event></UpgradeLog>

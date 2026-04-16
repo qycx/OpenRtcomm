@@ -1,0 +1,85 @@
+﻿Build started 2013/1/23 1:10:01.
+     1>Project "D:\qycx4\develop6\directshow\pc\BaseClasses\BaseClasses.vcxproj" on node 2 (rebuild target(s)).
+     1>_PrepareForClean:
+         Deleting file "Win32\Release\BaseClasses.lastbuildstate".
+       InitializeBuildStatus:
+         Creating "Win32\Release\BaseClasses.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I. /Zi /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Win32\Release\\" /Fd"Win32\Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt amextra.cpp amfilter.cpp amvideo.cpp arithutil.cpp combase.cpp cprop.cpp ctlutil.cpp ddmm.cpp dllentry.cpp dllsetup.cpp mtype.cpp outputq.cpp perflog.cpp pstream.cpp pullpin.cpp refclock.cpp renbase.cpp schedule.cpp seekpt.cpp source.cpp strmctl.cpp sysclock.cpp transfrm.cpp transip.cpp videoctl.cpp vtrans.cpp winctrl.cpp winutil.cpp wxdebug.cpp wxlist.cpp wxutil.cpp
+         amextra.cpp
+         amfilter.cpp
+         amvideo.cpp
+         arithutil.cpp
+         combase.cpp
+         cprop.cpp
+         ctlutil.cpp
+         ddmm.cpp
+         dllentry.cpp
+         dllsetup.cpp
+         mtype.cpp
+         outputq.cpp
+         perflog.cpp
+         pstream.cpp
+         pullpin.cpp
+         refclock.cpp
+         renbase.cpp
+         schedule.cpp
+         seekpt.cpp
+         source.cpp
+         Generating Code...
+         Compiling...
+         strmctl.cpp
+         sysclock.cpp
+         transfrm.cpp
+         transip.cpp
+         videoctl.cpp
+         vtrans.cpp
+         winctrl.cpp
+         winutil.cpp
+         wxdebug.cpp
+         wxlist.cpp
+         wxutil.cpp
+         Generating Code...
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppBuild.targets(1151,5): warning MSB8012: TargetPath(D:\qycx4\develop6\directshow\pc\BaseClasses\Win32\Release\BaseClasses.lib) does not match the Library's OutputFile property value (D:\qycx4\develop6\directshow\pc\BaseClasses\Win32\Release\strmbase.lib). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Lib.OutputFile).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppBuild.targets(1153,5): warning MSB8012: TargetName(BaseClasses) does not match the Library's OutputFile property value (strmbase). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Lib.OutputFile).
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:"Win32\Release\strmbase.lib" strmiids.lib /NOLOGO Win32\Release\amextra.obj
+         Win32\Release\amfilter.obj
+         Win32\Release\amvideo.obj
+         Win32\Release\arithutil.obj
+         Win32\Release\combase.obj
+         Win32\Release\cprop.obj
+         Win32\Release\ctlutil.obj
+         Win32\Release\ddmm.obj
+         Win32\Release\dllentry.obj
+         Win32\Release\dllsetup.obj
+         Win32\Release\mtype.obj
+         Win32\Release\outputq.obj
+         Win32\Release\perflog.obj
+         Win32\Release\pstream.obj
+         Win32\Release\pullpin.obj
+         Win32\Release\refclock.obj
+         Win32\Release\renbase.obj
+         Win32\Release\schedule.obj
+         Win32\Release\seekpt.obj
+         Win32\Release\source.obj
+         Win32\Release\strmctl.obj
+         Win32\Release\sysclock.obj
+         Win32\Release\transfrm.obj
+         Win32\Release\transip.obj
+         Win32\Release\videoctl.obj
+         Win32\Release\vtrans.obj
+         Win32\Release\winctrl.obj
+         Win32\Release\winutil.obj
+         Win32\Release\wxdebug.obj
+         Win32\Release\wxlist.obj
+         Win32\Release\wxutil.obj
+         BaseClasses.vcxproj -> D:\qycx4\develop6\directshow\pc\BaseClasses\Win32\Release\BaseClasses.lib
+       FinalizeBuildStatus:
+         Deleting file "Win32\Release\BaseClasses.unsuccessfulbuild".
+         Touching "Win32\Release\BaseClasses.lastbuildstate".
+     1>Done Building Project "D:\qycx4\develop6\directshow\pc\BaseClasses\BaseClasses.vcxproj" (rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:18.10
