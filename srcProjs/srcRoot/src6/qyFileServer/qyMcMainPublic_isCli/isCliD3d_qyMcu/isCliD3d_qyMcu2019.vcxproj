@@ -1,0 +1,394 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{16042A6C-48AB-4057-95F4-FA94B994AFBA}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>isCliD3d</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin\</OutDir>
+    <IntDir>..\..\..\..\..\..\..\VS2012\$(Platform)\o\isCliD3d_qyMcu2019\$(Configuration)\</IntDir>
+    <IncludePath>$(IncludePath);$(DXSDK_DIR)include;</IncludePath>
+    <TargetName>isCliD3d_qyMcu</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin\</OutDir>
+    <IntDir>..\..\..\..\..\..\..\VS2012\$(Platform)\o\isCliD3d_qyMcu2019\$(Configuration)\</IntDir>
+    <IncludePath>$(IncludePath);$(DXSDK_DIR)include;</IncludePath>
+    <TargetName>isCliD3d_qyMcu</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;__DLL_isCliD3d__;__isCli__;__noMfc__;_DEBUG;_WINDOWS;_USRDLL;ISCLID3D_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\qyInclude;..\..\..\qyEncLib\include;..\..\..\qyMcInclude;..\..\..\qyMcMainInclude;.;..\..\..\qyCustom\include;..\..\..\qyCommProc\include;..\..\..\qyCommProc_mis\include;..\..\..\..\..\qyOpen\include;..\..\..\..\..\qyOpen\qmShell_open\include;..\..\..\..\qyCusSrc\qyCusRes\include;include;..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\include;..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\isCliProcs\soundProc_msAec\include;..\..\..\tmpInclude;..\..\qyProjShare_isCli\ptzPublic\include;..\..\..\qyMcMain_isCli\qyProjShare_isCli\sketchpadProj\include;..\..\..\tmpInclude\old;..\..\..\d3d\effects11\inc;..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\include_isCli;..\..\..\..\qisOpen\include;..\..\..\isCliD3d\include;..\..\..\isCliD3d\isCliD3d_include;..\..\..\d3d;..\..\..\isCliD3d\dx12\ATG\Kits\ATGTK;..\..\..\isCliD3d\dx11\include;..\..\..\isCliD3d\dx12\include;..\..\..\isCliD3d\dx12\ATG\VideoTexturePC12;..\..\..\isCliD3d\dx12\ATG\Kits\DirectXTK12\Inc;..\..\..\isCliD3d\dx12</AdditionalIncludeDirectories>
+      <ExceptionHandling>Async</ExceptionHandling>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>qyBaseLibNoMfc.lib;qyEncLibNoMfc.lib;ws2_32.lib;d3d9.lib;winmm.lib;d3dCompiler.lib;usp10.lib;Comctl32.lib;vfw32.lib;D2d1.lib;dwrite.lib;windowscodecs.lib;d3d12.lib;dxgi.lib;d3dcompiler.lib;dxguid.lib;d3d11.lib;d2d1.lib;mfplat.lib;uuid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;__DLL_isCliD3d__;__isCli__;__noMfc__;NDEBUG;_WINDOWS;_USRDLL;ISCLID3D_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\qyInclude;..\..\..\qyEncLib\include;..\..\..\qyMcInclude;..\..\..\qyMcMainInclude;.;..\..\..\qyCustom\include;..\..\..\qyCommProc\include;..\..\..\qyCommProc_mis\include;..\..\..\..\..\qyOpen\include;..\..\..\..\..\qyOpen\qmShell_open\include;..\..\..\..\qyCusSrc\qyCusRes\include;include;..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\include;..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\isCliProcs\soundProc_msAec\include;..\..\..\tmpInclude;..\..\qyProjShare_isCli\ptzPublic\include;..\..\..\qyMcMain_isCli\qyProjShare_isCli\sketchpadProj\include;..\..\..\tmpInclude\old;..\..\..\d3d\effects11\inc;..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\include_isCli;..\..\..\..\qisOpen\include;..\..\..\isCliD3d\include;..\..\..\isCliD3d\isCliD3d_include;..\..\..\d3d;..\..\..\isCliD3d\dx12\ATG\Kits\ATGTK;..\..\..\isCliD3d\dx11\include;..\..\..\isCliD3d\dx12\include;..\..\..\isCliD3d\dx12\ATG\VideoTexturePC12;..\..\..\isCliD3d\dx12\ATG\Kits\DirectXTK12\Inc;..\..\..\isCliD3d\dx12</AdditionalIncludeDirectories>
+      <ExceptionHandling>Async</ExceptionHandling>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>qyBaseLibNoMfc.lib;qyEncLibNoMfc.lib;ws2_32.lib;d3d9.lib;winmm.lib;d3dCompiler.lib;usp10.lib;Comctl32.lib;vfw32.lib;D2d1.lib;dwrite.lib;windowscodecs.lib;d3d12.lib;dxgi.lib;d3dcompiler.lib;dxguid.lib;d3d11.lib;d2d1.lib;mfplat.lib;uuid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="..\..\..\isCliD3d\isCliD3d_public\d3dControl.cpp.old" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\isCliD3d\isCliD3d_include\cuboidTool.h" />
+    <ClInclude Include="..\..\..\isCliD3d\isCliD3d_include\d2dProc.h" />
+    <ClInclude Include="..\..\..\isCliD3d\isCliD3d_include\d3dControl.h" />
+    <ClInclude Include="..\..\..\isCliD3d\isCliD3d_include\d3dTxtProc.h" />
+    <ClInclude Include="..\..\..\isCliD3d\isCliD3d_include\d3dWnd.h" />
+    <ClInclude Include="..\..\..\isCliD3d\isCliD3d_include\dlgD3dWall.h" />
+    <ClInclude Include="..\..\..\isCliD3d\isCliD3d_include\dxutGui2.h" />
+    <ClInclude Include="..\..\..\isCliD3d\isCliD3d_include\dynFuncs_d3dCall.h" />
+    <ClInclude Include="..\..\..\isCliD3d\isCliD3d_include\isCliD3dCommon.h" />
+    <ClInclude Include="..\..\..\isCliD3d\isCliD3d_include\myDxutFunc.h" />
+    <ClInclude Include="..\..\..\isCliD3d\isCliD3d_include\qisWallToD3d.h" />
+    <ClInclude Include="..\..\..\isCliD3d\isCliD3d_include\TextHelpers.h" />
+    <ClInclude Include="..\..\..\isCliD3d\isCliD3d_include\TextHelpers_Common.h" />
+    <ClInclude Include="..\..\..\isCliD3d\isCliD3d_include\threadProc_getTex_toRend.h" />
+    <ClInclude Include="..\..\..\isCliD3d\isCliD3d_include\wallConf.h" />
+    <ClInclude Include="..\..\..\isCliD3d\isCliD3d_include\wallConfWall.h" />
+    <ClInclude Include="..\..\..\isCliD3d\isCliD3d_include\wallEnlarge.h" />
+    <ClInclude Include="..\..\..\isCliD3d\isCliD3d_include\wallMem.h" />
+    <ClInclude Include="..\..\..\isCliD3d\isCliD3d_include\wallMemCommon.h" />
+    <ClInclude Include="..\..\..\isCliD3d\isCliD3d_include\wallMem_u.h" />
+    <ClInclude Include="..\..\..\isCliD3d\isCliD3d_include\wallTmpl.h" />
+    <ClInclude Include="..\..\..\isCliD3d\isCliD3d_include\wmControl.h" />
+    <ClInclude Include="..\..\..\isCliD3d\isCliD3d_include\wmD3dWndIndicator.h" />
+    <ClInclude Include="..\..\..\isCliD3d\isCliD3d_include\wmDynBmp.h" />
+    <ClInclude Include="..\..\..\isCliD3d\isCliD3d_include\wmEnlarge.h" />
+    <ClInclude Include="..\..\..\isCliD3d\isCliD3d_include\wmForm.h" />
+    <ClInclude Include="..\..\..\isCliD3d\isCliD3d_include\wmImg.h" />
+    <ClInclude Include="..\..\..\isCliD3d\isCliD3d_include\wmList.h" />
+    <ClInclude Include="..\..\..\isCliD3d\isCliD3d_include\wmMenu.h" />
+    <ClInclude Include="..\..\..\isCliD3d\isCliD3d_include\wmMsgList.h" />
+    <ClInclude Include="..\..\..\isCliD3d\isCliD3d_include\wmNone.h" />
+    <ClInclude Include="..\..\..\isCliD3d\isCliD3d_include\wmNoWall.h" />
+    <ClInclude Include="..\..\..\isCliD3d\isCliD3d_include\wmTalker.h" />
+    <ClInclude Include="..\..\..\isCliD3d\isCliD3d_include\wmTalkers.h" />
+    <ClInclude Include="..\..\..\isCliD3d\isCliD3d_include\wmTalker_bgWall.h" />
+    <ClInclude Include="..\..\..\isCliD3d\isCliD3d_include\wmWalls.h" />
+    <ClInclude Include="..\..\..\qyCommProc\INCLUDE\qyString.h" />
+    <ClInclude Include="..\..\..\qyCommProc\INCLUDE\syncMtCnt.h" />
+    <ClInclude Include="..\..\..\qyCommProc\INCLUDE\syncMtCntDefs.h" />
+    <ClInclude Include="..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\include_isCli\qmcVWall.h" />
+    <ClInclude Include="..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\include_isCli\wallMemMgr.h" />
+    <ClInclude Include="..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\include_isCli\wallMemTmpl.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="resource1.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\qyOpen\qisD3d_open\qisD3dFunc_open.cpp" />
+    <ClCompile Include="..\..\..\..\..\qyOpen\qyCommProc_open\fileFunc_open.cpp" />
+    <ClCompile Include="..\..\..\..\..\qyOpen\qyCommProc_open\qisSyncTex.cpp" />
+    <ClCompile Include="..\..\..\..\..\qyOpen\qyCommProc_open\qyCommProc_open.cpp" />
+    <ClCompile Include="..\..\..\..\..\qyOpen\qyCommProc_open\qySyncObj.cpp" />
+    <ClCompile Include="..\..\..\..\..\qyOpen\qyCommProc_open\qyTCharCommProc.cpp" />
+    <ClCompile Include="..\..\..\..\..\qyOpen\qyCommProc_open\videoFunc_open.cpp" />
+    <ClCompile Include="..\..\..\..\..\qyOpen\qyCommProc_open\yv12rgb.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\dx11\public\chkAndRecoverD3dImg11.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\dx11\public\copyToSharedTex_dx11.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\dx11\public\createMosaicRttInfo_dx11.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\dx11\public\create_readingSharedTex_textureInfo_dx11.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\dx11\public\d3dContextFunc_dx11.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\dx11\public\d3dProc_dx11.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\dx11\public\myCreateTexture_dx11.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\dx11\public\qmcFunc_dx11.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\dx11\public\renderOthers_dx11.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\dx11\public\t1Frame11.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\dx11\public\t5Frame11.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\dx11\public\wmTalker_func_dx11.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\dx12\public\d3d12Proc.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\dx12\public\d3dProc_dx12.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\dx12\public\qmcFunc_dx12.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\avConsole_proc_d3d.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\copyToSharedTex.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\cuboidTool.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\cuboidTool11.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\d2dProc.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\d3d11proc.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\d3d9Proc.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\d3dCommonProc.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\d3dContextFunc.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\d3dControl.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\d3dDebugFunc.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\d3dFunc.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\d3dMosaic.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\d3dMosaic_uav.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\d3dPick.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\d3dPickFunc.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\d3dProc.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\d3dTest.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\d3dTxtFunc.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\d3dTxtProc.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\d3dWallFrmFunc.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\d3dWallProc.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\d3dWallProc_isCli.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\d3dWall_dxut.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\d3dWnd.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\dbgFunc_dx.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\dlgD3dWall.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\dxutGui2.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\dynFuncs_d3dCall.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\fillData_d3d.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\generalWall_proc.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\getMatsFunc.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\getZoneObjsInfo_d3dWall.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\help_getTextureMgrVar.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\myCreateTexture.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\myFrame.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\myPreRender.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\myPreRender_func.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\myRender.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\myRender10.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\myRender11.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\preRenderText.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\preRenderText_d2d.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\qisWallsProc.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\qisWallToD3d.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\renderOthers.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\t1Frame.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\t5Frame.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\texIndProc.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\TextHelpers.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\wallConf.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\wallConfWall.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\wallEnlarge.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\wallMem.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\wallMemFunc.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\wallMem_dynBmp.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\wallMem_talker.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\wallMem_talkers.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\wallTmpl.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\wmControl.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\wmD3dWndIndicator.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\wmDynBmp.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\wmEnlarge.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\wmForm.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\wmImg.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\wmInfoSync.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\wmList.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\wmMenu.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\wmMsgList.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\wmNone.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\wmNoWall.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\wmTalker.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\wmTalkers.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\wmTalker_bgWall.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\isCliD3d_public\wmWalls.cpp" />
+    <ClCompile Include="..\..\..\isCliD3d\public\chkAndRecoverD3dImg.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qnmAssetsTemp.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qnmChkCommProc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qnmCommProc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qnmFwCommProc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qnmGuiCommProc2.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qnmHotKeys.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qnmOsAuditCommProc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qnmsCommProc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qnmWarnCommProc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qwmDjCommProc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qwmDynFunc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qwmNetworkStatusCommProc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qwmStreamCommProc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qyCommFunc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qyCommProc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qyDmItemCommProc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qyImcLogFunc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qyImcPublic.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qyLangCommProc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qyModuleFunc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qySharedQ.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qySqlFuncPublic.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qyString.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qySyncCommProc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qyThread.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qyTmpMemory.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qyWnd.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\syncMtCnt.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\syncMtCntFunc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\tmpCeLib.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\tmpLib.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc_mis\isFunc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc_mis\isTmpFunc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc_mis\qyComPortEx.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc_mis\qyMsgFunc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc_mis\qyMsgFunc_iocp.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc_mis\qyTick.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc_mis\qyWmComm_is.cpp" />
+    <ClCompile Include="..\..\..\qyCustom\qnmAllHints.cpp" />
+    <ClCompile Include="..\..\..\qyCustom\qnmCustomComm.cpp" />
+    <ClCompile Include="..\..\..\qyCustom\qyCusResHelp.cpp" />
+    <ClCompile Include="..\..\..\qyCustom\qyCustom.cpp" />
+    <ClCompile Include="..\..\..\qyMcMainPublic\bQmFreeVer.cpp" />
+    <ClCompile Include="..\..\..\qyMcMainPublic\qyMcMainFunc.cpp" />
+    <ClCompile Include="..\..\..\qyMcMainPublic\qyMcMainObj.cpp" />
+    <ClCompile Include="..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\public\addTxtToPic.cpp" />
+    <ClCompile Include="..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\public\qmcD3dFunc.cpp" />
+    <ClCompile Include="..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\public\qmcDirectX.cpp" />
+    <ClCompile Include="..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\public\qmcFunc.cpp" />
+    <ClCompile Include="..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\public\qmcImgFunc.cpp" />
+    <ClCompile Include="..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\public\qmcVideoFunc.cpp" />
+    <ClCompile Include="..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\public_isCli\capImageFunc.cpp" />
+    <ClCompile Include="..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\public_isCli\capImageProc.cpp" />
+    <ClCompile Include="..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\public_isCli\capImageProc_forD3d.cpp" />
+    <ClCompile Include="..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\public_isCli\dyn_isCliD3d.cpp" />
+    <ClCompile Include="..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\public_isCli\dyn_isCliD3d_public.cpp" />
+    <ClCompile Include="..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\public_isCli\dyn_isCliHelp.cpp" />
+    <ClCompile Include="..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\public_isCli\dyn_others.cpp" />
+    <ClCompile Include="..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\public_isCli\getPeerImages_forD3d.cpp" />
+    <ClCompile Include="..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\public_isCli\help_getDlgTalkVar.cpp" />
+    <ClCompile Include="..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\public_isCli\hlslFunc.cpp" />
+    <ClCompile Include="..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\public_isCli\qmcCfg.cpp" />
+    <ClCompile Include="..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\public_isCli\qmcFunc_isCli.cpp" />
+    <ClCompile Include="..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\public_isCli\qmcObjVarInfo.cpp" />
+    <ClCompile Include="..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\public_isCli\qmcSharedObj.cpp" />
+    <ClCompile Include="..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\public_isCli\qmcTaskInfo_help.cpp" />
+    <ClCompile Include="..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\public_isCli\qmcVWall.cpp" />
+    <ClCompile Include="..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\public_isCli\qmc_tttbbbMac.cpp" />
+    <ClCompile Include="..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\public_isCli\qnmMainFunc_isCli.cpp" />
+    <ClCompile Include="..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\public_isCli\setSlaveStreamOn.cpp" />
+    <ClCompile Include="..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\public_isCli\slaveStreamProc.cpp" />
+    <ClCompile Include="..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\public_isCli\subtitleFunc.cpp" />
+    <ClCompile Include="..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\public_isCli\wallMemMgr.cpp" />
+    <ClCompile Include="..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\public_isCli\wallMemTmpl.cpp" />
+    <ClCompile Include="dllmain.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </PrecompiledHeader>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="isCliD3d.cpp" />
+    <ClCompile Include="isCliD3d_func.cpp" />
+    <ClCompile Include="public\dxut_qyMcu.cpp" />
+    <ClCompile Include="public\readRtt.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\qyOpen\open_test\open_test.vcxproj">
+      <Project>{e8d0d82e-f8c2-403c-b18f-bb9d778ebd86}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\d3d\DirectXTK\DirectXTK_Desktop_2019.vcxproj">
+      <Project>{e0b52ae7-e160-4d32-bf3f-910b785e5a8e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\d3d\DXUT\Core\DXUT_2019_Win10.vcxproj">
+      <Project>{85344b7f-5aa0-4e12-a065-d1333d11f6ca}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\d3d\DXUT\Optional\DXUTOpt_2019_Win10.vcxproj">
+      <Project>{61b333c2-c4f7-4cc1-a9bf-83f6d95588eb}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\d3d\Effects11\Effects11_2019_Win10.vcxproj">
+      <Project>{df460eab-570d-4b50-9089-2e2fc801bf38}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\isCliD3d\dx12\isCliD3d_dx12.vcxproj">
+      <Project>{6a9638ba-b346-4647-8b4c-460e7b9da3f8}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\isCliCore1\isCliCore1_2012.vcxproj">
+      <Project>{a794ec14-a745-431e-b849-bc773d120948}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\isCliCore\isCliCore2012.vcxproj">
+      <Project>{b1b80105-3cd4-4e55-a4a9-90a0ce80a336}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\isCliHelp\isCliHelp2012.vcxproj">
+      <Project>{7322eed5-f85f-4328-8c4c-d5980bab0c80}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\isD3dFunc\isD3dFunc2012.vcxproj">
+      <Project>{606d78e9-bb54-4fe0-8787-5a636df60288}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\qyMcPublic\qyPublic\qyPublic2012.vcxproj">
+      <Project>{aab8de7c-7262-461b-8c10-ee4fa4b1511e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\qyMcPublic\qyShowInfo\qyShowInfo2012.vcxproj">
+      <Project>{32fc6695-1451-47bf-a185-41c2d3d80bcb}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\isCliCore\isCliCore2012.vcxproj">
+      <Project>{b1b80105-3cd4-4e55-a4a9-90a0ce80a336}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\isCliHelp\isCliHelp2012.vcxproj">
+      <Project>{7322eed5-f85f-4328-8c4c-d5980bab0c80}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\isD3dFunc\isD3dFunc2012.vcxproj">
+      <Project>{606d78e9-bb54-4fe0-8787-5a636df60288}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\meshLoader\meshLoader2012.vcxproj">
+      <Project>{8ade5f3c-fc3b-4e7b-b434-ade02504603a}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="isCliD3d_qyMcu2019.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
