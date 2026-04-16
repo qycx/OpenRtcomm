@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="cJSON.cpp" />
+    <ClCompile Include="curl_conn.cpp" />
+    <ClCompile Include="testapi.cpp" />
+    <ClCompile Include="..\..\..\..\..\qisOpen\public\myCmdParams_open.cpp">
+      <Filter>qisOpen\public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\qisOpen\public\tmpRegFunc_open.cpp">
+      <Filter>qisOpen\public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\qyOpen\qyCommProc_open\tmpStrFunc_open.cpp">
+      <Filter>qyOpen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\public\proc_ca_bjca.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\qyOpen\qyCommProc_open\qyTCharCommProc.cpp">
+      <Filter>qyOpen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\qyOpen\qyCommProc_open\dbgFunc_open.cpp">
+      <Filter>qyOpen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\qyOpen\qyCommProc_open\timeFunc_open.cpp">
+      <Filter>qyOpen</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="curl_conn.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{22f14e86-faae-44e4-b40f-f44cc41ac52a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="public">
+      <UniqueIdentifier>{bc5b1f5a-5441-4c61-861a-24d659a31eff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qisOpen">
+      <UniqueIdentifier>{b16299c5-1242-49a4-8933-4f8dbaa052e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qisOpen\include">
+      <UniqueIdentifier>{43de02ec-82ae-49bc-b3f5-600775688e78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qisOpen\public">
+      <UniqueIdentifier>{02156b4d-6f9e-4c69-b6d4-c84748b7cac0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyOpen">
+      <UniqueIdentifier>{64955caf-167a-43e7-b345-f1e3c37b8a6b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

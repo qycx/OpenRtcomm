@@ -1,0 +1,2 @@
+C:\root\test\sendHttp_新增获取签名证书序列号\Debug\demo.exe
+D:\qy_mcu\sxrz\Debug\demo.exe

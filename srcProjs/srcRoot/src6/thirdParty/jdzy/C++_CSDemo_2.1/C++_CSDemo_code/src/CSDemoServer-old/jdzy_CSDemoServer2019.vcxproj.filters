@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="CSDemoServer.cpp" />
+    <ClCompile Include="CSDemoServerDlg.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\..\qisOpen\public\myCmdParams_open.cpp">
+      <Filter>qisOpen\public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\qyOpen\qyCommProc_open\tmpStrFunc_open.cpp">
+      <Filter>qyOpen\public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\qisOpen\public\tmpRegFunc_open.cpp">
+      <Filter>qisOpen\public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\proc_ca_jdzy.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\proc_caCmd_jdzy.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\tmp_CServerAuth.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\qyOpen\qyCommProc_open\qyTCharCommProc.cpp">
+      <Filter>qyOpen\public</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CSDemoServer.h" />
+    <ClInclude Include="CSDemoServerDlg.h" />
+    <ClInclude Include="CServerAuth.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\qisOpen\include\myCmdParams_open.h">
+      <Filter>qisOpen\include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\proc_ca_jdzy.h">
+      <Filter>include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="CSDemoServer.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\CSDemoServer.ico" />
+    <None Include="res\CSDemoServer.rc2" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{2e5991c2-160a-438a-8c73-97c65b04dff9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="public">
+      <UniqueIdentifier>{a4919bc4-9346-495c-ab58-662f6a881574}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qisOpen">
+      <UniqueIdentifier>{5b4245a3-e054-437a-92b3-05ecf783c0ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qisOpen\public">
+      <UniqueIdentifier>{af2665f9-872e-4039-b0c1-3dc606a85b03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qisOpen\include">
+      <UniqueIdentifier>{c7771a0d-479d-41a4-900d-0facdfb58291}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyOpen">
+      <UniqueIdentifier>{d6001bfd-fbe8-4601-9391-096479826be5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyOpen\include">
+      <UniqueIdentifier>{30910c38-dcc1-4df0-8144-6af5940db538}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyOpen\public">
+      <UniqueIdentifier>{c4dc3d90-0546-4fc3-8cab-baf88227275b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

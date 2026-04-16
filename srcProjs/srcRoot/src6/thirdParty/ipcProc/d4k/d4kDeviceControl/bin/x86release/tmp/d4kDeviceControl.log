@@ -1,0 +1,142 @@
+﻿  StdAfx.cpp
+  _WIN32_WINNT not defined. Defaulting to _WIN32_WINNT_MAXVER (see WinSDKVer.h)
+  dyn_qisPublic.cpp
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\qyOpen\qyCommProc_open\dyn_qisPublic.cpp(41,3): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/qyOpen/qyCommProc_open/dyn_qisPublic.cpp”)
+  
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\qyOpen\qyCommProc_open\dyn_qisPublic.cpp(57,3): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/qyOpen/qyCommProc_open/dyn_qisPublic.cpp”)
+  
+  qyCommProc_open.cpp
+  qyTCharCommProc.cpp
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\qyOpen\qyCommProc_open\qyTCharCommProc.cpp(326,3): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/qyOpen/qyCommProc_open/qyTCharCommProc.cpp”)
+  
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\qyOpen\qyCommProc_open\qyTCharCommProc.cpp(382,3): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/qyOpen/qyCommProc_open/qyTCharCommProc.cpp”)
+  
+  ipcProc_open.cpp
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\srcRoot\qisOpen\include\myCmdParams_open.h(30,3): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/qisOpen/public/ipcProc_open.cpp”)
+  
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\srcRoot\qisOpen\include\myCmdParams_open.h(34,3): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/qisOpen/public/ipcProc_open.cpp”)
+  
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\srcRoot\qisOpen\public\ipcProc_open.cpp(71,4): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/qisOpen/public/ipcProc_open.cpp”)
+  
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\srcRoot\qisOpen\public\ipcProc_open.cpp(74,4): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/qisOpen/public/ipcProc_open.cpp”)
+  
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\srcRoot\qisOpen\public\ipcProc_open.cpp(77,4): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/qisOpen/public/ipcProc_open.cpp”)
+  
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\srcRoot\qisOpen\public\ipcProc_open.cpp(80,4): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/qisOpen/public/ipcProc_open.cpp”)
+  
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\srcRoot\qisOpen\public\ipcProc_open.cpp(83,4): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/qisOpen/public/ipcProc_open.cpp”)
+  
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\srcRoot\qisOpen\public\ipcProc_open.cpp(86,4): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/qisOpen/public/ipcProc_open.cpp”)
+  
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\srcRoot\qisOpen\public\ipcProc_open.cpp(89,4): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/qisOpen/public/ipcProc_open.cpp”)
+  
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\srcRoot\qisOpen\public\ipcProc_open.cpp(92,4): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/qisOpen/public/ipcProc_open.cpp”)
+  
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\srcRoot\qisOpen\public\ipcProc_open.cpp(95,4): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/qisOpen/public/ipcProc_open.cpp”)
+  
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\srcRoot\qisOpen\public\ipcProc_open.cpp(98,4): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/qisOpen/public/ipcProc_open.cpp”)
+  
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\srcRoot\qisOpen\public\ipcProc_open.cpp(101,4): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/qisOpen/public/ipcProc_open.cpp”)
+  
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\srcRoot\qisOpen\public\ipcProc_open.cpp(105,4): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/qisOpen/public/ipcProc_open.cpp”)
+  
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\srcRoot\qisOpen\public\ipcProc_open.cpp(120,4): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/qisOpen/public/ipcProc_open.cpp”)
+  
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\srcRoot\qisOpen\public\ipcProc_open.cpp(125,4): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/qisOpen/public/ipcProc_open.cpp”)
+  
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\srcRoot\qisOpen\public\ipcProc_open.cpp(130,4): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/qisOpen/public/ipcProc_open.cpp”)
+  
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\srcRoot\qisOpen\public\ipcProc_open.cpp(135,3): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/qisOpen/public/ipcProc_open.cpp”)
+  
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\srcRoot\qisOpen\public\ipcProc_open.cpp(140,3): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/qisOpen/public/ipcProc_open.cpp”)
+  
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\srcRoot\qisOpen\public\ipcProc_open.cpp(171,4): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/qisOpen/public/ipcProc_open.cpp”)
+  
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\srcRoot\qisOpen\public\ipcProc_open.cpp(178,3): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/qisOpen/public/ipcProc_open.cpp”)
+  
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\srcRoot\qisOpen\public\ipcProc_open.cpp(228,3): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/qisOpen/public/ipcProc_open.cpp”)
+  
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\srcRoot\qisOpen\public\ipcProc_open.cpp(269,1): warning C4102: “errLabel”: 未引用的标签
+  (编译源文件“/qisOpen/public/ipcProc_open.cpp”)
+  
+  myCmdParams_open.cpp
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\srcRoot\qisOpen\include\myCmdParams_open.h(30,3): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/qisOpen/public/myCmdParams_open.cpp”)
+  
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\srcRoot\qisOpen\include\myCmdParams_open.h(34,3): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/qisOpen/public/myCmdParams_open.cpp”)
+  
+  DeviceControlAndTimeSynchronization.cpp
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\srcRoot\qisOpen\include\myCmdParams_open.h(30,3): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/DeviceControlAndTimeSynchronization.cpp”)
+  
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\srcRoot\qisOpen\include\myCmdParams_open.h(34,3): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/DeviceControlAndTimeSynchronization.cpp”)
+  
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\srcRoot\src6\thirdParty\ipcProc\d4k\d4kDeviceControl\DeviceControlAndTimeSynchronization.cpp(41,25): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/DeviceControlAndTimeSynchronization.cpp”)
+  
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\srcRoot\src6\thirdParty\ipcProc\d4k\d4kDeviceControl\DeviceControlAndTimeSynchronization.cpp(59,13): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/DeviceControlAndTimeSynchronization.cpp”)
+  
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\srcRoot\src6\thirdParty\ipcProc\d4k\d4kDeviceControl\DeviceControlAndTimeSynchronization.cpp(83,13): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/DeviceControlAndTimeSynchronization.cpp”)
+  
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\srcRoot\src6\thirdParty\ipcProc\d4k\d4kDeviceControl\DeviceControlAndTimeSynchronization.cpp(205,2): warning C4996: 'CWinApp::Enable3dControlsStatic': CWinApp::Enable3dControlsStatic is no longer needed. You should remove this call.
+  (编译源文件“/DeviceControlAndTimeSynchronization.cpp”)
+  
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\srcRoot\src6\thirdParty\ipcProc\d4k\d4kDeviceControl\DeviceControlAndTimeSynchronization.cpp(268,4): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/DeviceControlAndTimeSynchronization.cpp”)
+  
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\srcRoot\src6\thirdParty\ipcProc\d4k\d4kDeviceControl\DeviceControlAndTimeSynchronization.cpp(269,4): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/DeviceControlAndTimeSynchronization.cpp”)
+  
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\srcRoot\src6\thirdParty\ipcProc\d4k\d4kDeviceControl\DeviceControlAndTimeSynchronization.cpp(273,4): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/DeviceControlAndTimeSynchronization.cpp”)
+  
+  d4kDeviceControlProc.cpp
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\srcRoot\qisOpen\include\myCmdParams_open.h(30,3): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/d4kDeviceControlProc.cpp”)
+  
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\srcRoot\qisOpen\include\myCmdParams_open.h(34,3): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/d4kDeviceControlProc.cpp”)
+  
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\srcRoot\src6\thirdParty\ipcProc\d4k\d4kDeviceControl\public\d4kDeviceControlProc.cpp(76,10): warning C4101: “ipcInfo”: 未引用的局部变量
+  (编译源文件“/public/d4kDeviceControlProc.cpp”)
+  
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\srcRoot\src6\thirdParty\ipcProc\d4k\d4kDeviceControl\public\d4kDeviceControlProc.cpp(540,1): warning C4102: “errLabel”: 未引用的标签
+  (编译源文件“/public/d4kDeviceControlProc.cpp”)
+  
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\srcRoot\src6\thirdParty\ipcProc\d4k\d4kDeviceControl\public\d4kDeviceControlProc.cpp(438,9): warning C4101: “tBuf”: 未引用的局部变量
+  (编译源文件“/public/d4kDeviceControlProc.cpp”)
+  
+  TcpClient.cpp
+  正在生成代码...
+D:\root\pc.anc.v3\openRtComm-windows\srcProjs\srcRoot\src6\thirdParty\ipcProc\d4k\d4kDeviceControl\DeviceControlAndTimeSynchronization.cpp(104,1): warning C4715: “printLog”: 不是所有的控件路径都返回值
+  d4kDeviceControl.vcxproj -> D:\root\pc.anc.v3\openRtComm-windows\srcProjs\srcRoot\src6\thirdParty\ipcProc\d4k\d4kDeviceControl\bin\x86release\d4kDeviceControl.exe

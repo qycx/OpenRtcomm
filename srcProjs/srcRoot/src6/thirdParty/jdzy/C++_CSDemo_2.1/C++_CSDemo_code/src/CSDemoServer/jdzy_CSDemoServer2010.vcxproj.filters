@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="CSDemoServer.cpp" />
+    <ClCompile Include="CSDemoServerDlg.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\..\qisOpen\public\myCmdParams_open.cpp">
+      <Filter>qisOpen\public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\qisOpen\public\tmpRegFunc_open.cpp">
+      <Filter>qisOpen\public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\qyOpen\qyCommProc_open\tmpStrFunc_open.cpp">
+      <Filter>qyOpen</Filter>
+    </ClCompile>
+    <ClCompile Include="public\proc_ca_jdzy.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\proc_caCmd_jdzy.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\tmp_CServerAuth.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\qyOpen\qyCommProc_open\qyTCharCommProc.cpp">
+      <Filter>qyOpen</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CSDemoServer.h" />
+    <ClInclude Include="CSDemoServerDlg.h" />
+    <ClInclude Include="CServerAuth.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="include\proc_ca_jdzy.h">
+      <Filter>include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="CSDemoServer.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\CSDemoServer.ico" />
+    <None Include="res\CSDemoServer.rc2" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{799f51ec-5990-4904-8b18-60b6b7aca7aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="public">
+      <UniqueIdentifier>{4da230d9-d2cd-4fe3-8574-d70f80ac818e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qisOpen">
+      <UniqueIdentifier>{1dee3c5c-630a-426e-93d7-9482a68a2169}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qisOpen\include">
+      <UniqueIdentifier>{aeb23628-40bc-4371-8731-a32e44827194}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qisOpen\public">
+      <UniqueIdentifier>{d72f7b7d-9ed4-4fe6-8221-654663f93a5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyOpen">
+      <UniqueIdentifier>{961aae48-9c33-417a-8b7d-4f3858693785}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

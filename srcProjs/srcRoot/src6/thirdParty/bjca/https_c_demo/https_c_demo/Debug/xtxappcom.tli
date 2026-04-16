@@ -1,0 +1,1910 @@
+﻿// Created by Microsoft (R) C/C++ Compiler Version 10.00.30319.01 (b495f1d3).
+//
+// c:\root\develop2019\srcprojs\srcroot\src6\thirdparty\bjca\https_c_demo\https_c_demo\debug\xtxappcom.tli
+//
+// Wrapper implementations for Win32 type library C:\\Program Files (x86)\\BJCAClient\\CertAppEnvV3.8\\Program\\XTXAppCOM.dll
+// compiler-generated file created 01/14/23 at 02:42:04 - DO NOT EDIT!
+
+#pragma once
+
+//
+// dispinterface _IBJCASACEvents wrapper method implementations
+//
+
+inline HRESULT _IBJCASACEvents::OnUsbkeyChange ( ) {
+    return _com_dispatch_method(this, 0x1, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+}
+
+//
+// interface IBJCASAC wrapper method implementations
+//
+
+inline long IBJCASAC::GetCardCount ( ) {
+    long _result = 0;
+    HRESULT _hr = raw_GetCardCount(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IBJCASAC::GetAllCardInfoList ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_GetAllCardInfoList(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IBJCASAC::GetCardDevName ( short iIndex ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_GetCardDevName(iIndex, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline long IBJCASAC::GetLastError ( ) {
+    long _result = 0;
+    HRESULT _hr = raw_GetLastError(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IBJCASAC::GetErrorMsg ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_GetErrorMsg(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IBJCASAC::OpenCard ( _bstr_t sKeySN ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_OpenCard(sKeySN, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IBJCASAC::GetKeySN ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_GetKeySN(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline long IBJCASAC::Login ( _bstr_t sPass ) {
+    long _result = 0;
+    HRESULT _hr = raw_Login(sPass, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IBJCASAC::GetRetryCount ( ) {
+    long _result = 0;
+    HRESULT _hr = raw_GetRetryCount(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IBJCASAC::GenSignKeyPair ( _bstr_t sContainerName ) {
+    long _result = 0;
+    HRESULT _hr = raw_GenSignKeyPair(sContainerName, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IBJCASAC::ExportSignPublicKey ( _bstr_t sContainerName ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_ExportSignPublicKey(sContainerName, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline long IBJCASAC::ImportSignCert ( _bstr_t sContainerName, _bstr_t sCert, _bstr_t sCertPass ) {
+    long _result = 0;
+    HRESULT _hr = raw_ImportSignCert(sContainerName, sCert, sCertPass, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IBJCASAC::ImportEncKeyPair ( _bstr_t sContainerName, _bstr_t sCert, _bstr_t sPriKeyCipher, _bstr_t sPfxPass ) {
+    long _result = 0;
+    HRESULT _hr = raw_ImportEncKeyPair(sContainerName, sCert, sPriKeyCipher, sPfxPass, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IBJCASAC::SetENVSN ( _bstr_t sEnvsn ) {
+    long _result = 0;
+    HRESULT _hr = raw_SetENVSN(sEnvsn, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IBJCASAC::GetENVSN ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_GetENVSN(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline long IBJCASAC::GetContainerCount ( ) {
+    long _result = 0;
+    HRESULT _hr = raw_GetContainerCount(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IBJCASAC::DelContainer ( _bstr_t sContainerName ) {
+    long _result = 0;
+    HRESULT _hr = raw_DelContainer(sContainerName, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IBJCASAC::ChangeAdminPin ( _bstr_t sOldPin, _bstr_t sNewPin ) {
+    long _result = 0;
+    HRESULT _hr = raw_ChangeAdminPin(sOldPin, sNewPin, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IBJCASAC::ChangeUserPin ( _bstr_t sOldPin, _bstr_t sNewPin ) {
+    long _result = 0;
+    HRESULT _hr = raw_ChangeUserPin(sOldPin, sNewPin, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IBJCASAC::UnlockUserPin ( _bstr_t sAdminPin, _bstr_t sNewUserPin ) {
+    long _result = 0;
+    HRESULT _hr = raw_UnlockUserPin(sAdminPin, sNewUserPin, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IBJCASAC::IsContainerExist ( _bstr_t sContainerName ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_IsContainerExist(sContainerName, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IBJCASAC::Sign ( _bstr_t sInData, VARIANT_BOOL bNeedBase64DecodeData ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_Sign(sInData, bNeedBase64DecodeData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IBJCASAC::Verify ( _bstr_t sCert, _bstr_t sInData, VARIANT_BOOL bNeedBase64DecodeData, _bstr_t SignValue ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_Verify(sCert, sInData, bNeedBase64DecodeData, SignValue, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IBJCASAC::GetCert ( VARIANT_BOOL bSign ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_GetCert(bSign, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline HRESULT IBJCASAC::About ( ) {
+    HRESULT _hr = raw_About();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline _bstr_t IBJCASAC::GetCertListFormElement ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_CertListFormElement(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IBJCASAC::PutCertListFormElement ( _bstr_t pVal ) {
+    HRESULT _hr = put_CertListFormElement(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t IBJCASAC::GetAlertBeforeCertDate ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_AlertBeforeCertDate(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IBJCASAC::PutAlertBeforeCertDate ( _bstr_t pVal ) {
+    HRESULT _hr = put_AlertBeforeCertDate(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t IBJCASAC::GetServerSignedData ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_ServerSignedData(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IBJCASAC::PutServerSignedData ( _bstr_t pVal ) {
+    HRESULT _hr = put_ServerSignedData(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t IBJCASAC::GetServerRan ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_ServerRan(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IBJCASAC::PutServerRan ( _bstr_t pVal ) {
+    HRESULT _hr = put_ServerRan(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t IBJCASAC::GetServerCert ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_ServerCert(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IBJCASAC::PutServerCert ( _bstr_t pVal ) {
+    HRESULT _hr = put_ServerCert(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t IBJCASAC::GetServerMode ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_ServerMode(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IBJCASAC::PutServerMode ( _bstr_t pVal ) {
+    HRESULT _hr = put_ServerMode(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t IBJCASAC::GetShowError ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_ShowError(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IBJCASAC::PutShowError ( _bstr_t pVal ) {
+    HRESULT _hr = put_ShowError(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IBJCASAC::AddSignInfo ( _bstr_t sUserPin ) {
+    long _result = 0;
+    HRESULT _hr = raw_AddSignInfo(sUserPin, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IBJCASAC::SignData ( _bstr_t CertID, _bstr_t sInData ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SignData(CertID, sInData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IBJCASAC::VerifySignedData ( _bstr_t sCert, _bstr_t sInData, _bstr_t sSignValue ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_VerifySignedData(sCert, sInData, sSignValue, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IBJCASAC::SignDataXML ( _bstr_t CertID, _bstr_t sInData ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SignDataXML(CertID, sInData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IBJCASAC::verifySignedDataXML ( _bstr_t sInData ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_verifySignedDataXML(sInData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IBJCASAC::SignDataByP7_0 ( _bstr_t CertID, _bstr_t sInData ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SignDataByP7_0(CertID, sInData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IBJCASAC::VerifySignedDatabyP7_0 ( _bstr_t sInData ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_VerifySignedDatabyP7_0(sInData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IBJCASAC::EncodeP7EnvelopedData ( _bstr_t CertID, _bstr_t sInData ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_EncodeP7EnvelopedData(CertID, sInData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IBJCASAC::DecodeP7EnvelopedData ( _bstr_t sInData ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_DecodeP7EnvelopedData(sInData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IBJCASAC::GenRandom ( short iRandomLen ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_GenRandom(iRandomLen, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IBJCASAC::PubKeyEncrypt ( _bstr_t sCert, _bstr_t sInData ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_PubKeyEncrypt(sCert, sInData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IBJCASAC::PriKeyDecrypt ( _bstr_t CertID, _bstr_t sInData ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_PriKeyDecrypt(CertID, sInData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IBJCASAC::EncryptData ( _bstr_t sSymKey, _bstr_t sInData ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_EncryptData(sSymKey, sInData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IBJCASAC::DecryptData ( _bstr_t sSymKey, _bstr_t sInData ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_DecryptData(sSymKey, sInData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IBJCASAC::ExportUserCert ( _bstr_t CertID, VARIANT_BOOL bSignCert ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_ExportUserCert(CertID, bSignCert, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IBJCASAC::GetKeyInfo ( long iType ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_GetKeyInfo(iType, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IBJCASAC::GetCertInfo ( long iType ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_GetCertInfo(iType, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IBJCASAC::GetCertName ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_GetCertName(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IBJCASAC::GetCertOID ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_GetCertOID(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IBJCASAC::FormatCard ( _bstr_t sInfo ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_FormatCard(sInfo, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IBJCASAC::ExtExec1 ( long iMethod, _bstr_t str1, _bstr_t str2, _bstr_t str3 ) {
+    long _result = 0;
+    HRESULT _hr = raw_ExtExec1(iMethod, str1, str2, str3, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IBJCASAC::ExtExec2 ( long iMethod, _bstr_t str1, _bstr_t str2, _bstr_t str3 ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_ExtExec2(iMethod, str1, str2, str3, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IBJCASAC::GetCertInfoByOID ( _bstr_t sOID ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_GetCertInfoByOID(sOID, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IBJCASAC::ExportP10 ( _bstr_t sContainerName, _bstr_t sDN ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_ExportP10(sContainerName, sDN, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IBJCASAC::SignDataByP7 ( _bstr_t inData, VARIANT_BOOL isDetached, long hashAlg ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SignDataByP7(inData, isDetached, hashAlg, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IBJCASAC::VerifySignedDatabyP7 ( _bstr_t inData, _bstr_t P7Data ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_VerifySignedDatabyP7(inData, P7Data, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IBJCASAC::ResetCard ( _bstr_t sKeySN, _bstr_t sAdminPin ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_ResetCard(sKeySN, sAdminPin, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IBJCASAC::ResetUserPin ( _bstr_t sAdminPin, _bstr_t sNewUserPin ) {
+    long _result = 0;
+    HRESULT _hr = raw_ResetUserPin(sAdminPin, sNewUserPin, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IBJCASAC::Logout ( _bstr_t sKeySN ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_Logout(sKeySN, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+//
+// dispinterface _IXTXAppEvents wrapper method implementations
+//
+
+inline HRESULT _IXTXAppEvents::OnUsbkeyChange ( ) {
+    return _com_dispatch_method(this, 0x1, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+}
+
+inline HRESULT _IXTXAppEvents::OnUsbkeyInsert ( ) {
+    return _com_dispatch_method(this, 0x2, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+}
+
+inline HRESULT _IXTXAppEvents::OnUsbkeyRemove ( ) {
+    return _com_dispatch_method(this, 0x3, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+}
+
+//
+// interface IXTXApp wrapper method implementations
+//
+
+inline long IXTXApp::SOF_SetSignMethod ( long SignMethod ) {
+    long _result = 0;
+    HRESULT _hr = raw_SOF_SetSignMethod(SignMethod, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IXTXApp::SOF_GetSignMethod ( ) {
+    long _result = 0;
+    HRESULT _hr = raw_SOF_GetSignMethod(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IXTXApp::SOF_SetEncryptMethod ( long EncryptMethod ) {
+    long _result = 0;
+    HRESULT _hr = raw_SOF_SetEncryptMethod(EncryptMethod, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IXTXApp::SOF_GetEncryptMethod ( ) {
+    long _result = 0;
+    HRESULT _hr = raw_SOF_GetEncryptMethod(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::SOF_GetUserList ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_GetUserList(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOF_ExportUserCert ( _bstr_t CertID ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_ExportUserCert(CertID, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IXTXApp::SOF_Login ( _bstr_t CertID, _bstr_t PassWd ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_SOF_Login(CertID, PassWd, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IXTXApp::SOF_GetPinRetryCount ( _bstr_t CertID ) {
+    long _result = 0;
+    HRESULT _hr = raw_SOF_GetPinRetryCount(CertID, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IXTXApp::SOF_ChangePassWd ( _bstr_t CertID, _bstr_t oldPass, _bstr_t newPass ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_SOF_ChangePassWd(CertID, oldPass, newPass, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::SOF_GetCertInfo ( _bstr_t Cert, short type ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_GetCertInfo(Cert, type, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOF_GetCertInfoByOid ( _bstr_t Cert, _bstr_t Oid ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_GetCertInfoByOid(Cert, Oid, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOF_SignData ( _bstr_t CertID, _bstr_t inData ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_SignData(CertID, inData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IXTXApp::SOF_VerifySignedData ( _bstr_t Cert, _bstr_t inData, _bstr_t SignValue ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_SOF_VerifySignedData(Cert, inData, SignValue, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::SOF_SignFile ( _bstr_t CertID, _bstr_t InFile ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_SignFile(CertID, InFile, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IXTXApp::SOF_VerifySignedFile ( _bstr_t Cert, _bstr_t InFile, _bstr_t SignValue ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_SOF_VerifySignedFile(Cert, InFile, SignValue, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::SOF_EncryptData ( _bstr_t Cert, _bstr_t inData ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_EncryptData(Cert, inData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOF_DecryptData ( _bstr_t CertID, _bstr_t inData ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_DecryptData(CertID, inData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IXTXApp::SOF_EncryptFile ( _bstr_t Cert, _bstr_t InFile, _bstr_t OutFile ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_SOF_EncryptFile(Cert, InFile, OutFile, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IXTXApp::SOF_DecryptFile ( _bstr_t CertID, _bstr_t InFile, _bstr_t OutFile ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_SOF_DecryptFile(CertID, InFile, OutFile, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::SOF_SignMessage ( short dwFlag, _bstr_t CertID, _bstr_t inData ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_SignMessage(dwFlag, CertID, inData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IXTXApp::SOF_VerifySignedMessage ( _bstr_t MessageData, _bstr_t inData ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_SOF_VerifySignedMessage(MessageData, inData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::SOF_GetInfoFromSignedMessage ( _bstr_t SignedMessage, short type ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_GetInfoFromSignedMessage(SignedMessage, type, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOF_SignDataXML ( _bstr_t CertID, _bstr_t inData ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_SignDataXML(CertID, inData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IXTXApp::SOF_VerifySignedDataXML ( _bstr_t inData ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_SOF_VerifySignedDataXML(inData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::SOF_GetXMLSignatureInfo ( _bstr_t XMLSignedData, short type ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_GetXMLSignatureInfo(XMLSignedData, type, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOF_GenRandom ( long RandomLen ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_GenRandom(RandomLen, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOF_PubKeyEncrypt ( _bstr_t Cert, _bstr_t inData ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_PubKeyEncrypt(Cert, inData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOF_PriKeyDecrypt ( _bstr_t CertID, _bstr_t inData ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_PriKeyDecrypt(CertID, inData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOF_SecertSegment ( _bstr_t Secert, short m, short n, short k ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_SecertSegment(Secert, m, n, k, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOF_SecertRecovery ( _bstr_t Seg ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_SecertRecovery(Seg, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline long IXTXApp::SOF_GetLastError ( ) {
+    long _result = 0;
+    HRESULT _hr = raw_SOF_GetLastError(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IXTXApp::GetDeviceCount ( ) {
+    long _result = 0;
+    HRESULT _hr = raw_GetDeviceCount(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::GetAllDeviceSN ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_GetAllDeviceSN(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::GetDeviceSNByIndex ( long iIndex ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_GetDeviceSNByIndex(iIndex, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::GetDeviceInfo ( _bstr_t sDeviceSN, long iType ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_GetDeviceInfo(sDeviceSN, iType, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IXTXApp::ChangeAdminPass ( _bstr_t sDeviceSN, _bstr_t sOldPass, _bstr_t sNewPass ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_ChangeAdminPass(sDeviceSN, sOldPass, sNewPass, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IXTXApp::UnlockUserPass ( _bstr_t sDeviceSN, _bstr_t sAdminPass, _bstr_t sNewUserPass ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_UnlockUserPass(sDeviceSN, sAdminPass, sNewUserPass, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IXTXApp::GenerateKeyPair ( _bstr_t sDeviceSN, _bstr_t sContainerName, long iKeyType, VARIANT_BOOL bSign ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_GenerateKeyPair(sDeviceSN, sContainerName, iKeyType, bSign, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::ExportPubKey ( _bstr_t sDeviceSN, _bstr_t sContainerName, VARIANT_BOOL bSign ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_ExportPubKey(sDeviceSN, sContainerName, bSign, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IXTXApp::ImportSignCert ( _bstr_t sDeviceSN, _bstr_t sContainerName, _bstr_t sCert ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_ImportSignCert(sDeviceSN, sContainerName, sCert, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IXTXApp::ImportEncCert ( _bstr_t sDeviceSN, _bstr_t sContainerName, _bstr_t sCert, _bstr_t sPriKeyCipher ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_ImportEncCert(sDeviceSN, sContainerName, sCert, sPriKeyCipher, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::ReadFile ( _bstr_t sDeviceSN, _bstr_t sFileName ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_ReadFile(sDeviceSN, sFileName, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IXTXApp::WriteFile ( _bstr_t sDeviceSN, _bstr_t sFileName, _bstr_t sContent, VARIANT_BOOL bPrivate ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_WriteFile(sDeviceSN, sFileName, sContent, bPrivate, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IXTXApp::IsContainerExist ( _bstr_t sDeviceSN, _bstr_t sContainerName ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_IsContainerExist(sDeviceSN, sContainerName, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IXTXApp::DeleteContainer ( _bstr_t sDeviceSN, _bstr_t sContainerName ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_DeleteContainer(sDeviceSN, sContainerName, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::ExportPKCS10 ( _bstr_t sDeviceSN, _bstr_t sContainerName, _bstr_t sDN, VARIANT_BOOL bSign ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_ExportPKCS10(sDeviceSN, sContainerName, sDN, bSign, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IXTXApp::InitDevice ( _bstr_t sDeviceSN, _bstr_t sAdminPass ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_InitDevice(sDeviceSN, sAdminPass, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::GetCertListFormElement ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_CertListFormElement(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IXTXApp::PutCertListFormElement ( _bstr_t pVal ) {
+    HRESULT _hr = put_CertListFormElement(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t IXTXApp::GetAlertBeforeCertDate ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_AlertBeforeCertDate(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IXTXApp::PutAlertBeforeCertDate ( _bstr_t pVal ) {
+    HRESULT _hr = put_AlertBeforeCertDate(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t IXTXApp::GetServerSignedData ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_ServerSignedData(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IXTXApp::PutServerSignedData ( _bstr_t pVal ) {
+    HRESULT _hr = put_ServerSignedData(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t IXTXApp::GetServerRan ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_ServerRan(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IXTXApp::PutServerRan ( _bstr_t pVal ) {
+    HRESULT _hr = put_ServerRan(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t IXTXApp::GetServerCert ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_ServerCert(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IXTXApp::PutServerCert ( _bstr_t pVal ) {
+    HRESULT _hr = put_ServerCert(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t IXTXApp::GetServerMode ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_ServerMode(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IXTXApp::PutServerMode ( _bstr_t pVal ) {
+    HRESULT _hr = put_ServerMode(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t IXTXApp::GetShowError ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_ShowError(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IXTXApp::PutShowError ( _bstr_t pVal ) {
+    HRESULT _hr = put_ShowError(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline VARIANT_BOOL IXTXApp::AddSignInfo ( _bstr_t sUserPass ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_AddSignInfo(sUserPass, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::SOF_GetVersion ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_GetVersion(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOF_ExportExChangeUserCert ( _bstr_t CertID ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_ExportExChangeUserCert(CertID, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline long IXTXApp::SOF_ValidateCert ( _bstr_t Cert ) {
+    long _result = 0;
+    HRESULT _hr = raw_SOF_ValidateCert(Cert, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::GetENVSN ( _bstr_t sDeviceSN ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_GetENVSN(sDeviceSN, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IXTXApp::SetENVSN ( _bstr_t sDeviceSN, _bstr_t sEnvsn ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_SetENVSN(sDeviceSN, sEnvsn, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IXTXApp::IsDeviceExist ( _bstr_t sDeviceSN ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_IsDeviceExist(sDeviceSN, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IXTXApp::GetContainerCount ( _bstr_t sDeviceSN ) {
+    long _result = 0;
+    HRESULT _hr = raw_GetContainerCount(sDeviceSN, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::SOF_SymEncryptData ( _bstr_t sKey, _bstr_t inData ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_SymEncryptData(sKey, inData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOF_SymDecryptData ( _bstr_t sKey, _bstr_t inData ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_SymDecryptData(sKey, inData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IXTXApp::SOF_SymEncryptFile ( _bstr_t sKey, _bstr_t InFile, _bstr_t OutFile ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_SOF_SymEncryptFile(sKey, InFile, OutFile, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IXTXApp::SOF_SymDecryptFile ( _bstr_t sKey, _bstr_t InFile, _bstr_t OutFile ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_SOF_SymDecryptFile(sKey, InFile, OutFile, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::SOF_GetLastErrMsg ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_GetLastErrMsg(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOF_Base64Encode ( _bstr_t sInData ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_Base64Encode(sInData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOF_Base64Decode ( _bstr_t sInData ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_Base64Decode(sInData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOF_HashData ( long hashAlg, _bstr_t sInData ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_HashData(hashAlg, sInData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOF_HashFile ( long hashAlg, _bstr_t InFile ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_HashFile(hashAlg, InFile, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IXTXApp::UnlockUserPassEx ( _bstr_t sDeviceSN, _bstr_t sAdminPin, _bstr_t sNewUserPass ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_UnlockUserPassEx(sDeviceSN, sAdminPin, sNewUserPass, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IXTXApp::DeleteOldContainer ( _bstr_t sDeviceSN ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_DeleteOldContainer(sDeviceSN, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IXTXApp::WriteFileEx ( _bstr_t sDeviceSN, _bstr_t sFileName, _bstr_t sContent ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_WriteFileEx(sDeviceSN, sFileName, sContent, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::ReadFileEx ( _bstr_t sDeviceSN, _bstr_t sFileName ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_ReadFileEx(sDeviceSN, sFileName, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOF_EncryptDataEx ( _bstr_t Cert, _bstr_t inData ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_EncryptDataEx(Cert, inData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::Base64EncodeFile ( _bstr_t sInFile ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_Base64EncodeFile(sInFile, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline long IXTXApp::SOF_GetRetryCount ( _bstr_t CertID ) {
+    long _result = 0;
+    HRESULT _hr = raw_SOF_GetRetryCount(CertID, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::SOF_GetAllContainerName ( _bstr_t sDeviceSN ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_GetAllContainerName(sDeviceSN, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IXTXApp::CreateSoftDevice ( _bstr_t sDeviceSN, _bstr_t sLabel ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_CreateSoftDevice(sDeviceSN, sLabel, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IXTXApp::DeleteSoftDevice ( _bstr_t sDeviceSN, _bstr_t sPasswd ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_DeleteSoftDevice(sDeviceSN, sPasswd, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IXTXApp::EnableSoftDevice ( VARIANT_BOOL enable, _bstr_t sDeviceSN ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_EnableSoftDevice(enable, sDeviceSN, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::SoftDeviceBackup ( _bstr_t sDeviceSN, _bstr_t sPasswd ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SoftDeviceBackup(sDeviceSN, sPasswd, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IXTXApp::SoftDeviceRestore ( _bstr_t sDeviceSN, _bstr_t sPasswd, _bstr_t sInFilePath ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_SoftDeviceRestore(sDeviceSN, sPasswd, sInFilePath, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IXTXApp::SOF_Logout ( _bstr_t CertID ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_SOF_Logout(CertID, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IXTXApp::SetUserConfig ( long type, _bstr_t strConfig ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_SetUserConfig(type, strConfig, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::SOF_SignByteData ( _bstr_t CertID, unsigned char * byteInData, long byteLen ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_SignByteData(CertID, byteInData, byteLen, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IXTXApp::SOF_VerifySignedByteData ( _bstr_t Cert, unsigned char * byteInData, long byteLen, _bstr_t SignValue ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_SOF_VerifySignedByteData(Cert, byteInData, byteLen, SignValue, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::OTP_GetChallengeCode ( _bstr_t sCertID ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_OTP_GetChallengeCode(sCertID, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IXTXApp::ImportEncCertEx ( _bstr_t sDeviceSN, _bstr_t sContainerName, _bstr_t sCert, _bstr_t sPriKeyCipher, long ulSymAlg ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_ImportEncCertEx(sDeviceSN, sContainerName, sCert, sPriKeyCipher, ulSymAlg, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::SOF_GetCertEntity ( _bstr_t sCert ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_GetCertEntity(sCert, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOF_HMAC ( long hashid, _bstr_t key, _bstr_t inData ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_HMAC(hashid, key, inData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOF_SignDataByPriKey ( _bstr_t sPriKey, _bstr_t sCert, _bstr_t sInData ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_SignDataByPriKey(sPriKey, sCert, sInData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IXTXApp::ImportKeyCertToSoftDevice ( _bstr_t sDeviceSN, _bstr_t sContainerName, _bstr_t sPriKey, _bstr_t sCert, VARIANT_BOOL bSign ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_ImportKeyCertToSoftDevice(sDeviceSN, sContainerName, sPriKey, sCert, bSign, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IXTXApp::InitDeviceEx ( _bstr_t sDeviceSN, _bstr_t sAdminPass, _bstr_t sUserPin, _bstr_t sKeyLabel, long adminPinMaxRetry, long userPinMaxRetry ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_InitDeviceEx(sDeviceSN, sAdminPass, sUserPin, sKeyLabel, adminPinMaxRetry, userPinMaxRetry, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::SelectFile ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SelectFile(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOF_SignHashData ( _bstr_t CertID, _bstr_t b64ashData, long hashAlg ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_SignHashData(CertID, b64ashData, hashAlg, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IXTXApp::SOF_VerifySignedHashData ( _bstr_t Cert, _bstr_t b64ashData, _bstr_t SignValue, long hashAlg ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_SOF_VerifySignedHashData(Cert, b64ashData, SignValue, hashAlg, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IXTXApp::CheckSoftDeviceEnv ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_CheckSoftDeviceEnv(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::SOF_SignBinaryData ( _bstr_t CertID, const _variant_t & inData ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_SignBinaryData(CertID, inData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IXTXApp::SOF_VerifySignedBinaryData ( _bstr_t Cert, const _variant_t & inData, _bstr_t SignValue ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_SOF_VerifySignedBinaryData(Cert, inData, SignValue, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::SOF_EncryptBinaryData ( _bstr_t Cert, const _variant_t & inData ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_EncryptBinaryData(Cert, inData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOF_EncryptBinaryDataEx ( _bstr_t Cert, const _variant_t & inData ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_EncryptBinaryDataEx(Cert, inData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _variant_t IXTXApp::SOF_DecryptBinaryData ( _bstr_t CertID, _bstr_t inData ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = raw_SOF_DecryptBinaryData(CertID, inData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOF_SignBinaryMessage ( short dwFlag, _bstr_t CertID, const _variant_t & inData ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_SignBinaryMessage(dwFlag, CertID, inData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IXTXApp::SOF_VerifySignedBinaryMessage ( _bstr_t MessageData, const _variant_t & inData ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_SOF_VerifySignedBinaryMessage(MessageData, inData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::SOF_PubKeyBinaryEncrypt ( _bstr_t Cert, const _variant_t & inData ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_PubKeyBinaryEncrypt(Cert, inData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _variant_t IXTXApp::SOF_PriKeyBinaryDecrypt ( _bstr_t CertID, _bstr_t inData ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = raw_SOF_PriKeyBinaryDecrypt(CertID, inData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOF_Base64BinaryEncode ( const _variant_t & sInData ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_Base64BinaryEncode(sInData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _variant_t IXTXApp::SOF_Base64BinaryDecode ( _bstr_t sInData ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = raw_SOF_Base64BinaryDecode(sInData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOF_HashBinaryData ( long hashAlg, const _variant_t & sInData, _bstr_t sCert, _bstr_t sID ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_HashBinaryData(hashAlg, sInData, sCert, sID, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOF_SignBinaryDataByPriKey ( _bstr_t sPriKey, _bstr_t sCert, const _variant_t & sInData ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_SignBinaryDataByPriKey(sPriKey, sCert, sInData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IXTXApp::ImportPfxToDevice ( _bstr_t sDeviceSN, _bstr_t sContainerName, VARIANT_BOOL bSign, _bstr_t strPfx, _bstr_t strPfxPass ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_ImportPfxToDevice(sDeviceSN, sContainerName, bSign, strPfx, strPfxPass, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::SOF_HashDataEx ( long hashAlg, _bstr_t sInData, _bstr_t sCert, _bstr_t sID ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_HashDataEx(hashAlg, sInData, sCert, sID, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOF_HashFileEx ( long hashAlg, _bstr_t InFile, _bstr_t sCert, _bstr_t sID ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_HashFileEx(hashAlg, InFile, sCert, sID, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline long IXTXApp::GetDeviceCountEx ( long type ) {
+    long _result = 0;
+    HRESULT _hr = raw_GetDeviceCountEx(type, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::GetAllDeviceSNEx ( long type ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_GetAllDeviceSNEx(type, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline long IXTXApp::SOF_UpdateCert ( _bstr_t CertID, long type ) {
+    long _result = 0;
+    HRESULT _hr = raw_SOF_UpdateCert(CertID, type, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT IXTXApp::OpenSpecifiedFolder ( _bstr_t backupFilePath ) {
+    HRESULT _hr = raw_OpenSpecifiedFolder(backupFilePath);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline _bstr_t IXTXApp::OTP_GetChallengeCodeEx ( _bstr_t sCertID, _bstr_t szAccount, long money ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_OTP_GetChallengeCodeEx(sCertID, szAccount, money, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IXTXApp::Base64DecodeFile ( _bstr_t sInData, _bstr_t sFilePath ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_Base64DecodeFile(sInData, sFilePath, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::EnumFilesInDevice ( _bstr_t sDeviceSN ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_EnumFilesInDevice(sDeviceSN, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IXTXApp::OTP_Halt ( _bstr_t sCertID ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_OTP_Halt(sCertID, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::SOF_TSGenREQ ( _bstr_t b64Hash, long hashAlg, VARIANT_BOOL bReqCert, _bstr_t policyID, _bstr_t b64Nonce, _bstr_t b64Extension ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_TSGenREQ(b64Hash, hashAlg, bReqCert, policyID, b64Nonce, b64Extension, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IXTXApp::SOF_TSCompareNonce ( _bstr_t b64TSReq, _bstr_t b64TSAResp ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_SOF_TSCompareNonce(b64TSReq, b64TSAResp, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::SOF_TSGenPDFSignature ( _bstr_t b64TSAResp, _bstr_t b64OriPDFSignature ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_TSGenPDFSignature(b64TSAResp, b64OriPDFSignature, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IXTXApp::SOF_TSVerifyPDFSignature ( _bstr_t b64TSPDFSignature ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_SOF_TSVerifyPDFSignature(b64TSPDFSignature, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::SOF_TSGetPDFSignatureInfo ( _bstr_t b64TSPDFSignature, long iType ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_TSGetPDFSignatureInfo(b64TSPDFSignature, iType, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::OTP_GetState ( _bstr_t sCertID, VARIANT_BOOL bCert ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_OTP_GetState(sCertID, bCert, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::OTP_GetSyncCode ( _bstr_t sCertID, _bstr_t ChallengeCode ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_OTP_GetSyncCode(sCertID, ChallengeCode, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IXTXApp::SOF_IsLogin ( _bstr_t CertID ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_SOF_IsLogin(CertID, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IXTXApp::SOF_LoginEx ( _bstr_t CertID, _bstr_t PassWd, long updateFlag ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_SOF_LoginEx(CertID, PassWd, updateFlag, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::EnumSupportDeviceList ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_EnumSupportDeviceList(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::ExportPfxFromDevice ( _bstr_t sDeviceSN, _bstr_t sContainerName, VARIANT_BOOL bSign, _bstr_t strPfxPass ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_ExportPfxFromDevice(sDeviceSN, sContainerName, bSign, strPfxPass, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOF_SignHashMessage ( _bstr_t CertID, _bstr_t InHashData, long hashAlg ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_SignHashMessage(CertID, InHashData, hashAlg, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::ExportPfxToFile ( _bstr_t sDeviceSN, _bstr_t sContainerName, VARIANT_BOOL bSign, _bstr_t strPfxPass ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_ExportPfxToFile(sDeviceSN, sContainerName, bSign, strPfxPass, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOF_SignAPK ( _bstr_t CertID, _bstr_t strOriSignature ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_SignAPK(CertID, strOriSignature, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IXTXApp::YZT_GenerateKeyPair ( _bstr_t sDeviceSN, _bstr_t sContainerName, long iKeyTypeRSA, long iKeyTypeSM2 ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_YZT_GenerateKeyPair(sDeviceSN, sContainerName, iKeyTypeRSA, iKeyTypeSM2, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::YZT_ExportPubKey ( _bstr_t sDeviceSN, _bstr_t sContainerName, VARIANT_BOOL bSign ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_YZT_ExportPubKey(sDeviceSN, sContainerName, bSign, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IXTXApp::YZT_ImportSignCert ( _bstr_t sDeviceSN, _bstr_t sContainerName, _bstr_t sRSACert, _bstr_t sSM2Cert ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_YZT_ImportSignCert(sDeviceSN, sContainerName, sRSACert, sSM2Cert, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IXTXApp::YZT_ImportEncCert ( _bstr_t sDeviceSN, _bstr_t sContainerName, _bstr_t sRSACert, _bstr_t sRSAPriKeyCipher, long ulRSASymAlg, _bstr_t sSM2Cert, _bstr_t sSM2PriKeyCipher, long ulSM2SymAlg ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_YZT_ImportEncCert(sDeviceSN, sContainerName, sRSACert, sRSAPriKeyCipher, ulRSASymAlg, sSM2Cert, sSM2PriKeyCipher, ulSM2SymAlg, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::SOF_ListenUKey ( long Parm ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_ListenUKey(Parm, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOF_EnableLoginWindow ( long Parm ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_EnableLoginWindow(Parm, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOF_SignEnvelope ( _bstr_t CertID, _bstr_t Cert, _bstr_t inData ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_SignEnvelope(CertID, Cert, inData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOF_UnSignEnvelope ( _bstr_t CertID, _bstr_t inData ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_UnSignEnvelope(CertID, inData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::BIO_MAKExportPKCS10 ( _bstr_t sDeviceSN, long iKeyType, _bstr_t sDN ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_BIO_MAKExportPKCS10(sDeviceSN, iKeyType, sDN, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IXTXApp::BIO_MAKImportSignEncCert ( _bstr_t sDeviceSN, _bstr_t sSignCert, _bstr_t sEncCert, _bstr_t sPriKeyCipher ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_BIO_MAKImportSignEncCert(sDeviceSN, sSignCert, sEncCert, sPriKeyCipher, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IXTXApp::BIO_IssueDAKCert ( _bstr_t sDeviceSN, long iKeyType, _bstr_t sDN ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_BIO_IssueDAKCert(sDeviceSN, iKeyType, sDN, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::BIO_InfoCollect ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_BIO_InfoCollect(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::BIO_GetBioInfo ( _bstr_t sDeviceSN ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_BIO_GetBioInfo(sDeviceSN, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOF_GetLastLoginCertID ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_GetLastLoginCertID(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOF_ReadESealData ( _bstr_t CertID, long ulKeyIndex, long ulKeyAlgId, long ulFlags ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_ReadESealData(CertID, ulKeyIndex, ulKeyAlgId, ulFlags, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOF_ReadKFXESealData ( _bstr_t CertID, long ulKeyIndex, long ulKeyAlgId, long ulFlags ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_ReadKFXESealData(CertID, ulKeyIndex, ulKeyAlgId, ulFlags, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOF_SymDecryptFileToData ( _bstr_t sKey, _bstr_t InFile ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_SymDecryptFileToData(sKey, InFile, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOF_SignMessageBase64 ( short dwFlag, _bstr_t CertID, _bstr_t inData ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_SignMessageBase64(dwFlag, CertID, inData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IXTXApp::SOF_VerifySignedMessageBase64 ( _bstr_t MessageData, _bstr_t inData ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_SOF_VerifySignedMessageBase64(MessageData, inData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IXTXApp::SOF_VerifySignedHashMessage ( _bstr_t MessageData, _bstr_t InHashData ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_SOF_VerifySignedHashMessage(MessageData, InHashData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::SOF_SignDataBase64 ( _bstr_t CertID, _bstr_t inData ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_SignDataBase64(CertID, inData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IXTXApp::SOF_VerifySignedDataBase64 ( _bstr_t Cert, _bstr_t inData, _bstr_t SignValue ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_SOF_VerifySignedDataBase64(Cert, inData, SignValue, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::SOF_HashDataExBase64 ( long hashAlg, _bstr_t sInData, _bstr_t sCert, _bstr_t sID ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_HashDataExBase64(hashAlg, sInData, sCert, sID, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOF_GetProductVersion ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_GetProductVersion(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline long IXTXApp::SOF_UpdateCertEx ( _bstr_t CertID, _bstr_t PassWd ) {
+    long _result = 0;
+    HRESULT _hr = raw_SOF_UpdateCertEx(CertID, PassWd, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::SOF_GetLastSignDataCertID ( _bstr_t CertID ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_GetLastSignDataCertID(CertID, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IXTXApp::BIO_SetUserConfig ( _bstr_t CertID, long type, _bstr_t strConfig ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_BIO_SetUserConfig(CertID, type, strConfig, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::BIO_InvokeCommand ( _bstr_t CertID, _bstr_t bstrCommand ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_BIO_InvokeCommand(CertID, bstrCommand, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IXTXApp::SOF_ImportSymmKey ( _bstr_t CertID, long ulKeyIndex, _bstr_t inData, long ulFlags ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_SOF_ImportSymmKey(CertID, ulKeyIndex, inData, ulFlags, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IXTXApp::SOF_WriteESealData ( _bstr_t CertID, _bstr_t inData, long ulFlags ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_SOF_WriteESealData(CertID, inData, ulFlags, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::SOF_EPS_Encrypt ( _bstr_t CertID, long ulKeyIndex, long ulKeyAlgId, _bstr_t IVData, long DivCount, _bstr_t DivComponent, _bstr_t inData, long ulFlags ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_EPS_Encrypt(CertID, ulKeyIndex, ulKeyAlgId, IVData, DivCount, DivComponent, inData, ulFlags, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOF_EPS_Decrypt ( _bstr_t CertID, long ulKeyIndex, long ulKeyAlgId, _bstr_t IVData, long DivCount, _bstr_t DivComponent, _bstr_t inData, long ulFlags ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_EPS_Decrypt(CertID, ulKeyIndex, ulKeyAlgId, IVData, DivCount, DivComponent, inData, ulFlags, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOF_EPS_Mac ( _bstr_t CertID, long ulKeyIndex, long ulKeyAlgId, _bstr_t IVData, long DivCount, _bstr_t DivComponent, _bstr_t inData, long ulFlags ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_EPS_Mac(CertID, ulKeyIndex, ulKeyAlgId, IVData, DivCount, DivComponent, inData, ulFlags, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOF_PriKeyDecryptEx ( _bstr_t CertID, _bstr_t inData ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_PriKeyDecryptEx(CertID, inData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOF_EPS_ReadESealData ( _bstr_t CertID, long ulKeyIndex, long ulKeyAlgId, long ulFlags ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_EPS_ReadESealData(CertID, ulKeyIndex, ulKeyAlgId, ulFlags, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IXTXApp::SOF_EPS_WriteESealData ( _bstr_t CertID, _bstr_t inData, long ulFlags ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_SOF_EPS_WriteESealData(CertID, inData, ulFlags, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::EnumESeal ( _bstr_t sDeviceSN ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_EnumESeal(sDeviceSN, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::GetPicture ( _bstr_t bstrConName ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_GetPicture(bstrConName, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IXTXApp::SOF_SignEnvelopeFile ( _bstr_t CertID, _bstr_t Cert, _bstr_t InFile, _bstr_t OutFile ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_SOF_SignEnvelopeFile(CertID, Cert, InFile, OutFile, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IXTXApp::SOF_UnSignEnvelopeFile ( _bstr_t CertID, _bstr_t InFile, _bstr_t OutFile ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_SOF_UnSignEnvelopeFile(CertID, InFile, OutFile, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IXTXApp::SOFX_EncryptFile ( _bstr_t CertID, _bstr_t Cert, _bstr_t InFile, _bstr_t OutFile, long ulFlags ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_SOFX_EncryptFile(CertID, Cert, InFile, OutFile, ulFlags, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IXTXApp::SOFX_DecryptFile ( _bstr_t CertID, _bstr_t InFile, _bstr_t OutFile, long ulFlags ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_SOFX_DecryptFile(CertID, InFile, OutFile, ulFlags, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IXTXApp::WriteFileBase64 ( _bstr_t sDeviceSN, _bstr_t sFileName, _bstr_t sContent ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_WriteFileBase64(sDeviceSN, sFileName, sContent, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IXTXApp::DeleteFile ( _bstr_t sDeviceSN, _bstr_t sFileName ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_DeleteFile(sDeviceSN, sFileName, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::SOF_SignDataEx ( _bstr_t CertID, _bstr_t inData, long signFlag ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_SignDataEx(CertID, inData, signFlag, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IXTXApp::SOF_VerifySignedDataEx ( _bstr_t Cert, _bstr_t inData, _bstr_t SignValue, long signFlag ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_SOF_VerifySignedDataEx(Cert, inData, SignValue, signFlag, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::SOF_SymEncryptDataEx ( _bstr_t sKey, _bstr_t sIV, _bstr_t inData ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_SymEncryptDataEx(sKey, sIV, inData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOF_SymDecryptDataEx ( _bstr_t sKey, _bstr_t sIV, _bstr_t inData ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_SymDecryptDataEx(sKey, sIV, inData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IXTXApp::InitDeviceWithParam ( _bstr_t sDeviceSN, _bstr_t sAppName, _bstr_t sAdminPass, _bstr_t sUserPin, _bstr_t sKeyLabel, long adminPinMaxRetry, long userPinMaxRetry, long createFileRights ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_InitDeviceWithParam(sDeviceSN, sAppName, sAdminPass, sUserPin, sKeyLabel, adminPinMaxRetry, userPinMaxRetry, createFileRights, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IXTXApp::SOF_SymEncryptFileEx ( _bstr_t sKey, _bstr_t sIV, _bstr_t InFile, _bstr_t OutFile ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_SOF_SymEncryptFileEx(sKey, sIV, InFile, OutFile, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IXTXApp::SOF_SymDecryptFileEx ( _bstr_t sKey, _bstr_t sIV, _bstr_t InFile, _bstr_t OutFile ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_SOF_SymDecryptFileEx(sKey, sIV, InFile, OutFile, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::SOF_SymDecryptFileToDataEx ( _bstr_t sKey, _bstr_t sIV, _bstr_t InFile ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOF_SymDecryptFileToDataEx(sKey, sIV, InFile, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOFX_SymEncryptDataWithPadding ( _bstr_t sKey, _bstr_t sIV, long ulPaddingType, _bstr_t inData ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOFX_SymEncryptDataWithPadding(sKey, sIV, ulPaddingType, inData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXTXApp::SOFX_SymDecryptDataWithPadding ( _bstr_t sKey, _bstr_t sIV, long ulPaddingType, _bstr_t inData ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOFX_SymDecryptDataWithPadding(sKey, sIV, ulPaddingType, inData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IXTXApp::SOFX_SymEncryptFileWithPadding ( _bstr_t sKey, _bstr_t sIV, long ulPaddingType, _bstr_t InFile, _bstr_t OutFile ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_SOFX_SymEncryptFileWithPadding(sKey, sIV, ulPaddingType, InFile, OutFile, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IXTXApp::SOFX_SymDecryptFileWithPadding ( _bstr_t sKey, _bstr_t sIV, long ulPaddingType, _bstr_t InFile, _bstr_t OutFile ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_SOFX_SymDecryptFileWithPadding(sKey, sIV, ulPaddingType, InFile, OutFile, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IXTXApp::SOFX_InvokeCommand ( _bstr_t DllName, _bstr_t InParam ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_SOFX_InvokeCommand(DllName, InParam, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IXTXApp::SOFX_VerifySignedDataWithID ( _bstr_t Cert, _bstr_t inData, _bstr_t SignValue, _bstr_t userId ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_SOFX_VerifySignedDataWithID(Cert, inData, SignValue, userId, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IXTXApp::SOFX_VerifySignedFileWithID ( _bstr_t Cert, _bstr_t InFile, _bstr_t SignValue, _bstr_t userId ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_SOFX_VerifySignedFileWithID(Cert, InFile, SignValue, userId, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}

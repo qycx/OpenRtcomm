@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="utf-8"?><authinfo><liblist><lib type="CSP" version="1.0" dllname="JIT USB Key CSP v1.0"><algid val="SHA1" sm2_hashalg="SHA1" /></lib></liblist></authinfo>
