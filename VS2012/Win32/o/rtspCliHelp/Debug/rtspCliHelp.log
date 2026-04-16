@@ -1,0 +1,199 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Output 目录未以斜杠结尾。  此生成实例将添加斜杠，因为必须有这个斜杠才能正确计算 Output 目录。
+  stdafx.cpp
+  qyPipeFunc_open.cpp
+E:\root\openRtComm-new\srcProjs\qyOpen\include\qyDefs_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/qyOpen/qyCommProc_open/qyPipeFunc_open.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qyCommProc_open\include\qyCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/qyOpen/qyCommProc_open/qyPipeFunc_open.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qdc_open\include\qdcCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/qyOpen/qyCommProc_open/qyPipeFunc_open.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qdc_open\include\rtspCliHelpPublic.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/qyOpen/qyCommProc_open/qyPipeFunc_open.cpp”)
+  
+  rtspCliCommonFunc.cpp
+E:\root\openRtComm-new\srcProjs\qyOpen\include\qyDefs_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/qyOpen/qyCommProc_open/rtspCliCommonFunc.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qyCommProc_open\include\qyCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/qyOpen/qyCommProc_open/rtspCliCommonFunc.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qdc_open\include\qdcCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/qyOpen/qyCommProc_open/rtspCliCommonFunc.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qdc_open\include\rtspCliHelpPublic.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/qyOpen/qyCommProc_open/rtspCliCommonFunc.cpp”)
+  
+  myopenRTSP.cpp
+  myplayCommon.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\root\openRtComm-new\srcProjs\qyOpen\include\qyDefs_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qyCommProc_open\include\qyCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qdc_open\include\qdcCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qdc_open\include\rtspCliHelpPublic.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\include\qvcfDefs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(340,15): warning C4018: “>”: 有符号/无符号不匹配
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(537,30): warning C4244: “参数”: 从“unsigned __int64”转换到“int”，可能丢失数据
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(548,29): warning C4244: “参数”: 从“unsigned __int64”转换到“int”，可能丢失数据
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(824,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(905,149): warning C4244: “参数”: 从“unsigned __int64”转换到“int”，可能丢失数据
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(915,147): warning C4244: “参数”: 从“unsigned __int64”转换到“int”，可能丢失数据
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(965,32): warning C4244: “参数”: 从“unsigned __int64”转换到“int”，可能丢失数据
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(1158,8): warning C4101: “fSuccess”: 未引用的局部变量
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(2078,38): warning C4101: “e”: 未引用的局部变量
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(2081,34): warning C4101: “e”: 未引用的局部变量
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+  rtspCliHelpCmdProc.cpp
+E:\root\openRtComm-new\srcProjs\qyOpen\include\qyDefs_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/rtspCliHelpCmdProc.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qyCommProc_open\include\qyCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/rtspCliHelpCmdProc.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qdc_open\include\qdcCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/rtspCliHelpCmdProc.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qdc_open\include\rtspCliHelpPublic.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/rtspCliHelpCmdProc.cpp”)
+  
+  rtspCliHelp_dynFunc.cpp
+E:\root\openRtComm-new\srcProjs\qyOpen\include\qyDefs_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/rtspCliHelp_dynFunc.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qyCommProc_open\include\qyCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/rtspCliHelp_dynFunc.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qdc_open\include\qdcCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/rtspCliHelp_dynFunc.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qdc_open\include\rtspCliHelpPublic.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/rtspCliHelp_dynFunc.cpp”)
+  
+  splProc.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\splProc.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\root\openRtComm-new\srcProjs\qyOpen\include\qyDefs_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/splProc.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qyCommProc_open\include\qyCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/splProc.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qdc_open\include\qdcCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/splProc.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qdc_open\include\rtspCliHelpPublic.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/splProc.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\splProc.cpp(244,147): warning C4244: “参数”: 从“unsigned __int64”转换到“int”，可能丢失数据
+  (编译源文件“/public/splProc.cpp”)
+  
+  rtspCliHelp.cpp
+  正在生成代码...
+  dllmain.cpp
+    正在创建库 ..\..\..\..\VS2012\Win32\Debug\tools\rtspCli\rtspCliHelp.lib 和对象 ..\..\..\..\VS2012\Win32\Debug\tools\rtspCli\rtspCliHelp.exp
+myopenRTSP.obj : error LNK2019: 无法解析的外部符号 "public: static class RTSPClient * __cdecl RTSPClient::createNew(class UsageEnvironment &,char const *,int,char const *,unsigned short,int)" (?createNew@RTSPClient@@SAPAV1@AAVUsageEnvironment@@PBDH1GH@Z)，函数 "class Medium * __cdecl createClient(class UsageEnvironment &,char const *,int,char const *)" (?createClient@@YAPAVMedium@@AAVUsageEnvironment@@PBDH1@Z) 中引用了该符号
+myopenRTSP.obj : error LNK2019: 无法解析的外部符号 "public: unsigned int __thiscall RTSPClient::sendDescribeCommand(void (__cdecl*)(class RTSPClient *,int,char *),class Authenticator *)" (?sendDescribeCommand@RTSPClient@@QAEIP6AXPAV1@HPAD@ZPAVAuthenticator@@@Z)，函数 "void __cdecl getSDPDescription(void (__cdecl*)(class RTSPClient *,int,char *))" (?getSDPDescription@@YAXP6AXPAVRTSPClient@@HPAD@Z@Z) 中引用了该符号
+myopenRTSP.obj : error LNK2019: 无法解析的外部符号 "public: unsigned int __thiscall RTSPClient::sendOptionsCommand(void (__cdecl*)(class RTSPClient *,int,char *),class Authenticator *)" (?sendOptionsCommand@RTSPClient@@QAEIP6AXPAV1@HPAD@ZPAVAuthenticator@@@Z)，函数 "void __cdecl getOptions(void (__cdecl*)(class RTSPClient *,int,char *))" (?getOptions@@YAXP6AXPAVRTSPClient@@HPAD@Z@Z) 中引用了该符号
+myopenRTSP.obj : error LNK2019: 无法解析的外部符号 "public: unsigned int __thiscall RTSPClient::sendSetupCommand(class MediaSubsession &,void (__cdecl*)(class RTSPClient *,int,char *),bool,bool,bool,class Authenticator *)" (?sendSetupCommand@RTSPClient@@QAEIAAVMediaSubsession@@P6AXPAV1@HPAD@Z_N44PAVAuthenticator@@@Z)，函数 "void __cdecl setupSubsession(class MediaSubsession *,bool,bool,void (__cdecl*)(class RTSPClient *,int,char *))" (?setupSubsession@@YAXPAVMediaSubsession@@_N1P6AXPAVRTSPClient@@HPAD@Z@Z) 中引用了该符号
+myopenRTSP.obj : error LNK2019: 无法解析的外部符号 "public: unsigned int __thiscall RTSPClient::sendPlayCommand(class MediaSession &,void (__cdecl*)(class RTSPClient *,int,char *),double,double,float,class Authenticator *)" (?sendPlayCommand@RTSPClient@@QAEIAAVMediaSession@@P6AXPAV1@HPAD@ZNNMPAVAuthenticator@@@Z)，函数 "void __cdecl startPlayingSession(class MediaSession *,double,double,float,void (__cdecl*)(class RTSPClient *,int,char *))" (?startPlayingSession@@YAXPAVMediaSession@@NNMP6AXPAVRTSPClient@@HPAD@Z@Z) 中引用了该符号
+myopenRTSP.obj : error LNK2019: 无法解析的外部符号 "public: unsigned int __thiscall RTSPClient::sendPlayCommand(class MediaSession &,void (__cdecl*)(class RTSPClient *,int,char *),char const *,char const *,float,class Authenticator *)" (?sendPlayCommand@RTSPClient@@QAEIAAVMediaSession@@P6AXPAV1@HPAD@ZPBD4MPAVAuthenticator@@@Z)，函数 "void __cdecl startPlayingSession(class MediaSession *,char const *,char const *,float,void (__cdecl*)(class RTSPClient *,int,char *))" (?startPlayingSession@@YAXPAVMediaSession@@PBD1MP6AXPAVRTSPClient@@HPAD@Z@Z) 中引用了该符号
+myopenRTSP.obj : error LNK2019: 无法解析的外部符号 "public: unsigned int __thiscall RTSPClient::sendTeardownCommand(class MediaSession &,void (__cdecl*)(class RTSPClient *,int,char *),class Authenticator *)" (?sendTeardownCommand@RTSPClient@@QAEIAAVMediaSession@@P6AXPAV1@HPAD@ZPAVAuthenticator@@@Z)，函数 "void __cdecl tearDownSession(class MediaSession *,void (__cdecl*)(class RTSPClient *,int,char *))" (?tearDownSession@@YAXPAVMediaSession@@P6AXPAVRTSPClient@@HPAD@Z@Z) 中引用了该符号
+myopenRTSP.obj : error LNK2019: 无法解析的外部符号 "public: void __thiscall RTSPClient::setUserAgentString(char const *)" (?setUserAgentString@RTSPClient@@QAEXPBD@Z)，函数 "void __cdecl setUserAgentString(char const *)" (?setUserAgentString@@YAXPBD@Z) 中引用了该符号
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 __imp___invalid_parameter，函数 "void * __cdecl std::_Allocate_manually_vector_aligned<struct std::_Default_allocate_traits>(unsigned int)" (??$_Allocate_manually_vector_aligned@U_Default_allocate_traits@std@@@std@@YAPAXI@Z) 中引用了该符号
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 __imp___CrtDbgReport，函数 "void * __cdecl std::_Allocate_manually_vector_aligned<struct std::_Default_allocate_traits>(unsigned int)" (??$_Allocate_manually_vector_aligned@U_Default_allocate_traits@std@@@std@@YAPAXI@Z) 中引用了该符号
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "char * __cdecl strDup(char const *)" (?strDup@@YAPADPBD@Z)，函数 "private: __thiscall CMyDummySink::CMyDummySink(class UsageEnvironment &,class MediaSubsession &,struct _iobuf *,unsigned int,char const *)" (??0CMyDummySink@@AAE@AAVUsageEnvironment@@AAVMediaSubsession@@PAU_iobuf@@IPBD@Z) 中引用了该符号
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "public: static void __cdecl Medium::close(class Medium *)" (?close@Medium@@SAXPAV1@@Z)，函数 "void __cdecl closeMediaSinks(void)" (?closeMediaSinks@@YAXXZ) 中引用了该符号
+myplayCommon.obj : error LNK2001: 无法解析的外部符号 "public: virtual bool __thiscall Medium::isSource(void)const " (?isSource@Medium@@UBE_NXZ)
+myplayCommon.obj : error LNK2001: 无法解析的外部符号 "public: virtual bool __thiscall Medium::isRTCPInstance(void)const " (?isRTCPInstance@Medium@@UBE_NXZ)
+myplayCommon.obj : error LNK2001: 无法解析的外部符号 "public: virtual bool __thiscall Medium::isRTSPClient(void)const " (?isRTSPClient@Medium@@UBE_NXZ)
+myplayCommon.obj : error LNK2001: 无法解析的外部符号 "public: virtual bool __thiscall Medium::isRTSPServer(void)const " (?isRTSPServer@Medium@@UBE_NXZ)
+myplayCommon.obj : error LNK2001: 无法解析的外部符号 "public: virtual bool __thiscall Medium::isMediaSession(void)const " (?isMediaSession@Medium@@UBE_NXZ)
+myplayCommon.obj : error LNK2001: 无法解析的外部符号 "public: virtual bool __thiscall Medium::isServerMediaSession(void)const " (?isServerMediaSession@Medium@@UBE_NXZ)
+myplayCommon.obj : error LNK2001: 无法解析的外部符号 "public: virtual bool __thiscall Medium::isDarwinInjector(void)const " (?isDarwinInjector@Medium@@UBE_NXZ)
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "public: void __thiscall FramedSource::getNextFrame(unsigned char *,unsigned int,void (__cdecl*)(void *,unsigned int,unsigned int,struct timeval,unsigned int),void *,void (__cdecl*)(void *),void *)" (?getNextFrame@FramedSource@@QAEXPAEIP6AXPAXIIUtimeval@@I@Z1P6AX1@Z1@Z)，函数 "private: virtual bool __thiscall CMyDummySink::continuePlaying(void)" (?continuePlaying@CMyDummySink@@EAE_NXZ) 中引用了该符号
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "public: bool __thiscall MediaSink::startPlaying(class MediaSource &,void (__cdecl*)(void *),void *)" (?startPlaying@MediaSink@@QAE_NAAVMediaSource@@P6AXPAX@Z1@Z)，函数 __catch$?createOutputFiles@@YAXPBD@Z$0 中引用了该符号
+myplayCommon.obj : error LNK2001: 无法解析的外部符号 "public: virtual void __thiscall MediaSink::stopPlaying(void)" (?stopPlaying@MediaSink@@UAEXXZ)
+myplayCommon.obj : error LNK2001: 无法解析的外部符号 "public: virtual bool __thiscall MediaSink::isRTPSink(void)const " (?isRTPSink@MediaSink@@UBE_NXZ)
+myplayCommon.obj : error LNK2001: 无法解析的外部符号 "protected: virtual bool __thiscall MediaSink::sourceIsCompatibleWithUs(class MediaSource &)" (?sourceIsCompatibleWithUs@MediaSink@@MAE_NAAVMediaSource@@@Z)
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "protected: static void __cdecl MediaSink::onSourceClosure(void *)" (?onSourceClosure@MediaSink@@KAXPAX@Z)，函数 "private: virtual bool __thiscall CMyDummySink::continuePlaying(void)" (?continuePlaying@CMyDummySink@@EAE_NXZ) 中引用了该符号
+myplayCommon.obj : error LNK2001: 无法解析的外部符号 "private: virtual bool __thiscall MediaSink::isSink(void)const " (?isSink@MediaSink@@EBE_NXZ)
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "public: __thiscall NetAddressList::NetAddressList(char const *)" (??0NetAddressList@@QAE@PBD@Z)，函数 "int __cdecl rtspCliHelp_main(int,char * *)" (?rtspCliHelp_main@@YAHHPAPAD@Z) 中引用了该符号
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "public: virtual __thiscall NetAddressList::~NetAddressList(void)" (??1NetAddressList@@UAE@XZ)，函数 "int __cdecl rtspCliHelp_main(int,char * *)" (?rtspCliHelp_main@@YAHHPAPAD@Z) 中引用了该符号
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "public: class NetAddress const * __thiscall NetAddressList::firstAddress(void)const " (?firstAddress@NetAddressList@@QBEPBVNetAddress@@XZ)，函数 "int __cdecl rtspCliHelp_main(int,char * *)" (?rtspCliHelp_main@@YAHHPAPAD@Z) 中引用了该符号
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "public: __thiscall Port::Port(unsigned short)" (??0Port@@QAE@G@Z)，函数 "int __cdecl rtspCliHelp_main(int,char * *)" (?rtspCliHelp_main@@YAHHPAPAD@Z) 中引用了该符号
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "public: static class FileSink * __cdecl FileSink::createNew(class UsageEnvironment &,char const *,unsigned int,bool)" (?createNew@FileSink@@SAPAV1@AAVUsageEnvironment@@PBDI_N@Z)，函数 __catch$?createOutputFiles@@YAXPBD@Z$0 中引用了该符号
+myplayCommon.obj : error LNK2001: 无法解析的外部符号 "public: virtual void __thiscall FileSink::addData(unsigned char const *,unsigned int,struct timeval)" (?addData@FileSink@@UAEXPBEIUtimeval@@@Z)
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "protected: __thiscall FileSink::FileSink(class UsageEnvironment &,struct _iobuf *,unsigned int,char const *)" (??0FileSink@@IAE@AAVUsageEnvironment@@PAU_iobuf@@IPBD@Z)，函数 "private: __thiscall CMyDummySink::CMyDummySink(class UsageEnvironment &,class MediaSubsession &,struct _iobuf *,unsigned int,char const *)" (??0CMyDummySink@@AAE@AAVUsageEnvironment@@AAVMediaSubsession@@PAU_iobuf@@IPBD@Z) 中引用了该符号
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "protected: virtual __thiscall FileSink::~FileSink(void)" (??1FileSink@@MAE@XZ)，函数 __unwindfunclet$??0CMyDummySink@@AAE@AAVUsageEnvironment@@AAVMediaSubsession@@PAU_iobuf@@IPBD@Z$0 中引用了该符号
+myplayCommon.obj : error LNK2001: 无法解析的外部符号 "protected: virtual void __thiscall FileSink::afterGettingFrame(unsigned int,unsigned int,struct timeval)" (?afterGettingFrame@FileSink@@MAEXIIUtimeval@@@Z)
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "public: static class AMRAudioFileSink * __cdecl AMRAudioFileSink::createNew(class UsageEnvironment &,char const *,unsigned int,bool)" (?createNew@AMRAudioFileSink@@SAPAV1@AAVUsageEnvironment@@PBDI_N@Z)，函数 "void __cdecl createOutputFiles(char const *)" (?createOutputFiles@@YAXPBD@Z) 中引用了该符号
+myplayCommon.obj : error LNK2001: 无法解析的外部符号 "protected: virtual void __thiscall H264or5VideoFileSink::afterGettingFrame(unsigned int,unsigned int,struct timeval)" (?afterGettingFrame@H264or5VideoFileSink@@MAEXIIUtimeval@@@Z)
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "protected: __thiscall H264VideoFileSink::H264VideoFileSink(class UsageEnvironment &,struct _iobuf *,char const *,unsigned int,char const *)" (??0H264VideoFileSink@@IAE@AAVUsageEnvironment@@PAU_iobuf@@PBDI2@Z)，函数 "private: __thiscall CMyH264Sink::CMyH264Sink(class UsageEnvironment &,struct _iobuf *,int,char const *,unsigned int,char const *)" (??0CMyH264Sink@@AAE@AAVUsageEnvironment@@PAU_iobuf@@HPBDI2@Z) 中引用了该符号
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "protected: __thiscall H264VideoFileSink::H264VideoFileSink(class UsageEnvironment &,struct _iobuf *,char const *,char const *,char const *,unsigned int,char const *)" (??0H264VideoFileSink@@IAE@AAVUsageEnvironment@@PAU_iobuf@@PBD22I2@Z)，函数 "private: __thiscall CMyH264Sink::CMyH264Sink(class UsageEnvironment &,struct _iobuf *,int,char const *,char const *,char const *,unsigned int,char const *)" (??0CMyH264Sink@@AAE@AAVUsageEnvironment@@PAU_iobuf@@HPBD22I2@Z) 中引用了该符号
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "protected: virtual __thiscall H264VideoFileSink::~H264VideoFileSink(void)" (??1H264VideoFileSink@@MAE@XZ)，函数 __unwindfunclet$??0CMyH264Sink@@AAE@AAVUsageEnvironment@@PAU_iobuf@@HPBD22I2@Z$0 中引用了该符号
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "public: static class OggFileSink * __cdecl OggFileSink::createNew(class UsageEnvironment &,char const *,unsigned int,char const *,unsigned int,bool)" (?createNew@OggFileSink@@SAPAV1@AAVUsageEnvironment@@PBDI1I_N@Z)，函数 __catch$?createOutputFiles@@YAXPBD@Z$0 中引用了该符号
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "public: __thiscall RTPReceptionStatsDB::Iterator::Iterator(class RTPReceptionStatsDB &)" (??0Iterator@RTPReceptionStatsDB@@QAE@AAV1@@Z)，函数 "public: __thiscall qosMeasurementRecord::qosMeasurementRecord(struct timeval const &,class RTPSource *)" (??0qosMeasurementRecord@@QAE@ABUtimeval@@PAVRTPSource@@@Z) 中引用了该符号
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "public: virtual __thiscall RTPReceptionStatsDB::Iterator::~Iterator(void)" (??1Iterator@RTPReceptionStatsDB@@UAE@XZ)，函数 "public: __thiscall qosMeasurementRecord::qosMeasurementRecord(struct timeval const &,class RTPSource *)" (??0qosMeasurementRecord@@QAE@ABUtimeval@@PAVRTPSource@@@Z) 中引用了该符号
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "public: class RTPReceptionStats * __thiscall RTPReceptionStatsDB::Iterator::next(bool)" (?next@Iterator@RTPReceptionStatsDB@@QAEPAVRTPReceptionStats@@_N@Z)，函数 "public: __thiscall qosMeasurementRecord::qosMeasurementRecord(struct timeval const &,class RTPSource *)" (??0qosMeasurementRecord@@QAE@ABUtimeval@@PAVRTPSource@@@Z) 中引用了该符号
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "public: double __thiscall RTPReceptionStats::totNumKBytesReceived(void)const " (?totNumKBytesReceived@RTPReceptionStats@@QBENXZ)，函数 "public: __thiscall qosMeasurementRecord::qosMeasurementRecord(struct timeval const &,class RTPSource *)" (??0qosMeasurementRecord@@QAE@ABUtimeval@@PAVRTPSource@@@Z) 中引用了该符号
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "unsigned char * __cdecl parseGeneralConfigStr(char const *,unsigned int &)" (?parseGeneralConfigStr@@YAPAEPBDAAI@Z)，函数 __catch$?createOutputFiles@@YAXPBD@Z$0 中引用了该符号
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "class SPropRecord * __cdecl parseSPropParameterSets(char const *,unsigned int &)" (?parseSPropParameterSets@@YAPAVSPropRecord@@PBDAAI@Z)，函数 "private: void __thiscall CMyH264Sink::afterGettingFrame(unsigned int,unsigned int,struct timeval,unsigned int)" (?afterGettingFrame@CMyH264Sink@@AAEXIIUtimeval@@I@Z) 中引用了该符号
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "public: void __thiscall RTCPInstance::setByeHandler(void (__cdecl*)(void *),void *,bool)" (?setByeHandler@RTCPInstance@@QAEXP6AXPAX@Z0_N@Z)，函数 __catch$?createOutputFiles@@YAXPBD@Z$0 中引用了该符号
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "public: static class MediaSession * __cdecl MediaSession::createNew(class UsageEnvironment &,char const *)" (?createNew@MediaSession@@SAPAV1@AAVUsageEnvironment@@PBD@Z)，函数 "void __cdecl continueAfterDESCRIBE(class RTSPClient *,int,char *)" (?continueAfterDESCRIBE@@YAXPAVRTSPClient@@HPAD@Z) 中引用了该符号
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "public: char * __thiscall MediaSession::absStartTime(void)const " (?absStartTime@MediaSession@@QBEPADXZ)，函数 "void __cdecl setupStreams(void)" (?setupStreams@@YAXXZ) 中引用了该符号
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "public: char * __thiscall MediaSession::absEndTime(void)const " (?absEndTime@MediaSession@@QBEPADXZ)，函数 "void __cdecl setupStreams(void)" (?setupStreams@@YAXXZ) 中引用了该符号
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "public: __thiscall MediaSubsessionIterator::MediaSubsessionIterator(class MediaSession const &)" (??0MediaSubsessionIterator@@QAE@ABVMediaSession@@@Z)，函数 "void __cdecl beginQOSMeasurement(void)" (?beginQOSMeasurement@@YAXXZ) 中引用了该符号
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "public: virtual __thiscall MediaSubsessionIterator::~MediaSubsessionIterator(void)" (??1MediaSubsessionIterator@@UAE@XZ)，函数 "void __cdecl beginQOSMeasurement(void)" (?beginQOSMeasurement@@YAXXZ) 中引用了该符号
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "public: class MediaSubsession * __thiscall MediaSubsessionIterator::next(void)" (?next@MediaSubsessionIterator@@QAEPAVMediaSubsession@@XZ)，函数 "void __cdecl beginQOSMeasurement(void)" (?beginQOSMeasurement@@YAXXZ) 中引用了该符号
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "public: bool __thiscall MediaSubsession::initiate(int)" (?initiate@MediaSubsession@@QAE_NH@Z)，函数 "void __cdecl continueAfterDESCRIBE(class RTSPClient *,int,char *)" (?continueAfterDESCRIBE@@YAXPAVRTSPClient@@HPAD@Z) 中引用了该符号
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "public: bool __thiscall MediaSubsession::setClientPortNum(unsigned short)" (?setClientPortNum@MediaSubsession@@QAE_NG@Z)，函数 "void __cdecl continueAfterDESCRIBE(class RTSPClient *,int,char *)" (?continueAfterDESCRIBE@@YAXPAVRTSPClient@@HPAD@Z) 中引用了该符号
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "public: char const * __thiscall MediaSubsession::attrVal_str(char const *)const " (?attrVal_str@MediaSubsession@@QBEPBDPBD@Z)，函数 "public: char const * __thiscall MediaSubsession::fmtp_spropparametersets(void)const " (?fmtp_spropparametersets@MediaSubsession@@QBEPBDXZ) 中引用了该符号
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "public: char const * __thiscall MediaSubsession::fmtp_config(void)const " (?fmtp_config@MediaSubsession@@QBEPBDXZ)，函数 __catch$?createOutputFiles@@YAXPBD@Z$0 中引用了该符号
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "public: __thiscall Authenticator::Authenticator(char const *,char const *,bool)" (??0Authenticator@@QAE@PBD0_N@Z)，函数 "int __cdecl rtspCliHelp_main(int,char * *)" (?rtspCliHelp_main@@YAHHPAPAD@Z) 中引用了该符号
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "public: __thiscall UserAuthenticationDatabase::UserAuthenticationDatabase(char const *,bool)" (??0UserAuthenticationDatabase@@QAE@PBD_N@Z)，函数 "int __cdecl rtspCliHelp_main(int,char * *)" (?rtspCliHelp_main@@YAHHPAPAD@Z) 中引用了该符号
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "public: static class HandlerServerForREGISTERCommand * __cdecl HandlerServerForREGISTERCommand::createNew(class UsageEnvironment &,void (__cdecl*)(class RTSPClient *,bool),class Port,class UserAuthenticationDatabase *,int,char const *)" (?createNew@HandlerServerForREGISTERCommand@@SAPAV1@AAVUsageEnvironment@@P6AXPAVRTSPClient@@_N@ZVPort@@PAVUserAuthenticationDatabase@@HPBD@Z)，函数 "int __cdecl rtspCliHelp_main(int,char * *)" (?rtspCliHelp_main@@YAHHPAPAD@Z) 中引用了该符号
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "public: static class QuickTimeFileSink * __cdecl QuickTimeFileSink::createNew(class UsageEnvironment &,class MediaSession &,char const *,unsigned int,unsigned short,unsigned short,unsigned int,bool,bool,bool,bool)" (?createNew@QuickTimeFileSink@@SAPAV1@AAVUsageEnvironment@@AAVMediaSession@@PBDIGGI_N333@Z)，函数 "void __cdecl createOutputFiles(char const *)" (?createOutputFiles@@YAXPBD@Z) 中引用了该符号
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "public: bool __thiscall QuickTimeFileSink::startPlaying(void (__cdecl*)(void *),void *)" (?startPlaying@QuickTimeFileSink@@QAE_NP6AXPAX@Z0@Z)，函数 "void __cdecl createOutputFiles(char const *)" (?createOutputFiles@@YAXPBD@Z) 中引用了该符号
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "public: static class AVIFileSink * __cdecl AVIFileSink::createNew(class UsageEnvironment &,class MediaSession &,char const *,unsigned int,unsigned short,unsigned short,unsigned int,bool)" (?createNew@AVIFileSink@@SAPAV1@AAVUsageEnvironment@@AAVMediaSession@@PBDIGGI_N@Z)，函数 "void __cdecl createOutputFiles(char const *)" (?createOutputFiles@@YAXPBD@Z) 中引用了该符号
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "public: bool __thiscall AVIFileSink::startPlaying(void (__cdecl*)(void *),void *)" (?startPlaying@AVIFileSink@@QAE_NP6AXPAX@Z0@Z)，函数 "void __cdecl createOutputFiles(char const *)" (?createOutputFiles@@YAXPBD@Z) 中引用了该符号
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "public: static class BasicUsageEnvironment * __cdecl BasicUsageEnvironment::createNew(class TaskScheduler &)" (?createNew@BasicUsageEnvironment@@SAPAV1@AAVTaskScheduler@@@Z)，函数 "int __cdecl rtspCliHelp_main(int,char * *)" (?rtspCliHelp_main@@YAHHPAPAD@Z) 中引用了该符号
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "public: static class BasicTaskScheduler * __cdecl BasicTaskScheduler::createNew(unsigned int)" (?createNew@BasicTaskScheduler@@SAPAV1@I@Z)，函数 "int __cdecl rtspCliHelp_main(int,char * *)" (?rtspCliHelp_main@@YAHHPAPAD@Z) 中引用了该符号
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "unsigned int __cdecl getReceiveBufferSize(class UsageEnvironment &,int)" (?getReceiveBufferSize@@YAIAAVUsageEnvironment@@H@Z)，函数 "void __cdecl continueAfterDESCRIBE(class RTSPClient *,int,char *)" (?continueAfterDESCRIBE@@YAXPAVRTSPClient@@HPAD@Z) 中引用了该符号
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "unsigned int __cdecl setReceiveBufferTo(class UsageEnvironment &,int,unsigned int)" (?setReceiveBufferTo@@YAIAAVUsageEnvironment@@HI@Z)，函数 "void __cdecl continueAfterDESCRIBE(class RTSPClient *,int,char *)" (?continueAfterDESCRIBE@@YAXPAVRTSPClient@@HPAD@Z) 中引用了该符号
+myplayCommon.obj : error LNK2019: 无法解析的外部符号 "int __cdecl gettimeofday(struct timeval *,int *)" (?gettimeofday@@YAHPAUtimeval@@PAH@Z)，函数 "void __cdecl beginQOSMeasurement(void)" (?beginQOSMeasurement@@YAXXZ) 中引用了该符号
+myplayCommon.obj : error LNK2001: 无法解析的外部符号 "unsigned int ReceivingInterfaceAddr" (?ReceivingInterfaceAddr@@3IA)
+..\live\liveMedia\liveMedia.lib : warning LNK4272: 库计算机类型“x64”与目标计算机类型“x86”冲突
+..\live\groupsock\groupsock.lib : warning LNK4272: 库计算机类型“x64”与目标计算机类型“x86”冲突
+..\live\BasicUsageEnvironment\BasicUsageEnvironment.lib : warning LNK4272: 库计算机类型“x64”与目标计算机类型“x86”冲突
+..\live\UsageEnvironment\UsageEnvironment.lib : warning LNK4272: 库计算机类型“x64”与目标计算机类型“x86”冲突
+..\..\..\..\VS2012\Win32\Debug\tools\rtspCli\rtspCliHelp.dll : fatal error LNK1120: 71 个无法解析的外部命令

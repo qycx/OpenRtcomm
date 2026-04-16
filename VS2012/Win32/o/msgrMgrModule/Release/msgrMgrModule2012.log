@@ -1,0 +1,7 @@
+﻿  qyBaseLib.lib(traceLog.obj) : 找到 MSIL .netmodule 或使用 /GL 编译的模块；正在使用 /LTCG 重新启动链接；将 /LTCG 添加到链接命令行以改进链接器性能
+    正在创建库 ..\..\..\..\..\..\..\VS2012\Win32\Release\bin\msgrMgrModule.lib 和对象 ..\..\..\..\..\..\..\VS2012\Win32\Release\bin\msgrMgrModule.exp
+qyLicense.lib(qyProcSentinelKeys.obj) : error LNK2001: 无法解析的外部符号 _SFNTGetDeviceInfo@8
+qyLicense.lib(qyProcSentinelKeys.obj) : error LNK2001: 无法解析的外部符号 _SFNTGetLicense@20
+qyLicense.lib(qyProcSentinelKeys.obj) : error LNK2001: 无法解析的外部符号 _SFNTReleaseLicense@4
+qyLicense.lib(qyProcSentinelKeys.obj) : error LNK2001: 无法解析的外部符号 _SFNTReadString@16
+..\..\..\..\..\..\..\VS2012\Win32\Release\bin\msgrMgrModule.dll : fatal error LNK1120: 4 个无法解析的外部命令

@@ -1,0 +1,56 @@
+﻿Build started 2021/9/11 11:39:57.
+     1>Project "C:\root\develop2012\srcProjs\qdc_tmpRoot\mediaSdk\cli_samples\samples\sample_common\sample_common_vs2012.vcxproj" on node 3 (Rebuild target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I..\..\igfx_s3dcontrol\include\API /IC:\root\develop2012\srcProjs\qdc_tmpRoot\mediaSdk\cli_samples\samples\sample_common\\include /I"C:\Program Files (x86)\IntelSWTools\Intel(R)_Media_SDK_2017.0.1\\include" /IC:\root\develop2012\srcProjs\qdc_tmpRoot\mediaSdk\cli_samples\samples\sample_common\\include\vm /I"C:\Program Files (x86)\IntelSWTools\Intel(R)_Media_SDK_2017.0.1\\igfx_s3dcontrol\include" /I"C:\Program Files (x86)\Windows Kits\10\Include" /I"C:\Program Files (x86)\Windows Kits\10\Include\um" /I"C:\Program Files (x86)\Windows Kits\10\Include\shared" /ZI /nologo /W4 /WX /Od /Oy- /D WIN32 /D _WIN32 /D _DEBUG /D _LIB /D _ITERATOR_DEBUG_LEVEL=0 /D _UNICODE /D UNICODE /Gm /EHa /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\root\develop2012\srcProjs\qdc_tmpRoot\mediaSdk\cli_samples\samples\sample_common\..\..\..\..\..\..\vs2012\sample_common\_build\Win32\Debug\lib\obj\sample_common_vs2012\\" /Fd"C:\root\develop2012\srcProjs\qdc_tmpRoot\mediaSdk\cli_samples\samples\sample_common\..\..\..\..\..\..\vs2012\sample_common\_build\Win32\Debug\lib\obj\sample_common_vs2012\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt src\avc_bitstream.cpp src\avc_nal_spl.cpp src\avc_spl.cpp src\base_allocator.cpp src\d3d11_allocator.cpp src\d3d11_device.cpp src\d3d_allocator.cpp src\d3d_device.cpp src\decode_render.cpp src\general_allocator.cpp src\mfx_buffering.cpp src\parameters_dumper.cpp src\plugin_utils.cpp src\sample_utils.cpp src\sysmem_allocator.cpp src\vpp_ex.cpp src\vm\atomic.cpp src\vm\shared_object.cpp src\vm\thread.cpp src\vm\thread_windows.cpp src\vm\time.cpp
+         time.cpp
+         thread_windows.cpp
+         thread.cpp
+         shared_object.cpp
+         atomic.cpp
+         vpp_ex.cpp
+         sysmem_allocator.cpp
+         sample_utils.cpp
+         plugin_utils.cpp
+         parameters_dumper.cpp
+         mfx_buffering.cpp
+         general_allocator.cpp
+         decode_render.cpp
+         d3d_device.cpp
+         d3d_allocator.cpp
+         d3d11_device.cpp
+         d3d11_allocator.cpp
+         base_allocator.cpp
+         avc_spl.cpp
+         avc_nal_spl.cpp
+         Generating Code...
+         Compiling...
+         avc_bitstream.cpp
+         Generating Code...
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"C:\root\develop2012\srcProjs\qdc_tmpRoot\mediaSdk\cli_samples\samples\sample_common\..\..\..\..\..\..\vs2012\sample_common\_build\Win32\Debug\lib\sample_common_vs2012.lib" /NOLOGO C:\root\develop2012\srcProjs\qdc_tmpRoot\mediaSdk\cli_samples\samples\sample_common\..\..\..\..\..\..\vs2012\sample_common\_build\Win32\Debug\lib\obj\sample_common_vs2012\avc_bitstream.obj
+         C:\root\develop2012\srcProjs\qdc_tmpRoot\mediaSdk\cli_samples\samples\sample_common\..\..\..\..\..\..\vs2012\sample_common\_build\Win32\Debug\lib\obj\sample_common_vs2012\avc_nal_spl.obj
+         C:\root\develop2012\srcProjs\qdc_tmpRoot\mediaSdk\cli_samples\samples\sample_common\..\..\..\..\..\..\vs2012\sample_common\_build\Win32\Debug\lib\obj\sample_common_vs2012\avc_spl.obj
+         C:\root\develop2012\srcProjs\qdc_tmpRoot\mediaSdk\cli_samples\samples\sample_common\..\..\..\..\..\..\vs2012\sample_common\_build\Win32\Debug\lib\obj\sample_common_vs2012\base_allocator.obj
+         C:\root\develop2012\srcProjs\qdc_tmpRoot\mediaSdk\cli_samples\samples\sample_common\..\..\..\..\..\..\vs2012\sample_common\_build\Win32\Debug\lib\obj\sample_common_vs2012\d3d11_allocator.obj
+         C:\root\develop2012\srcProjs\qdc_tmpRoot\mediaSdk\cli_samples\samples\sample_common\..\..\..\..\..\..\vs2012\sample_common\_build\Win32\Debug\lib\obj\sample_common_vs2012\d3d11_device.obj
+         C:\root\develop2012\srcProjs\qdc_tmpRoot\mediaSdk\cli_samples\samples\sample_common\..\..\..\..\..\..\vs2012\sample_common\_build\Win32\Debug\lib\obj\sample_common_vs2012\d3d_allocator.obj
+         C:\root\develop2012\srcProjs\qdc_tmpRoot\mediaSdk\cli_samples\samples\sample_common\..\..\..\..\..\..\vs2012\sample_common\_build\Win32\Debug\lib\obj\sample_common_vs2012\d3d_device.obj
+         C:\root\develop2012\srcProjs\qdc_tmpRoot\mediaSdk\cli_samples\samples\sample_common\..\..\..\..\..\..\vs2012\sample_common\_build\Win32\Debug\lib\obj\sample_common_vs2012\decode_render.obj
+         C:\root\develop2012\srcProjs\qdc_tmpRoot\mediaSdk\cli_samples\samples\sample_common\..\..\..\..\..\..\vs2012\sample_common\_build\Win32\Debug\lib\obj\sample_common_vs2012\general_allocator.obj
+         C:\root\develop2012\srcProjs\qdc_tmpRoot\mediaSdk\cli_samples\samples\sample_common\..\..\..\..\..\..\vs2012\sample_common\_build\Win32\Debug\lib\obj\sample_common_vs2012\mfx_buffering.obj
+         C:\root\develop2012\srcProjs\qdc_tmpRoot\mediaSdk\cli_samples\samples\sample_common\..\..\..\..\..\..\vs2012\sample_common\_build\Win32\Debug\lib\obj\sample_common_vs2012\parameters_dumper.obj
+         C:\root\develop2012\srcProjs\qdc_tmpRoot\mediaSdk\cli_samples\samples\sample_common\..\..\..\..\..\..\vs2012\sample_common\_build\Win32\Debug\lib\obj\sample_common_vs2012\plugin_utils.obj
+         C:\root\develop2012\srcProjs\qdc_tmpRoot\mediaSdk\cli_samples\samples\sample_common\..\..\..\..\..\..\vs2012\sample_common\_build\Win32\Debug\lib\obj\sample_common_vs2012\sample_utils.obj
+         C:\root\develop2012\srcProjs\qdc_tmpRoot\mediaSdk\cli_samples\samples\sample_common\..\..\..\..\..\..\vs2012\sample_common\_build\Win32\Debug\lib\obj\sample_common_vs2012\sysmem_allocator.obj
+         C:\root\develop2012\srcProjs\qdc_tmpRoot\mediaSdk\cli_samples\samples\sample_common\..\..\..\..\..\..\vs2012\sample_common\_build\Win32\Debug\lib\obj\sample_common_vs2012\vpp_ex.obj
+         C:\root\develop2012\srcProjs\qdc_tmpRoot\mediaSdk\cli_samples\samples\sample_common\..\..\..\..\..\..\vs2012\sample_common\_build\Win32\Debug\lib\obj\sample_common_vs2012\atomic.obj
+         C:\root\develop2012\srcProjs\qdc_tmpRoot\mediaSdk\cli_samples\samples\sample_common\..\..\..\..\..\..\vs2012\sample_common\_build\Win32\Debug\lib\obj\sample_common_vs2012\shared_object.obj
+         C:\root\develop2012\srcProjs\qdc_tmpRoot\mediaSdk\cli_samples\samples\sample_common\..\..\..\..\..\..\vs2012\sample_common\_build\Win32\Debug\lib\obj\sample_common_vs2012\thread.obj
+         C:\root\develop2012\srcProjs\qdc_tmpRoot\mediaSdk\cli_samples\samples\sample_common\..\..\..\..\..\..\vs2012\sample_common\_build\Win32\Debug\lib\obj\sample_common_vs2012\thread_windows.obj
+         C:\root\develop2012\srcProjs\qdc_tmpRoot\mediaSdk\cli_samples\samples\sample_common\..\..\..\..\..\..\vs2012\sample_common\_build\Win32\Debug\lib\obj\sample_common_vs2012\time.obj
+         sample_common_vs2012.vcxproj -> C:\root\develop2012\srcProjs\qdc_tmpRoot\mediaSdk\cli_samples\samples\sample_common\..\..\..\..\..\..\vs2012\sample_common\_build\Win32\Debug\lib\sample_common_vs2012.lib
+     1>Done Building Project "C:\root\develop2012\srcProjs\qdc_tmpRoot\mediaSdk\cli_samples\samples\sample_common\sample_common_vs2012.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:22.50

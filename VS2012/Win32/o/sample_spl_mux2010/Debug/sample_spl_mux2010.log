@@ -1,0 +1,71 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Output 目录未以斜杠结尾。  此生成实例将添加斜杠，因为必须有这个斜杠才能正确计算 Output 目录。
+cl : 命令行  warning D9035: “Gm”选项已否决，并将在将来的版本中移除
+  ffmpeg_splitter_impl.c
+E:\root\openRtComm-new\ffmpegLibs\x64\include\libavutil\rational.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“src/ffmpeg_splitter_impl.c”)
+  
+E:\root\openRtComm-new\srcProjs\qdc_tmpRoot\mediaSdk\cli_samples\samples\sample_spl_mux\src\ffmpeg_splitter_impl.c(436,110): warning C4244: “=”: 从“int64_t”转换到“mfxU32”，可能丢失数据
+  ffmpeg_reader_writer.c
+  ffmpeg_mux_impl.c
+E:\root\openRtComm-new\ffmpegLibs\x64\include\libavutil\rational.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“src/ffmpeg_mux_impl.c”)
+  
+  adts_muxer.c
+E:\root\openRtComm-new\ffmpegLibs\x64\include\libavutil\rational.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“src/adts_muxer.c”)
+  
+  正在生成代码...
+    正在创建库 ..\..\..\..\..\..\VS2012\Win32\Debug\tools\rtspCli\sample_spl_mux.lib 和对象 ..\..\..\..\..\..\VS2012\Win32\Debug\tools\rtspCli\sample_spl_mux.exp
+adts_muxer.obj : error LNK2019: 无法解析的外部符号 _av_malloc，函数 _GetAdtsBitstream 中引用了该符号
+ffmpeg_mux_impl.obj : error LNK2001: 无法解析的外部符号 _av_malloc
+ffmpeg_splitter_impl.obj : error LNK2001: 无法解析的外部符号 _av_malloc
+adts_muxer.obj : error LNK2019: 无法解析的外部符号 _av_free，函数 _CloseAdtsMuxer 中引用了该符号
+ffmpeg_mux_impl.obj : error LNK2001: 无法解析的外部符号 _av_free
+ffmpeg_splitter_impl.obj : error LNK2001: 无法解析的外部符号 _av_free
+adts_muxer.obj : error LNK2019: 无法解析的外部符号 _av_freep，函数 _CloseAdtsMuxer 中引用了该符号
+ffmpeg_mux_impl.obj : error LNK2001: 无法解析的外部符号 _av_freep
+adts_muxer.obj : error LNK2019: 无法解析的外部符号 _avcodec_copy_context，函数 _SetAdtsInfo 中引用了该符号
+adts_muxer.obj : error LNK2019: 无法解析的外部符号 _avcodec_close，函数 _CloseAdtsMuxer 中引用了该符号
+ffmpeg_mux_impl.obj : error LNK2001: 无法解析的外部符号 _avcodec_close
+ffmpeg_splitter_impl.obj : error LNK2001: 无法解析的外部符号 _avcodec_close
+adts_muxer.obj : error LNK2019: 无法解析的外部符号 _avio_alloc_context，函数 _InitAdtsMuxer 中引用了该符号
+ffmpeg_mux_impl.obj : error LNK2001: 无法解析的外部符号 _avio_alloc_context
+ffmpeg_splitter_impl.obj : error LNK2001: 无法解析的外部符号 _avio_alloc_context
+adts_muxer.obj : error LNK2019: 无法解析的外部符号 _avformat_new_stream，函数 _InitAdtsMuxer 中引用了该符号
+ffmpeg_mux_impl.obj : error LNK2001: 无法解析的外部符号 _avformat_new_stream
+adts_muxer.obj : error LNK2019: 无法解析的外部符号 _avformat_alloc_output_context2，函数 _InitAdtsMuxer 中引用了该符号
+ffmpeg_mux_impl.obj : error LNK2001: 无法解析的外部符号 _avformat_alloc_output_context2
+adts_muxer.obj : error LNK2019: 无法解析的外部符号 _avformat_write_header，函数 _InitAdtsMuxer 中引用了该符号
+ffmpeg_mux_impl.obj : error LNK2001: 无法解析的外部符号 _avformat_write_header
+adts_muxer.obj : error LNK2019: 无法解析的外部符号 _av_interleaved_write_frame，函数 _GetAdtsBitstream 中引用了该符号
+ffmpeg_mux_impl.obj : error LNK2001: 无法解析的外部符号 _av_interleaved_write_frame
+adts_muxer.obj : error LNK2019: 无法解析的外部符号 _av_write_trailer，函数 _CloseAdtsMuxer 中引用了该符号
+ffmpeg_mux_impl.obj : error LNK2001: 无法解析的外部符号 _av_write_trailer
+adts_muxer.obj : error LNK2019: 无法解析的外部符号 _av_guess_format，函数 _InitAdtsMuxer 中引用了该符号
+ffmpeg_mux_impl.obj : error LNK2001: 无法解析的外部符号 _av_guess_format
+ffmpeg_mux_impl.obj : error LNK2019: 无法解析的外部符号 _av_rescale_q，函数 _MFXMuxer_PutBitstream 中引用了该符号
+ffmpeg_splitter_impl.obj : error LNK2001: 无法解析的外部符号 _av_rescale_q
+ffmpeg_mux_impl.obj : error LNK2019: 无法解析的外部符号 _av_init_packet，函数 _MFXMuxer_PutBitstream 中引用了该符号
+ffmpeg_splitter_impl.obj : error LNK2001: 无法解析的外部符号 _av_init_packet
+ffmpeg_mux_impl.obj : error LNK2019: 无法解析的外部符号 _av_bitstream_filter_init，函数 _MFXMuxer_Init 中引用了该符号
+ffmpeg_splitter_impl.obj : error LNK2001: 无法解析的外部符号 _av_bitstream_filter_init
+ffmpeg_mux_impl.obj : error LNK2019: 无法解析的外部符号 _av_bitstream_filter_filter，函数 _MFXMuxer_PutBitstream 中引用了该符号
+ffmpeg_splitter_impl.obj : error LNK2001: 无法解析的外部符号 _av_bitstream_filter_filter
+ffmpeg_mux_impl.obj : error LNK2019: 无法解析的外部符号 _av_bitstream_filter_close，函数 _MFXMuxer_Close 中引用了该符号
+ffmpeg_splitter_impl.obj : error LNK2001: 无法解析的外部符号 _av_bitstream_filter_close
+ffmpeg_mux_impl.obj : error LNK2019: 无法解析的外部符号 _av_register_all，函数 _MFXMuxer_Init 中引用了该符号
+ffmpeg_splitter_impl.obj : error LNK2001: 无法解析的外部符号 _av_register_all
+ffmpeg_splitter_impl.obj : error LNK2019: 无法解析的外部符号 _av_free_packet，函数 _MFXSplitter_GetBitstream 中引用了该符号
+ffmpeg_splitter_impl.obj : error LNK2019: 无法解析的外部符号 _avcodec_flush_buffers，函数 _MFXSplitter_Seek 中引用了该符号
+ffmpeg_splitter_impl.obj : error LNK2019: 无法解析的外部符号 _av_stream_get_r_frame_rate，函数 _MFXSplitter_GetInfo 中引用了该符号
+ffmpeg_splitter_impl.obj : error LNK2019: 无法解析的外部符号 _avformat_alloc_context，函数 _MFXSplitter_Init 中引用了该符号
+ffmpeg_splitter_impl.obj : error LNK2019: 无法解析的外部符号 _av_probe_input_format，函数 _MFXSplitter_Init 中引用了该符号
+ffmpeg_splitter_impl.obj : error LNK2019: 无法解析的外部符号 _avformat_open_input，函数 _MFXSplitter_Init 中引用了该符号
+ffmpeg_splitter_impl.obj : error LNK2019: 无法解析的外部符号 _avformat_find_stream_info，函数 _MFXSplitter_GetInfo 中引用了该符号
+ffmpeg_splitter_impl.obj : error LNK2019: 无法解析的外部符号 _av_read_frame，函数 _MFXSplitter_GetBitstream 中引用了该符号
+ffmpeg_splitter_impl.obj : error LNK2019: 无法解析的外部符号 _av_seek_frame，函数 _MFXSplitter_Seek 中引用了该符号
+ffmpeg_splitter_impl.obj : error LNK2019: 无法解析的外部符号 _avformat_close_input，函数 _MFXSplitter_Close 中引用了该符号
+..\..\..\..\..\..\ffmpegLibs\x64\bin\avutil.lib : warning LNK4272: 库计算机类型“x64”与目标计算机类型“x86”冲突
+..\..\..\..\..\..\ffmpegLibs\x64\bin\avcodec.lib : warning LNK4272: 库计算机类型“x64”与目标计算机类型“x86”冲突
+..\..\..\..\..\..\ffmpegLibs\x64\bin\avformat.lib : warning LNK4272: 库计算机类型“x64”与目标计算机类型“x86”冲突
+..\..\..\..\..\..\VS2012\Win32\Debug\tools\rtspCli\sample_spl_mux.dll : fatal error LNK1120: 28 个无法解析的外部命令

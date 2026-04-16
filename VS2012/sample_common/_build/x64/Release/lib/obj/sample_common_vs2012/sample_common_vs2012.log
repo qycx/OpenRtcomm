@@ -1,0 +1,23 @@
+﻿  avc_bitstream.cpp
+  avc_nal_spl.cpp
+  avc_spl.cpp
+  base_allocator.cpp
+  d3d11_allocator.cpp
+  d3d11_device.cpp
+  d3d_allocator.cpp
+  d3d_device.cpp
+  decode_render.cpp
+  general_allocator.cpp
+  mfx_buffering.cpp
+  parameters_dumper.cpp
+  plugin_utils.cpp
+  sample_utils.cpp
+  sysmem_allocator.cpp
+  vpp_ex.cpp
+  atomic.cpp
+  shared_object.cpp
+  thread.cpp
+  thread_windows.cpp
+  正在编译...
+  time.cpp
+  sample_common_vs2012.vcxproj -> C:\root_new\develop2019\vs2012\sample_common\_build\x64\Release\lib\sample_common_vs2012.lib
