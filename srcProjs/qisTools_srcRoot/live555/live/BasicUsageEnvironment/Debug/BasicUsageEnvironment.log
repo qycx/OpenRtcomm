@@ -1,0 +1,14 @@
+﻿  pch.cpp
+  BasicHashTable.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\BasicUsageEnvironment\BasicHashTable.cpp(278,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  BasicTaskScheduler.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\BasicUsageEnvironment\BasicTaskScheduler.cpp(243,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  BasicTaskScheduler0.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\BasicUsageEnvironment\BasicTaskScheduler0.cpp(236,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  BasicUsageEnvironment.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\BasicUsageEnvironment\BasicUsageEnvironment.cpp(81,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  BasicUsageEnvironment0.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\BasicUsageEnvironment\BasicUsageEnvironment0.cpp(89,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  DelayQueue.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\BasicUsageEnvironment\DelayQueue.cpp(234,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  正在生成代码...

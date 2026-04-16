@@ -1,0 +1,359 @@
+﻿  pch.cpp
+  AC3AudioFileServerMediaSubsession.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\AC3AudioFileServerMediaSubsession.cpp(62,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  AC3AudioRTPSink.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\AC3AudioRTPSink.cpp(98,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  AC3AudioRTPSource.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\AC3AudioRTPSource.cpp(67,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  AC3AudioStreamFramer.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\AC3AudioStreamFramer.cpp(341,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  ADTSAudioFileServerMediaSubsession.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\ADTSAudioFileServerMediaSubsession.cpp(61,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  ADTSAudioFileSource.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\ADTSAudioFileSource.cpp(172,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  AMRAudioFileServerMediaSubsession.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\AMRAudioFileServerMediaSubsession.cpp(60,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  AMRAudioFileSink.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\AMRAudioFileSink.cpp(102,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  AMRAudioFileSource.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\AMRAudioFileSource.cpp(175,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  AMRAudioRTPSink.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\AMRAudioRTPSink.cpp(135,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  AMRAudioRTPSource.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\AMRAudioRTPSource.cpp(748,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  AMRAudioSource.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\AMRAudioSource.cpp(39,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  AudioInputDevice.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\AudioInputDevice.cpp(46,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  AudioRTPSink.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\AudioRTPSink.cpp(38,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  AVIFileSink.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\AVIFileSink.cpp(785,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  Base64.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\Base64.cpp(123,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  BasicUDPSink.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\BasicUDPSink.cpp(101,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  BasicUDPSource.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\BasicUDPSource.cpp(74,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  BitVector.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\BitVector.cpp(175,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  ByteStreamFileSource.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\ByteStreamFileSource.cpp(185,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  正在生成代码...
+  正在编译...
+  ByteStreamMemoryBufferSource.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\ByteStreamMemoryBufferSource.cpp(119,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  ByteStreamMultiFileSource.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\ByteStreamMultiFileSource.cpp(134,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  DarwinInjector.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\DarwinInjector.cpp(350,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  DeviceSource.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\DeviceSource.cpp(157,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  DigestAuthentication.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\DigestAuthentication.cpp(158,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  DVVideoFileServerMediaSubsession.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\DVVideoFileServerMediaSubsession.cpp(104,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  DVVideoRTPSink.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\DVVideoRTPSink.cpp(96,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  DVVideoRTPSource.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\DVVideoRTPSource.cpp(66,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  DVVideoStreamFramer.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\DVVideoStreamFramer.cpp(221,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  EBMLNumber.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\EBMLNumber.cpp(148,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  FileServerMediaSubsession.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\FileServerMediaSubsession.cpp(35,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  FileSink.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\FileSink.cpp(152,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  FramedFileSource.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\FramedFileSource.cpp(31,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  FramedFilter.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\FramedFilter.cpp(60,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  FramedSource.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\FramedSource.cpp(126,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  GSMAudioRTPSink.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\GSMAudioRTPSink.cpp(41,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  H261VideoRTPSource.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\H261VideoRTPSource.cpp(68,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  H263plusVideoFileServerMediaSubsession.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\H263plusVideoFileServerMediaSubsession.cpp(65,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  H263plusVideoRTPSink.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\H263plusVideoRTPSink.cpp(93,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  H263plusVideoRTPSource.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\H263plusVideoRTPSource.cpp(107,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  正在生成代码...
+  正在编译...
+  H263plusVideoStreamFramer.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\H263plusVideoStreamFramer.cpp(130,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  H263plusVideoStreamParser.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\H263plusVideoStreamParser.cpp(860,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  H264or5VideoFileSink.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\H264or5VideoFileSink.cpp(66,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  H264or5VideoRTPSink.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\H264or5VideoRTPSink.cpp(287,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  H264or5VideoStreamDiscreteFramer.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\H264or5VideoStreamDiscreteFramer.cpp(95,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  H264or5VideoStreamFramer.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\H264or5VideoStreamFramer.cpp(328,1): warning C4005: “DEBUG_PRINT”: 宏重定义
+  D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\H264or5VideoStreamFramer.cpp(319,1):
+  参见“DEBUG_PRINT”的前一个定义
+  
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\H264or5VideoStreamFramer.cpp(330,1): warning C4005: “DEBUG_STR”: 宏重定义
+  D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\H264or5VideoStreamFramer.cpp(320,1):
+  参见“DEBUG_STR”的前一个定义
+  
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\H264or5VideoStreamFramer.cpp(331,1): warning C4005: “DEBUG_TAB”: 宏重定义
+  D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\H264or5VideoStreamFramer.cpp(326,1):
+  参见“DEBUG_TAB”的前一个定义
+  
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\H264or5VideoStreamFramer.cpp(1098,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  H264VideoFileServerMediaSubsession.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\H264VideoFileServerMediaSubsession.cpp(120,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  H264VideoFileSink.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\H264VideoFileSink.cpp(97,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  H264VideoRTPSink.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\H264VideoRTPSink.cpp(128,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  H264VideoRTPSource.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\H264VideoRTPSource.cpp(200,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  H264VideoStreamDiscreteFramer.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\H264VideoStreamDiscreteFramer.cpp(42,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  H264VideoStreamFramer.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\H264VideoStreamFramer.cpp(39,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  H265VideoFileServerMediaSubsession.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\H265VideoFileServerMediaSubsession.cpp(121,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  H265VideoFileSink.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\H265VideoFileSink.cpp(64,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  H265VideoRTPSink.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\H265VideoRTPSink.cpp(190,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  H265VideoRTPSource.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\H265VideoRTPSource.cpp(219,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  H265VideoStreamDiscreteFramer.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\H265VideoStreamDiscreteFramer.cpp(42,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  H265VideoStreamFramer.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\H265VideoStreamFramer.cpp(39,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  InputFile.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\InputFile.cpp(113,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  JPEGVideoRTPSink.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\JPEGVideoRTPSink.cpp(146,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  正在生成代码...
+  正在编译...
+  JPEGVideoRTPSource.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\JPEGVideoRTPSource.cpp(466,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  JPEGVideoSource.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\JPEGVideoSource.cpp(46,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  liveMedia.cpp
+  Locale.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\Locale.cpp(61,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MatroskaDemuxedTrack.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MatroskaDemuxedTrack.cpp(47,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MatroskaFile.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MatroskaFile.cpp(921,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MatroskaFileParser.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MatroskaFileParser.cpp(1397,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MatroskaFileServerDemux.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MatroskaFileServerDemux.cpp(122,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MatroskaFileServerMediaSubsession.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MatroskaFileServerMediaSubsession.cpp(66,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  Media.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\Media.cpp(168,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MediaSession.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MediaSession.cpp(1404,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MediaSink.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MediaSink.cpp(225,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MediaSource.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MediaSource.cpp(89,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MP3ADU.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MP3ADU.cpp(635,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MP3ADUdescriptor.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MP3ADUdescriptor.cpp(66,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MP3ADUinterleaving.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MP3ADUinterleaving.cpp(518,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MP3ADURTPSink.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MP3ADURTPSink.cpp(120,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MP3ADURTPSource.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MP3ADURTPSource.cpp(81,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MP3ADUTranscoder.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MP3ADUTranscoder.cpp(93,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MP3AudioFileServerMediaSubsession.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MP3AudioFileServerMediaSubsession.cpp(180,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  正在生成代码...
+  正在编译...
+  MP3AudioMatroskaFileServerMediaSubsession.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MP3AudioMatroskaFileServerMediaSubsession.cpp(58,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MP3FileSource.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MP3FileSource.cpp(179,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MP3Internals.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MP3Internals.cpp(809,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MP3InternalsHuffman.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MP3InternalsHuffman.cpp(977,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MP3InternalsHuffmanTable.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MP3InternalsHuffmanTable.cpp(1549,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MP3StreamState.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MP3StreamState.cpp(439,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MP3Transcoder.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MP3Transcoder.cpp(53,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MPEG1or2AudioRTPSink.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG1or2AudioRTPSink.cpp(64,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MPEG1or2AudioRTPSource.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG1or2AudioRTPSource.cpp(63,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MPEG1or2AudioStreamFramer.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG1or2AudioStreamFramer.cpp(211,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MPEG1or2Demux.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG1or2Demux.cpp(760,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MPEG1or2DemuxedElementaryStream.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG1or2DemuxedElementaryStream.cpp(89,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MPEG1or2DemuxedServerMediaSubsession.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG1or2DemuxedServerMediaSubsession.cpp(135,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MPEG1or2FileServerDemux.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG1or2FileServerDemux.cpp(265,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MPEG1or2VideoFileServerMediaSubsession.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG1or2VideoFileServerMediaSubsession.cpp(70,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MPEG1or2VideoRTPSink.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG1or2VideoRTPSink.cpp(176,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MPEG1or2VideoRTPSource.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG1or2VideoRTPSource.cpp(83,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MPEG1or2VideoStreamDiscreteFramer.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG1or2VideoStreamDiscreteFramer.cpp(204,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MPEG1or2VideoStreamFramer.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG1or2VideoStreamFramer.cpp(479,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MPEG2IndexFromTransportStream.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG2IndexFromTransportStream.cpp(683,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  正在生成代码...
+  正在编译...
+  MPEG2TransportFileServerMediaSubsession.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG2TransportFileServerMediaSubsession.cpp(353,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MPEG2TransportStreamFramer.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG2TransportStreamFramer.cpp(291,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MPEG2TransportStreamFromESSource.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG2TransportStreamFromESSource.cpp(260,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MPEG2TransportStreamFromPESSource.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG2TransportStreamFromPESSource.cpp(75,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MPEG2TransportStreamIndexFile.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG2TransportStreamIndexFile.cpp(350,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MPEG2TransportStreamMultiplexor.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG2TransportStreamMultiplexor.cpp(437,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MPEG2TransportStreamTrickModeFilter.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG2TransportStreamTrickModeFilter.cpp(267,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MPEG2TransportUDPServerMediaSubsession.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG2TransportUDPServerMediaSubsession.cpp(76,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MPEG4ESVideoRTPSink.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG4ESVideoRTPSink.cpp(143,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MPEG4ESVideoRTPSource.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG4ESVideoRTPSource.cpp(66,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MPEG4GenericRTPSink.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG4GenericRTPSink.cpp(143,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MPEG4GenericRTPSource.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG4GenericRTPSource.cpp(235,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MPEG4LATMAudioRTPSink.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG4LATMAudioRTPSink.cpp(96,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MPEG4LATMAudioRTPSource.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG4LATMAudioRTPSource.cpp(265,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MPEG4VideoFileServerMediaSubsession.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG4VideoFileServerMediaSubsession.cpp(126,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MPEG4VideoStreamDiscreteFramer.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG4VideoStreamDiscreteFramer.cpp(253,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MPEG4VideoStreamFramer.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG4VideoStreamFramer.cpp(682,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MPEGVideoStreamFramer.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEGVideoStreamFramer.cpp(181,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MPEGVideoStreamParser.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEGVideoStreamParser.cpp(46,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  MultiFramedRTPSink.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MultiFramedRTPSink.cpp(424,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  正在生成代码...
+  正在编译...
+  MultiFramedRTPSource.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MultiFramedRTPSource.cpp(612,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  OggDemuxedTrack.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\OggDemuxedTrack.cpp(44,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  OggFile.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\OggFile.cpp(327,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  OggFileParser.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\OggFileParser.cpp(1030,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  OggFileServerDemux.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\OggFileServerDemux.cpp(110,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  OggFileServerMediaSubsession.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\OggFileServerMediaSubsession.cpp(55,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  OggFileSink.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\OggFileSink.cpp(274,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  OnDemandServerMediaSubsession.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\OnDemandServerMediaSubsession.cpp(550,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  ourMD5.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\ourMD5.cpp(314,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  OutputFile.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\OutputFile.cpp(61,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  PassiveServerMediaSubsession.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\PassiveServerMediaSubsession.cpp(211,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  ProxyServerMediaSession.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\ProxyServerMediaSession.cpp(800,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  QCELPAudioRTPSource.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\QCELPAudioRTPSource.cpp(505,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  QuickTimeFileSink.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\QuickTimeFileSink.cpp(2318,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  QuickTimeGenericRTPSource.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\QuickTimeGenericRTPSource.cpp(275,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  RTCP.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTCP.cpp(1044,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  RTPInterface.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTPInterface.cpp(577,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  RTPSink.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTPSink.cpp(353,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  RTPSource.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTPSource.cpp(409,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  RTSPClient.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPClient.cpp(1876,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  正在生成代码...
+  正在编译...
+  RTSPCommon.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPCommon.cpp(381,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  RTSPRegisterSender.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPRegisterSender.cpp(122,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  RTSPServer.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPServer.cpp(2257,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  RTSPServerSupportingHTTPStreaming.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPServerSupportingHTTPStreaming.cpp(263,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  ServerMediaSession.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\ServerMediaSession.cpp(453,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  SimpleRTPSink.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\SimpleRTPSink.cpp(95,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  SimpleRTPSource.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\SimpleRTPSource.cpp(69,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  SIPClient.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\SIPClient.cpp(27,1): warning C4005: “_strncasecmp”: 宏重定义
+  D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\SIPClient.cpp(25,1):
+  参见“_strncasecmp”的前一个定义
+  
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\SIPClient.cpp(959,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  StreamParser.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\StreamParser.cpp(211,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  StreamReplicator.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\StreamReplicator.cpp(334,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  T140TextRTPSink.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\T140TextRTPSink.cpp(185,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  TCPStreamSink.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\TCPStreamSink.cpp(119,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  TextRTPSink.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\TextRTPSink.cpp(37,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  TheoraVideoRTPSink.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\TheoraVideoRTPSink.cpp(177,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  TheoraVideoRTPSource.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\TheoraVideoRTPSource.cpp(114,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  uLawAudioFilter.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\uLawAudioFilter.cpp(432,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  VideoRTPSink.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\VideoRTPSink.cpp(37,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  VorbisAudioRTPSink.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\VorbisAudioRTPSink.cpp(267,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  VorbisAudioRTPSource.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\VorbisAudioRTPSource.cpp(198,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  VP8VideoRTPSink.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\VP8VideoRTPSink.cpp(69,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  正在生成代码...
+  正在编译...
+  VP8VideoRTPSource.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\VP8VideoRTPSource.cpp(85,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  WAVAudioFileServerMediaSubsession.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\WAVAudioFileServerMediaSubsession.cpp(229,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  WAVAudioFileSource.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\liveMedia\WAVAudioFileSource.cpp(343,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  正在生成代码...

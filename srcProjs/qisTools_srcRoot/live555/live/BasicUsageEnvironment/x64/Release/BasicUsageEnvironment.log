@@ -1,0 +1,10 @@
+﻿  pch.cpp
+  BasicHashTable.cpp
+  BasicTaskScheduler.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\BasicUsageEnvironment\BasicTaskScheduler.cpp(92,26): warning C4244: “初始化”: 从“SOCKET”转换到“int”，可能丢失数据
+  BasicTaskScheduler0.cpp
+  BasicUsageEnvironment.cpp
+  BasicUsageEnvironment0.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\BasicUsageEnvironment\BasicUsageEnvironment0.cpp(73,22): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+  DelayQueue.cpp
+  BasicUsageEnvironment.vcxproj -> D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\BasicUsageEnvironment\BasicUsageEnvironment.lib

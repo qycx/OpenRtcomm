@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="isCliSaveAv.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="public\file_h264.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\file_webm.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\saveAvProc.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="isCliSaveAv_func.cpp" />
+    <ClCompile Include="public\file_qvcf.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\saveAvProc_qvcf.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyOpen\qyCommProc_open\parseSpsPps.cpp">
+      <Filter>qyOpen\qyCommProc_open</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyOpen\qyCommProc_open\qySyncObj.cpp">
+      <Filter>qyOpen\qyCommProc_open</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyOpen\qyCommProc_open\videoFunc_open.cpp">
+      <Filter>qyOpen\qyCommProc_open</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyOpen\qyCommProc_open\fileFunc_open.cpp">
+      <Filter>qyOpen\qyCommProc_open</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyOpen\qyCommProc_open\qyTCharCommProc.cpp">
+      <Filter>qyOpen\qyCommProc_open</Filter>
+    </ClCompile>
+    <ClCompile Include="TcpClient.cpp" />
+    <ClCompile Include="..\..\srcRoot\qisOpen\public\tmpRegFunc_open.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="resource1.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="include\isCliSaveAvCommon.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="TcpClient.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="public">
+      <UniqueIdentifier>{a86523b1-4807-476c-a483-5ee0a090d667}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyOpen">
+      <UniqueIdentifier>{a8234810-22df-4f60-807d-dd3f30b6477b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyOpen\qyCommProc_open">
+      <UniqueIdentifier>{a2638b94-2eb3-4ec3-b3a3-9f02377cd358}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{311de803-4d67-468c-8170-57e680c6afcb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="isCliSaveAv.rc" />
+  </ItemGroup>
+</Project>

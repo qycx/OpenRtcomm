@@ -1,0 +1,25 @@
+﻿  pch.cpp
+  GroupEId.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\groupsock\GroupEId.cpp(105,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  groupsock.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\groupsock\groupsock.cpp(636,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  GroupsockHelper.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\groupsock\GroupsockHelper.cpp(311,1): warning C4005: “TTL_TYPE”: 宏重定义
+  D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\groupsock\GroupsockHelper.cpp(309,1):
+  参见“TTL_TYPE”的前一个定义
+  
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\groupsock\GroupsockHelper.cpp(477,1): warning C4005: “IP_ADD_SOURCE_MEMBERSHIP”: 宏重定义
+  D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\groupsock\GroupsockHelper.cpp(474,1):
+  参见“IP_ADD_SOURCE_MEMBERSHIP”的前一个定义
+  
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\groupsock\GroupsockHelper.cpp(478,1): warning C4005: “IP_DROP_SOURCE_MEMBERSHIP”: 宏重定义
+  D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\groupsock\GroupsockHelper.cpp(475,1):
+  参见“IP_DROP_SOURCE_MEMBERSHIP”的前一个定义
+  
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\groupsock\GroupsockHelper.cpp(809,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  IOHandlers.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\groupsock\IOHandlers.cpp(47,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  NetAddress.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\groupsock\NetAddress.cpp(313,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  NetInterface.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qisTools_srcRoot\live555\live\groupsock\NetInterface.cpp(175,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
