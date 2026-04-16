@@ -1,0 +1,503 @@
+Begin Time:2026-03-26T09:55:09.020
+[2026-03-26T09:55:09.020 info Netsdk:63708 71828:65368 AVNetSDKMgr.cpp:504]Load avnetsdk library dynamically
+[2026-03-26T09:55:09.042 info Netsdk:63708 71828:65368 AVNetSDKMgr.cpp:549]avnetsdk module handle: 0000025F6BC40000
+
+[2026-03-26T09:55:09.043 info Netsdk:63708 71828:65368 AVNetSDKMgr.cpp:823]Load configsdk dynamically
+[2026-03-26T09:55:09.051 info Netsdk:63708 71828:65368 dhnetsdk.cpp:352]Enter CLIENT_SetNetworkParam:[nWaittime=0, nConnectTime=0, nConnectTryNum=2, nSubConnectSpaceTime=0, nGetDevInfoTime=3000, nConnectBufSize=0, nGetConnInfoTime=0, nSearchRecordTime=0, nsubDisconnetTime=0, byNetType=0, byPlaybackBufSize=0, bDetectDisconnTime=0, bKeepLifeInterval=0, nPicBufSize=0].
+[2026-03-26T09:55:09.052 info Netsdk:63708 71828:65368 dhnetsdk.cpp:367]Leave CLIENT_SetNetworkParam.
+[2026-03-26T09:55:09.052 info Netsdk:63708 71828:65368 dhnetsdk.cpp:302]Enter CLIENT_SetAutoReconnect:[cbAutoConnect=00007FF67D829E1C, dwUser=000000D724BAE9F0].
+[2026-03-26T09:55:09.052 info Netsdk:63708 71828:65368 dhnetsdk.cpp:304]Leave CLIENT_SetAutoReconnect.
+[2026-03-26T09:55:09.263 info Netsdk:63708 71828:65368 dhnetsdk.cpp:991]Enter CLIENT_LoginWithHighLevelSecurity. pstInParam:000000D724BADF90, pstOutParam:000000D724BAE070.
+[2026-03-26T09:55:09.263 info Netsdk:63708 71828:65368 dhnetsdk.cpp:1007]IP:192.168.1.23, port:37777, SpeCap:0, CapParam:0000000000000000, TLSCap:0
+Begin Time:2026-03-26T09:55:09.269
+[2026-03-26T09:55:09.269 info Netsdk:63708 62232:72376 AVNetSDKMgr.cpp:504]Load avnetsdk library dynamically
+[2026-03-26T09:55:09.272 info Netsdk:63708 62232:72376 AVNetSDKMgr.cpp:549]avnetsdk module handle: 0000023D972A0000
+
+[2026-03-26T09:55:09.272 info Netsdk:63708 62232:72376 AVNetSDKMgr.cpp:823]Load configsdk dynamically
+[2026-03-26T09:55:09.273 info Netsdk:63708 62232:72376 dhnetsdk.cpp:302]Enter CLIENT_SetAutoReconnect:[cbAutoConnect=00007FF77A26F150, dwUser=0000008DA7EFCEF0].
+[2026-03-26T09:55:09.273 info Netsdk:63708 62232:72376 dhnetsdk.cpp:304]Leave CLIENT_SetAutoReconnect.
+[2026-03-26T09:55:09.279 info Netsdk:63708 62232:72376 dhnetsdk.cpp:991]Enter CLIENT_LoginWithHighLevelSecurity. pstInParam:0000008DA7EFC490, pstOutParam:0000008DA7EFC570.
+[2026-03-26T09:55:09.279 info Netsdk:63708 62232:72376 dhnetsdk.cpp:1007]IP:192.168.1.23, port:37777, SpeCap:0, CapParam:0000000000000000, TLSCap:0
+[2026-03-26T09:55:09.466 info Netsdk:63708 71828:65368 dhnetsdk.cpp:1054]Leave CLIENT_LoginWithHighLevelSecurity. error:0, login ID:1786951888.
+[2026-03-26T09:55:09.470 info Netsdk:63708 71828:65368 dhnetsdk.cpp:8181]Enter CLIENT_QueryDevState. [lLoginID=1786951888, nType=4, pBuf=000000D724BAD310, nBufLen=3076, pRetLen=000000D724BAC6B0, waittime=3000.]
+[2026-03-26T09:55:09.474 info Netsdk:63708 62232:72376 dhnetsdk.cpp:1054]Leave CLIENT_LoginWithHighLevelSecurity. error:0, login ID:-1782530960.
+[2026-03-26T09:55:09.477 info Netsdk:63708 62232:72376 dhnetsdk.cpp:8181]Enter CLIENT_QueryDevState. [lLoginID=-1782530960, nType=82, pBuf=0000008DA7EFC450, nBufLen=60, pRetLen=0000008DA7EFC420, waittime=1000.]
+[2026-03-26T09:55:09.493 info Netsdk:63708 71828:65368 dhnetsdk.cpp:8205]Leave CLIENT_QueryDevState.ret:1.
+[2026-03-26T09:55:09.569 info Netsdk:63708 62232:72376 dhnetsdk.cpp:8205]Leave CLIENT_QueryDevState.ret:1.
+[2026-03-26T09:55:09.574 info Netsdk:63708 62232:72376 dhnetsdk.cpp:1288]Enter CLIENT_RealPlayEx. lLoginID:-1782530960. nChannelID:0. rType:0
+[2026-03-26T09:55:09.993 error Netsdk:63708 62232:72376 Generation2ProtocolSecureTransmit.cpp:661]Not find
+[2026-03-26T09:55:09.993 info Netsdk:63708 62232:72376 DevConfigEx.cpp:11689]IN SetupSession PORT=0 and PORT: 37777
+[2026-03-26T09:55:10.074 info Netsdk:63708 62232:72376 dhnetsdk.cpp:1354]Leave CLIENT_RealPlayEx. ret:-1753078080
+[2026-03-26T10:14:54.302 info Netsdk:63708 62232:72376 dhnetsdk.cpp:2090]Enter CLIENT_StopRealPlayEx. lRealHandle:-1753078080.
+[2026-03-26T10:14:54.315 info Netsdk:63708 62232:72376 dhnetsdk.cpp:2104]Leave CLIENT_StopRealPlayEx. ret:1
+[2026-03-26T10:14:54.315 info Netsdk:63708 62232:72376 dhnetsdk.cpp:1075]Enter CLIENT_Logout. lLoginID:-1782530960.
+[2026-03-26T10:14:54.315 error Netsdk:63708 62232:72376 TPTCPClient.cpp:723]Device is not online, ip:192.168.1.23
+[2026-03-26T10:14:54.315 info Netsdk:63708 62232:72376 dhnetsdk.cpp:1097]Leave CLIENT_Logout. ret:1
+[2026-03-26T10:14:55.111 info Netsdk:63708 71828:65368 dhnetsdk.cpp:1075]Enter CLIENT_Logout. lLoginID:1786951888.
+[2026-03-26T10:14:55.112 error Netsdk:63708 71828:65368 TPTCPClient.cpp:723]Device is not online, ip:192.168.1.23
+[2026-03-26T10:14:55.112 info Netsdk:63708 71828:65368 dhnetsdk.cpp:1097]Leave CLIENT_Logout. ret:1
+Begin Time:2026-03-26T11:36:58.338
+[2026-03-26T11:36:58.339 info Netsdk:63708 64936:71668 AVNetSDKMgr.cpp:504]Load avnetsdk library dynamically
+[2026-03-26T11:36:58.357 info Netsdk:63708 64936:71668 AVNetSDKMgr.cpp:549]avnetsdk module handle: 00000217C3C70000
+
+[2026-03-26T11:36:58.358 info Netsdk:63708 64936:71668 AVNetSDKMgr.cpp:823]Load configsdk dynamically
+[2026-03-26T11:36:58.363 info Netsdk:63708 64936:71668 dhnetsdk.cpp:352]Enter CLIENT_SetNetworkParam:[nWaittime=0, nConnectTime=0, nConnectTryNum=2, nSubConnectSpaceTime=0, nGetDevInfoTime=3000, nConnectBufSize=0, nGetConnInfoTime=0, nSearchRecordTime=0, nsubDisconnetTime=0, byNetType=0, byPlaybackBufSize=0, bDetectDisconnTime=0, bKeepLifeInterval=0, nPicBufSize=0].
+[2026-03-26T11:36:58.363 info Netsdk:63708 64936:71668 dhnetsdk.cpp:367]Leave CLIENT_SetNetworkParam.
+[2026-03-26T11:36:58.363 info Netsdk:63708 64936:71668 dhnetsdk.cpp:302]Enter CLIENT_SetAutoReconnect:[cbAutoConnect=00007FF679D19E1C, dwUser=000000F416D5E930].
+[2026-03-26T11:36:58.363 info Netsdk:63708 64936:71668 dhnetsdk.cpp:304]Leave CLIENT_SetAutoReconnect.
+[2026-03-26T11:36:58.397 info Netsdk:63708 64936:71668 dhnetsdk.cpp:991]Enter CLIENT_LoginWithHighLevelSecurity. pstInParam:000000F416D5DED0, pstOutParam:000000F416D5DFB0.
+[2026-03-26T11:36:58.397 info Netsdk:63708 64936:71668 dhnetsdk.cpp:1007]IP:192.168.1.23, port:37777, SpeCap:0, CapParam:0000000000000000, TLSCap:0
+Begin Time:2026-03-26T11:36:58.446
+[2026-03-26T11:36:58.446 info Netsdk:63708 2480:73632 AVNetSDKMgr.cpp:504]Load avnetsdk library dynamically
+[2026-03-26T11:36:58.450 info Netsdk:63708 2480:73632 AVNetSDKMgr.cpp:549]avnetsdk module handle: 0000024947720000
+
+[2026-03-26T11:36:58.450 info Netsdk:63708 2480:73632 AVNetSDKMgr.cpp:823]Load configsdk dynamically
+[2026-03-26T11:36:58.451 info Netsdk:63708 2480:73632 dhnetsdk.cpp:302]Enter CLIENT_SetAutoReconnect:[cbAutoConnect=00007FF6BF9CF150, dwUser=000000561BAFCE10].
+[2026-03-26T11:36:58.451 info Netsdk:63708 2480:73632 dhnetsdk.cpp:304]Leave CLIENT_SetAutoReconnect.
+[2026-03-26T11:36:58.462 info Netsdk:63708 2480:73632 dhnetsdk.cpp:991]Enter CLIENT_LoginWithHighLevelSecurity. pstInParam:000000561BAFC3B0, pstOutParam:000000561BAFC490.
+[2026-03-26T11:36:58.462 info Netsdk:63708 2480:73632 dhnetsdk.cpp:1007]IP:192.168.1.23, port:37777, SpeCap:0, CapParam:0000000000000000, TLSCap:0
+[2026-03-26T11:36:58.738 info Netsdk:63708 64936:71668 dhnetsdk.cpp:1054]Leave CLIENT_LoginWithHighLevelSecurity. error:0, login ID:-1022721920.
+[2026-03-26T11:36:58.740 info Netsdk:63708 64936:71668 dhnetsdk.cpp:8181]Enter CLIENT_QueryDevState. [lLoginID=-1022721920, nType=4, pBuf=000000F416D5D250, nBufLen=3076, pRetLen=000000F416D5C5F0, waittime=3000.]
+[2026-03-26T11:36:58.806 info Netsdk:63708 64936:71668 dhnetsdk.cpp:8205]Leave CLIENT_QueryDevState.ret:1.
+[2026-03-26T11:36:58.806 info Netsdk:63708 2480:73632 dhnetsdk.cpp:1054]Leave CLIENT_LoginWithHighLevelSecurity. error:0, login ID:1136305712.
+[2026-03-26T11:36:58.815 info Netsdk:63708 2480:73632 dhnetsdk.cpp:8181]Enter CLIENT_QueryDevState. [lLoginID=1136305712, nType=82, pBuf=000000561BAFC370, nBufLen=60, pRetLen=000000561BAFC340, waittime=1000.]
+[2026-03-26T11:36:58.997 info Netsdk:63708 2480:73632 dhnetsdk.cpp:8205]Leave CLIENT_QueryDevState.ret:1.
+[2026-03-26T11:36:59.005 info Netsdk:63708 2480:73632 dhnetsdk.cpp:1288]Enter CLIENT_RealPlayEx. lLoginID:1136305712. nChannelID:0. rType:0
+[2026-03-26T11:36:59.483 error Netsdk:63708 2480:73632 Generation2ProtocolSecureTransmit.cpp:661]Not find
+[2026-03-26T11:36:59.483 info Netsdk:63708 2480:73632 DevConfigEx.cpp:11689]IN SetupSession PORT=0 and PORT: 37777
+[2026-03-26T11:36:59.574 info Netsdk:63708 2480:73632 dhnetsdk.cpp:1354]Leave CLIENT_RealPlayEx. ret:1136365888
+Begin Time:2026-03-26T11:37:28.477
+[2026-03-26T11:37:28.477 info Netsdk:63708 69092:68548 AVNetSDKMgr.cpp:504]Load avnetsdk library dynamically
+[2026-03-26T11:37:28.498 info Netsdk:63708 69092:68548 AVNetSDKMgr.cpp:549]avnetsdk module handle: 0000024B3D690000
+
+[2026-03-26T11:37:28.498 info Netsdk:63708 69092:68548 AVNetSDKMgr.cpp:823]Load configsdk dynamically
+[2026-03-26T11:37:28.504 info Netsdk:63708 69092:68548 dhnetsdk.cpp:352]Enter CLIENT_SetNetworkParam:[nWaittime=0, nConnectTime=0, nConnectTryNum=2, nSubConnectSpaceTime=0, nGetDevInfoTime=3000, nConnectBufSize=0, nGetConnInfoTime=0, nSearchRecordTime=0, nsubDisconnetTime=0, byNetType=0, byPlaybackBufSize=0, bDetectDisconnTime=0, bKeepLifeInterval=0, nPicBufSize=0].
+[2026-03-26T11:37:28.504 info Netsdk:63708 69092:68548 dhnetsdk.cpp:367]Leave CLIENT_SetNetworkParam.
+[2026-03-26T11:37:28.504 info Netsdk:63708 69092:68548 dhnetsdk.cpp:302]Enter CLIENT_SetAutoReconnect:[cbAutoConnect=00007FF679D19E1C, dwUser=000000A22698EB70].
+[2026-03-26T11:37:28.504 info Netsdk:63708 69092:68548 dhnetsdk.cpp:304]Leave CLIENT_SetAutoReconnect.
+[2026-03-26T11:37:28.705 info Netsdk:63708 69092:68548 dhnetsdk.cpp:991]Enter CLIENT_LoginWithHighLevelSecurity. pstInParam:000000A22698E110, pstOutParam:000000A22698E1F0.
+[2026-03-26T11:37:28.705 info Netsdk:63708 69092:68548 dhnetsdk.cpp:1007]IP:192.168.1.23, port:37777, SpeCap:0, CapParam:0000000000000000, TLSCap:0
+[2026-03-26T11:37:28.892 info Netsdk:63708 69092:68548 dhnetsdk.cpp:1054]Leave CLIENT_LoginWithHighLevelSecurity. error:0, login ID:987673152.
+[2026-03-26T11:37:28.895 info Netsdk:63708 69092:68548 dhnetsdk.cpp:8181]Enter CLIENT_QueryDevState. [lLoginID=987673152, nType=4, pBuf=000000A22698D490, nBufLen=3076, pRetLen=000000A22698C830, waittime=3000.]
+[2026-03-26T11:37:28.909 info Netsdk:63708 69092:68548 dhnetsdk.cpp:8205]Leave CLIENT_QueryDevState.ret:1.
+[2026-03-26T11:37:33.367 info Netsdk:63708 64936:71668 dhnetsdk.cpp:1075]Enter CLIENT_Logout. lLoginID:-1022721920.
+[2026-03-26T11:37:33.367 error Netsdk:63708 64936:71668 TPTCPClient.cpp:723]Device is not online, ip:192.168.1.23
+[2026-03-26T11:37:33.367 info Netsdk:63708 64936:71668 dhnetsdk.cpp:1097]Leave CLIENT_Logout. ret:1
+[2026-03-26T11:37:33.443 info Netsdk:63708 2480:73632 dhnetsdk.cpp:2090]Enter CLIENT_StopRealPlayEx. lRealHandle:1136365888.
+[2026-03-26T11:37:33.455 info Netsdk:63708 2480:73632 dhnetsdk.cpp:2104]Leave CLIENT_StopRealPlayEx. ret:1
+[2026-03-26T11:37:33.455 info Netsdk:63708 2480:73632 dhnetsdk.cpp:1075]Enter CLIENT_Logout. lLoginID:1136305712.
+[2026-03-26T11:37:33.455 error Netsdk:63708 2480:73632 TPTCPClient.cpp:723]Device is not online, ip:192.168.1.23
+[2026-03-26T11:37:33.455 info Netsdk:63708 2480:73632 dhnetsdk.cpp:1097]Leave CLIENT_Logout. ret:1
+[2026-03-26T11:38:03.518 info Netsdk:63708 69092:68548 dhnetsdk.cpp:1075]Enter CLIENT_Logout. lLoginID:987673152.
+[2026-03-26T11:38:03.518 error Netsdk:63708 69092:68548 TPTCPClient.cpp:723]Device is not online, ip:192.168.1.23
+[2026-03-26T11:38:03.518 info Netsdk:63708 69092:68548 dhnetsdk.cpp:1097]Leave CLIENT_Logout. ret:1
+Begin Time:2026-03-26T13:05:08.530
+[2026-03-26T13:05:08.530 info Netsdk:63708 74116:64104 AVNetSDKMgr.cpp:504]Load avnetsdk library dynamically
+[2026-03-26T13:05:08.563 info Netsdk:63708 74116:64104 AVNetSDKMgr.cpp:549]avnetsdk module handle: 0000021D60760000
+
+[2026-03-26T13:05:08.563 info Netsdk:63708 74116:64104 AVNetSDKMgr.cpp:823]Load configsdk dynamically
+[2026-03-26T13:05:08.577 info Netsdk:63708 74116:64104 dhnetsdk.cpp:352]Enter CLIENT_SetNetworkParam:[nWaittime=0, nConnectTime=0, nConnectTryNum=2, nSubConnectSpaceTime=0, nGetDevInfoTime=3000, nConnectBufSize=0, nGetConnInfoTime=0, nSearchRecordTime=0, nsubDisconnetTime=0, byNetType=0, byPlaybackBufSize=0, bDetectDisconnTime=0, bKeepLifeInterval=0, nPicBufSize=0].
+[2026-03-26T13:05:08.578 info Netsdk:63708 74116:64104 dhnetsdk.cpp:367]Leave CLIENT_SetNetworkParam.
+[2026-03-26T13:05:08.578 info Netsdk:63708 74116:64104 dhnetsdk.cpp:302]Enter CLIENT_SetAutoReconnect:[cbAutoConnect=00007FF679D19E1C, dwUser=0000006D5975EB10].
+[2026-03-26T13:05:08.578 info Netsdk:63708 74116:64104 dhnetsdk.cpp:304]Leave CLIENT_SetAutoReconnect.
+[2026-03-26T13:05:08.675 info Netsdk:63708 74116:64104 dhnetsdk.cpp:991]Enter CLIENT_LoginWithHighLevelSecurity. pstInParam:0000006D5975E0B0, pstOutParam:0000006D5975E190.
+[2026-03-26T13:05:08.675 info Netsdk:63708 74116:64104 dhnetsdk.cpp:1007]IP:192.168.1.23, port:37777, SpeCap:0, CapParam:0000000000000000, TLSCap:0
+Begin Time:2026-03-26T13:05:08.802
+[2026-03-26T13:05:08.802 info Netsdk:63708 70832:59608 AVNetSDKMgr.cpp:504]Load avnetsdk library dynamically
+[2026-03-26T13:05:08.807 info Netsdk:63708 70832:59608 AVNetSDKMgr.cpp:549]avnetsdk module handle: 00000262AD920000
+
+[2026-03-26T13:05:08.807 info Netsdk:63708 70832:59608 AVNetSDKMgr.cpp:823]Load configsdk dynamically
+[2026-03-26T13:05:08.808 info Netsdk:63708 70832:59608 dhnetsdk.cpp:302]Enter CLIENT_SetAutoReconnect:[cbAutoConnect=00007FF6BF9CF150, dwUser=000000878E36CF20].
+[2026-03-26T13:05:08.808 info Netsdk:63708 70832:59608 dhnetsdk.cpp:304]Leave CLIENT_SetAutoReconnect.
+[2026-03-26T13:05:08.818 info Netsdk:63708 70832:59608 dhnetsdk.cpp:991]Enter CLIENT_LoginWithHighLevelSecurity. pstInParam:000000878E36C4C0, pstOutParam:000000878E36C5A0.
+[2026-03-26T13:05:08.818 info Netsdk:63708 70832:59608 dhnetsdk.cpp:1007]IP:192.168.1.23, port:37777, SpeCap:0, CapParam:0000000000000000, TLSCap:0
+[2026-03-26T13:05:08.892 info Netsdk:63708 74116:64104 dhnetsdk.cpp:1054]Leave CLIENT_LoginWithHighLevelSecurity. error:0, login ID:1530309744.
+[2026-03-26T13:05:08.894 info Netsdk:63708 74116:64104 dhnetsdk.cpp:8181]Enter CLIENT_QueryDevState. [lLoginID=1530309744, nType=4, pBuf=0000006D5975D430, nBufLen=3076, pRetLen=0000006D5975C7D0, waittime=3000.]
+[2026-03-26T13:05:09.018 info Netsdk:63708 74116:64104 dhnetsdk.cpp:8205]Leave CLIENT_QueryDevState.ret:1.
+[2026-03-26T13:05:09.097 info Netsdk:63708 70832:59608 dhnetsdk.cpp:1054]Leave CLIENT_LoginWithHighLevelSecurity. error:0, login ID:-1632912240.
+[2026-03-26T13:05:09.099 info Netsdk:63708 70832:59608 dhnetsdk.cpp:8181]Enter CLIENT_QueryDevState. [lLoginID=-1632912240, nType=82, pBuf=000000878E36C480, nBufLen=60, pRetLen=000000878E36C450, waittime=1000.]
+[2026-03-26T13:05:09.198 info Netsdk:63708 70832:59608 dhnetsdk.cpp:8205]Leave CLIENT_QueryDevState.ret:1.
+[2026-03-26T13:05:09.201 info Netsdk:63708 70832:59608 dhnetsdk.cpp:1288]Enter CLIENT_RealPlayEx. lLoginID:-1632912240. nChannelID:0. rType:0
+[2026-03-26T13:05:09.598 error Netsdk:63708 70832:59608 Generation2ProtocolSecureTransmit.cpp:661]Not find
+[2026-03-26T13:05:09.598 info Netsdk:63708 70832:59608 DevConfigEx.cpp:11689]IN SetupSession PORT=0 and PORT: 37777
+[2026-03-26T13:05:09.679 info Netsdk:63708 70832:59608 dhnetsdk.cpp:1354]Leave CLIENT_RealPlayEx. ret:-1376911232
+[2026-03-26T13:05:43.580 info Netsdk:63708 74116:64104 dhnetsdk.cpp:1075]Enter CLIENT_Logout. lLoginID:1530309744.
+[2026-03-26T13:05:43.580 error Netsdk:63708 74116:64104 TPTCPClient.cpp:723]Device is not online, ip:192.168.1.23
+[2026-03-26T13:05:43.580 info Netsdk:63708 74116:64104 dhnetsdk.cpp:1097]Leave CLIENT_Logout. ret:1
+[2026-03-26T13:05:43.812 info Netsdk:63708 70832:59608 dhnetsdk.cpp:2090]Enter CLIENT_StopRealPlayEx. lRealHandle:-1376911232.
+[2026-03-26T13:05:43.817 info Netsdk:63708 70832:59608 dhnetsdk.cpp:2104]Leave CLIENT_StopRealPlayEx. ret:1
+[2026-03-26T13:05:43.817 info Netsdk:63708 70832:59608 dhnetsdk.cpp:1075]Enter CLIENT_Logout. lLoginID:-1632912240.
+[2026-03-26T13:05:43.818 error Netsdk:63708 70832:59608 TPTCPClient.cpp:723]Device is not online, ip:192.168.1.23
+[2026-03-26T13:05:43.818 info Netsdk:63708 70832:59608 dhnetsdk.cpp:1097]Leave CLIENT_Logout. ret:1
+Begin Time:2026-03-26T13:05:53.298
+[2026-03-26T13:05:53.298 info Netsdk:63708 67820:31500 AVNetSDKMgr.cpp:504]Load avnetsdk library dynamically
+[2026-03-26T13:05:53.316 info Netsdk:63708 67820:31500 AVNetSDKMgr.cpp:549]avnetsdk module handle: 0000018CFB840000
+
+[2026-03-26T13:05:53.316 info Netsdk:63708 67820:31500 AVNetSDKMgr.cpp:823]Load configsdk dynamically
+[2026-03-26T13:05:53.321 info Netsdk:63708 67820:31500 dhnetsdk.cpp:352]Enter CLIENT_SetNetworkParam:[nWaittime=0, nConnectTime=0, nConnectTryNum=2, nSubConnectSpaceTime=0, nGetDevInfoTime=3000, nConnectBufSize=0, nGetConnInfoTime=0, nSearchRecordTime=0, nsubDisconnetTime=0, byNetType=0, byPlaybackBufSize=0, bDetectDisconnTime=0, bKeepLifeInterval=0, nPicBufSize=0].
+[2026-03-26T13:05:53.321 info Netsdk:63708 67820:31500 dhnetsdk.cpp:367]Leave CLIENT_SetNetworkParam.
+[2026-03-26T13:05:53.321 info Netsdk:63708 67820:31500 dhnetsdk.cpp:302]Enter CLIENT_SetAutoReconnect:[cbAutoConnect=00007FF679D19E1C, dwUser=00000037D8CFE930].
+[2026-03-26T13:05:53.321 info Netsdk:63708 67820:31500 dhnetsdk.cpp:304]Leave CLIENT_SetAutoReconnect.
+Begin Time:2026-03-26T13:05:53.434
+[2026-03-26T13:05:53.434 info Netsdk:63708 74400:75000 AVNetSDKMgr.cpp:504]Load avnetsdk library dynamically
+[2026-03-26T13:05:53.439 info Netsdk:63708 74400:75000 AVNetSDKMgr.cpp:549]avnetsdk module handle: 000001D0E85D0000
+
+[2026-03-26T13:05:53.439 info Netsdk:63708 74400:75000 AVNetSDKMgr.cpp:823]Load configsdk dynamically
+[2026-03-26T13:05:53.441 info Netsdk:63708 74400:75000 dhnetsdk.cpp:302]Enter CLIENT_SetAutoReconnect:[cbAutoConnect=00007FF6BF9CF150, dwUser=000000664DEFD250].
+[2026-03-26T13:05:53.441 info Netsdk:63708 74400:75000 dhnetsdk.cpp:304]Leave CLIENT_SetAutoReconnect.
+[2026-03-26T13:05:53.454 info Netsdk:63708 74400:75000 dhnetsdk.cpp:991]Enter CLIENT_LoginWithHighLevelSecurity. pstInParam:000000664DEFC7F0, pstOutParam:000000664DEFC8D0.
+[2026-03-26T13:05:53.454 info Netsdk:63708 74400:75000 dhnetsdk.cpp:1007]IP:192.168.1.23, port:37777, SpeCap:0, CapParam:0000000000000000, TLSCap:0
+[2026-03-26T13:05:53.526 info Netsdk:63708 67820:31500 dhnetsdk.cpp:991]Enter CLIENT_LoginWithHighLevelSecurity. pstInParam:00000037D8CFDED0, pstOutParam:00000037D8CFDFB0.
+[2026-03-26T13:05:53.526 info Netsdk:63708 67820:31500 dhnetsdk.cpp:1007]IP:192.168.1.23, port:37777, SpeCap:0, CapParam:0000000000000000, TLSCap:0
+[2026-03-26T13:05:53.641 info Netsdk:63708 74400:75000 dhnetsdk.cpp:1054]Leave CLIENT_LoginWithHighLevelSecurity. error:0, login ID:-542720880.
+[2026-03-26T13:05:53.648 info Netsdk:63708 74400:75000 dhnetsdk.cpp:8181]Enter CLIENT_QueryDevState. [lLoginID=-542720880, nType=82, pBuf=000000664DEFC7B0, nBufLen=60, pRetLen=000000664DEFC780, waittime=1000.]
+[2026-03-26T13:05:53.714 info Netsdk:63708 67820:31500 dhnetsdk.cpp:1054]Leave CLIENT_LoginWithHighLevelSecurity. error:0, login ID:-96093104.
+[2026-03-26T13:05:53.718 info Netsdk:63708 67820:31500 dhnetsdk.cpp:8181]Enter CLIENT_QueryDevState. [lLoginID=-96093104, nType=4, pBuf=00000037D8CFD250, nBufLen=3076, pRetLen=00000037D8CFC5F0, waittime=3000.]
+[2026-03-26T13:05:53.733 info Netsdk:63708 67820:31500 dhnetsdk.cpp:8205]Leave CLIENT_QueryDevState.ret:1.
+[2026-03-26T13:05:53.757 info Netsdk:63708 74400:75000 dhnetsdk.cpp:8205]Leave CLIENT_QueryDevState.ret:1.
+[2026-03-26T13:05:53.762 info Netsdk:63708 74400:75000 dhnetsdk.cpp:1288]Enter CLIENT_RealPlayEx. lLoginID:-542720880. nChannelID:0. rType:0
+[2026-03-26T13:05:54.119 error Netsdk:63708 74400:75000 Generation2ProtocolSecureTransmit.cpp:661]Not find
+[2026-03-26T13:05:54.119 info Netsdk:63708 74400:75000 DevConfigEx.cpp:11689]IN SetupSession PORT=0 and PORT: 37777
+[2026-03-26T13:05:54.216 info Netsdk:63708 74400:75000 dhnetsdk.cpp:1354]Leave CLIENT_RealPlayEx. ret:-389928416
+[2026-03-26T13:06:48.324 info Netsdk:63708 67820:31500 dhnetsdk.cpp:1075]Enter CLIENT_Logout. lLoginID:-96093104.
+[2026-03-26T13:06:48.325 error Netsdk:63708 67820:31500 TPTCPClient.cpp:723]Device is not online, ip:192.168.1.23
+[2026-03-26T13:06:48.325 info Netsdk:63708 67820:31500 dhnetsdk.cpp:1097]Leave CLIENT_Logout. ret:1
+[2026-03-26T13:06:48.447 info Netsdk:63708 74400:75000 dhnetsdk.cpp:2090]Enter CLIENT_StopRealPlayEx. lRealHandle:-389928416.
+[2026-03-26T13:06:48.457 info Netsdk:63708 74400:75000 dhnetsdk.cpp:2104]Leave CLIENT_StopRealPlayEx. ret:1
+[2026-03-26T13:06:48.457 info Netsdk:63708 74400:75000 dhnetsdk.cpp:1075]Enter CLIENT_Logout. lLoginID:-542720880.
+[2026-03-26T13:06:48.458 error Netsdk:63708 74400:75000 TPTCPClient.cpp:723]Device is not online, ip:192.168.1.23
+[2026-03-26T13:06:48.458 info Netsdk:63708 74400:75000 dhnetsdk.cpp:1097]Leave CLIENT_Logout. ret:1
+Begin Time:2026-03-26T13:07:12.573
+[2026-03-26T13:07:12.573 info Netsdk:63708 54792:74132 AVNetSDKMgr.cpp:504]Load avnetsdk library dynamically
+[2026-03-26T13:07:12.592 info Netsdk:63708 54792:74132 AVNetSDKMgr.cpp:549]avnetsdk module handle: 0000011F0F3B0000
+
+[2026-03-26T13:07:12.592 info Netsdk:63708 54792:74132 AVNetSDKMgr.cpp:823]Load configsdk dynamically
+[2026-03-26T13:07:12.595 info Netsdk:63708 54792:74132 dhnetsdk.cpp:352]Enter CLIENT_SetNetworkParam:[nWaittime=0, nConnectTime=0, nConnectTryNum=2, nSubConnectSpaceTime=0, nGetDevInfoTime=3000, nConnectBufSize=0, nGetConnInfoTime=0, nSearchRecordTime=0, nsubDisconnetTime=0, byNetType=0, byPlaybackBufSize=0, bDetectDisconnTime=0, bKeepLifeInterval=0, nPicBufSize=0].
+[2026-03-26T13:07:12.595 info Netsdk:63708 54792:74132 dhnetsdk.cpp:367]Leave CLIENT_SetNetworkParam.
+[2026-03-26T13:07:12.595 info Netsdk:63708 54792:74132 dhnetsdk.cpp:302]Enter CLIENT_SetAutoReconnect:[cbAutoConnect=00007FF679D19E1C, dwUser=00000003B92FEB70].
+[2026-03-26T13:07:12.595 info Netsdk:63708 54792:74132 dhnetsdk.cpp:304]Leave CLIENT_SetAutoReconnect.
+Begin Time:2026-03-26T13:07:12.746
+[2026-03-26T13:07:12.746 info Netsdk:63708 74972:72540 AVNetSDKMgr.cpp:504]Load avnetsdk library dynamically
+[2026-03-26T13:07:12.750 info Netsdk:63708 74972:72540 AVNetSDKMgr.cpp:549]avnetsdk module handle: 0000016ABB6A0000
+
+[2026-03-26T13:07:12.750 info Netsdk:63708 74972:72540 AVNetSDKMgr.cpp:823]Load configsdk dynamically
+[2026-03-26T13:07:12.751 info Netsdk:63708 74972:72540 dhnetsdk.cpp:302]Enter CLIENT_SetAutoReconnect:[cbAutoConnect=00007FF6BF9CF150, dwUser=00000009F258CB90].
+[2026-03-26T13:07:12.751 info Netsdk:63708 74972:72540 dhnetsdk.cpp:304]Leave CLIENT_SetAutoReconnect.
+[2026-03-26T13:07:12.774 info Netsdk:63708 74972:72540 dhnetsdk.cpp:991]Enter CLIENT_LoginWithHighLevelSecurity. pstInParam:00000009F258C130, pstOutParam:00000009F258C210.
+[2026-03-26T13:07:12.774 info Netsdk:63708 74972:72540 dhnetsdk.cpp:1007]IP:192.168.1.23, port:37777, SpeCap:0, CapParam:0000000000000000, TLSCap:0
+[2026-03-26T13:07:12.828 info Netsdk:63708 54792:74132 dhnetsdk.cpp:991]Enter CLIENT_LoginWithHighLevelSecurity. pstInParam:00000003B92FE110, pstOutParam:00000003B92FE1F0.
+[2026-03-26T13:07:12.828 info Netsdk:63708 54792:74132 dhnetsdk.cpp:1007]IP:192.168.1.23, port:37777, SpeCap:0, CapParam:0000000000000000, TLSCap:0
+[2026-03-26T13:07:12.972 info Netsdk:63708 74972:72540 dhnetsdk.cpp:1054]Leave CLIENT_LoginWithHighLevelSecurity. error:0, login ID:-1296384880.
+[2026-03-26T13:07:12.974 info Netsdk:63708 74972:72540 dhnetsdk.cpp:8181]Enter CLIENT_QueryDevState. [lLoginID=-1296384880, nType=82, pBuf=00000009F258C0F0, nBufLen=60, pRetLen=00000009F258C0C0, waittime=1000.]
+[2026-03-26T13:07:13.030 info Netsdk:63708 54792:74132 dhnetsdk.cpp:1054]Leave CLIENT_LoginWithHighLevelSecurity. error:0, login ID:234862672.
+[2026-03-26T13:07:13.032 info Netsdk:63708 54792:74132 dhnetsdk.cpp:8181]Enter CLIENT_QueryDevState. [lLoginID=234862672, nType=4, pBuf=00000003B92FD490, nBufLen=3076, pRetLen=00000003B92FC830, waittime=3000.]
+[2026-03-26T13:07:13.041 info Netsdk:63708 54792:74132 dhnetsdk.cpp:8205]Leave CLIENT_QueryDevState.ret:1.
+[2026-03-26T13:07:13.069 info Netsdk:63708 74972:72540 dhnetsdk.cpp:8205]Leave CLIENT_QueryDevState.ret:1.
+[2026-03-26T13:07:13.077 info Netsdk:63708 74972:72540 dhnetsdk.cpp:1288]Enter CLIENT_RealPlayEx. lLoginID:-1296384880. nChannelID:0. rType:0
+[2026-03-26T13:07:13.396 error Netsdk:63708 74972:72540 Generation2ProtocolSecureTransmit.cpp:661]Not find
+[2026-03-26T13:07:13.396 info Netsdk:63708 74972:72540 DevConfigEx.cpp:11689]IN SetupSession PORT=0 and PORT: 37777
+[2026-03-26T13:07:13.470 info Netsdk:63708 74972:72540 dhnetsdk.cpp:1354]Leave CLIENT_RealPlayEx. ret:-1296319344
+[2026-03-26T13:19:31.630 info Netsdk:63708 54792:74132 dhnetsdk.cpp:1075]Enter CLIENT_Logout. lLoginID:234862672.
+[2026-03-26T13:19:31.631 error Netsdk:63708 54792:74132 TPTCPClient.cpp:723]Device is not online, ip:192.168.1.23
+[2026-03-26T13:19:31.631 info Netsdk:63708 54792:74132 dhnetsdk.cpp:1097]Leave CLIENT_Logout. ret:1
+[2026-03-26T13:19:31.754 info Netsdk:63708 74972:72540 dhnetsdk.cpp:2090]Enter CLIENT_StopRealPlayEx. lRealHandle:-1296319344.
+[2026-03-26T13:19:31.770 info Netsdk:63708 74972:72540 dhnetsdk.cpp:2104]Leave CLIENT_StopRealPlayEx. ret:1
+[2026-03-26T13:19:31.770 info Netsdk:63708 74972:72540 dhnetsdk.cpp:1075]Enter CLIENT_Logout. lLoginID:-1296384880.
+[2026-03-26T13:19:31.770 error Netsdk:63708 74972:72540 TPTCPClient.cpp:723]Device is not online, ip:192.168.1.23
+[2026-03-26T13:19:31.771 info Netsdk:63708 74972:72540 dhnetsdk.cpp:1097]Leave CLIENT_Logout. ret:1
+Begin Time:2026-03-30T10:05:22.266
+[2026-03-30T10:05:22.266 info Netsdk:63708 12992:14876 AVNetSDKMgr.cpp:504]Load avnetsdk library dynamically
+[2026-03-30T10:05:22.284 info Netsdk:63708 12992:14876 AVNetSDKMgr.cpp:549]avnetsdk module handle: 00000204C8160000
+
+[2026-03-30T10:05:22.284 info Netsdk:63708 12992:14876 AVNetSDKMgr.cpp:823]Load configsdk dynamically
+[2026-03-30T10:05:22.287 info Netsdk:63708 12992:14876 dhnetsdk.cpp:352]Enter CLIENT_SetNetworkParam:[nWaittime=0, nConnectTime=0, nConnectTryNum=2, nSubConnectSpaceTime=0, nGetDevInfoTime=3000, nConnectBufSize=0, nGetConnInfoTime=0, nSearchRecordTime=0, nsubDisconnetTime=0, byNetType=0, byPlaybackBufSize=0, bDetectDisconnTime=0, bKeepLifeInterval=0, nPicBufSize=0].
+[2026-03-30T10:05:22.287 info Netsdk:63708 12992:14876 dhnetsdk.cpp:367]Leave CLIENT_SetNetworkParam.
+[2026-03-30T10:05:22.287 info Netsdk:63708 12992:14876 dhnetsdk.cpp:302]Enter CLIENT_SetAutoReconnect:[cbAutoConnect=00007FF7304F9E1C, dwUser=00000009DF4FE4C0].
+[2026-03-30T10:05:22.289 info Netsdk:63708 12992:14876 dhnetsdk.cpp:304]Leave CLIENT_SetAutoReconnect.
+[2026-03-30T10:05:22.487 info Netsdk:63708 12992:14876 dhnetsdk.cpp:991]Enter CLIENT_LoginWithHighLevelSecurity. pstInParam:00000009DF4FDA60, pstOutParam:00000009DF4FDB40.
+[2026-03-30T10:05:22.487 info Netsdk:63708 12992:14876 dhnetsdk.cpp:1007]IP:192.168.1.23, port:37777, SpeCap:0, CapParam:0000000000000000, TLSCap:0
+Begin Time:2026-03-30T10:05:22.576
+[2026-03-30T10:05:22.576 info Netsdk:63708 31208:42780 AVNetSDKMgr.cpp:504]Load avnetsdk library dynamically
+[2026-03-30T10:05:22.581 info Netsdk:63708 31208:42780 AVNetSDKMgr.cpp:549]avnetsdk module handle: 000002649EC60000
+
+[2026-03-30T10:05:22.581 info Netsdk:63708 31208:42780 AVNetSDKMgr.cpp:823]Load configsdk dynamically
+[2026-03-30T10:05:22.581 info Netsdk:63708 31208:42780 dhnetsdk.cpp:302]Enter CLIENT_SetAutoReconnect:[cbAutoConnect=00007FF7F52AF150, dwUser=000000ED4D32D300].
+[2026-03-30T10:05:22.581 info Netsdk:63708 31208:42780 dhnetsdk.cpp:304]Leave CLIENT_SetAutoReconnect.
+[2026-03-30T10:05:22.592 info Netsdk:63708 31208:42780 dhnetsdk.cpp:991]Enter CLIENT_LoginWithHighLevelSecurity. pstInParam:000000ED4D32C8A0, pstOutParam:000000ED4D32C980.
+[2026-03-30T10:05:22.592 info Netsdk:63708 31208:42780 dhnetsdk.cpp:1007]IP:192.168.1.23, port:37777, SpeCap:0, CapParam:0000000000000000, TLSCap:0
+[2026-03-30T10:05:22.681 info Netsdk:63708 12992:14876 dhnetsdk.cpp:1054]Leave CLIENT_LoginWithHighLevelSecurity. error:0, login ID:-1014646064.
+[2026-03-30T10:05:22.685 info Netsdk:63708 12992:14876 dhnetsdk.cpp:8181]Enter CLIENT_QueryDevState. [lLoginID=-1014646064, nType=4, pBuf=00000009DF4FCDE0, nBufLen=3076, pRetLen=00000009DF4FC180, waittime=3000.]
+[2026-03-30T10:05:22.693 info Netsdk:63708 12992:14876 dhnetsdk.cpp:8205]Leave CLIENT_QueryDevState.ret:1.
+[2026-03-30T10:05:22.753 info Netsdk:63708 31208:42780 dhnetsdk.cpp:1054]Leave CLIENT_LoginWithHighLevelSecurity. error:0, login ID:-1870284176.
+[2026-03-30T10:05:22.756 info Netsdk:63708 31208:42780 dhnetsdk.cpp:8181]Enter CLIENT_QueryDevState. [lLoginID=-1870284176, nType=82, pBuf=000000ED4D32C860, nBufLen=60, pRetLen=000000ED4D32C830, waittime=1000.]
+[2026-03-30T10:05:22.836 info Netsdk:63708 31208:42780 dhnetsdk.cpp:8205]Leave CLIENT_QueryDevState.ret:1.
+[2026-03-30T10:05:22.840 info Netsdk:63708 31208:42780 dhnetsdk.cpp:1288]Enter CLIENT_RealPlayEx. lLoginID:-1870284176. nChannelID:0. rType:0
+[2026-03-30T10:05:23.121 error Netsdk:63708 31208:42780 Generation2ProtocolSecureTransmit.cpp:661]Not find
+[2026-03-30T10:05:23.121 info Netsdk:63708 31208:42780 DevConfigEx.cpp:11689]IN SetupSession PORT=0 and PORT: 37777
+[2026-03-30T10:05:23.180 info Netsdk:63708 31208:42780 dhnetsdk.cpp:1354]Leave CLIENT_RealPlayEx. ret:-1870231840
+[2026-03-30T10:06:31.285 info Netsdk:63708 12992:14876 dhnetsdk.cpp:1075]Enter CLIENT_Logout. lLoginID:-1014646064.
+[2026-03-30T10:06:31.285 error Netsdk:63708 12992:14876 TPTCPClient.cpp:723]Device is not online, ip:192.168.1.23
+[2026-03-30T10:06:31.285 info Netsdk:63708 12992:14876 dhnetsdk.cpp:1097]Leave CLIENT_Logout. ret:1
+[2026-03-30T10:06:31.567 info Netsdk:63708 31208:42780 dhnetsdk.cpp:2090]Enter CLIENT_StopRealPlayEx. lRealHandle:-1870231840.
+[2026-03-30T10:06:31.573 info Netsdk:63708 31208:42780 dhnetsdk.cpp:2104]Leave CLIENT_StopRealPlayEx. ret:1
+[2026-03-30T10:06:31.573 info Netsdk:63708 31208:42780 dhnetsdk.cpp:1075]Enter CLIENT_Logout. lLoginID:-1870284176.
+[2026-03-30T10:06:31.573 error Netsdk:63708 31208:42780 TPTCPClient.cpp:723]Device is not online, ip:192.168.1.23
+[2026-03-30T10:06:31.573 info Netsdk:63708 31208:42780 dhnetsdk.cpp:1097]Leave CLIENT_Logout. ret:1
+Begin Time:2026-03-30T10:07:17.117
+[2026-03-30T10:07:17.117 info Netsdk:63708 48696:7392 AVNetSDKMgr.cpp:504]Load avnetsdk library dynamically
+[2026-03-30T10:07:17.142 info Netsdk:63708 48696:7392 AVNetSDKMgr.cpp:549]avnetsdk module handle: 000001FAF9C70000
+
+[2026-03-30T10:07:17.142 info Netsdk:63708 48696:7392 AVNetSDKMgr.cpp:823]Load configsdk dynamically
+[2026-03-30T10:07:17.148 info Netsdk:63708 48696:7392 dhnetsdk.cpp:352]Enter CLIENT_SetNetworkParam:[nWaittime=0, nConnectTime=0, nConnectTryNum=2, nSubConnectSpaceTime=0, nGetDevInfoTime=3000, nConnectBufSize=0, nGetConnInfoTime=0, nSearchRecordTime=0, nsubDisconnetTime=0, byNetType=0, byPlaybackBufSize=0, bDetectDisconnTime=0, bKeepLifeInterval=0, nPicBufSize=0].
+[2026-03-30T10:07:17.148 info Netsdk:63708 48696:7392 dhnetsdk.cpp:367]Leave CLIENT_SetNetworkParam.
+[2026-03-30T10:07:17.148 info Netsdk:63708 48696:7392 dhnetsdk.cpp:302]Enter CLIENT_SetAutoReconnect:[cbAutoConnect=00007FF7304F9E1C, dwUser=000000A8604FE9A0].
+[2026-03-30T10:07:17.148 info Netsdk:63708 48696:7392 dhnetsdk.cpp:304]Leave CLIENT_SetAutoReconnect.
+Begin Time:2026-03-30T10:07:17.336
+[2026-03-30T10:07:17.336 info Netsdk:63708 47132:40356 AVNetSDKMgr.cpp:504]Load avnetsdk library dynamically
+[2026-03-30T10:07:17.339 info Netsdk:63708 47132:40356 AVNetSDKMgr.cpp:549]avnetsdk module handle: 000001DEC56B0000
+
+[2026-03-30T10:07:17.339 info Netsdk:63708 47132:40356 AVNetSDKMgr.cpp:823]Load configsdk dynamically
+[2026-03-30T10:07:17.340 info Netsdk:63708 47132:40356 dhnetsdk.cpp:302]Enter CLIENT_SetAutoReconnect:[cbAutoConnect=00007FF7F52AF150, dwUser=000000B4D24FCF00].
+[2026-03-30T10:07:17.340 info Netsdk:63708 47132:40356 dhnetsdk.cpp:304]Leave CLIENT_SetAutoReconnect.
+[2026-03-30T10:07:17.370 info Netsdk:63708 47132:40356 dhnetsdk.cpp:991]Enter CLIENT_LoginWithHighLevelSecurity. pstInParam:000000B4D24FC4A0, pstOutParam:000000B4D24FC580.
+[2026-03-30T10:07:17.370 info Netsdk:63708 47132:40356 dhnetsdk.cpp:1007]IP:192.168.1.23, port:37777, SpeCap:0, CapParam:0000000000000000, TLSCap:0
+[2026-03-30T10:07:17.381 info Netsdk:63708 48696:7392 dhnetsdk.cpp:991]Enter CLIENT_LoginWithHighLevelSecurity. pstInParam:000000A8604FDF40, pstOutParam:000000A8604FE020.
+[2026-03-30T10:07:17.381 info Netsdk:63708 48696:7392 dhnetsdk.cpp:1007]IP:192.168.1.23, port:37777, SpeCap:0, CapParam:0000000000000000, TLSCap:0
+[2026-03-30T10:07:17.536 info Netsdk:63708 47132:40356 dhnetsdk.cpp:1054]Leave CLIENT_LoginWithHighLevelSecurity. error:0, login ID:-1156006256.
+[2026-03-30T10:07:17.538 info Netsdk:63708 47132:40356 dhnetsdk.cpp:8181]Enter CLIENT_QueryDevState. [lLoginID=-1156006256, nType=82, pBuf=000000B4D24FC460, nBufLen=60, pRetLen=000000B4D24FC430, waittime=1000.]
+[2026-03-30T10:07:17.555 info Netsdk:63708 48696:7392 dhnetsdk.cpp:1054]Leave CLIENT_LoginWithHighLevelSecurity. error:0, login ID:-136134576.
+[2026-03-30T10:07:17.564 info Netsdk:63708 48696:7392 dhnetsdk.cpp:8181]Enter CLIENT_QueryDevState. [lLoginID=-136134576, nType=4, pBuf=000000A8604FD2C0, nBufLen=3076, pRetLen=000000A8604FC660, waittime=3000.]
+[2026-03-30T10:07:17.675 info Netsdk:63708 47132:40356 dhnetsdk.cpp:8205]Leave CLIENT_QueryDevState.ret:1.
+[2026-03-30T10:07:17.679 info Netsdk:63708 47132:40356 dhnetsdk.cpp:1288]Enter CLIENT_RealPlayEx. lLoginID:-1156006256. nChannelID:0. rType:0
+[2026-03-30T10:07:17.814 info Netsdk:63708 48696:7392 dhnetsdk.cpp:8205]Leave CLIENT_QueryDevState.ret:1.
+[2026-03-30T10:07:17.989 error Netsdk:63708 47132:40356 Generation2ProtocolSecureTransmit.cpp:661]Not find
+[2026-03-30T10:07:17.989 info Netsdk:63708 47132:40356 DevConfigEx.cpp:11689]IN SetupSession PORT=0 and PORT: 37777
+[2026-03-30T10:07:18.093 info Netsdk:63708 47132:40356 dhnetsdk.cpp:1354]Leave CLIENT_RealPlayEx. ret:-1155931952
+[2026-03-30T10:08:13.173 info Netsdk:63708 48696:7392 dhnetsdk.cpp:1075]Enter CLIENT_Logout. lLoginID:-136134576.
+[2026-03-30T10:08:13.174 error Netsdk:63708 48696:7392 TPTCPClient.cpp:723]Device is not online, ip:192.168.1.23
+[2026-03-30T10:08:13.174 info Netsdk:63708 48696:7392 dhnetsdk.cpp:1097]Leave CLIENT_Logout. ret:1
+[2026-03-30T10:08:13.343 info Netsdk:63708 47132:40356 dhnetsdk.cpp:2090]Enter CLIENT_StopRealPlayEx. lRealHandle:-1155931952.
+[2026-03-30T10:08:13.354 info Netsdk:63708 47132:40356 dhnetsdk.cpp:2104]Leave CLIENT_StopRealPlayEx. ret:1
+[2026-03-30T10:08:13.354 info Netsdk:63708 47132:40356 dhnetsdk.cpp:1075]Enter CLIENT_Logout. lLoginID:-1156006256.
+[2026-03-30T10:08:13.354 error Netsdk:63708 47132:40356 TPTCPClient.cpp:723]Device is not online, ip:192.168.1.23
+[2026-03-30T10:08:13.354 info Netsdk:63708 47132:40356 dhnetsdk.cpp:1097]Leave CLIENT_Logout. ret:1
+Begin Time:2026-03-30T13:17:51.272
+[2026-03-30T13:17:51.272 info Netsdk:63708 50124:53528 AVNetSDKMgr.cpp:504]Load avnetsdk library dynamically
+[2026-03-30T13:17:51.305 info Netsdk:63708 50124:53528 AVNetSDKMgr.cpp:549]avnetsdk module handle: 0000022543160000
+
+[2026-03-30T13:17:51.305 info Netsdk:63708 50124:53528 AVNetSDKMgr.cpp:823]Load configsdk dynamically
+[2026-03-30T13:17:51.313 info Netsdk:63708 50124:53528 dhnetsdk.cpp:352]Enter CLIENT_SetNetworkParam:[nWaittime=0, nConnectTime=0, nConnectTryNum=2, nSubConnectSpaceTime=0, nGetDevInfoTime=3000, nConnectBufSize=0, nGetConnInfoTime=0, nSearchRecordTime=0, nsubDisconnetTime=0, byNetType=0, byPlaybackBufSize=0, bDetectDisconnTime=0, bKeepLifeInterval=0, nPicBufSize=0].
+[2026-03-30T13:17:51.313 info Netsdk:63708 50124:53528 dhnetsdk.cpp:367]Leave CLIENT_SetNetworkParam.
+[2026-03-30T13:17:51.313 info Netsdk:63708 50124:53528 dhnetsdk.cpp:302]Enter CLIENT_SetAutoReconnect:[cbAutoConnect=00007FF6EAE69E1C, dwUser=0000006DFBBDEB20].
+[2026-03-30T13:17:51.313 info Netsdk:63708 50124:53528 dhnetsdk.cpp:304]Leave CLIENT_SetAutoReconnect.
+[2026-03-30T13:17:51.699 info Netsdk:63708 50124:53528 dhnetsdk.cpp:991]Enter CLIENT_LoginWithHighLevelSecurity. pstInParam:0000006DFBBDE0C0, pstOutParam:0000006DFBBDE1A0.
+[2026-03-30T13:17:51.699 info Netsdk:63708 50124:53528 dhnetsdk.cpp:1007]IP:192.168.1.23, port:37777, SpeCap:0, CapParam:0000000000000000, TLSCap:0
+Begin Time:2026-03-30T13:17:51.735
+[2026-03-30T13:17:51.735 info Netsdk:63708 53688:46804 AVNetSDKMgr.cpp:504]Load avnetsdk library dynamically
+[2026-03-30T13:17:51.739 info Netsdk:63708 53688:46804 AVNetSDKMgr.cpp:549]avnetsdk module handle: 0000020C4BFF0000
+
+[2026-03-30T13:17:51.739 info Netsdk:63708 53688:46804 AVNetSDKMgr.cpp:823]Load configsdk dynamically
+[2026-03-30T13:17:51.740 info Netsdk:63708 53688:46804 dhnetsdk.cpp:302]Enter CLIENT_SetAutoReconnect:[cbAutoConnect=00007FF66EF3F150, dwUser=00000027D06FCD10].
+[2026-03-30T13:17:51.740 info Netsdk:63708 53688:46804 dhnetsdk.cpp:304]Leave CLIENT_SetAutoReconnect.
+[2026-03-30T13:17:51.763 info Netsdk:63708 53688:46804 dhnetsdk.cpp:991]Enter CLIENT_LoginWithHighLevelSecurity. pstInParam:00000027D06FC2B0, pstOutParam:00000027D06FC390.
+[2026-03-30T13:17:51.763 info Netsdk:63708 53688:46804 dhnetsdk.cpp:1007]IP:192.168.1.23, port:37777, SpeCap:0, CapParam:0000000000000000, TLSCap:0
+[2026-03-30T13:17:51.916 info Netsdk:63708 50124:53528 dhnetsdk.cpp:1054]Leave CLIENT_LoginWithHighLevelSecurity. error:0, login ID:1113514656.
+[2026-03-30T13:17:51.923 info Netsdk:63708 50124:53528 dhnetsdk.cpp:8181]Enter CLIENT_QueryDevState. [lLoginID=1113514656, nType=4, pBuf=0000006DFBBDD440, nBufLen=3076, pRetLen=0000006DFBBDC7E0, waittime=3000.]
+[2026-03-30T13:17:51.934 info Netsdk:63708 50124:53528 dhnetsdk.cpp:8205]Leave CLIENT_QueryDevState.ret:1.
+[2026-03-30T13:17:51.978 info Netsdk:63708 53688:46804 dhnetsdk.cpp:1054]Leave CLIENT_LoginWithHighLevelSecurity. error:0, login ID:1087487632.
+[2026-03-30T13:17:51.983 info Netsdk:63708 53688:46804 dhnetsdk.cpp:8181]Enter CLIENT_QueryDevState. [lLoginID=1087487632, nType=82, pBuf=00000027D06FC270, nBufLen=60, pRetLen=00000027D06FC240, waittime=1000.]
+[2026-03-30T13:17:52.295 info Netsdk:63708 53688:46804 dhnetsdk.cpp:8205]Leave CLIENT_QueryDevState.ret:1.
+[2026-03-30T13:17:52.304 info Netsdk:63708 53688:46804 dhnetsdk.cpp:1288]Enter CLIENT_RealPlayEx. lLoginID:1087487632. nChannelID:0. rType:0
+[2026-03-30T13:17:53.232 error Netsdk:63708 53688:46804 Generation2ProtocolSecureTransmit.cpp:661]Not find
+[2026-03-30T13:17:53.232 info Netsdk:63708 53688:46804 DevConfigEx.cpp:11689]IN SetupSession PORT=0 and PORT: 37777
+[2026-03-30T13:17:53.396 info Netsdk:63708 53688:46804 dhnetsdk.cpp:1354]Leave CLIENT_RealPlayEx. ret:1282356064
+[2026-03-30T13:18:35.744 info Netsdk:63708 53688:46804 dhnetsdk.cpp:2090]Enter CLIENT_StopRealPlayEx. lRealHandle:1282356064.
+[2026-03-30T13:18:35.757 info Netsdk:63708 53688:46804 dhnetsdk.cpp:2104]Leave CLIENT_StopRealPlayEx. ret:1
+[2026-03-30T13:18:35.758 info Netsdk:63708 53688:46804 dhnetsdk.cpp:1075]Enter CLIENT_Logout. lLoginID:1087487632.
+[2026-03-30T13:18:35.762 error Netsdk:63708 53688:46804 TPTCPClient.cpp:723]Device is not online, ip:192.168.1.23
+[2026-03-30T13:18:35.762 info Netsdk:63708 53688:46804 dhnetsdk.cpp:1097]Leave CLIENT_Logout. ret:1
+[2026-03-30T13:18:36.315 info Netsdk:63708 50124:53528 dhnetsdk.cpp:1075]Enter CLIENT_Logout. lLoginID:1113514656.
+[2026-03-30T13:18:36.316 error Netsdk:63708 50124:53528 TPTCPClient.cpp:723]Device is not online, ip:192.168.1.23
+[2026-03-30T13:18:36.316 info Netsdk:63708 50124:53528 dhnetsdk.cpp:1097]Leave CLIENT_Logout. ret:1
+Begin Time:2026-03-30T13:19:05.340
+[2026-03-30T13:19:05.340 info Netsdk:63708 50308:53332 AVNetSDKMgr.cpp:504]Load avnetsdk library dynamically
+[2026-03-30T13:19:05.361 info Netsdk:63708 50308:53332 AVNetSDKMgr.cpp:549]avnetsdk module handle: 0000029642E50000
+
+[2026-03-30T13:19:05.361 info Netsdk:63708 50308:53332 AVNetSDKMgr.cpp:823]Load configsdk dynamically
+[2026-03-30T13:19:05.368 info Netsdk:63708 50308:53332 dhnetsdk.cpp:352]Enter CLIENT_SetNetworkParam:[nWaittime=0, nConnectTime=0, nConnectTryNum=2, nSubConnectSpaceTime=0, nGetDevInfoTime=3000, nConnectBufSize=0, nGetConnInfoTime=0, nSearchRecordTime=0, nsubDisconnetTime=0, byNetType=0, byPlaybackBufSize=0, bDetectDisconnTime=0, bKeepLifeInterval=0, nPicBufSize=0].
+[2026-03-30T13:19:05.368 info Netsdk:63708 50308:53332 dhnetsdk.cpp:367]Leave CLIENT_SetNetworkParam.
+[2026-03-30T13:19:05.368 info Netsdk:63708 50308:53332 dhnetsdk.cpp:302]Enter CLIENT_SetAutoReconnect:[cbAutoConnect=00007FF6EAE69E1C, dwUser=000000D3D575E900].
+[2026-03-30T13:19:05.368 info Netsdk:63708 50308:53332 dhnetsdk.cpp:304]Leave CLIENT_SetAutoReconnect.
+Begin Time:2026-03-30T13:19:05.629
+[2026-03-30T13:19:05.629 info Netsdk:63708 53964:53596 AVNetSDKMgr.cpp:504]Load avnetsdk library dynamically
+[2026-03-30T13:19:05.632 info Netsdk:63708 53964:53596 AVNetSDKMgr.cpp:549]avnetsdk module handle: 000002F4FBDD0000
+
+[2026-03-30T13:19:05.632 info Netsdk:63708 53964:53596 AVNetSDKMgr.cpp:823]Load configsdk dynamically
+[2026-03-30T13:19:05.633 info Netsdk:63708 53964:53596 dhnetsdk.cpp:302]Enter CLIENT_SetAutoReconnect:[cbAutoConnect=00007FF66EF3F150, dwUser=000000F85EAFCE90].
+[2026-03-30T13:19:05.633 info Netsdk:63708 53964:53596 dhnetsdk.cpp:304]Leave CLIENT_SetAutoReconnect.
+[2026-03-30T13:19:05.667 info Netsdk:63708 53964:53596 dhnetsdk.cpp:991]Enter CLIENT_LoginWithHighLevelSecurity. pstInParam:000000F85EAFC430, pstOutParam:000000F85EAFC510.
+[2026-03-30T13:19:05.667 info Netsdk:63708 53964:53596 dhnetsdk.cpp:1007]IP:192.168.1.23, port:37777, SpeCap:0, CapParam:0000000000000000, TLSCap:0
+[2026-03-30T13:19:05.682 info Netsdk:63708 50308:53332 dhnetsdk.cpp:991]Enter CLIENT_LoginWithHighLevelSecurity. pstInParam:000000D3D575DEA0, pstOutParam:000000D3D575DF80.
+[2026-03-30T13:19:05.682 info Netsdk:63708 50308:53332 dhnetsdk.cpp:1007]IP:192.168.1.23, port:37777, SpeCap:0, CapParam:0000000000000000, TLSCap:0
+[2026-03-30T13:19:05.860 info Netsdk:63708 53964:53596 dhnetsdk.cpp:1054]Leave CLIENT_LoginWithHighLevelSecurity. error:0, login ID:-253642128.
+[2026-03-30T13:19:05.869 info Netsdk:63708 53964:53596 dhnetsdk.cpp:8181]Enter CLIENT_QueryDevState. [lLoginID=-253642128, nType=82, pBuf=000000F85EAFC3F0, nBufLen=60, pRetLen=000000F85EAFC3C0, waittime=1000.]
+[2026-03-30T13:19:05.890 info Netsdk:63708 50308:53332 dhnetsdk.cpp:1054]Leave CLIENT_LoginWithHighLevelSecurity. error:0, login ID:1043839536.
+[2026-03-30T13:19:05.903 info Netsdk:63708 50308:53332 dhnetsdk.cpp:8181]Enter CLIENT_QueryDevState. [lLoginID=1043839536, nType=4, pBuf=000000D3D575D220, nBufLen=3076, pRetLen=000000D3D575C5C0, waittime=3000.]
+[2026-03-30T13:19:05.919 info Netsdk:63708 50308:53332 dhnetsdk.cpp:8205]Leave CLIENT_QueryDevState.ret:1.
+[2026-03-30T13:19:05.970 info Netsdk:63708 53964:53596 dhnetsdk.cpp:8205]Leave CLIENT_QueryDevState.ret:1.
+[2026-03-30T13:19:05.984 info Netsdk:63708 53964:53596 dhnetsdk.cpp:1288]Enter CLIENT_RealPlayEx. lLoginID:-253642128. nChannelID:0. rType:0
+[2026-03-30T13:19:06.421 error Netsdk:63708 53964:53596 Generation2ProtocolSecureTransmit.cpp:661]Not find
+[2026-03-30T13:19:06.421 info Netsdk:63708 53964:53596 DevConfigEx.cpp:11689]IN SetupSession PORT=0 and PORT: 37777
+[2026-03-30T13:19:06.512 info Netsdk:63708 53964:53596 dhnetsdk.cpp:1354]Leave CLIENT_RealPlayEx. ret:-253612944
+[2026-03-30T14:04:22.540 info Netsdk:63708 53964:53596 dhnetsdk.cpp:2090]Enter CLIENT_StopRealPlayEx. lRealHandle:-253612944.
+[2026-03-30T14:04:22.540 info Netsdk:63708 50308:53332 dhnetsdk.cpp:1075]Enter CLIENT_Logout. lLoginID:1043839536.
+[2026-03-30T14:04:22.541 error Netsdk:63708 50308:53332 TPTCPClient.cpp:723]Device is not online, ip:192.168.1.23
+[2026-03-30T14:04:22.541 info Netsdk:63708 50308:53332 dhnetsdk.cpp:1097]Leave CLIENT_Logout. ret:1
+[2026-03-30T14:04:22.548 info Netsdk:63708 53964:53596 dhnetsdk.cpp:2104]Leave CLIENT_StopRealPlayEx. ret:1
+[2026-03-30T14:04:22.548 info Netsdk:63708 53964:53596 dhnetsdk.cpp:1075]Enter CLIENT_Logout. lLoginID:-253642128.
+[2026-03-30T14:04:22.549 error Netsdk:63708 53964:53596 TPTCPClient.cpp:723]Device is not online, ip:192.168.1.23
+[2026-03-30T14:04:22.549 info Netsdk:63708 53964:53596 dhnetsdk.cpp:1097]Leave CLIENT_Logout. ret:1
+Begin Time:2026-03-30T14:04:32.443
+[2026-03-30T14:04:32.443 info Netsdk:63708 56248:44416 AVNetSDKMgr.cpp:504]Load avnetsdk library dynamically
+[2026-03-30T14:04:32.474 info Netsdk:63708 56248:44416 AVNetSDKMgr.cpp:549]avnetsdk module handle: 00000260FA290000
+
+[2026-03-30T14:04:32.475 info Netsdk:63708 56248:44416 AVNetSDKMgr.cpp:823]Load configsdk dynamically
+[2026-03-30T14:04:32.479 info Netsdk:63708 56248:44416 dhnetsdk.cpp:352]Enter CLIENT_SetNetworkParam:[nWaittime=0, nConnectTime=0, nConnectTryNum=2, nSubConnectSpaceTime=0, nGetDevInfoTime=3000, nConnectBufSize=0, nGetConnInfoTime=0, nSearchRecordTime=0, nsubDisconnetTime=0, byNetType=0, byPlaybackBufSize=0, bDetectDisconnTime=0, bKeepLifeInterval=0, nPicBufSize=0].
+[2026-03-30T14:04:32.480 info Netsdk:63708 56248:44416 dhnetsdk.cpp:367]Leave CLIENT_SetNetworkParam.
+[2026-03-30T14:04:32.480 info Netsdk:63708 56248:44416 dhnetsdk.cpp:302]Enter CLIENT_SetAutoReconnect:[cbAutoConnect=00007FF6EAE69E1C, dwUser=0000009C28B4E8D0].
+[2026-03-30T14:04:32.480 info Netsdk:63708 56248:44416 dhnetsdk.cpp:304]Leave CLIENT_SetAutoReconnect.
+Begin Time:2026-03-30T14:04:32.672
+[2026-03-30T14:04:32.672 info Netsdk:63708 40432:45632 AVNetSDKMgr.cpp:504]Load avnetsdk library dynamically
+[2026-03-30T14:04:32.675 info Netsdk:63708 40432:45632 AVNetSDKMgr.cpp:549]avnetsdk module handle: 00000223F23C0000
+
+[2026-03-30T14:04:32.675 info Netsdk:63708 40432:45632 AVNetSDKMgr.cpp:823]Load configsdk dynamically
+[2026-03-30T14:04:32.676 info Netsdk:63708 40432:45632 dhnetsdk.cpp:302]Enter CLIENT_SetAutoReconnect:[cbAutoConnect=00007FF66EF3F150, dwUser=000000ECE11ACF10].
+[2026-03-30T14:04:32.676 info Netsdk:63708 40432:45632 dhnetsdk.cpp:304]Leave CLIENT_SetAutoReconnect.
+[2026-03-30T14:04:32.688 info Netsdk:63708 40432:45632 dhnetsdk.cpp:991]Enter CLIENT_LoginWithHighLevelSecurity. pstInParam:000000ECE11AC4B0, pstOutParam:000000ECE11AC590.
+[2026-03-30T14:04:32.688 info Netsdk:63708 40432:45632 dhnetsdk.cpp:1007]IP:192.168.1.23, port:37777, SpeCap:0, CapParam:0000000000000000, TLSCap:0
+[2026-03-30T14:04:32.765 info Netsdk:63708 56248:44416 dhnetsdk.cpp:991]Enter CLIENT_LoginWithHighLevelSecurity. pstInParam:0000009C28B4DE70, pstOutParam:0000009C28B4DF50.
+[2026-03-30T14:04:32.765 info Netsdk:63708 56248:44416 dhnetsdk.cpp:1007]IP:192.168.1.23, port:37777, SpeCap:0, CapParam:0000000000000000, TLSCap:0
+[2026-03-30T14:04:33.049 info Netsdk:63708 40432:45632 dhnetsdk.cpp:1054]Leave CLIENT_LoginWithHighLevelSecurity. error:0, login ID:-462243216.
+[2026-03-30T14:04:33.051 info Netsdk:63708 40432:45632 dhnetsdk.cpp:8181]Enter CLIENT_QueryDevState. [lLoginID=-462243216, nType=82, pBuf=000000ECE11AC470, nBufLen=60, pRetLen=000000ECE11AC440, waittime=1000.]
+[2026-03-30T14:04:33.103 info Netsdk:63708 56248:44416 dhnetsdk.cpp:1054]Leave CLIENT_LoginWithHighLevelSecurity. error:0, login ID:-152190384.
+[2026-03-30T14:04:33.107 info Netsdk:63708 56248:44416 dhnetsdk.cpp:8181]Enter CLIENT_QueryDevState. [lLoginID=-152190384, nType=4, pBuf=0000009C28B4D1F0, nBufLen=3076, pRetLen=0000009C28B4C590, waittime=3000.]
+[2026-03-30T14:04:33.126 info Netsdk:63708 56248:44416 dhnetsdk.cpp:8205]Leave CLIENT_QueryDevState.ret:1.
+[2026-03-30T14:04:33.192 info Netsdk:63708 40432:45632 dhnetsdk.cpp:8205]Leave CLIENT_QueryDevState.ret:1.
+[2026-03-30T14:04:33.197 info Netsdk:63708 40432:45632 dhnetsdk.cpp:1288]Enter CLIENT_RealPlayEx. lLoginID:-462243216. nChannelID:0. rType:0
+[2026-03-30T14:04:34.060 error Netsdk:63708 40432:45632 Generation2ProtocolSecureTransmit.cpp:661]Not find
+[2026-03-30T14:04:34.060 info Netsdk:63708 40432:45632 DevConfigEx.cpp:11689]IN SetupSession PORT=0 and PORT: 37777
+[2026-03-30T14:04:34.133 info Netsdk:63708 40432:45632 dhnetsdk.cpp:1354]Leave CLIENT_RealPlayEx. ret:-462214032
+[2026-03-30T14:07:32.500 info Netsdk:63708 56248:44416 dhnetsdk.cpp:1075]Enter CLIENT_Logout. lLoginID:-152190384.
+[2026-03-30T14:07:32.501 error Netsdk:63708 56248:44416 TPTCPClient.cpp:723]Device is not online, ip:192.168.1.23
+[2026-03-30T14:07:32.501 info Netsdk:63708 56248:44416 dhnetsdk.cpp:1097]Leave CLIENT_Logout. ret:1
+[2026-03-30T14:07:32.704 info Netsdk:63708 40432:45632 dhnetsdk.cpp:2090]Enter CLIENT_StopRealPlayEx. lRealHandle:-462214032.
+[2026-03-30T14:07:32.710 info Netsdk:63708 40432:45632 dhnetsdk.cpp:2104]Leave CLIENT_StopRealPlayEx. ret:1
+[2026-03-30T14:07:32.710 info Netsdk:63708 40432:45632 dhnetsdk.cpp:1075]Enter CLIENT_Logout. lLoginID:-462243216.
+[2026-03-30T14:07:32.711 error Netsdk:63708 40432:45632 TPTCPClient.cpp:723]Device is not online, ip:192.168.1.23
+[2026-03-30T14:07:32.711 info Netsdk:63708 40432:45632 dhnetsdk.cpp:1097]Leave CLIENT_Logout. ret:1
+Begin Time:2026-03-30T15:01:39.040
+[2026-03-30T15:01:39.040 info Netsdk:63708 52420:51328 AVNetSDKMgr.cpp:504]Load avnetsdk library dynamically
+[2026-03-30T15:01:39.061 info Netsdk:63708 52420:51328 AVNetSDKMgr.cpp:549]avnetsdk module handle: 0000017FA2B80000
+
+[2026-03-30T15:01:39.061 info Netsdk:63708 52420:51328 AVNetSDKMgr.cpp:823]Load configsdk dynamically
+[2026-03-30T15:01:39.065 info Netsdk:63708 52420:51328 dhnetsdk.cpp:352]Enter CLIENT_SetNetworkParam:[nWaittime=0, nConnectTime=0, nConnectTryNum=2, nSubConnectSpaceTime=0, nGetDevInfoTime=3000, nConnectBufSize=0, nGetConnInfoTime=0, nSearchRecordTime=0, nsubDisconnetTime=0, byNetType=0, byPlaybackBufSize=0, bDetectDisconnTime=0, bKeepLifeInterval=0, nPicBufSize=0].
+[2026-03-30T15:01:39.065 info Netsdk:63708 52420:51328 dhnetsdk.cpp:367]Leave CLIENT_SetNetworkParam.
+[2026-03-30T15:01:39.065 info Netsdk:63708 52420:51328 dhnetsdk.cpp:302]Enter CLIENT_SetAutoReconnect:[cbAutoConnect=00007FF760C39E1C, dwUser=0000006123F6EB80].
+[2026-03-30T15:01:39.065 info Netsdk:63708 52420:51328 dhnetsdk.cpp:304]Leave CLIENT_SetAutoReconnect.
+Begin Time:2026-03-30T15:01:39.316
+[2026-03-30T15:01:39.316 info Netsdk:63708 48404:50284 AVNetSDKMgr.cpp:504]Load avnetsdk library dynamically
+[2026-03-30T15:01:39.321 info Netsdk:63708 48404:50284 AVNetSDKMgr.cpp:549]avnetsdk module handle: 0000015D71DA0000
+
+[2026-03-30T15:01:39.321 info Netsdk:63708 48404:50284 AVNetSDKMgr.cpp:823]Load configsdk dynamically
+[2026-03-30T15:01:39.323 info Netsdk:63708 48404:50284 dhnetsdk.cpp:302]Enter CLIENT_SetAutoReconnect:[cbAutoConnect=00007FF665A4F150, dwUser=000000076B93CD90].
+[2026-03-30T15:01:39.323 info Netsdk:63708 48404:50284 dhnetsdk.cpp:304]Leave CLIENT_SetAutoReconnect.
+[2026-03-30T15:01:39.343 info Netsdk:63708 48404:50284 dhnetsdk.cpp:991]Enter CLIENT_LoginWithHighLevelSecurity. pstInParam:000000076B93C330, pstOutParam:000000076B93C410.
+[2026-03-30T15:01:39.343 info Netsdk:63708 48404:50284 dhnetsdk.cpp:1007]IP:192.168.1.23, port:37777, SpeCap:0, CapParam:0000000000000000, TLSCap:0
+[2026-03-30T15:01:39.356 info Netsdk:63708 52420:51328 dhnetsdk.cpp:991]Enter CLIENT_LoginWithHighLevelSecurity. pstInParam:0000006123F6E120, pstOutParam:0000006123F6E200.
+[2026-03-30T15:01:39.356 info Netsdk:63708 52420:51328 dhnetsdk.cpp:1007]IP:192.168.1.23, port:37777, SpeCap:0, CapParam:0000000000000000, TLSCap:0
+[2026-03-30T15:01:39.657 info Netsdk:63708 48404:50284 dhnetsdk.cpp:1054]Leave CLIENT_LoginWithHighLevelSecurity. error:0, login ID:1701821040.
+[2026-03-30T15:01:39.660 info Netsdk:63708 48404:50284 dhnetsdk.cpp:8181]Enter CLIENT_QueryDevState. [lLoginID=1701821040, nType=82, pBuf=000000076B93C2F0, nBufLen=60, pRetLen=000000076B93C2C0, waittime=1000.]
+[2026-03-30T15:01:39.665 info Netsdk:63708 52420:51328 dhnetsdk.cpp:1054]Leave CLIENT_LoginWithHighLevelSecurity. error:0, login ID:-1612464048.
+[2026-03-30T15:01:39.670 info Netsdk:63708 52420:51328 dhnetsdk.cpp:8181]Enter CLIENT_QueryDevState. [lLoginID=-1612464048, nType=4, pBuf=0000006123F6D4A0, nBufLen=3076, pRetLen=0000006123F6C840, waittime=3000.]
+[2026-03-30T15:01:39.682 info Netsdk:63708 52420:51328 dhnetsdk.cpp:8205]Leave CLIENT_QueryDevState.ret:1.
+[2026-03-30T15:01:39.758 info Netsdk:63708 48404:50284 dhnetsdk.cpp:8205]Leave CLIENT_QueryDevState.ret:1.
+[2026-03-30T15:01:39.766 info Netsdk:63708 48404:50284 dhnetsdk.cpp:1288]Enter CLIENT_RealPlayEx. lLoginID:1701821040. nChannelID:0. rType:0
+[2026-03-30T15:01:40.558 error Netsdk:63708 48404:50284 Generation2ProtocolSecureTransmit.cpp:661]Not find
+[2026-03-30T15:01:40.558 info Netsdk:63708 48404:50284 DevConfigEx.cpp:11689]IN SetupSession PORT=0 and PORT: 37777
+[2026-03-30T15:01:40.647 info Netsdk:63708 48404:50284 dhnetsdk.cpp:1354]Leave CLIENT_RealPlayEx. ret:1701898864
+[2026-03-30T15:02:45.071 info Netsdk:63708 52420:51328 dhnetsdk.cpp:1075]Enter CLIENT_Logout. lLoginID:-1612464048.
+[2026-03-30T15:02:45.082 error Netsdk:63708 52420:51328 TPTCPClient.cpp:723]Device is not online, ip:192.168.1.23
+[2026-03-30T15:02:45.082 info Netsdk:63708 52420:51328 dhnetsdk.cpp:1097]Leave CLIENT_Logout. ret:1
+[2026-03-30T15:02:45.326 info Netsdk:63708 48404:50284 dhnetsdk.cpp:2090]Enter CLIENT_StopRealPlayEx. lRealHandle:1701898864.
+[2026-03-30T15:02:45.342 info Netsdk:63708 48404:50284 dhnetsdk.cpp:2104]Leave CLIENT_StopRealPlayEx. ret:1
+[2026-03-30T15:02:45.342 info Netsdk:63708 48404:50284 dhnetsdk.cpp:1075]Enter CLIENT_Logout. lLoginID:1701821040.
+[2026-03-30T15:02:45.342 error Netsdk:63708 48404:50284 TPTCPClient.cpp:723]Device is not online, ip:192.168.1.23
+[2026-03-30T15:02:45.344 info Netsdk:63708 48404:50284 dhnetsdk.cpp:1097]Leave CLIENT_Logout. ret:1
+Begin Time:2026-04-14T09:39:44.554
+[2026-04-14T09:39:44.554 info Netsdk:63708 161840:169480 AVNetSDKMgr.cpp:504]Load avnetsdk library dynamically
+[2026-04-14T09:39:44.578 info Netsdk:63708 161840:169480 AVNetSDKMgr.cpp:549]avnetsdk module handle: 000002AFC39A0000
+
+[2026-04-14T09:39:44.580 info Netsdk:63708 161840:169480 AVNetSDKMgr.cpp:823]Load configsdk dynamically
+[2026-04-14T09:39:44.588 info Netsdk:63708 161840:169480 dhnetsdk.cpp:352]Enter CLIENT_SetNetworkParam:[nWaittime=0, nConnectTime=0, nConnectTryNum=2, nSubConnectSpaceTime=0, nGetDevInfoTime=3000, nConnectBufSize=0, nGetConnInfoTime=0, nSearchRecordTime=0, nsubDisconnetTime=0, byNetType=0, byPlaybackBufSize=0, bDetectDisconnTime=0, bKeepLifeInterval=0, nPicBufSize=0].
+[2026-04-14T09:39:44.588 info Netsdk:63708 161840:169480 dhnetsdk.cpp:367]Leave CLIENT_SetNetworkParam.
+[2026-04-14T09:39:44.588 info Netsdk:63708 161840:169480 dhnetsdk.cpp:302]Enter CLIENT_SetAutoReconnect:[cbAutoConnect=00007FF7661C9E1C, dwUser=000000B7AE6FE800].
+[2026-04-14T09:39:44.588 info Netsdk:63708 161840:169480 dhnetsdk.cpp:304]Leave CLIENT_SetAutoReconnect.
+Begin Time:2026-04-14T09:39:44.750
+[2026-04-14T09:39:44.750 info Netsdk:63708 170224:148684 AVNetSDKMgr.cpp:504]Load avnetsdk library dynamically
+[2026-04-14T09:39:44.754 info Netsdk:63708 170224:148684 AVNetSDKMgr.cpp:549]avnetsdk module handle: 0000028232270000
+
+[2026-04-14T09:39:44.754 info Netsdk:63708 170224:148684 AVNetSDKMgr.cpp:823]Load configsdk dynamically
+[2026-04-14T09:39:44.757 info Netsdk:63708 170224:148684 dhnetsdk.cpp:302]Enter CLIENT_SetAutoReconnect:[cbAutoConnect=00007FF780A1F150, dwUser=000000BBB15ED0D0].
+[2026-04-14T09:39:44.757 info Netsdk:63708 170224:148684 dhnetsdk.cpp:304]Leave CLIENT_SetAutoReconnect.
+[2026-04-14T09:39:44.773 info Netsdk:63708 170224:148684 dhnetsdk.cpp:991]Enter CLIENT_LoginWithHighLevelSecurity. pstInParam:000000BBB15EC670, pstOutParam:000000BBB15EC750.
+[2026-04-14T09:39:44.773 info Netsdk:63708 170224:148684 dhnetsdk.cpp:1007]IP:192.168.1.23, port:37777, SpeCap:0, CapParam:0000000000000000, TLSCap:0
+[2026-04-14T09:39:44.790 info Netsdk:63708 161840:169480 dhnetsdk.cpp:991]Enter CLIENT_LoginWithHighLevelSecurity. pstInParam:000000B7AE6FDDA0, pstOutParam:000000B7AE6FDE80.
+[2026-04-14T09:39:44.790 info Netsdk:63708 161840:169480 dhnetsdk.cpp:1007]IP:192.168.1.23, port:37777, SpeCap:0, CapParam:0000000000000000, TLSCap:0
+[2026-04-14T09:39:44.973 info Netsdk:63708 170224:148684 dhnetsdk.cpp:1054]Leave CLIENT_LoginWithHighLevelSecurity. error:0, login ID:838253744.
+[2026-04-14T09:39:44.976 info Netsdk:63708 170224:148684 dhnetsdk.cpp:8181]Enter CLIENT_QueryDevState. [lLoginID=838253744, nType=82, pBuf=000000BBB15EC630, nBufLen=60, pRetLen=000000BBB15EC600, waittime=1000.]
+[2026-04-14T09:39:44.981 info Netsdk:63708 161840:169480 dhnetsdk.cpp:1054]Leave CLIENT_LoginWithHighLevelSecurity. error:0, login ID:-1021001584.
+[2026-04-14T09:39:44.984 info Netsdk:63708 161840:169480 dhnetsdk.cpp:8181]Enter CLIENT_QueryDevState. [lLoginID=-1021001584, nType=4, pBuf=000000B7AE6FD120, nBufLen=3076, pRetLen=000000B7AE6FC4C0, waittime=3000.]
+[2026-04-14T09:39:44.997 info Netsdk:63708 161840:169480 dhnetsdk.cpp:8205]Leave CLIENT_QueryDevState.ret:1.
+[2026-04-14T09:39:45.064 info Netsdk:63708 170224:148684 dhnetsdk.cpp:8205]Leave CLIENT_QueryDevState.ret:1.
+[2026-04-14T09:39:45.072 info Netsdk:63708 170224:148684 dhnetsdk.cpp:1288]Enter CLIENT_RealPlayEx. lLoginID:838253744. nChannelID:0. rType:0
+[2026-04-14T09:39:45.430 error Netsdk:63708 170224:148684 Generation2ProtocolSecureTransmit.cpp:661]Not find
+[2026-04-14T09:39:45.430 info Netsdk:63708 170224:148684 DevConfigEx.cpp:11689]IN SetupSession PORT=0 and PORT: 37777
+[2026-04-14T09:39:45.522 info Netsdk:63708 170224:148684 dhnetsdk.cpp:1354]Leave CLIENT_RealPlayEx. ret:838325792
+[2026-04-14T11:08:17.772 info Netsdk:63708 170224:148684 dhnetsdk.cpp:2090]Enter CLIENT_StopRealPlayEx. lRealHandle:838325792.
+[2026-04-14T11:08:17.780 info Netsdk:63708 170224:148684 dhnetsdk.cpp:2104]Leave CLIENT_StopRealPlayEx. ret:1
+[2026-04-14T11:08:17.781 info Netsdk:63708 170224:148684 dhnetsdk.cpp:1075]Enter CLIENT_Logout. lLoginID:838253744.
+[2026-04-14T11:08:17.787 error Netsdk:63708 170224:148684 TPTCPClient.cpp:723]Device is not online, ip:192.168.1.23
+[2026-04-14T11:08:17.787 info Netsdk:63708 170224:148684 dhnetsdk.cpp:1097]Leave CLIENT_Logout. ret:1
+[2026-04-14T11:08:18.582 info Netsdk:63708 161840:169480 dhnetsdk.cpp:1075]Enter CLIENT_Logout. lLoginID:-1021001584.
+[2026-04-14T11:08:18.582 error Netsdk:63708 161840:169480 TPTCPClient.cpp:723]Device is not online, ip:192.168.1.23
+[2026-04-14T11:08:18.582 info Netsdk:63708 161840:169480 dhnetsdk.cpp:1097]Leave CLIENT_Logout. ret:1
+Begin Time:2026-04-14T11:16:04.253
+[2026-04-14T11:16:04.253 info Netsdk:63708 145664:141548 AVNetSDKMgr.cpp:504]Load avnetsdk library dynamically
+[2026-04-14T11:16:04.271 info Netsdk:63708 145664:141548 AVNetSDKMgr.cpp:549]avnetsdk module handle: 0000029281B60000
+
+[2026-04-14T11:16:04.271 info Netsdk:63708 145664:141548 AVNetSDKMgr.cpp:823]Load configsdk dynamically
+[2026-04-14T11:16:04.277 info Netsdk:63708 145664:141548 dhnetsdk.cpp:352]Enter CLIENT_SetNetworkParam:[nWaittime=0, nConnectTime=0, nConnectTryNum=2, nSubConnectSpaceTime=0, nGetDevInfoTime=3000, nConnectBufSize=0, nGetConnInfoTime=0, nSearchRecordTime=0, nsubDisconnetTime=0, byNetType=0, byPlaybackBufSize=0, bDetectDisconnTime=0, bKeepLifeInterval=0, nPicBufSize=0].
+[2026-04-14T11:16:04.277 info Netsdk:63708 145664:141548 dhnetsdk.cpp:367]Leave CLIENT_SetNetworkParam.
+[2026-04-14T11:16:04.277 info Netsdk:63708 145664:141548 dhnetsdk.cpp:302]Enter CLIENT_SetAutoReconnect:[cbAutoConnect=00007FF7661C9E1C, dwUser=00000095021AE820].
+[2026-04-14T11:16:04.277 info Netsdk:63708 145664:141548 dhnetsdk.cpp:304]Leave CLIENT_SetAutoReconnect.
+[2026-04-14T11:16:04.331 info Netsdk:63708 145664:141548 dhnetsdk.cpp:991]Enter CLIENT_LoginWithHighLevelSecurity. pstInParam:00000095021ADDC0, pstOutParam:00000095021ADEA0.
+[2026-04-14T11:16:04.331 info Netsdk:63708 145664:141548 dhnetsdk.cpp:1007]IP:192.168.1.23, port:37777, SpeCap:0, CapParam:0000000000000000, TLSCap:0
+Begin Time:2026-04-14T11:16:04.436
+[2026-04-14T11:16:04.436 info Netsdk:63708 138904:156116 AVNetSDKMgr.cpp:504]Load avnetsdk library dynamically
+[2026-04-14T11:16:04.441 info Netsdk:63708 138904:156116 AVNetSDKMgr.cpp:549]avnetsdk module handle: 000002028F760000
+
+[2026-04-14T11:16:04.441 info Netsdk:63708 138904:156116 AVNetSDKMgr.cpp:823]Load configsdk dynamically
+[2026-04-14T11:16:04.443 info Netsdk:63708 138904:156116 dhnetsdk.cpp:302]Enter CLIENT_SetAutoReconnect:[cbAutoConnect=00007FF780A1F150, dwUser=0000009F8BF5D060].
+[2026-04-14T11:16:04.443 info Netsdk:63708 138904:156116 dhnetsdk.cpp:304]Leave CLIENT_SetAutoReconnect.
+[2026-04-14T11:16:04.457 info Netsdk:63708 138904:156116 dhnetsdk.cpp:991]Enter CLIENT_LoginWithHighLevelSecurity. pstInParam:0000009F8BF5C600, pstOutParam:0000009F8BF5C6E0.
+[2026-04-14T11:16:04.457 info Netsdk:63708 138904:156116 dhnetsdk.cpp:1007]IP:192.168.1.23, port:37777, SpeCap:0, CapParam:0000000000000000, TLSCap:0
+[2026-04-14T11:16:04.521 info Netsdk:63708 145664:141548 dhnetsdk.cpp:1054]Leave CLIENT_LoginWithHighLevelSecurity. error:0, login ID:-33718656.
+[2026-04-14T11:16:04.525 info Netsdk:63708 145664:141548 dhnetsdk.cpp:8181]Enter CLIENT_QueryDevState. [lLoginID=-33718656, nType=4, pBuf=00000095021AD140, nBufLen=3076, pRetLen=00000095021AC4E0, waittime=3000.]
+[2026-04-14T11:16:04.544 info Netsdk:63708 145664:141548 dhnetsdk.cpp:8205]Leave CLIENT_QueryDevState.ret:1.
+[2026-04-14T11:16:04.632 info Netsdk:63708 138904:156116 dhnetsdk.cpp:1054]Leave CLIENT_LoginWithHighLevelSecurity. error:0, login ID:-1962954176.
+[2026-04-14T11:16:04.638 info Netsdk:63708 138904:156116 dhnetsdk.cpp:8181]Enter CLIENT_QueryDevState. [lLoginID=-1962954176, nType=82, pBuf=0000009F8BF5C5C0, nBufLen=60, pRetLen=0000009F8BF5C590, waittime=1000.]
+[2026-04-14T11:16:04.741 info Netsdk:63708 138904:156116 dhnetsdk.cpp:8205]Leave CLIENT_QueryDevState.ret:1.
+[2026-04-14T11:16:04.749 info Netsdk:63708 138904:156116 dhnetsdk.cpp:1288]Enter CLIENT_RealPlayEx. lLoginID:-1962954176. nChannelID:0. rType:0
+[2026-04-14T11:16:05.145 error Netsdk:63708 138904:156116 Generation2ProtocolSecureTransmit.cpp:661]Not find
+[2026-04-14T11:16:05.145 info Netsdk:63708 138904:156116 DevConfigEx.cpp:11689]IN SetupSession PORT=0 and PORT: 37777
+[2026-04-14T11:16:05.227 info Netsdk:63708 138904:156116 dhnetsdk.cpp:1354]Leave CLIENT_RealPlayEx. ret:-1962890064

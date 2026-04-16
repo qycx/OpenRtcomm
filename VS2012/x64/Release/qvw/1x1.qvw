@@ -1,0 +1,29 @@
+[File]
+obj=qvw
+cstm=1250
+ver=0101
+createTime=20180705135135
+title=Virtual Wall
+comment=Note: Don't modify this file.
+objEnd
+
+
+
+[Data]
+obj=subWall
+background=
+rect_org=0,0,640,480
+obj=cad
+cadObj=1,0,2:pos=0,0:
+cadObj=1,0,4:pos=639,0:
+cadObj=1,0,5:pos=0,479:
+cadObj=1,0,3:pos=639,479:
+cadObj=2,0,6:dep=2,4:horz=1:
+cadObj=2,0,7:dep=4,3:vert=1:
+cadObj=2,0,8:dep=3,5:horz=1:
+cadObj=2,0,9:dep=5,2:vert=1:
+cadObj=7,0,1:dep=2,4,3,5,6,7,8,9:
+objEnd
+obj=vwRules
+objEnd
+objEnd
