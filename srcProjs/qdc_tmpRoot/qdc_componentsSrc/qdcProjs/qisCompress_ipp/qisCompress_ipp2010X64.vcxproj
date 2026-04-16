@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B0EE10E3-8272-4D61-B24A-97C8E7ADD9F5}</ProjectGuid>
+    <RootNamespace>qisCompress</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectName>qisCompress_ipp</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <InterproceduralOptimization>true</InterproceduralOptimization>
+    <UseIntelIPP>Sequential</UseIntelIPP>
+    <PlatformToolset>Intel C++ Compiler XE 13.0</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseIntelIPP>Sequential</UseIntelIPP>
+    <PlatformToolset>Intel C++ Compiler XE 13.0</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\..\..\..\..\VS2010\$(Platform)\$(Configuration)\cusModule\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\..\..\..\..\VS2010\$(Platform)\o\qisCompress_ipp\$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\..\..\..\..\VS2010\$(Platform)\$(Configuration)\cusModule\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\..\..\..\..\VS2010\$(Platform)\o\qisCompress_ipp\$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">h264Compress</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">h264Compress</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\..\qyOpen\include;include;..\include;..\..\..\ipp\ipp-samples\sources\audio-video-codecs\core\umc\include;..\..\..\ipp\ipp-samples\sources\audio-video-codecs\core\vm\include;..\..\..\ipp\ipp-samples\sources\audio-video-codecs\core\vm_plus\include;..\..\..\ipp\ipp-samples\sources\audio-video-codecs\io\umc\include;..\..\..\ipp\ipp-samples\sources\audio-video-codecs\codec\common\include;..\..\..\ipp\ipp-samples\sources\audio-video-codecs\codec\audio\mp3\common\include;..\..\..\ipp\ipp-samples\sources\audio-video-codecs\codec\video\h264\dec\include;..\..\..\ipp\ipp-samples\sources\audio-video-codecs\codec\video\h264\enc\include;..\..\..\ipp\ipp-samples\sources\audio-video-codecs\codec\audio\mp3\dec\include;..\..\..\ipp\ipp-samples\sources\audio-video-codecs\codec\audio\mp3\enc\include;..\..\..\ipp\ipp-samples\sources\audio-video-codecs\codec\container\common\include;..\..\..\ipp\ipp-samples\sources\audio-video-codecs\codec\video\common\cc\include;..\..\..\ipp\ipp-samples\sources\audio-video-codecs\codec\container\avi\spl\include;..\..\..\ipp\ipp-samples\sources\audio-video-codecs\codec\container\mpeg2\spl\include;..\..\..\ipp\ipp-samples\sources\audio-video-codecs\codec\container\mpeg4\spl\include;..\..\..\ipp\ipp-samples\sources\audio-video-codecs\codec\container\vc1\spl\include;$(ICPP_COMPILER13)ipp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;QISCOMPRESS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Async</ExceptionHandling>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>pdh.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>libmmd.lib;libcmt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\..\..\..\qyOpen\include;include;..\include;..\..\..\ipp\ipp-samples\sources\audio-video-codecs\core\umc\include;..\..\..\ipp\ipp-samples\sources\audio-video-codecs\core\vm\include;..\..\..\ipp\ipp-samples\sources\audio-video-codecs\core\vm_plus\include;..\..\..\ipp\ipp-samples\sources\audio-video-codecs\io\umc\include;..\..\..\ipp\ipp-samples\sources\audio-video-codecs\codec\common\include;..\..\..\ipp\ipp-samples\sources\audio-video-codecs\codec\audio\mp3\common\include;..\..\..\ipp\ipp-samples\sources\audio-video-codecs\codec\video\h264\dec\include;..\..\..\ipp\ipp-samples\sources\audio-video-codecs\codec\video\h264\enc\include;..\..\..\ipp\ipp-samples\sources\audio-video-codecs\codec\audio\mp3\dec\include;..\..\..\ipp\ipp-samples\sources\audio-video-codecs\codec\audio\mp3\enc\include;..\..\..\ipp\ipp-samples\sources\audio-video-codecs\codec\container\common\include;..\..\..\ipp\ipp-samples\sources\audio-video-codecs\codec\video\common\cc\include;..\..\..\ipp\ipp-samples\sources\audio-video-codecs\codec\container\avi\spl\include;..\..\..\ipp\ipp-samples\sources\audio-video-codecs\codec\container\mpeg2\spl\include;..\..\..\ipp\ipp-samples\sources\audio-video-codecs\codec\container\mpeg4\spl\include;..\..\..\ipp\ipp-samples\sources\audio-video-codecs\codec\container\vc1\spl\include;$(ICPP_COMPILER13)ipp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;QISCOMPRESS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Async</ExceptionHandling>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>pdh.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>libmmd.lib;libcmt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX64</TargetMachine>
+      <AdditionalLibraryDirectories>C:\Program Files (x86)\Intel\Composer XE 2013\compiler\lib\intel64;C:\Program Files (x86)\Intel\Composer XE 2013\ipp\lib\intel64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\qySyncObj.cpp" />
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\tmpGuiOpenFunc.cpp" />
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\yv12rgb.cpp" />
+    <ClCompile Include="dllmain.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </PrecompiledHeader>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </PrecompiledHeader>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="public\qdcSplitter.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="public\qisCompress.cpp" />
+    <ClCompile Include="public\qisCompress_audio.cpp" />
+    <ClCompile Include="public\yv12rgb_ipp.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="..\..\qyOpen\qdc_open\include\qdcCommProc_open.h" />
+    <ClInclude Include="include\qisCompressProc.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="qisCompress.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.ia32.vc2010.s.st\codec\audio\aac\common\aac_common.vcxproj">
+      <Project>{9b5d2e9a-1405-4823-8f93-3b91fd3d294e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.ia32.vc2010.s.st\codec\audio\mp3\common\mp3_common.vcxproj">
+      <Project>{de208b06-d5e1-4385-bf7d-10aee3cc72b1}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.ia32.vc2010.s.st\codec\audio\mp3\dec\mp3_dec.vcxproj">
+      <Project>{0a2ceab5-a105-40ab-a65f-ef1ad796108e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.ia32.vc2010.s.st\codec\audio\mp3\enc\mp3_enc.vcxproj">
+      <Project>{2dfd0d29-df0b-4342-aac3-c013d535c989}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.ia32.vc2010.s.st\codec\common\codec_common.vcxproj">
+      <Project>{b01c59a9-5508-4aae-bce2-bb00b427c84f}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.ia32.vc2010.s.st\codec\container\avi\spl\avi_spl.vcxproj">
+      <Project>{c3beb8c1-6a9a-4255-b1ff-1562e694f0ec}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.ia32.vc2010.s.st\codec\container\common\container_common.vcxproj">
+      <Project>{c0054a82-4ddb-47f4-9ff4-93a949deb558}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.ia32.vc2010.s.st\codec\container\mpeg2\spl\mpeg2_spl.vcxproj">
+      <Project>{a1e1b068-16a2-4f7b-8788-292f9ec5616f}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.ia32.vc2010.s.st\codec\container\mpeg4\spl\mpeg4_spl.vcxproj">
+      <Project>{3b1b643b-5a8f-46d5-b92c-cb7427e8f908}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.ia32.vc2010.s.st\codec\container\vc1\spl\vc1_spl.vcxproj">
+      <Project>{370db5a8-c643-4f48-973d-d58f364ce53c}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.ia32.vc2010.s.st\codec\video\common\cc\common_cc.vcxproj">
+      <Project>{f04d8a8f-cec4-49f9-bdee-04f092806448}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.ia32.vc2010.s.st\codec\video\h264\dec\h264_dec.vcxproj">
+      <Project>{7b8b81b1-7bdf-401b-a47d-2b029b837121}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.ia32.vc2010.s.st\codec\video\h264\enc\h264_enc.vcxproj">
+      <Project>{b456ca91-4c9f-45ca-bcc3-d7417cb683e4}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.ia32.vc2010.s.st\codec\video\vc1\common\vc1_common.vcxproj">
+      <Project>{023a36f5-08d0-4045-aac9-f74e8ab72743}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.ia32.vc2010.s.st\core\umc\core_umc.vcxproj">
+      <Project>{5bd295ad-a112-4696-9408-69dfb8e8d039}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.ia32.vc2010.s.st\core\vm\vm.vcxproj">
+      <Project>{3258c207-39ca-4671-95a9-ea3bb1e34468}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.ia32.vc2010.s.st\core\vm_plus\vm_plus.vcxproj">
+      <Project>{c09293fd-84cd-463e-9041-85e7a42da5ef}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.ia32.vc2010.s.st\io\media_buffers\media_buffers.vcxproj">
+      <Project>{8f9c16d3-b5ca-4eb6-9b92-d53f130e7199}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.ia32.vc2010.s.st\io\renders\audio\renders_audio.vcxproj">
+      <Project>{491f0db0-87d5-422e-970f-2da66cb7f755}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.ia32.vc2010.s.st\io\renders\video\renders_video.vcxproj">
+      <Project>{d75d88e0-51e2-4b5e-a626-b0a7ec557357}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.ia32.vc2010.s.st\io\umc\io_umc.vcxproj">
+      <Project>{f2098b8f-b045-4103-aac0-5851df137cd1}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.intel64.vc2010.s.st\codec\audio\mp3\common\mp3_common.vcxproj">
+      <Project>{77e99023-8360-453f-8469-8124a40dedb5}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.intel64.vc2010.s.st\codec\audio\mp3\dec\mp3_dec.vcxproj">
+      <Project>{68e75977-c5a3-4f37-b448-947649d1161a}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.intel64.vc2010.s.st\codec\audio\mp3\enc\mp3_enc.vcxproj">
+      <Project>{db0abd96-8219-43e9-980a-79de4524a663}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.intel64.vc2010.s.st\codec\common\codec_common.vcxproj">
+      <Project>{7388e144-b96b-46d8-a5c2-1e1b56983fb4}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.intel64.vc2010.s.st\codec\container\avi\spl\avi_spl.vcxproj">
+      <Project>{3085ac46-ecfd-40af-89a4-4540c4caa5e5}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.intel64.vc2010.s.st\codec\container\common\container_common.vcxproj">
+      <Project>{3dbd1c64-517b-40b2-9872-06d8abe8950b}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.intel64.vc2010.s.st\codec\container\mpeg2\spl\mpeg2_spl.vcxproj">
+      <Project>{61f586a3-2b9f-4dd3-8579-cd759288d0f4}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.intel64.vc2010.s.st\codec\container\mpeg4\spl\mpeg4_spl.vcxproj">
+      <Project>{94336712-a0d4-48fa-9abd-83c11e6da8a8}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.intel64.vc2010.s.st\codec\container\vc1\spl\vc1_spl.vcxproj">
+      <Project>{7198e0bd-f9a4-4576-80d7-119f61328c75}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.intel64.vc2010.s.st\codec\video\common\cc\common_cc.vcxproj">
+      <Project>{83b5b388-5004-41d6-9799-0fa6a76d1301}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.intel64.vc2010.s.st\codec\video\h264\dec\h264_dec.vcxproj">
+      <Project>{00146a1d-9979-405e-9195-56ce205b4717}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.intel64.vc2010.s.st\codec\video\h264\enc\h264_enc.vcxproj">
+      <Project>{5950e87c-2a2f-491a-a997-203af9fc3e96}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.intel64.vc2010.s.st\codec\video\mjpeg\dec\mjpeg_dec.vcxproj">
+      <Project>{476e0580-e42d-4adf-afec-18315319bb43}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.intel64.vc2010.s.st\core\umc\core_umc.vcxproj">
+      <Project>{6b1616cc-e52f-401f-853e-01d1e54886a0}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.intel64.vc2010.s.st\core\vm\vm.vcxproj">
+      <Project>{8d0a554e-8e41-4d0f-96ae-ee795a500e6c}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.intel64.vc2010.s.st\core\vm_plus\vm_plus.vcxproj">
+      <Project>{8430a4ab-b739-497b-8105-17a869202919}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.intel64.vc2010.s.st\io\media_buffers\media_buffers.vcxproj">
+      <Project>{2eb60239-7107-427e-8062-f7cbb4c4a847}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.intel64.vc2010.s.st\io\renders\audio\renders_audio.vcxproj">
+      <Project>{f66697de-39b5-40c5-b6c7-03d4382c4b7a}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.intel64.vc2010.s.st\io\renders\video\renders_video.vcxproj">
+      <Project>{9a1caf72-da21-458e-adfc-e514f7146163}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.intel64.vc2010.s.st\io\umc\io_umc.vcxproj">
+      <Project>{c54c4f67-fd92-4cdc-97d7-983ccb34694c}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.intel64.vc2010.s.st\ZERO_CHECK.vcxproj">
+      <Project>{b4cedc1e-fd1e-4ae9-a049-e006e07bbd5c}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

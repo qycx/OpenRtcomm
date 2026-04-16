@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Intel C++ Project"
+	Version="12.1"
+	Name="qisCompress"
+	ProjectGUID="{5A0F1F0B-5780-4D5D-ADB8-06D445CEA694}"
+	VCNestedProjectGUID="{B0EE10E3-8272-4D61-B24A-97C8E7ADD9F5}"
+	VCNestedProjectFileName="qisCompress.vcproj"
+	>
+	<Configurations/>
+	<Files/>
+</VisualStudioProject>

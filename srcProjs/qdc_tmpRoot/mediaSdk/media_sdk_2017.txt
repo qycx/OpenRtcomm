@@ -1,0 +1,22 @@
+
+2017/10/06
+Intel_Media_SDK_2017_R1
+MediaSamplesR3_MSS_2017_8.0.24.271
+
+
+
+//
+Output Direcotory
+$(ProjectDir)..\..\..\..\..\..\vs2012\sample_common\_build\$(Platform)\$(Configuration)\lib\
+$(ProjectDir)..\..\..\..\..\..\vs2010\sample_common\_build\$(Platform)\$(Configuration)\lib\
+
+
+20160416)
+media SDK 2016
+
+20150924)
+media SDK 
+
+20150112)
+media_sdk_5.0.486.98113
+Media SDK 2014 for Clients

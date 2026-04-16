@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="public\qdcSplitter_ffmpeg.cpp" />
+    <ClCompile Include="public\qdcSpl_dynFunc.cpp" />
+    <ClCompile Include="public\tmp_readAndSave.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="public\qisCompress.cpp" />
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\parseSpsPps.cpp">
+      <Filter>qyOpen</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\qyOpen\qdc_open\include\qdcCommProc_open.h" />
+    <ClInclude Include="include\my_mfxsplmux++.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="include\qisCompressProc.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="qisCompress.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="qyOpen">
+      <UniqueIdentifier>{dca25810-8520-4d2e-a79e-4e7b653c07a5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

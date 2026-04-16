@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="qisCompress">
+</Property><Property Name="Solution File" Value="D:\qycx4\develop6\develop_mediasdk\tmpRoot_mediasdk\componentsSrc\qisCompress\qisCompress.sln">
+</Property><Property Name="User Options File" Value="D:\qycx4\develop6\develop_mediasdk\tmpRoot_mediasdk\componentsSrc\qisCompress\qisCompress.suo">
+</Property><Property Name="Date" Value="Saturday, November 26, 2011">
+</Property><Property Name="Time" Value="22:02 PM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="qisCompress.sln" Description="File successfully backed up as D:\qycx4\develop6\develop_mediasdk\tmpRoot_mediasdk\componentsSrc\qisCompress\qisCompress.sln.old">
+</Event><Event ErrorLevel="0" Project="" Source="qisCompress.suo" Description="File successfully backed up as D:\qycx4\develop6\develop_mediasdk\tmpRoot_mediasdk\componentsSrc\qisCompress\qisCompress.suo.old">
+</Event><Event ErrorLevel="3" Project="qisCompress" Source="qisCompress.icproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="qisCompress" Source="qisCompress.icproj" Description="Project file successfully backed up as 'D:\qycx4\develop6\develop_mediasdk\tmpRoot_mediasdk\componentsSrc\qisCompress\qisCompress.icproj.120.old'">
+</Event><Event ErrorLevel="0" Project="qisCompress" Source="qisCompress.icproj" Description="Project upgraded successfully.">
+</Event><Event ErrorLevel="2" Project="sample_common" Source="..\..\..\mediasdk\20\samples\sample_common\sample_common.vcproj" Description="Failed to upgrade project file 'D:\qycx4\develop6\develop_mediasdk\mediasdk\20\samples\sample_common\sample_common.vcproj'.  Please make sure the file exists and is not write-protected.">
+</Event><Event ErrorLevel="2" Project="sample_common" Source="..\..\..\mediasdk\20\samples\sample_common\sample_common.vcproj" Description="Project upgrade failed.">
+</Event><Event ErrorLevel="3" Project="sample_common" Source="..\..\..\mediasdk\20\samples\sample_common\sample_common.vcproj" Description="Not Converted">
+</Event><Event ErrorLevel="0" Project="testMediasdk" Source="..\testMediasdk\testMediasdk.vcproj" Description="Project upgraded successfully.">
+</Event><Event ErrorLevel="3" Project="testMediasdk" Source="..\testMediasdk\testMediasdk.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="qisCompress.sln" Description="The solution file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="" Source="qisCompress.sln" Description="No Conversion Required">
+</Event></UpgradeLog>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="qisCompress">
+</Property><Property Name="Solution File" Value="D:\qycx4\develop6\develop_mediasdk\tmpRoot_mediasdk\componentsSrc\qisCompress\qisCompress.sln">
+</Property><Property Name="User Options File" Value="D:\qycx4\develop6\develop_mediasdk\tmpRoot_mediasdk\componentsSrc\qisCompress\qisCompress.suo">
+</Property><Property Name="Date" Value="Saturday, November 26, 2011">
+</Property><Property Name="Time" Value="22:10 PM">
+</Property><Property Name="Log Number" Value="2">
+</Property></Properties><Event ErrorLevel="2" Project="" Source="qisCompress.sln" Description="Error creating backup file: D:\qycx4\develop6\develop_mediasdk\tmpRoot_mediasdk\componentsSrc\qisCompress\qisCompress.sln.old">
+</Event><Event ErrorLevel="2" Project="" Source="qisCompress.suo" Description="Error creating backup file: D:\qycx4\develop6\develop_mediasdk\tmpRoot_mediasdk\componentsSrc\qisCompress\qisCompress.suo.old">
+</Event><Event ErrorLevel="3" Project="qisCompress" Source="qisCompress.icproj" Description="NotConverted">
+</Event><Event ErrorLevel="0" Project="qisCompress" Source="qisCompress.icproj" Description="The project file does not require conversion.">
+</Event><Event ErrorLevel="1" Project="sample_common" Source="..\..\..\mediasdk\20\samples\sample_common\sample_common.vcproj" Description="This application has been updated to include settings related to the User Account Control (UAC) feature of Windows Vista. By default, when run on Windows Vista with UAC enabled, this application is marked to run with the same privileges as the process that launched it. This marking also disables the application from running with virtualization. You can change UAC related settings from the Property Pages of the project.">
+</Event><Event ErrorLevel="0" Project="sample_common" Source="..\..\..\mediasdk\20\samples\sample_common\sample_common.vcproj" Description="Project file successfully backed up as 'D:\qycx4\develop6\develop_mediasdk\mediasdk\20\samples\sample_common\sample_common.vcproj.8.00.old'.">
+</Event><Event ErrorLevel="0" Project="sample_common" Source="..\..\..\mediasdk\20\samples\sample_common\sample_common.vcproj" Description="Project upgraded successfully.">
+</Event><Event ErrorLevel="3" Project="sample_common" Source="..\..\..\mediasdk\20\samples\sample_common\sample_common.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="testMediasdk" Source="..\testMediasdk\testMediasdk.vcproj" Description="Project upgraded successfully.">
+</Event><Event ErrorLevel="3" Project="testMediasdk" Source="..\testMediasdk\testMediasdk.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="qisCompress.sln" Description="The solution file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="" Source="qisCompress.sln" Description="No Conversion Required">
+</Event></UpgradeLog>

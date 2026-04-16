@@ -1,0 +1,146 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qisCompress_ipp", "qisCompress_ipp2010X64.vcxproj", "{B0EE10E3-8272-4D61-B24A-97C8E7ADD9F5}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mp3_common", "..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.intel64.vc2010.s.st\codec\audio\mp3\common\mp3_common.vcxproj", "{77E99023-8360-453F-8469-8124A40DEDB5}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mp3_dec", "..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.intel64.vc2010.s.st\codec\audio\mp3\dec\mp3_dec.vcxproj", "{68E75977-C5A3-4F37-B448-947649D1161A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mp3_enc", "..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.intel64.vc2010.s.st\codec\audio\mp3\enc\mp3_enc.vcxproj", "{DB0ABD96-8219-43E9-980A-79DE4524A663}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "codec_common", "..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.intel64.vc2010.s.st\codec\common\codec_common.vcxproj", "{7388E144-B96B-46D8-A5C2-1E1B56983FB4}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "avi_spl", "..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.intel64.vc2010.s.st\codec\container\avi\spl\avi_spl.vcxproj", "{3085AC46-ECFD-40AF-89A4-4540C4CAA5E5}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "container_common", "..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.intel64.vc2010.s.st\codec\container\common\container_common.vcxproj", "{3DBD1C64-517B-40B2-9872-06D8ABE8950B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mpeg2_spl", "..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.intel64.vc2010.s.st\codec\container\mpeg2\spl\mpeg2_spl.vcxproj", "{61F586A3-2B9F-4DD3-8579-CD759288D0F4}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mpeg4_spl", "..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.intel64.vc2010.s.st\codec\container\mpeg4\spl\mpeg4_spl.vcxproj", "{94336712-A0D4-48FA-9ABD-83C11E6DA8A8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vc1_spl", "..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.intel64.vc2010.s.st\codec\container\vc1\spl\vc1_spl.vcxproj", "{7198E0BD-F9A4-4576-80D7-119F61328C75}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "common_cc", "..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.intel64.vc2010.s.st\codec\video\common\cc\common_cc.vcxproj", "{83B5B388-5004-41D6-9799-0FA6A76D1301}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "h264_dec", "..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.intel64.vc2010.s.st\codec\video\h264\dec\h264_dec.vcxproj", "{00146A1D-9979-405E-9195-56CE205B4717}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "h264_enc", "..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.intel64.vc2010.s.st\codec\video\h264\enc\h264_enc.vcxproj", "{5950E87C-2A2F-491A-A997-203AF9FC3E96}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mjpeg_dec", "..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.intel64.vc2010.s.st\codec\video\mjpeg\dec\mjpeg_dec.vcxproj", "{476E0580-E42D-4ADF-AFEC-18315319BB43}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "core_umc", "..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.intel64.vc2010.s.st\core\umc\core_umc.vcxproj", "{6B1616CC-E52F-401F-853E-01D1E54886A0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vm", "..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.intel64.vc2010.s.st\core\vm\vm.vcxproj", "{8D0A554E-8E41-4D0F-96AE-EE795A500E6C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vm_plus", "..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.intel64.vc2010.s.st\core\vm_plus\vm_plus.vcxproj", "{8430A4AB-B739-497B-8105-17A869202919}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "media_buffers", "..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.intel64.vc2010.s.st\io\media_buffers\media_buffers.vcxproj", "{2EB60239-7107-427E-8062-F7CBB4C4A847}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "renders_audio", "..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.intel64.vc2010.s.st\io\renders\audio\renders_audio.vcxproj", "{F66697DE-39B5-40C5-B6C7-03D4382C4B7A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "renders_video", "..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.intel64.vc2010.s.st\io\renders\video\renders_video.vcxproj", "{9A1CAF72-DA21-458E-ADFC-E514F7146163}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "io_umc", "..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.intel64.vc2010.s.st\io\umc\io_umc.vcxproj", "{C54C4F67-FD92-4CDC-97D7-983CCB34694C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ZERO_CHECK", "..\..\..\ipp\ipp-samples\__cmake\audio-video-codecs.intel64.vc2010.s.st\ZERO_CHECK.vcxproj", "{B4CEDC1E-FD1E-4AE9-A049-E006E07BBD5C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B0EE10E3-8272-4D61-B24A-97C8E7ADD9F5}.Debug|x64.ActiveCfg = Debug|x64
+		{B0EE10E3-8272-4D61-B24A-97C8E7ADD9F5}.Debug|x64.Build.0 = Debug|x64
+		{B0EE10E3-8272-4D61-B24A-97C8E7ADD9F5}.Release|x64.ActiveCfg = Release|x64
+		{B0EE10E3-8272-4D61-B24A-97C8E7ADD9F5}.Release|x64.Build.0 = Release|x64
+		{77E99023-8360-453F-8469-8124A40DEDB5}.Debug|x64.ActiveCfg = debug|x64
+		{77E99023-8360-453F-8469-8124A40DEDB5}.Debug|x64.Build.0 = debug|x64
+		{77E99023-8360-453F-8469-8124A40DEDB5}.Release|x64.ActiveCfg = release|x64
+		{77E99023-8360-453F-8469-8124A40DEDB5}.Release|x64.Build.0 = release|x64
+		{68E75977-C5A3-4F37-B448-947649D1161A}.Debug|x64.ActiveCfg = debug|x64
+		{68E75977-C5A3-4F37-B448-947649D1161A}.Debug|x64.Build.0 = debug|x64
+		{68E75977-C5A3-4F37-B448-947649D1161A}.Release|x64.ActiveCfg = release|x64
+		{68E75977-C5A3-4F37-B448-947649D1161A}.Release|x64.Build.0 = release|x64
+		{DB0ABD96-8219-43E9-980A-79DE4524A663}.Debug|x64.ActiveCfg = debug|x64
+		{DB0ABD96-8219-43E9-980A-79DE4524A663}.Debug|x64.Build.0 = debug|x64
+		{DB0ABD96-8219-43E9-980A-79DE4524A663}.Release|x64.ActiveCfg = release|x64
+		{DB0ABD96-8219-43E9-980A-79DE4524A663}.Release|x64.Build.0 = release|x64
+		{7388E144-B96B-46D8-A5C2-1E1B56983FB4}.Debug|x64.ActiveCfg = debug|x64
+		{7388E144-B96B-46D8-A5C2-1E1B56983FB4}.Debug|x64.Build.0 = debug|x64
+		{7388E144-B96B-46D8-A5C2-1E1B56983FB4}.Release|x64.ActiveCfg = release|x64
+		{7388E144-B96B-46D8-A5C2-1E1B56983FB4}.Release|x64.Build.0 = release|x64
+		{3085AC46-ECFD-40AF-89A4-4540C4CAA5E5}.Debug|x64.ActiveCfg = debug|x64
+		{3085AC46-ECFD-40AF-89A4-4540C4CAA5E5}.Debug|x64.Build.0 = debug|x64
+		{3085AC46-ECFD-40AF-89A4-4540C4CAA5E5}.Release|x64.ActiveCfg = release|x64
+		{3085AC46-ECFD-40AF-89A4-4540C4CAA5E5}.Release|x64.Build.0 = release|x64
+		{3DBD1C64-517B-40B2-9872-06D8ABE8950B}.Debug|x64.ActiveCfg = debug|x64
+		{3DBD1C64-517B-40B2-9872-06D8ABE8950B}.Debug|x64.Build.0 = debug|x64
+		{3DBD1C64-517B-40B2-9872-06D8ABE8950B}.Release|x64.ActiveCfg = release|x64
+		{3DBD1C64-517B-40B2-9872-06D8ABE8950B}.Release|x64.Build.0 = release|x64
+		{61F586A3-2B9F-4DD3-8579-CD759288D0F4}.Debug|x64.ActiveCfg = debug|x64
+		{61F586A3-2B9F-4DD3-8579-CD759288D0F4}.Debug|x64.Build.0 = debug|x64
+		{61F586A3-2B9F-4DD3-8579-CD759288D0F4}.Release|x64.ActiveCfg = release|x64
+		{61F586A3-2B9F-4DD3-8579-CD759288D0F4}.Release|x64.Build.0 = release|x64
+		{94336712-A0D4-48FA-9ABD-83C11E6DA8A8}.Debug|x64.ActiveCfg = debug|x64
+		{94336712-A0D4-48FA-9ABD-83C11E6DA8A8}.Debug|x64.Build.0 = debug|x64
+		{94336712-A0D4-48FA-9ABD-83C11E6DA8A8}.Release|x64.ActiveCfg = release|x64
+		{94336712-A0D4-48FA-9ABD-83C11E6DA8A8}.Release|x64.Build.0 = release|x64
+		{7198E0BD-F9A4-4576-80D7-119F61328C75}.Debug|x64.ActiveCfg = debug|x64
+		{7198E0BD-F9A4-4576-80D7-119F61328C75}.Debug|x64.Build.0 = debug|x64
+		{7198E0BD-F9A4-4576-80D7-119F61328C75}.Release|x64.ActiveCfg = release|x64
+		{7198E0BD-F9A4-4576-80D7-119F61328C75}.Release|x64.Build.0 = release|x64
+		{83B5B388-5004-41D6-9799-0FA6A76D1301}.Debug|x64.ActiveCfg = debug|x64
+		{83B5B388-5004-41D6-9799-0FA6A76D1301}.Debug|x64.Build.0 = debug|x64
+		{83B5B388-5004-41D6-9799-0FA6A76D1301}.Release|x64.ActiveCfg = release|x64
+		{83B5B388-5004-41D6-9799-0FA6A76D1301}.Release|x64.Build.0 = release|x64
+		{00146A1D-9979-405E-9195-56CE205B4717}.Debug|x64.ActiveCfg = debug|x64
+		{00146A1D-9979-405E-9195-56CE205B4717}.Debug|x64.Build.0 = debug|x64
+		{00146A1D-9979-405E-9195-56CE205B4717}.Release|x64.ActiveCfg = release|x64
+		{00146A1D-9979-405E-9195-56CE205B4717}.Release|x64.Build.0 = release|x64
+		{5950E87C-2A2F-491A-A997-203AF9FC3E96}.Debug|x64.ActiveCfg = debug|x64
+		{5950E87C-2A2F-491A-A997-203AF9FC3E96}.Debug|x64.Build.0 = debug|x64
+		{5950E87C-2A2F-491A-A997-203AF9FC3E96}.Release|x64.ActiveCfg = release|x64
+		{5950E87C-2A2F-491A-A997-203AF9FC3E96}.Release|x64.Build.0 = release|x64
+		{476E0580-E42D-4ADF-AFEC-18315319BB43}.Debug|x64.ActiveCfg = debug|x64
+		{476E0580-E42D-4ADF-AFEC-18315319BB43}.Debug|x64.Build.0 = debug|x64
+		{476E0580-E42D-4ADF-AFEC-18315319BB43}.Release|x64.ActiveCfg = release|x64
+		{476E0580-E42D-4ADF-AFEC-18315319BB43}.Release|x64.Build.0 = release|x64
+		{6B1616CC-E52F-401F-853E-01D1E54886A0}.Debug|x64.ActiveCfg = debug|x64
+		{6B1616CC-E52F-401F-853E-01D1E54886A0}.Debug|x64.Build.0 = debug|x64
+		{6B1616CC-E52F-401F-853E-01D1E54886A0}.Release|x64.ActiveCfg = release|x64
+		{6B1616CC-E52F-401F-853E-01D1E54886A0}.Release|x64.Build.0 = release|x64
+		{8D0A554E-8E41-4D0F-96AE-EE795A500E6C}.Debug|x64.ActiveCfg = debug|x64
+		{8D0A554E-8E41-4D0F-96AE-EE795A500E6C}.Debug|x64.Build.0 = debug|x64
+		{8D0A554E-8E41-4D0F-96AE-EE795A500E6C}.Release|x64.ActiveCfg = release|x64
+		{8D0A554E-8E41-4D0F-96AE-EE795A500E6C}.Release|x64.Build.0 = release|x64
+		{8430A4AB-B739-497B-8105-17A869202919}.Debug|x64.ActiveCfg = debug|x64
+		{8430A4AB-B739-497B-8105-17A869202919}.Debug|x64.Build.0 = debug|x64
+		{8430A4AB-B739-497B-8105-17A869202919}.Release|x64.ActiveCfg = release|x64
+		{8430A4AB-B739-497B-8105-17A869202919}.Release|x64.Build.0 = release|x64
+		{2EB60239-7107-427E-8062-F7CBB4C4A847}.Debug|x64.ActiveCfg = debug|x64
+		{2EB60239-7107-427E-8062-F7CBB4C4A847}.Debug|x64.Build.0 = debug|x64
+		{2EB60239-7107-427E-8062-F7CBB4C4A847}.Release|x64.ActiveCfg = release|x64
+		{2EB60239-7107-427E-8062-F7CBB4C4A847}.Release|x64.Build.0 = release|x64
+		{F66697DE-39B5-40C5-B6C7-03D4382C4B7A}.Debug|x64.ActiveCfg = debug|x64
+		{F66697DE-39B5-40C5-B6C7-03D4382C4B7A}.Debug|x64.Build.0 = debug|x64
+		{F66697DE-39B5-40C5-B6C7-03D4382C4B7A}.Release|x64.ActiveCfg = release|x64
+		{F66697DE-39B5-40C5-B6C7-03D4382C4B7A}.Release|x64.Build.0 = release|x64
+		{9A1CAF72-DA21-458E-ADFC-E514F7146163}.Debug|x64.ActiveCfg = debug|x64
+		{9A1CAF72-DA21-458E-ADFC-E514F7146163}.Debug|x64.Build.0 = debug|x64
+		{9A1CAF72-DA21-458E-ADFC-E514F7146163}.Release|x64.ActiveCfg = release|x64
+		{9A1CAF72-DA21-458E-ADFC-E514F7146163}.Release|x64.Build.0 = release|x64
+		{C54C4F67-FD92-4CDC-97D7-983CCB34694C}.Debug|x64.ActiveCfg = debug|x64
+		{C54C4F67-FD92-4CDC-97D7-983CCB34694C}.Debug|x64.Build.0 = debug|x64
+		{C54C4F67-FD92-4CDC-97D7-983CCB34694C}.Release|x64.ActiveCfg = release|x64
+		{C54C4F67-FD92-4CDC-97D7-983CCB34694C}.Release|x64.Build.0 = release|x64
+		{B4CEDC1E-FD1E-4AE9-A049-E006E07BBD5C}.Debug|x64.ActiveCfg = debug|x64
+		{B4CEDC1E-FD1E-4AE9-A049-E006E07BBD5C}.Debug|x64.Build.0 = debug|x64
+		{B4CEDC1E-FD1E-4AE9-A049-E006E07BBD5C}.Release|x64.ActiveCfg = release|x64
+		{B4CEDC1E-FD1E-4AE9-A049-E006E07BBD5C}.Release|x64.Build.0 = release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\videoFunc_open.cpp" />
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="public\qisEncVideo.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="public\qisCompress.cpp" />
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\tmpGuiOpenFunc.cpp">
+      <Filter>qyOpen\qyCommProc_open</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="..\..\qyOpen\qdc_open\include\qdcCommProc_open.h" />
+    <ClInclude Include="include\qisCompressProc.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="qisCompress.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="qyOpen">
+      <UniqueIdentifier>{f525beb8-456b-494c-99b3-0387988c6d37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyOpen\qyCommProc_open">
+      <UniqueIdentifier>{3ae23e21-c2b3-435f-8c04-73f3b21f2c6d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
