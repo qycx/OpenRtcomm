@@ -1,0 +1,29 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Output 目录未以斜杠结尾。  此生成实例将添加斜杠，因为必须有这个斜杠才能正确计算 Output 目录。
+  stdafx.cpp
+  rtspCli.cpp
+E:\root\openRtComm-new\srcProjs\qyOpen\include\qyDefs_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/rtspCli.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qyCommProc_open\include\qyCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/rtspCli.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qyVDev_open\include\qyVDevCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/rtspCli.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qyVDev_open\include\qyPtz_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/rtspCli.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qdc_open\include\qdcCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/rtspCli.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qdc_open\include\rtspCliHelpPublic.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/rtspCli.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qisCamCap_open\include\qisCamCap_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/rtspCli.cpp”)
+  
+  正在生成代码
+  Previous IPDB not found, fall back to full compilation.
+  All 4 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  已完成代码的生成
+  rtspCli.vcxproj -> E:\root\openRtComm-new\VS2012\x64\Release\tools\rtspCli\rtspCli.exe

@@ -1,0 +1,106 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets(2153,5): warning : The referenced project '..\..\ancProjs\module_lyra\module_lyra.vcxproj' does not exist.
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Output 目录未以斜杠结尾。  此生成实例将添加斜杠，因为必须有这个斜杠才能正确计算 Output 目录。
+  Reading Qt configuration (E:/Qt/6.8.3/msvc2022_64/bin/qmake)
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets(2153,5): warning : The referenced project '..\..\ancProjs\module_lyra\module_lyra.vcxproj' does not exist.
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Output 目录未以斜杠结尾。  此生成实例将添加斜杠，因为必须有这个斜杠才能正确计算 Output 目录。
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(516,5): warning MSB8004: Intermediate 目录未以斜杠结尾。  此生成实例将添加斜杠，因为必须有这个斜杠才能正确计算 Intermediate 目录。
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Output 目录未以斜杠结尾。  此生成实例将添加斜杠，因为必须有这个斜杠才能正确计算 Output 目录。
+libfdk-aacd.lib(aacdecoder_lib.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(aacdecoder_lib.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(genericStds.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(genericStds.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(syslib_channelMapDescr.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(syslib_channelMapDescr.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(scale.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(scale.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(fixpoint_math.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(fixpoint_math.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(FDK_bitbuffer.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(FDK_bitbuffer.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(tpdec_lib.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(tpdec_lib.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(FDK_qmf_domain.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(FDK_qmf_domain.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(sbrdecoder.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(sbrdecoder.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(aacdec_drc.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(aacdec_drc.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(pcmdmx_lib.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(pcmdmx_lib.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(FDK_drcDecLib.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(FDK_drcDecLib.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(limiter.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(limiter.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(FDK_delay.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(FDK_delay.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(aacdecoder.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(aacdecoder.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(aac_ram.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(aac_ram.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(FDK_core.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(FDK_core.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(conceal.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(conceal.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(sac_dec_lib.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(sac_dec_lib.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(pcm_utils.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(pcm_utils.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(tpdec_asc.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(tpdec_asc.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(FDK_crc.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(FDK_crc.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(tpdec_adts.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(tpdec_adts.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(tpdec_adif.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(tpdec_adif.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(tpdec_latm.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(tpdec_latm.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(tpdec_drm.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(tpdec_drm.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(qmf.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(qmf.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(psdec.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(psdec.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(env_extr.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(env_extr.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(sbrdec_freq_sca.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(sbrdec_freq_sca.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(sbrdec_drc.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(sbrdec_drc.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(sbr_dec.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(sbr_dec.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(env_dec.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(env_dec.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(sbr_ram2.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(sbr_ram2.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(psbitdec.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(psbitdec.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(drcDec_reader.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(drcDec_reader.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(drcDec_gainDecoder.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(drcDec_gainDecoder.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(drcDec_selectionProcess.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(drcDec_selectionProcess.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(drcDec_tools.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(drcDec_tools.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(mdct.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(mdct.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(aacdec_pns.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(aacdec_pns.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(ac_arith_coder.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(ac_arith_coder.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(channelinfo.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(channelinfo.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(channel.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(channel.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(block.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(block.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(usacdec_lpd.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(usacdec_lpd.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(aac_rom.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(aac_rom.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(usacdec_lpc.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(usacdec_lpc.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(sac_dec.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(sac_dec.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(sac_bitdec.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(sac_bitdec.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(FDK_matrixCalloc.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(FDK_matrixCalloc.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(dct.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(dct.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(FDK_tools_rom.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(FDK_tools_rom.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(FDK_hybrid.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(FDK_hybrid.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(FDK_decorrelate.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(FDK_decorrelate.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(sbr_rom2.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(sbr_rom2.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(huff_dec.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(huff_dec.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(hbe.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(hbe.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(lpp_tran.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(lpp_tran.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(pvc_dec.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(pvc_dec.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(env_calc.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(env_calc.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(drcDec_rom.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(drcDec_rom.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(drcGainDec_preprocess.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(drcGainDec_preprocess.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(drcGainDec_init.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(drcGainDec_init.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(drcGainDec_process.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(drcGainDec_process.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(stereo.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(stereo.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(pulsedata.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(pulsedata.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(aacdec_tns.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(aacdec_tns.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(rvlc.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(rvlc.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(aacdec_hcr.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(aacdec_hcr.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(usacdec_fac.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(usacdec_fac.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(FDK_trigFcts.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(FDK_trigFcts.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(ldfiltbank.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(ldfiltbank.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(usacdec_acelp.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(usacdec_acelp.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(fft.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(fft.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(usacdec_rom.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(usacdec_rom.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(aacdec_hcrs.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(aacdec_hcrs.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(sac_qmf.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(sac_qmf.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(sac_calcM1andM2.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(sac_calcM1andM2.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(sac_reshapeBBEnv.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(sac_reshapeBBEnv.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(sac_dec_conceal.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(sac_dec_conceal.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(sac_process.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(sac_process.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(sac_smoothing.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(sac_smoothing.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(sac_stp.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(sac_stp.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(sac_rom.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(sac_rom.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(sac_tsd.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(sac_tsd.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(nlc_dec.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(nlc_dec.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(autocorr2nd.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(autocorr2nd.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(HFgen_preFlat.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(HFgen_preFlat.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(FDK_lpc.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(FDK_lpc.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(rvlcbit.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(rvlcbit.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(rvlcconceal.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(rvlcconceal.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(aacdec_hcr_bit.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(aacdec_hcr_bit.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(usacdec_ace_d4t64.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(usacdec_ace_d4t64.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(usacdec_ace_ltp.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(usacdec_ace_ltp.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(fft_rad2.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(fft_rad2.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+libfdk-aacd.lib(huff_nodes.obj) : warning LNK4099: 未找到 PDB“”(使用“libfdk-aacd.lib(huff_nodes.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+    正在创建库 ..\..\..\..\..\..\openRtComm\VS2012\x64\Debug\bin\.\qyMessenger_sm.lib 和对象 ..\..\..\..\..\..\openRtComm\VS2012\x64\Debug\bin\.\qyMessenger_sm.exp
+  qyMessenger_sm.vcxproj -> E:\root\atProjs\openRtComm\VS2012\x64\Debug\bin\qyMessenger_sm.exe

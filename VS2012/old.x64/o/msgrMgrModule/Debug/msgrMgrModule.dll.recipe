@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>F:\tmp_root\atDevelop\VS2012\x64\Debug\bin\qyPublic.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>F:\tmp_root\atDevelop\VS2012\x64\Debug\bin\qyShowInfo.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>F:\tmp_root\atDevelop\VS2012\x64\Debug\bin\msgrMgrModule.dll</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles />
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>

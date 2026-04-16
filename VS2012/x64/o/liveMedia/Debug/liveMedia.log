@@ -1,0 +1,407 @@
+﻿  pch.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\pch.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\pch.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“pch.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\framework.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“pch.cpp”)
+  
+  AC3AudioFileServerMediaSubsession.cpp
+  AC3AudioRTPSink.cpp
+  AC3AudioRTPSource.cpp
+  AC3AudioStreamFramer.cpp
+  ADTSAudioFileServerMediaSubsession.cpp
+  ADTSAudioFileSource.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\ADTSAudioFileSource.cpp(150,20): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  AMRAudioFileServerMediaSubsession.cpp
+  AMRAudioFileSink.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\AMRAudioFileSink.cpp(79,27): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+  AMRAudioFileSource.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\AMRAudioFileSource.cpp(156,21): warning C4267: “=”: 从“size_t”转换到“unsigned int”，可能丢失数据
+  AMRAudioRTPSink.cpp
+  AMRAudioRTPSource.cpp
+  AMRAudioSource.cpp
+  AudioInputDevice.cpp
+  AudioRTPSink.cpp
+  AVIFileSink.cpp
+  Base64.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\Base64.cpp(43,33): warning C4267: “参数”: 从“size_t”转换到“unsigned int”，可能丢失数据
+  BasicUDPSink.cpp
+  BasicUDPSource.cpp
+  BitVector.cpp
+  ByteStreamFileSource.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\ByteStreamFileSource.cpp(138,21): warning C4267: “=”: 从“size_t”转换到“unsigned int”，可能丢失数据
+  正在生成代码...
+  正在编译...
+  ByteStreamMemoryBufferSource.cpp
+  ByteStreamMultiFileSource.cpp
+  DarwinInjector.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\DarwinInjector.cpp(100,31): warning C4267: “+=”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\DarwinInjector.cpp(133,7): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\DarwinInjector.cpp(165,21): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\DarwinInjector.cpp(307,28): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\DarwinInjector.cpp(319,27): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\DarwinInjector.cpp(322,27): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\DarwinInjector.cpp(329,23): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+  DeviceSource.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\DeviceSource.cpp(125,33): warning C4312: “类型强制转换”: 从“unsigned int”转换到更大的“u_int8_t *”
+  DigestAuthentication.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\DigestAuthentication.cpp(103,29): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\DigestAuthentication.cpp(102,31): warning C4267: “初始化”: 从“size_t”转换到“const unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\DigestAuthentication.cpp(110,47): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\DigestAuthentication.cpp(110,29): warning C4267: “初始化”: 从“size_t”转换到“const unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\DigestAuthentication.cpp(117,36): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\DigestAuthentication.cpp(118,5): warning C4267: “初始化”: 从“size_t”转换到“const unsigned int”，可能丢失数据
+  DVVideoFileServerMediaSubsession.cpp
+  DVVideoRTPSink.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\DVVideoRTPSink.cpp(87,27): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+  DVVideoRTPSource.cpp
+  DVVideoStreamFramer.cpp
+  EBMLNumber.cpp
+  FileServerMediaSubsession.cpp
+  FileSink.cpp
+  FramedFileSource.cpp
+  FramedFilter.cpp
+  FramedSource.cpp
+  GSMAudioRTPSink.cpp
+  H261VideoRTPSource.cpp
+  H263plusVideoFileServerMediaSubsession.cpp
+  H263plusVideoRTPSink.cpp
+  H263plusVideoRTPSource.cpp
+  正在生成代码...
+  正在编译...
+  H263plusVideoStreamFramer.cpp
+  H263plusVideoStreamParser.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\H263plusVideoStreamParser.cpp(200,23): warning C4477: “fprintf”: 格式字符串“%lu”需要类型“unsigned long”的参数，但可变参数 2 拥有了类型“__int64”
+  E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\H263plusVideoStreamParser.cpp(200,23):
+  请考虑在格式字符串中使用“%llu”
+  E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\H263plusVideoStreamParser.cpp(200,23):
+  请考虑在格式字符串中使用“%Iu”
+  E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\H263plusVideoStreamParser.cpp(200,23):
+  请考虑在格式字符串中使用“%I64u”
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\H263plusVideoStreamParser.cpp(210,9): warning C4244: “初始化”: 从“__int64”转换到“int”，可能丢失数据
+  H264or5VideoFileSink.cpp
+  H264or5VideoRTPSink.cpp
+  H264or5VideoStreamDiscreteFramer.cpp
+  H264or5VideoStreamFramer.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEGVideoStreamParser.hh(114,40): warning C4244: “return”: 从“__int64”转换到“unsigned int”，可能丢失数据
+  (编译源文件“H264or5VideoStreamFramer.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\H264or5VideoStreamFramer.cpp(208,42): warning C4244: “初始化”: 从“__int64”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\H264or5VideoStreamFramer.cpp(208,36): warning C4244: “初始化”: 从“__int64”转换到“const unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\H264or5VideoStreamFramer.cpp(645,41): warning C4018: “<”: 有符号/无符号不匹配
+  H264VideoFileServerMediaSubsession.cpp
+  H264VideoFileSink.cpp
+  H264VideoRTPSink.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\H264VideoRTPSink.cpp(112,24): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+  H264VideoRTPSource.cpp
+  H264VideoStreamDiscreteFramer.cpp
+  H264VideoStreamFramer.cpp
+  H265VideoFileServerMediaSubsession.cpp
+  H265VideoFileSink.cpp
+  H265VideoRTPSink.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\H265VideoRTPSink.cpp(163,24): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+  H265VideoRTPSource.cpp
+  H265VideoStreamDiscreteFramer.cpp
+  H265VideoStreamFramer.cpp
+  InputFile.cpp
+  JPEGVideoRTPSink.cpp
+  正在生成代码...
+  正在编译...
+  JPEGVideoRTPSource.cpp
+  JPEGVideoSource.cpp
+  liveMedia.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\liveMedia.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\pch.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“liveMedia.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\framework.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“liveMedia.cpp”)
+  
+  Locale.cpp
+  MatroskaDemuxedTrack.cpp
+  MatroskaFile.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MatroskaFile.cpp(670,70): warning C4312: “类型强制转换”: 从“unsigned int”转换到更大的“const char *”
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MatroskaFile.cpp(671,62): warning C4312: “类型强制转换”: 从“unsigned int”转换到更大的“const char *”
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MatroskaFile.cpp(676,41): warning C4312: “类型强制转换”: 从“unsigned int”转换到更大的“const char *”
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MatroskaFile.cpp(762,28): warning C4312: “类型强制转换”: 从“unsigned int”转换到更大的“const char *”
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MatroskaFile.cpp(767,61): warning C4312: “类型强制转换”: 从“unsigned int”转换到更大的“const char *”
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MatroskaFile.cpp(771,31): warning C4312: “类型强制转换”: 从“unsigned int”转换到更大的“const char *”
+  MatroskaFileParser.cpp
+  MatroskaFileServerDemux.cpp
+  MatroskaFileServerMediaSubsession.cpp
+  Media.cpp
+  MediaSession.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MediaSession.cpp(748,59): warning C4312: “类型强制转换”: 从“unsigned int”转换到更大的“const char *”
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MediaSession.cpp(770,59): warning C4312: “类型强制转换”: 从“unsigned int”转换到更大的“const char *”
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MediaSession.cpp(1080,39): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MediaSession.cpp(1080,31): warning C4267: “初始化”: 从“size_t”转换到“const unsigned int”，可能丢失数据
+  MediaSink.cpp
+  MediaSource.cpp
+  MP3ADU.cpp
+  MP3ADUdescriptor.cpp
+  MP3ADUinterleaving.cpp
+  MP3ADURTPSink.cpp
+  MP3ADURTPSource.cpp
+  MP3ADUTranscoder.cpp
+  MP3AudioFileServerMediaSubsession.cpp
+  正在生成代码...
+  正在编译...
+  MP3AudioMatroskaFileServerMediaSubsession.cpp
+  MP3FileSource.cpp
+  MP3Internals.cpp
+  MP3InternalsHuffman.cpp
+  MP3InternalsHuffmanTable.cpp
+  MP3StreamState.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MP3StreamState.cpp(390,17): warning C4267: “return”: 从“size_t”转换到“unsigned int”，可能丢失数据
+  MP3Transcoder.cpp
+  MPEG1or2AudioRTPSink.cpp
+  MPEG1or2AudioRTPSource.cpp
+  MPEG1or2AudioStreamFramer.cpp
+  MPEG1or2Demux.cpp
+  MPEG1or2DemuxedElementaryStream.cpp
+  MPEG1or2DemuxedServerMediaSubsession.cpp
+  MPEG1or2FileServerDemux.cpp
+  MPEG1or2VideoFileServerMediaSubsession.cpp
+  MPEG1or2VideoRTPSink.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG1or2VideoRTPSink.cpp(124,11): warning C4312: “类型强制转换”: 从“unsigned int”转换到更大的“void *”
+  MPEG1or2VideoRTPSource.cpp
+  MPEG1or2VideoStreamDiscreteFramer.cpp
+  MPEG1or2VideoStreamFramer.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEGVideoStreamParser.hh(114,40): warning C4244: “return”: 从“__int64”转换到“unsigned int”，可能丢失数据
+  (编译源文件“MPEG1or2VideoStreamFramer.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG1or2VideoStreamFramer.cpp(205,26): warning C4244: “初始化”: 从“__int64”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG1or2VideoStreamFramer.cpp(463,11): warning C4312: “类型强制转换”: 从“unsigned int”转换到更大的“void *”
+  MPEG2IndexFromTransportStream.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG2IndexFromTransportStream.cpp(619,32): warning C4244: “=”: 从“__int64”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG2IndexFromTransportStream.cpp(624,28): warning C4244: “=”: 从“__int64”转换到“unsigned int”，可能丢失数据
+  正在生成代码...
+  正在编译...
+  MPEG2TransportFileServerMediaSubsession.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG2TransportFileServerMediaSubsession.cpp(185,36): warning C4312: “类型强制转换”: 从“unsigned int”转换到更大的“const char *”
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG2TransportFileServerMediaSubsession.cpp(219,66): warning C4312: “类型强制转换”: 从“unsigned int”转换到更大的“const char *”
+  MPEG2TransportStreamFramer.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG2TransportStreamFramer.cpp(233,63): warning C4312: “类型强制转换”: 从“unsigned int”转换到更大的“char *”
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG2TransportStreamFramer.cpp(238,26): warning C4312: “类型强制转换”: 从“unsigned int”转换到更大的“char *”
+  MPEG2TransportStreamFromESSource.cpp
+  MPEG2TransportStreamFromPESSource.cpp
+  MPEG2TransportStreamIndexFile.cpp
+  MPEG2TransportStreamMultiplexor.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG2TransportStreamMultiplexor.cpp(261,49): warning C4244: “参数”: 从“__int64”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG2TransportStreamMultiplexor.cpp(307,27): warning C4244: “初始化”: 从“__int64”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG2TransportStreamMultiplexor.cpp(311,49): warning C4244: “参数”: 从“__int64”转换到“unsigned int”，可能丢失数据
+  MPEG2TransportStreamTrickModeFilter.cpp
+  MPEG2TransportUDPServerMediaSubsession.cpp
+  MPEG4ESVideoRTPSink.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG4ESVideoRTPSink.cpp(124,24): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+  MPEG4ESVideoRTPSource.cpp
+  MPEG4GenericRTPSink.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG4GenericRTPSink.cpp(59,24): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+  MPEG4GenericRTPSource.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG4GenericRTPSource.cpp(87,29): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+  MPEG4LATMAudioRTPSink.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG4LATMAudioRTPSink.cpp(38,24): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+  MPEG4LATMAudioRTPSource.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG4LATMAudioRTPSource.cpp(202,22): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG4LATMAudioRTPSource.cpp(247,39): warning C4267: “=”: 从“size_t”转换到“unsigned int”，可能丢失数据
+  MPEG4VideoFileServerMediaSubsession.cpp
+  MPEG4VideoStreamDiscreteFramer.cpp
+  MPEG4VideoStreamFramer.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEGVideoStreamParser.hh(114,40): warning C4244: “return”: 从“__int64”转换到“unsigned int”，可能丢失数据
+  (编译源文件“MPEG4VideoStreamFramer.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEG4VideoStreamFramer.cpp(655,12): warning C4312: “类型强制转换”: 从“u_int32_t”转换到更大的“void *”
+  MPEGVideoStreamFramer.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEGVideoStreamParser.hh(114,40): warning C4244: “return”: 从“__int64”转换到“unsigned int”，可能丢失数据
+  (编译源文件“MPEGVideoStreamFramer.cpp”)
+  
+  MPEGVideoStreamParser.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MPEGVideoStreamParser.hh(114,40): warning C4244: “return”: 从“__int64”转换到“unsigned int”，可能丢失数据
+  (编译源文件“MPEGVideoStreamParser.cpp”)
+  
+  MultiFramedRTPSink.cpp
+  正在生成代码...
+  正在编译...
+  MultiFramedRTPSource.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\MultiFramedRTPSource.cpp(437,41): warning C4244: “+=”: 从“__int64”转换到“unsigned int”，可能丢失数据
+  OggDemuxedTrack.cpp
+  OggFile.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\OggFile.cpp(192,30): warning C4312: “类型强制转换”: 从“u_int32_t”转换到更大的“const char *”
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\OggFile.cpp(197,36): warning C4312: “类型强制转换”: 从“u_int32_t”转换到更大的“const char *”
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\OggFile.cpp(249,28): warning C4312: “类型强制转换”: 从“u_int32_t”转换到更大的“const char *”
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\OggFile.cpp(257,28): warning C4312: “类型强制转换”: 从“unsigned int”转换到更大的“const char *”
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\OggFile.cpp(262,56): warning C4312: “类型强制转换”: 从“u_int32_t”转换到更大的“const char *”
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\OggFile.cpp(288,31): warning C4312: “类型强制转换”: 从“u_int32_t”转换到更大的“const char *”
+  OggFileParser.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\OggFileParser.cpp(282,56): warning C4244: “return”: 从“__int64”转换到“unsigned int”，可能丢失数据
+  OggFileServerDemux.cpp
+  OggFileServerMediaSubsession.cpp
+  OggFileSink.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\OggFileSink.cpp(228,44): warning C4334: “<<”: 32 位移位的结果被隐式转换为 64 位(是否希望进行 64 位移位?)
+  OnDemandServerMediaSubsession.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\OnDemandServerMediaSubsession.cpp(186,31): warning C4312: “类型强制转换”: 从“unsigned int”转换到更大的“const char *”
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\OnDemandServerMediaSubsession.cpp(199,54): warning C4312: “类型强制转换”: 从“unsigned int”转换到更大的“const char *”
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\OnDemandServerMediaSubsession.cpp(309,54): warning C4312: “类型强制转换”: 从“unsigned int”转换到更大的“const char *”
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\OnDemandServerMediaSubsession.cpp(311,36): warning C4312: “类型强制转换”: 从“unsigned int”转换到更大的“const char *”
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\OnDemandServerMediaSubsession.cpp(384,23): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+  ourMD5.cpp
+  OutputFile.cpp
+  PassiveServerMediaSubsession.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\PassiveServerMediaSubsession.cpp(89,25): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\PassiveServerMediaSubsession.cpp(154,33): warning C4312: “类型强制转换”: 从“unsigned int”转换到更大的“const char *”
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\PassiveServerMediaSubsession.cpp(181,85): warning C4312: “类型强制转换”: 从“unsigned int”转换到更大的“const char *”
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\PassiveServerMediaSubsession.cpp(201,83): warning C4312: “类型强制转换”: 从“unsigned int”转换到更大的“const char *”
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\PassiveServerMediaSubsession.cpp(207,38): warning C4312: “类型强制转换”: 从“unsigned int”转换到更大的“const char *”
+  ProxyServerMediaSession.cpp
+  QCELPAudioRTPSource.cpp
+  QuickTimeFileSink.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\QuickTimeFileSink.cpp(1231,24): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\QuickTimeFileSink.cpp(2190,30): warning C4244: “初始化”: 从“__int64”转换到“int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\QuickTimeFileSink.cpp(2201,13): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\QuickTimeFileSink.cpp(2305,31): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+  QuickTimeGenericRTPSource.cpp
+  RTCP.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTCP.cpp(39,27): warning C4312: “类型强制转换”: 从“long”转换到更大的“char *”
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTCP.cpp(50,17): warning C4312: “类型强制转换”: 从“long”转换到更大的“char *”
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTCP.cpp(50,36): warning C4312: “类型强制转换”: 从“long”转换到更大的“void *”
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTCP.cpp(56,41): warning C4312: “类型强制转换”: 从“long”转换到更大的“char *”
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTCP.cpp(939,19): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+  RTPInterface.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTPInterface.cpp(82,21): warning C4312: “类型强制转换”: 从“long”转换到更大的“const char *”
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTPInterface.cpp(87,18): warning C4312: “类型强制转换”: 从“long”转换到更大的“const char *”
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTPInterface.cpp(101,21): warning C4312: “类型强制转换”: 从“long”转换到更大的“const char *”
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTPInterface.cpp(398,29): warning C4312: “类型强制转换”: 从“long”转换到更大的“const char *”
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTPInterface.cpp(412,27): warning C4312: “类型强制转换”: 从“long”转换到更大的“const char *”
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTPInterface.cpp(421,32): warning C4312: “类型强制转换”: 从“long”转换到更大的“const char *”
+  RTPSink.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTPSink.cpp(140,28): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTPSink.cpp(205,20): warning C4312: “类型强制转换”: 从“long”转换到更大的“const char *”
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTPSink.cpp(229,49): warning C4312: “类型强制转换”: 从“long”转换到更大的“const char *”
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTPSink.cpp(234,15): warning C4312: “类型强制转换”: 从“long”转换到更大的“const char *”
+  RTPSource.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTPSource.cpp(146,20): warning C4312: “类型强制转换”: 从“long”转换到更大的“const char *”
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTPSource.cpp(177,46): warning C4312: “类型强制转换”: 从“long”转换到更大的“const char *”
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTPSource.cpp(182,15): warning C4312: “类型强制转换”: 从“long”转换到更大的“const char *”
+  RTSPClient.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPClient.cpp(148,29): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPClient.cpp(244,23): warning C4244: “初始化”: 从“__int64”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPClient.cpp(251,23): warning C4244: “初始化”: 从“__int64”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPClient.cpp(315,49): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPClient.cpp(315,29): warning C4267: “初始化”: 从“size_t”转换到“const unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPClient.cpp(319,34): warning C4267: “=”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPClient.cpp(356,5): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPClient.cpp(445,28): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPClient.cpp(449,40): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPClient.cpp(467,22): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPClient.cpp(495,41): warning C4267: “参数”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPClient.cpp(500,43): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPClient.cpp(502,49): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPClient.cpp(502,32): warning C4267: “初始化”: 从“size_t”转换到“const unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPClient.cpp(650,28): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPClient.cpp(699,33): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPClient.cpp(716,33): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPClient.cpp(862,28): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPClient.cpp(873,39): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPClient.cpp(878,71): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPClient.cpp(878,34): warning C4267: “初始化”: 从“size_t”转换到“const unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPClient.cpp(942,42): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPClient.cpp(1204,33): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPClient.cpp(1215,24): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPClient.cpp(1320,24): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPClient.cpp(1624,27): warning C4244: “初始化”: 从“__int64”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPClient.cpp(1651,80): warning C4244: “=”: 从“__int64”转换到“unsigned int”，可能丢失数据
+  正在生成代码...
+  正在编译...
+  RTSPCommon.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPCommon.cpp(318,43): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPCommon.cpp(318,35): warning C4267: “初始化”: 从“size_t”转换到“const unsigned int”，可能丢失数据
+  RTSPRegisterSender.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPRegisterSender.cpp(53,28): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPRegisterSender.cpp(86,44): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPRegisterSender.cpp(93,34): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+  RTSPServer.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPServer.cpp(407,20): warning C4244: “初始化”: 从“SOCKET”转换到“int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPServer.cpp(530,33): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPServer.cpp(556,26): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPServer.cpp(948,88): warning C4244: “参数”: 从“__int64”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPServer.cpp(1073,27): warning C4244: “初始化”: 从“__int64”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPServer.cpp(1096,67): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPServer.cpp(1106,26): warning C4244: “初始化”: 从“__int64”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPServer.cpp(1278,37): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPServer.cpp(1278,29): warning C4267: “初始化”: 从“size_t”转换到“const unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPServer.cpp(1296,37): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPServer.cpp(1296,29): warning C4267: “初始化”: 从“size_t”转换到“const unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPServer.cpp(1768,44): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPServer.cpp(1768,36): warning C4267: “初始化”: 从“size_t”转换到“const unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPServer.cpp(1827,24): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPServer.cpp(1890,27): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPServer.cpp(1987,28): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPServer.cpp(2008,25): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+  RTSPServerSupportingHTTPStreaming.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPServerSupportingHTTPStreaming.cpp(143,69): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPServerSupportingHTTPStreaming.cpp(183,71): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPServerSupportingHTTPStreaming.cpp(183,43): warning C4267: “初始化”: 从“size_t”转换到“const unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPServerSupportingHTTPStreaming.cpp(188,117): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPServerSupportingHTTPStreaming.cpp(188,50): warning C4267: “初始化”: 从“size_t”转换到“const unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPServerSupportingHTTPStreaming.cpp(192,51): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPServerSupportingHTTPStreaming.cpp(192,43): warning C4267: “初始化”: 从“size_t”转换到“const unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPServerSupportingHTTPStreaming.cpp(220,24): warning C4244: “初始化”: 从“__int64”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\RTSPServerSupportingHTTPStreaming.cpp(237,65): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  ServerMediaSession.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\ServerMediaSession.cpp(209,29): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\ServerMediaSession.cpp(217,85): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\ServerMediaSession.cpp(217,40): warning C4267: “初始化”: 从“size_t”转换到“const unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\ServerMediaSession.cpp(238,26): warning C4267: “+=”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\ServerMediaSession.cpp(277,7): warning C4267: “+=”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\ServerMediaSession.cpp(300,31): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+  SimpleRTPSink.cpp
+  SimpleRTPSource.cpp
+  SIPClient.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\SIPClient.cpp(46,49): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\SIPClient.cpp(46,29): warning C4267: “初始化”: 从“size_t”转换到“const unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\SIPClient.cpp(50,34): warning C4267: “=”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\SIPClient.cpp(69,28): warning C4267: “=”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\SIPClient.cpp(73,32): warning C4267: “=”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\SIPClient.cpp(78,30): warning C4267: “=”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\SIPClient.cpp(118,5): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\SIPClient.cpp(144,25): warning C4267: “=”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\SIPClient.cpp(191,20): warning C4267: “=”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\SIPClient.cpp(215,30): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\SIPClient.cpp(220,30): warning C4267: “=”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\SIPClient.cpp(234,31): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\SIPClient.cpp(248,28): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\SIPClient.cpp(265,28): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\SIPClient.cpp(290,28): warning C4267: “=”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\SIPClient.cpp(537,24): warning C4267: “=”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\SIPClient.cpp(563,29): warning C4244: “初始化”: 从“__int64”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\SIPClient.cpp(619,25): warning C4267: “=”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\SIPClient.cpp(656,22): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\SIPClient.cpp(672,33): warning C4267: “参数”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\SIPClient.cpp(698,22): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\SIPClient.cpp(714,33): warning C4267: “参数”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\SIPClient.cpp(873,26): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+  StreamParser.cpp
+  StreamReplicator.cpp
+  T140TextRTPSink.cpp
+  TCPStreamSink.cpp
+  TextRTPSink.cpp
+  TheoraVideoRTPSink.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\TheoraVideoRTPSink.cpp(103,31): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+  TheoraVideoRTPSource.cpp
+  uLawAudioFilter.cpp
+  VideoRTPSink.cpp
+  VorbisAudioRTPSink.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\VorbisAudioRTPSink.cpp(112,31): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+  VorbisAudioRTPSource.cpp
+  VP8VideoRTPSink.cpp
+  正在生成代码...
+  正在编译...
+  VP8VideoRTPSource.cpp
+  WAVAudioFileServerMediaSubsession.cpp
+  WAVAudioFileSource.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\WAVAudioFileSource.cpp(276,25): warning C4267: “=”: 从“size_t”转换到“unsigned int”，可能丢失数据
+  正在生成代码...
+  rtcp_from_spec.c
+  liveMedia.vcxproj -> E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\liveMedia\liveMedia.lib

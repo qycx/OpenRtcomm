@@ -1,0 +1,13 @@
+﻿  pch.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\UsageEnvironment\pch.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\UsageEnvironment\pch.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“pch.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\UsageEnvironment\framework.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“pch.cpp”)
+  
+  HashTable.cpp
+  strDup.cpp
+  UsageEnvironment.cpp
+  正在生成代码...
+  UsageEnvironment.vcxproj -> E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\live\UsageEnvironment\UsageEnvironment.lib

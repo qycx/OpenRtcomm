@@ -1,0 +1,232 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Output 目录未以斜杠结尾。  此生成实例将添加斜杠，因为必须有这个斜杠才能正确计算 Output 目录。
+  stdafx.cpp
+  qyPipeFunc_open.cpp
+E:\root\openRtComm-new\srcProjs\qyOpen\include\qyDefs_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/qyOpen/qyCommProc_open/qyPipeFunc_open.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qyCommProc_open\include\qyCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/qyOpen/qyCommProc_open/qyPipeFunc_open.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qdc_open\include\qdcCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/qyOpen/qyCommProc_open/qyPipeFunc_open.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qdc_open\include\rtspCliHelpPublic.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/qyOpen/qyCommProc_open/qyPipeFunc_open.cpp”)
+  
+  rtspCliCommonFunc.cpp
+E:\root\openRtComm-new\srcProjs\qyOpen\include\qyDefs_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/qyOpen/qyCommProc_open/rtspCliCommonFunc.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qyCommProc_open\include\qyCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/qyOpen/qyCommProc_open/rtspCliCommonFunc.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qdc_open\include\qdcCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/qyOpen/qyCommProc_open/rtspCliCommonFunc.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qdc_open\include\rtspCliHelpPublic.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/qyOpen/qyCommProc_open/rtspCliCommonFunc.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qyCommProc_open\rtspCliCommonFunc.cpp(39,2): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/qyOpen/qyCommProc_open/rtspCliCommonFunc.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qyCommProc_open\rtspCliCommonFunc.cpp(62,3): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/qyOpen/qyCommProc_open/rtspCliCommonFunc.cpp”)
+  
+  myopenRTSP.cpp
+  myplayCommon.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\root\openRtComm-new\srcProjs\qyOpen\include\qyDefs_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qyCommProc_open\include\qyCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qdc_open\include\qdcCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qdc_open\include\rtspCliHelpPublic.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\include\qvcfDefs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(340,15): warning C4018: “>”: 有符号/无符号不匹配
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(268,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(333,5): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(348,4): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(537,30): warning C4244: “参数”: 从“unsigned __int64”转换到“int”，可能丢失数据
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(548,29): warning C4244: “参数”: 从“unsigned __int64”转换到“int”，可能丢失数据
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(481,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(824,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(905,149): warning C4244: “参数”: 从“unsigned __int64”转换到“int”，可能丢失数据
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(915,147): warning C4244: “参数”: 从“unsigned __int64”转换到“int”，可能丢失数据
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(965,32): warning C4244: “参数”: 从“unsigned __int64”转换到“int”，可能丢失数据
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(820,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(1158,8): warning C4101: “fSuccess”: 未引用的局部变量
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(1351,3): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(1372,11): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(1436,11): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(1452,11): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(1465,11): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(1498,11): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(1521,8): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(1546,8): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(1570,11): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(1587,11): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(1596,11): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(1605,11): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(1626,11): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(1634,11): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(1663,6): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(1674,11): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(1691,11): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(1704,6): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(1738,3): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(2053,13): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(2078,38): warning C4101: “e”: 未引用的局部变量
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(2081,34): warning C4101: “e”: 未引用的局部变量
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(2093,7): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(2097,7): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(2148,2): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(2154,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(2300,3): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\myplayCommon.cpp(2812,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/myplayCommon.cpp”)
+  
+  rtspCliHelpCmdProc.cpp
+E:\root\openRtComm-new\srcProjs\qyOpen\include\qyDefs_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/rtspCliHelpCmdProc.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qyCommProc_open\include\qyCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/rtspCliHelpCmdProc.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qdc_open\include\qdcCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/rtspCliHelpCmdProc.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qdc_open\include\rtspCliHelpPublic.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/rtspCliHelpCmdProc.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\rtspCliHelpCmdProc.cpp(62,5): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/rtspCliHelpCmdProc.cpp”)
+  
+  rtspCliHelp_dynFunc.cpp
+E:\root\openRtComm-new\srcProjs\qyOpen\include\qyDefs_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/rtspCliHelp_dynFunc.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qyCommProc_open\include\qyCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/rtspCliHelp_dynFunc.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qdc_open\include\qdcCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/rtspCliHelp_dynFunc.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qdc_open\include\rtspCliHelpPublic.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/rtspCliHelp_dynFunc.cpp”)
+  
+  splProc.cpp
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\splProc.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\root\openRtComm-new\srcProjs\qyOpen\include\qyDefs_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/splProc.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qyCommProc_open\include\qyCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/splProc.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qdc_open\include\qdcCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/splProc.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qdc_open\include\rtspCliHelpPublic.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/splProc.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\splProc.cpp(244,147): warning C4244: “参数”: 从“unsigned __int64”转换到“int”，可能丢失数据
+  (编译源文件“/public/splProc.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qisTools_srcRoot\live555\rtspCliHelp\public\splProc.cpp(152,10): warning C4101: “tBuf”: 未引用的局部变量
+  (编译源文件“/public/splProc.cpp”)
+  
+  rtspCliHelp.cpp
+  dllmain.cpp
+    正在创建库 ..\..\..\..\VS2012\x64\Release\tools\rtspCli\rtspCliHelp.lib 和对象 ..\..\..\..\VS2012\x64\Release\tools\rtspCli\rtspCliHelp.exp
+  正在生成代码
+  Previous IPDB not found, fall back to full compilation.
+  All 2562 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  已完成代码的生成
+  rtspCliHelp.vcxproj -> E:\root\openRtComm-new\VS2012\x64\Release\tools\rtspCli\rtspCliHelp.dll

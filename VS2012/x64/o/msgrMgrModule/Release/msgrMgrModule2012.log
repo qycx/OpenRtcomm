@@ -1,0 +1,1139 @@
+﻿  StdAfx.cpp
+  qySyncObj.cpp
+  qyTCharCommProc.cpp
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\qyCommProc_open\qyTCharCommProc.cpp(326,3): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/qyOpen/qyCommProc_open/qyTCharCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\qyCommProc_open\qyTCharCommProc.cpp(382,3): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/qyOpen/qyCommProc_open/qyTCharCommProc.cpp”)
+  
+  qyCommFunc.cpp
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qyCommFunc.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(9,11): warning C4005: “UNICODE”: 宏重定义
+  (编译源文件“/qyCommProc/qyCommFunc.cpp”)
+      E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(9,11):
+      之前在命令行上声明的“UNICODE”
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(10,11): warning C4005: “_UNICODE”: 宏重定义
+  (编译源文件“/qyCommProc/qyCommFunc.cpp”)
+      E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(10,11):
+      之前在命令行上声明的“_UNICODE”
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/qyCommProc/qyCommFunc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\commonfunc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/qyCommProc/qyCommFunc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCfg.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/qyCommProc/qyCommFunc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\asrComm.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/qyCommProc/qyCommFunc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyDefs_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/qyCommProc/qyCommFunc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyDefs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/qyCommProc/qyCommFunc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyTypes.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/qyCommProc/qyCommFunc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyCommonFunc5.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/qyCommProc/qyCommFunc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyLogHelpFunc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/qyCommProc/qyCommFunc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyLog\qyLogFunc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/qyCommProc/qyCommFunc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\contentFilter\qyCfPublic.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/qyCommProc/qyCommFunc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyComm.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/qyCommProc/qyCommFunc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\atOpen\include\ancCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/qyCommProc/qyCommFunc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qyCommFunc.cpp(339,5): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/qyCommProc/qyCommFunc.cpp”)
+  
+  msgrMgrModule.cpp
+  msgrMgrModuleProc.cpp
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/msgrMgrModuleProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(9,11): warning C4005: “UNICODE”: 宏重定义
+  (编译源文件“/msgrMgrModuleProc.cpp”)
+      E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(9,11):
+      之前在命令行上声明的“UNICODE”
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(10,11): warning C4005: “_UNICODE”: 宏重定义
+  (编译源文件“/msgrMgrModuleProc.cpp”)
+      E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(10,11):
+      之前在命令行上声明的“_UNICODE”
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\commonfunc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/msgrMgrModuleProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCfg.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/msgrMgrModuleProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\asrComm.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/msgrMgrModuleProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyDefs_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/msgrMgrModuleProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyDefs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/msgrMgrModuleProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyTypes.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/msgrMgrModuleProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyCommonFunc5.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/msgrMgrModuleProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyLogHelpFunc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/msgrMgrModuleProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyLog\qyLogFunc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/msgrMgrModuleProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\contentFilter\qyCfPublic.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/msgrMgrModuleProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCustom\include\qyCustom.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/msgrMgrModuleProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyWmComm.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/msgrMgrModuleProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyComm.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/msgrMgrModuleProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\atOpen\include\ancCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/msgrMgrModuleProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyLicense.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/msgrMgrModuleProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyCommProc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/msgrMgrModuleProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyCommProc.h(521,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/msgrMgrModuleProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qnmCommProc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/msgrMgrModuleProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\atOpen\include\ancCommProc_defs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/msgrMgrModuleProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qnmCommProc.h(639,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/msgrMgrModuleProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qnmCommProc.h(1079,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/msgrMgrModuleProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qnmCommProc.h(2318,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/msgrMgrModuleProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyModuleFunc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/msgrMgrModuleProc.cpp”)
+  
+  正在生成代码...
+  qnmCommProc.cpp
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(9,11): warning C4005: “UNICODE”: 宏重定义
+  (编译源文件“../../../../qyCommProc/qnmCommProc.cpp”)
+      E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(9,11):
+      之前在命令行上声明的“UNICODE”
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(10,11): warning C4005: “_UNICODE”: 宏重定义
+  (编译源文件“../../../../qyCommProc/qnmCommProc.cpp”)
+      E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(10,11):
+      之前在命令行上声明的“_UNICODE”
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\commonfunc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCfg.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\asrComm.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyDefs_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyDefs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyTypes.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyCommonFunc5.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyLogHelpFunc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyLog\qyLogFunc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\contentFilter\qyCfPublic.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyWmComm.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyComm.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\atOpen\include\ancCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCustom\include\qyCustom.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyCommProc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyCommProc.h(521,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qnmCommProc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\atOpen\include\ancCommProc_defs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qnmCommProc.h(639,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qnmCommProc.h(1079,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qnmCommProc.h(2318,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\qisOpen\include\imCommType_defs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qnmAssetsCommProc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qnmSpCommProc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qwmNetworkStatusCommProc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCustom\include\qnmCustom.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qySyncCommProc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmCommProc.cpp(606,4): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmCommProc.cpp(610,9): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmCommProc.cpp(624,10): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmCommProc.cpp(676,28): warning C4244: “=”: 从“long”转换到“unsigned short”，可能丢失数据
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmCommProc.cpp(807,3): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmCommProc.cpp(1558,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmCommProc.cpp(1630,1): warning C4102: “errLabel”: 未引用的标签
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmCommProc.cpp(1523,18): warning C4101: “i”: 未引用的局部变量
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmCommProc.cpp(1758,1): warning C4102: “errLabel”: 未引用的标签
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmCommProc.cpp(1642,16): warning C4101: “tmpPcCommU”: 未引用的局部变量
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmCommProc.cpp(1640,18): warning C4101: “i”: 未引用的局部变量
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmCommProc.cpp(1774,3): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmCommProc.cpp(1775,3): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmCommProc.cpp(1816,1): warning C4102: “errLabel”: 未引用的标签
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmCommProc.cpp(1797,18): warning C4101: “i”: 未引用的局部变量
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmCommProc.cpp(1844,1): warning C4102: “errLabel”: 未引用的标签
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmCommProc.cpp(1823,18): warning C4101: “i”: 未引用的局部变量
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmCommProc.cpp(1895,12): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmCommProc.cpp(1897,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmCommProc.cpp(1917,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmCommProc.cpp(1930,19): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmCommProc.cpp(2124,30): warning C4267: “=”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmCommProc.cpp(2127,34): warning C4267: “参数”: 从“size_t”转换到“unsigned long”，可能丢失数据
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmCommProc.cpp(2231,30): warning C4267: “=”: 从“size_t”转换到“unsigned int”，可能丢失数据
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmCommProc.cpp(2234,34): warning C4267: “参数”: 从“size_t”转换到“unsigned long”，可能丢失数据
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmCommProc.cpp(2346,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmCommProc.cpp(2509,11): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmCommProc.cpp(2571,23): warning C4996: 'gethostbyname': Use getaddrinfo() or GetAddrInfoW() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmCommProc.cpp(2576,20): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmCommProc.cpp(2577,3): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmCommProc.cpp(2606,5): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmCommProc.cpp(2650,3): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  qnmOsAuditCommProc.cpp
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmOsAuditCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(9,11): warning C4005: “UNICODE”: 宏重定义
+  (编译源文件“../../../../qyCommProc/qnmOsAuditCommProc.cpp”)
+      E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(9,11):
+      之前在命令行上声明的“UNICODE”
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(10,11): warning C4005: “_UNICODE”: 宏重定义
+  (编译源文件“../../../../qyCommProc/qnmOsAuditCommProc.cpp”)
+      E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(10,11):
+      之前在命令行上声明的“_UNICODE”
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\commonfunc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmOsAuditCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCfg.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmOsAuditCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\asrComm.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmOsAuditCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyDefs_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmOsAuditCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyDefs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmOsAuditCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyTypes.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmOsAuditCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyCommonFunc5.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmOsAuditCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyLogHelpFunc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmOsAuditCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyLog\qyLogFunc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmOsAuditCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\contentFilter\qyCfPublic.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmOsAuditCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyWmComm.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmOsAuditCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyComm.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmOsAuditCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\atOpen\include\ancCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmOsAuditCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCustom\include\qyCustom.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmOsAuditCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyCommProc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmOsAuditCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyCommProc.h(521,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmOsAuditCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyLangCommProc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmOsAuditCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qySnmpCommProc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmOsAuditCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qySnmpCommProc.h(493,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmOsAuditCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qnmCommProc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmOsAuditCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\atOpen\include\ancCommProc_defs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmOsAuditCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qnmCommProc.h(639,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmOsAuditCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qnmCommProc.h(1079,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmOsAuditCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qnmCommProc.h(2318,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmOsAuditCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\qisOpen\include\imCommType_defs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmOsAuditCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCustom\include\qnmCustom.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmOsAuditCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qnmAssetsCommProc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qnmOsAuditCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmOsAuditCommProc.cpp(25,4): warning C4311: “类型强制转换”: 从“HKEY”到“long”的指针截断
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmOsAuditCommProc.cpp(25,4): warning C4302: “类型强制转换”: 从“HKEY”到“long”截断
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmOsAuditCommProc.cpp(26,4): warning C4311: “类型强制转换”: 从“HKEY”到“long”的指针截断
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmOsAuditCommProc.cpp(26,4): warning C4302: “类型强制转换”: 从“HKEY”到“long”截断
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmOsAuditCommProc.cpp(27,4): warning C4311: “类型强制转换”: 从“HKEY”到“long”的指针截断
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmOsAuditCommProc.cpp(27,4): warning C4302: “类型强制转换”: 从“HKEY”到“long”截断
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmOsAuditCommProc.cpp(33,4): warning C4311: “类型强制转换”: 从“HKEY”到“long”的指针截断
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmOsAuditCommProc.cpp(33,4): warning C4302: “类型强制转换”: 从“HKEY”到“long”截断
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmOsAuditCommProc.cpp(34,4): warning C4311: “类型强制转换”: 从“HKEY”到“long”的指针截断
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmOsAuditCommProc.cpp(34,4): warning C4302: “类型强制转换”: 从“HKEY”到“long”截断
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmOsAuditCommProc.cpp(35,4): warning C4311: “类型强制转换”: 从“HKEY”到“long”的指针截断
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmOsAuditCommProc.cpp(35,4): warning C4302: “类型强制转换”: 从“HKEY”到“long”截断
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmOsAuditCommProc.cpp(41,4): warning C4311: “类型强制转换”: 从“HKEY”到“long”的指针截断
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmOsAuditCommProc.cpp(41,4): warning C4302: “类型强制转换”: 从“HKEY”到“long”截断
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmOsAuditCommProc.cpp(42,4): warning C4311: “类型强制转换”: 从“HKEY”到“long”的指针截断
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmOsAuditCommProc.cpp(42,4): warning C4302: “类型强制转换”: 从“HKEY”到“long”截断
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmOsAuditCommProc.cpp(43,4): warning C4311: “类型强制转换”: 从“HKEY”到“long”的指针截断
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmOsAuditCommProc.cpp(43,4): warning C4302: “类型强制转换”: 从“HKEY”到“long”截断
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmOsAuditCommProc.cpp(44,4): warning C4311: “类型强制转换”: 从“HKEY”到“long”的指针截断
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qnmOsAuditCommProc.cpp(44,4): warning C4302: “类型强制转换”: 从“HKEY”到“long”截断
+  qwmDynFunc.cpp
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qwmDynFunc.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(9,11): warning C4005: “UNICODE”: 宏重定义
+  (编译源文件“../../../../qyCommProc/qwmDynFunc.cpp”)
+      E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(9,11):
+      之前在命令行上声明的“UNICODE”
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(10,11): warning C4005: “_UNICODE”: 宏重定义
+  (编译源文件“../../../../qyCommProc/qwmDynFunc.cpp”)
+      E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(10,11):
+      之前在命令行上声明的“_UNICODE”
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmDynFunc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\commonfunc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmDynFunc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCfg.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmDynFunc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\asrComm.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmDynFunc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyDefs_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmDynFunc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyDefs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmDynFunc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyTypes.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmDynFunc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyCommonFunc5.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmDynFunc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyLogHelpFunc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmDynFunc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyLog\qyLogFunc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmDynFunc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\contentFilter\qyCfPublic.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmDynFunc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qwmDynFunc.h(419,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmDynFunc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyComm.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmDynFunc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\atOpen\include\ancCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmDynFunc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyWmComm.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmDynFunc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyCommProc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmDynFunc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyCommProc.h(521,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmDynFunc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qnmCommProc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmDynFunc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\atOpen\include\ancCommProc_defs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmDynFunc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qnmCommProc.h(639,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmDynFunc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qnmCommProc.h(1079,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmDynFunc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qnmCommProc.h(2318,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmDynFunc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qySyncCommProc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmDynFunc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qwmDynFunc.cpp(423,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qwmDynFunc.cpp(287,4): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qwmDynFunc.cpp(288,4): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qwmDynFunc.cpp(817,8): warning C4101: “uLen”: 未引用的局部变量
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qwmDynFunc.cpp(818,10): warning C4101: “pT”: 未引用的局部变量
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qwmDynFunc.cpp(886,31): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qwmDynFunc.cpp(887,30): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  qwmNetworkStatusCommProc.cpp
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(9,11): warning C4005: “UNICODE”: 宏重定义
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+      E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(9,11):
+      之前在命令行上声明的“UNICODE”
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(10,11): warning C4005: “_UNICODE”: 宏重定义
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+      E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(10,11):
+      之前在命令行上声明的“_UNICODE”
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\commonfunc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCfg.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\asrComm.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyDefs_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyDefs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyTypes.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyCommonFunc5.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyLogHelpFunc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyLog\qyLogFunc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\contentFilter\qyCfPublic.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyWmComm.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyComm.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\atOpen\include\ancCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCustom\include\qyCustom.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyCommProc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyCommProc.h(521,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyLangCommProc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qySyncCommProc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\genericQueue.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyq2.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qySnmpCommProc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qySnmpCommProc.h(493,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qnmCommProc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\atOpen\include\ancCommProc_defs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qnmCommProc.h(639,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qnmCommProc.h(1079,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qnmCommProc.h(2318,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\qyCommProc_open\include\qyCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\qyVDev_open\include\qyVDevCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\qyVDev_open\include\qyPtz_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\qdc_open\include\qdcCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\qdc_open\include\rtspCliHelpPublic.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\qisCamCap_open\include\qisCamCap_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc_mis\include\qnmCommProc_mis.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\qisOpen\include\ipcProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\qyVDev_open\include\qyPtz_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\atOpen\include\ancPktProcessPublic.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc_mis\include\qnmCommProc_mis.h(914,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\qisOpen\include\imCommType_defs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc_mis\include\qnmCommProc_mis.h(1811,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc_mis\include\qnmCommProc_mis.h(2878,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc_mis\include\qnmCommProc_mis.h(3943,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc_mis\include\qnmCommProc_mis.h(4880,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc_mis\include\qnmCommProc_mis.h(5808,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCustom\include\qnmCustom.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qnmAssetsCommProc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qwmNetworkStatusCommProc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qwmDynFunc.h(419,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\qisOpen\include\pcCommType_defs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qwmNetworkStatusCommProc.cpp(231,22): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qwmNetworkStatusCommProc.cpp(233,6): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qwmNetworkStatusCommProc.cpp(234,6): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qwmNetworkStatusCommProc.cpp(263,41): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qwmNetworkStatusCommProc.cpp(264,11): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qwmNetworkStatusCommProc.cpp(394,44): warning C4244: “=”: 从“time_t”转换到“long”，可能丢失数据
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qwmNetworkStatusCommProc.cpp(330,4): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qwmNetworkStatusCommProc.cpp(352,57): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qwmNetworkStatusCommProc.cpp(353,4): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qwmNetworkStatusCommProc.cpp(415,4): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qwmNetworkStatusCommProc.cpp(561,4): warning C4838: 从“unsigned int”转换到“long”需要收缩转换
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qwmNetworkStatusCommProc.cpp(683,10): warning C4101: “i”: 未引用的局部变量
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qwmNetworkStatusCommProc.cpp(695,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  qyCommProc.cpp
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qyCommProc.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(9,11): warning C4005: “UNICODE”: 宏重定义
+  (编译源文件“../../../../qyCommProc/qyCommProc.cpp”)
+      E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(9,11):
+      之前在命令行上声明的“UNICODE”
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(10,11): warning C4005: “_UNICODE”: 宏重定义
+  (编译源文件“../../../../qyCommProc/qyCommProc.cpp”)
+      E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(10,11):
+      之前在命令行上声明的“_UNICODE”
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\commonfunc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCfg.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\asrComm.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyDefs_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyDefs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyTypes.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyCommonFunc5.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyLogHelpFunc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyLog\qyLogFunc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\contentFilter\qyCfPublic.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyComm.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\atOpen\include\ancCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCustom\include\qyCustom.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyCommProc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyCommProc.h(521,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCustom\include\qnmCustom.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qyCommProc.cpp(210,3): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  qyDmItemCommProc.cpp
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qyDmItemCommProc.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyDmItemCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(9,11): warning C4005: “UNICODE”: 宏重定义
+  (编译源文件“../../../../qyCommProc/qyDmItemCommProc.cpp”)
+      E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(9,11):
+      之前在命令行上声明的“UNICODE”
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(10,11): warning C4005: “_UNICODE”: 宏重定义
+  (编译源文件“../../../../qyCommProc/qyDmItemCommProc.cpp”)
+      E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(10,11):
+      之前在命令行上声明的“_UNICODE”
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\commonfunc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyDmItemCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCfg.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyDmItemCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\asrComm.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyDmItemCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyDefs_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyDmItemCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyDefs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyDmItemCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyTypes.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyDmItemCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyCommonFunc5.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyDmItemCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyLogHelpFunc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyDmItemCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyLog\qyLogFunc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyDmItemCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\contentFilter\qyCfPublic.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyDmItemCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyCommProc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyDmItemCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyCommProc.h(521,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyDmItemCommProc.cpp”)
+  
+  qySyncCommProc.cpp
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(9,11): warning C4005: “UNICODE”: 宏重定义
+  (编译源文件“../../../../qyCommProc/qySyncCommProc.cpp”)
+      E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(9,11):
+      之前在命令行上声明的“UNICODE”
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(10,11): warning C4005: “_UNICODE”: 宏重定义
+  (编译源文件“../../../../qyCommProc/qySyncCommProc.cpp”)
+      E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(10,11):
+      之前在命令行上声明的“_UNICODE”
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qySyncCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\commonfunc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qySyncCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCfg.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qySyncCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\asrComm.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qySyncCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyDefs_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qySyncCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyDefs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qySyncCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyTypes.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qySyncCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyCommonFunc5.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qySyncCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyLogHelpFunc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qySyncCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyLog\qyLogFunc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qySyncCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\contentFilter\qyCfPublic.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qySyncCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCustom\include\qyCustom.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qySyncCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyWmComm.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qySyncCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyComm.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qySyncCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\atOpen\include\ancCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qySyncCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyCommProc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qySyncCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyCommProc.h(521,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qySyncCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qnmCommProc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qySyncCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\atOpen\include\ancCommProc_defs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qySyncCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qnmCommProc.h(639,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qySyncCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qnmCommProc.h(1079,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qySyncCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qnmCommProc.h(2318,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qySyncCommProc.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qySyncCommProc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qySyncCommProc.cpp”)
+  
+  qyTmpMemory.cpp
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qyTmpMemory.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(9,11): warning C4005: “UNICODE”: 宏重定义
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+      E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(9,11):
+      之前在命令行上声明的“UNICODE”
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(10,11): warning C4005: “_UNICODE”: 宏重定义
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+      E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(10,11):
+      之前在命令行上声明的“_UNICODE”
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\commonfunc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCfg.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\asrComm.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyDefs_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyDefs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyTypes.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyCommonFunc5.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyLogHelpFunc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyLog\qyLogFunc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\contentFilter\qyCfPublic.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCustom\include\qyCustom.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyWmComm.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyComm.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\atOpen\include\ancCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyCommProc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyCommProc.h(521,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qnmCommProc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\atOpen\include\ancCommProc_defs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qnmCommProc.h(639,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qnmCommProc.h(1079,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qnmCommProc.h(2318,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qySyncCommProc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\qyCommProc_open\include\qyCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\qyVDev_open\include\qyVDevCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\qyVDev_open\include\qyPtz_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\qdc_open\include\qdcCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\qdc_open\include\rtspCliHelpPublic.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\qisCamCap_open\include\qisCamCap_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\genericQueue.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyq2.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc_mis\include\qnmCommProc_mis.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\qisOpen\include\ipcProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\qyVDev_open\include\qyPtz_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\atOpen\include\ancPktProcessPublic.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc_mis\include\qnmCommProc_mis.h(914,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\qisOpen\include\imCommType_defs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc_mis\include\qnmCommProc_mis.h(1811,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc_mis\include\qnmCommProc_mis.h(2878,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc_mis\include\qnmCommProc_mis.h(3943,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc_mis\include\qnmCommProc_mis.h(4880,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc_mis\include\qnmCommProc_mis.h(5808,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/qyTmpMemory.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qyTmpMemory.cpp(75,14): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qyTmpMemory.cpp(78,3): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qyTmpMemory.cpp(95,3): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qyTmpMemory.cpp(109,14): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qyTmpMemory.cpp(112,3): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qyTmpMemory.cpp(127,2): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qyTmpMemory.cpp(144,14): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\qyTmpMemory.cpp(147,2): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  tmpCeLib.cpp
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(9,11): warning C4005: “UNICODE”: 宏重定义
+  (编译源文件“../../../../qyCommProc/tmpCeLib.cpp”)
+      E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(9,11):
+      之前在命令行上声明的“UNICODE”
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(10,11): warning C4005: “_UNICODE”: 宏重定义
+  (编译源文件“../../../../qyCommProc/tmpCeLib.cpp”)
+      E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(10,11):
+      之前在命令行上声明的“_UNICODE”
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/tmpCeLib.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\commonfunc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/tmpCeLib.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCfg.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/tmpCeLib.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\asrComm.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/tmpCeLib.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyDefs_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/tmpCeLib.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyDefs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/tmpCeLib.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyTypes.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/tmpCeLib.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyCommonFunc5.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/tmpCeLib.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyLogHelpFunc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/tmpCeLib.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyLog\qyLogFunc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/tmpCeLib.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\contentFilter\qyCfPublic.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/tmpCeLib.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyComm.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/tmpCeLib.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\atOpen\include\ancCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/tmpCeLib.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyWmComm.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/tmpCeLib.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyCommProc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/tmpCeLib.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyCommProc.h(521,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/tmpCeLib.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qnmCommProc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/tmpCeLib.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\atOpen\include\ancCommProc_defs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/tmpCeLib.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qnmCommProc.h(639,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/tmpCeLib.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qnmCommProc.h(1079,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/tmpCeLib.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qnmCommProc.h(2318,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCommProc/tmpCeLib.cpp”)
+  
+  qyCustom.cpp
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCustom\qyCustom.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCustom/qyCustom.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(9,11): warning C4005: “UNICODE”: 宏重定义
+  (编译源文件“../../../../qyCustom/qyCustom.cpp”)
+      E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(9,11):
+      之前在命令行上声明的“UNICODE”
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(10,11): warning C4005: “_UNICODE”: 宏重定义
+  (编译源文件“../../../../qyCustom/qyCustom.cpp”)
+      E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyPrecomp.h(10,11):
+      之前在命令行上声明的“_UNICODE”
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\commonfunc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCustom/qyCustom.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCfg.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCustom/qyCustom.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\asrComm.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCustom/qyCustom.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\qyOpen\Include\qyDefs_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCustom/qyCustom.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyDefs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCustom/qyCustom.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyTypes.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCustom/qyCustom.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyCommonFunc5.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCustom/qyCustom.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyCommon\qyLogHelpFunc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCustom/qyCustom.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\qyLog\qyLogFunc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCustom/qyCustom.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyInclude\contentFilter\qyCfPublic.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCustom/qyCustom.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyComm.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCustom/qyCustom.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\atOpen\include\ancCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCustom/qyCustom.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCustom\include\qyCustom.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCustom/qyCustom.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyCommProc.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCustom/qyCustom.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCommProc\include\qyCommProc.h(521,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCustom/qyCustom.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCustom\include\qnmCustom.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../../../qyCustom/qyCustom.cpp”)
+  
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCustom\qyCustom.cpp(131,16): warning C4244: “=”: 从“long”转换到“BYTE”，可能丢失数据
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCustom\qyCustom.cpp(135,25): warning C4244: “=”: 从“long”转换到“BYTE”，可能丢失数据
+E:\tmp_root\atProjs\openRtComm\srcProjs\srcRoot\src6\qyCustom\qyCustom.cpp(139,32): warning C4244: “=”: 从“long”转换到“unsigned short”，可能丢失数据
+  正在生成代码...
+  qyBaseLib.lib(traceLog.obj) : 找到 MSIL .netmodule 或使用 /GL 编译的模块；正在使用 /LTCG 重新启动链接；将 /LTCG 添加到链接命令行以改进链接器性能
+    正在创建库 ..\..\..\..\..\..\..\VS2012\x64\Release\bin\msgrMgrModule.lib 和对象 ..\..\..\..\..\..\..\VS2012\x64\Release\bin\msgrMgrModule.exp
+  正在生成代码
+  已完成代码的生成
+  msgrMgrModule2012.vcxproj -> E:\tmp_root\atProjs\openRtComm\VS2012\x64\Release\bin\msgrMgrModule.dll

@@ -1,0 +1,157 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Output 目录未以斜杠结尾。  此生成实例将添加斜杠，因为必须有这个斜杠才能正确计算 Output 目录。
+cl : 命令行  warning D9035: “Gm”选项已否决，并将在将来的版本中移除
+  stdafx.cpp
+cl : 命令行  warning D9035: “Gm”选项已否决，并将在将来的版本中移除
+  qisCompress.cpp
+E:\root\openRtComm-new\srcProjs\qyOpen\include\qyDefs_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/qisCompress.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qyCommProc_open\include\qyCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/qisCompress.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qdc_open\include\qdcCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/qisCompress.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qdc_open\include\rtspCliHelpPublic.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/qisCompress.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qdc_tmpRoot\qdc_componentsSrc\qdcProjs\qisCompress_ffmpeg\public\qisCompress.cpp(45,2): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/qisCompress.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qdc_tmpRoot\qdc_componentsSrc\qdcProjs\qisCompress_ffmpeg\public\qisCompress.cpp(48,2): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/qisCompress.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qdc_tmpRoot\qdc_componentsSrc\qdcProjs\qisCompress_ffmpeg\public\qisCompress.cpp(111,2): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/qisCompress.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qdc_tmpRoot\qdc_componentsSrc\qdcProjs\qisCompress_ffmpeg\public\qisCompress.cpp(421,20): warning C4018: “>”: 有符号/无符号不匹配
+  (编译源文件“/public/qisCompress.cpp”)
+  
+  tmp_readAndSave.cpp
+E:\root\openRtComm-new\ffmpegLibs\x64\include\libavutil\rational.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/tmp_readAndSave.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qdc_tmpRoot\qdc_componentsSrc\qdcProjs\qisCompress_ffmpeg\public\tmp_readAndSave.cpp(21,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/tmp_readAndSave.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qdc_tmpRoot\qdc_componentsSrc\qdcProjs\qisCompress_ffmpeg\public\tmp_readAndSave.cpp(22,12): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/tmp_readAndSave.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qdc_tmpRoot\qdc_componentsSrc\qdcProjs\qisCompress_ffmpeg\public\tmp_readAndSave.cpp(70,32): warning C4996: 'AVStream::codec': 被声明为已否决
+  (编译源文件“/public/tmp_readAndSave.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qdc_tmpRoot\qdc_componentsSrc\qdcProjs\qisCompress_ffmpeg\public\tmp_readAndSave.cpp(76,46): warning C4996: 'AVStream::codec': 被声明为已否决
+  (编译源文件“/public/tmp_readAndSave.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qdc_tmpRoot\qdc_componentsSrc\qdcProjs\qisCompress_ffmpeg\public\tmp_readAndSave.cpp(106,78): warning C4996: 'AVCodecContext::header_bits': 被声明为已否决
+  (编译源文件“/public/tmp_readAndSave.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qdc_tmpRoot\qdc_componentsSrc\qdcProjs\qisCompress_ffmpeg\public\tmp_readAndSave.cpp(57,2): warning C4996: 'av_register_all': 被声明为已否决
+  (编译源文件“/public/tmp_readAndSave.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qdc_tmpRoot\qdc_componentsSrc\qdcProjs\qisCompress_ffmpeg\public\tmp_readAndSave.cpp(91,15): warning C4996: 'avpicture_get_size': 被声明为已否决
+  (编译源文件“/public/tmp_readAndSave.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qdc_tmpRoot\qdc_componentsSrc\qdcProjs\qisCompress_ffmpeg\public\tmp_readAndSave.cpp(94,2): warning C4996: 'avpicture_fill': 被声明为已否决
+  (编译源文件“/public/tmp_readAndSave.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qdc_tmpRoot\qdc_componentsSrc\qdcProjs\qisCompress_ffmpeg\public\tmp_readAndSave.cpp(99,4): warning C4996: 'avcodec_decode_video2': 被声明为已否决
+  (编译源文件“/public/tmp_readAndSave.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qdc_tmpRoot\qdc_componentsSrc\qdcProjs\qisCompress_ffmpeg\public\tmp_readAndSave.cpp(109,3): warning C4996: 'av_free_packet': 被声明为已否决
+  (编译源文件“/public/tmp_readAndSave.cpp”)
+  
+  qdcSpl_dynFunc.cpp
+E:\root\openRtComm-new\srcProjs\qyOpen\include\qyDefs_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/qdcSpl_dynFunc.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qyCommProc_open\include\qyCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/qdcSpl_dynFunc.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qdc_open\include\qdcCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/qdcSpl_dynFunc.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qdc_open\include\rtspCliHelpPublic.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/qdcSpl_dynFunc.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qdc_tmpRoot\qdc_componentsSrc\qdcProjs\qisCompress_ffmpeg\public\qdcSpl_dynFunc.cpp(69,3): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/qdcSpl_dynFunc.cpp”)
+  
+  qdcSplitter_ffmpeg.cpp
+E:\root\openRtComm-new\srcProjs\qdc_tmpRoot\qdc_componentsSrc\qdcProjs\qisCompress_ffmpeg\public\qdcSplitter_ffmpeg.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\root\openRtComm-new\srcProjs\qyOpen\include\qyDefs_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/qdcSplitter_ffmpeg.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qyCommProc_open\include\qyCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/qdcSplitter_ffmpeg.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qdc_open\include\qdcCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/qdcSplitter_ffmpeg.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qdc_open\include\rtspCliHelpPublic.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/public/qdcSplitter_ffmpeg.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qdc_tmpRoot\qdc_componentsSrc\qdcProjs\qisCompress_ffmpeg\public\qdcSplitter_ffmpeg.cpp(109,6): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/qdcSplitter_ffmpeg.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qdc_tmpRoot\qdc_componentsSrc\qdcProjs\qisCompress_ffmpeg\public\qdcSplitter_ffmpeg.cpp(173,5): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/qdcSplitter_ffmpeg.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qdc_tmpRoot\qdc_componentsSrc\qdcProjs\qisCompress_ffmpeg\public\qdcSplitter_ffmpeg.cpp(193,4): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/qdcSplitter_ffmpeg.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qdc_tmpRoot\qdc_componentsSrc\qdcProjs\qisCompress_ffmpeg\public\qdcSplitter_ffmpeg.cpp(226,54): warning C4244: “=”: 从“mfxI64”转换到“unsigned int”，可能丢失数据
+  (编译源文件“/public/qdcSplitter_ffmpeg.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qdc_tmpRoot\qdc_componentsSrc\qdcProjs\qisCompress_ffmpeg\public\qdcSplitter_ffmpeg.cpp(271,19): warning C4101: “buf”: 未引用的局部变量
+  (编译源文件“/public/qdcSplitter_ffmpeg.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qdc_tmpRoot\qdc_componentsSrc\qdcProjs\qisCompress_ffmpeg\public\qdcSplitter_ffmpeg.cpp(562,1): warning C4102: “errLabel”: 未引用的标签
+  (编译源文件“/public/qdcSplitter_ffmpeg.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qdc_tmpRoot\qdc_componentsSrc\qdcProjs\qisCompress_ffmpeg\public\qdcSplitter_ffmpeg.cpp(620,46): warning C4244: “=”: 从“mfxU64”转换到“int”，可能丢失数据
+  (编译源文件“/public/qdcSplitter_ffmpeg.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qdc_tmpRoot\qdc_componentsSrc\qdcProjs\qisCompress_ffmpeg\public\qdcSplitter_ffmpeg.cpp(628,6): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/qdcSplitter_ffmpeg.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qdc_tmpRoot\qdc_componentsSrc\qdcProjs\qisCompress_ffmpeg\public\qdcSplitter_ffmpeg.cpp(636,9): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (编译源文件“/public/qdcSplitter_ffmpeg.cpp”)
+  
+  parseSpsPps.cpp
+E:\root\openRtComm-new\srcProjs\qyOpen\include\qyDefs_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/qyOpen/qyCommProc_open/parseSpsPps.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qyCommProc_open\include\qyCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/qyOpen/qyCommProc_open/parseSpsPps.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qdc_open\include\qdcCommProc_open.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/qyOpen/qyCommProc_open/parseSpsPps.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qdc_open\include\rtspCliHelpPublic.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“/qyOpen/qyCommProc_open/parseSpsPps.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qyCommProc_open\parseSpsPps.cpp(39,20): warning C4018: “>”: 有符号/无符号不匹配
+  (编译源文件“/qyOpen/qyCommProc_open/parseSpsPps.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qyCommProc_open\parseSpsPps.cpp(209,29): warning C4244: “=”: 从“__int64”转换到“unsigned int”，可能丢失数据
+  (编译源文件“/qyOpen/qyCommProc_open/parseSpsPps.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qyCommProc_open\parseSpsPps.cpp(238,29): warning C4244: “=”: 从“__int64”转换到“unsigned int”，可能丢失数据
+  (编译源文件“/qyOpen/qyCommProc_open/parseSpsPps.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qyCommProc_open\parseSpsPps.cpp(389,29): warning C4244: “=”: 从“__int64”转换到“unsigned int”，可能丢失数据
+  (编译源文件“/qyOpen/qyCommProc_open/parseSpsPps.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qyCommProc_open\parseSpsPps.cpp(423,29): warning C4244: “=”: 从“__int64”转换到“unsigned int”，可能丢失数据
+  (编译源文件“/qyOpen/qyCommProc_open/parseSpsPps.cpp”)
+  
+E:\root\openRtComm-new\srcProjs\qyOpen\qyCommProc_open\parseSpsPps.cpp(486,19): warning C4018: “<”: 有符号/无符号不匹配
+  (编译源文件“/qyOpen/qyCommProc_open/parseSpsPps.cpp”)
+  
+  正在生成代码...
+E:\root\openRtComm-new\srcProjs\qdc_tmpRoot\qdc_componentsSrc\qdcProjs\qisCompress_ffmpeg\public\qdcSpl_dynFunc.cpp(103,1): warning C4715: “unload_spl”: 不是所有的控件路径都返回值
+cl : 命令行  warning D9035: “Gm”选项已否决，并将在将来的版本中移除
+  dllmain.cpp
+    正在创建库 ..\..\..\..\..\VS2012\x64\Debug\tools\rtspCli\ffCompress.lib 和对象 ..\..\..\..\..\VS2012\x64\Debug\tools\rtspCli\ffCompress.exp
+  qisCompress_ffmpeg2010.vcxproj -> E:\root\openRtComm-new\VS2012\x64\Debug\tools\rtspCli\ffCompress.dll
