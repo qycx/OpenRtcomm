@@ -1,0 +1,2112 @@
+﻿生成启动时间为 2023/12/12 16:17:11。
+     1>项目“C:\Users\sunrenjie\Downloads\CH-HCNetSDKV6.1.9.48_build20230410_win64\Demo示例\1- MFC综合示例\ClientDemo.vcxproj”在节点 2 上(Build 个目标)。
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(357,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I"../../头文件" /I../incCn /I./ /Iinclude /Zi /nologo /W3 /WX- /MP /Od /D _WIN64 /D NDEBUG /D _WINDOWS /D DEMO_LAN_CN /D _VC80_UPGRADE=0x0600 /D _MBCS /GF /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp".\ReleaseVC60\ClientDemo.pch" /FAcs /Fa"VC60/" /Fo"VC60/" /Fd"VC60/vc120.pdb" /FR /Gd /TP /errorReport:prompt ClientDemo.cpp
+         ClientDemo.cpp
+     1>C:\Users\sunrenjie\Downloads\CH-HCNetSDKV6.1.9.48_build20230410_win64\头文件\HCNetSDK.h(1906): warning C4005: “ZOOM_IN”: 宏重定义
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\atlmfc\include\afxpriv.h(475) : 参见“ZOOM_IN”的前一个定义
+     1>C:\Users\sunrenjie\Downloads\CH-HCNetSDKV6.1.9.48_build20230410_win64\头文件\HCNetSDK.h(1907): warning C4005: “ZOOM_OUT”: 宏重定义
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\atlmfc\include\afxpriv.h(473) : 参见“ZOOM_OUT”的前一个定义
+     1>C:\Users\sunrenjie\Downloads\CH-HCNetSDKV6.1.9.48_build20230410_win64\头文件\HCNetSDK.h(41172): warning C4010: 单行注释包含行继续符
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I"../../头文件" /I../incCn /I./ /Iinclude /Zi /nologo /W3 /WX- /MP /Od /D _WIN64 /D NDEBUG /D _WINDOWS /D DEMO_LAN_CN /D _VC80_UPGRADE=0x0600 /D _MBCS /GF /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp".\ReleaseVC60\ClientDemo.pch" /FAcs /Fa"VC60/" /Fo"VC60/" /Fd"VC60/vc120.pdb" /FR /Gd /TP /errorReport:prompt AlarmAdvanceSetter.cpp B10SeriesConfig.cpp ClientDemoDlg.cpp ConvertC10S21Param.cpp curl_httpclient.cpp DecoderCfg.cpp DeviceCfgFile.cpp DeviceDlg.cpp DialogDoorContent.cpp DialogMultiNetCard.cpp DialogRecordTimeSpan.cpp Dlg67DVSCfg.cpp DlgAbilityAutoDetect.cpp DlgAbnormalInfo.cpp DlgACAlarmInOutCfg.cpp DlgACCardParam.cpp DlgAccessCameraCfg.cpp DlgAccessoryCardInfo.cpp DlgAcsAttendance.cpp DlgAcsCardPasswdCfg.cpp DlgAcsCardPasswdParam.cpp DlgAcsCardUserInfoCfg.cpp DlgAcsCaseSensor.cpp DlgAcsCfg.cpp DlgAcsCheckFacePicture.cpp DlgAcsExternalDevCfg.cpp DlgAcsFaceAndTemplate.cpp DlgAcsFaceParamCfg.cpp DlgAcsFingerPrintCfg.cpp DlgACSGateTimeCFG.cpp DlgAcsLocalControllerCfg.cpp DlgAcsLocalControllerStatus.cpp DlgAcsLogSearch.cpp DlgAcsMoudleStatus.cpp DlgAcsOnlineLocalControllerCfg.cpp DlgAcsPersonnelChannelCfg.cpp DlgAcsPhoneDoorRightCfg.cpp DlgAcsSearchExamCompareResult.cpp DlgAcsSetExamineeInfo.cpp DlgAcsSetExamInfo.cpp DlgAcsSmsCfg.cpp DlgAcsSnapCfg.cpp DlgAcsUSBDeviceManage.cpp DlgAcsWorkModeCfg.cpp DlgAcsWorkStatus.cpp DlgAcsXmlDiffusion.cpp DlgAddDevice.cpp DlgAES.cpp DlgAlarmCamCfg.cpp DlgAlarmCenterNetCfg.cpp DlgAlarmCenterServerCfg.cpp DlgAlarmChanAblitity.cpp DlgAlarmExceptionHandle.cpp DlgAlarmHost.cpp DlgAlarmHostAbility.cpp DlgAlarmHostAudioAssociateAlarm.cpp DlgAlarmhostDataUploadMode.cpp DlgAlarmHostDialParam.cpp DlgAlarmHostDong.cpp DlgAlarmHostEnableCfg.cpp DlgAlarmHostEventTrigger.cpp DlgAlarmhostExternalDevLimitValue.cpp DlgAlarmHostExternalDevState.cpp DlgAlarmHostExternalModule.cpp DlgAlarmHostFaultProcess.cpp DlgAlarmHostGetAllModule.cpp DlgAlarmHostGPRS.cpp DlgAlarmhostHistoryData.cpp DlgAlarmHostLED.cpp DlgAlarmHostLEDBrightness.cpp DlgAlarmHostLogSearch.cpp DlgAlarmhostModuleCfg.cpp DlgAlarmHostNetCfg.cpp DlgAlarmhostPointCfg.cpp DlgAlarmHostPrinter.cpp DlgAlarmHostReportMode.cpp DlgAlarmHostRs485.cpp DlgAlarmhostSensorLinkage.cpp DlgAlarmHostStatus.cpp DlgAlarmhostSTDXMLConfig.cpp DlgAlarmhostSubsystem.cpp DlgAlarmHostTransparent.cpp DlgAlarmHostTriggerCode.cpp DlgAlarmHostZoneCfg.cpp DlgAlarmHostZoomAddr.cpp DlgAlarmInfo.cpp DlgAlarmKeyboardUser.cpp DlgAlarmNetUser.cpp DlgAlarmOneKey.cpp DlgAlarmOperatorUser.cpp DlgAlarmOutCfg.cpp DlgAlarmPicCfg.cpp DlgAlarmTamper.cpp DlgAntiSneakHostCfg.cpp DlgAreaMaskCfg.cpp DlgAreaMonitorCfg.cpp DlgArmingHost.cpp DlgAsynloginWait.cpp DlgAtmFrameFormatV30.cpp DlgAttendanceHolidayGroup.cpp DlgAttendanceHolidayPlan.cpp DlgAttendanceRecordInfo.cpp DlgAttendanceRule.cpp DlgAttendanceSummaryInfo.cpp DlgAudioChanCfg.cpp DlgAudioControlFile.cpp DlgAudioDiacriticalCfg.cpp DlgAudioInVolumeCfg1.cpp DlgAudioOutVolumeCfg.cpp DlgAudioUploadDownload.cpp DlgAutoReboot.cpp DlgAutoUpgrade.cpp DlgBatchConfig.cpp DlgBatchUploadBlockList.cpp DlgBathcUserRightCfg.cpp DlgBatteryPower.cpp DlgBellFileCfg.cpp DlgBroadCast.cpp DlgBuiltinSupplementLight.cpp DlgBvCalibParamCfg.cpp DlgC10S21Config.cpp DlgCameraSetupCfg.cpp DlgCaptureFace.cpp DlgCaptureFingerPrint.cpp DlgCapturePictureV50.cpp DlgCardReaderCfg.cpp DlgCaseInfo.cpp DlgCcdParam.cpp DlgCenterPoint.cpp DlgCertInfo.cpp DLGCfgSecuFile.cpp DlgChanInputAbility.cpp DlgChannelInfo.cpp DlgCheckTime.cpp DlgClearAcsParam.cpp DlgCloudCfg.cpp DlgCloudManage.cpp DlgCloudStorage.cpp DlgCloudStorageCfg.cpp DlgCloudStoragePhoneTest.cpp DlgCloudUploadstrategyCfg.cpp DlgCloudUrlCfg.cpp DlgCluster.cpp DlgCMSParam.cpp DlgCodeSplitter.cpp DlgCommuSecurity.cpp DlgCompressionV30.cpp DlgConferenceParam.cpp DlgConferenceRegion.cpp DlgConfigAll.cpp DlgConfigFlash.cpp DlgConnectList.cpp DlgConsumeSimulate.cpp DlgCourseCfg.cpp DlgCourseInfo.cpp DlgCourseList.cpp DlgCreateVD.cpp DLGCreateWall.cpp DlgCuntomProtocal.cpp DlgCurrentEncodeAbility.cpp DlgCVR.cpp DlgCVRDataManage.cpp DlgCVRPassbackBasicCfg.cpp DlgCVRPreviewByStreamID.cpp DlgCVRRemoteBackup.cpp DlgCVRResourceIPCfg.cpp DlgDebug.cpp DlgDecoderAbility.cpp DlgDecoderControl.cpp DlgDecorder.cpp DlgDecWinStatus.cpp DlgDecWinStatusUniform.cpp DlgDelayPreviewCfg.cpp DlgDepartmentParam.cpp DlgDetectorRegister.cpp DlgDeviceAudioTalkCode.cpp DlgDeviceInfo.cpp DlgDeviceLanguageEncode.cpp DlgDeviceSelfCheckState.cpp DlgDeviceState.cpp DlgDevServer.cpp DlgDevStorageInfo.cpp DlgDevWorkMode.cpp DlgDH3.cpp DlgDiagnosticServer.cpp DlgDiskQuota.cpp DlgDoorConfig.cpp DlgDoTest.cpp DlgDPCCfg.cpp DlgDyanmicPic.cpp DlgDynChanAbility.cpp DlgEagleCfg.cpp DlgEagleEyeCfg.cpp DlgEctChanStatus.cpp DlgEctWorkState.cpp DlgEncodeAbility.cpp DlgEncodeJoint.cpp DlgEncryptCert.cpp DlgESataMiniSasUsage.cpp DlgEthernetIpv6Cfg.cpp DlgEventCardLinkageCfg.cpp DlgExternalDev.cpp DlgEZVIZAccessCfg.cpp DlgEzvizLogin.cpp DlgFaceConsume.cpp DlgFaceData.cpp DlgFacelibSearch.cpp DlgFiberRingCfg.cpp DlgFibreDev.cpp DlgFileUploadDownload.cpp DlgFireDetection.cpp DLGFIREPTZEXCFG.cpp DlgFirmWareversion.cpp DlgFishEye.cpp DlgFisheyeCorrect.cpp DlgFisheyeFECWnd.cpp DlgFishEyePtzControl.cpp DlgFisheyePtzPlayWnd.cpp DlgFisheyeTrackCfg.cpp DlgFormatHD.cpp DlgFortify.cpp DlgFrameCtrl.cpp DlgFTPLogUpload.cpp DlgFTPUpload.cpp DlgGatewayCardCfg.cpp DlgGatewayCfg.cpp DlgGB28181ServerCfg.cpp DlgGBT28181ProAccessUniform.cpp DlgGBT28181ProtocolAccess.cpp DlgGetAccessDeviceChannelInfo.cpp DlgGetAllPointCfg.cpp DlgGetAllRs485Cfg.cpp DlgGetAllRs485Slot.cpp DlgGetAllSensor.cpp DLGGetChannelInfo.cpp DlgGetDigitalChannelStatus.cpp DlgGetRegisterInfo.cpp DlgGetWifiClientListInfo.cpp DlgGISInfo.cpp DlgGKServer.cpp DlgGopInfo.cpp DlgGroupCfg.cpp DlgHardDiskCfg.cpp DlgHardDiskStorageTest.cpp DlgHardDiskVolumeInfo.cpp DlgHeatMapCfg.cpp DlgHiddenInfo.cpp DlgHolidayCfg.cpp DlgIDSMainBoard.cpp DlgImageDiffDetectionCfg.cpp DlgImExportIPCCfgFile.cpp DlgInChanVideoLostCfg.cpp DlgInfoDiffusionCapabilites.cpp DlgInfoDiffusionClock.cpp DlgInfoDiffusionClockWeather.cpp DlgInfoDiffusionContainer.cpp DlgInfoDiffusionContent.cpp DlgInfoDiffusionGuard.cpp DlgInfoDiffusionMaterial.cpp DlgInfoDiffusionPlay.cpp DlgInfoDiffusionProgram.cpp DlgInfoDiffusionRelease.cpp DlgInfoDiffusionSchedule.cpp DlgInfoDiffusionScheduleSearch.cpp DlgInfoDiffusionScheduleSelfdefine.cpp DlgInfoDiffusionServer.cpp DlgInfoDiffusionShutdown.cpp DlgInfoDiffusionTermainlServer.cpp DlgInfoDiffusionTerminal.cpp DlgInfoDiffusionTerminalUpgrade.cpp DlgInfoDiffusionTernimalPreview.cpp DlgInfoDiffusionVolum.cpp DlgInfoDiffusionXmlCfg.cpp DlgInfoDiffusionXmlUpdownload.cpp DlgInfoGerenal.cpp DlgInfoXmlCfgWithUrl.cpp DlgInfrareCfg.cpp DlgInfrared.cpp DlgInqMixAudioInCfg.cpp DlgInquestCaseInfo.cpp DlgInquestDvr.cpp DlgInquestEvent.cpp DlgInquestFile.cpp DlgInquestTrayConfig.cpp DlgInqUserRight.cpp DlgInteractive.cpp DlgInteractiveControl.cpp DlgInteractiveFileInfoCfg.cpp DlgInteractiveScreenConfig.cpp DlgInteractiveScreenFileUpload.cpp DlgIntranetSegmentCfg.cpp DlgIOOutCfg.cpp DlgIPAccessCfgDDNS.cpp DlgIPAccessCfgEasyDDNS.cpp DlgIPAccessCfgIPServer.cpp DlgIPAccessCfgStreamServer.cpp DlgIPAddrFilterCfg.cpp DlgIPCFrontAbility.cpp DlgIPCPlateRecog.cpp DlgIPCSimpIntellCfg.cpp DlgIPCSpecial.cpp DlgIPCSpeclalEx.cpp DlgIPDomeLocalCfg.cpp DlgIperf.cpp DlgIpViewCfg.cpp DlgIscsiCfg.cpp DlgISPParamCfg.cpp DlgITCAblity.cpp DlgITCIOinCfg.cpp DlgITSBaseInfo.cpp DlgITSConfig.cpp DlgITSImageMergeCfg.cpp DlgITSIOinCfg.cpp DlgITSIpcCfg.cpp DlgITSMiniPost.cpp DlgITSMonitor.cpp DlgITSOverlapCfg.cpp DlgITSRoadInfo.cpp DlgITSUpload.cpp DlgITSWorkState.cpp DlgJpegCaptureCfg.cpp DlgJpegFTP.cpp DlgJPEGPicDownloadMedical.cpp DlgJPEGSnatchConfig.cpp DlgKeyboardCfg.cpp DlgLampCfg.cpp DlgLampControl.cpp DlgLcdMatrixRelation.cpp DlgLcdMatrixSwitch.cpp DlgLcdParamCfg.cpp DlgLcdScene.cpp DlgLCDScreen.cpp DlgLCDScreenDisplay.cpp DlgLcdSerial.cpp DlgLcdServer.cpp DlgLcdSplice.cpp DlgLcdSwitchCfg.cpp DlgLcdUserCfg.cpp DlgLEDCheckCond.cpp DlgLedConfig.cpp DlgLedConfigDisplay.cpp DlgLedConfigRecv.cpp DlgLEDTimerSwitch.cpp DlgLEDVersion.cpp DlgLimitAngle.cpp DlgLinkStatus.cpp DlgLiteStorage.cpp DlgLocalConfig.cpp DlgLocalInputInfo.cpp DlgLocalLogConfig.cpp DlgLocalRecordSchedule.cpp DlgLockedInfo.cpp DlgLogSearch.cpp DlgMacFilter.cpp DlgManualSnap.cpp DlgManualThermCfg.cpp DlgMasterSlaveTracking.cpp DlgMatDecBigScrSplice.cpp DlgMatDecodeChanJoint.cpp DlgMatOutputCfg.cpp DlgMatUnitedSystem.cpp DlgMCUAbilityDetect.cpp DlgMCUAddConference.cpp DlgMCUCall.cpp DlgMCUClearConfHistory.cpp DlgMCUConferenceCtrl.cpp DlgMCUDelConference.cpp DlgMCUGetConfStatus.cpp DlgMCUGetDailyDistribution.cpp DlgMCUGetTermGroupList.cpp DlgMCUSearchConference.cpp DlgMCUTerminalCtrl.cpp DlgMCUTerminalGroupCfg.cpp DlgMCUTerminalManageCfg.cpp DlgMergeDecOsd.cpp DlgMergeDev.cpp DlgMergeDevPic.cpp DlgMergeDevResource.cpp DlgMicrophoneStatus.cpp DlgMixAudioInCfg.cpp DlgMixAudioOutCfg.cpp DlgMobileTriggerCfg.cpp DlgModifyRecord.cpp DlgMonitorInfo.cpp DlgMonitorLocation.cpp DlgMouseEvent.cpp DlgMultiCardCfg.cpp DlgMultilStreamRelChanCfg.cpp DlgNetraEventVedio.cpp DlgNetraHttps.cpp DlgNetraRecordPackage.cpp DlgNetraSeries.cpp DlgNetServiceCfg.cpp DlgNetworkAbility.cpp DlgNetworkBonding.cpp DlgNetworkFlowTest.cpp DlgNVRAudioVideoCfg.cpp DlgNVRCfg.cpp DlgNVRIPCCfg.cpp DlgOISCfg.cpp DlgOneKeyBackupCfg.cpp DlgOneKeyPublish.cpp DlgOneOutputScheduleRuleCfg.cpp DlgOnlineUserList.cpp DlgOrdinaryClass.cpp DlgOutput.cpp DlgOutputCtrl.cpp DlgOutputScheduleRuleCfg.cpp DlgPanoramaImage.cpp DlgPassiveTransCode.cpp DlgPassiveWin.cpp DlgPdcCalibration.cpp DlgPdcResult.cpp DlgPdcRuleCfg.cpp DlgPdcRuleCfgEx.cpp DlgPDCSearch.cpp DlgPersonnelStatis.cpp DlgPicBatchUpload.cpp DlgPicModelCfg.cpp DlgPictureSwitchCtrl.cpp DlgPictureUpload.cpp DlgPlayBack.cpp DlgPlayConvert.cpp DlgPlayDvrRecord.cpp DlgPlayEvent.cpp DlgPlayLocalFile.cpp DlgPlayLockFile.cpp DlgPlayMotion.cpp DlgPlayRemoteFile.cpp DlgPlayRemoteFileMedical.cpp DlgPlayRemoteTime.cpp DlgPosChanFilter.cpp DlgPosConnectMode.cpp DlgPosFilterEffect.cpp DlgPosFilterRule.cpp DlgPosInfoctrl.cpp DlgPositionTrackCfg.cpp DlgPosManage.cpp DlgPosRecvData.cpp DlgPOSRegion.cpp DlgPosSerialPortRecvData.cpp DlgPostRadarCfg.cpp DlgPPPCfg.cpp DlgPPTDetect.cpp DlgPreviewOpts.cpp DlgPreviewSwitchCfg.cpp DlgPreviewWin.cpp DlgPrivateProtocolCfg.cpp DlgProductAcs.cpp DlgProductAlarmHostCfg.cpp DlgProductCfg.cpp DlgProductDH.cpp DlgProductionTest.cpp DlgProductVcaCfg.cpp DlgPtzCfgCtrl.cpp DlgPTZCruise.cpp DlgPtzCtrl.cpp DlgPtzLockCfg.cpp DlgPtzNotification.cpp DlgPtzParkActionCfg.cpp DlgPTZPreset.cpp DlgPtzScope.cpp DlgPTZTasks.cpp DlgPtzTrackParamCfg.cpp DlgPUStream.cpp DlgQuickAddIpc.cpp DlgRaidConfig.cpp DlgReaderAntiSneakHostCfg.cpp DlgRecordAbility.cpp DlgRecordControl.cpp DlgRecordHost.cpp DlgRecordHostAbility.cpp DlgRecordHostAudioEffectiveCfg.cpp DlgRecordHostBackgroundPicCfg.cpp DlgRecordHostCfg.cpp DlgRecordHostClassDataStatistic.cpp DlgRecordHostDirectedAdvanceCfg.cpp DlgRecordHostDirectedStrategyCfg.cpp DlgRecordHostEducationServerCfg.cpp DlgRecordHostEndTime.cpp DlgRecordHostFilePublish.cpp DlgRecordHostFilmModeCfg.cpp DlgRecordHostFrameCfg.cpp DlgRecordHostRTMPCfg.cpp DlgRecordHostV120.cpp DlgRecordHostVedioSwitchConfig.cpp DlgRecordHostVideoCfg.cpp DlgRecordHostVideoTitleConfig.cpp DlgRecordLabel.cpp DlgRecordPublishCfg.cpp DlgRecordStatus.cpp DlgRecordStreamTransType.cpp DlgRecPassBack.cpp DlgRecPassBackHistorySchdule.cpp DlgRecPassBackScheCfg.cpp DlgRecPassbackTaskExecutable.cpp DlgRegionDetectCfg.cpp DlgRegionList.cpp DlgRemoteAdvanceNetConfig.cpp DlgRemoteAlarmDetectFace.cpp DlgRemoteAlarmInHandle.cpp DlgRemoteAlarmInPtzInvoke.cpp DlgRemoteCfg.cpp DlgRemoteControlAbility.cpp DlgRemoteControllerCfg.cpp DlgRemoteControllerManage.cpp DlgRemoteControlPlay.cpp DlgRemoteControlStatus.cpp DlgRemoteEmailAddReceiver.cpp DlgRemoteeMMC.cpp DlgRemoteFanException.cpp DlgRemoteHideAlarm.cpp DlgRemoteHideArea.cpp DlgRemoteIPAccess.cpp DlgRemoteKey.cpp DlgRemoteMotionDetect.cpp DlgRemoteNetNFS.cpp DlgRemotePullException.cpp DlgRemoteRecordSchedule.cpp DlgRemoteShowString.cpp DlgRemoteStreamRecordSchedule.cpp DlgRemoteVideoInLost.cpp DlgRemoteVideoInput.cpp DlgRemoteZone.cpp DLGResetLoginPassWord.cpp DlgRoiCfg.cpp DlgRS485DLLParamCfg.cpp DlgRS485ProtocolVersion.cpp DlgRtspConfig.cpp DlgSafeCabinState.cpp DlgSafetyCabin.cpp DlgScaleOutCfg.cpp DlgSceneChangeUpdate.cpp DlgSceneTimeCfg.cpp DlgScheduleInfo.cpp DlgSchedulePlan.cpp DlgScreenCtrl.cpp DlgScreenLogoCfg.cpp DlgScreenLogoCfgUniform.cpp DlgSDIAutoTrackCfg.cpp DlgSDIMatrix.cpp DlgSecurityCfg.cpp DlgSelectDevice.cpp DlgSenceControl.cpp DlgSenceControlUniform.cpp DlgSensorAddPreview.cpp DlgSensorCfg.cpp DlgSerialTrans.cpp DlgShipDetection.cpp DlgSignalLightSync.cpp DlgSizeFilter.cpp DlgSlaveCameraInfo.cpp DlgSmartCalib.cpp DlgSmartSearchPicture.cpp DlgSmartStoragedDetection.cpp DlgSneakAndLock.cpp DlgSnmpCfg.cpp DlgSoftwareService.cpp DlgSplitterStartTrans.cpp DlgSplitterTransparent.cpp DlgStorageServerSwitch.cpp DlgStreamAttachInfoCfg.cpp DlgStreamID.cpp DlgStreamManualRecordAndLock.cpp DlgStreamMediaCfg.cpp DlgStreamRecCheck.cpp DlgStreamRecordInfo.cpp DlgStreamRecordStatus.cpp DlgStreamSrcCfg.cpp DlgSubIPCCfg.cpp DlgSubITSCfg.cpp DlgSubsysNetCfg.cpp DlgSuperBrainFunctionTest.cpp DlgSystemTimeAlarm.cpp DlgT1test.cpp DlgTalkMREx.cpp DlgTermGroup.cpp DlgTerminalConferenceStatus.cpp DlgTerminalGkCfg.cpp DlgTermManage.cpp DlgTermPlay.cpp DlgTermState.cpp DlgTest.cpp DlgThermalDoubleSpectrum.cpp DlgThermometry.cpp DlgThirdGenerationCfg.cpp DlgThreeDimensionaPtz.cpp DlgThremalPipCfg.cpp DlgThscreen.cpp DlgTimeCorrect.cpp DlgTmeCfg.cpp DlgTPSRuleCfg.cpp DlgTransAutoReboot.cpp DlgTransCompression.cpp DlgTransConfig.cpp DlgTransDevStatus.cpp DlgTransStreamSrcCfg.cpp DlgTrialAudioActivation.cpp DLGTrialAudioMix.cpp DlgTrialCaseParam.cpp DlgTrialDVR.cpp DlgTrialHostStatus.cpp DlgTrialPIPCfg.cpp DlgTsSeries.cpp DlgUHFBasicInfo.cpp DlgUHFRFIDReaderCfg.cpp DlgUniformInterface.cpp DlgUpgrade.cpp DlgUpgradeIPC.cpp DlgUpgradeSelectDev.cpp DlgUploadBlockList.cpp DlgUploadBlockListPicture.cpp DlgUploadCalibrationFile.cpp DlgUploadFaceLib.cpp DlgUploadFile.cpp DlgUploadHd.cpp DlgUploadHdFile.cpp DlgUploadLogo.cpp DlgUpnpCfg.cpp DlgUpStreamCfg.cpp DlgVcaAidRuleCfg.cpp DlgVCAAlarmLogo.cpp DlgVcaAlarmTimeCfg.cpp DlgVcaAuxAreaList.cpp DlgVcaBaselineScene.cpp DlgVcaBehaviorCalibrate.cpp DlgVcaBehaviorCfg.cpp DlgVcaBlockList.cpp DlgVcaBVCalibrate.cpp DlgVcaChanCtrlCfg.cpp DlgVcaChannelWorkMode.cpp DlgVcaDataBase.cpp DlgVcaDetectionCfg.cpp DlgVCADetionCfg.cpp DlgVcaDevAbility.cpp DlgVcaDevAccessCfg.cpp DlgVcaDevChannel.cpp DlgVcaDrawMode.cpp DlgVcaEnterRegion.cpp DlgVcaFace.cpp DlgVcaFaceDataBase.cpp DlgVcaFaceDetect.cpp DlgVcaFaceMatchLogSearch.cpp DlgVcaFaceSnapCfg.cpp DlgVcaFindBackgroundPic.cpp DlgVcaFindSnapData.cpp DlgVcaForensicsModeCfg.cpp DlgVcaFunCfg.cpp DlgVcaITCTriggerCfg.cpp DlgVcaITSCalibrate.cpp DlgVcaITSCfg.cpp DlgVcaIvmsCfg.cpp DlgVcaIvmsSched.cpp DlgVcaLaneCfg.cpp DlgVcaLF.cpp DlgVcaMaskRegion.cpp DlgVcaObjectColor.cpp DlgVcaParamkey.cpp DlgVcaPositionRule.cpp DlgVcaRemoteChannel.cpp DlgVcaResetCounterCfg.cpp DlgVcaRuleCfg.cpp DlgVcaRuleCfgEx.cpp DlgVCARuleColorCfg.cpp DlgVcaSavePathConfig.cpp DlgVcaSceneAidRuleCfg.cpp DlgVcaSceneCfg.cpp DlgVcaSceneITSCalibrate.cpp DlgVcaSceneLaneCfg.cpp DlgVcaSceneRegionList.cpp DlgVcaSceneTpsRuleCfg.cpp DlgVcaSceneTrafficCfg.cpp DlgVcaSingleProcImg.cpp DlgVcaSnapDatabase.cpp DlgVcaTrackCfg.cpp DlgVcaVersionList.cpp DlgVcaVQDAlarmPic.cpp DlgVcaVQDEventRule.cpp DlgVcaWorkStatus.cpp DlgVCSExternalMatrix.cpp DlgVedioAudioInCfg.cpp DlgVedioImgDB.cpp DlgVehicleCfg.cpp DlgVehicleControlCfg.cpp DlgVehicleInfo.cpp DlgVehicleMvaCfg.cpp DlgVehicleRecogCFG.cpp DlgVideoIntercomAlarmCfg.cpp DlgVideoIntercomAuthCfg.cpp DlgVideoIntercomCall.cpp DlgVideoIntercomCallRoomCfg.cpp DlgVideoIntercomCfg.cpp DlgVideoIntercomDeviceIDCfg.cpp DlgVideoIntercomElevatorCfg.cpp DlgVideoIntercomGateway.cpp DlgVideoIntercomIOInCfg.cpp DlgVideoIntercomIOOutCfg.cpp DlgVideoIntercomNoticeDataCfg.cpp DlgVideoIntercomNoticeVideoDataCfg.cpp DlgVideoIntercomOpTimeCfg.cpp DlgVideoIntercomPrivilegePwdCfg.cpp DlgVideoIntercomRelateDevCfg.cpp DlgVideoIntercomRoomCustomCfg.cpp DlgVideoIntercomStreamCfg.cpp DlgVideoOut.cpp DlgVideoOutResolutionCfg.cpp DlgVideoWallElse.cpp DlgVISDevInfo.cpp DlgVISRegisterInfo.cpp DlgVoiceTalk.cpp DlgVQDCfg.cpp DlgVqdPlan.cpp DlgWall.cpp DlgWallBasemapWin.cpp DlgWallCfg.cpp DlgWallCfgUniform.cpp DlgWallControl.cpp DlgWallPreview.cpp DlgWallVirLED.cpp DlgWallWin.cpp DlgWallWinVideoWall.cpp DlgWD1Enable.cpp DlgWDRCfg.cpp DlgWeekPlan.cpp DlgAllowList.cpp DlgWiegandCfg.cpp DlgWifi.cpp DlgWifiDHCPCfg.cpp DlgWIFIServerCfg.cpp DlgWinPreview.cpp DlgWirelessBusinessSearch.cpp DlgWirelessDial.cpp DlgWirelessServer.cpp DlgWorkingClass.cpp DlgXmlAbility.cpp DlgXmlAlarmAbility.cpp DlgXmlDecoderAbility.cpp DlgXmlEventAbility.cpp DlgXmlItcAbility.cpp DlgXmlJpegCapAbility.cpp DlgXmlLCDAbility.cpp DlgXmlNetAppAbility.cpp DlgXmlRaidAbility.cpp DlgXmlSerialAbility.cpp DlgXmlSub.cpp DlgXmlVideoPic.cpp DlgXmlWallAblity.cpp DlgZeroChanCfg.cpp DlgZoneLinkageChanCfg.cpp DrawFun.cpp explorer.cpp EzvizDDNSAPI.cpp InfoDiffusionParamsConvert.cpp JPEGPicDownload.cpp LEDScreenAdjust.cpp LocalConfigFile.cpp Markup.cpp MatCodeSplitter.cpp MatCycLink.cpp MatDecDnsCfg.cpp MatDecoderStatus.cpp MatDispChan.cpp MatDispChanControl.cpp MatDynamicTest.cpp MatPassive.cpp MatPlayBack.cpp MatTrans.cpp MatVedioPlatform.cpp MimeProtocolParsing.cpp ModifyRecord.cpp OpenSourceCERT.cpp P2PProxyCfgDlg.cpp ParseXMLHelper.cpp Picture.cpp PTZButton.cpp PTZButton1.cpp PtzControl.cpp SoundIn.cpp StdAfx.cpp SubDlgAdapterCfg.cpp SubDlgAlarmCfg.cpp SubDlgArrayCfg.cpp SubDlgATMInfoCfg.cpp SubDlgBTS.cpp SubDlgChanCfg.cpp SubDlgCVRCfg.cpp SubDlgDeviceCfg.cpp SubDlgDVRNVRCfg.cpp SubDlgExceptionCfg.cpp SubDlgMatDecCfg.cpp SubDlgNetworkCfg.cpp SubDlgPDCfg.cpp SubDlgPreviewCfgV30.cpp SubDlgSerialCfg.cpp SubDlgUserCfg.cpp SubDlgVDCfg.cpp SubDlgWndSequence.cpp TimeSegment.cpp UPLOAD_PANORAMIC_STITCH.cpp UserDlg.cpp VcaCommonOperations.cpp WaveSound.cpp XMLParamsConvert.cpp XmlUserAbility.cpp
+         AlarmAdvanceSetter.cpp
+         B10SeriesConfig.cpp
+         ClientDemoDlg.cpp
+         ConvertC10S21Param.cpp
+     1>ConvertC10S21Param.cpp(186): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (ConvertC10S21Param.cpp)
+     1>ConvertC10S21Param.cpp(187): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (ConvertC10S21Param.cpp)
+     1>ConvertC10S21Param.cpp(191): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (ConvertC10S21Param.cpp)
+     1>ConvertC10S21Param.cpp(192): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (ConvertC10S21Param.cpp)
+         curl_httpclient.cpp
+     1>c:\users\sunrenjie\downloads\ch-hcnetsdkv6.1.9.48_build20230410_win64\demo示例\1- mfc综合示例\curl_httpclient.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (curl_httpclient.cpp)
+     1>c:\users\sunrenjie\downloads\ch-hcnetsdkv6.1.9.48_build20230410_win64\demo示例\1- mfc综合示例\curl_httpclient.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (ClientDemoDlg.cpp)
+     1>AlarmAdvanceSetter.cpp(333): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (AlarmAdvanceSetter.cpp)
+     1>AlarmAdvanceSetter.cpp(385): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (AlarmAdvanceSetter.cpp)
+     1>AlarmAdvanceSetter.cpp(433): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (AlarmAdvanceSetter.cpp)
+     1>AlarmAdvanceSetter.cpp(611): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (AlarmAdvanceSetter.cpp)
+     1>AlarmAdvanceSetter.cpp(663): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (AlarmAdvanceSetter.cpp)
+     1>AlarmAdvanceSetter.cpp(742): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (AlarmAdvanceSetter.cpp)
+     1>AlarmAdvanceSetter.cpp(1620): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (AlarmAdvanceSetter.cpp)
+         DecoderCfg.cpp
+         DeviceCfgFile.cpp
+         DeviceDlg.cpp
+     1>ClientDemoDlg.cpp(7644): warning C4313: “sprintf”: 格式字符串中的“%d”与“char *”类型的参数 11 冲突 (ClientDemoDlg.cpp)
+     1>ClientDemoDlg.cpp(8356): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (ClientDemoDlg.cpp)
+     1>ClientDemoDlg.cpp(9714): warning C4313: “sprintf”: 格式字符串中的“%d”与“char *”类型的参数 8 冲突 (ClientDemoDlg.cpp)
+         DialogDoorContent.cpp
+     1>ClientDemoDlg.cpp(12434): warning C4313: “sprintf”: 格式字符串中的“%d”与“char *”类型的参数 4 冲突 (ClientDemoDlg.cpp)
+         DialogMultiNetCard.cpp
+     1>ClientDemoDlg.cpp(17530): warning C4313: “sprintf”: 格式字符串中的“%d”与“const char *”类型的参数 3 冲突 (ClientDemoDlg.cpp)
+     1>ClientDemoDlg.cpp(17534): warning C4313: “sprintf”: 格式字符串中的“%d”与“const char *”类型的参数 3 冲突 (ClientDemoDlg.cpp)
+     1>ClientDemoDlg.cpp(18619): warning C4313: “sprintf”: 格式字符串中的“%d”与“char *”类型的参数 14 冲突 (ClientDemoDlg.cpp)
+     1>ClientDemoDlg.cpp(18619): warning C4313: “sprintf”: 格式字符串中的“%d”与“const char *”类型的参数 15 冲突 (ClientDemoDlg.cpp)
+     1>ClientDemoDlg.cpp(18832): warning C4313: “sprintf”: 格式字符串中的“%d”与“char *”类型的参数 28 冲突 (ClientDemoDlg.cpp)
+     1>ClientDemoDlg.cpp(19742): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (ClientDemoDlg.cpp)
+     1>ClientDemoDlg.cpp(20752): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据 (ClientDemoDlg.cpp)
+     1>ClientDemoDlg.cpp(21041): warning C4267: “参数”: 从“size_t”转换到“UINT”，可能丢失数据 (ClientDemoDlg.cpp)
+     1>ClientDemoDlg.cpp(21974): warning C4313: “sprintf”: 格式字符串中的“%d”与“char *”类型的参数 16 冲突 (ClientDemoDlg.cpp)
+         DialogRecordTimeSpan.cpp
+         Dlg67DVSCfg.cpp
+         DlgAbilityAutoDetect.cpp
+         DlgAbnormalInfo.cpp
+         DlgACAlarmInOutCfg.cpp
+         DlgACCardParam.cpp
+         DlgAccessCameraCfg.cpp
+         DlgAccessoryCardInfo.cpp
+         DlgAcsAttendance.cpp
+         DlgAcsCardPasswdCfg.cpp
+         DlgAcsCardPasswdParam.cpp
+         DlgAcsCardUserInfoCfg.cpp
+         DlgAcsCaseSensor.cpp
+         DlgAcsCfg.cpp
+         DlgAcsCheckFacePicture.cpp
+         DlgAcsExternalDevCfg.cpp
+         DlgAcsFaceAndTemplate.cpp
+         DlgAcsFaceParamCfg.cpp
+         DlgAcsFingerPrintCfg.cpp
+         DlgACSGateTimeCFG.cpp
+         DlgAcsLocalControllerCfg.cpp
+         DlgAcsLocalControllerStatus.cpp
+         DlgAcsLogSearch.cpp
+         DlgAcsMoudleStatus.cpp
+     1>DlgAcsLocalControllerCfg.cpp(194): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgAcsLocalControllerCfg.cpp)
+     1>DlgAcsLocalControllerCfg.cpp(228): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgAcsLocalControllerCfg.cpp)
+     1>DlgAcsLocalControllerCfg.cpp(376): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgAcsLocalControllerCfg.cpp)
+     1>DlgAcsLocalControllerCfg.cpp(414): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgAcsLocalControllerCfg.cpp)
+     1>DlgAcsLocalControllerCfg.cpp(452): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgAcsLocalControllerCfg.cpp)
+     1>DlgAcsLocalControllerCfg.cpp(514): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgAcsLocalControllerCfg.cpp)
+         DlgAcsOnlineLocalControllerCfg.cpp
+         DlgAcsPersonnelChannelCfg.cpp
+     1>DlgAcsMoudleStatus.cpp(80): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgAcsMoudleStatus.cpp)
+         DlgAcsPhoneDoorRightCfg.cpp
+         DlgAcsSearchExamCompareResult.cpp
+         DlgAcsSetExamineeInfo.cpp
+         DlgAcsSetExamInfo.cpp
+         DlgAcsSmsCfg.cpp
+         DlgAcsSnapCfg.cpp
+         DlgAcsUSBDeviceManage.cpp
+         DlgAcsWorkModeCfg.cpp
+     1>DlgAcsSnapCfg.cpp(178): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgAcsSnapCfg.cpp)
+         DlgAcsWorkStatus.cpp
+     1>DlgAcsUSBDeviceManage.cpp(123): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgAcsUSBDeviceManage.cpp)
+     1>DlgAcsUSBDeviceManage.cpp(205): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgAcsUSBDeviceManage.cpp)
+     1>DlgAcsUSBDeviceManage.cpp(254): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgAcsUSBDeviceManage.cpp)
+     1>DlgAcsWorkModeCfg.cpp(84): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgAcsWorkModeCfg.cpp)
+         DlgAcsXmlDiffusion.cpp
+     1>DlgAcsWorkModeCfg.cpp(136): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgAcsWorkModeCfg.cpp)
+     1>DlgAcsWorkModeCfg.cpp(175): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgAcsWorkModeCfg.cpp)
+         DlgAddDevice.cpp
+         DlgAES.cpp
+     1>DlgAcsXmlDiffusion.cpp(82): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgAcsXmlDiffusion.cpp)
+     1>DlgAcsXmlDiffusion.cpp(113): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgAcsXmlDiffusion.cpp)
+     1>DlgAcsXmlDiffusion.cpp(179): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgAcsXmlDiffusion.cpp)
+     1>DlgAcsXmlDiffusion.cpp(210): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgAcsXmlDiffusion.cpp)
+         DlgAlarmCamCfg.cpp
+     1>c:\users\sunrenjie\downloads\ch-hcnetsdkv6.1.9.48_build20230410_win64\demo示例\1- mfc综合示例\curl_httpclient.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (DlgAddDevice.cpp)
+         DlgAlarmCenterNetCfg.cpp
+         DlgAlarmCenterServerCfg.cpp
+         DlgAlarmChanAblitity.cpp
+         DlgAlarmExceptionHandle.cpp
+         DlgAlarmHost.cpp
+         DlgAlarmHostAbility.cpp
+         DlgAlarmHostAudioAssociateAlarm.cpp
+         DlgAlarmhostDataUploadMode.cpp
+         DlgAlarmHostDialParam.cpp
+         DlgAlarmHostDong.cpp
+         DlgAlarmHostEnableCfg.cpp
+         DlgAlarmHostEventTrigger.cpp
+         DlgAlarmhostExternalDevLimitValue.cpp
+         DlgAlarmHostExternalDevState.cpp
+         DlgAlarmHostExternalModule.cpp
+         DlgAlarmHostFaultProcess.cpp
+         DlgAlarmHostGetAllModule.cpp
+         DlgAlarmHostGPRS.cpp
+         DlgAlarmhostHistoryData.cpp
+         DlgAlarmHostLED.cpp
+         DlgAlarmHostLEDBrightness.cpp
+         DlgAlarmHostLogSearch.cpp
+         DlgAlarmhostModuleCfg.cpp
+         DlgAlarmHostNetCfg.cpp
+         DlgAlarmhostPointCfg.cpp
+     1>DlgAlarmHostLogSearch.cpp(2677): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgAlarmHostLogSearch.cpp)
+         DlgAlarmHostPrinter.cpp
+         DlgAlarmHostReportMode.cpp
+         DlgAlarmHostRs485.cpp
+         DlgAlarmhostSensorLinkage.cpp
+         DlgAlarmHostStatus.cpp
+         DlgAlarmhostSTDXMLConfig.cpp
+         DlgAlarmhostSubsystem.cpp
+         DlgAlarmHostTransparent.cpp
+         DlgAlarmHostTriggerCode.cpp
+         DlgAlarmHostZoneCfg.cpp
+         DlgAlarmHostZoomAddr.cpp
+         DlgAlarmInfo.cpp
+         DlgAlarmKeyboardUser.cpp
+         DlgAlarmNetUser.cpp
+         DlgAlarmOneKey.cpp
+         DlgAlarmOperatorUser.cpp
+         DlgAlarmOutCfg.cpp
+         DlgAlarmPicCfg.cpp
+         DlgAlarmTamper.cpp
+         DlgAntiSneakHostCfg.cpp
+         DlgAreaMaskCfg.cpp
+         DlgAreaMonitorCfg.cpp
+         DlgArmingHost.cpp
+         DlgAsynloginWait.cpp
+         DlgAtmFrameFormatV30.cpp
+     1>DlgAreaMonitorCfg.cpp(178): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgAreaMonitorCfg.cpp)
+     1>DlgAreaMonitorCfg.cpp(298): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgAreaMonitorCfg.cpp)
+     1>DlgAreaMonitorCfg.cpp(323): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据 (DlgAreaMonitorCfg.cpp)
+     1>DlgAreaMonitorCfg.cpp(1943): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据 (DlgAreaMonitorCfg.cpp)
+     1>DlgAreaMonitorCfg.cpp(2040): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据 (DlgAreaMonitorCfg.cpp)
+         DlgAttendanceHolidayGroup.cpp
+         DlgAttendanceHolidayPlan.cpp
+         DlgAttendanceRecordInfo.cpp
+     1>DlgAttendanceHolidayGroup.cpp(143): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgAttendanceHolidayGroup.cpp)
+     1>DlgAttendanceHolidayGroup.cpp(238): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgAttendanceHolidayGroup.cpp)
+         DlgAttendanceRule.cpp
+     1>DlgAttendanceHolidayPlan.cpp(74): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgAttendanceHolidayPlan.cpp)
+     1>DlgAttendanceHolidayPlan.cpp(148): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgAttendanceHolidayPlan.cpp)
+         DlgAttendanceSummaryInfo.cpp
+         DlgAudioChanCfg.cpp
+     1>DlgAttendanceRule.cpp(94): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgAttendanceRule.cpp)
+     1>DlgAttendanceRule.cpp(229): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgAttendanceRule.cpp)
+         DlgAudioControlFile.cpp
+         DlgAudioDiacriticalCfg.cpp
+         DlgAudioInVolumeCfg1.cpp
+         DlgAudioOutVolumeCfg.cpp
+         DlgAudioUploadDownload.cpp
+         DlgAutoReboot.cpp
+     1>DlgAudioInVolumeCfg1.cpp(207): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgAudioInVolumeCfg1.cpp)
+     1>DlgAudioOutVolumeCfg.cpp(147): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgAudioOutVolumeCfg.cpp)
+         DlgAutoUpgrade.cpp
+         DlgBatchConfig.cpp
+         DlgBatchUploadBlockList.cpp
+         DlgBathcUserRightCfg.cpp
+         DlgBatteryPower.cpp
+         DlgBellFileCfg.cpp
+         DlgBroadCast.cpp
+         DlgBuiltinSupplementLight.cpp
+         DlgBvCalibParamCfg.cpp
+     1>DlgBroadCast.cpp(400): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgBroadCast.cpp)
+         DlgC10S21Config.cpp
+         DlgCameraSetupCfg.cpp
+     1>DlgBvCalibParamCfg.cpp(583): warning C4313: “sprintf”: 格式字符串中的“%d”与“ATL::CTime (__cdecl *)(void) throw()”类型的参数 8 冲突 (DlgBvCalibParamCfg.cpp)
+     1>DlgBvCalibParamCfg.cpp(617): warning C4305: “=”: 从“double”到“float”截断 (DlgBvCalibParamCfg.cpp)
+         DlgCaptureFace.cpp
+     1>DlgC10S21Config.cpp(99): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgC10S21Config.cpp)
+     1>DlgC10S21Config.cpp(148): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgC10S21Config.cpp)
+     1>DlgC10S21Config.cpp(203): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgC10S21Config.cpp)
+     1>DlgC10S21Config.cpp(239): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgC10S21Config.cpp)
+     1>DlgC10S21Config.cpp(398): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgC10S21Config.cpp)
+         DlgCaptureFingerPrint.cpp
+         DlgCapturePictureV50.cpp
+         DlgCardReaderCfg.cpp
+         DlgCaseInfo.cpp
+         DlgCcdParam.cpp
+         DlgCenterPoint.cpp
+         DlgCertInfo.cpp
+         DLGCfgSecuFile.cpp
+         DlgChanInputAbility.cpp
+         DlgChannelInfo.cpp
+         DlgCheckTime.cpp
+         DlgClearAcsParam.cpp
+     1>DlgChanInputAbility.cpp(81): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgChanInputAbility.cpp)
+     1>DlgChanInputAbility.cpp(84): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgChanInputAbility.cpp)
+         DlgCloudCfg.cpp
+         DlgCloudManage.cpp
+         DlgCloudStorage.cpp
+         DlgCloudStorageCfg.cpp
+         DlgCloudStoragePhoneTest.cpp
+     1>DlgCloudStorage.cpp(355): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgCloudStorage.cpp)
+     1>DlgCloudStorage.cpp(414): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgCloudStorage.cpp)
+     1>DlgCloudStorage.cpp(472): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgCloudStorage.cpp)
+     1>DlgCloudStorage.cpp(603): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgCloudStorage.cpp)
+     1>DlgCloudStorage.cpp(634): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgCloudStorage.cpp)
+     1>DlgCloudStorage.cpp(672): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgCloudStorage.cpp)
+     1>DlgCloudStorage.cpp(730): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgCloudStorage.cpp)
+     1>DlgCloudStorage.cpp(875): warning C4313: “sprintf”: 格式字符串中的“%d”与“char *”类型的参数 8 冲突 (DlgCloudStorage.cpp)
+     1>DlgCloudStorage.cpp(880): warning C4313: “sprintf”: 格式字符串中的“%d”与“char *”类型的参数 8 冲突 (DlgCloudStorage.cpp)
+     1>DlgCloudStorage.cpp(885): warning C4313: “sprintf”: 格式字符串中的“%d”与“char *”类型的参数 8 冲突 (DlgCloudStorage.cpp)
+         DlgCloudUploadstrategyCfg.cpp
+         DlgCloudUrlCfg.cpp
+         DlgCluster.cpp
+         DlgCMSParam.cpp
+     1>DlgCluster.cpp(555): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgCluster.cpp)
+     1>DlgCluster.cpp(591): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgCluster.cpp)
+     1>DlgCluster.cpp(655): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgCluster.cpp)
+     1>DlgCluster.cpp(724): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgCluster.cpp)
+     1>DlgCluster.cpp(917): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgCluster.cpp)
+     1>DlgCluster.cpp(1153): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgCluster.cpp)
+     1>DlgCluster.cpp(1264): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgCluster.cpp)
+     1>DlgCluster.cpp(1298): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgCluster.cpp)
+         DlgCodeSplitter.cpp
+         DlgCommuSecurity.cpp
+         DlgCompressionV30.cpp
+         DlgConferenceParam.cpp
+         DlgConferenceRegion.cpp
+         DlgConfigAll.cpp
+         DlgConfigFlash.cpp
+         DlgConnectList.cpp
+         DlgConsumeSimulate.cpp
+         DlgCourseCfg.cpp
+     1>DlgConsumeSimulate.cpp(430): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgConsumeSimulate.cpp)
+     1>DlgConsumeSimulate.cpp(432): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgConsumeSimulate.cpp)
+     1>DlgConsumeSimulate.cpp(570): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgConsumeSimulate.cpp)
+     1>DlgConsumeSimulate.cpp(572): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgConsumeSimulate.cpp)
+         DlgCourseInfo.cpp
+         DlgCourseList.cpp
+         DlgCreateVD.cpp
+         DLGCreateWall.cpp
+         DlgCuntomProtocal.cpp
+         DlgCurrentEncodeAbility.cpp
+         DlgCVR.cpp
+     1>DlgCurrentEncodeAbility.cpp(68): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgCurrentEncodeAbility.cpp)
+     1>DlgCurrentEncodeAbility.cpp(70): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgCurrentEncodeAbility.cpp)
+     1>DlgCurrentEncodeAbility.cpp(72): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgCurrentEncodeAbility.cpp)
+     1>DlgCurrentEncodeAbility.cpp(131): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgCurrentEncodeAbility.cpp)
+     1>DlgCVR.cpp(1848): warning C4313: “sprintf”: 格式字符串中的“%d”与“ATL::CTime (__cdecl *)(void) throw()”类型的参数 8 冲突 (DlgCVR.cpp)
+     1>DlgCVR.cpp(1909): warning C4313: “sprintf”: 格式字符串中的“%d”与“ATL::CTime (__cdecl *)(void) throw()”类型的参数 8 冲突 (DlgCVR.cpp)
+     1>DlgCVR.cpp(2051): warning C4313: “sprintf”: 格式字符串中的“%d”与“ATL::CTime (__cdecl *)(void) throw()”类型的参数 8 冲突 (DlgCVR.cpp)
+         DlgCVRDataManage.cpp
+         DlgCVRPassbackBasicCfg.cpp
+         DlgCVRPreviewByStreamID.cpp
+         DlgCVRRemoteBackup.cpp
+     1>DlgCVRDataManage.cpp(625): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgCVRDataManage.cpp)
+     1>DlgCVRDataManage.cpp(695): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgCVRDataManage.cpp)
+     1>DlgCVRDataManage.cpp(764): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgCVRDataManage.cpp)
+     1>DlgCVRDataManage.cpp(984): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgCVRDataManage.cpp)
+         DlgCVRResourceIPCfg.cpp
+         DlgDebug.cpp
+     1>DlgCVRRemoteBackup.cpp(203): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgCVRRemoteBackup.cpp)
+     1>DlgCVRRemoteBackup.cpp(305): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgCVRRemoteBackup.cpp)
+     1>DlgCVRRemoteBackup.cpp(442): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgCVRRemoteBackup.cpp)
+     1>DlgCVRRemoteBackup.cpp(598): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgCVRRemoteBackup.cpp)
+     1>DlgCVRRemoteBackup.cpp(739): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgCVRRemoteBackup.cpp)
+         DlgDecoderAbility.cpp
+     1>DlgCVRResourceIPCfg.cpp(126): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgCVRResourceIPCfg.cpp)
+     1>DlgCVRResourceIPCfg.cpp(287): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgCVRResourceIPCfg.cpp)
+         DlgDecoderControl.cpp
+     1>DlgDebug.cpp(136): warning C4267: “参数”: 从“size_t”转换到“UINT”，可能丢失数据 (DlgDebug.cpp)
+     1>DlgDebug.cpp(250): warning C4267: “参数”: 从“size_t”转换到“UINT”，可能丢失数据 (DlgDebug.cpp)
+     1>DlgDebug.cpp(265): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据 (DlgDebug.cpp)
+     1>DlgDebug.cpp(271): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据 (DlgDebug.cpp)
+         DlgDecorder.cpp
+         DlgDecWinStatus.cpp
+         DlgDecWinStatusUniform.cpp
+         DlgDelayPreviewCfg.cpp
+         DlgDepartmentParam.cpp
+         DlgDetectorRegister.cpp
+         DlgDeviceAudioTalkCode.cpp
+     1>DlgDepartmentParam.cpp(68): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgDepartmentParam.cpp)
+     1>DlgDepartmentParam.cpp(134): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgDepartmentParam.cpp)
+         DlgDeviceInfo.cpp
+         DlgDeviceLanguageEncode.cpp
+         DlgDeviceSelfCheckState.cpp
+         DlgDeviceState.cpp
+         DlgDevServer.cpp
+         DlgDevStorageInfo.cpp
+         DlgDevWorkMode.cpp
+         DlgDH3.cpp
+         DlgDiagnosticServer.cpp
+         DlgDiskQuota.cpp
+         DlgDoorConfig.cpp
+         DlgDoTest.cpp
+         DlgDPCCfg.cpp
+         DlgDyanmicPic.cpp
+         DlgDynChanAbility.cpp
+     1>DlgDyanmicPic.cpp(149): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgDyanmicPic.cpp)
+         DlgEagleCfg.cpp
+     1>DlgDynChanAbility.cpp(80): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgDynChanAbility.cpp)
+     1>DlgDynChanAbility.cpp(83): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgDynChanAbility.cpp)
+         DlgEagleEyeCfg.cpp
+         DlgEctChanStatus.cpp
+         DlgEctWorkState.cpp
+         DlgEncodeAbility.cpp
+         DlgEncodeJoint.cpp
+         DlgEncryptCert.cpp
+     1>DlgEncodeAbility.cpp(99): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgEncodeAbility.cpp)
+     1>DlgEncodeAbility.cpp(245): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgEncodeAbility.cpp)
+     1>DlgEncodeAbility.cpp(274): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgEncodeAbility.cpp)
+         DlgESataMiniSasUsage.cpp
+         DlgEthernetIpv6Cfg.cpp
+         DlgEventCardLinkageCfg.cpp
+         DlgExternalDev.cpp
+         DlgEZVIZAccessCfg.cpp
+         DlgEzvizLogin.cpp
+         DlgFaceConsume.cpp
+         DlgFaceData.cpp
+         DlgFacelibSearch.cpp
+         DlgFiberRingCfg.cpp
+         DlgFibreDev.cpp
+     1>DlgFacelibSearch.cpp(235): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgFacelibSearch.cpp)
+     1>DlgFacelibSearch.cpp(346): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgFacelibSearch.cpp)
+         DlgFileUploadDownload.cpp
+         DlgFireDetection.cpp
+         DLGFIREPTZEXCFG.cpp
+         DlgFirmWareversion.cpp
+     1>DlgFireDetection.cpp(2643): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgFireDetection.cpp)
+         DlgFishEye.cpp
+         DlgFisheyeCorrect.cpp
+         DlgFisheyeFECWnd.cpp
+         DlgFishEyePtzControl.cpp
+         DlgFisheyePtzPlayWnd.cpp
+         DlgFisheyeTrackCfg.cpp
+         DlgFormatHD.cpp
+     1>DlgFisheyeTrackCfg.cpp(568): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据 (DlgFisheyeTrackCfg.cpp)
+         DlgFortify.cpp
+         DlgFrameCtrl.cpp
+         DlgFTPLogUpload.cpp
+     1>DlgFortify.cpp(309): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgFortify.cpp)
+     1>DlgFortify.cpp(313): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgFortify.cpp)
+     1>DlgFortify.cpp(390): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgFortify.cpp)
+         DlgFTPUpload.cpp
+         DlgGatewayCardCfg.cpp
+     1>DlgFTPLogUpload.cpp(638): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgFTPLogUpload.cpp)
+     1>DlgFTPLogUpload.cpp(650): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgFTPLogUpload.cpp)
+         DlgGatewayCfg.cpp
+         DlgGB28181ServerCfg.cpp
+         DlgGBT28181ProAccessUniform.cpp
+     1>DlgGatewayCardCfg.cpp(687): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgGatewayCardCfg.cpp)
+     1>DlgGatewayCardCfg.cpp(1408): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgGatewayCardCfg.cpp)
+     1>DlgGatewayCardCfg.cpp(1429): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgGatewayCardCfg.cpp)
+         DlgGBT28181ProtocolAccess.cpp
+         DlgGetAccessDeviceChannelInfo.cpp
+         DlgGetAllPointCfg.cpp
+         DlgGetAllRs485Cfg.cpp
+         DlgGetAllRs485Slot.cpp
+         DlgGetAllSensor.cpp
+         DLGGetChannelInfo.cpp
+         DlgGetDigitalChannelStatus.cpp
+         DlgGetRegisterInfo.cpp
+         DlgGetWifiClientListInfo.cpp
+         DlgGISInfo.cpp
+         DlgGKServer.cpp
+         DlgGopInfo.cpp
+         DlgGroupCfg.cpp
+     1>DlgGKServer.cpp(50): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgGKServer.cpp)
+         DlgHardDiskCfg.cpp
+     1>DlgGKServer.cpp(114): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgGKServer.cpp)
+         DlgHardDiskStorageTest.cpp
+         DlgHardDiskVolumeInfo.cpp
+         DlgHeatMapCfg.cpp
+     1>DlgHardDiskStorageTest.cpp(77): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgHardDiskStorageTest.cpp)
+         DlgHiddenInfo.cpp
+         DlgHolidayCfg.cpp
+         DlgIDSMainBoard.cpp
+         DlgImageDiffDetectionCfg.cpp
+         DlgImExportIPCCfgFile.cpp
+         DlgInChanVideoLostCfg.cpp
+         DlgInfoDiffusionCapabilites.cpp
+         DlgInfoDiffusionClock.cpp
+         DlgInfoDiffusionClockWeather.cpp
+         DlgInfoDiffusionContainer.cpp
+         DlgInfoDiffusionContent.cpp
+         DlgInfoDiffusionGuard.cpp
+         DlgInfoDiffusionMaterial.cpp
+         DlgInfoDiffusionPlay.cpp
+         DlgInfoDiffusionProgram.cpp
+         DlgInfoDiffusionRelease.cpp
+         DlgInfoDiffusionSchedule.cpp
+         DlgInfoDiffusionScheduleSearch.cpp
+         DlgInfoDiffusionScheduleSelfdefine.cpp
+         DlgInfoDiffusionServer.cpp
+         DlgInfoDiffusionShutdown.cpp
+         DlgInfoDiffusionTermainlServer.cpp
+         DlgInfoDiffusionTerminal.cpp
+         DlgInfoDiffusionTerminalUpgrade.cpp
+         DlgInfoDiffusionTernimalPreview.cpp
+         DlgInfoDiffusionVolum.cpp
+         DlgInfoDiffusionXmlCfg.cpp
+         DlgInfoDiffusionXmlUpdownload.cpp
+     1>DlgInfoDiffusionXmlCfg.cpp(208): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgInfoDiffusionXmlCfg.cpp)
+     1>DlgInfoDiffusionXmlCfg.cpp(274): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgInfoDiffusionXmlCfg.cpp)
+     1>DlgInfoDiffusionXmlCfg.cpp(313): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgInfoDiffusionXmlCfg.cpp)
+     1>DlgInfoDiffusionXmlCfg.cpp(473): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgInfoDiffusionXmlCfg.cpp)
+     1>DlgInfoDiffusionXmlCfg.cpp(630): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgInfoDiffusionXmlCfg.cpp)
+     1>DlgInfoDiffusionXmlCfg.cpp(679): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgInfoDiffusionXmlCfg.cpp)
+     1>DlgInfoDiffusionXmlCfg.cpp(694): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgInfoDiffusionXmlCfg.cpp)
+         DlgInfoGerenal.cpp
+         DlgInfoXmlCfgWithUrl.cpp
+     1>DlgInfoGerenal.cpp(309): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgInfoGerenal.cpp)
+         DlgInfrareCfg.cpp
+     1>DlgInfoXmlCfgWithUrl.cpp(766): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgInfoXmlCfgWithUrl.cpp)
+         DlgInfrared.cpp
+         DlgInqMixAudioInCfg.cpp
+         DlgInquestCaseInfo.cpp
+         DlgInquestDvr.cpp
+         DlgInquestEvent.cpp
+         DlgInquestFile.cpp
+         DlgInquestTrayConfig.cpp
+         DlgInqUserRight.cpp
+     1>DlgInquestTrayConfig.cpp(96): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgInquestTrayConfig.cpp)
+     1>DlgInquestTrayConfig.cpp(180): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgInquestTrayConfig.cpp)
+         DlgInteractive.cpp
+         DlgInteractiveControl.cpp
+         DlgInteractiveFileInfoCfg.cpp
+         DlgInteractiveScreenConfig.cpp
+         DlgInteractiveScreenFileUpload.cpp
+         DlgIntranetSegmentCfg.cpp
+         DlgIOOutCfg.cpp
+         DlgIPAccessCfgDDNS.cpp
+     1>DlgIntranetSegmentCfg.cpp(74): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgIntranetSegmentCfg.cpp)
+     1>DlgIntranetSegmentCfg.cpp(156): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgIntranetSegmentCfg.cpp)
+     1>DlgIntranetSegmentCfg.cpp(254): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgIntranetSegmentCfg.cpp)
+     1>DlgIntranetSegmentCfg.cpp(256): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgIntranetSegmentCfg.cpp)
+         DlgIPAccessCfgEasyDDNS.cpp
+         DlgIPAccessCfgIPServer.cpp
+         DlgIPAccessCfgStreamServer.cpp
+         DlgIPAddrFilterCfg.cpp
+         DlgIPCFrontAbility.cpp
+         DlgIPCPlateRecog.cpp
+         DlgIPCSimpIntellCfg.cpp
+     1>DlgIPCFrontAbility.cpp(96): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgIPCFrontAbility.cpp)
+     1>DlgIPCFrontAbility.cpp(120): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgIPCFrontAbility.cpp)
+         DlgIPCSpecial.cpp
+     1>DlgIPCPlateRecog.cpp(1190): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgIPCPlateRecog.cpp)
+     1>DlgIPCPlateRecog.cpp(1292): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgIPCPlateRecog.cpp)
+     1>DlgIPCPlateRecog.cpp(1337): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgIPCPlateRecog.cpp)
+         DlgIPCSpeclalEx.cpp
+         DlgIPDomeLocalCfg.cpp
+         DlgIperf.cpp
+         DlgIpViewCfg.cpp
+         DlgIscsiCfg.cpp
+         DlgISPParamCfg.cpp
+     1>DlgIperf.cpp(140): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgIperf.cpp)
+     1>DlgIperf.cpp(141): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgIperf.cpp)
+         DlgITCAblity.cpp
+         DlgITCIOinCfg.cpp
+         DlgITSBaseInfo.cpp
+         DlgITSConfig.cpp
+         DlgITSImageMergeCfg.cpp
+         DlgITSIOinCfg.cpp
+         DlgITSIpcCfg.cpp
+         DlgITSMiniPost.cpp
+         DlgITSMonitor.cpp
+         DlgITSOverlapCfg.cpp
+         DlgITSRoadInfo.cpp
+         DlgITSUpload.cpp
+         DlgITSWorkState.cpp
+         DlgJpegCaptureCfg.cpp
+         DlgJpegFTP.cpp
+         DlgJPEGPicDownloadMedical.cpp
+         DlgJPEGSnatchConfig.cpp
+         DlgKeyboardCfg.cpp
+         DlgLampCfg.cpp
+         DlgLampControl.cpp
+         DlgLcdMatrixRelation.cpp
+         DlgLcdMatrixSwitch.cpp
+         DlgLcdParamCfg.cpp
+         DlgLcdScene.cpp
+         DlgLCDScreen.cpp
+         DlgLCDScreenDisplay.cpp
+         DlgLcdSerial.cpp
+         DlgLcdServer.cpp
+         DlgLcdSplice.cpp
+         DlgLcdSwitchCfg.cpp
+         DlgLcdUserCfg.cpp
+         DlgLEDCheckCond.cpp
+         DlgLedConfig.cpp
+         DlgLedConfigDisplay.cpp
+         DlgLedConfigRecv.cpp
+     1>c:\users\sunrenjie\downloads\ch-hcnetsdkv6.1.9.48_build20230410_win64\demo示例\1- mfc综合示例\CheckEnabled.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (DlgLedConfig.cpp)
+         DlgLEDTimerSwitch.cpp
+     1>c:\users\sunrenjie\downloads\ch-hcnetsdkv6.1.9.48_build20230410_win64\demo示例\1- mfc综合示例\RecvCardArea.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (DlgLedConfigRecv.cpp)
+     1>c:\users\sunrenjie\downloads\ch-hcnetsdkv6.1.9.48_build20230410_win64\demo示例\1- mfc综合示例\RecvCardVersion.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (DlgLedConfigRecv.cpp)
+     1>DlgLedConfig.cpp(941): warning C4800: “BOOL”: 将值强制为布尔值“true”或“false”(性能警告) (DlgLedConfig.cpp)
+     1>DlgLedConfig.cpp(953): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgLedConfig.cpp)
+         DlgLEDVersion.cpp
+     1>c:\users\sunrenjie\downloads\ch-hcnetsdkv6.1.9.48_build20230410_win64\demo示例\1- mfc综合示例\ParseXMLUtil.h(129): warning C4101: “pOutbuf”: 未引用的局部变量 (DlgLedConfig.cpp)
+                 DlgLedConfig.cpp(944): 参见对正在编译的函数 模板 实例化“std::string InformationReleaseSystem::TGenXmlDoc<CheckEnabled>(T &,const std::string &)”的引用
+                 with
+                 [
+                     T=CheckEnabled
+                 ]
+         DlgLimitAngle.cpp
+         DlgLinkStatus.cpp
+     1>c:\users\sunrenjie\downloads\ch-hcnetsdkv6.1.9.48_build20230410_win64\demo示例\1- mfc综合示例\RecvCardArea.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (DlgLEDVersion.cpp)
+     1>c:\users\sunrenjie\downloads\ch-hcnetsdkv6.1.9.48_build20230410_win64\demo示例\1- mfc综合示例\RecvCardVersion.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (DlgLEDVersion.cpp)
+     1>DlgLEDVersion.cpp(74): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgLEDVersion.cpp)
+     1>DlgLEDVersion.cpp(76): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgLEDVersion.cpp)
+     1>DlgLEDVersion.cpp(119): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgLEDVersion.cpp)
+     1>DlgLEDVersion.cpp(121): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgLEDVersion.cpp)
+     1>c:\users\sunrenjie\downloads\ch-hcnetsdkv6.1.9.48_build20230410_win64\demo示例\1- mfc综合示例\ParseXMLUtil.h(129): warning C4101: “pOutbuf”: 未引用的局部变量 (DlgLEDVersion.cpp)
+                 DlgLEDVersion.cpp(69): 参见对正在编译的函数 模板 实例化“std::string InformationReleaseSystem::TGenXmlDoc<RecvCardArea>(T &,const std::string &)”的引用
+                 with
+                 [
+                     T=RecvCardArea
+                 ]
+         DlgLiteStorage.cpp
+         DlgLocalConfig.cpp
+         DlgLocalInputInfo.cpp
+         DlgLocalLogConfig.cpp
+         DlgLocalRecordSchedule.cpp
+         DlgLockedInfo.cpp
+         DlgLogSearch.cpp
+         DlgMacFilter.cpp
+         DlgManualSnap.cpp
+         DlgManualThermCfg.cpp
+         DlgMasterSlaveTracking.cpp
+         DlgMatDecBigScrSplice.cpp
+         DlgMatDecodeChanJoint.cpp
+         DlgMatOutputCfg.cpp
+         DlgMatUnitedSystem.cpp
+         DlgMCUAbilityDetect.cpp
+         DlgMCUAddConference.cpp
+         DlgMCUCall.cpp
+     1>DlgMCUAddConference.cpp(383): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgMCUAddConference.cpp)
+     1>DlgMCUAddConference.cpp(398): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgMCUAddConference.cpp)
+     1>DlgMCUAddConference.cpp(399): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgMCUAddConference.cpp)
+     1>DlgMCUAddConference.cpp(582): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgMCUAddConference.cpp)
+         DlgMCUClearConfHistory.cpp
+         DlgMCUConferenceCtrl.cpp
+         DlgMCUDelConference.cpp
+     1>DlgMCUClearConfHistory.cpp(95): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgMCUClearConfHistory.cpp)
+         DlgMCUGetConfStatus.cpp
+     1>DlgMCUDelConference.cpp(104): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgMCUDelConference.cpp)
+     1>DlgMCUConferenceCtrl.cpp(150): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgMCUConferenceCtrl.cpp)
+     1>DlgMCUConferenceCtrl.cpp(152): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgMCUConferenceCtrl.cpp)
+         DlgMCUGetDailyDistribution.cpp
+         DlgMCUGetTermGroupList.cpp
+         DlgMCUSearchConference.cpp
+     1>DlgMCUGetConfStatus.cpp(218): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgMCUGetConfStatus.cpp)
+     1>DlgMCUGetDailyDistribution.cpp(156): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgMCUGetDailyDistribution.cpp)
+     1>DlgMCUGetTermGroupList.cpp(134): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgMCUGetTermGroupList.cpp)
+         DlgMCUTerminalCtrl.cpp
+         DlgMCUTerminalGroupCfg.cpp
+     1>DlgMCUSearchConference.cpp(331): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgMCUSearchConference.cpp)
+     1>DlgMCUSearchConference.cpp(576): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据 (DlgMCUSearchConference.cpp)
+     1>DlgMCUSearchConference.cpp(579): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据 (DlgMCUSearchConference.cpp)
+         DlgMCUTerminalManageCfg.cpp
+     1>DlgMCUTerminalCtrl.cpp(201): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgMCUTerminalCtrl.cpp)
+     1>DlgMCUTerminalGroupCfg.cpp(213): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgMCUTerminalGroupCfg.cpp)
+     1>DlgMCUTerminalGroupCfg.cpp(271): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgMCUTerminalGroupCfg.cpp)
+     1>DlgMCUTerminalGroupCfg.cpp(418): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgMCUTerminalGroupCfg.cpp)
+     1>DlgMCUTerminalGroupCfg.cpp(475): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgMCUTerminalGroupCfg.cpp)
+         DlgMergeDecOsd.cpp
+     1>DlgMCUTerminalManageCfg.cpp(253): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgMCUTerminalManageCfg.cpp)
+     1>DlgMCUTerminalManageCfg.cpp(322): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgMCUTerminalManageCfg.cpp)
+     1>DlgMCUTerminalManageCfg.cpp(564): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgMCUTerminalManageCfg.cpp)
+     1>DlgMCUTerminalManageCfg.cpp(617): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgMCUTerminalManageCfg.cpp)
+         DlgMergeDev.cpp
+         DlgMergeDevPic.cpp
+         DlgMergeDevResource.cpp
+         DlgMicrophoneStatus.cpp
+         DlgMixAudioInCfg.cpp
+         DlgMixAudioOutCfg.cpp
+         DlgMobileTriggerCfg.cpp
+         DlgModifyRecord.cpp
+         DlgMonitorInfo.cpp
+         DlgMonitorLocation.cpp
+         DlgMouseEvent.cpp
+         DlgMultiCardCfg.cpp
+         DlgMultilStreamRelChanCfg.cpp
+         DlgNetraEventVedio.cpp
+         DlgNetraHttps.cpp
+         DlgNetraRecordPackage.cpp
+         DlgNetraSeries.cpp
+         DlgNetServiceCfg.cpp
+         DlgNetworkAbility.cpp
+         DlgNetworkBonding.cpp
+         DlgNetworkFlowTest.cpp
+     1>DlgNetworkAbility.cpp(65): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgNetworkAbility.cpp)
+         DlgNVRAudioVideoCfg.cpp
+         DlgNVRCfg.cpp
+         DlgNVRIPCCfg.cpp
+         DlgOISCfg.cpp
+         DlgOneKeyBackupCfg.cpp
+         DlgOneKeyPublish.cpp
+         DlgOneOutputScheduleRuleCfg.cpp
+         DlgOnlineUserList.cpp
+         DlgOrdinaryClass.cpp
+         DlgOutput.cpp
+         DlgOutputCtrl.cpp
+     1>DlgOrdinaryClass.cpp(100): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgOrdinaryClass.cpp)
+     1>DlgOrdinaryClass.cpp(196): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgOrdinaryClass.cpp)
+         DlgOutputScheduleRuleCfg.cpp
+         DlgPanoramaImage.cpp
+     1>DlgOutput.cpp(65): warning C4267: “=”: 从“size_t”转换到“BOOL”，可能丢失数据 (DlgOutput.cpp)
+     1>DlgOutput.cpp(72): warning C4267: “=”: 从“size_t”转换到“BOOL”，可能丢失数据 (DlgOutput.cpp)
+     1>DlgOutput.cpp(74): warning C4267: “=”: 从“size_t”转换到“BOOL”，可能丢失数据 (DlgOutput.cpp)
+     1>DlgOutput.cpp(486): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据 (DlgOutput.cpp)
+     1>DlgOutput.cpp(908): warning C4313: “sprintf”: 格式字符串中的“%X”与“void *”类型的参数 3 冲突 (DlgOutput.cpp)
+     1>DlgOutput.cpp(915): warning C4313: “sprintf”: 格式字符串中的“%X”与“void *”类型的参数 3 冲突 (DlgOutput.cpp)
+         DlgPassiveTransCode.cpp
+         DlgPassiveWin.cpp
+         DlgPdcCalibration.cpp
+         DlgPdcResult.cpp
+         DlgPdcRuleCfg.cpp
+         DlgPdcRuleCfgEx.cpp
+         DlgPDCSearch.cpp
+         DlgPersonnelStatis.cpp
+         DlgPicBatchUpload.cpp
+         DlgPicModelCfg.cpp
+         DlgPictureSwitchCtrl.cpp
+         DlgPictureUpload.cpp
+         DlgPlayBack.cpp
+         DlgPlayConvert.cpp
+         DlgPlayDvrRecord.cpp
+         DlgPlayEvent.cpp
+         DlgPlayLocalFile.cpp
+     1>DlgPlayConvert.cpp(122): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgPlayConvert.cpp)
+     1>DlgPlayEvent.cpp(1251): warning C4313: “sprintf”: 格式字符串中的“%d”与“ATL::CTime (__cdecl *)(void) throw()”类型的参数 9 冲突 (DlgPlayEvent.cpp)
+     1>DlgPlayEvent.cpp(3681): warning C4313: “sprintf”: 格式字符串中的“%d”与“ATL::CTime (__cdecl *)(void) throw()”类型的参数 9 冲突 (DlgPlayEvent.cpp)
+         DlgPlayLockFile.cpp
+         DlgPlayMotion.cpp
+         DlgPlayRemoteFile.cpp
+         DlgPlayRemoteFileMedical.cpp
+         DlgPlayRemoteTime.cpp
+     1>DlgPlayRemoteFile.cpp(3612): warning C4267: “初始化”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgPlayRemoteFile.cpp)
+     1>DlgPlayRemoteFile.cpp(3667): warning C4267: “初始化”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgPlayRemoteFile.cpp)
+         DlgPosChanFilter.cpp
+     1>DlgPlayRemoteTime.cpp(91): warning C4313: “sprintf”: 格式字符串中的“%d”与“char *”类型的参数 1 冲突 (DlgPlayRemoteTime.cpp)
+     1>DlgPlayRemoteTime.cpp(191): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据 (DlgPlayRemoteTime.cpp)
+         DlgPosConnectMode.cpp
+         DlgPosFilterEffect.cpp
+         DlgPosFilterRule.cpp
+         DlgPosInfoctrl.cpp
+         DlgPositionTrackCfg.cpp
+         DlgPosManage.cpp
+         DlgPosRecvData.cpp
+         DlgPOSRegion.cpp
+         DlgPosSerialPortRecvData.cpp
+     1>DlgPosRecvData.cpp(285): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据 (DlgPosRecvData.cpp)
+         DlgPostRadarCfg.cpp
+         DlgPPPCfg.cpp
+         DlgPPTDetect.cpp
+         DlgPreviewOpts.cpp
+         DlgPreviewSwitchCfg.cpp
+         DlgPreviewWin.cpp
+         DlgPrivateProtocolCfg.cpp
+         DlgProductAcs.cpp
+         DlgProductAlarmHostCfg.cpp
+         DlgProductCfg.cpp
+         DlgProductDH.cpp
+         DlgProductionTest.cpp
+         DlgProductVcaCfg.cpp
+         DlgPtzCfgCtrl.cpp
+         DlgPTZCruise.cpp
+     1>DlgPTZCruise.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (DlgPTZCruise.cpp)
+         DlgPtzCtrl.cpp
+         DlgPtzLockCfg.cpp
+         DlgPtzNotification.cpp
+         DlgPtzParkActionCfg.cpp
+         DlgPTZPreset.cpp
+         DlgPtzScope.cpp
+         DlgPTZTasks.cpp
+         DlgPtzTrackParamCfg.cpp
+         DlgPUStream.cpp
+         DlgQuickAddIpc.cpp
+         DlgRaidConfig.cpp
+         DlgReaderAntiSneakHostCfg.cpp
+         DlgRecordAbility.cpp
+         DlgRecordControl.cpp
+         DlgRecordHost.cpp
+         DlgRecordHostAbility.cpp
+     1>DlgRecordAbility.cpp(90): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgRecordAbility.cpp)
+     1>DlgRecordAbility.cpp(93): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgRecordAbility.cpp)
+     1>DlgRecordHostAbility.cpp(82): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgRecordHostAbility.cpp)
+     1>DlgRecordHostAbility.cpp(92): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgRecordHostAbility.cpp)
+         DlgRecordHostAudioEffectiveCfg.cpp
+         DlgRecordHostBackgroundPicCfg.cpp
+         DlgRecordHostCfg.cpp
+         DlgRecordHostClassDataStatistic.cpp
+         DlgRecordHostDirectedAdvanceCfg.cpp
+     1>DlgRecordHostCfg.cpp(208): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgRecordHostCfg.cpp)
+     1>DlgRecordHostCfg.cpp(272): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgRecordHostCfg.cpp)
+         DlgRecordHostDirectedStrategyCfg.cpp
+     1>DlgRecordHostClassDataStatistic.cpp(301): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgRecordHostClassDataStatistic.cpp)
+     1>DlgRecordHostClassDataStatistic.cpp(327): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgRecordHostClassDataStatistic.cpp)
+         DlgRecordHostEducationServerCfg.cpp
+     1>DlgRecordHostDirectedAdvanceCfg.cpp(76): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgRecordHostDirectedAdvanceCfg.cpp)
+     1>DlgRecordHostDirectedAdvanceCfg.cpp(141): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgRecordHostDirectedAdvanceCfg.cpp)
+         DlgRecordHostEndTime.cpp
+     1>DlgRecordHostEducationServerCfg.cpp(152): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgRecordHostEducationServerCfg.cpp)
+     1>DlgRecordHostEducationServerCfg.cpp(270): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgRecordHostEducationServerCfg.cpp)
+         DlgRecordHostFilePublish.cpp
+         DlgRecordHostFilmModeCfg.cpp
+         DlgRecordHostFrameCfg.cpp
+         DlgRecordHostRTMPCfg.cpp
+         DlgRecordHostV120.cpp
+         DlgRecordHostVedioSwitchConfig.cpp
+         DlgRecordHostVideoCfg.cpp
+     1>DlgRecordHostVedioSwitchConfig.cpp(91): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgRecordHostVedioSwitchConfig.cpp)
+     1>DlgRecordHostVedioSwitchConfig.cpp(186): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgRecordHostVedioSwitchConfig.cpp)
+         DlgRecordHostVideoTitleConfig.cpp
+         DlgRecordLabel.cpp
+         DlgRecordPublishCfg.cpp
+     1>DlgRecordHostVideoTitleConfig.cpp(62): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgRecordHostVideoTitleConfig.cpp)
+     1>DlgRecordHostVideoTitleConfig.cpp(165): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgRecordHostVideoTitleConfig.cpp)
+     1>DlgRecordHostVideoTitleConfig.cpp(194): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgRecordHostVideoTitleConfig.cpp)
+     1>DlgRecordHostVideoTitleConfig.cpp(297): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgRecordHostVideoTitleConfig.cpp)
+         DlgRecordStatus.cpp
+         DlgRecordStreamTransType.cpp
+         DlgRecPassBack.cpp
+         DlgRecPassBackHistorySchdule.cpp
+         DlgRecPassBackScheCfg.cpp
+         DlgRecPassbackTaskExecutable.cpp
+         DlgRegionDetectCfg.cpp
+         DlgRegionList.cpp
+         DlgRemoteAdvanceNetConfig.cpp
+         DlgRemoteAlarmDetectFace.cpp
+         DlgRemoteAlarmInHandle.cpp
+         DlgRemoteAlarmInPtzInvoke.cpp
+         DlgRemoteCfg.cpp
+         DlgRemoteControlAbility.cpp
+     1>DlgRemoteControlAbility.cpp(82): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgRemoteControlAbility.cpp)
+     1>DlgRemoteControlAbility.cpp(92): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgRemoteControlAbility.cpp)
+         DlgRemoteControllerCfg.cpp
+         DlgRemoteControllerManage.cpp
+         DlgRemoteControlPlay.cpp
+         DlgRemoteControlStatus.cpp
+         DlgRemoteEmailAddReceiver.cpp
+         DlgRemoteeMMC.cpp
+         DlgRemoteFanException.cpp
+     1>DlgRemoteeMMC.cpp(79): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgRemoteeMMC.cpp)
+     1>DlgRemoteeMMC.cpp(119): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgRemoteeMMC.cpp)
+         DlgRemoteHideAlarm.cpp
+         DlgRemoteHideArea.cpp
+         DlgRemoteIPAccess.cpp
+         DlgRemoteKey.cpp
+         DlgRemoteMotionDetect.cpp
+         DlgRemoteNetNFS.cpp
+         DlgRemotePullException.cpp
+         DlgRemoteRecordSchedule.cpp
+         DlgRemoteShowString.cpp
+         DlgRemoteStreamRecordSchedule.cpp
+         DlgRemoteVideoInLost.cpp
+         DlgRemoteVideoInput.cpp
+         DlgRemoteZone.cpp
+         DLGResetLoginPassWord.cpp
+         DlgRoiCfg.cpp
+         DlgRS485DLLParamCfg.cpp
+         DlgRS485ProtocolVersion.cpp
+         DlgRtspConfig.cpp
+         DlgSafeCabinState.cpp
+         DlgSafetyCabin.cpp
+         DlgScaleOutCfg.cpp
+         DlgSceneChangeUpdate.cpp
+         DlgSceneTimeCfg.cpp
+         DlgScheduleInfo.cpp
+         DlgSchedulePlan.cpp
+         DlgScreenCtrl.cpp
+     1>DlgSchedulePlan.cpp(115): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgSchedulePlan.cpp)
+     1>DlgSchedulePlan.cpp(238): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgSchedulePlan.cpp)
+         DlgScreenLogoCfg.cpp
+         DlgScreenLogoCfgUniform.cpp
+         DlgSDIAutoTrackCfg.cpp
+         DlgSDIMatrix.cpp
+         DlgSecurityCfg.cpp
+         DlgSelectDevice.cpp
+         DlgSenceControl.cpp
+         DlgSenceControlUniform.cpp
+         DlgSensorAddPreview.cpp
+         DlgSensorCfg.cpp
+         DlgSerialTrans.cpp
+     1>DlgSerialTrans.cpp(21): warning C4005: “MAX_CONTENT_LEN”: 宏重定义 (DlgSerialTrans.cpp)
+                 C:\Users\sunrenjie\Downloads\CH-HCNetSDKV6.1.9.48_build20230410_win64\头文件\HCNetSDK.h(24514) : 参见“MAX_CONTENT_LEN”的前一个定义
+         DlgShipDetection.cpp
+         DlgSignalLightSync.cpp
+         DlgSizeFilter.cpp
+         DlgSlaveCameraInfo.cpp
+         DlgSmartCalib.cpp
+         DlgSmartSearchPicture.cpp
+         DlgSmartStoragedDetection.cpp
+         DlgSneakAndLock.cpp
+         DlgSnmpCfg.cpp
+         DlgSoftwareService.cpp
+         DlgSplitterStartTrans.cpp
+         DlgSplitterTransparent.cpp
+         DlgStorageServerSwitch.cpp
+         DlgStreamAttachInfoCfg.cpp
+         DlgStreamID.cpp
+         DlgStreamManualRecordAndLock.cpp
+         DlgStreamMediaCfg.cpp
+         DlgStreamRecCheck.cpp
+         DlgStreamRecordInfo.cpp
+         DlgStreamRecordStatus.cpp
+         DlgStreamSrcCfg.cpp
+         DlgSubIPCCfg.cpp
+         DlgSubITSCfg.cpp
+         DlgSubsysNetCfg.cpp
+         DlgSuperBrainFunctionTest.cpp
+         DlgSystemTimeAlarm.cpp
+         DlgT1test.cpp
+         DlgTalkMREx.cpp
+     1>DlgSuperBrainFunctionTest.cpp(244): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgSuperBrainFunctionTest.cpp)
+     1>DlgSuperBrainFunctionTest.cpp(845): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgSuperBrainFunctionTest.cpp)
+     1>DlgSuperBrainFunctionTest.cpp(1078): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgSuperBrainFunctionTest.cpp)
+     1>DlgSuperBrainFunctionTest.cpp(1112): warning C4313: “sprintf”: 格式字符串中的“%d”与“ATL::CTime (__cdecl *)(void) throw()”类型的参数 8 冲突 (DlgSuperBrainFunctionTest.cpp)
+     1>DlgT1test.cpp(124): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgT1test.cpp)
+     1>DlgT1test.cpp(284): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgT1test.cpp)
+     1>DlgT1test.cpp(298): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgT1test.cpp)
+         DlgTermGroup.cpp
+         DlgTerminalConferenceStatus.cpp
+         DlgTerminalGkCfg.cpp
+         DlgTermManage.cpp
+     1>DlgTerminalGkCfg.cpp(91): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgTerminalGkCfg.cpp)
+     1>DlgTerminalGkCfg.cpp(222): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgTerminalGkCfg.cpp)
+         DlgTermPlay.cpp
+         DlgTermState.cpp
+         DlgTest.cpp
+     1>DlgTermManage.cpp(423): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgTermManage.cpp)
+     1>DlgTermManage.cpp(1306): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgTermManage.cpp)
+     1>DlgTermManage.cpp(1453): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgTermManage.cpp)
+     1>DlgTermManage.cpp(1498): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgTermManage.cpp)
+         DlgThermalDoubleSpectrum.cpp
+         DlgThermometry.cpp
+     1>DlgTermState.cpp(210): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgTermState.cpp)
+         DlgThirdGenerationCfg.cpp
+         DlgThreeDimensionaPtz.cpp
+     1>DlgThermometry.cpp(283): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgThermometry.cpp)
+     1>DlgThermometry.cpp(285): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgThermometry.cpp)
+     1>DlgThermometry.cpp(459): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgThermometry.cpp)
+     1>DlgThermometry.cpp(589): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgThermometry.cpp)
+     1>DlgThermometry.cpp(628): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgThermometry.cpp)
+         DlgThremalPipCfg.cpp
+         DlgThscreen.cpp
+         DlgTimeCorrect.cpp
+         DlgTmeCfg.cpp
+     1>DlgTmeCfg.cpp(542): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgTmeCfg.cpp)
+     1>DlgTmeCfg.cpp(547): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgTmeCfg.cpp)
+         DlgTPSRuleCfg.cpp
+         DlgTransAutoReboot.cpp
+         DlgTransCompression.cpp
+         DlgTransConfig.cpp
+         DlgTransDevStatus.cpp
+         DlgTransStreamSrcCfg.cpp
+         DlgTrialAudioActivation.cpp
+         DLGTrialAudioMix.cpp
+         DlgTrialCaseParam.cpp
+     1>DLGTrialAudioMix.cpp(79): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DLGTrialAudioMix.cpp)
+     1>DLGTrialAudioMix.cpp(137): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DLGTrialAudioMix.cpp)
+     1>DLGTrialAudioMix.cpp(167): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DLGTrialAudioMix.cpp)
+     1>DLGTrialAudioMix.cpp(222): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DLGTrialAudioMix.cpp)
+     1>DLGTrialAudioMix.cpp(256): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DLGTrialAudioMix.cpp)
+     1>DLGTrialAudioMix.cpp(315): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DLGTrialAudioMix.cpp)
+     1>DLGTrialAudioMix.cpp(346): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DLGTrialAudioMix.cpp)
+     1>DLGTrialAudioMix.cpp(402): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DLGTrialAudioMix.cpp)
+     1>DLGTrialAudioMix.cpp(431): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DLGTrialAudioMix.cpp)
+     1>DLGTrialAudioMix.cpp(496): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DLGTrialAudioMix.cpp)
+         DlgTrialDVR.cpp
+         DlgTrialHostStatus.cpp
+         DlgTrialPIPCfg.cpp
+         DlgTsSeries.cpp
+         DlgUHFBasicInfo.cpp
+         DlgUHFRFIDReaderCfg.cpp
+         DlgUniformInterface.cpp
+     1>DlgUHFBasicInfo.cpp(221): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgUHFBasicInfo.cpp)
+     1>DlgUHFBasicInfo.cpp(407): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgUHFBasicInfo.cpp)
+         DlgUpgrade.cpp
+         DlgUpgradeIPC.cpp
+         DlgUpgradeSelectDev.cpp
+     1>DlgUpgrade.cpp(295): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgUpgrade.cpp)
+     1>DlgUpgrade.cpp(427): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgUpgrade.cpp)
+         DlgUploadBlockList.cpp
+         DlgUploadBlockListPicture.cpp
+         DlgUploadCalibrationFile.cpp
+         DlgUploadFaceLib.cpp
+         DlgUploadFile.cpp
+         DlgUploadHd.cpp
+         DlgUploadHdFile.cpp
+         DlgUploadLogo.cpp
+         DlgUpnpCfg.cpp
+         DlgUpStreamCfg.cpp
+         DlgVcaAidRuleCfg.cpp
+         DlgVCAAlarmLogo.cpp
+         DlgVcaAlarmTimeCfg.cpp
+         DlgVcaAuxAreaList.cpp
+         DlgVcaBaselineScene.cpp
+         DlgVcaBehaviorCalibrate.cpp
+         DlgVcaBehaviorCfg.cpp
+         DlgVcaBlockList.cpp
+         DlgVcaBVCalibrate.cpp
+         DlgVcaChanCtrlCfg.cpp
+         DlgVcaChannelWorkMode.cpp
+         DlgVcaDataBase.cpp
+         DlgVcaDetectionCfg.cpp
+         DlgVCADetionCfg.cpp
+         DlgVcaDevAbility.cpp
+         DlgVcaDevAccessCfg.cpp
+         DlgVcaDevChannel.cpp
+         DlgVcaDrawMode.cpp
+         DlgVcaEnterRegion.cpp
+         DlgVcaFace.cpp
+         DlgVcaFaceDataBase.cpp
+         DlgVcaFaceDetect.cpp
+         DlgVcaFaceMatchLogSearch.cpp
+         DlgVcaFaceSnapCfg.cpp
+         DlgVcaFindBackgroundPic.cpp
+         DlgVcaFindSnapData.cpp
+         DlgVcaForensicsModeCfg.cpp
+         DlgVcaFunCfg.cpp
+         DlgVcaITCTriggerCfg.cpp
+         DlgVcaITSCalibrate.cpp
+         DlgVcaITSCfg.cpp
+         DlgVcaIvmsCfg.cpp
+         DlgVcaIvmsSched.cpp
+         DlgVcaLaneCfg.cpp
+         DlgVcaLF.cpp
+     1>DlgVcaIvmsCfg.cpp(1060): warning C4313: “sprintf”: 格式字符串中的“%d”与“char *”类型的参数 1 冲突 (DlgVcaIvmsCfg.cpp)
+     1>DlgVcaIvmsCfg.cpp(1070): warning C4313: “sprintf”: 格式字符串中的“%d”与“char *”类型的参数 1 冲突 (DlgVcaIvmsCfg.cpp)
+     1>DlgVcaIvmsCfg.cpp(1354): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据 (DlgVcaIvmsCfg.cpp)
+     1>DlgVcaIvmsCfg.cpp(1400): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据 (DlgVcaIvmsCfg.cpp)
+     1>DlgVcaIvmsCfg.cpp(2289): warning C4313: “sprintf”: 格式字符串中的“%d”与“char *”类型的参数 1 冲突 (DlgVcaIvmsCfg.cpp)
+         DlgVcaMaskRegion.cpp
+         DlgVcaObjectColor.cpp
+         DlgVcaParamkey.cpp
+         DlgVcaPositionRule.cpp
+         DlgVcaRemoteChannel.cpp
+         DlgVcaResetCounterCfg.cpp
+     1>DlgVcaPositionRule.cpp(1617): warning C4313: “sprintf”: 格式字符串中的“%d”与“char *”类型的参数 1 冲突 (DlgVcaPositionRule.cpp)
+     1>DlgVcaPositionRule.cpp(2308): warning C4313: “sprintf”: 格式字符串中的“%d”与“char *”类型的参数 1 冲突 (DlgVcaPositionRule.cpp)
+     1>DlgVcaPositionRule.cpp(2318): warning C4313: “sprintf”: 格式字符串中的“%d”与“char *”类型的参数 1 冲突 (DlgVcaPositionRule.cpp)
+     1>DlgVcaPositionRule.cpp(2751): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据 (DlgVcaPositionRule.cpp)
+     1>DlgVcaPositionRule.cpp(2799): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据 (DlgVcaPositionRule.cpp)
+         DlgVcaRuleCfg.cpp
+         DlgVcaRuleCfgEx.cpp
+         DlgVCARuleColorCfg.cpp
+         DlgVcaSavePathConfig.cpp
+         DlgVcaSceneAidRuleCfg.cpp
+         DlgVcaSceneCfg.cpp
+         DlgVcaSceneITSCalibrate.cpp
+         DlgVcaSceneLaneCfg.cpp
+         DlgVcaSceneRegionList.cpp
+         DlgVcaSceneTpsRuleCfg.cpp
+         DlgVcaSceneTrafficCfg.cpp
+         DlgVcaSingleProcImg.cpp
+         DlgVcaSnapDatabase.cpp
+         DlgVcaTrackCfg.cpp
+         DlgVcaVersionList.cpp
+         DlgVcaVQDAlarmPic.cpp
+         DlgVcaVQDEventRule.cpp
+         DlgVcaWorkStatus.cpp
+         DlgVCSExternalMatrix.cpp
+         DlgVedioAudioInCfg.cpp
+         DlgVedioImgDB.cpp
+         DlgVehicleCfg.cpp
+         DlgVehicleControlCfg.cpp
+     1>DlgVedioImgDB.cpp(80): warning C4313: “sprintf”: 格式字符串中的“%x”与“void *”类型的参数 2 冲突 (DlgVedioImgDB.cpp)
+         DlgVehicleInfo.cpp
+         DlgVehicleMvaCfg.cpp
+     1>DlgVehicleInfo.cpp(90): warning C4313: “sprintf”: 格式字符串中的“%d”与“char *”类型的参数 7 冲突 (DlgVehicleInfo.cpp)
+     1>DlgVehicleInfo.cpp(90): warning C4313: “sprintf”: 格式字符串中的“%d”与“const char *”类型的参数 8 冲突 (DlgVehicleInfo.cpp)
+         DlgVehicleRecogCFG.cpp
+         DlgVideoIntercomAlarmCfg.cpp
+         DlgVideoIntercomAuthCfg.cpp
+     1>DlgVehicleRecogCFG.cpp(455): warning C4313: “sprintf”: 格式字符串中的“%d”与“char *”类型的参数 7 冲突 (DlgVehicleRecogCFG.cpp)
+         DlgVideoIntercomCall.cpp
+         DlgVideoIntercomCallRoomCfg.cpp
+         DlgVideoIntercomCfg.cpp
+         DlgVideoIntercomDeviceIDCfg.cpp
+         DlgVideoIntercomElevatorCfg.cpp
+         DlgVideoIntercomGateway.cpp
+         DlgVideoIntercomIOInCfg.cpp
+         DlgVideoIntercomIOOutCfg.cpp
+         DlgVideoIntercomNoticeDataCfg.cpp
+         DlgVideoIntercomNoticeVideoDataCfg.cpp
+         DlgVideoIntercomOpTimeCfg.cpp
+         DlgVideoIntercomPrivilegePwdCfg.cpp
+         DlgVideoIntercomRelateDevCfg.cpp
+         DlgVideoIntercomRoomCustomCfg.cpp
+         DlgVideoIntercomStreamCfg.cpp
+         DlgVideoOut.cpp
+         DlgVideoOutResolutionCfg.cpp
+         DlgVideoWallElse.cpp
+         DlgVISDevInfo.cpp
+         DlgVISRegisterInfo.cpp
+     1>DlgVideoWallElse.cpp(74): warning C4313: “sprintf”: 格式字符串中的“%d”与“char *”类型的参数 2 冲突 (DlgVideoWallElse.cpp)
+     1>DlgVideoWallElse.cpp(99): warning C4313: “sprintf”: 格式字符串中的“%d”与“char *”类型的参数 2 冲突 (DlgVideoWallElse.cpp)
+         DlgVoiceTalk.cpp
+         DlgVQDCfg.cpp
+         DlgVqdPlan.cpp
+         DlgWall.cpp
+         DlgWallBasemapWin.cpp
+         DlgWallCfg.cpp
+         DlgWallCfgUniform.cpp
+         DlgWallControl.cpp
+         DlgWallPreview.cpp
+         DlgWallVirLED.cpp
+         DlgWallWin.cpp
+         DlgWallWinVideoWall.cpp
+     1>DlgWallVirLED.cpp(146): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgWallVirLED.cpp)
+         DlgWD1Enable.cpp
+         DlgWDRCfg.cpp
+         DlgWeekPlan.cpp
+         DlgAllowList.cpp
+         DlgWiegandCfg.cpp
+         DlgWifi.cpp
+         DlgWifiDHCPCfg.cpp
+     1>DlgWiegandCfg.cpp(131): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgWiegandCfg.cpp)
+     1>DlgWiegandCfg.cpp(230): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgWiegandCfg.cpp)
+         DlgWIFIServerCfg.cpp
+     1>DlgWifi.cpp(327): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据 (DlgWifi.cpp)
+         DlgWinPreview.cpp
+         DlgWirelessBusinessSearch.cpp
+         DlgWirelessDial.cpp
+         DlgWirelessServer.cpp
+         DlgWorkingClass.cpp
+         DlgXmlAbility.cpp
+     1>DlgWorkingClass.cpp(107): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgWorkingClass.cpp)
+     1>DlgWorkingClass.cpp(219): warning C4267: “=”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgWorkingClass.cpp)
+         DlgXmlAlarmAbility.cpp
+         DlgXmlDecoderAbility.cpp
+     1>DlgXmlAbility.cpp(278): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(298): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(377): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(382): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(387): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(392): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(397): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(402): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(411): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(413): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(418): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(428): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(430): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(435): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(445): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(447): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(452): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(460): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(467): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(476): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(478): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(483): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(493): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(495): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(500): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(508): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(517): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(519): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(524): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(534): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(536): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(541): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(551): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(553): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(558): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(566): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(575): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(577): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(582): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(592): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(594): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(599): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(607): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(616): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(618): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(623): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(633): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(635): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(640): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(650): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(652): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(657): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(667): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(669): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(674): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(684): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(686): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(691): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(701): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(703): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(708): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(718): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(720): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(725): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(733): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(742): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(744): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(749): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(759): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(761): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(766): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(776): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(778): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(783): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(793): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(795): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(800): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(810): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(812): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(817): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAbility.cpp(824): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAbility.cpp)
+     1>DlgXmlAlarmAbility.cpp(81): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAlarmAbility.cpp)
+         DlgXmlEventAbility.cpp
+     1>DlgXmlAlarmAbility.cpp(91): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlAlarmAbility.cpp)
+     1>DlgXmlDecoderAbility.cpp(99): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlDecoderAbility.cpp)
+     1>DlgXmlDecoderAbility.cpp(109): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlDecoderAbility.cpp)
+         DlgXmlItcAbility.cpp
+         DlgXmlJpegCapAbility.cpp
+         DlgXmlLCDAbility.cpp
+     1>DlgXmlEventAbility.cpp(82): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlEventAbility.cpp)
+     1>DlgXmlEventAbility.cpp(92): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlEventAbility.cpp)
+     1>DlgXmlItcAbility.cpp(82): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlItcAbility.cpp)
+     1>DlgXmlItcAbility.cpp(92): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlItcAbility.cpp)
+         DlgXmlNetAppAbility.cpp
+     1>DlgXmlJpegCapAbility.cpp(81): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlJpegCapAbility.cpp)
+     1>DlgXmlJpegCapAbility.cpp(91): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlJpegCapAbility.cpp)
+     1>DlgXmlLCDAbility.cpp(100): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlLCDAbility.cpp)
+     1>DlgXmlLCDAbility.cpp(110): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlLCDAbility.cpp)
+         DlgXmlRaidAbility.cpp
+         DlgXmlSerialAbility.cpp
+     1>DlgXmlNetAppAbility.cpp(81): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlNetAppAbility.cpp)
+     1>DlgXmlNetAppAbility.cpp(91): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlNetAppAbility.cpp)
+         DlgXmlSub.cpp
+     1>DlgXmlRaidAbility.cpp(78): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlRaidAbility.cpp)
+         DlgXmlVideoPic.cpp
+     1>DlgXmlSerialAbility.cpp(81): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlSerialAbility.cpp)
+     1>DlgXmlSerialAbility.cpp(91): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlSerialAbility.cpp)
+         DlgXmlWallAblity.cpp
+     1>DlgXmlVideoPic.cpp(81): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlVideoPic.cpp)
+         DlgZeroChanCfg.cpp
+         DlgZoneLinkageChanCfg.cpp
+     1>DlgXmlVideoPic.cpp(91): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlVideoPic.cpp)
+     1>DlgXmlWallAblity.cpp(71): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (DlgXmlWallAblity.cpp)
+         DrawFun.cpp
+         explorer.cpp
+         EzvizDDNSAPI.cpp
+         InfoDiffusionParamsConvert.cpp
+     1>DrawFun.cpp(66): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据 (DrawFun.cpp)
+     1>DrawFun.cpp(83): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据 (DrawFun.cpp)
+         JPEGPicDownload.cpp
+     1>c:\users\sunrenjie\downloads\ch-hcnetsdkv6.1.9.48_build20230410_win64\demo示例\1- mfc综合示例\curl_httpclient.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (EzvizDDNSAPI.cpp)
+         LEDScreenAdjust.cpp
+         LocalConfigFile.cpp
+         Markup.cpp
+     1>LEDScreenAdjust.cpp(10): warning C4005: “IDC_EDIT”: 宏重定义 (LEDScreenAdjust.cpp)
+                 c:\users\sunrenjie\downloads\ch-hcnetsdkv6.1.9.48_build20230410_win64\demo示例\1- mfc综合示例\resource.h(11960) : 参见“IDC_EDIT”的前一个定义
+         Note: MBCS build (not UTF-8)
+         MatCodeSplitter.cpp
+         MatCycLink.cpp
+         MatDecDnsCfg.cpp
+         MatDecoderStatus.cpp
+         MatDispChan.cpp
+         MatDispChanControl.cpp
+         MatDynamicTest.cpp
+         MatPassive.cpp
+         MatPlayBack.cpp
+         MatTrans.cpp
+         MatVedioPlatform.cpp
+         MimeProtocolParsing.cpp
+         ModifyRecord.cpp
+     1>MimeProtocolParsing.cpp(53): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据 (MimeProtocolParsing.cpp)
+     1>MimeProtocolParsing.cpp(85): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据 (MimeProtocolParsing.cpp)
+     1>MimeProtocolParsing.cpp(138): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据 (MimeProtocolParsing.cpp)
+         OpenSourceCERT.cpp
+         P2PProxyCfgDlg.cpp
+         ParseXMLHelper.cpp
+         Picture.cpp
+     1>Picture.cpp(53): warning C4267: “初始化”: 从“size_t”转换到“DWORD”，可能丢失数据 (Picture.cpp)
+         PTZButton.cpp
+         PTZButton1.cpp
+         PtzControl.cpp
+         SoundIn.cpp
+         StdAfx.cpp
+         SubDlgAdapterCfg.cpp
+         SubDlgAlarmCfg.cpp
+         SubDlgArrayCfg.cpp
+         SubDlgATMInfoCfg.cpp
+         SubDlgBTS.cpp
+         SubDlgChanCfg.cpp
+         SubDlgCVRCfg.cpp
+         SubDlgDeviceCfg.cpp
+     1>SubDlgDeviceCfg.cpp(405): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (SubDlgDeviceCfg.cpp)
+     1>SubDlgDeviceCfg.cpp(549): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (SubDlgDeviceCfg.cpp)
+         SubDlgDVRNVRCfg.cpp
+         SubDlgExceptionCfg.cpp
+         SubDlgMatDecCfg.cpp
+         SubDlgNetworkCfg.cpp
+         SubDlgPDCfg.cpp
+         SubDlgPreviewCfgV30.cpp
+         SubDlgSerialCfg.cpp
+         SubDlgUserCfg.cpp
+         SubDlgVDCfg.cpp
+         SubDlgWndSequence.cpp
+         TimeSegment.cpp
+     1>SubDlgUserCfg.cpp(498): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据 (SubDlgUserCfg.cpp)
+         UPLOAD_PANORAMIC_STITCH.cpp
+         UserDlg.cpp
+         VcaCommonOperations.cpp
+         WaveSound.cpp
+         XMLParamsConvert.cpp
+         XmlUserAbility.cpp
+     1>XmlUserAbility.cpp(81): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (XmlUserAbility.cpp)
+     1>XmlUserAbility.cpp(91): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据 (XmlUserAbility.cpp)
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I"../../头文件" /I../incCn /I./ /Iinclude /Zi /nologo /W3 /WX- /MP /Od /D _WIN64 /D NDEBUG /D _WINDOWS /D DEMO_LAN_CN /D _VC80_UPGRADE=0x0600 /D _MBCS /GF /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /FAcs /Fa"VC60/" /Fo"VC60/" /Fd"VC60/vc120.pdb" /FR /Gd /TP /errorReport:prompt CheckEnabled.cpp RecvCardArea.cpp RecvCardVersion.cpp xml\tinystr.cpp xml\tinyxml.cpp xml\tinyxmlerror.cpp xml\tinyxmlparser.cpp xml\XmlBase.cpp
+         CheckEnabled.cpp
+         RecvCardArea.cpp
+         RecvCardVersion.cpp
+         tinystr.cpp
+     1>CheckEnabled.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (CheckEnabled.cpp)
+     1>RecvCardVersion.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (RecvCardVersion.cpp)
+     1>c:\users\sunrenjie\downloads\ch-hcnetsdkv6.1.9.48_build20230410_win64\demo示例\1- mfc综合示例\CheckEnabled.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (CheckEnabled.cpp)
+     1>RecvCardArea.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (RecvCardArea.cpp)
+     1>c:\users\sunrenjie\downloads\ch-hcnetsdkv6.1.9.48_build20230410_win64\demo示例\1- mfc综合示例\RecvCardVersion.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (RecvCardVersion.cpp)
+     1>c:\users\sunrenjie\downloads\ch-hcnetsdkv6.1.9.48_build20230410_win64\demo示例\1- mfc综合示例\RecvCardArea.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (RecvCardArea.cpp)
+         tinyxml.cpp
+         tinyxmlerror.cpp
+         tinyxmlparser.cpp
+         XmlBase.cpp
+     1>xml\XmlBase.cpp(314): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据 (xml\XmlBase.cpp)
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I"../../头文件" /I../incCn /I./ /Iinclude /Zi /nologo /W3 /WX- /MP /Od /D _WIN64 /D NDEBUG /D _WINDOWS /D DEMO_LAN_CN /D _VC80_UPGRADE=0x0600 /D _MBCS /GF /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /FAcs /Fa"VC60/" /Fo"VC60/" /Fd"VC60/vc120.pdb" /FR /Gd /TC /errorReport:prompt cjson\cjson.c
+         cjson.c
+     1>cjson\cjson.c(126): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
+     1>cjson\cjson.c(133): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
+     1>cjson\cjson.c(134): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
+     1>cjson\cjson.c(135): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
+     1>cjson\cjson.c(168): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(304) : 参见“sscanf”的声明
+     1>cjson\cjson.c(175): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(304) : 参见“sscanf”的声明
+     1>cjson\cjson.c(230): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
+     1>cjson\cjson.c(349): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 参见“strcpy”的声明
+     1>cjson\cjson.c(362): warning C4267: “+=”: 从“size_t”转换到“int”，可能丢失数据
+     1>cjson\cjson.c(384): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 参见“strcpy”的声明
+     1>cjson\cjson.c(462): warning C4267: “+=”: 从“size_t”转换到“int”，可能丢失数据
+     1>cjson\cjson.c(483): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 参见“strcpy”的声明
+     1>cjson\cjson.c(485): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 参见“strcpy”的声明
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /D NDEBUG /D _VC80_UPGRADE=0x0600 /l"0x0804" /nologo /fo"Release/ClientDemo.res" ClientDemo.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"../../库文件/ClientDemo.exe" /INCREMENTAL /NOLOGO /LIBPATH:"../../库文件" /LIBPATH:../lib/win64 HCNetSDK.lib PlayCtrl.lib ws2_32.lib winmm.lib GdiPlus.lib IPHlpApi.Lib shlwapi.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"../../库文件\ClientDemo.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"../../库文件\ClientDemo.lib" /MACHINE:X64 Release/ClientDemo.res
+         VC60/AlarmAdvanceSetter.obj
+         VC60/B10SeriesConfig.obj
+         VC60/CheckEnabled.obj
+         VC60/cjson.obj
+         VC60/ClientDemo.obj
+         VC60/ClientDemoDlg.obj
+         VC60/ConvertC10S21Param.obj
+         VC60/curl_httpclient.obj
+         VC60/DecoderCfg.obj
+         VC60/DeviceCfgFile.obj
+         VC60/DeviceDlg.obj
+         VC60/DialogDoorContent.obj
+         VC60/DialogMultiNetCard.obj
+         VC60/DialogRecordTimeSpan.obj
+         VC60/Dlg67DVSCfg.obj
+         VC60/DlgAbilityAutoDetect.obj
+         VC60/DlgAbnormalInfo.obj
+         VC60/DlgACAlarmInOutCfg.obj
+         VC60/DlgACCardParam.obj
+         VC60/DlgAccessCameraCfg.obj
+         VC60/DlgAccessoryCardInfo.obj
+         VC60/DlgAcsAttendance.obj
+         VC60/DlgAcsCardPasswdCfg.obj
+         VC60/DlgAcsCardPasswdParam.obj
+         VC60/DlgAcsCardUserInfoCfg.obj
+         VC60/DlgAcsCaseSensor.obj
+         VC60/DlgAcsCfg.obj
+         VC60/DlgAcsCheckFacePicture.obj
+         VC60/DlgAcsExternalDevCfg.obj
+         VC60/DlgAcsFaceAndTemplate.obj
+         VC60/DlgAcsFaceParamCfg.obj
+         VC60/DlgAcsFingerPrintCfg.obj
+         VC60/DlgACSGateTimeCFG.obj
+         VC60/DlgAcsLocalControllerCfg.obj
+         VC60/DlgAcsLocalControllerStatus.obj
+         VC60/DlgAcsLogSearch.obj
+         VC60/DlgAcsMoudleStatus.obj
+         VC60/DlgAcsOnlineLocalControllerCfg.obj
+         VC60/DlgAcsPersonnelChannelCfg.obj
+         VC60/DlgAcsPhoneDoorRightCfg.obj
+         VC60/DlgAcsSearchExamCompareResult.obj
+         VC60/DlgAcsSetExamineeInfo.obj
+         VC60/DlgAcsSetExamInfo.obj
+         VC60/DlgAcsSmsCfg.obj
+         VC60/DlgAcsSnapCfg.obj
+         VC60/DlgAcsUSBDeviceManage.obj
+         VC60/DlgAcsWorkModeCfg.obj
+         VC60/DlgAcsWorkStatus.obj
+         VC60/DlgAcsXmlDiffusion.obj
+         VC60/DlgAddDevice.obj
+         VC60/DlgAES.obj
+         VC60/DlgAlarmCamCfg.obj
+         VC60/DlgAlarmCenterNetCfg.obj
+         VC60/DlgAlarmCenterServerCfg.obj
+         VC60/DlgAlarmChanAblitity.obj
+         VC60/DlgAlarmExceptionHandle.obj
+         VC60/DlgAlarmHost.obj
+         VC60/DlgAlarmHostAbility.obj
+         VC60/DlgAlarmHostAudioAssociateAlarm.obj
+         VC60/DlgAlarmhostDataUploadMode.obj
+         VC60/DlgAlarmHostDialParam.obj
+         VC60/DlgAlarmHostDong.obj
+         VC60/DlgAlarmHostEnableCfg.obj
+         VC60/DlgAlarmHostEventTrigger.obj
+         VC60/DlgAlarmhostExternalDevLimitValue.obj
+         VC60/DlgAlarmHostExternalDevState.obj
+         VC60/DlgAlarmHostExternalModule.obj
+         VC60/DlgAlarmHostFaultProcess.obj
+         VC60/DlgAlarmHostGetAllModule.obj
+         VC60/DlgAlarmHostGPRS.obj
+         VC60/DlgAlarmhostHistoryData.obj
+         VC60/DlgAlarmHostLED.obj
+         VC60/DlgAlarmHostLEDBrightness.obj
+         VC60/DlgAlarmHostLogSearch.obj
+         VC60/DlgAlarmhostModuleCfg.obj
+         VC60/DlgAlarmHostNetCfg.obj
+         VC60/DlgAlarmhostPointCfg.obj
+         VC60/DlgAlarmHostPrinter.obj
+         VC60/DlgAlarmHostReportMode.obj
+         VC60/DlgAlarmHostRs485.obj
+         VC60/DlgAlarmhostSensorLinkage.obj
+         VC60/DlgAlarmHostStatus.obj
+         VC60/DlgAlarmhostSTDXMLConfig.obj
+         VC60/DlgAlarmhostSubsystem.obj
+         VC60/DlgAlarmHostTransparent.obj
+         VC60/DlgAlarmHostTriggerCode.obj
+         VC60/DlgAlarmHostZoneCfg.obj
+         VC60/DlgAlarmHostZoomAddr.obj
+         VC60/DlgAlarmInfo.obj
+         VC60/DlgAlarmKeyboardUser.obj
+         VC60/DlgAlarmNetUser.obj
+         VC60/DlgAlarmOneKey.obj
+         VC60/DlgAlarmOperatorUser.obj
+         VC60/DlgAlarmOutCfg.obj
+         VC60/DlgAlarmPicCfg.obj
+         VC60/DlgAlarmTamper.obj
+         VC60/DlgAntiSneakHostCfg.obj
+         VC60/DlgAreaMaskCfg.obj
+         VC60/DlgAreaMonitorCfg.obj
+         VC60/DlgArmingHost.obj
+         VC60/DlgAsynloginWait.obj
+         VC60/DlgAtmFrameFormatV30.obj
+         VC60/DlgAttendanceHolidayGroup.obj
+         VC60/DlgAttendanceHolidayPlan.obj
+         VC60/DlgAttendanceRecordInfo.obj
+         VC60/DlgAttendanceRule.obj
+         VC60/DlgAttendanceSummaryInfo.obj
+         VC60/DlgAudioChanCfg.obj
+         VC60/DlgAudioControlFile.obj
+         VC60/DlgAudioDiacriticalCfg.obj
+         VC60/DlgAudioInVolumeCfg1.obj
+         VC60/DlgAudioOutVolumeCfg.obj
+         VC60/DlgAudioUploadDownload.obj
+         VC60/DlgAutoReboot.obj
+         VC60/DlgAutoUpgrade.obj
+         VC60/DlgBatchConfig.obj
+         VC60/DlgBatchUploadBlockList.obj
+         VC60/DlgBathcUserRightCfg.obj
+         VC60/DlgBatteryPower.obj
+         VC60/DlgBellFileCfg.obj
+         VC60/DlgBroadCast.obj
+         VC60/DlgBuiltinSupplementLight.obj
+         VC60/DlgBvCalibParamCfg.obj
+         VC60/DlgC10S21Config.obj
+         VC60/DlgCameraSetupCfg.obj
+         VC60/DlgCaptureFace.obj
+         VC60/DlgCaptureFingerPrint.obj
+         VC60/DlgCapturePictureV50.obj
+         VC60/DlgCardReaderCfg.obj
+         VC60/DlgCaseInfo.obj
+         VC60/DlgCcdParam.obj
+         VC60/DlgCenterPoint.obj
+         VC60/DlgCertInfo.obj
+         VC60/DLGCfgSecuFile.obj
+         VC60/DlgChanInputAbility.obj
+         VC60/DlgChannelInfo.obj
+         VC60/DlgCheckTime.obj
+         VC60/DlgClearAcsParam.obj
+         VC60/DlgCloudCfg.obj
+         VC60/DlgCloudManage.obj
+         VC60/DlgCloudStorage.obj
+         VC60/DlgCloudStorageCfg.obj
+         VC60/DlgCloudStoragePhoneTest.obj
+         VC60/DlgCloudUploadstrategyCfg.obj
+         VC60/DlgCloudUrlCfg.obj
+         VC60/DlgCluster.obj
+         VC60/DlgCMSParam.obj
+         VC60/DlgCodeSplitter.obj
+         VC60/DlgCommuSecurity.obj
+         VC60/DlgCompressionV30.obj
+         VC60/DlgConferenceParam.obj
+         VC60/DlgConferenceRegion.obj
+         VC60/DlgConfigAll.obj
+         VC60/DlgConfigFlash.obj
+         VC60/DlgConnectList.obj
+         VC60/DlgConsumeSimulate.obj
+         VC60/DlgCourseCfg.obj
+         VC60/DlgCourseInfo.obj
+         VC60/DlgCourseList.obj
+         VC60/DlgCreateVD.obj
+         VC60/DLGCreateWall.obj
+         VC60/DlgCuntomProtocal.obj
+         VC60/DlgCurrentEncodeAbility.obj
+         VC60/DlgCVR.obj
+         VC60/DlgCVRDataManage.obj
+         VC60/DlgCVRPassbackBasicCfg.obj
+         VC60/DlgCVRPreviewByStreamID.obj
+         VC60/DlgCVRRemoteBackup.obj
+         VC60/DlgCVRResourceIPCfg.obj
+         VC60/DlgDebug.obj
+         VC60/DlgDecoderAbility.obj
+         VC60/DlgDecoderControl.obj
+         VC60/DlgDecorder.obj
+         VC60/DlgDecWinStatus.obj
+         VC60/DlgDecWinStatusUniform.obj
+         VC60/DlgDelayPreviewCfg.obj
+         VC60/DlgDepartmentParam.obj
+         VC60/DlgDetectorRegister.obj
+         VC60/DlgDeviceAudioTalkCode.obj
+         VC60/DlgDeviceInfo.obj
+         VC60/DlgDeviceLanguageEncode.obj
+         VC60/DlgDeviceSelfCheckState.obj
+         VC60/DlgDeviceState.obj
+         VC60/DlgDevServer.obj
+         VC60/DlgDevStorageInfo.obj
+         VC60/DlgDevWorkMode.obj
+         VC60/DlgDH3.obj
+         VC60/DlgDiagnosticServer.obj
+         VC60/DlgDiskQuota.obj
+         VC60/DlgDoorConfig.obj
+         VC60/DlgDoTest.obj
+         VC60/DlgDPCCfg.obj
+         VC60/DlgDyanmicPic.obj
+         VC60/DlgDynChanAbility.obj
+         VC60/DlgEagleCfg.obj
+         VC60/DlgEagleEyeCfg.obj
+         VC60/DlgEctChanStatus.obj
+         VC60/DlgEctWorkState.obj
+         VC60/DlgEncodeAbility.obj
+         VC60/DlgEncodeJoint.obj
+         VC60/DlgEncryptCert.obj
+         VC60/DlgESataMiniSasUsage.obj
+         VC60/DlgEthernetIpv6Cfg.obj
+         VC60/DlgEventCardLinkageCfg.obj
+         VC60/DlgExternalDev.obj
+         VC60/DlgEZVIZAccessCfg.obj
+         VC60/DlgEzvizLogin.obj
+         VC60/DlgFaceConsume.obj
+         VC60/DlgFaceData.obj
+         VC60/DlgFacelibSearch.obj
+         VC60/DlgFiberRingCfg.obj
+         VC60/DlgFibreDev.obj
+         VC60/DlgFileUploadDownload.obj
+         VC60/DlgFireDetection.obj
+         VC60/DLGFIREPTZEXCFG.obj
+         VC60/DlgFirmWareversion.obj
+         VC60/DlgFishEye.obj
+         VC60/DlgFisheyeCorrect.obj
+         VC60/DlgFisheyeFECWnd.obj
+         VC60/DlgFishEyePtzControl.obj
+         VC60/DlgFisheyePtzPlayWnd.obj
+         VC60/DlgFisheyeTrackCfg.obj
+         VC60/DlgFormatHD.obj
+         VC60/DlgFortify.obj
+         VC60/DlgFrameCtrl.obj
+         VC60/DlgFTPLogUpload.obj
+         VC60/DlgFTPUpload.obj
+         VC60/DlgGatewayCardCfg.obj
+         VC60/DlgGatewayCfg.obj
+         VC60/DlgGB28181ServerCfg.obj
+         VC60/DlgGBT28181ProAccessUniform.obj
+         VC60/DlgGBT28181ProtocolAccess.obj
+         VC60/DlgGetAccessDeviceChannelInfo.obj
+         VC60/DlgGetAllPointCfg.obj
+         VC60/DlgGetAllRs485Cfg.obj
+         VC60/DlgGetAllRs485Slot.obj
+         VC60/DlgGetAllSensor.obj
+         VC60/DLGGetChannelInfo.obj
+         VC60/DlgGetDigitalChannelStatus.obj
+         VC60/DlgGetRegisterInfo.obj
+         VC60/DlgGetWifiClientListInfo.obj
+         VC60/DlgGISInfo.obj
+         VC60/DlgGKServer.obj
+         VC60/DlgGopInfo.obj
+         VC60/DlgGroupCfg.obj
+         VC60/DlgHardDiskCfg.obj
+         VC60/DlgHardDiskStorageTest.obj
+         VC60/DlgHardDiskVolumeInfo.obj
+         VC60/DlgHeatMapCfg.obj
+         VC60/DlgHiddenInfo.obj
+         VC60/DlgHolidayCfg.obj
+         VC60/DlgIDSMainBoard.obj
+         VC60/DlgImageDiffDetectionCfg.obj
+         VC60/DlgImExportIPCCfgFile.obj
+         VC60/DlgInChanVideoLostCfg.obj
+         VC60/DlgInfoDiffusionCapabilites.obj
+         VC60/DlgInfoDiffusionClock.obj
+         VC60/DlgInfoDiffusionClockWeather.obj
+         VC60/DlgInfoDiffusionContainer.obj
+         VC60/DlgInfoDiffusionContent.obj
+         VC60/DlgInfoDiffusionGuard.obj
+         VC60/DlgInfoDiffusionMaterial.obj
+         VC60/DlgInfoDiffusionPlay.obj
+         VC60/DlgInfoDiffusionProgram.obj
+         VC60/DlgInfoDiffusionRelease.obj
+         VC60/DlgInfoDiffusionSchedule.obj
+         VC60/DlgInfoDiffusionScheduleSearch.obj
+         VC60/DlgInfoDiffusionScheduleSelfdefine.obj
+         VC60/DlgInfoDiffusionServer.obj
+         VC60/DlgInfoDiffusionShutdown.obj
+         VC60/DlgInfoDiffusionTermainlServer.obj
+         VC60/DlgInfoDiffusionTerminal.obj
+         VC60/DlgInfoDiffusionTerminalUpgrade.obj
+         VC60/DlgInfoDiffusionTernimalPreview.obj
+         VC60/DlgInfoDiffusionVolum.obj
+         VC60/DlgInfoDiffusionXmlCfg.obj
+         VC60/DlgInfoDiffusionXmlUpdownload.obj
+         VC60/DlgInfoGerenal.obj
+         VC60/DlgInfoXmlCfgWithUrl.obj
+         VC60/DlgInfrareCfg.obj
+         VC60/DlgInfrared.obj
+         VC60/DlgInqMixAudioInCfg.obj
+         VC60/DlgInquestCaseInfo.obj
+         VC60/DlgInquestDvr.obj
+         VC60/DlgInquestEvent.obj
+         VC60/DlgInquestFile.obj
+         VC60/DlgInquestTrayConfig.obj
+         VC60/DlgInqUserRight.obj
+         VC60/DlgInteractive.obj
+         VC60/DlgInteractiveControl.obj
+         VC60/DlgInteractiveFileInfoCfg.obj
+         VC60/DlgInteractiveScreenConfig.obj
+         VC60/DlgInteractiveScreenFileUpload.obj
+         VC60/DlgIntranetSegmentCfg.obj
+         VC60/DlgIOOutCfg.obj
+         VC60/DlgIPAccessCfgDDNS.obj
+         VC60/DlgIPAccessCfgEasyDDNS.obj
+         VC60/DlgIPAccessCfgIPServer.obj
+         VC60/DlgIPAccessCfgStreamServer.obj
+         VC60/DlgIPAddrFilterCfg.obj
+         VC60/DlgIPCFrontAbility.obj
+         VC60/DlgIPCPlateRecog.obj
+         VC60/DlgIPCSimpIntellCfg.obj
+         VC60/DlgIPCSpecial.obj
+         VC60/DlgIPCSpeclalEx.obj
+         VC60/DlgIPDomeLocalCfg.obj
+         VC60/DlgIperf.obj
+         VC60/DlgIpViewCfg.obj
+         VC60/DlgIscsiCfg.obj
+         VC60/DlgISPParamCfg.obj
+         VC60/DlgITCAblity.obj
+         VC60/DlgITCIOinCfg.obj
+         VC60/DlgITSBaseInfo.obj
+         VC60/DlgITSConfig.obj
+         VC60/DlgITSImageMergeCfg.obj
+         VC60/DlgITSIOinCfg.obj
+         VC60/DlgITSIpcCfg.obj
+         VC60/DlgITSMiniPost.obj
+         VC60/DlgITSMonitor.obj
+         VC60/DlgITSOverlapCfg.obj
+         VC60/DlgITSRoadInfo.obj
+         VC60/DlgITSUpload.obj
+         VC60/DlgITSWorkState.obj
+         VC60/DlgJpegCaptureCfg.obj
+         VC60/DlgJpegFTP.obj
+         VC60/DlgJPEGPicDownloadMedical.obj
+         VC60/DlgJPEGSnatchConfig.obj
+         VC60/DlgKeyboardCfg.obj
+         VC60/DlgLampCfg.obj
+         VC60/DlgLampControl.obj
+         VC60/DlgLcdMatrixRelation.obj
+         VC60/DlgLcdMatrixSwitch.obj
+         VC60/DlgLcdParamCfg.obj
+         VC60/DlgLcdScene.obj
+         VC60/DlgLCDScreen.obj
+         VC60/DlgLCDScreenDisplay.obj
+         VC60/DlgLcdSerial.obj
+         VC60/DlgLcdServer.obj
+         VC60/DlgLcdSplice.obj
+         VC60/DlgLcdSwitchCfg.obj
+         VC60/DlgLcdUserCfg.obj
+         VC60/DlgLEDCheckCond.obj
+         VC60/DlgLedConfig.obj
+         VC60/DlgLedConfigDisplay.obj
+         VC60/DlgLedConfigRecv.obj
+         VC60/DlgLEDTimerSwitch.obj
+         VC60/DlgLEDVersion.obj
+         VC60/DlgLimitAngle.obj
+         VC60/DlgLinkStatus.obj
+         VC60/DlgLiteStorage.obj
+         VC60/DlgLocalConfig.obj
+         VC60/DlgLocalInputInfo.obj
+         VC60/DlgLocalLogConfig.obj
+         VC60/DlgLocalRecordSchedule.obj
+         VC60/DlgLockedInfo.obj
+         VC60/DlgLogSearch.obj
+         VC60/DlgMacFilter.obj
+         VC60/DlgManualSnap.obj
+         VC60/DlgManualThermCfg.obj
+         VC60/DlgMasterSlaveTracking.obj
+         VC60/DlgMatDecBigScrSplice.obj
+         VC60/DlgMatDecodeChanJoint.obj
+         VC60/DlgMatOutputCfg.obj
+         VC60/DlgMatUnitedSystem.obj
+         VC60/DlgMCUAbilityDetect.obj
+         VC60/DlgMCUAddConference.obj
+         VC60/DlgMCUCall.obj
+         VC60/DlgMCUClearConfHistory.obj
+         VC60/DlgMCUConferenceCtrl.obj
+         VC60/DlgMCUDelConference.obj
+         VC60/DlgMCUGetConfStatus.obj
+         VC60/DlgMCUGetDailyDistribution.obj
+         VC60/DlgMCUGetTermGroupList.obj
+         VC60/DlgMCUSearchConference.obj
+         VC60/DlgMCUTerminalCtrl.obj
+         VC60/DlgMCUTerminalGroupCfg.obj
+         VC60/DlgMCUTerminalManageCfg.obj
+         VC60/DlgMergeDecOsd.obj
+         VC60/DlgMergeDev.obj
+         VC60/DlgMergeDevPic.obj
+         VC60/DlgMergeDevResource.obj
+         VC60/DlgMicrophoneStatus.obj
+         VC60/DlgMixAudioInCfg.obj
+         VC60/DlgMixAudioOutCfg.obj
+         VC60/DlgMobileTriggerCfg.obj
+         VC60/DlgModifyRecord.obj
+         VC60/DlgMonitorInfo.obj
+         VC60/DlgMonitorLocation.obj
+         VC60/DlgMouseEvent.obj
+         VC60/DlgMultiCardCfg.obj
+         VC60/DlgMultilStreamRelChanCfg.obj
+         VC60/DlgNetraEventVedio.obj
+         VC60/DlgNetraHttps.obj
+         VC60/DlgNetraRecordPackage.obj
+         VC60/DlgNetraSeries.obj
+         VC60/DlgNetServiceCfg.obj
+         VC60/DlgNetworkAbility.obj
+         VC60/DlgNetworkBonding.obj
+         VC60/DlgNetworkFlowTest.obj
+         VC60/DlgNVRAudioVideoCfg.obj
+         VC60/DlgNVRCfg.obj
+         VC60/DlgNVRIPCCfg.obj
+         VC60/DlgOISCfg.obj
+         VC60/DlgOneKeyBackupCfg.obj
+         VC60/DlgOneKeyPublish.obj
+         VC60/DlgOneOutputScheduleRuleCfg.obj
+         VC60/DlgOnlineUserList.obj
+         VC60/DlgOrdinaryClass.obj
+         VC60/DlgOutput.obj
+         VC60/DlgOutputCtrl.obj
+         VC60/DlgOutputScheduleRuleCfg.obj
+         VC60/DlgPanoramaImage.obj
+         VC60/DlgPassiveTransCode.obj
+         VC60/DlgPassiveWin.obj
+         VC60/DlgPdcCalibration.obj
+         VC60/DlgPdcResult.obj
+         VC60/DlgPdcRuleCfg.obj
+         VC60/DlgPdcRuleCfgEx.obj
+         VC60/DlgPDCSearch.obj
+         VC60/DlgPersonnelStatis.obj
+         VC60/DlgPicBatchUpload.obj
+         VC60/DlgPicModelCfg.obj
+         VC60/DlgPictureSwitchCtrl.obj
+         VC60/DlgPictureUpload.obj
+         VC60/DlgPlayBack.obj
+         VC60/DlgPlayConvert.obj
+         VC60/DlgPlayDvrRecord.obj
+         VC60/DlgPlayEvent.obj
+         VC60/DlgPlayLocalFile.obj
+         VC60/DlgPlayLockFile.obj
+         VC60/DlgPlayMotion.obj
+         VC60/DlgPlayRemoteFile.obj
+         VC60/DlgPlayRemoteFileMedical.obj
+         VC60/DlgPlayRemoteTime.obj
+         VC60/DlgPosChanFilter.obj
+         VC60/DlgPosConnectMode.obj
+         VC60/DlgPosFilterEffect.obj
+         VC60/DlgPosFilterRule.obj
+         VC60/DlgPosInfoctrl.obj
+         VC60/DlgPositionTrackCfg.obj
+         VC60/DlgPosManage.obj
+         VC60/DlgPosRecvData.obj
+         VC60/DlgPOSRegion.obj
+         VC60/DlgPosSerialPortRecvData.obj
+         VC60/DlgPostRadarCfg.obj
+         VC60/DlgPPPCfg.obj
+         VC60/DlgPPTDetect.obj
+         VC60/DlgPreviewOpts.obj
+         VC60/DlgPreviewSwitchCfg.obj
+         VC60/DlgPreviewWin.obj
+         VC60/DlgPrivateProtocolCfg.obj
+         VC60/DlgProductAcs.obj
+         VC60/DlgProductAlarmHostCfg.obj
+         VC60/DlgProductCfg.obj
+         VC60/DlgProductDH.obj
+         VC60/DlgProductionTest.obj
+         VC60/DlgProductVcaCfg.obj
+         VC60/DlgPtzCfgCtrl.obj
+         VC60/DlgPTZCruise.obj
+         VC60/DlgPtzCtrl.obj
+         VC60/DlgPtzLockCfg.obj
+         VC60/DlgPtzNotification.obj
+         VC60/DlgPtzParkActionCfg.obj
+         VC60/DlgPTZPreset.obj
+         VC60/DlgPtzScope.obj
+         VC60/DlgPTZTasks.obj
+         VC60/DlgPtzTrackParamCfg.obj
+         VC60/DlgPUStream.obj
+         VC60/DlgQuickAddIpc.obj
+         VC60/DlgRaidConfig.obj
+         VC60/DlgReaderAntiSneakHostCfg.obj
+         VC60/DlgRecordAbility.obj
+         VC60/DlgRecordControl.obj
+         VC60/DlgRecordHost.obj
+         VC60/DlgRecordHostAbility.obj
+         VC60/DlgRecordHostAudioEffectiveCfg.obj
+         VC60/DlgRecordHostBackgroundPicCfg.obj
+         VC60/DlgRecordHostCfg.obj
+         VC60/DlgRecordHostClassDataStatistic.obj
+         VC60/DlgRecordHostDirectedAdvanceCfg.obj
+         VC60/DlgRecordHostDirectedStrategyCfg.obj
+         VC60/DlgRecordHostEducationServerCfg.obj
+         VC60/DlgRecordHostEndTime.obj
+         VC60/DlgRecordHostFilePublish.obj
+         VC60/DlgRecordHostFilmModeCfg.obj
+         VC60/DlgRecordHostFrameCfg.obj
+         VC60/DlgRecordHostRTMPCfg.obj
+         VC60/DlgRecordHostV120.obj
+         VC60/DlgRecordHostVedioSwitchConfig.obj
+         VC60/DlgRecordHostVideoCfg.obj
+         VC60/DlgRecordHostVideoTitleConfig.obj
+         VC60/DlgRecordLabel.obj
+         VC60/DlgRecordPublishCfg.obj
+         VC60/DlgRecordStatus.obj
+         VC60/DlgRecordStreamTransType.obj
+         VC60/DlgRecPassBack.obj
+         VC60/DlgRecPassBackHistorySchdule.obj
+         VC60/DlgRecPassBackScheCfg.obj
+         VC60/DlgRecPassbackTaskExecutable.obj
+         VC60/DlgRegionDetectCfg.obj
+         VC60/DlgRegionList.obj
+         VC60/DlgRemoteAdvanceNetConfig.obj
+         VC60/DlgRemoteAlarmDetectFace.obj
+         VC60/DlgRemoteAlarmInHandle.obj
+         VC60/DlgRemoteAlarmInPtzInvoke.obj
+         VC60/DlgRemoteCfg.obj
+         VC60/DlgRemoteControlAbility.obj
+         VC60/DlgRemoteControllerCfg.obj
+         VC60/DlgRemoteControllerManage.obj
+         VC60/DlgRemoteControlPlay.obj
+         VC60/DlgRemoteControlStatus.obj
+         VC60/DlgRemoteEmailAddReceiver.obj
+         VC60/DlgRemoteeMMC.obj
+         VC60/DlgRemoteFanException.obj
+         VC60/DlgRemoteHideAlarm.obj
+         VC60/DlgRemoteHideArea.obj
+         VC60/DlgRemoteIPAccess.obj
+         VC60/DlgRemoteKey.obj
+         VC60/DlgRemoteMotionDetect.obj
+         VC60/DlgRemoteNetNFS.obj
+         VC60/DlgRemotePullException.obj
+         VC60/DlgRemoteRecordSchedule.obj
+         VC60/DlgRemoteShowString.obj
+         VC60/DlgRemoteStreamRecordSchedule.obj
+         VC60/DlgRemoteVideoInLost.obj
+         VC60/DlgRemoteVideoInput.obj
+         VC60/DlgRemoteZone.obj
+         VC60/DLGResetLoginPassWord.obj
+         VC60/DlgRoiCfg.obj
+         VC60/DlgRS485DLLParamCfg.obj
+         VC60/DlgRS485ProtocolVersion.obj
+         VC60/DlgRtspConfig.obj
+         VC60/DlgSafeCabinState.obj
+         VC60/DlgSafetyCabin.obj
+         VC60/DlgScaleOutCfg.obj
+         VC60/DlgSceneChangeUpdate.obj
+         VC60/DlgSceneTimeCfg.obj
+         VC60/DlgScheduleInfo.obj
+         VC60/DlgSchedulePlan.obj
+         VC60/DlgScreenCtrl.obj
+         VC60/DlgScreenLogoCfg.obj
+         VC60/DlgScreenLogoCfgUniform.obj
+         VC60/DlgSDIAutoTrackCfg.obj
+         VC60/DlgSDIMatrix.obj
+         VC60/DlgSecurityCfg.obj
+         VC60/DlgSelectDevice.obj
+         VC60/DlgSenceControl.obj
+         VC60/DlgSenceControlUniform.obj
+         VC60/DlgSensorAddPreview.obj
+         VC60/DlgSensorCfg.obj
+         VC60/DlgSerialTrans.obj
+         VC60/DlgShipDetection.obj
+         VC60/DlgSignalLightSync.obj
+         VC60/DlgSizeFilter.obj
+         VC60/DlgSlaveCameraInfo.obj
+         VC60/DlgSmartCalib.obj
+         VC60/DlgSmartSearchPicture.obj
+         VC60/DlgSmartStoragedDetection.obj
+         VC60/DlgSneakAndLock.obj
+         VC60/DlgSnmpCfg.obj
+         VC60/DlgSoftwareService.obj
+         VC60/DlgSplitterStartTrans.obj
+         VC60/DlgSplitterTransparent.obj
+         VC60/DlgStorageServerSwitch.obj
+         VC60/DlgStreamAttachInfoCfg.obj
+         VC60/DlgStreamID.obj
+         VC60/DlgStreamManualRecordAndLock.obj
+         VC60/DlgStreamMediaCfg.obj
+         VC60/DlgStreamRecCheck.obj
+         VC60/DlgStreamRecordInfo.obj
+         VC60/DlgStreamRecordStatus.obj
+         VC60/DlgStreamSrcCfg.obj
+         VC60/DlgSubIPCCfg.obj
+         VC60/DlgSubITSCfg.obj
+         VC60/DlgSubsysNetCfg.obj
+         VC60/DlgSuperBrainFunctionTest.obj
+         VC60/DlgSystemTimeAlarm.obj
+         VC60/DlgT1test.obj
+         VC60/DlgTalkMREx.obj
+         VC60/DlgTermGroup.obj
+         VC60/DlgTerminalConferenceStatus.obj
+         VC60/DlgTerminalGkCfg.obj
+         VC60/DlgTermManage.obj
+         VC60/DlgTermPlay.obj
+         VC60/DlgTermState.obj
+         VC60/DlgTest.obj
+         VC60/DlgThermalDoubleSpectrum.obj
+         VC60/DlgThermometry.obj
+         VC60/DlgThirdGenerationCfg.obj
+         VC60/DlgThreeDimensionaPtz.obj
+         VC60/DlgThremalPipCfg.obj
+         VC60/DlgThscreen.obj
+         VC60/DlgTimeCorrect.obj
+         VC60/DlgTmeCfg.obj
+         VC60/DlgTPSRuleCfg.obj
+         VC60/DlgTransAutoReboot.obj
+         VC60/DlgTransCompression.obj
+         VC60/DlgTransConfig.obj
+         VC60/DlgTransDevStatus.obj
+         VC60/DlgTransStreamSrcCfg.obj
+         VC60/DlgTrialAudioActivation.obj
+         VC60/DLGTrialAudioMix.obj
+         VC60/DlgTrialCaseParam.obj
+         VC60/DlgTrialDVR.obj
+         VC60/DlgTrialHostStatus.obj
+         VC60/DlgTrialPIPCfg.obj
+         VC60/DlgTsSeries.obj
+         VC60/DlgUHFBasicInfo.obj
+         VC60/DlgUHFRFIDReaderCfg.obj
+         VC60/DlgUniformInterface.obj
+         VC60/DlgUpgrade.obj
+         VC60/DlgUpgradeIPC.obj
+         VC60/DlgUpgradeSelectDev.obj
+         VC60/DlgUploadBlockList.obj
+         VC60/DlgUploadBlockListPicture.obj
+         VC60/DlgUploadCalibrationFile.obj
+         VC60/DlgUploadFaceLib.obj
+         VC60/DlgUploadFile.obj
+         VC60/DlgUploadHd.obj
+         VC60/DlgUploadHdFile.obj
+         VC60/DlgUploadLogo.obj
+         VC60/DlgUpnpCfg.obj
+         VC60/DlgUpStreamCfg.obj
+         VC60/DlgVcaAidRuleCfg.obj
+         VC60/DlgVCAAlarmLogo.obj
+         VC60/DlgVcaAlarmTimeCfg.obj
+         VC60/DlgVcaAuxAreaList.obj
+         VC60/DlgVcaBaselineScene.obj
+         VC60/DlgVcaBehaviorCalibrate.obj
+         VC60/DlgVcaBehaviorCfg.obj
+         VC60/DlgVcaBlockList.obj
+         VC60/DlgVcaBVCalibrate.obj
+         VC60/DlgVcaChanCtrlCfg.obj
+         VC60/DlgVcaChannelWorkMode.obj
+         VC60/DlgVcaDataBase.obj
+         VC60/DlgVcaDetectionCfg.obj
+         VC60/DlgVCADetionCfg.obj
+         VC60/DlgVcaDevAbility.obj
+         VC60/DlgVcaDevAccessCfg.obj
+         VC60/DlgVcaDevChannel.obj
+         VC60/DlgVcaDrawMode.obj
+         VC60/DlgVcaEnterRegion.obj
+         VC60/DlgVcaFace.obj
+         VC60/DlgVcaFaceDataBase.obj
+         VC60/DlgVcaFaceDetect.obj
+         VC60/DlgVcaFaceMatchLogSearch.obj
+         VC60/DlgVcaFaceSnapCfg.obj
+         VC60/DlgVcaFindBackgroundPic.obj
+         VC60/DlgVcaFindSnapData.obj
+         VC60/DlgVcaForensicsModeCfg.obj
+         VC60/DlgVcaFunCfg.obj
+         VC60/DlgVcaITCTriggerCfg.obj
+         VC60/DlgVcaITSCalibrate.obj
+         VC60/DlgVcaITSCfg.obj
+         VC60/DlgVcaIvmsCfg.obj
+         VC60/DlgVcaIvmsSched.obj
+         VC60/DlgVcaLaneCfg.obj
+         VC60/DlgVcaLF.obj
+         VC60/DlgVcaMaskRegion.obj
+         VC60/DlgVcaObjectColor.obj
+         VC60/DlgVcaParamkey.obj
+         VC60/DlgVcaPositionRule.obj
+         VC60/DlgVcaRemoteChannel.obj
+         VC60/DlgVcaResetCounterCfg.obj
+         VC60/DlgVcaRuleCfg.obj
+         VC60/DlgVcaRuleCfgEx.obj
+         VC60/DlgVCARuleColorCfg.obj
+         VC60/DlgVcaSavePathConfig.obj
+         VC60/DlgVcaSceneAidRuleCfg.obj
+         VC60/DlgVcaSceneCfg.obj
+         VC60/DlgVcaSceneITSCalibrate.obj
+         VC60/DlgVcaSceneLaneCfg.obj
+         VC60/DlgVcaSceneRegionList.obj
+         VC60/DlgVcaSceneTpsRuleCfg.obj
+         VC60/DlgVcaSceneTrafficCfg.obj
+         VC60/DlgVcaSingleProcImg.obj
+         VC60/DlgVcaSnapDatabase.obj
+         VC60/DlgVcaTrackCfg.obj
+         VC60/DlgVcaVersionList.obj
+         VC60/DlgVcaVQDAlarmPic.obj
+         VC60/DlgVcaVQDEventRule.obj
+         VC60/DlgVcaWorkStatus.obj
+         VC60/DlgVCSExternalMatrix.obj
+         VC60/DlgVedioAudioInCfg.obj
+         VC60/DlgVedioImgDB.obj
+         VC60/DlgVehicleCfg.obj
+         VC60/DlgVehicleControlCfg.obj
+         VC60/DlgVehicleInfo.obj
+         VC60/DlgVehicleMvaCfg.obj
+         VC60/DlgVehicleRecogCFG.obj
+         VC60/DlgVideoIntercomAlarmCfg.obj
+         VC60/DlgVideoIntercomAuthCfg.obj
+         VC60/DlgVideoIntercomCall.obj
+         VC60/DlgVideoIntercomCallRoomCfg.obj
+         VC60/DlgVideoIntercomCfg.obj
+         VC60/DlgVideoIntercomDeviceIDCfg.obj
+         VC60/DlgVideoIntercomElevatorCfg.obj
+         VC60/DlgVideoIntercomGateway.obj
+         VC60/DlgVideoIntercomIOInCfg.obj
+         VC60/DlgVideoIntercomIOOutCfg.obj
+         VC60/DlgVideoIntercomNoticeDataCfg.obj
+         VC60/DlgVideoIntercomNoticeVideoDataCfg.obj
+         VC60/DlgVideoIntercomOpTimeCfg.obj
+         VC60/DlgVideoIntercomPrivilegePwdCfg.obj
+         VC60/DlgVideoIntercomRelateDevCfg.obj
+         VC60/DlgVideoIntercomRoomCustomCfg.obj
+         VC60/DlgVideoIntercomStreamCfg.obj
+         VC60/DlgVideoOut.obj
+         VC60/DlgVideoOutResolutionCfg.obj
+         VC60/DlgVideoWallElse.obj
+         VC60/DlgVISDevInfo.obj
+         VC60/DlgVISRegisterInfo.obj
+         VC60/DlgVoiceTalk.obj
+         VC60/DlgVQDCfg.obj
+         VC60/DlgVqdPlan.obj
+         VC60/DlgWall.obj
+         VC60/DlgWallBasemapWin.obj
+         VC60/DlgWallCfg.obj
+         VC60/DlgWallCfgUniform.obj
+         VC60/DlgWallControl.obj
+         VC60/DlgWallPreview.obj
+         VC60/DlgWallVirLED.obj
+         VC60/DlgWallWin.obj
+         VC60/DlgWallWinVideoWall.obj
+         VC60/DlgWD1Enable.obj
+         VC60/DlgWDRCfg.obj
+         VC60/DlgWeekPlan.obj
+         VC60/DlgAllowList.obj
+         VC60/DlgWiegandCfg.obj
+         VC60/DlgWifi.obj
+         VC60/DlgWifiDHCPCfg.obj
+         VC60/DlgWIFIServerCfg.obj
+         VC60/DlgWinPreview.obj
+         VC60/DlgWirelessBusinessSearch.obj
+         VC60/DlgWirelessDial.obj
+         VC60/DlgWirelessServer.obj
+         VC60/DlgWorkingClass.obj
+         VC60/DlgXmlAbility.obj
+         VC60/DlgXmlAlarmAbility.obj
+         VC60/DlgXmlDecoderAbility.obj
+         VC60/DlgXmlEventAbility.obj
+         VC60/DlgXmlItcAbility.obj
+         VC60/DlgXmlJpegCapAbility.obj
+         VC60/DlgXmlLCDAbility.obj
+         VC60/DlgXmlNetAppAbility.obj
+         VC60/DlgXmlRaidAbility.obj
+         VC60/DlgXmlSerialAbility.obj
+         VC60/DlgXmlSub.obj
+         VC60/DlgXmlVideoPic.obj
+         VC60/DlgXmlWallAblity.obj
+         VC60/DlgZeroChanCfg.obj
+         VC60/DlgZoneLinkageChanCfg.obj
+         VC60/DrawFun.obj
+         VC60/explorer.obj
+         VC60/EzvizDDNSAPI.obj
+         VC60/InfoDiffusionParamsConvert.obj
+         VC60/JPEGPicDownload.obj
+         VC60/LEDScreenAdjust.obj
+         VC60/LocalConfigFile.obj
+         VC60/Markup.obj
+         VC60/MatCodeSplitter.obj
+         VC60/MatCycLink.obj
+         VC60/MatDecDnsCfg.obj
+         VC60/MatDecoderStatus.obj
+         VC60/MatDispChan.obj
+         VC60/MatDispChanControl.obj
+         VC60/MatDynamicTest.obj
+         VC60/MatPassive.obj
+         VC60/MatPlayBack.obj
+         VC60/MatTrans.obj
+         VC60/MatVedioPlatform.obj
+         VC60/MimeProtocolParsing.obj
+         VC60/ModifyRecord.obj
+         VC60/OpenSourceCERT.obj
+         VC60/P2PProxyCfgDlg.obj
+         VC60/ParseXMLHelper.obj
+         VC60/Picture.obj
+         VC60/PTZButton.obj
+         VC60/PTZButton1.obj
+         VC60/PtzControl.obj
+         VC60/RecvCardArea.obj
+         VC60/RecvCardVersion.obj
+         VC60/SoundIn.obj
+         VC60/StdAfx.obj
+         VC60/SubDlgAdapterCfg.obj
+         VC60/SubDlgAlarmCfg.obj
+         VC60/SubDlgArrayCfg.obj
+         VC60/SubDlgATMInfoCfg.obj
+         VC60/SubDlgBTS.obj
+         VC60/SubDlgChanCfg.obj
+         VC60/SubDlgCVRCfg.obj
+         VC60/SubDlgDeviceCfg.obj
+         VC60/SubDlgDVRNVRCfg.obj
+         VC60/SubDlgExceptionCfg.obj
+         VC60/SubDlgMatDecCfg.obj
+         VC60/SubDlgNetworkCfg.obj
+         VC60/SubDlgPDCfg.obj
+         VC60/SubDlgPreviewCfgV30.obj
+         VC60/SubDlgSerialCfg.obj
+         VC60/SubDlgUserCfg.obj
+         VC60/SubDlgVDCfg.obj
+         VC60/SubDlgWndSequence.obj
+         VC60/TimeSegment.obj
+         VC60/UPLOAD_PANORAMIC_STITCH.obj
+         VC60/UserDlg.obj
+         VC60/VcaCommonOperations.obj
+         VC60/WaveSound.obj
+         VC60/XMLParamsConvert.obj
+         VC60/XmlUserAbility.obj
+         VC60/tinystr.obj
+         VC60/tinyxml.obj
+         VC60/tinyxmlerror.obj
+         VC60/tinyxmlparser.obj
+         VC60/XmlBase.obj
+         ClientDemo.vcxproj -> C:\Users\sunrenjie\Downloads\CH-HCNetSDKV6.1.9.48_build20230410_win64\Demo示例\1- MFC综合示例\../../库文件\ClientDemo.exe
+       BscMake:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\bscmake.exe /nologo /o"Release/ClientDemo.bsc" AlarmAdvanceSetter.sbr B10SeriesConfig.sbr CheckEnabled.sbr cjson.sbr ClientDemo.sbr ClientDemoDlg.sbr ConvertC10S21Param.sbr curl_httpclient.sbr DecoderCfg.sbr DeviceCfgFile.sbr DeviceDlg.sbr DialogDoorContent.sbr DialogMultiNetCard.sbr DialogRecordTimeSpan.sbr Dlg67DVSCfg.sbr DlgAbilityAutoDetect.sbr DlgAbnormalInfo.sbr DlgACAlarmInOutCfg.sbr DlgACCardParam.sbr DlgAccessCameraCfg.sbr DlgAccessoryCardInfo.sbr DlgAcsAttendance.sbr DlgAcsCardPasswdCfg.sbr DlgAcsCardPasswdParam.sbr DlgAcsCardUserInfoCfg.sbr DlgAcsCaseSensor.sbr DlgAcsCfg.sbr DlgAcsCheckFacePicture.sbr DlgAcsExternalDevCfg.sbr DlgAcsFaceAndTemplate.sbr DlgAcsFaceParamCfg.sbr DlgAcsFingerPrintCfg.sbr DlgACSGateTimeCFG.sbr DlgAcsLocalControllerCfg.sbr DlgAcsLocalControllerStatus.sbr DlgAcsLogSearch.sbr DlgAcsMoudleStatus.sbr DlgAcsOnlineLocalControllerCfg.sbr DlgAcsPersonnelChannelCfg.sbr DlgAcsPhoneDoorRightCfg.sbr DlgAcsSearchExamCompareResult.sbr DlgAcsSetExamineeInfo.sbr DlgAcsSetExamInfo.sbr DlgAcsSmsCfg.sbr DlgAcsSnapCfg.sbr DlgAcsUSBDeviceManage.sbr DlgAcsWorkModeCfg.sbr DlgAcsWorkStatus.sbr DlgAcsXmlDiffusion.sbr DlgAddDevice.sbr DlgAES.sbr DlgAlarmCamCfg.sbr DlgAlarmCenterNetCfg.sbr DlgAlarmCenterServerCfg.sbr DlgAlarmChanAblitity.sbr DlgAlarmExceptionHandle.sbr DlgAlarmHost.sbr DlgAlarmHostAbility.sbr DlgAlarmHostAudioAssociateAlarm.sbr DlgAlarmhostDataUploadMode.sbr DlgAlarmHostDialParam.sbr DlgAlarmHostDong.sbr DlgAlarmHostEnableCfg.sbr DlgAlarmHostEventTrigger.sbr DlgAlarmhostExternalDevLimitValue.sbr DlgAlarmHostExternalDevState.sbr DlgAlarmHostExternalModule.sbr DlgAlarmHostFaultProcess.sbr DlgAlarmHostGetAllModule.sbr DlgAlarmHostGPRS.sbr DlgAlarmhostHistoryData.sbr DlgAlarmHostLED.sbr DlgAlarmHostLEDBrightness.sbr DlgAlarmHostLogSearch.sbr DlgAlarmhostModuleCfg.sbr DlgAlarmHostNetCfg.sbr DlgAlarmhostPointCfg.sbr DlgAlarmHostPrinter.sbr DlgAlarmHostReportMode.sbr DlgAlarmHostRs485.sbr DlgAlarmhostSensorLinkage.sbr DlgAlarmHostStatus.sbr DlgAlarmhostSTDXMLConfig.sbr DlgAlarmhostSubsystem.sbr DlgAlarmHostTransparent.sbr DlgAlarmHostTriggerCode.sbr DlgAlarmHostZoneCfg.sbr DlgAlarmHostZoomAddr.sbr DlgAlarmInfo.sbr DlgAlarmKeyboardUser.sbr DlgAlarmNetUser.sbr DlgAlarmOneKey.sbr DlgAlarmOperatorUser.sbr DlgAlarmOutCfg.sbr DlgAlarmPicCfg.sbr DlgAlarmTamper.sbr DlgAntiSneakHostCfg.sbr DlgAreaMaskCfg.sbr DlgAreaMonitorCfg.sbr DlgArmingHost.sbr DlgAsynloginWait.sbr DlgAtmFrameFormatV30.sbr DlgAttendanceHolidayGroup.sbr DlgAttendanceHolidayPlan.sbr DlgAttendanceRecordInfo.sbr DlgAttendanceRule.sbr DlgAttendanceSummaryInfo.sbr DlgAudioChanCfg.sbr DlgAudioControlFile.sbr DlgAudioDiacriticalCfg.sbr DlgAudioInVolumeCfg1.sbr DlgAudioOutVolumeCfg.sbr DlgAudioUploadDownload.sbr DlgAutoReboot.sbr DlgAutoUpgrade.sbr DlgBatchConfig.sbr DlgBatchUploadBlockList.sbr DlgBathcUserRightCfg.sbr DlgBatteryPower.sbr DlgBellFileCfg.sbr DlgBroadCast.sbr DlgBuiltinSupplementLight.sbr DlgBvCalibParamCfg.sbr DlgC10S21Config.sbr DlgCameraSetupCfg.sbr DlgCaptureFace.sbr DlgCaptureFingerPrint.sbr DlgCapturePictureV50.sbr DlgCardReaderCfg.sbr DlgCaseInfo.sbr DlgCcdParam.sbr DlgCenterPoint.sbr DlgCertInfo.sbr DLGCfgSecuFile.sbr DlgChanInputAbility.sbr DlgChannelInfo.sbr DlgCheckTime.sbr DlgClearAcsParam.sbr DlgCloudCfg.sbr DlgCloudManage.sbr DlgCloudStorage.sbr DlgCloudStorageCfg.sbr DlgCloudStoragePhoneTest.sbr DlgCloudUploadstrategyCfg.sbr DlgCloudUrlCfg.sbr DlgCluster.sbr DlgCMSParam.sbr DlgCodeSplitter.sbr DlgCommuSecurity.sbr DlgCompressionV30.sbr DlgConferenceParam.sbr DlgConferenceRegion.sbr DlgConfigAll.sbr DlgConfigFlash.sbr DlgConnectList.sbr DlgConsumeSimulate.sbr DlgCourseCfg.sbr DlgCourseInfo.sbr DlgCourseList.sbr DlgCreateVD.sbr DLGCreateWall.sbr DlgCuntomProtocal.sbr DlgCurrentEncodeAbility.sbr DlgCVR.sbr DlgCVRDataManage.sbr DlgCVRPassbackBasicCfg.sbr DlgCVRPreviewByStreamID.sbr DlgCVRRemoteBackup.sbr DlgCVRResourceIPCfg.sbr DlgDebug.sbr DlgDecoderAbility.sbr DlgDecoderControl.sbr DlgDecorder.sbr DlgDecWinStatus.sbr DlgDecWinStatusUniform.sbr DlgDelayPreviewCfg.sbr DlgDepartmentParam.sbr DlgDetectorRegister.sbr DlgDeviceAudioTalkCode.sbr DlgDeviceInfo.sbr DlgDeviceLanguageEncode.sbr DlgDeviceSelfCheckState.sbr DlgDeviceState.sbr DlgDevServer.sbr DlgDevStorageInfo.sbr DlgDevWorkMode.sbr DlgDH3.sbr DlgDiagnosticServer.sbr DlgDiskQuota.sbr DlgDoorConfig.sbr DlgDoTest.sbr DlgDPCCfg.sbr DlgDyanmicPic.sbr DlgDynChanAbility.sbr DlgEagleCfg.sbr DlgEagleEyeCfg.sbr DlgEctChanStatus.sbr DlgEctWorkState.sbr DlgEncodeAbility.sbr DlgEncodeJoint.sbr DlgEncryptCert.sbr DlgESataMiniSasUsage.sbr DlgEthernetIpv6Cfg.sbr DlgEventCardLinkageCfg.sbr DlgExternalDev.sbr DlgEZVIZAccessCfg.sbr DlgEzvizLogin.sbr DlgFaceConsume.sbr DlgFaceData.sbr DlgFacelibSearch.sbr DlgFiberRingCfg.sbr DlgFibreDev.sbr DlgFileUploadDownload.sbr DlgFireDetection.sbr DLGFIREPTZEXCFG.sbr DlgFirmWareversion.sbr DlgFishEye.sbr DlgFisheyeCorrect.sbr DlgFisheyeFECWnd.sbr DlgFishEyePtzControl.sbr DlgFisheyePtzPlayWnd.sbr DlgFisheyeTrackCfg.sbr DlgFormatHD.sbr DlgFortify.sbr DlgFrameCtrl.sbr DlgFTPLogUpload.sbr DlgFTPUpload.sbr DlgGatewayCardCfg.sbr DlgGatewayCfg.sbr DlgGB28181ServerCfg.sbr DlgGBT28181ProAccessUniform.sbr DlgGBT28181ProtocolAccess.sbr DlgGetAccessDeviceChannelInfo.sbr DlgGetAllPointCfg.sbr DlgGetAllRs485Cfg.sbr DlgGetAllRs485Slot.sbr DlgGetAllSensor.sbr DLGGetChannelInfo.sbr DlgGetDigitalChannelStatus.sbr DlgGetRegisterInfo.sbr DlgGetWifiClientListInfo.sbr DlgGISInfo.sbr DlgGKServer.sbr DlgGopInfo.sbr DlgGroupCfg.sbr DlgHardDiskCfg.sbr DlgHardDiskStorageTest.sbr DlgHardDiskVolumeInfo.sbr DlgHeatMapCfg.sbr DlgHiddenInfo.sbr DlgHolidayCfg.sbr DlgIDSMainBoard.sbr DlgImageDiffDetectionCfg.sbr DlgImExportIPCCfgFile.sbr DlgInChanVideoLostCfg.sbr DlgInfoDiffusionCapabilites.sbr DlgInfoDiffusionClock.sbr DlgInfoDiffusionClockWeather.sbr DlgInfoDiffusionContainer.sbr DlgInfoDiffusionContent.sbr DlgInfoDiffusionGuard.sbr DlgInfoDiffusionMaterial.sbr DlgInfoDiffusionPlay.sbr DlgInfoDiffusionProgram.sbr DlgInfoDiffusionRelease.sbr DlgInfoDiffusionSchedule.sbr DlgInfoDiffusionScheduleSearch.sbr DlgInfoDiffusionScheduleSelfdefine.sbr DlgInfoDiffusionServer.sbr DlgInfoDiffusionShutdown.sbr DlgInfoDiffusionTermainlServer.sbr DlgInfoDiffusionTerminal.sbr DlgInfoDiffusionTerminalUpgrade.sbr DlgInfoDiffusionTernimalPreview.sbr DlgInfoDiffusionVolum.sbr DlgInfoDiffusionXmlCfg.sbr DlgInfoDiffusionXmlUpdownload.sbr DlgInfoGerenal.sbr DlgInfoXmlCfgWithUrl.sbr DlgInfrareCfg.sbr DlgInfrared.sbr DlgInqMixAudioInCfg.sbr DlgInquestCaseInfo.sbr DlgInquestDvr.sbr DlgInquestEvent.sbr DlgInquestFile.sbr DlgInquestTrayConfig.sbr DlgInqUserRight.sbr DlgInteractive.sbr DlgInteractiveControl.sbr DlgInteractiveFileInfoCfg.sbr DlgInteractiveScreenConfig.sbr DlgInteractiveScreenFileUpload.sbr DlgIntranetSegmentCfg.sbr DlgIOOutCfg.sbr DlgIPAccessCfgDDNS.sbr DlgIPAccessCfgEasyDDNS.sbr DlgIPAccessCfgIPServer.sbr DlgIPAccessCfgStreamServer.sbr DlgIPAddrFilterCfg.sbr DlgIPCFrontAbility.sbr DlgIPCPlateRecog.sbr DlgIPCSimpIntellCfg.sbr DlgIPCSpecial.sbr DlgIPCSpeclalEx.sbr DlgIPDomeLocalCfg.sbr DlgIperf.sbr DlgIpViewCfg.sbr DlgIscsiCfg.sbr DlgISPParamCfg.sbr DlgITCAblity.sbr DlgITCIOinCfg.sbr DlgITSBaseInfo.sbr DlgITSConfig.sbr DlgITSImageMergeCfg.sbr DlgITSIOinCfg.sbr DlgITSIpcCfg.sbr DlgITSMiniPost.sbr DlgITSMonitor.sbr DlgITSOverlapCfg.sbr DlgITSRoadInfo.sbr DlgITSUpload.sbr DlgITSWorkState.sbr DlgJpegCaptureCfg.sbr DlgJpegFTP.sbr DlgJPEGPicDownloadMedical.sbr DlgJPEGSnatchConfig.sbr DlgKeyboardCfg.sbr DlgLampCfg.sbr DlgLampControl.sbr DlgLcdMatrixRelation.sbr DlgLcdMatrixSwitch.sbr DlgLcdParamCfg.sbr DlgLcdScene.sbr DlgLCDScreen.sbr DlgLCDScreenDisplay.sbr DlgLcdSerial.sbr DlgLcdServer.sbr DlgLcdSplice.sbr DlgLcdSwitchCfg.sbr DlgLcdUserCfg.sbr DlgLEDCheckCond.sbr DlgLedConfig.sbr DlgLedConfigDisplay.sbr DlgLedConfigRecv.sbr DlgLEDTimerSwitch.sbr DlgLEDVersion.sbr DlgLimitAngle.sbr DlgLinkStatus.sbr DlgLiteStorage.sbr DlgLocalConfig.sbr DlgLocalInputInfo.sbr DlgLocalLogConfig.sbr DlgLocalRecordSchedule.sbr DlgLockedInfo.sbr DlgLogSearch.sbr DlgMacFilter.sbr DlgManualSnap.sbr DlgManualThermCfg.sbr DlgMasterSlaveTracking.sbr DlgMatDecBigScrSplice.sbr DlgMatDecodeChanJoint.sbr DlgMatOutputCfg.sbr DlgMatUnitedSystem.sbr DlgMCUAbilityDetect.sbr DlgMCUAddConference.sbr DlgMCUCall.sbr DlgMCUClearConfHistory.sbr DlgMCUConferenceCtrl.sbr DlgMCUDelConference.sbr DlgMCUGetConfStatus.sbr DlgMCUGetDailyDistribution.sbr DlgMCUGetTermGroupList.sbr DlgMCUSearchConference.sbr DlgMCUTerminalCtrl.sbr DlgMCUTerminalGroupCfg.sbr DlgMCUTerminalManageCfg.sbr DlgMergeDecOsd.sbr DlgMergeDev.sbr DlgMergeDevPic.sbr DlgMergeDevResource.sbr DlgMicrophoneStatus.sbr DlgMixAudioInCfg.sbr DlgMixAudioOutCfg.sbr DlgMobileTriggerCfg.sbr DlgModifyRecord.sbr DlgMonitorInfo.sbr DlgMonitorLocation.sbr DlgMouseEvent.sbr DlgMultiCardCfg.sbr DlgMultilStreamRelChanCfg.sbr DlgNetraEventVedio.sbr DlgNetraHttps.sbr DlgNetraRecordPackage.sbr DlgNetraSeries.sbr DlgNetServiceCfg.sbr DlgNetworkAbility.sbr DlgNetworkBonding.sbr DlgNetworkFlowTest.sbr DlgNVRAudioVideoCfg.sbr DlgNVRCfg.sbr DlgNVRIPCCfg.sbr DlgOISCfg.sbr DlgOneKeyBackupCfg.sbr DlgOneKeyPublish.sbr DlgOneOutputScheduleRuleCfg.sbr DlgOnlineUserList.sbr DlgOrdinaryClass.sbr DlgOutput.sbr DlgOutputCtrl.sbr DlgOutputScheduleRuleCfg.sbr DlgPanoramaImage.sbr DlgPassiveTransCode.sbr DlgPassiveWin.sbr DlgPdcCalibration.sbr DlgPdcResult.sbr DlgPdcRuleCfg.sbr DlgPdcRuleCfgEx.sbr DlgPDCSearch.sbr DlgPersonnelStatis.sbr DlgPicBatchUpload.sbr DlgPicModelCfg.sbr DlgPictureSwitchCtrl.sbr DlgPictureUpload.sbr DlgPlayBack.sbr DlgPlayConvert.sbr DlgPlayDvrRecord.sbr DlgPlayEvent.sbr DlgPlayLocalFile.sbr DlgPlayLockFile.sbr DlgPlayMotion.sbr DlgPlayRemoteFile.sbr DlgPlayRemoteFileMedical.sbr DlgPlayRemoteTime.sbr DlgPosChanFilter.sbr DlgPosConnectMode.sbr DlgPosFilterEffect.sbr DlgPosFilterRule.sbr DlgPosInfoctrl.sbr DlgPositionTrackCfg.sbr DlgPosManage.sbr DlgPosRecvData.sbr DlgPOSRegion.sbr DlgPosSerialPortRecvData.sbr DlgPostRadarCfg.sbr DlgPPPCfg.sbr DlgPPTDetect.sbr DlgPreviewOpts.sbr DlgPreviewSwitchCfg.sbr DlgPreviewWin.sbr DlgPrivateProtocolCfg.sbr DlgProductAcs.sbr DlgProductAlarmHostCfg.sbr DlgProductCfg.sbr DlgProductDH.sbr DlgProductionTest.sbr DlgProductVcaCfg.sbr DlgPtzCfgCtrl.sbr DlgPTZCruise.sbr DlgPtzCtrl.sbr DlgPtzLockCfg.sbr DlgPtzNotification.sbr DlgPtzParkActionCfg.sbr DlgPTZPreset.sbr DlgPtzScope.sbr DlgPTZTasks.sbr DlgPtzTrackParamCfg.sbr DlgPUStream.sbr DlgQuickAddIpc.sbr DlgRaidConfig.sbr DlgReaderAntiSneakHostCfg.sbr DlgRecordAbility.sbr DlgRecordControl.sbr DlgRecordHost.sbr DlgRecordHostAbility.sbr DlgRecordHostAudioEffectiveCfg.sbr DlgRecordHostBackgroundPicCfg.sbr DlgRecordHostCfg.sbr DlgRecordHostClassDataStatistic.sbr DlgRecordHostDirectedAdvanceCfg.sbr DlgRecordHostDirectedStrategyCfg.sbr DlgRecordHostEducationServerCfg.sbr DlgRecordHostEndTime.sbr DlgRecordHostFilePublish.sbr DlgRecordHostFilmModeCfg.sbr DlgRecordHostFrameCfg.sbr DlgRecordHostRTMPCfg.sbr DlgRecordHostV120.sbr DlgRecordHostVedioSwitchConfig.sbr DlgRecordHostVideoCfg.sbr DlgRecordHostVideoTitleConfig.sbr DlgRecordLabel.sbr DlgRecordPublishCfg.sbr DlgRecordStatus.sbr DlgRecordStreamTransType.sbr DlgRecPassBack.sbr DlgRecPassBackHistorySchdule.sbr DlgRecPassBackScheCfg.sbr DlgRecPassbackTaskExecutable.sbr DlgRegionDetectCfg.sbr DlgRegionList.sbr DlgRemoteAdvanceNetConfig.sbr DlgRemoteAlarmDetectFace.sbr DlgRemoteAlarmInHandle.sbr DlgRemoteAlarmInPtzInvoke.sbr DlgRemoteCfg.sbr DlgRemoteControlAbility.sbr DlgRemoteControllerCfg.sbr DlgRemoteControllerManage.sbr DlgRemoteControlPlay.sbr DlgRemoteControlStatus.sbr DlgRemoteEmailAddReceiver.sbr DlgRemoteeMMC.sbr DlgRemoteFanException.sbr DlgRemoteHideAlarm.sbr DlgRemoteHideArea.sbr DlgRemoteIPAccess.sbr DlgRemoteKey.sbr DlgRemoteMotionDetect.sbr DlgRemoteNetNFS.sbr DlgRemotePullException.sbr DlgRemoteRecordSchedule.sbr DlgRemoteShowString.sbr DlgRemoteStreamRecordSchedule.sbr DlgRemoteVideoInLost.sbr DlgRemoteVideoInput.sbr DlgRemoteZone.sbr DLGResetLoginPassWord.sbr DlgRoiCfg.sbr DlgRS485DLLParamCfg.sbr DlgRS485ProtocolVersion.sbr DlgRtspConfig.sbr DlgSafeCabinState.sbr DlgSafetyCabin.sbr DlgScaleOutCfg.sbr DlgSceneChangeUpdate.sbr DlgSceneTimeCfg.sbr DlgScheduleInfo.sbr DlgSchedulePlan.sbr DlgScreenCtrl.sbr DlgScreenLogoCfg.sbr DlgScreenLogoCfgUniform.sbr DlgSDIAutoTrackCfg.sbr DlgSDIMatrix.sbr DlgSecurityCfg.sbr DlgSelectDevice.sbr DlgSenceControl.sbr DlgSenceControlUniform.sbr DlgSensorAddPreview.sbr DlgSensorCfg.sbr DlgSerialTrans.sbr DlgShipDetection.sbr DlgSignalLightSync.sbr DlgSizeFilter.sbr DlgSlaveCameraInfo.sbr DlgSmartCalib.sbr DlgSmartSearchPicture.sbr DlgSmartStoragedDetection.sbr DlgSneakAndLock.sbr DlgSnmpCfg.sbr DlgSoftwareService.sbr DlgSplitterStartTrans.sbr DlgSplitterTransparent.sbr DlgStorageServerSwitch.sbr DlgStreamAttachInfoCfg.sbr DlgStreamID.sbr DlgStreamManualRecordAndLock.sbr DlgStreamMediaCfg.sbr DlgStreamRecCheck.sbr DlgStreamRecordInfo.sbr DlgStreamRecordStatus.sbr DlgStreamSrcCfg.sbr DlgSubIPCCfg.sbr DlgSubITSCfg.sbr DlgSubsysNetCfg.sbr DlgSuperBrainFunctionTest.sbr DlgSystemTimeAlarm.sbr DlgT1test.sbr DlgTalkMREx.sbr DlgTermGroup.sbr DlgTerminalConferenceStatus.sbr DlgTerminalGkCfg.sbr DlgTermManage.sbr DlgTermPlay.sbr DlgTermState.sbr DlgTest.sbr DlgThermalDoubleSpectrum.sbr DlgThermometry.sbr DlgThirdGenerationCfg.sbr DlgThreeDimensionaPtz.sbr DlgThremalPipCfg.sbr DlgThscreen.sbr DlgTimeCorrect.sbr DlgTmeCfg.sbr DlgTPSRuleCfg.sbr DlgTransAutoReboot.sbr DlgTransCompression.sbr DlgTransConfig.sbr DlgTransDevStatus.sbr DlgTransStreamSrcCfg.sbr DlgTrialAudioActivation.sbr DLGTrialAudioMix.sbr DlgTrialCaseParam.sbr DlgTrialDVR.sbr DlgTrialHostStatus.sbr DlgTrialPIPCfg.sbr DlgTsSeries.sbr DlgUHFBasicInfo.sbr DlgUHFRFIDReaderCfg.sbr DlgUniformInterface.sbr DlgUpgrade.sbr DlgUpgradeIPC.sbr DlgUpgradeSelectDev.sbr DlgUploadBlockList.sbr DlgUploadBlockListPicture.sbr DlgUploadCalibrationFile.sbr DlgUploadFaceLib.sbr DlgUploadFile.sbr DlgUploadHd.sbr DlgUploadHdFile.sbr DlgUploadLogo.sbr DlgUpnpCfg.sbr DlgUpStreamCfg.sbr DlgVcaAidRuleCfg.sbr DlgVCAAlarmLogo.sbr DlgVcaAlarmTimeCfg.sbr DlgVcaAuxAreaList.sbr DlgVcaBaselineScene.sbr DlgVcaBehaviorCalibrate.sbr DlgVcaBehaviorCfg.sbr DlgVcaBlockList.sbr DlgVcaBVCalibrate.sbr DlgVcaChanCtrlCfg.sbr DlgVcaChannelWorkMode.sbr DlgVcaDataBase.sbr DlgVcaDetectionCfg.sbr DlgVCADetionCfg.sbr DlgVcaDevAbility.sbr DlgVcaDevAccessCfg.sbr DlgVcaDevChannel.sbr DlgVcaDrawMode.sbr DlgVcaEnterRegion.sbr DlgVcaFace.sbr DlgVcaFaceDataBase.sbr DlgVcaFaceDetect.sbr DlgVcaFaceMatchLogSearch.sbr DlgVcaFaceSnapCfg.sbr DlgVcaFindBackgroundPic.sbr DlgVcaFindSnapData.sbr DlgVcaForensicsModeCfg.sbr DlgVcaFunCfg.sbr DlgVcaITCTriggerCfg.sbr DlgVcaITSCalibrate.sbr DlgVcaITSCfg.sbr DlgVcaIvmsCfg.sbr DlgVcaIvmsSched.sbr DlgVcaLaneCfg.sbr DlgVcaLF.sbr DlgVcaMaskRegion.sbr DlgVcaObjectColor.sbr DlgVcaParamkey.sbr DlgVcaPositionRule.sbr DlgVcaRemoteChannel.sbr DlgVcaResetCounterCfg.sbr DlgVcaRuleCfg.sbr DlgVcaRuleCfgEx.sbr DlgVCARuleColorCfg.sbr DlgVcaSavePathConfig.sbr DlgVcaSceneAidRuleCfg.sbr DlgVcaSceneCfg.sbr DlgVcaSceneITSCalibrate.sbr DlgVcaSceneLaneCfg.sbr DlgVcaSceneRegionList.sbr DlgVcaSceneTpsRuleCfg.sbr DlgVcaSceneTrafficCfg.sbr DlgVcaSingleProcImg.sbr DlgVcaSnapDatabase.sbr DlgVcaTrackCfg.sbr DlgVcaVersionList.sbr DlgVcaVQDAlarmPic.sbr DlgVcaVQDEventRule.sbr DlgVcaWorkStatus.sbr DlgVCSExternalMatrix.sbr DlgVedioAudioInCfg.sbr DlgVedioImgDB.sbr DlgVehicleCfg.sbr DlgVehicleControlCfg.sbr DlgVehicleInfo.sbr DlgVehicleMvaCfg.sbr DlgVehicleRecogCFG.sbr DlgVideoIntercomAlarmCfg.sbr DlgVideoIntercomAuthCfg.sbr DlgVideoIntercomCall.sbr DlgVideoIntercomCallRoomCfg.sbr DlgVideoIntercomCfg.sbr DlgVideoIntercomDeviceIDCfg.sbr DlgVideoIntercomElevatorCfg.sbr DlgVideoIntercomGateway.sbr DlgVideoIntercomIOInCfg.sbr DlgVideoIntercomIOOutCfg.sbr DlgVideoIntercomNoticeDataCfg.sbr DlgVideoIntercomNoticeVideoDataCfg.sbr DlgVideoIntercomOpTimeCfg.sbr DlgVideoIntercomPrivilegePwdCfg.sbr DlgVideoIntercomRelateDevCfg.sbr DlgVideoIntercomRoomCustomCfg.sbr DlgVideoIntercomStreamCfg.sbr DlgVideoOut.sbr DlgVideoOutResolutionCfg.sbr DlgVideoWallElse.sbr DlgVISDevInfo.sbr DlgVISRegisterInfo.sbr DlgVoiceTalk.sbr DlgVQDCfg.sbr DlgVqdPlan.sbr DlgWall.sbr DlgWallBasemapWin.sbr DlgWallCfg.sbr DlgWallCfgUniform.sbr DlgWallControl.sbr DlgWallPreview.sbr DlgWallVirLED.sbr DlgWallWin.sbr DlgWallWinVideoWall.sbr DlgWD1Enable.sbr DlgWDRCfg.sbr DlgWeekPlan.sbr DlgAllowList.sbr DlgWiegandCfg.sbr DlgWifi.sbr DlgWifiDHCPCfg.sbr DlgWIFIServerCfg.sbr DlgWinPreview.sbr DlgWirelessBusinessSearch.sbr DlgWirelessDial.sbr DlgWirelessServer.sbr DlgWorkingClass.sbr DlgXmlAbility.sbr DlgXmlAlarmAbility.sbr DlgXmlDecoderAbility.sbr DlgXmlEventAbility.sbr DlgXmlItcAbility.sbr DlgXmlJpegCapAbility.sbr DlgXmlLCDAbility.sbr DlgXmlNetAppAbility.sbr DlgXmlRaidAbility.sbr DlgXmlSerialAbility.sbr DlgXmlSub.sbr DlgXmlVideoPic.sbr DlgXmlWallAblity.sbr DlgZeroChanCfg.sbr DlgZoneLinkageChanCfg.sbr DrawFun.sbr explorer.sbr EzvizDDNSAPI.sbr InfoDiffusionParamsConvert.sbr JPEGPicDownload.sbr LEDScreenAdjust.sbr LocalConfigFile.sbr Markup.sbr MatCodeSplitter.sbr MatCycLink.sbr MatDecDnsCfg.sbr MatDecoderStatus.sbr MatDispChan.sbr MatDispChanControl.sbr MatDynamicTest.sbr MatPassive.sbr MatPlayBack.sbr MatTrans.sbr MatVedioPlatform.sbr MimeProtocolParsing.sbr ModifyRecord.sbr OpenSourceCERT.sbr P2PProxyCfgDlg.sbr ParseXMLHelper.sbr Picture.sbr PTZButton.sbr PTZButton1.sbr PtzControl.sbr RecvCardArea.sbr RecvCardVersion.sbr SoundIn.sbr StdAfx.sbr SubDlgAdapterCfg.sbr SubDlgAlarmCfg.sbr SubDlgArrayCfg.sbr SubDlgATMInfoCfg.sbr SubDlgBTS.sbr SubDlgChanCfg.sbr SubDlgCVRCfg.sbr SubDlgDeviceCfg.sbr SubDlgDVRNVRCfg.sbr SubDlgExceptionCfg.sbr SubDlgMatDecCfg.sbr SubDlgNetworkCfg.sbr SubDlgPDCfg.sbr SubDlgPreviewCfgV30.sbr SubDlgSerialCfg.sbr SubDlgUserCfg.sbr SubDlgVDCfg.sbr SubDlgWndSequence.sbr TimeSegment.sbr UPLOAD_PANORAMIC_STITCH.sbr UserDlg.sbr VcaCommonOperations.sbr WaveSound.sbr XMLParamsConvert.sbr XmlUserAbility.sbr tinystr.sbr tinyxml.sbr tinyxmlerror.sbr tinyxmlparser.sbr XmlBase.sbr
+       PostBuildEvent:
+         set outdirpath=../../库文件\
+         set SignToolName=C:\DemoSignTool\DemoSignTool.bat
+         if exist %SignToolName% (
+             call %SignToolName%
+         )
+         :VCEnd
+     1>已完成生成项目“C:\Users\sunrenjie\Downloads\CH-HCNetSDKV6.1.9.48_build20230410_win64\Demo示例\1- MFC综合示例\ClientDemo.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:04:09.39

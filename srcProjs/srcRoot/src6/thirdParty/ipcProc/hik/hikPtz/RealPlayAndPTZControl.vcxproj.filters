@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{c27df1af-b3fd-4156-bc23-efa0a448c9d9}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{5c31aea7-ce80-49a9-8f71-18fb60ed2b1a}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{bc10c631-c0c6-4b39-b054-1b7871bf97f6}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{414e95e6-ff98-463e-b321-76abb2636e88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="public">
+      <UniqueIdentifier>{df2d3ca6-b0be-49f7-b056-18b77fee7f85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qisOpen">
+      <UniqueIdentifier>{916019e0-867c-45d6-a1e6-e312b2895ba0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qisOpen\public">
+      <UniqueIdentifier>{3323d202-d435-45cd-a426-689ad166c160}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qisOpen\include">
+      <UniqueIdentifier>{dff57403-f7e6-4429-a2b3-0e7e6cb9abf8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyOpen">
+      <UniqueIdentifier>{d1cf619f-2cd8-4288-9a31-b567511845d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyOpen\qyCommProc_open">
+      <UniqueIdentifier>{b2492829-1654-424d-b60d-31ac4634dafb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyOpen\include">
+      <UniqueIdentifier>{a12af8be-9a5e-4027-8380-668c60bcde4a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BSWndContainer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ExButton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MultiPlay.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayApi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayWnd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PtzMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PtzScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RealPlayAndPTZControl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RealPlayAndPTZControlDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoNodeInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="public\dhPtzProc.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\qisOpen\public\ipcProc_open.cpp">
+      <Filter>qisOpen\public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\qisOpen\public\myCmdParams_open.cpp">
+      <Filter>qisOpen\public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\qyOpen\qyCommProc_open\dyn_qisPublic.cpp">
+      <Filter>qyOpen\qyCommProc_open</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\qyOpen\qyCommProc_open\qyCommProc_open.cpp">
+      <Filter>qyOpen\qyCommProc_open</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\qyOpen\qyCommProc_open\qyTCharCommProc.cpp">
+      <Filter>qyOpen\qyCommProc_open</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="RealPlayAndPTZControl.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BSWndContainer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ExButton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MultiPlay.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayApi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayWnd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PtzMenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PtzScreen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RealPlayAndPTZControl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RealPlayAndPTZControlDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoNodeInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dhPtzProc.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\qisOpen\include\ipcProc_open.h">
+      <Filter>qisOpen\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\qyOpen\include\qisOnvifCommProc_open.h">
+      <Filter>qyOpen\include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\RealPlayAndPTZControl.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\RealPlayAndPTZControl.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

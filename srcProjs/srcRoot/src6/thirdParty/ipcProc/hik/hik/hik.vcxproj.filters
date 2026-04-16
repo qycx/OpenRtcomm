@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="qyOpen">
+      <UniqueIdentifier>{980f20f8-f908-41b4-bdea-9b5d91a3ef51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyOpen\qyCommProc_open">
+      <UniqueIdentifier>{ab3265f3-8815-4fa4-b019-8acad9a95df2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{33dbd48a-69f7-4852-91bf-a085133c9725}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="public">
+      <UniqueIdentifier>{a0d1b1f9-3e9a-4de5-8e5f-c37426543917}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyOpen\include">
+      <UniqueIdentifier>{6b4bcc48-f3d4-4e48-a9b8-d39430614497}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qisOpen">
+      <UniqueIdentifier>{916b338a-f657-47ef-ae7e-de754fe88b1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qisOpen\public">
+      <UniqueIdentifier>{34d5af97-f3c5-4abb-84ff-b0038c8765ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qisOpen\include">
+      <UniqueIdentifier>{24b2d364-854f-4ed3-a9d8-b04454fe3f70}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="hik.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\qyOpen\include\qisOnvifCommProc_open.h">
+      <Filter>qyOpen\include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\hikProc.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\qisOpen\include\ipcProc_open.h">
+      <Filter>qisOpen\include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="hik.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="public\hikProc.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\qyOpen\qyCommProc_open\dyn_qisPublic.cpp">
+      <Filter>qyOpen\qyCommProc_open</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\qyOpen\qyCommProc_open\qyCommProc_open.cpp">
+      <Filter>qyOpen\qyCommProc_open</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\qisOpen\public\ipcProc_open.cpp">
+      <Filter>qisOpen\public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\qyOpen\qyCommProc_open\qyTCharCommProc.cpp">
+      <Filter>qyOpen\qyCommProc_open</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\qisOpen\public\myCmdParams_open.cpp">
+      <Filter>qisOpen\public</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="dh.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="dh.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
