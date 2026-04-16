@@ -1,0 +1,376 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(简体，中国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\qyStatusTool.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\qyStatusTool.ico"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2,66,10,67
+ PRODUCTVERSION 2,66,10,67
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "QYCX"
+            VALUE "FileDescription", "qyStatusTool"
+            VALUE "FileVersion", "2.66.10.67"
+            VALUE "InternalName", "qyStatusTool"
+            VALUE "LegalCopyright", "Qycx Copyright(C) 2003"
+            VALUE "OriginalFilename", "qyStatusTool.EXE"
+            VALUE "ProductName", "Qycx Video Conferencing"
+            VALUE "ProductVersion", "2.66.10.67"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU1 MENU
+BEGIN
+    MENUITEM "sys",                         ID_SYS
+    MENUITEM "tasks",                       ID_MENU_TASKS
+    MENUITEM "players",                     ID_MENU_PLAYERS
+    MENUITEM "talks",                       ID_MENU_TALKS
+    MENUITEM "qs",                          ID_QS
+    MENUITEM "others",                      ID_OTHERS
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP              BITMAP                  "res\\bitmap1.bmp"
+
+IDB_BITMAP_LARGE        BITMAP                  "res\\bitmap2.bmp"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_ABOUTBOX            "关于 qyStatusTool(&A)..."
+    IDP_SOCKETS_INIT_FAILED "Windows 通信端口初始化失败。"
+END
+
+#endif    // 中文(简体，中国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// 英语(美国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG 0, 0, 235, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 qyStatusTool"
+FONT 9, "Tahoma"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "qyStatusTool 1.0 版",IDC_STATIC_ver,40,10,119,8,SS_NOPREFIX
+    LTEXT           "版权所有 (C) 2003",IDC_STATIC_qycxCopyRight,40,25,119,8
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_ip DIALOG 0, 0, 187, 91
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "输入将监视的IP"
+FONT 9, "Tahoma"
+BEGIN
+    CONTROL         "IPAddress1",IDC_IP,"SysIPAddress32",WS_TABSTOP,47,21,92,15
+    DEFPUSHBUTTON   "确定",IDOK,31,55,50,14
+    PUSHBUTTON      "取消",IDCANCEL,106,55,50,14
+END
+
+IDD_filters DIALOGEX 0, 0, 421, 213
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "filters"
+FONT 9, "Tahoma", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,135,182,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,236,182,50,14
+    LTEXT           "filter0:",IDC_STATIC_staticFilter0,94,19,63,16,SS_CENTERIMAGE
+    LTEXT           "filter1:",IDC_STATIC_staticFilter1,168,19,63,16,SS_CENTERIMAGE
+    LTEXT           "clientIp0:",IDC_STATIC_clientIp0,15,19,63,16,SS_CENTERIMAGE
+    LTEXT           "content filter2:",IDC_STATIC_staticFilter2,246,19,63,16,SS_CENTERIMAGE
+    LTEXT           "content filter3:",IDC_STATIC_staticFilter3,330,19,63,16,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT_clientIp0,15,45,69,16,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_filter00,94,45,69,16,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_filter01,168,45,69,16,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_filter02,246,45,69,16,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_filter03,330,45,69,16,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_clientIp1,15,66,69,16,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_filter10,94,66,69,16,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_filter11,168,66,69,16,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_filter12,246,66,69,16,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_filter13,330,66,69,16,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_clientIp2,15,89,69,16,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_filter20,94,89,69,16,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_filter21,168,89,69,16,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_filter22,246,89,69,16,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_filter23,330,89,69,16,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_clientIp3,15,111,69,16,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_filter30,94,111,69,16,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_filter31,168,111,69,16,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_filter32,246,111,69,16,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_filter33,330,111,69,16,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_clientIp4,15,132,69,16,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_filter40,94,132,69,16,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_filter41,168,132,69,16,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_filter42,246,132,69,16,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_filter43,330,132,69,16,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_clientIp5,15,153,69,16,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_filter50,94,153,69,16,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_filter51,168,153,69,16,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_filter52,246,153,69,16,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_filter53,330,153,69,16,ES_AUTOHSCROLL
+END
+
+IDD_qyCommStatus DIALOGEX 0, 0, 687, 313
+STYLE DS_SETFONT | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Dialog"
+MENU IDR_MENU1
+FONT 9, "Courier", 700, 0, 0x0
+BEGIN
+    COMBOBOX        IDC_COMBO_select,14,45,86,42,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "qwmComm",IDC_RADIO_qwmComm,"Button",BS_AUTORADIOBUTTON,624,11,45,9
+    CONTROL         "qnmChking",IDC_RADIO_qnmChking,"Button",BS_AUTORADIOBUTTON,624,23,45,9
+    CONTROL         "scanningIp",IDC_RADIO_scanningIp,"Button",BS_AUTORADIOBUTTON,632,35,50,9
+    LTEXT           "即将显示管理控制状态",IDC_STATIC_nm,9,30,612,9
+    LTEXT           "即将显示应用系统服务状态",IDC_STATIC_serviceStatus_netMc,9,8,612,9
+    CONTROL         "满2500条自动清空",IDC_CHECK_autoClearup,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,27,290,308,14
+    LTEXT           "即将显示管理服务运行状态",IDC_STATIC_serviceStatus_is,9,18,612,9
+    CTEXT           "clientIp0",IDC_STATIC_clientIp0,106,45,62,12,SS_CENTERIMAGE | SS_SUNKEN | NOT WS_VISIBLE
+    CTEXT           "filter00",IDC_STATIC_filter00,173,45,47,12,SS_CENTERIMAGE | SS_SUNKEN | NOT WS_VISIBLE
+    CTEXT           "filter01",IDC_STATIC_filter01,228,45,47,12,SS_CENTERIMAGE | SS_SUNKEN | NOT WS_VISIBLE
+    CTEXT           "contentFilter02",IDC_STATIC_contentFilter02,281,45,47,12,SS_CENTERIMAGE | SS_SUNKEN | NOT WS_VISIBLE
+    CTEXT           "contentFilter03",IDC_STATIC_contentFilter03,336,45,47,12,SS_CENTERIMAGE | SS_SUNKEN | NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC_toolStatus,376,289,276,14,SS_CENTERIMAGE,WS_EX_RIGHT
+    CTEXT           "clientIp1",IDC_STATIC_clientIp1,106,62,62,12,SS_CENTERIMAGE | SS_SUNKEN | NOT WS_VISIBLE
+    CTEXT           "filter0",IDC_STATIC_filter10,173,62,47,12,SS_CENTERIMAGE | SS_SUNKEN | NOT WS_VISIBLE
+    CTEXT           "filter1",IDC_STATIC_filter11,228,62,47,12,SS_CENTERIMAGE | SS_SUNKEN | NOT WS_VISIBLE
+    CTEXT           "contentFilter2",IDC_STATIC_contentFilter12,281,62,47,12,SS_CENTERIMAGE | SS_SUNKEN | NOT WS_VISIBLE
+    CTEXT           "contentFilter3",IDC_STATIC_contentFilter13,336,62,47,12,SS_CENTERIMAGE | SS_SUNKEN | NOT WS_VISIBLE
+    CTEXT           "clientIp2",IDC_STATIC_clientIp2,106,79,62,12,SS_CENTERIMAGE | SS_SUNKEN | NOT WS_VISIBLE
+    CTEXT           "filter0",IDC_STATIC_filter20,173,79,47,12,SS_CENTERIMAGE | SS_SUNKEN | NOT WS_VISIBLE
+    CTEXT           "filter1",IDC_STATIC_filter21,228,79,47,12,SS_CENTERIMAGE | SS_SUNKEN | NOT WS_VISIBLE
+    CTEXT           "contentFilter2",IDC_STATIC_contentFilter22,281,79,47,12,SS_CENTERIMAGE | SS_SUNKEN | NOT WS_VISIBLE
+    CTEXT           "contentFilter3",IDC_STATIC_contentFilter23,336,79,47,12,SS_CENTERIMAGE | SS_SUNKEN | NOT WS_VISIBLE
+    CTEXT           "clientIp2",IDC_STATIC_clientIp3,391,46,62,12,SS_CENTERIMAGE | SS_SUNKEN | NOT WS_VISIBLE
+    CTEXT           "filter0",IDC_STATIC_filter30,458,46,47,12,SS_CENTERIMAGE | SS_SUNKEN | NOT WS_VISIBLE
+    CTEXT           "filter1",IDC_STATIC_filter31,513,46,47,12,SS_CENTERIMAGE | SS_SUNKEN | NOT WS_VISIBLE
+    CTEXT           "contentFilter2",IDC_STATIC_contentFilter32,566,46,47,12,SS_CENTERIMAGE | SS_SUNKEN | NOT WS_VISIBLE
+    CTEXT           "contentFilter3",IDC_STATIC_contentFilter33,621,46,47,12,SS_CENTERIMAGE | SS_SUNKEN | NOT WS_VISIBLE
+    CTEXT           "clientIp2",IDC_STATIC_clientIp4,390,63,62,12,SS_CENTERIMAGE | SS_SUNKEN | NOT WS_VISIBLE
+    CTEXT           "filter0",IDC_STATIC_filter40,457,63,47,12,SS_CENTERIMAGE | SS_SUNKEN | NOT WS_VISIBLE
+    CTEXT           "filter1",IDC_STATIC_filter41,512,63,47,12,SS_CENTERIMAGE | SS_SUNKEN | NOT WS_VISIBLE
+    CTEXT           "contentFilter2",IDC_STATIC_contentFilter42,565,63,47,12,SS_CENTERIMAGE | SS_SUNKEN | NOT WS_VISIBLE
+    CTEXT           "contentFilter3",IDC_STATIC_contentFilter43,620,63,47,12,SS_CENTERIMAGE | SS_SUNKEN | NOT WS_VISIBLE
+    CTEXT           "clientIp2",IDC_STATIC_clientIp5,389,80,62,12,SS_CENTERIMAGE | SS_SUNKEN | NOT WS_VISIBLE
+    CTEXT           "filter0",IDC_STATIC_filter50,456,80,47,12,SS_CENTERIMAGE | SS_SUNKEN | NOT WS_VISIBLE
+    CTEXT           "filter1",IDC_STATIC_filter51,511,80,47,12,SS_CENTERIMAGE | SS_SUNKEN | NOT WS_VISIBLE
+    CTEXT           "contentFilter2",IDC_STATIC_contentFilter52,564,80,47,12,SS_CENTERIMAGE | SS_SUNKEN | NOT WS_VISIBLE
+    CTEXT           "contentFilter3",IDC_STATIC_contentFilter53,619,80,47,12,SS_CENTERIMAGE | SS_SUNKEN | NOT WS_VISIBLE
+    CONTROL         "",IDC_LIST_display,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | LVS_OWNERDATA | WS_BORDER | WS_TABSTOP,15,101,660,171
+END
+
+IDD_state DIALOGEX 0, 0, 572, 229
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_LIST_display,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,28,24,516,181
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_ip, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 84
+    END
+
+    IDD_filters, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 414
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 206
+    END
+
+    IDD_qyCommStatus, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 682
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 304
+    END
+
+    IDD_state, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 565
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 222
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_qyCommStatus AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_state AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+#endif    // 英语(美国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\qyStatusTool.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

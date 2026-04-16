@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <FxCompile Include="..\..\..\tmpBak\installDir\cfg\qisChromaKey.fx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\qyOpen\qyCommProc_open\mySaveBmp.cpp" />
+    <ClCompile Include="..\..\..\..\..\qyOpen\qyCommProc_open\parseSpsPps.cpp" />
+    <ClCompile Include="..\..\..\..\..\qyOpen\qyCommProc_open\qySyncObj.cpp" />
+    <ClCompile Include="..\..\..\..\..\qyOpen\qyCommProc_open\videoFunc_open.cpp" />
+    <ClCompile Include="..\..\..\..\..\qyOpen\qyCommProc_open\yv12rgb.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qnmAssetsTemp.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qnmChkCommProc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qnmCommProc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qnmCommProc1.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qnmFwCommProc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qnmGuiCommProc2.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qnmHotKeys.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qnmOsAuditCommProc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qnmsCommProc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qnmWarnCommProc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qwmDjCommProc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qwmDynFunc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qwmNetworkStatusCommProc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qwmStreamCommProc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qyCommProc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qyDmItemCommProc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qyImcLogFunc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qyImcPublic.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qyLangCommProc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qyModuleFunc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qySharedQ.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qySqlFuncPublic.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qyString.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qySyncCommProc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qyThread.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qyTmpMemory.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qyWnd.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\tmpCeLib.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\tmpLib.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc_mis\isFunc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc_mis\isProtocolFunc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc_mis\isTmpFunc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc_mis\qnmCommProc_mis.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc_mis\qyComPortEx.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc_mis\qyMsgFunc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc_mis\qyMsgFunc_iocp.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc_mis\qyTick.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc_mis\qyWmComm_is.cpp" />
+    <ClCompile Include="..\..\..\qyCustom\qnmAllHints.cpp" />
+    <ClCompile Include="..\..\..\qyCustom\qnmCustomComm.cpp" />
+    <ClCompile Include="..\..\..\qyCustom\qyCusResHelp.cpp" />
+    <ClCompile Include="..\..\..\qyCustom\qyCustom.cpp" />
+    <ClCompile Include="..\public_isCli\hlslFunc.cpp" />
+    <ClCompile Include="..\public_isCli\hslrgb.cpp" />
+    <ClCompile Include="..\public_isCli\yuy2rgb.cpp" />
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="..\public_isCli\colorSpaceFunc.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="public\dec_d3d11_func.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\qyOpen\qisD3d_open\qisD3dFunc_open.cpp">
+      <Filter>qyOpen\qisD3d_open</Filter>
+    </ClCompile>
+    <ClCompile Include="public\enc_d3d11_func.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\chromaKey_inputParams.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\qisChromaKeyEffect.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\myCopyTex_rtt.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\qmcD3dFunc.cpp">
+      <Filter>qyMcMainPublic_isCli\public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\myCopyTex_rtt_spriteBatch.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\myDumpTex.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\qyOpen\qyCommProc_open\tmpGuiOpenFunc.cpp">
+      <Filter>qyOpen\qyCommProc_open</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\qyOpen\qyCommProc_open\tmpDllInit.cpp">
+      <Filter>qyOpen\qyCommProc_open</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qyCommProc\qyCommFunc.cpp">
+      <Filter>qyCommProc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\qyOpen\qyCommProc_open\fileFunc_open.cpp">
+      <Filter>qyOpen\qyCommProc_open</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\qyOpen\qyCommProc_open\qyTCharCommProc.cpp">
+      <Filter>qyOpen\qyCommProc_open</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\atCommProc_nc\ancProtocolFunc.cpp">
+      <Filter>atCommProc_nc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\qyOpen\qyCommProc_open\nv12rgb.cpp">
+      <Filter>qyOpen\qyCommProc_open</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource1.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="include\dec_d3d11_func.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="resource2.h" />
+    <ClInclude Include="include\enc_d3d11_func.h">
+      <Filter>include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="qyMcMainPublic_isCli">
+      <UniqueIdentifier>{8133a52b-9de5-42a7-b5f2-2a53d68fc259}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyMcMainPublic_isCli\include">
+      <UniqueIdentifier>{262e9233-4546-4ed3-9bc3-955f5368559e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyMcMainPublic_isCli\include_isCli">
+      <UniqueIdentifier>{8593e262-6b13-44a9-865d-9c7d256b3852}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyMcMainPublic_isCli\public">
+      <UniqueIdentifier>{c4e9f2bd-ae82-45ab-83ec-8c14af15505a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyMcMainPublic_isCli\public_isCli">
+      <UniqueIdentifier>{2971f8da-8cde-4dc8-8b9b-66c2feda5192}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="public">
+      <UniqueIdentifier>{1a7cf3b4-fb74-48ee-ae46-4e2187ebc205}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{37804769-f47a-4a2e-9129-4fc33a637bc0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyOpen">
+      <UniqueIdentifier>{a2706ca2-9308-40c0-bb20-9676d35ae2cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyOpen\qisD3d_open">
+      <UniqueIdentifier>{39f8b042-fa42-47fd-9106-1eb85b4fc5ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyOpen\qyCommProc_open">
+      <UniqueIdentifier>{4915d0ba-2407-40e5-adae-67aaf6bb726d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyCommProc">
+      <UniqueIdentifier>{987211b4-ca11-4e2b-924f-5be6fe433c97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="atCommProc_nc">
+      <UniqueIdentifier>{73e5fff1-dba4-413a-b1da-c9a80c8b3104}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="isD3dFunc.rc" />
+  </ItemGroup>
+</Project>

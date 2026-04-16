@@ -1,0 +1,12 @@
+*{
+    font-family: Microsoft YaHei;
+}
+ 
+QToolButton#btnCancel,QToolButton#btnAccept{
+   border:none;
+   background:transparent; 
+   border-radius: 20px;
+} 
+
+
+

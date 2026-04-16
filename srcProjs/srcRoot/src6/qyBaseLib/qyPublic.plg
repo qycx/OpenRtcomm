@@ -1,0 +1,185 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: qyEncLib - Win32 Release Static No Mfc--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "G:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSPAB.tmp" with contents
+[
+/nologo /MT /W3 /GX /O2 /I "include" /I "libDes" /I "..\qyInclude" /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_LIB" /Fp"..\..\..\o\qyEncLib\ReleaseStaticNoMfc/qyEncLib.pch" /YX /Fo"..\..\..\o\qyEncLib\ReleaseStaticNoMfc/" /Fd"..\..\..\o\qyEncLib\ReleaseStaticNoMfc/" /FD /c 
+"E:\qycx4\Develop6\srcRoot\src6\qyEncLib\D3Des.c"
+"E:\qycx4\Develop6\srcRoot\src6\qyEncLib\licenseEncFunc.cpp"
+"E:\qycx4\Develop6\srcRoot\src6\qyEncLib\qnmEncFunc.cpp"
+"E:\qycx4\Develop6\srcRoot\src6\qyEncLib\qyEncFunc.cpp"
+"E:\qycx4\Develop6\srcRoot\src6\qyEncLib\qyRand.c"
+]
+Creating command line "cl.exe @G:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSPAB.tmp" 
+Creating temporary file "G:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSPAC.tmp" with contents
+[
+/nologo /out:"..\..\..\Release\lib\qyEncLibStaticNoMfc.lib" 
+\qycx4\Develop6\o\qyEncLib\ReleaseStaticNoMfc\D3Des.obj
+\qycx4\Develop6\o\qyEncLib\ReleaseStaticNoMfc\licenseEncFunc.obj
+\qycx4\Develop6\o\qyEncLib\ReleaseStaticNoMfc\qnmEncFunc.obj
+\qycx4\Develop6\o\qyEncLib\ReleaseStaticNoMfc\qyEncFunc.obj
+\qycx4\Develop6\o\qyEncLib\ReleaseStaticNoMfc\qyRand.obj
+]
+Creating command line "link.exe -lib @G:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSPAC.tmp"
+<h3>Output Window</h3>
+Compiling...
+D3Des.c
+E:\qycx4\Develop6\srcRoot\src6\qyEncLib\D3Des.c(209) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+E:\qycx4\Develop6\srcRoot\src6\qyEncLib\D3Des.c(210) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+E:\qycx4\Develop6\srcRoot\src6\qyEncLib\D3Des.c(211) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+E:\qycx4\Develop6\srcRoot\src6\qyEncLib\D3Des.c(212) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+E:\qycx4\Develop6\srcRoot\src6\qyEncLib\D3Des.c(213) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+E:\qycx4\Develop6\srcRoot\src6\qyEncLib\D3Des.c(214) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+E:\qycx4\Develop6\srcRoot\src6\qyEncLib\D3Des.c(215) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+E:\qycx4\Develop6\srcRoot\src6\qyEncLib\D3Des.c(216) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+licenseEncFunc.cpp
+qnmEncFunc.cpp
+qyEncFunc.cpp
+qyRand.c
+Creating library...
+
+
+
+<h3>Results</h3>
+qyEncLibStaticNoMfc.lib - 0 error(s), 8 warning(s)
+<h3>
+--------------------Configuration: qyPublic - Win32 Release Static No Mfc--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "G:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSPAD.tmp" with contents
+[
+/nologo /MT /W3 /GX /O2 /I "..\asrInclude" /I "..\qyInclude" /I "..\asrComm\include" /I "..\asrLog\Include" /I "include" /I "contentFilter\include" /I "md5\include" /I "..\qyEncLib\include" /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_LIB" /FR"..\..\..\o\qyPublic\ReleaseStaticNoMfc/" /Fp"..\..\..\o\qyPublic\ReleaseStaticNoMfc/qyPublic.pch" /YX /Fo"..\..\..\o\qyPublic\ReleaseStaticNoMfc/" /Fd"..\..\..\o\qyPublic\ReleaseStaticNoMfc/" /FD /c 
+"E:\qycx4\Develop6\srcRoot\src6\qyPublic\qyLog\qyLogFunc.cpp"
+"E:\qycx4\Develop6\srcRoot\src6\qyPublic\qyCommon\qyCommonFunc3.cpp"
+"E:\qycx4\Develop6\srcRoot\src6\qyPublic\qyCommon\qyCommonFunc4.cpp"
+"E:\qycx4\Develop6\srcRoot\src6\qyPublic\qyCommon\qyCommonFunc7.cpp"
+"E:\qycx4\Develop6\srcRoot\src6\qyPublic\qyCommon\qyCommonFunc8.cpp"
+"E:\qycx4\Develop6\srcRoot\src6\qyPublic\qyCommon\qyCommonFunc9.cpp"
+"E:\qycx4\Develop6\srcRoot\src6\qyPublic\qyCommon\qyCommonObj.cpp"
+"E:\qycx4\Develop6\srcRoot\src6\qyPublic\qyCommon\qyDebugFunc.cpp"
+"E:\qycx4\Develop6\srcRoot\src6\qyPublic\qyCommon\qyModifyPeFunc.cpp"
+"E:\qycx4\Develop6\srcRoot\src6\qyPublic\qyGuiLib\qyGuiFunc.cpp"
+"E:\qycx4\Develop6\srcRoot\src6\qyPublic\qySock\qyCommonSock.cpp"
+"E:\qycx4\Develop6\srcRoot\src6\qyPublic\qySock\qySockFunc.cpp"
+"E:\qycx4\Develop6\srcRoot\src6\qyPublic\qyComm\qyCommFunc.cpp"
+"E:\qycx4\Develop6\srcRoot\src6\qyPublic\contentFilter\cfCfgServ.cpp"
+"E:\qycx4\Develop6\srcRoot\src6\qyPublic\contentFilter\cfCommon.cpp"
+"E:\qycx4\Develop6\srcRoot\src6\qyPublic\contentFilter\cfKeyValue.cpp"
+"E:\qycx4\Develop6\srcRoot\src6\qyPublic\contentFilter\contentfilter.cpp"
+"E:\qycx4\Develop6\srcRoot\src6\qyPublic\contentFilter\EmailProcess.cpp"
+"E:\qycx4\Develop6\srcRoot\src6\qyPublic\contentFilter\keyvalue.cpp"
+"E:\qycx4\Develop6\srcRoot\src6\qyPublic\contentFilter\littlefunction.cpp"
+"E:\qycx4\Develop6\srcRoot\src6\qyPublic\contentFilter\setupCfDict.cpp"
+"E:\qycx4\Develop6\srcRoot\src6\qyPublic\contentFilter\zhFunc.cpp"
+"E:\qycx4\Develop6\srcRoot\src6\qyPublic\md5\asrMd5.c"
+"E:\qycx4\Develop6\srcRoot\src6\qyPublic\md5\md5c.c"
+"E:\qycx4\Develop6\srcRoot\src6\qyPublic\md5\mddriver.c"
+"E:\qycx4\Develop6\srcRoot\src6\qyPublic\md5\qwmMd5.c"
+"E:\qycx4\Develop6\srcRoot\src6\qyPublic2\detectNetworkWithSnmp.cpp"
+"E:\qycx4\Develop6\srcRoot\src6\qyPublic2\qnmCommonFunc.cpp"
+"E:\qycx4\Develop6\srcRoot\src6\qyPublic2\qwmCommonFunc.cpp"
+"E:\qycx4\Develop6\srcRoot\src6\qyPublic2\qyCommonFunc5.cpp"
+"E:\qycx4\Develop6\srcRoot\src6\qyPublic2\qyErrFunc.cpp"
+"E:\qycx4\Develop6\srcRoot\src6\asrPublic\commonfunc.cpp"
+"E:\qycx4\Develop6\srcRoot\src6\asrPublic\commonFunc1.cpp"
+"E:\qycx4\Develop6\srcRoot\src6\asrPublic\commonFunc2.cpp"
+"E:\qycx4\Develop6\srcRoot\src6\asrPublic\commonFunc3.cpp"
+"E:\qycx4\Develop6\srcRoot\src6\asrPublic\commonSock.cpp"
+"E:\qycx4\Develop6\srcRoot\src6\asrPublic\commonSql.cpp"
+]
+Creating command line "cl.exe @G:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSPAD.tmp" 
+Creating temporary file "G:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSPAE.tmp" with contents
+[
+/nologo /out:"..\..\..\Release\lib\qyPublicStaticNoMfc.lib" 
+\qycx4\Develop6\o\qyPublic\ReleaseStaticNoMfc\qyLogFunc.obj
+\qycx4\Develop6\o\qyPublic\ReleaseStaticNoMfc\qyCommonFunc3.obj
+\qycx4\Develop6\o\qyPublic\ReleaseStaticNoMfc\qyCommonFunc4.obj
+\qycx4\Develop6\o\qyPublic\ReleaseStaticNoMfc\qyCommonFunc7.obj
+\qycx4\Develop6\o\qyPublic\ReleaseStaticNoMfc\qyCommonFunc8.obj
+\qycx4\Develop6\o\qyPublic\ReleaseStaticNoMfc\qyCommonFunc9.obj
+\qycx4\Develop6\o\qyPublic\ReleaseStaticNoMfc\qyCommonObj.obj
+\qycx4\Develop6\o\qyPublic\ReleaseStaticNoMfc\qyDebugFunc.obj
+\qycx4\Develop6\o\qyPublic\ReleaseStaticNoMfc\qyModifyPeFunc.obj
+\qycx4\Develop6\o\qyPublic\ReleaseStaticNoMfc\qyGuiFunc.obj
+\qycx4\Develop6\o\qyPublic\ReleaseStaticNoMfc\qyCommonSock.obj
+\qycx4\Develop6\o\qyPublic\ReleaseStaticNoMfc\qySockFunc.obj
+\qycx4\Develop6\o\qyPublic\ReleaseStaticNoMfc\qyCommFunc.obj
+\qycx4\Develop6\o\qyPublic\ReleaseStaticNoMfc\cfCfgServ.obj
+\qycx4\Develop6\o\qyPublic\ReleaseStaticNoMfc\cfCommon.obj
+\qycx4\Develop6\o\qyPublic\ReleaseStaticNoMfc\cfKeyValue.obj
+\qycx4\Develop6\o\qyPublic\ReleaseStaticNoMfc\contentfilter.obj
+\qycx4\Develop6\o\qyPublic\ReleaseStaticNoMfc\EmailProcess.obj
+\qycx4\Develop6\o\qyPublic\ReleaseStaticNoMfc\keyvalue.obj
+\qycx4\Develop6\o\qyPublic\ReleaseStaticNoMfc\littlefunction.obj
+\qycx4\Develop6\o\qyPublic\ReleaseStaticNoMfc\setupCfDict.obj
+\qycx4\Develop6\o\qyPublic\ReleaseStaticNoMfc\zhFunc.obj
+\qycx4\Develop6\o\qyPublic\ReleaseStaticNoMfc\asrMd5.obj
+\qycx4\Develop6\o\qyPublic\ReleaseStaticNoMfc\md5c.obj
+\qycx4\Develop6\o\qyPublic\ReleaseStaticNoMfc\mddriver.obj
+\qycx4\Develop6\o\qyPublic\ReleaseStaticNoMfc\qwmMd5.obj
+\qycx4\Develop6\o\qyPublic\ReleaseStaticNoMfc\detectNetworkWithSnmp.obj
+\qycx4\Develop6\o\qyPublic\ReleaseStaticNoMfc\qnmCommonFunc.obj
+\qycx4\Develop6\o\qyPublic\ReleaseStaticNoMfc\qwmCommonFunc.obj
+\qycx4\Develop6\o\qyPublic\ReleaseStaticNoMfc\qyCommonFunc5.obj
+\qycx4\Develop6\o\qyPublic\ReleaseStaticNoMfc\qyErrFunc.obj
+\qycx4\Develop6\o\qyPublic\ReleaseStaticNoMfc\commonfunc.obj
+\qycx4\Develop6\o\qyPublic\ReleaseStaticNoMfc\commonFunc1.obj
+\qycx4\Develop6\o\qyPublic\ReleaseStaticNoMfc\commonFunc2.obj
+\qycx4\Develop6\o\qyPublic\ReleaseStaticNoMfc\commonFunc3.obj
+\qycx4\Develop6\o\qyPublic\ReleaseStaticNoMfc\commonSock.obj
+\qycx4\Develop6\o\qyPublic\ReleaseStaticNoMfc\commonSql.obj
+]
+Creating command line "link.exe -lib @G:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSPAE.tmp"
+<h3>Output Window</h3>
+Compiling...
+qyLogFunc.cpp
+qyCommonFunc3.cpp
+qyCommonFunc4.cpp
+qyCommonFunc7.cpp
+qyCommonFunc8.cpp
+qyCommonFunc9.cpp
+qyCommonObj.cpp
+qyDebugFunc.cpp
+qyModifyPeFunc.cpp
+qyGuiFunc.cpp
+qyCommonSock.cpp
+qySockFunc.cpp
+qyCommFunc.cpp
+cfCfgServ.cpp
+cfCommon.cpp
+cfKeyValue.cpp
+contentfilter.cpp
+EmailProcess.cpp
+keyvalue.cpp
+littlefunction.cpp
+setupCfDict.cpp
+zhFunc.cpp
+asrMd5.c
+md5c.c
+mddriver.c
+qwmMd5.c
+detectNetworkWithSnmp.cpp
+qnmCommonFunc.cpp
+qwmCommonFunc.cpp
+qyCommonFunc5.cpp
+qyErrFunc.cpp
+commonfunc.cpp
+commonFunc1.cpp
+commonFunc2.cpp
+commonFunc3.cpp
+commonSock.cpp
+commonSql.cpp
+Creating library...
+
+
+
+<h3>Results</h3>
+qyPublicStaticNoMfc.lib - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

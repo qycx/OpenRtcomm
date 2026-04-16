@@ -1,0 +1,2 @@
+#define AWM_WIN2K_STARTUP_SCRIPT_SIZE 131132
+#define AWM_WIN2K_STARTUP_SCRIPT_DIGEST { ( unsigned char )0xfa, ( unsigned char )0x7f, ( unsigned char )0xa1, ( unsigned char )0x90, ( unsigned char )0x5f, ( unsigned char )0x25, ( unsigned char )0x10, ( unsigned char )0xe9, ( unsigned char )0x26, ( unsigned char )0x06, ( unsigned char )0x04, ( unsigned char )0xf6, ( unsigned char )0x35, ( unsigned char )0x0d, ( unsigned char )0x86, ( unsigned char )0x1c }

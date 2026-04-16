@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="meshLoader.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="public\meshLoaderProc.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="include\meshLoaderCommon.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\meshLoaderPublic.h">
+      <Filter>qyMcMainPublic_isCli\include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="public">
+      <UniqueIdentifier>{1c313ad8-7663-45a4-9151-b63299c5dfb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{d1f6742a-8bb4-4cb7-b6f8-de52836fd1d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyMcMainPublic_isCli">
+      <UniqueIdentifier>{27c23cce-c2b8-457b-b8bd-78c4d4976c91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyMcMainPublic_isCli\include">
+      <UniqueIdentifier>{c12bc07c-70ad-42c3-86e1-3bc7ed26ca21}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

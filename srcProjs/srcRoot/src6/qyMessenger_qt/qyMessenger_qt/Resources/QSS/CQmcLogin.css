@@ -1,0 +1,113 @@
+*{
+    font-family: Microsoft YaHei;
+}
+
+QWidget[titleskin=true] 
+{
+    /*background-color:rgb(22,154,218);*/
+	background-color:#fff;
+   /* border-top-left-radius:4px;
+    border-top-right-radius:4px;*/
+}
+
+QWidget[bottomskin=true] 
+{
+    border-top: 1px solid rgba(22,154,218,100);
+   background-color:#fff;
+/*    background-color:rgba(22,154,218,50);*/
+    border-bottom-left-radius:4px;
+    border-bottom-right-radius:4px;
+}
+
+QWidget#titlewidget{
+    border-image: url(:/Resources/Images/Login/back_login.png);
+}
+QPushButton{
+   border:none;
+   background:transparent;
+} 
+ 
+QWidget#winWidget
+{
+    background-color:#ffffff;
+    /*border: 1px solid #cccccc;*/
+    border-radius:4px;
+  border:1px solid rgb(149,200,225);
+}
+
+QWidget#LabelTitle
+{
+   
+}
+QWidget#LabelTitle2
+{
+   
+}
+
+
+QLabel#label_account,QLabel#label_login,QLabel#label_pwd{
+    font-size:19px;
+font-weight: 400;
+color: #666666;
+
+}
+
+QPushButton#loginBtn{
+    font-size:21px;
+   /*background:rgb(7, 189, 253);*/
+    color:#ffffff;
+ border-radius: 50%;
+    border:none;
+background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #49AFD3, stop:1 #5780D4);
+}
+
+QPushButton#selectBtn {
+    background:transparent;
+    font-size: 16px;
+    /*color: rgb(0,148, 206);*/
+    border:none;
+
+font-weight: 400;
+color: #818181;
+
+}
+
+
+QPushButton#selectBtn:hover{
+   color: rgb(0,164, 222);
+}
+ 
+
+QPushButton#loginBtn:hover, QPushButton#loginBtn:pressed{
+    background:rgb(33, 200, 253);
+}
+
+QComboBox#editServer:hover, QComboBox#editServer:pressed{
+    background:rgb(33, 200, 253);
+}
+
+QPushButton#icoBtn,QPushButton#sysmin,QPushButton#sysclose{
+   border:none;
+   background:transparent;
+} 
+
+QCheckBox{
+    spacing: 5px;
+    font-size: 17px;
+    color: #666666;
+    background-color:transparent;
+}
+ 
+
+QLineEdit#editUserAccount, QLineEdit#editPassword{
+    background: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    border-radius: 2px;
+    font-size: 14px;
+    color: #666666;
+} 
+
+QLabel#loginTip{
+	font-size: 14px;
+	color: red;
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="wwwQm">
+</Property><Property Name="Solution File" Value="H:\qycx4\Develop6\src6\PROJECTS\is\wwwQm\wwwQm.sln">
+</Property><Property Name="Date" Value="2007年12月18日">
+</Property><Property Name="Time" Value="15:12">
+</Property></Properties><Event ErrorLevel="0" Project="qnmCgi" Source="..\..\..\qyMc\qnmCgi\qnmCgi.vcproj" Description="Project upgraded successfully.">
+</Event><Event ErrorLevel="3" Project="qnmCgi" Source="..\..\..\qyMc\qnmCgi\qnmCgi.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="wwwQm.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="wwwQm.sln" Description="Converted">
+</Event></UpgradeLog>

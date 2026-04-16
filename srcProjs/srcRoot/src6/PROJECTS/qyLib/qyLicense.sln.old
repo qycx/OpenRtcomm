@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qyLicense", "..\..\qyLicense\qyLicense.vcproj", "{2C3ACAFD-67F2-4DB9-B218-73F883DA68D3}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qyMcHelp", "..\..\QYMCHELP\qyMcHelp.vcproj", "{012759AA-2A40-4B78-95A1-843DC2973AB0}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{2C3ACAFD-67F2-4DB9-B218-73F883DA68D3}.Debug.ActiveCfg = Debug|Win32
+		{2C3ACAFD-67F2-4DB9-B218-73F883DA68D3}.Debug.Build.0 = Debug|Win32
+		{2C3ACAFD-67F2-4DB9-B218-73F883DA68D3}.Release.ActiveCfg = Release|Win32
+		{2C3ACAFD-67F2-4DB9-B218-73F883DA68D3}.Release.Build.0 = Release|Win32
+		{012759AA-2A40-4B78-95A1-843DC2973AB0}.Debug.ActiveCfg = Debug|Win32
+		{012759AA-2A40-4B78-95A1-843DC2973AB0}.Debug.Build.0 = Debug|Win32
+		{012759AA-2A40-4B78-95A1-843DC2973AB0}.Release.ActiveCfg = Release|Win32
+		{012759AA-2A40-4B78-95A1-843DC2973AB0}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

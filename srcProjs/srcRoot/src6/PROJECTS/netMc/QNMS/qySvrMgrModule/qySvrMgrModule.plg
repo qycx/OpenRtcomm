@@ -1,0 +1,46 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: qySvrMgrModule - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "G:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP11D5.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /I "..\..\..\..\asrInclude" /I "..\..\..\..\qyInclude" /I "..\..\..\..\qyPublic\include" /I "..\include" /I "include" /I "." /I "..\..\..\..\qyCommProc\include" /I "..\..\..\..\qyEncLib\include" /I "..\..\..\..\qyCustom\include" /I "..\..\..\..\qyPublic2\include" /I "..\..\..\..\tmpInclude" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "QYSVRMGRMODULE_EXPORTS" /D "_WINDLL" /D "_AFXDLL" /D WINVER=0x0400 /Fo"..\..\..\..\..\o\qySvrMgrModule\Debug/" /Fd"..\..\..\..\..\o\qySvrMgrModule\Debug/" /FD /GZ /c 
+"H:\qycx4\Develop4\src5\qyCommProc\tmpCntLib.cpp"
+]
+Creating command line "cl.exe @G:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP11D5.tmp" 
+Creating temporary file "G:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP11D6.tmp" with contents
+[
+qyPublic.lib qyEncLib.lib ws2_32.lib user32.lib qyLicense.lib Spromeps.lib /nologo /dll /incremental:yes /pdb:"..\..\..\..\..\Debug\bin/qySvrMgrModule.pdb" /debug /machine:I386 /out:"..\..\..\..\..\Debug\bin/qySvrMgrModule.dll" /implib:"..\..\..\..\..\Debug\bin/qySvrMgrModule.lib" /pdbtype:sept /libpath:"..\..\..\..\..\Debug\lib" 
+\qycx4\Develop4\o\qySvrMgrModule\Debug\QnmSvrMgrModuleDaemon.obj
+\qycx4\Develop4\o\qySvrMgrModule\Debug\qySvrMgrModule.obj
+\qycx4\Develop4\o\qySvrMgrModule\Debug\qnmChkCommProc.obj
+\qycx4\Develop4\o\qySvrMgrModule\Debug\qnmCommProc.obj
+\qycx4\Develop4\o\qySvrMgrModule\Debug\qyCommProc.obj
+\qycx4\Develop4\o\qySvrMgrModule\Debug\qyDmItemCommProc.obj
+\qycx4\Develop4\o\qySvrMgrModule\Debug\qyGenericDaemon.obj
+\qycx4\Develop4\o\qySvrMgrModule\Debug\qyShowInfoCommProc.obj
+\qycx4\Develop4\o\qySvrMgrModule\Debug\qySqlFunc.obj
+\qycx4\Develop4\o\qySvrMgrModule\Debug\qyTCharCommProc.obj
+\qycx4\Develop4\o\qySvrMgrModule\Debug\qwmDynFunc.obj
+\qycx4\Develop4\o\qySvrMgrModule\Debug\qwmNetworkStatusCommProc.obj
+\qycx4\Develop4\o\qySvrMgrModule\Debug\qnmOsAuditCommProc.obj
+\qycx4\Develop4\o\qySvrMgrModule\Debug\tmpCntLib.obj
+]
+Creating command line "link.exe @G:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP11D6.tmp"
+<h3>Output Window</h3>
+Compiling...
+tmpCntLib.cpp
+Linking...
+   Creating library ..\..\..\..\..\Debug\bin/qySvrMgrModule.lib and object ..\..\..\..\..\Debug\bin/qySvrMgrModule.exp
+
+
+
+<h3>Results</h3>
+qySvrMgrModule.dll - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

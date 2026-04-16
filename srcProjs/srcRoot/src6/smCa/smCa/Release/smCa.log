@@ -1,0 +1,114 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Output 目录未以斜杠结尾。  此生成实例将添加斜杠，因为必须有这个斜杠才能正确计算 Output 目录。
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Output 目录未以斜杠结尾。  此生成实例将添加斜杠，因为必须有这个斜杠才能正确计算 Output 目录。
+  pch.cpp
+  parseSpsPps.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qyOpen\qyCommProc_open\parseSpsPps.cpp(9,10): error C1083: 无法打开包括文件: “qdcOpenCommon.h”: No such file or directory
+  (编译源文件“/qyOpen/qyCommProc_open/parseSpsPps.cpp”)
+  
+  qyCommProc_open.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qyOpen\qyCommProc_open\qyCommProc_open.cpp(10,10): error C1083: 无法打开包括文件: “qmOpenCommon.h”: No such file or directory
+  (编译源文件“/qyOpen/qyCommProc_open/qyCommProc_open.cpp”)
+  
+  qySyncObj.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qyOpen\qyCommProc_open\qySyncObj.cpp(5,10): error C1083: 无法打开包括文件: “qySyncObj.h”: No such file or directory
+  (编译源文件“/qyOpen/qyCommProc_open/qySyncObj.cpp”)
+  
+  qyTCharCommProc.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qyOpen\qyCommProc_open\qyTCharCommProc.cpp(20,10): error C1083: 无法打开包括文件: “qytcharcommproc.h”: No such file or directory
+  (编译源文件“/qyOpen/qyCommProc_open/qyTCharCommProc.cpp”)
+  
+  videoFunc_open.cpp
+D:\root\pc\openRtComm-windows\srcProjs\qyOpen\qyCommProc_open\videoFunc_open.cpp(5,10): error C1083: 无法打开包括文件: “qdcOpenCommon.h”: No such file or directory
+  (编译源文件“/qyOpen/qyCommProc_open/videoFunc_open.cpp”)
+  
+  tmpRegFunc_open.cpp
+D:\root\pc\openRtComm-windows\srcProjs\srcRoot\qisOpen\public\tmpRegFunc_open.cpp(7,10): error C1083: 无法打开包括文件: “qmOpenCommon.h”: No such file or directory
+  (编译源文件“/qisOpen/public/tmpRegFunc_open.cpp”)
+  
+  qnmCommProc.cpp
+D:\root\pc\openRtComm-windows\srcProjs\srcRoot\src6\qyCommProc\qnmCommProc.cpp(4,10): error C1083: 无法打开包括文件: “qyPrecomp.h”: No such file or directory
+  (编译源文件“/qyCommProc/qnmCommProc.cpp”)
+  
+  qnmFwCommProc.cpp
+D:\root\pc\openRtComm-windows\srcProjs\srcRoot\src6\qyCommProc\qnmFwCommProc.cpp(9,10): error C1083: 无法打开包括文件: “qyCommon.h”: No such file or directory
+  (编译源文件“/qyCommProc/qnmFwCommProc.cpp”)
+  
+  qwmDynFunc.cpp
+D:\root\pc\openRtComm-windows\srcProjs\srcRoot\src6\qyCommProc\qwmDynFunc.cpp(3,10): error C1083: 无法打开包括文件: “qyPrecomp.h”: No such file or directory
+  (编译源文件“/qyCommProc/qwmDynFunc.cpp”)
+  
+  qwmNetworkStatusCommProc.cpp
+D:\root\pc\openRtComm-windows\srcProjs\srcRoot\src6\qyCommProc\qwmNetworkStatusCommProc.cpp(3,10): error C1083: 无法打开包括文件: “qyPrecomp.h”: No such file or directory
+  (编译源文件“/qyCommProc/qwmNetworkStatusCommProc.cpp”)
+  
+  qyCommFunc.cpp
+D:\root\pc\openRtComm-windows\srcProjs\srcRoot\src6\qyCommProc\qyCommFunc.cpp(3,10): error C1083: 无法打开包括文件: “qyPrecomp.h”: No such file or directory
+  (编译源文件“/qyCommProc/qyCommFunc.cpp”)
+  
+  qyCommProc.cpp
+D:\root\pc\openRtComm-windows\srcProjs\srcRoot\src6\qyCommProc\qyCommProc.cpp(10,10): error C1083: 无法打开包括文件: “qyCommon.h”: No such file or directory
+  (编译源文件“/qyCommProc/qyCommProc.cpp”)
+  
+  qyDmItemCommProc.cpp
+D:\root\pc\openRtComm-windows\srcProjs\srcRoot\src6\qyCommProc\qyDmItemCommProc.cpp(8,10): error C1083: 无法打开包括文件: “qyCommon.h”: No such file or directory
+  (编译源文件“/qyCommProc/qyDmItemCommProc.cpp”)
+  
+  qyString.cpp
+D:\root\pc\openRtComm-windows\srcProjs\srcRoot\src6\qyCommProc\qyString.cpp(8,10): error C1083: 无法打开包括文件: “qyCommon.h”: No such file or directory
+  (编译源文件“/qyCommProc/qyString.cpp”)
+  
+  tmpCeLib.cpp
+D:\root\pc\openRtComm-windows\srcProjs\srcRoot\src6\qyCommProc\tmpCeLib.cpp(4,10): error C1083: 无法打开包括文件: “qyPrecomp.h”: No such file or directory
+  (编译源文件“/qyCommProc/tmpCeLib.cpp”)
+  
+  isFunc.cpp
+D:\root\pc\openRtComm-windows\srcProjs\srcRoot\src6\qyCommProc_mis\isFunc.cpp(4,10): error C1083: 无法打开包括文件: “qyPrecomp.h”: No such file or directory
+  (编译源文件“/qyCommProc_mis/isFunc.cpp”)
+  
+  isProtocolFunc.cpp
+D:\root\pc\openRtComm-windows\srcProjs\srcRoot\src6\qyCommProc_mis\isProtocolFunc.cpp(5,10): error C1083: 无法打开包括文件: “qyPrecomp.h”: No such file or directory
+  (编译源文件“/qyCommProc_mis/isProtocolFunc.cpp”)
+  
+  qnmCommProc_mis.cpp
+D:\root\pc\openRtComm-windows\srcProjs\srcRoot\src6\qyCommProc_mis\qnmCommProc_mis.cpp(4,10): error C1083: 无法打开包括文件: “qyPrecomp.h”: No such file or directory
+  (编译源文件“/qyCommProc_mis/qnmCommProc_mis.cpp”)
+  
+  qyMsgFunc.cpp
+D:\root\pc\openRtComm-windows\srcProjs\srcRoot\src6\qyCommProc_mis\qyMsgFunc.cpp(4,10): error C1083: 无法打开包括文件: “qyPrecomp.h”: No such file or directory
+  (编译源文件“/qyCommProc_mis/qyMsgFunc.cpp”)
+  
+  qyCustom.cpp
+D:\root\pc\openRtComm-windows\srcProjs\srcRoot\src6\qyCustom\qyCustom.cpp(10,10): error C1083: 无法打开包括文件: “qyCommon.h”: No such file or directory
+  (编译源文件“/qyCustom/qyCustom.cpp”)
+  
+  正在编译...
+  qmCaProc.cpp
+D:\root\pc\openRtComm-windows\srcProjs\srcRoot\src6\qyMcPublic\qmCaProc.cpp(11,10): error C1083: 无法打开包括文件: “qmCommon.h”: No such file or directory
+  (编译源文件“/qyMcPublic/qmCaProc.cpp”)
+  
+  qmCrypt.cpp
+D:\root\pc\openRtComm-windows\srcProjs\srcRoot\src6\qyMcPublic\qmCrypt.cpp(19,10): error C1083: 无法打开包括文件: “qmCommon.h”: No such file or directory
+  (编译源文件“/qyMcPublic/qmCrypt.cpp”)
+  
+  dllmain.cpp
+  cryptDataFunc.cpp
+D:\root\pc\openRtComm-windows\srcProjs\srcRoot\src6\smCa\smCa\public\cryptDataFunc.cpp(20,10): error C1083: 无法打开包括文件: “qmCommon.h”: No such file or directory
+  (编译源文件“/public/cryptDataFunc.cpp”)
+  
+  cryptFunc_qmd.cpp
+  hgFunc.cpp
+D:\root\pc\openRtComm-windows\srcProjs\srcRoot\src6\smCa\smCa\public\hgFunc.cpp(4,10): error C1083: 无法打开包括文件: “stdafx.h”: No such file or directory
+  (编译源文件“/public/hgFunc.cpp”)
+  
+  parseAndChkAuthFunc.cpp
+D:\root\pc\openRtComm-windows\srcProjs\srcRoot\src6\smCa\smCa\public\parseAndChkAuthFunc.cpp(12,10): error C1083: 无法打开包括文件: “qmCommon.h”: No such file or directory
+  (编译源文件“/public/parseAndChkAuthFunc.cpp”)
+  
+  qmdCrypt.cpp
+D:\root\pc\openRtComm-windows\srcProjs\srcRoot\src6\smCa\smCa\public\qmdCrypt.cpp(12,10): error C1083: 无法打开包括文件: “qmCommon.h”: No such file or directory
+  (编译源文件“/public/qmdCrypt.cpp”)
+  
+  smCaProc.cpp
+D:\root\pc\openRtComm-windows\srcProjs\srcRoot\src6\smCa\smCa\public\smCaProc.cpp(10,10): error C1083: 无法打开包括文件: “qmOpenCommon.h”: No such file or directory
+  (编译源文件“/public/smCaProc.cpp”)
+  

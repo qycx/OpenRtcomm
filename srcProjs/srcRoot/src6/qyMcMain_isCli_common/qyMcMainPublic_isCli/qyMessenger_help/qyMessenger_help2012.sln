@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qyMessenger_help2012", "qyMessenger_help2012.vcxproj", "{827A1A0B-CB07-4466-AB5C-8DB2F2C78A75}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{827A1A0B-CB07-4466-AB5C-8DB2F2C78A75}.Debug|Win32.ActiveCfg = Debug|Win32
+		{827A1A0B-CB07-4466-AB5C-8DB2F2C78A75}.Debug|Win32.Build.0 = Debug|Win32
+		{827A1A0B-CB07-4466-AB5C-8DB2F2C78A75}.Release|Win32.ActiveCfg = Release|Win32
+		{827A1A0B-CB07-4466-AB5C-8DB2F2C78A75}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

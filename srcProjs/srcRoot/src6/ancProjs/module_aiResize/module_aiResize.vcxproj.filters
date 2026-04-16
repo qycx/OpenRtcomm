@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="源文件\public">
+      <UniqueIdentifier>{2768dd9b-7355-4b48-a85d-2b0e896f2abf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyOpen">
+      <UniqueIdentifier>{09f00c51-54dc-4605-bf6a-f629b095b420}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyOpen\qyCommProc_open">
+      <UniqueIdentifier>{425c178a-0fe8-42b5-993b-10d9dab61dbb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyCommProc">
+      <UniqueIdentifier>{ed91c3eb-8247-4fc2-9f6c-b27496c589f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyCommProc_mis">
+      <UniqueIdentifier>{71caa125-5e05-4b6f-a4d8-b8f33a9de8c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyMcMain_isCli_common">
+      <UniqueIdentifier>{94c72da7-6be8-4274-a02e-1dc85ff3fc53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyMcMain_isCli_common\public_isCli">
+      <UniqueIdentifier>{e93cba1b-ef90-4080-80b3-8c580c1c2aeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyCustom">
+      <UniqueIdentifier>{2c5a67e6-8c0b-449c-ae9a-156f0e237347}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="public\aiResizeProc.cpp">
+      <Filter>源文件\public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\dbgFunc_open.cpp">
+      <Filter>qyOpen\qyCommProc_open</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\fileFunc_open.cpp">
+      <Filter>qyOpen\qyCommProc_open</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\mySaveBmp.cpp">
+      <Filter>qyOpen\qyCommProc_open</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\nv12rgb.cpp">
+      <Filter>qyOpen\qyCommProc_open</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\nv12yv12.cpp">
+      <Filter>qyOpen\qyCommProc_open</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\qisSyncTex.cpp">
+      <Filter>qyOpen\qyCommProc_open</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\qyCommProc_open.cpp">
+      <Filter>qyOpen\qyCommProc_open</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\qyTCharCommProc.cpp">
+      <Filter>qyOpen\qyCommProc_open</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\timeFunc_open.cpp">
+      <Filter>qyOpen\qyCommProc_open</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\yv12rgb.cpp">
+      <Filter>qyOpen\qyCommProc_open</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\videoFunc_open.cpp">
+      <Filter>qyOpen\qyCommProc_open</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\qySyncObj.cpp">
+      <Filter>qyOpen\qyCommProc_open</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyCommProc\qyTmpMemory.cpp">
+      <Filter>qyCommProc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyCommProc_mis\qyTick.cpp">
+      <Filter>qyCommProc_mis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\qnmMainFunc_isCli.cpp">
+      <Filter>qyMcMain_isCli_common\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyCommProc\qyDmItemCommProc.cpp">
+      <Filter>qyCommProc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\showTaskStatusFunc.cpp">
+      <Filter>qyMcMain_isCli_common\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\qmcFunc_isCli.cpp">
+      <Filter>qyMcMain_isCli_common\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyCustom\qyCusResHelp.cpp">
+      <Filter>qyCustom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyCommProc\tmpCeLib.cpp">
+      <Filter>qyCommProc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyCommProc\qyLangCommProc.cpp">
+      <Filter>qyCommProc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyCommProc\qnmCommProc.cpp">
+      <Filter>qyCommProc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyCommProc\qyCommFunc.cpp">
+      <Filter>qyCommProc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyCommProc\qwmDynFunc.cpp">
+      <Filter>qyCommProc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyCommProc\qyCommProc.cpp">
+      <Filter>qyCommProc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\qmcSharedObj.cpp">
+      <Filter>qyMcMain_isCli_common\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyCommProc_mis\isFunc.cpp">
+      <Filter>qyCommProc_mis</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

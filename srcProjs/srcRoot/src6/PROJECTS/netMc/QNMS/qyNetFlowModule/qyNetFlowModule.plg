@@ -1,0 +1,69 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: qyNetFlowModule - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "G:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP11E7.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /I "..\..\..\..\qyMc\include" /I "..\..\..\..\qyMc\main\include" /I "..\..\..\..\qyMc\main" /I "..\..\..\..\asrInclude" /I "..\..\..\..\qyInclude" /I "..\..\..\..\qyPublic\include" /I "..\include" /I "include" /I "." /I "..\..\..\..\qyCommProc\include" /I "..\..\..\..\qyEncLib\include" /I "..\..\..\..\qyCustom\include" /I "..\..\..\..\qyPublic2\include" /I "..\..\..\..\tmpInclude" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "QYNETFLOWMODULE_EXPORTS" /D "_WINDLL" /D "_AFXDLL" /D WINVER=0x0400 /FR"..\..\..\..\..\o\qyNetFlowModule\Debug/" /Fp"..\..\..\..\..\o\qyNetFlowModule\Debug/qyNetFlowModule.pch" /YX /Fo"..\..\..\..\..\o\qyNetFlowModule\Debug/" /Fd"..\..\..\..\..\o\qyNetFlowModule\Debug/" /FD /GZ /c 
+"H:\qycx4\Develop4\src5\PROJECTS\netMc\QNMS\qyNetFlowModule\qyNetFlowModuleProc.cpp"
+"H:\qycx4\Develop4\src5\qyCommProc\qnmCommProc.cpp"
+"H:\qycx4\Develop4\src5\qyCommProc\qnmOsAuditCommProc.cpp"
+"H:\qycx4\Develop4\src5\qyCommProc\qwmDynFunc.cpp"
+"H:\qycx4\Develop4\src5\qyCommProc\qwmNetworkStatusCommProc.cpp"
+"H:\qycx4\Develop4\src5\qyCommProc\qyDmItemCommProc.cpp"
+"H:\qycx4\Develop4\src5\qyCommProc\qyShowInfoCommProc.cpp"
+"H:\qycx4\Develop4\src5\qyCommProc\qyTCharCommProc.cpp"
+]
+Creating command line "cl.exe @G:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP11E7.tmp" 
+Creating temporary file "G:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP11E8.tmp" with contents
+[
+qyPublic.lib qyEncLib.lib ws2_32.lib user32.lib qyLicense.lib Spromeps.lib /nologo /dll /incremental:yes /pdb:"..\..\..\..\..\Debug\bin/qyNetFlowModule.pdb" /debug /machine:I386 /out:"..\..\..\..\..\Debug\bin/qyNetFlowModule.dll" /implib:"..\..\..\..\..\Debug\bin/qyNetFlowModule.lib" /pdbtype:sept /libpath:"..\..\..\..\..\Debug\lib" 
+\qycx4\Develop4\o\qyNetFlowModule\Debug\qyNetFlowModuleProc.obj
+\qycx4\Develop4\o\qyNetFlowModule\Debug\qnmCommProc.obj
+\qycx4\Develop4\o\qyNetFlowModule\Debug\qnmOsAuditCommProc.obj
+\qycx4\Develop4\o\qyNetFlowModule\Debug\qwmDynFunc.obj
+\qycx4\Develop4\o\qyNetFlowModule\Debug\qwmNetworkStatusCommProc.obj
+\qycx4\Develop4\o\qyNetFlowModule\Debug\qyDmItemCommProc.obj
+\qycx4\Develop4\o\qyNetFlowModule\Debug\qyShowInfoCommProc.obj
+\qycx4\Develop4\o\qyNetFlowModule\Debug\qyTCharCommProc.obj
+]
+Creating command line "link.exe @G:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP11E8.tmp"
+<h3>Output Window</h3>
+Compiling...
+qnmCommProc.cpp
+qwmDynFunc.cpp
+qwmNetworkStatusCommProc.cpp
+qyNetFlowModuleProc.cpp
+qnmOsAuditCommProc.cpp
+qyShowInfoCommProc.cpp
+qyTCharCommProc.cpp
+Skipping... (no relevant changes detected)
+qyDmItemCommProc.cpp
+Linking...
+   Creating library ..\..\..\..\..\Debug\bin/qyNetFlowModule.lib and object ..\..\..\..\..\Debug\bin/qyNetFlowModule.exp
+Creating temporary file "G:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP11EC.tmp" with contents
+[
+/nologo /o"..\..\..\..\..\Debug\bin/qyNetFlowModule.bsc" 
+\qycx4\Develop4\o\qyNetFlowModule\Debug\qyNetFlowModuleProc.sbr
+\qycx4\Develop4\o\qyNetFlowModule\Debug\qnmCommProc.sbr
+\qycx4\Develop4\o\qyNetFlowModule\Debug\qnmOsAuditCommProc.sbr
+\qycx4\Develop4\o\qyNetFlowModule\Debug\qwmDynFunc.sbr
+\qycx4\Develop4\o\qyNetFlowModule\Debug\qwmNetworkStatusCommProc.sbr
+\qycx4\Develop4\o\qyNetFlowModule\Debug\qyDmItemCommProc.sbr
+\qycx4\Develop4\o\qyNetFlowModule\Debug\qyShowInfoCommProc.sbr
+\qycx4\Develop4\o\qyNetFlowModule\Debug\qyTCharCommProc.sbr]
+Creating command line "bscmake.exe @G:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP11EC.tmp"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+qyNetFlowModule.dll - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

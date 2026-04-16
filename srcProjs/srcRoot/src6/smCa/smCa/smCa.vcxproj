@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{d8a89958-26c9-424e-bac6-9f96bd6fb560}</ProjectGuid>
+    <RootNamespace>smCa</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin\</OutDir>
+    <IntDir>..\..\..\..\..\..\VS2012\$(Platform)\o\smCa\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin\</OutDir>
+    <IntDir>..\..\..\..\..\..\VS2012\$(Platform)\o\smCa\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;_DEBUG;SMCA_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>include;..\..\tmpInclude;..\..\..\qyCusResSrc\qyCusRes\include;..\..\qyInclude;..\..\qyMcInclude;.;..\..\qyEncLib\include;..\..\qyCustom\include;..\..\qyCommProc\include;..\..\qyCommProc_mis\include;..\..\..\..\qyOpen\include;..\..\..\qisOpen\include;..\..\qyCommProc_serv\include;..\..\qmdConn\include;..\..\..\..\..\openssl\Include;..\..\atCommProc_nc\include;..\..\..\..\atOpen\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>libssl.lib;libcrypto.lib;openssl.lib;comctl32.lib;dxgi.lib;qyBaseLibNoMfc.lib;qyEncLibNoMfc.lib;ws2_32.lib;winmm.lib;vfw32.lib;strmiids.lib;Dmoguids.lib;msdmo.lib;wmcodecdspuuid.lib;dsound.lib;Msacm32.lib;help_webRtc.lib;msimg32.lib;avcodec.lib;avformat.lib;avutil.lib;swresample.lib;avfilter.lib;swscale.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\lib;..\..\..\..\..\ffmpegLibs\$(Platform)\bin;..\..\..\..\..\openssl\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;NDEBUG;SMCA_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>include;..\..\tmpInclude;..\..\..\qyCusResSrc\qyCusRes\include;..\..\qyInclude;..\..\qyMcInclude;.;..\..\qyEncLib\include;..\..\qyCustom\include;..\..\qyCommProc\include;..\..\qyCommProc_mis\include;..\..\..\..\qyOpen\include;..\..\..\qisOpen\include;..\..\qyCommProc_serv\include;..\..\qmdConn\include;..\..\..\..\..\openssl\Include;..\..\atCommProc_nc\include;..\..\..\..\atOpen\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>libssl.lib;libcrypto.lib;openssl.lib;comctl32.lib;dxgi.lib;qyBaseLibNoMfc.lib;qyEncLibNoMfc.lib;ws2_32.lib;winmm.lib;vfw32.lib;strmiids.lib;Dmoguids.lib;msdmo.lib;wmcodecdspuuid.lib;dsound.lib;Msacm32.lib;help_webRtc.lib;msimg32.lib;avcodec.lib;avformat.lib;avutil.lib;swresample.lib;avfilter.lib;swscale.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\lib;..\..\..\..\..\ffmpegLibs\$(Platform)\bin;..\..\..\..\..\openssl\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="include\AesCrypto.h" />
+    <ClInclude Include="include\cryptFunc_qmd.h" />
+    <ClInclude Include="pch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\parseSpsPps.cpp" />
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\qyCommProc_open.cpp" />
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\qySyncObj.cpp" />
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\qyTCharCommProc.cpp" />
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\videoFunc_open.cpp" />
+    <ClCompile Include="..\..\..\qisOpen\public\tmpRegFunc_open.cpp" />
+    <ClCompile Include="..\..\atCommProc_nc\ancProtocolFunc.cpp" />
+    <ClCompile Include="..\..\qyCommProc\qnmCommProc.cpp" />
+    <ClCompile Include="..\..\qyCommProc\qnmFwCommProc.cpp" />
+    <ClCompile Include="..\..\qyCommProc\qwmDynFunc.cpp" />
+    <ClCompile Include="..\..\qyCommProc\qwmNetworkStatusCommProc.cpp" />
+    <ClCompile Include="..\..\qyCommProc\qyCommFunc.cpp" />
+    <ClCompile Include="..\..\qyCommProc\qyCommProc.cpp" />
+    <ClCompile Include="..\..\qyCommProc\qyDmItemCommProc.cpp" />
+    <ClCompile Include="..\..\qyCommProc\qyString.cpp" />
+    <ClCompile Include="..\..\qyCommProc\tmpCeLib.cpp" />
+    <ClCompile Include="..\..\qyCommProc_mis\isFunc.cpp" />
+    <ClCompile Include="..\..\qyCommProc_mis\isProtocolFunc.cpp" />
+    <ClCompile Include="..\..\qyCommProc_mis\qnmCommProc_mis.cpp" />
+    <ClCompile Include="..\..\qyCommProc_mis\qyMsgFunc.cpp" />
+    <ClCompile Include="..\..\qyCustom\qyCustom.cpp" />
+    <ClCompile Include="..\..\qyMcPublic\qmCaProc.cpp" />
+    <ClCompile Include="..\..\qyMcPublic\qmCrypt.cpp" />
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="public\cryptDataFunc.cpp" />
+    <ClCompile Include="public\cryptFunc_qmd.cpp" />
+    <ClCompile Include="public\getNCardsInfo.cpp" />
+    <ClCompile Include="public\hgEncFunc.cpp" />
+    <ClCompile Include="public\hgFunc.cpp" />
+    <ClCompile Include="public\parseAndChkAuthFunc.cpp" />
+    <ClCompile Include="public\qmdCrypt.cpp" />
+    <ClCompile Include="public\smCaProc.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\atPublic\ancCore\ancCore.vcxproj">
+      <Project>{d597b53f-57db-4450-8f4c-7bddfd428b76}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\qyMcPublic\qyPublic\qyPublic2012.vcxproj">
+      <Project>{aab8de7c-7262-461b-8c10-ee4fa4b1511e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\qyMcPublic\qyShowInfo\qyShowInfo2012.vcxproj">
+      <Project>{32fc6695-1451-47bf-a185-41c2d3d80bcb}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

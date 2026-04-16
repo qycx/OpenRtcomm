@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\..\qyOpen\qyCommProc_open\qySyncObj.cpp" />
+    <ClCompile Include="msgrMgrModule.cpp" />
+    <ClCompile Include="msgrMgrModuleProc.cpp" />
+    <ClCompile Include="StdAfx.cpp" />
+    <ClCompile Include="..\..\..\..\qyCommProc\qnmCommProc.cpp" />
+    <ClCompile Include="..\..\..\..\qyCommProc\qnmOsAuditCommProc.cpp" />
+    <ClCompile Include="..\..\..\..\qyCommProc\qwmDynFunc.cpp" />
+    <ClCompile Include="..\..\..\..\qyCommProc\qwmNetworkStatusCommProc.cpp" />
+    <ClCompile Include="..\..\..\..\qyCommProc\qyCommProc.cpp" />
+    <ClCompile Include="..\..\..\..\qyCommProc\qyDmItemCommProc.cpp" />
+    <ClCompile Include="..\..\..\..\qyCommProc\qySyncCommProc.cpp" />
+    <ClCompile Include="..\..\..\..\qyCommProc\qyTmpMemory.cpp" />
+    <ClCompile Include="..\..\..\..\qyCommProc\tmpCeLib.cpp" />
+    <ClCompile Include="..\..\..\..\qyCustom\qyCustom.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\qyOpen\qyCommProc_open\qyTCharCommProc.cpp">
+      <Filter>qyOpen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\qyCommProc\qyCommFunc.cpp">
+      <Filter>qyCommProc</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="msgrMgrModule.h" />
+    <ClInclude Include="StdAfx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="qyOpen">
+      <UniqueIdentifier>{2ccb3989-ed31-4265-ae70-db3596ff4941}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyCommProc">
+      <UniqueIdentifier>{6a2d6026-4f1e-4d78-8699-0cec40aa457e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

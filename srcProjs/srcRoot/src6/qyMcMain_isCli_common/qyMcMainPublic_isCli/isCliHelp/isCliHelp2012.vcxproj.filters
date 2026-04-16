@@ -1,0 +1,969 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\..\qyCommProc\qnmAssetsTemp.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qnmChkCommProc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qnmCommProc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qnmCommProc1.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\QnmDb.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qnmFwCommProc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qnmGuiCommProc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qnmHotKeys.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qnmOsAuditCommProc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qnmsCommProc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qnmWarnCommProc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qwmDjCommProc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qwmDynFunc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qwmNetworkStatusCommProc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qwmStreamCommProc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qyCommProc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qyDmItemCommProc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qyImcLogFunc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qyImcPublic.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qyLangCommProc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qyModuleFunc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qySharedQ.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qyShowHintCommProc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qySqlFuncPublic.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qyString.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qySyncCommProc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qyThread.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qyTmpMemory.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qyWnd.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\tmpCeLib.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\tmpLib.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc_db\qySqlFunc_odbc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc_mfc\QyRestrictEdit.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc_mis\isProtocolFunc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc_mis\isTmpFunc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc_mis\qnmCommProc_mis.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc_mis\qyComPortEx.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc_mis\qyMsgFunc.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc_mis\qyMsgFunc_iocp.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc_mis\qyTick.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc_mis\qyWmComm_is.cpp" />
+    <ClCompile Include="..\..\..\qyCustom\qnmAllHints.cpp" />
+    <ClCompile Include="..\..\..\qyCustom\qnmCustomComm.cpp" />
+    <ClCompile Include="..\..\..\qyCustom\qnmCustomRegTool.cpp" />
+    <ClCompile Include="..\..\..\qyCustom\qyCusResHelp.cpp" />
+    <ClCompile Include="..\..\..\qyCustom\qyCustom.cpp" />
+    <ClCompile Include="..\..\..\qyMcMainPublic\dbFuncs\myDb\getObjId_myDb.cpp" />
+    <ClCompile Include="..\..\..\qyMcMainPublic\dbFuncs\myDb\qnmMainProc_myDb.cpp" />
+    <ClCompile Include="..\..\..\qyMcMainPublic\dbFuncs\odbc\getObjId_odbc.cpp" />
+    <ClCompile Include="..\..\..\qyMcMainPublic\dbFuncs\odbc\qnmMainProc_odbc.cpp" />
+    <ClCompile Include="..\..\..\qyMcMainPublic_mfc\qnmMainProc_mis1_mfc.cpp" />
+    <ClCompile Include="..\..\..\qyMcMainPublic_mfc\QyFile.cpp" />
+    <ClCompile Include="..\..\..\qyMcMainPublic_mfc\QyRcdset.cpp" />
+    <ClCompile Include="..\..\..\qyMcMainPublic_mfc\QyStatic.cpp" />
+    <ClCompile Include="..\..\..\qyMcPublic\dbFuncs\myDb\qmCommonDbFunc_myDb_mis.cpp" />
+    <ClCompile Include="..\..\..\qyMcPublic\dbFuncs\odbc\qmCommonDbFunc_odbc_mis.cpp" />
+    <ClCompile Include="..\..\..\qyMcPublic\qmCommonDbFunc.cpp" />
+    <ClCompile Include="..\..\..\qyMcPublic\qmCommonDbFuncHelp.cpp" />
+    <ClCompile Include="..\..\..\qyMcPublic\qmCommonDbFunc_mis.cpp" />
+    <ClCompile Include="..\..\..\qyMcPublic\qmCommonProc.cpp" />
+    <ClCompile Include="..\..\..\qyMcPublic\qmDynMenu.cpp" />
+    <ClCompile Include="..\..\..\qyMcPublic\qmStr.cpp" />
+    <ClCompile Include="..\..\..\qyMcPublic\qmUiFunc.cpp" />
+    <ClCompile Include="..\..\..\qyMcPublic\QyPs.cpp" />
+    <ClCompile Include="..\..\qyProjShare_isCli\ptzPublic\BitmapBtn.cpp" />
+    <ClCompile Include="..\..\qyProjShare_isCli\ptzPublic\myButton.cpp" />
+    <ClCompile Include="..\..\qyProjShare_isCli\ptzPublic\Pelco_D.cpp" />
+    <ClCompile Include="..\..\qyProjShare_isCli\ptzPublic\Pelco_P.cpp" />
+    <ClCompile Include="..\..\qyProjShare_isCli\ptzPublic\stageLens.cpp" />
+    <ClCompile Include="..\..\qyProjShare_isCli\sketchpadProj\issameplacespobj.cpp" />
+    <ClCompile Include="..\..\qyProjShare_isCli\sketchpadProj\isspobjselected.cpp" />
+    <ClCompile Include="..\..\qyProjShare_isCli\sketchpadProj\opsp.cpp" />
+    <ClCompile Include="..\..\qyProjShare_isCli\sketchpadProj\preopsp.cpp" />
+    <ClCompile Include="..\..\qyProjShare_isCli\sketchpadProj\spconstruct.cpp" />
+    <ClCompile Include="..\..\qyProjShare_isCli\sketchpadProj\spdiscmd.cpp" />
+    <ClCompile Include="..\..\qyProjShare_isCli\sketchpadProj\spdisplay.cpp" />
+    <ClCompile Include="..\..\qyProjShare_isCli\sketchpadProj\spfunc.cpp" />
+    <ClCompile Include="..\..\qyProjShare_isCli\sketchpadProj\spmain.cpp" />
+    <ClCompile Include="..\..\qyProjShare_isCli\sketchpadProj\spproc.cpp" />
+    <ClCompile Include="..\..\qyProjShare_isCli\sketchpadProj\spreflect.cpp" />
+    <ClCompile Include="..\..\qyProjShare_isCli\sketchpadProj\sprotate.cpp" />
+    <ClCompile Include="..\..\qyProjShare_isCli\sketchpadProj\sptransform.cpp" />
+    <ClCompile Include="..\..\qyProjShare_isCli\sketchpadProj\tempsp.cpp" />
+    <ClCompile Include="..\isCliProcs\dbFuncs\myDb\qmCommonDbFunc_myDb_mis_help.cpp" />
+    <ClCompile Include="..\isCliProcs\dbFuncs\odbc\qmCommonDbFunc_odbc_isCli.cpp" />
+    <ClCompile Include="..\isCliProcs\dbFuncs\odbc\qmCommonDbFunc_odbc_isCli_help.cpp" />
+    <ClCompile Include="isCliHelp.cpp" />
+    <ClCompile Include="isCliHelp_func.cpp" />
+    <ClCompile Include="public\d3dWallProc_isCliHelp.cpp" />
+    <ClCompile Include="public\DlgCfgVideoConference.cpp" />
+    <ClCompile Include="public\DlgCfgWmv.cpp" />
+    <ClCompile Include="public\DlgChromaKeyCfg.cpp" />
+    <ClCompile Include="public\DlgDesktopsMon.cpp" />
+    <ClCompile Include="public\DlgImg.cpp" />
+    <ClCompile Include="public\DlgImMsgSearch.cpp" />
+    <ClCompile Include="public\DlgImObjRule.cpp" />
+    <ClCompile Include="public\DlgListView.cpp" />
+    <ClCompile Include="public\DlgListView_db.cpp" />
+    <ClCompile Include="public\DlgMediaControl.cpp" />
+    <ClCompile Include="public\dlgMenuD3dWall.cpp" />
+    <ClCompile Include="public\DlgMenuIsCli.cpp" />
+    <ClCompile Include="public\DlgMessengerIsClient.cpp" />
+    <ClCompile Include="public\DlgNotification.cpp" />
+    <ClCompile Include="public\dlgObjsProc_isCli.cpp" />
+    <ClCompile Include="public\dlgObjs_shell.cpp" />
+    <ClCompile Include="public\DlgObjs_ts.cpp" />
+    <ClCompile Include="public\DlgPolicyAv.cpp" />
+    <ClCompile Include="public\DlgPolicyIsClient.cpp" />
+    <ClCompile Include="public\DlgPropImMsg.cpp" />
+    <ClCompile Include="public\DlgPropImTask.cpp" />
+    <ClCompile Include="public\DlgPropMessenger.cpp" />
+    <ClCompile Include="public\DlgQnmEditPcUsrInfo.cpp" />
+    <ClCompile Include="public\DlgQnmEventSearch.cpp" />
+    <ClCompile Include="public\DlgQnmSearch.cpp" />
+    <ClCompile Include="public\DlgQnmSendHint.cpp" />
+    <ClCompile Include="public\DlgQyBar.cpp" />
+    <ClCompile Include="public\DlgQyMenu.cpp" />
+    <ClCompile Include="public\DlgSelectAvDev.cpp" />
+    <ClCompile Include="public\DlgSelect_isCli.cpp" />
+    <ClCompile Include="public\DlgShhgPcProperties.cpp" />
+    <ClCompile Include="public\DlgStatusCli.cpp" />
+    <ClCompile Include="public\DlgSubtitleSelect.cpp" />
+    <ClCompile Include="public\DlgTest_isCli.cpp" />
+    <ClCompile Include="public\DlgToolboxSketchpad.cpp" />
+    <ClCompile Include="public\DlgVideoCompressors.cpp" />
+    <ClCompile Include="public\DlgVideos.cpp" />
+    <ClCompile Include="public\DlgVideoTagCfg.cpp" />
+    <ClCompile Include="public\DlgWalls.cpp" />
+    <ClCompile Include="public\mainFrm_OnqyClearUp.cpp" />
+    <ClCompile Include="public\mainWnd_OnQyTrayNotify.cpp" />
+    <ClCompile Include="public\myHtmlEditCtrl.cpp" />
+    <ClCompile Include="public\PpClearupEventCond.cpp" />
+    <ClCompile Include="public\PpQnmClearup.cpp" />
+    <ClCompile Include="public\qyAvRecord.cpp" />
+    <ClCompile Include="public\qyAvRecord_dx.cpp" />
+    <ClCompile Include="public\qyBoundWnd.cpp" />
+    <ClCompile Include="public\qyCustSite.cpp" />
+    <ClCompile Include="public\qyIdisImp.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="..\..\..\qyCommProc\qnmGuiCommProc2.cpp">
+      <Filter>qyCommProc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qyCommProc_mis\isFunc.cpp">
+      <Filter>qyCommProc_mis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\qyOpen\qyCommProc_open\qySyncObj.cpp" />
+    <ClCompile Include="..\..\..\..\..\qyOpen\qyCommProc_open\yv12rgb.cpp" />
+    <ClCompile Include="..\..\..\..\..\qyOpen\qyCommProc_open\parseSpsPps.cpp">
+      <Filter>qyOpen\qyCommProc_open</Filter>
+    </ClCompile>
+    <ClCompile Include="public\logImMsg_isCli.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\DlgSelectRemoteVideo.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\DlgRemoteStorageSettings.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\help_shareDynBmpMemFunc.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qyCommProc\syncMtCnt.cpp">
+      <Filter>qyCommProc</Filter>
+    </ClCompile>
+    <ClCompile Include="public\drawTxtFunc.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\dlgTalkProc_help.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qyMcMainPublic\qyMcMainObj.cpp">
+      <Filter>qyMcMainPublic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qyMcMainPublic\qyMcMainFunc.cpp">
+      <Filter>qyMcMainPublic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\dyn_isCliD3d.cpp">
+      <Filter>qyMcMainPublic_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\imObjHash.cpp">
+      <Filter>qyMcMainPublic_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\policyIsClientFunc.cpp">
+      <Filter>qyMcMainPublic_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\qmcCfg.cpp">
+      <Filter>qyMcMainPublic_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\qmcDxSurface.cpp">
+      <Filter>qyMcMainPublic_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\qmcGps_testData.cpp">
+      <Filter>qyMcMainPublic_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\qmcGpsCoordTransform.cpp">
+      <Filter>qyMcMainPublic_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\qmcGpsFunc.cpp">
+      <Filter>qyMcMainPublic_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\qmcSharedObj.cpp">
+      <Filter>qyMcMainPublic_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\qmcTaskInfo.cpp">
+      <Filter>qyMcMainPublic_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\qmcTest.cpp">
+      <Filter>qyMcMainPublic_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\qnmMainFunc_isCli.cpp">
+      <Filter>qyMcMainPublic_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\qnmMainProc_isCli.cpp">
+      <Filter>qyMcMainPublic_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\qyVk.cpp">
+      <Filter>qyMcMainPublic_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\rgb32rgb.cpp">
+      <Filter>qyMcMainPublic_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\slaveStreamProc.cpp">
+      <Filter>qyMcMainPublic_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\subtitleFunc.cpp">
+      <Filter>qyMcMainPublic_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\wnd_guiMsgProc.cpp">
+      <Filter>qyMcMainPublic_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\colorSpaceFunc.cpp">
+      <Filter>qyMcMainPublic_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\hlslFunc.cpp">
+      <Filter>qyMcMainPublic_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\qyOpen\qyCommProc_open\videoFunc_open.cpp">
+      <Filter>qyOpen\qyCommProc_open</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\getPolicyIsClient.cpp">
+      <Filter>qyMcMainPublic_isCli\public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\sendNotification.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\qmcFunc_isCli.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\showMsg_d3d.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\qmcVideoFunc.cpp">
+      <Filter>qyMcMainPublic_isCli\public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\qmcDynBmp.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\qmcOfflineRes.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="public\DlgOfflineRes.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\mcSharedQ.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="public\ptz_pelco.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\ptz_usb.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\DlgPtzControl.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\PtzSettings.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\qmcSoundFunc.cpp">
+      <Filter>qyMcMainPublic_isCli\public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\qmcDmoFunc.cpp">
+      <Filter>qyMcMainPublic_isCli\public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\qmcImgFunc.cpp">
+      <Filter>qyMcMainPublic_isCli\public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\addTxtToPic.cpp">
+      <Filter>qyMcMainPublic_isCli\public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qyCommProc\syncMtCntFunc.cpp">
+      <Filter>qyCommProc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\qmcObjVarInfo.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\qmcVWall.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\qmcVWall_file.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\qmcFunc.cpp">
+      <Filter>qyMcMainPublic_isCli\public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\DlgMsgInput.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\DlgMsgList.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\setSlaveStreamOn.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\qmcMasterSlave.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\qmc_tttbbbMac.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\taskAvFunc.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\qmcDispatchFunc.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\showTaskStatusFunc.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\removeFromMsgrs_sendLocalAv.cpp">
+      <Filter>qyMcMainPublic_isCli\public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\setFlg_forceKeyFrame.cpp">
+      <Filter>qyMcMainPublic_isCli\public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\findOrgMsgAndProcess_is.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\qmcProcTask.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\qmcProcTaskRemoteAssist.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\postMsg2MgrFunc.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qyCommProc_mis\qyq2Help.cpp">
+      <Filter>qyCommProc_mis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\procSendFunc.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\storeTaskInDb.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\addToMsgrs_sendLocalAv.cpp">
+      <Filter>qyMcMainPublic_isCli\public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\dyn_others.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\onvifFunc.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="public\ptz_onvif.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\dlgTalk_capImgProc.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\dlgTalkProc_isCliHelp.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qyMcPublic\qmObjQProc.cpp">
+      <Filter>qyMcPublic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qyMcPublic\getPcSatusInfo.cpp">
+      <Filter>qyMcPublic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\dyn_isCliD3d_public.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\help_getDlgTalkVar.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="public\addTalkerToGZone.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\dyn_messengerHelp.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qyMcPublic\dbFuncs\setQmDbFuncs.cpp">
+      <Filter>qyMcPublic\dbFuncs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qyMcPublic\dbFuncs\setQmDb_default_funcs.cpp">
+      <Filter>qyMcPublic\dbFuncs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qyMcMainPublic\bQmFreeVer.cpp">
+      <Filter>qyMcMainPublic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\doPostEnc_audio.cpp">
+      <Filter>qyMcMainPublic_isCli\public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\getNextVPkt.cpp">
+      <Filter>qyMcMainPublic_isCli\public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\qmcTestSpeed.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTestSpeed.cpp" />
+    <ClCompile Include="public\dlgAbout.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\qyMcRefrreshAll.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="public\avConsole_proc_isCliHelp.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgInstantAssistant.cpp" />
+    <ClCompile Include="DlgSelectAvCompressor.cpp" />
+    <ClCompile Include="DlgTalk.cpp" />
+    <ClCompile Include="..\..\..\qyMcMainPublic\getLvSelColContent.cpp">
+      <Filter>qyMcMainPublic</Filter>
+    </ClCompile>
+    <ClCompile Include="public\refreshTalkerList.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\dlgTalk_videoConference.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\getTalkerDesc.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="public\getDescByIdInfo.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\createTmpGrp.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgCfgGrp.cpp" />
+    <ClCompile Include="DlgPropImGrp.cpp" />
+    <ClCompile Include="..\..\..\qyMcPublic\delImObj.cpp">
+      <Filter>qyMcPublic</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgEditConsultMem.cpp" />
+    <ClCompile Include="public\get_conf_stat.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qyMcMainPublic\getProcedObjDb.cpp">
+      <Filter>qyMcMainPublic</Filter>
+    </ClCompile>
+    <ClCompile Include="public\dlgDynBmpsProc.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\dlgTalk_procVideo.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\qmcTaskInfo_help.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="public\dlgTalk_bgWall.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\mcThreadProc_bgWall.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\compressVideo.cpp">
+      <Filter>qyMcMainPublic_isCli\public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\qmcDmo.cpp">
+      <Filter>qyMcMainPublic_isCli\public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qyMcMainPublic\getCusModule.cpp">
+      <Filter>qyMcMainPublic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\smplFunc_v.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\doPostEnc_mediaSdk_new.cpp">
+      <Filter>qyMcMainPublic_isCli\public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\yuy2rgb.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\qmcDmo_help.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qyMcMainPublic\qmcGuid.cpp">
+      <Filter>qyMcMainPublic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qyMcMainPublic\getDebugStep_sth.cpp">
+      <Filter>qyMcMainPublic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\dec_parseEncVPkt_i.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\enc_parseOrgAPkt_i.cpp">
+      <Filter>qyMcMainPublic_isCli\public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\postVPktToSave.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\chkFromPlayerIndex_v.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\getPlayerByIndex.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgCfgBgWall.cpp" />
+    <ClCompile Include="DlgMsgTool.cpp" />
+    <ClCompile Include="..\public_isCli\qmcTransform.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\qmcVideoCapture.cpp">
+      <Filter>qyMcMainPublic_isCli\public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\v210rgb.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\rgb565rgb.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\qmcVideoCapture_dx.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\qmcShareMediaDevice.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\qmcShareMediaFile.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\qmcVideoCapture_rtsp.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\sharedObjUsr.cpp">
+      <Filter>qyMcMainPublic_isCli\public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\isCliProcs\soundProc_coreAudio\qmcSound_coreAudio.cpp">
+      <Filter>qyMcMainPublic_isCli\isCliProcs\soundProc_coreAudio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\isCliProcs\soundProc_webRtc\audioRecord_webRtc.cpp">
+      <Filter>qyMcMainPublic_isCli\isCliProcs\soundProc_webRtc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\isCliProcs\soundProc_webRtc\playAudio_webRtc.cpp">
+      <Filter>qyMcMainPublic_isCli\isCliProcs\soundProc_webRtc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\broadcastRecorderStatus.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\mmDeviceProc.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\qmcSound_dx.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\isCliProcs\soundProc_dx\audioRecorder_dx.cpp">
+      <Filter>qyMcMainPublic_isCli\isCliProcs\soundProc_dx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qyMcMainPublic\dxTmpFunc.cpp">
+      <Filter>qyMcMainPublic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\qyExitProcessEx.cpp">
+      <Filter>qyMcMainPublic_isCli\public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\qyMcMainMediaProc_decVideo_rtsp.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\mcThreadProc_rtsp.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\qyOpen\qyCommProc_open\qyPipeFunc_open.cpp">
+      <Filter>qyOpen\qyCommProc_open</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\qvcf_doRecvRtsp.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\qvcf\qvcf_readFunc.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\taskAvProc.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\qyMcMainMediaProc_decVideo.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\qyMcMainMediaProc_saveAv.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\dyn_isCliSaveAv.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgAvRes.cpp" />
+    <ClCompile Include="public\treeCtrlFunc.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\DropTree.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\qyDropTarget.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\skinProc_mfc.cpp">
+      <Filter>qyMcMainPublic_isCli\public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\tmpProc.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\dlgTalkProc_tmpFunc.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\isCliProcs\soundProc_msAec\msAecKsBinder.cpp">
+      <Filter>qyMcMainPublic_isCli\isCliProcs\soundProc_msAec</Filter>
+    </ClCompile>
+    <ClCompile Include="..\isCliProcs\soundProc_msAec\msAecSound.cpp">
+      <Filter>qyMcMainPublic_isCli\isCliProcs\soundProc_msAec</Filter>
+    </ClCompile>
+    <ClCompile Include="..\isCliProcs\soundProc_msAec\msAecSoundDeviceSelection.cpp">
+      <Filter>qyMcMainPublic_isCli\isCliProcs\soundProc_msAec</Filter>
+    </ClCompile>
+    <ClCompile Include="..\isCliProcs\soundProc_msAec\msAecWin32Sound.cpp">
+      <Filter>qyMcMainPublic_isCli\isCliProcs\soundProc_msAec</Filter>
+    </ClCompile>
+    <ClCompile Include="public\dlgTalk_procCmd.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qyCommProc\qyCommFunc.cpp">
+      <Filter>qyCommProc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qyMcMainPublic\qnmMainFunc.cpp">
+      <Filter>qyMcMainPublic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qyCommProc\displayShortTime.cpp">
+      <Filter>qyCommProc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qyCommProc\getMcuPolicy.cpp">
+      <Filter>qyCommProc</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgDynBmps.cpp" />
+    <ClCompile Include="..\isCliProcs\dbFuncs\myDb\qmCommonDbFunc_myDb_isCli.cpp">
+      <Filter>qyMcMainPublic_isCli\isCliProcs\dbFuncs\myDb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\isCliProcs\dbFuncs\myDb\qmCommonDbFunc_myDb_isCli_mfc.cpp">
+      <Filter>qyMcMainPublic_isCli\isCliProcs\dbFuncs\myDb</Filter>
+    </ClCompile>
+    <ClCompile Include="public\dlgTalkProc_isCliHelp_mfc.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\dlgTalkProc_help_mfc.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\dlgPolicyIsClient_help.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\dlgInstantAssistant_help.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\dlgAvRes_help.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\dlgCfgBgWall_help.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\dlgSelectAvCompressor_help.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\dlgVideoTagCfg_help.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qyCommProc_mis\qy_qBuf2.cpp">
+      <Filter>qyCommProc_mis</Filter>
+    </ClCompile>
+    <ClCompile Include="public\dlgOfflineResProc.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qyMcMainPublic\dlgProgressProc.cpp">
+      <Filter>qyMcMainPublic</Filter>
+    </ClCompile>
+    <ClCompile Include="public\dlgTalk_procTask_display_op.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\dyn_help_webrtc1.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\dlgVideosProc.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\dlgTalk_share.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\dlgSelectAvDevProc.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\smplFunc_v1.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qyCommProc\saveAvCommProc.cpp">
+      <Filter>qyCommProc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\qyOpen\qyCommProc_open\qyTCharCommProc.cpp">
+      <Filter>qyOpen\qyCommProc_open</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\qyOpen\qyCommProc_open\fileFunc_open.cpp">
+      <Filter>qyOpen\qyCommProc_open</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\capImageProc_forD3d.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\capImageFunc.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\capImageProc.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\getPeerImages_forD3d.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\hkFunc.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\sei_packet.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qyMcPublic\qmCfgProc.cpp">
+      <Filter>qyMcPublic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qyCommProc\qnmCommProc2.cpp">
+      <Filter>qyCommProc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\qyOpen\qyCommProc_open\qyCommProc_open.cpp">
+      <Filter>qyOpen\qyCommProc_open</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\ptz_ipc.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\ptzFunc.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\confKey.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\atCommProc_nc\ancProtocolFunc.cpp">
+      <Filter>atCommProc_nc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\atCommProc_nc\ancFunc.cpp">
+      <Filter>atCommProc_nc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\qyOpen\qyCommProc_open\nv12rgb.cpp">
+      <Filter>qyOpen\qyCommProc_open</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qyCustom\qnmCustomStr.cpp">
+      <Filter>qyCustom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\qyOpen\qyCommProc_open\dumpVideo.cpp">
+      <Filter>qyOpen\qyCommProc_open</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public_isCli\chkFromPlayerIndex_a.cpp">
+      <Filter>qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\atOpen\public\ivf_parser.cpp">
+      <Filter>atOpen</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\qyProjShare_isCli\ptzPublic\include\BitmapBtn.h" />
+    <ClInclude Include="..\..\qyProjShare_isCli\ptzPublic\include\myButton.h" />
+    <ClInclude Include="..\..\qyProjShare_isCli\ptzPublic\include\Pelco_D.h" />
+    <ClInclude Include="..\..\qyProjShare_isCli\ptzPublic\include\Pelco_P.h" />
+    <ClInclude Include="..\..\qyProjShare_isCli\ptzPublic\include\StageLens.h" />
+    <ClInclude Include="..\include\dlgtalkproc.h" />
+    <ClInclude Include="include\DlgCfgVideoConference.h" />
+    <ClInclude Include="include\DlgCfgWmv.h" />
+    <ClInclude Include="include\DlgChromaKeyCfg.h" />
+    <ClInclude Include="include\DlgDesktopsMon.h" />
+    <ClInclude Include="include\DlgImg.h" />
+    <ClInclude Include="include\DlgImMsgSearch.h" />
+    <ClInclude Include="include\DlgImObjRule.h" />
+    <ClInclude Include="include\DlgListView.h" />
+    <ClInclude Include="include\DlgListView_db.h" />
+    <ClInclude Include="include\DlgMediaControl.h" />
+    <ClInclude Include="include\dlgMenuD3dWall.h" />
+    <ClInclude Include="include\DlgMenuIsCli.h" />
+    <ClInclude Include="include\DlgMessengerIsClient.h" />
+    <ClInclude Include="include\DlgNotification.h" />
+    <ClInclude Include="include\DlgObjs_ts.h" />
+    <ClInclude Include="include\DlgPolicyAv.h" />
+    <ClInclude Include="include\dlgpolicyisclient.h" />
+    <ClInclude Include="include\DlgPropImMsg.h" />
+    <ClInclude Include="include\DlgPropImTask.h" />
+    <ClInclude Include="include\DlgPropMessenger.h" />
+    <ClInclude Include="include\DlgQnmEditPcUsrInfo.h" />
+    <ClInclude Include="include\DlgQnmEventSearch.h" />
+    <ClInclude Include="include\DlgQnmSearch.h" />
+    <ClInclude Include="include\DlgQnmSendHint.h" />
+    <ClInclude Include="include\DlgQyBar.h" />
+    <ClInclude Include="include\DlgQyMenu.h" />
+    <ClInclude Include="include\DlgSelectAvDev.h" />
+    <ClInclude Include="include\DlgSelect_isCli.h" />
+    <ClInclude Include="include\DlgStatusCli.h" />
+    <ClInclude Include="include\DlgSubtitleSelect.h" />
+    <ClInclude Include="include\DlgTest_isCli.h" />
+    <ClInclude Include="include\DlgToolboxSketchpad.h" />
+    <ClInclude Include="include\DlgVideoCompressors.h" />
+    <ClInclude Include="include\DlgVideos.h" />
+    <ClInclude Include="include\DlgVideoTagCfg.h" />
+    <ClInclude Include="include\myHtmlEditCtrl.h" />
+    <ClInclude Include="include\PpClearupEventCond.h" />
+    <ClInclude Include="include\PpQnmClearup.h" />
+    <ClInclude Include="include\qyBoundWnd.h" />
+    <ClInclude Include="include\qyCustSite.h" />
+    <ClInclude Include="include\qyIdisImp.h" />
+    <ClInclude Include="isCliHelp.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="include\DlgSelectRemoteVideo.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\DlgRemoteStorageSettings.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\qyCommProc\INCLUDE\syncMtCnt.h">
+      <Filter>qyCommProc\include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\DlgOfflineRes.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include_isCli\mcSharedQ.h">
+      <Filter>qyMcMainPublic_isCli\include_isCli</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PtzSettings.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\DlgPtzControl.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include_isCli\qmcObjVarInfo.h">
+      <Filter>qyMcMainPublic_isCli\include_isCli</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include_isCli\qmcVWall.h">
+      <Filter>qyMcMainPublic_isCli\include_isCli</Filter>
+    </ClInclude>
+    <ClInclude Include="include\DlgMsgInput.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\DlgMsgList.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include_isCli\dlgtalkproc.h">
+      <Filter>qyMcMainPublic_isCli\include_isCli</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include_isCli\help_getDlgTalkVar.h">
+      <Filter>qyMcMainPublic_isCli\include_isCli</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTestSpeed.h" />
+    <ClInclude Include="DlgInstantAssistant.h" />
+    <ClInclude Include="DlgSelectAvCompressor.h" />
+    <ClInclude Include="DlgTalk.h" />
+    <ClInclude Include="DlgCfgGrp.h" />
+    <ClInclude Include="DlgPropImGrp.h" />
+    <ClInclude Include="DlgEditConsultMem.h" />
+    <ClInclude Include="DlgCfgBgWall.h" />
+    <ClInclude Include="DlgMsgTool.h" />
+    <ClInclude Include="DlgAvRes.h" />
+    <ClInclude Include="include\DropTree.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\qyDropTarget.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgDynBmps.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="isCliHelp.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="isCliHelp.def" />
+    <None Include="ReadMe.txt" />
+    <None Include="res\bitmap1.bmp" />
+    <None Include="res\bmp00002.bmp" />
+    <None Include="res\bmp00003.bmp" />
+    <None Include="res\isCliHelp.rc2" />
+    <None Include="res\largeico.bmp" />
+    <None Include="res\qyMc.ico" />
+    <None Include="res\smallico.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="qyMcMainPublic_isCli">
+      <UniqueIdentifier>{cd72b6dd-c52c-4451-ba91-0c98afc8e556}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="public">
+      <UniqueIdentifier>{6801122c-9cbf-4127-ab5d-98f0856f1ac3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyCommProc">
+      <UniqueIdentifier>{10d0255b-a95f-4b7a-b06e-94e6c50f4c57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyCommProc_mis">
+      <UniqueIdentifier>{2b2e2fbb-8be9-4f62-8d86-324dbcf3d362}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{f2112d01-8dcd-47e2-8734-e9e817ea3633}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyOpen">
+      <UniqueIdentifier>{f85cac83-4ae5-4c33-a750-58732a60ba0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyOpen\qyCommProc_open">
+      <UniqueIdentifier>{b180558e-8c9f-4718-a5c8-f903e2dbbbb5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyMcMainPublic_isCli\include">
+      <UniqueIdentifier>{09209c99-4541-4592-a146-03c1edb12d2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyCommProc\include">
+      <UniqueIdentifier>{2344840d-c723-4f4c-af48-1db7340cf3fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyMcMainPublic">
+      <UniqueIdentifier>{f2c6f470-ef80-4326-906e-507c955f2dac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyMcMainPublic_isCli\public">
+      <UniqueIdentifier>{7213ae3e-585f-441a-948d-654ef3588c2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyMcMainPublic_isCli\public_isCli">
+      <UniqueIdentifier>{843c016e-e29a-4065-94d7-92dd8dfe9b45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyMcMainPublic_isCli\include_isCli">
+      <UniqueIdentifier>{dd83a1d0-e5aa-400f-9b37-43f4acd3a09e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyMcPublic">
+      <UniqueIdentifier>{117efd9d-58df-4650-b0a4-b68cd26b8a76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyMcPublic\dbFuncs">
+      <UniqueIdentifier>{b784923b-6f82-416f-9c02-e3beb82fa1d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyMcMainPublic_isCli\isCliProcs">
+      <UniqueIdentifier>{09d49389-2a2f-43db-b186-ed91e8a94b6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyMcMainPublic_isCli\isCliProcs\soundProc_coreAudio">
+      <UniqueIdentifier>{23d80c06-8479-4a71-a9c6-bfb3739496ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyMcMainPublic_isCli\isCliProcs\soundProc_webRtc">
+      <UniqueIdentifier>{2e1979d1-1981-49ff-a8db-df2a0e10e2cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyMcMainPublic_isCli\isCliProcs\soundProc_dx">
+      <UniqueIdentifier>{6f45823e-3eff-4cb5-8928-2c2431c57d85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyMcMainPublic_isCli\isCliProcs\soundProc_msAec">
+      <UniqueIdentifier>{d6ae9a76-89d5-4faf-a4c3-bd9e2ed397c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyMcMainPublic_isCli\isCliProcs\dbFuncs">
+      <UniqueIdentifier>{5811ef97-53f6-4305-a07a-95d82e51349a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyMcMainPublic_isCli\isCliProcs\dbFuncs\myDb">
+      <UniqueIdentifier>{bba6be86-fdfb-4ae0-99f2-423f0afab38d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="atCommProc_nc">
+      <UniqueIdentifier>{5cbce3f5-9fe8-4981-af16-ee2144caf39d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyCustom">
+      <UniqueIdentifier>{0a4473f3-9a65-4190-95b2-8c2bde135d50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="atOpen">
+      <UniqueIdentifier>{5ff795e1-f06d-4975-ba7e-652d0b37a958}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

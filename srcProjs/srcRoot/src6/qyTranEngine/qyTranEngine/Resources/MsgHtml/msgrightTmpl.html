@@ -1,0 +1,16 @@
+<div class="msg-wrap right" ddd="{{HTMLID}}">
+        <table  style="float:right">
+            <tr>
+                <td> 
+                    <div class="username" style="white-space:nowrap">{{USERNAME}}
+                        
+                    </div>
+                 </td>
+                <td rowspan="2" style="vertical-align: initial;"><img class="header" userid="{{USERID}}"  chatType="{{TYPE}}"  src="qrc:/Resources/Images/WinMain//person.png" ondragstart="return false;" onselectstart="return false;" onselect=”document.selection.empty();”></td>
+            </tr>
+            
+            <tr id="txt_tr"  id="{{HTMLID}}"> 
+                <td><div class="msg msg_msg" ddd="{{HTMLID}}" onclick="clickHandler(this)">{{MSG}}<img src="qrc:/Resources/Images/WinMain/video.png" class="void_png"  style="display: none;" /><span class="trigon"></span></div></td>
+            </tr>
+        </table>
+    </div>

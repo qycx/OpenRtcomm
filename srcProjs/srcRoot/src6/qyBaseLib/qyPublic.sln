@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qyPublic", "qyPublic.vcproj", "{A3B83926-9D1C-44D0-8B05-F0A87958988A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug Static No Mfc|Win32 = Debug Static No Mfc|Win32
+		Debug Static|Win32 = Debug Static|Win32
+		Debug|Win32 = Debug|Win32
+		Release Static No Mfc|Win32 = Release Static No Mfc|Win32
+		Release Static|Win32 = Release Static|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A3B83926-9D1C-44D0-8B05-F0A87958988A}.Debug Static No Mfc|Win32.ActiveCfg = Debug Static No Mfc|Win32
+		{A3B83926-9D1C-44D0-8B05-F0A87958988A}.Debug Static No Mfc|Win32.Build.0 = Debug Static No Mfc|Win32
+		{A3B83926-9D1C-44D0-8B05-F0A87958988A}.Debug Static|Win32.ActiveCfg = Debug Static|Win32
+		{A3B83926-9D1C-44D0-8B05-F0A87958988A}.Debug Static|Win32.Build.0 = Debug Static|Win32
+		{A3B83926-9D1C-44D0-8B05-F0A87958988A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A3B83926-9D1C-44D0-8B05-F0A87958988A}.Debug|Win32.Build.0 = Debug|Win32
+		{A3B83926-9D1C-44D0-8B05-F0A87958988A}.Release Static No Mfc|Win32.ActiveCfg = Release Static No Mfc|Win32
+		{A3B83926-9D1C-44D0-8B05-F0A87958988A}.Release Static No Mfc|Win32.Build.0 = Release Static No Mfc|Win32
+		{A3B83926-9D1C-44D0-8B05-F0A87958988A}.Release Static|Win32.ActiveCfg = Release Static|Win32
+		{A3B83926-9D1C-44D0-8B05-F0A87958988A}.Release Static|Win32.Build.0 = Release Static|Win32
+		{A3B83926-9D1C-44D0-8B05-F0A87958988A}.Release|Win32.ActiveCfg = Release|Win32
+		{A3B83926-9D1C-44D0-8B05-F0A87958988A}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

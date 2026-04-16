@@ -1,0 +1,378 @@
+<html>
+	<head>
+		<title></title>
+		<script src="js/prototype.js" type="text/javascript"></script>
+		<script src="js/qyWindow.js" type="text/javascript"></script>
+		<link href="css/wwwQm.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+
+
+var dlgTalk;
+var defaultTitle;
+var msgrId;
+//
+
+	
+// Smilies //
+var smilies = [                    // Smiley format: 'smiley~imagename.ext',
+   ":)~smile.gif",
+   ":-)~smile.gif",
+   ":D~grin.gif",
+   ":-D~grin.gif",
+   ";)~wink.gif",
+   ";-)~wink.gif",
+   ":[~embarassed.gif",
+   ":-[~embarassed.gif",
+   ":*~love.gif",
+   ":-*~love.gif",
+   ":(~sad.gif",
+   ":-(~sad.gif",
+   ":'(~cry.gif",
+   ":'-(~cry.gif",
+   "8-)~cool.gif",
+   "&gt;:o~angry.gif",
+   "&gt;:-o~angry.gif",
+   ":O~surprised.gif",
+   ":-O~surprised.gif",
+   ":|~serious.gif",
+   ":-|~serious.gif",
+   ":-S~sick.gif",
+   ":P~tongue.gif",
+   ":-P~tongue.gif",
+   "&lt;3~heart.gif",
+   "&lt;33~heart.gif",
+   "&lt;\/3~heartbroken.gif",
+   "&lt;\\3~heartbroken.gif"
+];
+
+
+ function init() 
+{
+       
+   //
+   if  (  !self.opener  )  self.close(  );   
+   msgrId  =  self.opener.curSelMsgrId;
+   if  (  trim(  msgrId  ).length  ==  0  )  self.close(  );
+   //   
+   document.title = self.opener.curSelMsgrName;
+   defaultTitle  =  document.title;
+      
+   //  
+      
+   dlgTalk = document.createElement('div');
+   dlgTalk.className = 'dlgTalkCls';
+   dlgTalk.id = msgrId + '_im';
+   //  
+   dlgTalk.style.width = '478px';   
+   dlgTalk.style.height = '300px';
+      
+   //    
+   document.body.innerHTML  =  self.opener.bBody;
+   //
+   dlgTalk.innerHTML  =  self.opener.bInner;
+                            
+                              
+   document.body.appendChild(dlgTalk);
+   
+   window.onresize = resizeProc;
+      
+   window.resizeTo(  503,  390  );
+      
+   $( 'imInput').style.left = '4px';
+   $( 'imInput').style.fontWeight = '400';
+   $( 'imInput').style.fontStyle = 'normal';
+   $( 'imInput').style.textDecoration = 'none';
+   
+   $( 'imSetFontColorColor').style.backgroundColor = '#000000';
+      
+   resizeProc();
+
+	$( 'imInput').focus(  );
+
+}
+
+function resizeProc() {
+
+	var  iBW  =  browserWidth(  );
+	var  iBH  =  browserHeight(  );
+
+   dlgTalk.style.height = (iBH - 20) + 'px';
+   dlgTalk.style.width = (iBW - 20) + 'px';
+
+   $( 'recentMsgList').style.height = (iBH - 103) + 'px';
+   $( 'recentMsgList').style.width = (iBW  *  2  /  3  - 13) + 'px';
+      
+   
+   $( 'imToolbar').style.top = (iBH - 93) + 'px';
+   $( 'imToolbar').style.width = (iBW - 10) + 'px';  
+   
+   $( 'imSetFont').style.top = (iBH - 83) + 'px';
+   
+   $( 'imSetFontSize').style.top = (iBH - 83) + 'px';
+   
+   $( 'imSetFontColor').style.top = (iBH - 83) + 'px';
+
+   $( 'imInsertEmot').style.top = (iBH - 83) + 'px';
+   
+   $( 'imInput').style.top = (iBH - 60) + 'px';
+   //  $( 'imInput').style.width = (iBW - 16) + 'px';
+   $( 'imInput').style.width = (  iBW  *  2  /  3  -  16  ) + 'px';
+   
+   var curIM = $( 'recentMsgList');
+   curIM.scrollTop = curIM.scrollHeight - curIM.clientHeight + 6;
+   
+   //  
+   $(advertisement).style.left  =  (  iBW  *  2  /  3  )  +  'px';   
+   $(advertisement).style.height  =  (  iBH  -  10  )  +  'px';
+   $(advertisement).style.width  =  (  iBW  /  3  -  6  )  +  'px';
+   
+}
+
+ function keyHandler(e) 
+{
+   var asc = document.all ? event.keyCode : e.which;
+   
+   if  (  asc  ==  13  )  {
+      procTalkTo();
+   }
+   return asc != 13;
+}
+
+function procTalkTo() 
+{
+   
+   //
+   
+   var isBold      = ($( 'imInput').style.fontWeight == '400' ? 'false' : 'true');
+   var isItalic    = ($( 'imInput').style.fontStyle == 'normal' ? 'false' : 'true');
+   var isUnderline = ($( 'imInput').style.textDecoration == 'none' ? 'false' : 'true');
+   var fontName    = $( 'imSetFont').innerHTML;
+   var fontName    = $( 'imSetFont').innerHTML;
+   var fontSize    = $( 'imSetFontSize').innerHTML;
+   var fontColor   = $( 'imSetFontColorColor').style.backgroundColor;
+
+   if(trim($("imInput").value).length > 0) {
+      var sBox = $( 'imInput').value;
+      $("imInput").value = '';
+      //
+
+      var sentText = sBox;
+      sentText = sentText.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/<([^>]+)>/ig, '').replace(/(\s|\n|^)(\w+:\/\/[^\s\n]+)/, '$1<a href="$2" target="_blank">$2</a>');
+     
+     
+      var  mySentStr  =  "<span style=\"font-family:" + fontName + ",sans-serif;font-size:" + fontSize + "px;color:" + fontColor + ";\">" + (isBold == 'true' ? "<b>" : "") + (isItalic == 'true' ? "<i>" : "") + (isUnderline == 'true' ? "<u>" : "") + sentText + (isBold == 'true' ? "</b>" : "") + (isItalic == 'true' ? "</i>" : "") + (isUnderline == 'true' ? "</u>" : "") + "</span>";
+           
+      self.opener.sendMsg(  "",  msgrId,  self.opener.getNextTranNo(  ),  "&msg="+encodeURIComponent(  mySentStr  )  );
+                   
+      sentText = self.opener.emotReplace(sentText, smilies);
+          
+       //   alert(  sentText  );
+	
+        
+      var rcvdBox = $("recentMsgList");
+      t = new Date(); var h = String(t.getHours()); var m = String(t.getMinutes()); var s = String(t.getSeconds());
+      h = (h.length > 1) ? h : "0"+h; m = (m.length > 1) ? m : "0"+m;
+
+      rcvdBox.innerHTML = rcvdBox.innerHTML + "<b>"  +  self.opener.user  +  "(" + h + ":" + m + ")"  +  ":&nbsp;</b> <span style=\"font-family:" + fontName + ",sans-serif;font-size:" + fontSize + "px;color:" + fontColor + ";\">" + (isBold == 'true' ? "<b>" : "") + (isItalic == 'true' ? "<i>" : "") + (isUnderline == 'true' ? "<u>" : "") + sentText + (isBold == 'true' ? "</b>" : "") + (isItalic == 'true' ? "</i>" : "") + (isUnderline == 'true' ? "</u>" : "") + "</span><br>\n";
+      rcvdBox.scrollTop = rcvdBox.scrollHeight - rcvdBox.clientHeight;
+        
+   }
+}
+
+function  addToRecentMsgList(  who,  sentText  )
+{
+
+    
+	try  {
+	
+      sentText = sentText.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/<([^>]+)>/ig, '').replace(/(\s|\n|^)(\w+:\/\/[^\s\n]+)/, '$1<a href="$2" target="_blank">$2</a>');
+                   
+      sentText = self.opener.emotReplace(sentText, smilies);
+        
+      var rcvdBox = $("recentMsgList");
+      t = new Date(); var h = String(t.getHours()); var m = String(t.getMinutes()); var s = String(t.getSeconds());
+      h = (h.length > 1) ? h : "0"+h; m = (m.length > 1) ? m : "0"+m;
+    
+      rcvdBox.innerHTML = rcvdBox.innerHTML + "<b>"  +  who  +  "(" + h + ":" + m + ")" +  ":&nbsp;</b> <span>"  +  sentText  + "</span><br>\n";
+      rcvdBox.scrollTop = rcvdBox.scrollHeight - rcvdBox.clientHeight;
+
+      $( 'imInput').focus();
+      
+		}
+	catch  (  e  )  {
+	}
+      
+      
+
+}
+
+
+function trim(text) {
+   if(text == null) return null;
+   return text.replace(/^[ \t]+|[ \t]+$/g, "");
+}
+
+function toggleBold() {
+   $( 'imInput').style.display = 'none'; // horrah weird Opera 9 input refresh!
+   if($( 'imInput').style.fontWeight == '400') {
+      $( 'imBold').src = 'images/bold_on.png';
+      $( 'imInput').style.fontWeight = '700';
+   } else {
+      $( 'imInput').style.fontWeight = '400';
+      $( 'imBold').src = 'images/bold_off.png';
+   }
+   $( 'imInput').style.display = 'block'; // horrah weird Opera 9 input refresh!
+   $( 'imInput').focus();
+}
+   
+function toggleItalic() {
+   $( 'imInput').style.display = 'none'; // horrah weird Opera 9 input refresh!
+   if($( 'imInput').style.fontStyle == 'normal') {
+      $( 'imInput').style.fontStyle = 'italic';
+      $( 'imItalic').src = 'images/italic_on.png';
+   } else {
+      $( 'imInput').style.fontStyle = 'normal';
+      $( 'imItalic').src = 'images/italic_off.png';
+   }
+   $( 'imInput').style.display = 'block'; // horrah weird Opera 9 input refresh!
+   $( 'imInput').focus();
+} 
+
+function toggleUnderline() {
+   $( 'imInput').style.display = 'none'; // horrah weird Opera 9 input refresh!
+   if($( 'imInput').style.textDecoration == 'none') {
+      $( 'imInput').style.textDecoration = 'underline';
+      $( 'imUnderline').src = 'images/underline_on.png';
+   } else {
+      $( 'imInput').style.textDecoration = 'none';
+      $( 'imUnderline').src = 'images/underline_off.png';
+   }
+   $( 'imInput').style.display = 'block'; // horrah weird Opera 9 input refresh!
+   $( 'imInput').focus();
+}
+
+function toggleFontList() {
+   $('emotLst').style.display = 'none';
+   $('fontSizeList').style.display = 'none';
+   $('fontColorList').style.display = 'none';
+   if($('fontsList').style.display == 'block') {
+      $('fontsList').style.display = 'none';
+   } else {
+      $('fontsList').style.left = parseInt($( 'imSetFont').offsetLeft) + 'px';
+      $('fontsList').style.top = ($( 'imToolbar').offsetTop - 94) + 'px';
+      $('fontsList').style.display = 'block';
+   }
+}
+
+function toggleFontSizeList() {
+   $('emotLst').style.display = 'none';
+   $('fontsList').style.display = 'none';
+   $('fontColorList').style.display = 'none';
+   if($('fontSizeList').style.display == 'block') {
+      $('fontSizeList').style.display = 'none';
+   } else {
+      $('fontSizeList').style.left = parseInt($( 'imSetFontSize').offsetLeft) + 'px';
+      $('fontSizeList').style.top = ($( 'imToolbar').offsetTop - 122) + 'px';
+      $('fontSizeList').style.display = 'block';
+   }
+}
+
+function toggleEmotLst() {
+   $('fontsList').style.display = 'none';
+   $('fontSizeList').style.display = 'none';
+   $('fontColorList').style.display = 'none';
+   if($('emotLst').style.display == 'block') {
+      $('emotLst').style.display = 'none';
+   } else {
+      $('emotLst').style.left = (parseInt($( 'imInsertEmot').offsetLeft) - 119) + 'px';
+      $('emotLst').style.top = ($( 'imToolbar').offsetTop - 73) + 'px';
+      $('emotLst').style.display = 'block';
+   }
+}
+
+function toggleFontColorList() {
+   $('fontsList').style.display = 'none';
+   $('fontSizeList').style.display = 'none';
+   $('emotLst').style.display = 'none';
+   if($('fontColorList').style.display == 'block') {
+      $('fontColorList').style.display = 'none';
+   } else {
+      $('fontColorList').style.left = (parseInt($( 'imSetFontColor').offsetLeft) - 69) + 'px';
+      $('fontColorList').style.top = ($( 'imToolbar').offsetTop - 43) + 'px';
+      $('fontColorList').style.display = 'block';
+   }
+}
+
+function insertText(tti) {
+   $( 'imInput').value += tti;
+   toggleEmotLst();
+   return false;
+}
+
+function setFont(fontname) {
+   $( 'imInput').style.fontFamily = fontname + ', sans-serif';
+   $( 'imSetFont').innerHTML = fontname;
+   toggleFontList('');
+}
+
+function setFontSize(size) {
+   $( 'imInput').style.fontSize = size + 'px';
+   $( 'imSetFontSize').innerHTML = size;
+   toggleFontSizeList('');
+}
+
+function setFontColor(color) {
+   $( 'imInput').style.color = color;
+   $( 'imSetFontColorColor').style.backgroundColor = color;
+   toggleFontColorList('');
+}
+
+
+
+function browserWidth() {
+   if (self.innerWidth) {
+      return self.innerWidth;
+   } else if (document.documentElement && document.documentElement.clientWidth) {
+      return document.documentElement.clientWidth;
+   } else if (document.body) {
+      return document.body.clientWidth;
+   }
+   return 630;
+}
+
+function browserHeight() {
+   if (self.innerWidth) {
+      return self.innerHeight;
+   } else if (document.documentElement && document.documentElement.clientWidth) {
+      return document.documentElement.clientHeight;
+   } else if (document.body) {
+      return document.body.clientHeight;
+   }
+   return 470;
+}
+
+window.onunload = function() {
+   self.opener.dlgTalks[msgrId] = null;   
+}
+		</script>
+		<style type="text/css">
+body {
+	overflow:hidden;
+	color: #000;
+	font-family: Tahoma, Arial, sans-serif;
+	font-size: 10px;
+	background-color:#ebe6e1;
+	background-image: none;
+	padding: 0;
+	margin: 0;
+}
+</style>
+	</head>
+	<body onload="init();" class="dlgTalk_content">
+		<!--
+		-->
+		<script>			
+		</script>
+	</body>
+</html>
+

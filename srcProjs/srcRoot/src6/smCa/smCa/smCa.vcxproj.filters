@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{9fc777cc-915a-4264-a5b4-c0941708835a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="public">
+      <UniqueIdentifier>{2096104d-4022-4fda-b8b6-64da78b5b3f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyMcPublic">
+      <UniqueIdentifier>{4e697d4c-1820-41b2-8c46-dbcb14858f40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyOpen">
+      <UniqueIdentifier>{e5f1e11c-2655-4b6b-b011-6072de50982e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qisOpen">
+      <UniqueIdentifier>{245d1f7c-e298-4d1c-bd7d-48e0d04b10e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyCommProc">
+      <UniqueIdentifier>{8700c3ff-0707-4605-b2a0-16ef21f4271d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyCommProc_mis">
+      <UniqueIdentifier>{66fc25d3-da2a-40f4-9a23-c49c58e4e050}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyCustom">
+      <UniqueIdentifier>{fa3f1711-91c6-490c-a7c9-329c001a0cb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="atCommProc_nc">
+      <UniqueIdentifier>{3962999b-e37a-4709-8590-a7666e2bb350}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AesCrypto.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cryptFunc_qmd.h">
+      <Filter>include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="public\smCaProc.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyMcPublic\qmCaProc.cpp">
+      <Filter>qyMcPublic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\qyTCharCommProc.cpp">
+      <Filter>qyOpen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\qyCommProc_open.cpp">
+      <Filter>qyOpen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qisOpen\public\tmpRegFunc_open.cpp">
+      <Filter>qisOpen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\qySyncObj.cpp">
+      <Filter>qyOpen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyCommProc\qnmCommProc.cpp">
+      <Filter>qyCommProc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyCommProc\qyDmItemCommProc.cpp">
+      <Filter>qyCommProc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyCommProc\qyCommFunc.cpp">
+      <Filter>qyCommProc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyCommProc\qwmDynFunc.cpp">
+      <Filter>qyCommProc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyCommProc\qyCommProc.cpp">
+      <Filter>qyCommProc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyCommProc\tmpCeLib.cpp">
+      <Filter>qyCommProc</Filter>
+    </ClCompile>
+    <ClCompile Include="public\hgFunc.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyCommProc_mis\isFunc.cpp">
+      <Filter>qyCommProc_mis</Filter>
+    </ClCompile>
+    <ClCompile Include="public\cryptFunc_qmd.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\qmdCrypt.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyMcPublic\qmCrypt.cpp">
+      <Filter>qyMcPublic</Filter>
+    </ClCompile>
+    <ClCompile Include="public\parseAndChkAuthFunc.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyCustom\qyCustom.cpp">
+      <Filter>qyCustom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyCommProc_mis\isProtocolFunc.cpp">
+      <Filter>qyCommProc_mis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\parseSpsPps.cpp">
+      <Filter>qyOpen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\videoFunc_open.cpp">
+      <Filter>qyOpen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyCommProc_mis\qnmCommProc_mis.cpp">
+      <Filter>qyCommProc_mis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyCommProc_mis\qyMsgFunc.cpp">
+      <Filter>qyCommProc_mis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyCommProc\qnmFwCommProc.cpp">
+      <Filter>qyCommProc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyCommProc\qyString.cpp">
+      <Filter>qyCommProc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyCommProc\qwmNetworkStatusCommProc.cpp">
+      <Filter>qyCommProc</Filter>
+    </ClCompile>
+    <ClCompile Include="public\cryptDataFunc.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\getNCardsInfo.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\atCommProc_nc\ancProtocolFunc.cpp">
+      <Filter>atCommProc_nc</Filter>
+    </ClCompile>
+    <ClCompile Include="public\hgEncFunc.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

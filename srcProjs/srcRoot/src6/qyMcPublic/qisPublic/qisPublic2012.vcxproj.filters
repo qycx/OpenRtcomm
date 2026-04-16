@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="qisPublic.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="..\..\qyCommProc\qyCommProc.cpp">
+      <Filter>qyCommProc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyCommProc\qySyncCommProc.cpp">
+      <Filter>qyCommProc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\parseSpsPps.cpp">
+      <Filter>qyCommProc_open</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\qySyncObj.cpp">
+      <Filter>qyCommProc_open</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\yv12rgb.cpp">
+      <Filter>qyCommProc_open</Filter>
+    </ClCompile>
+    <ClCompile Include="..\qyShowInfo_simple.cpp">
+      <Filter>qyMcPublic</Filter>
+    </ClCompile>
+    <ClCompile Include="public\qdcSplHelp.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyCommProc\qySharedQ.cpp">
+      <Filter>qyCommProc</Filter>
+    </ClCompile>
+    <ClCompile Include="public\qisPipe.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\qisPipe_cli.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\qisPipe_starter.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\qyPipeFunc.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\qyPipeFunc_open.cpp">
+      <Filter>qyCommProc_open</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\qyCommProc_open.cpp">
+      <Filter>qyCommProc_open</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\qyTCharCommProc.cpp">
+      <Filter>qyCommProc_open</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="..\..\..\..\qyOpen\qyCommProc_open\include\qyCommProc_open.h">
+      <Filter>qyCommProc_open\include</Filter>
+    </ClInclude>
+    <ClInclude Include="resource1.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="include\qisPipe.h">
+      <Filter>include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="public">
+      <UniqueIdentifier>{4cdd5f26-e550-42b0-8fd0-6c5b09890f53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{7e35fed1-918c-4d9a-89ba-567cc29f94f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyCommProc">
+      <UniqueIdentifier>{3f63855b-4b56-454f-b1bb-c03ac18c3ace}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyCommProc_mis">
+      <UniqueIdentifier>{8f02d54f-29ff-4e83-bf28-c8e6bec91e03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyCommProc_open">
+      <UniqueIdentifier>{d0877a83-910b-427c-ae20-b7115647a4a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyCommProc_open\include">
+      <UniqueIdentifier>{abbe7f17-7e81-4e07-b831-9005db3032ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyMcPublic">
+      <UniqueIdentifier>{38437230-db36-4cfb-b814-0b6748bcefdb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="qisPublic.rc" />
+  </ItemGroup>
+</Project>

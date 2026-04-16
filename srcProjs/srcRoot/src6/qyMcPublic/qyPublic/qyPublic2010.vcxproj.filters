@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\qySyncObj.cpp">
+      <Filter>qyCommProc_open</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyCommProc\qySyncCommProc.cpp">
+      <Filter>qyCommProc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyCommProc\qyCommProc.cpp">
+      <Filter>qyCommProc</Filter>
+    </ClCompile>
+    <ClCompile Include="public\genericqueue.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\genericHash.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\qyShowInfo_simple.cpp">
+      <Filter>qyMcPublic</Filter>
+    </ClCompile>
+    <ClCompile Include="public\qyq2.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyCommProc_mis\qyq2Help.cpp">
+      <Filter>qyCommProc_mis</Filter>
+    </ClCompile>
+    <ClCompile Include="qyCommProc_app\qy_getuiNextTranNo.cpp">
+      <Filter>qyCommProc_app</Filter>
+    </ClCompile>
+    <ClCompile Include="qyCommProc_app\qy_globals.cpp">
+      <Filter>qyCommProc_app</Filter>
+    </ClCompile>
+    <ClCompile Include="qyCommProc_app\qyMemoryFunc.cpp">
+      <Filter>qyCommProc_app</Filter>
+    </ClCompile>
+    <ClCompile Include="public\qyPublic_tmpFunc.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="qyCommProc_app\qy_myGetTickCount.cpp">
+      <Filter>qyCommProc_app</Filter>
+    </ClCompile>
+    <ClCompile Include="public\my_tcsistr.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="include\genericHash.h">
+      <Filter>include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="qyCommProc">
+      <UniqueIdentifier>{09588b2f-b233-4603-afaf-e47b69b6ae1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyCommProc_open">
+      <UniqueIdentifier>{bba5c5c2-77aa-4a98-98a2-11d45bd8219a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="public">
+      <UniqueIdentifier>{4bd6d987-b492-4d5c-b93e-2e72b7ebfb12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{c745babb-5c93-4b9b-8bd5-3b0e897cc1fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyMcPublic">
+      <UniqueIdentifier>{5e3993f2-c030-41d4-8b91-71c087d2780e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyCommProc_mis">
+      <UniqueIdentifier>{189677d9-6169-44d6-b1d4-b3c6bea3f679}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyCommProc_app">
+      <UniqueIdentifier>{5a18b7cd-2e6c-4e0d-a46e-10d1223cac12}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="qyPublic.rc" />
+  </ItemGroup>
+</Project>

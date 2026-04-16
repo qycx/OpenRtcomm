@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{f496a898-1725-475a-ab4c-9e1cc449f856}</ProjectGuid>
+    <RootNamespace>moduleaiResize</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin\</OutDir>
+    <IntDir>..\..\..\..\..\..\VS2012\$(Platform)\o\module_aiResize\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin\</OutDir>
+    <IntDir>..\..\..\..\..\..\VS2012\$(Platform)\o\module_aiResize\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;_ITERATOR_DEBUG_LEVEL=2;_DEBUG;MODULEAIRESIZE_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>.;..\resize_lib;..\..\..\..\..\..\..\TensorRT-10.13.0.35\include;$(CUDA_PATH)\include;..\..\..\..\..\..\..\opencv\opencv\build\include;..\..\qyMcMainInclude;..\..\..\qisOpen\include;..\..\qyCommProc\INCLUDE;..\..\qyMcInclude;..\..\qyInclude;..\..\..\..\qyOpen\include;..\..\qyEncLib\INCLUDE;..\..\qyCustom\INCLUDE;..\..\atCommProc_nc\include;..\..\..\..\atOpen\include;..\..\qyCommProc_mis\include;..\..\..\qyCusSrc\qyCusRes\include;..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\include;..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\include_isCli;..\..\qyMcMain_isCli_common\qyProjShare_isCli\sketchpadProj\include;..\..\..\src6\tmpInclude</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>resize_lib.lib;nvonnxparser_10.lib;nvinfer_plugin_10.lib;nvinfer_10.lib;opencv_world4100d.lib;$(CUDA_PATH)\lib\x64\cudart_static.lib;comctl32.lib;dxgi.lib;qyBaseLibNoMfc.lib;qyEncLibNoMfc.lib;ws2_32.lib;winmm.lib;vfw32.lib;strmiids.lib;Dmoguids.lib;msdmo.lib;wmcodecdspuuid.lib;dsound.lib;Msacm32.lib;help_webRtc.lib;msimg32.lib;avcodec.lib;avformat.lib;avutil.lib;swresample.lib;avfilter.lib;swscale.lib;ancPktProcess.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\resize_lib;..\..\..\..\..\..\..\TensorRT-10.13.0.35\lib;..\..\..\..\..\..\..\opencv\opencv\build\include\opencv2;..\..\..\..\..\..\..\opencv\opencv\build\x64\vc16\lib;..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\lib;..\..\..\..\..\ffmpegLibs\x64\bin;..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;_ITERATOR_DEBUG_LEVEL=2;NDEBUG;MODULEAIRESIZE_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>.;..\resize_lib;..\..\..\..\..\..\..\TensorRT-10.13.0.35\include;$(CUDA_PATH)\include;..\..\..\..\..\..\..\opencv\opencv\build\include;..\..\qyMcMainInclude;..\..\..\qisOpen\include;..\..\qyCommProc\INCLUDE;..\..\qyMcInclude;..\..\qyInclude;..\..\..\..\qyOpen\include;..\..\qyEncLib\INCLUDE;..\..\qyCustom\INCLUDE;..\..\atCommProc_nc\include;..\..\..\..\atOpen\include;..\..\qyCommProc_mis\include;..\..\..\qyCusSrc\qyCusRes\include;..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\include;..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\include_isCli;..\..\qyMcMain_isCli_common\qyProjShare_isCli\sketchpadProj\include;..\..\..\src6\tmpInclude</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>resize_lib.lib;nvonnxparser_10.lib;nvinfer_plugin_10.lib;nvinfer_10.lib;opencv_world4100d.lib;$(CUDA_PATH)\lib\x64\cudart_static.lib;comctl32.lib;dxgi.lib;qyBaseLibNoMfc.lib;qyEncLibNoMfc.lib;ws2_32.lib;winmm.lib;vfw32.lib;strmiids.lib;Dmoguids.lib;msdmo.lib;wmcodecdspuuid.lib;dsound.lib;Msacm32.lib;help_webRtc.lib;msimg32.lib;avcodec.lib;avformat.lib;avutil.lib;swresample.lib;avfilter.lib;swscale.lib;ancPktProcess.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\resize_lib;..\..\..\..\..\..\..\TensorRT-10.13.0.35\lib;..\..\..\..\..\..\..\opencv\opencv\build\include\opencv2;..\..\..\..\..\..\..\opencv\opencv\build\x64\vc16\lib;..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\lib;..\..\..\..\..\ffmpegLibs\x64\bin;..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="pch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\dbgFunc_open.cpp" />
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\fileFunc_open.cpp" />
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\mySaveBmp.cpp" />
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\nv12rgb.cpp" />
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\nv12yv12.cpp" />
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\qisSyncTex.cpp" />
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\qyCommProc_open.cpp" />
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\qySyncObj.cpp" />
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\qyTCharCommProc.cpp" />
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\timeFunc_open.cpp" />
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\videoFunc_open.cpp" />
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\yv12rgb.cpp" />
+    <ClCompile Include="..\..\qyCommProc\qnmCommProc.cpp" />
+    <ClCompile Include="..\..\qyCommProc\qwmDynFunc.cpp" />
+    <ClCompile Include="..\..\qyCommProc\qyCommFunc.cpp" />
+    <ClCompile Include="..\..\qyCommProc\qyCommProc.cpp" />
+    <ClCompile Include="..\..\qyCommProc\qyDmItemCommProc.cpp" />
+    <ClCompile Include="..\..\qyCommProc\qyLangCommProc.cpp" />
+    <ClCompile Include="..\..\qyCommProc\qyTmpMemory.cpp" />
+    <ClCompile Include="..\..\qyCommProc\tmpCeLib.cpp" />
+    <ClCompile Include="..\..\qyCommProc_mis\isFunc.cpp" />
+    <ClCompile Include="..\..\qyCommProc_mis\qyTick.cpp" />
+    <ClCompile Include="..\..\qyCustom\qyCusResHelp.cpp" />
+    <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\qmcFunc_isCli.cpp" />
+    <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\qmcSharedObj.cpp" />
+    <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\qnmMainFunc_isCli.cpp" />
+    <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\showTaskStatusFunc.cpp" />
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="public\aiResizeProc.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\..\ancExts\ancPktProcess\ancPktProcess.vcxproj">
+      <Project>{68583623-a874-43fe-aefb-1dea1607c2e0}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\isCliCore1\isCliCore1_2012.vcxproj">
+      <Project>{79f19a57-3505-4a85-8c1d-8e1fe340e33c}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\isCliCore\isCliCore2012.vcxproj">
+      <Project>{b1b80105-3cd4-4e55-a4a9-90a0ce80a336}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\qyMcPublic\qyPublic\qyPublic2012.vcxproj">
+      <Project>{aab8de7c-7262-461b-8c10-ee4fa4b1511e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\qyMcPublic\qyShowInfo\qyShowInfo2012.vcxproj">
+      <Project>{32fc6695-1451-47bf-a185-41c2d3d80bcb}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="isCliCore.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="public\get_zoneObjs_layoutInfo.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\get_zoneObjs_layoutInfo_d3d.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\zone_objs_proc.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\get_funcs_for_isCliHelp.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="resource1.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{5b873aca-4d0d-4604-964e-d6f5306d3203}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="public">
+      <UniqueIdentifier>{77d32d27-4e5b-4351-83d5-f0929265fb2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyMcMain_isCli">
+      <UniqueIdentifier>{c563cc42-523f-496b-a3e7-491f7c3a58b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyMcMainPublic_isCli">
+      <UniqueIdentifier>{7dd2bd56-75c6-4b05-9cb5-4ceab0200184}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyMcMain_isCli\public_isCli">
+      <UniqueIdentifier>{bcea77a7-aafd-443e-b262-c5ca2ab16185}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="isCliCore.rc" />
+  </ItemGroup>
+</Project>

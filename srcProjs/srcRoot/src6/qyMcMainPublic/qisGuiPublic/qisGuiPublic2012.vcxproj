@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{AAD7ED30-CC86-4F26-8C95-3CCD5B6CAA4A}</ProjectGuid>
+    <RootNamespace>qisGuiPublic</RootNamespace>
+    <Keyword>MFCDLLProj</Keyword>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin\</OutDir>
+    <IntDir>..\..\..\..\..\..\VS2012\$(Platform)\o\$(ProjectName)\$(Configuration)\</IntDir>
+    <TargetName>qisGuiPublic</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin\</OutDir>
+    <IntDir>..\..\..\..\..\..\VS2012\$(Platform)\o\$(ProjectName)\$(Configuration)\</IntDir>
+    <TargetName>qisGuiPublic</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\qyInclude;..\..\qyEncLib\include;..\..\qyMcInclude;..\..\qyMcMainInclude;.;..\..\qyCustom\include;..\..\tmpInclude;..\..\..\qyCusSrc\qyCusRes\include;..\..\qyCommProc\include;..\..\qyCommProc_mfc\include;..\..\qyCommProc_mis\include;..\..\..\..\qyOpen\include;..\qyProjShare_isCli\sketchpadProj\include;..\qyProjShare_isCli\ptzPublic\include;..\qyMcMainPublic_isCli\qySampleGrabber\include;..\qyMcMainPublic_isCli\include;..\qyMcMainPublic_isCli\isCliProcs\soundProc_aec\include;..\qyMcMainPublic_isCli\isCliProcs\soundProc_wave\include;..\qyMcMainPublic_isCli\isCliD3d\include;..\..\tmpInclude\old;..\..\..\..\live555_srcRoot\live555\qyRtspOpen\include;include;..\..\..\qisOpen\include;..\..\..\..\atOpen\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ModuleDefinitionFile>.\qisGuiPublic.def</ModuleDefinitionFile>
+      <AdditionalDependencies>qyBaseLib.lib;qyEncLib.lib;winmm.lib;vfw32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\lib</AdditionalLibraryDirectories>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\qyInclude;..\..\qyEncLib\include;..\..\qyMcInclude;..\..\qyMcMainInclude;.;..\..\qyCustom\include;..\..\tmpInclude;..\..\..\qyCusSrc\qyCusRes\include;..\..\qyCommProc\include;..\..\qyCommProc_mfc\include;..\..\qyCommProc_mis\include;..\..\..\..\qyOpen\include;..\qyProjShare_isCli\sketchpadProj\include;..\qyProjShare_isCli\ptzPublic\include;..\qyMcMainPublic_isCli\qySampleGrabber\include;..\qyMcMainPublic_isCli\include;..\qyMcMainPublic_isCli\isCliProcs\soundProc_aec\include;..\qyMcMainPublic_isCli\isCliProcs\soundProc_wave\include;..\qyMcMainPublic_isCli\isCliD3d\include;..\..\tmpInclude\old;..\..\..\..\live555_srcRoot\live555\qyRtspOpen\include;include;..\..\..\qisOpen\include;..\..\..\..\atOpen\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ModuleDefinitionFile>.\qisGuiPublic.def</ModuleDefinitionFile>
+      <AdditionalDependencies>qyBaseLib.lib;qyEncLib.lib;winmm.lib;vfw32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\lib</AdditionalLibraryDirectories>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="qisGuiPublic.def" />
+    <None Include="ReadMe.txt" />
+    <None Include="res\qisGuiPublic.rc2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\mySaveBmp.cpp" />
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\nv12rgb.cpp" />
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\parseSpsPps.cpp" />
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\qyPipeFunc_open.cpp" />
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\qySyncObj.cpp" />
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\qyTCharCommProc.cpp" />
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\rtspCliCommonFunc.cpp" />
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\videoFunc_open.cpp" />
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\yv12rgb.cpp" />
+    <ClCompile Include="..\..\qyCommProc\qnmCommProc.cpp" />
+    <ClCompile Include="..\..\qyCommProc\qnmGuiCommProc.cpp" />
+    <ClCompile Include="..\..\qyCommProc\qnmGuiCommProc2.cpp" />
+    <ClCompile Include="..\..\qyCommProc\qwmDynFunc.cpp" />
+    <ClCompile Include="..\..\qyCommProc\qyCommFunc.cpp" />
+    <ClCompile Include="..\..\qyCommProc\qyCommProc.cpp" />
+    <ClCompile Include="..\..\qyCommProc\qyDmItemCommProc.cpp" />
+    <ClCompile Include="..\..\qyCommProc\qyLangCommProc.cpp" />
+    <ClCompile Include="..\..\qyCommProc\qySharedQ.cpp" />
+    <ClCompile Include="..\..\qyCommProc\qyShowHintCommProc.cpp" />
+    <ClCompile Include="..\..\qyCommProc\qySyncCommProc.cpp" />
+    <ClCompile Include="..\..\qyCommProc\syncMtCnt.cpp" />
+    <ClCompile Include="..\..\qyCommProc\tmpCeLib.cpp" />
+    <ClCompile Include="..\..\qyCommProc_db\qySqlFunc_odbc.cpp" />
+    <ClCompile Include="..\..\qyCustom\qnmAllHints.cpp" />
+    <ClCompile Include="..\..\qyCustom\qyCusResHelp.cpp" />
+    <ClCompile Include="..\..\qyCustom\qyCustom.cpp" />
+    <ClCompile Include="..\..\qyCustom\testOnly\testOnly.cpp" />
+    <ClCompile Include="..\..\qyMcPublic\qmCommonDbFuncHelp.cpp" />
+    <ClCompile Include="public\DlgMessageBox.cpp" />
+    <ClCompile Include="public\DlgProgress.cpp" />
+    <ClCompile Include="qisGuiPublic.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\qyOpen\include\qyDefs_open.h" />
+    <ClInclude Include="..\..\..\..\qyOpen\qyCommProc_open\include\qyCommProc_open.h" />
+    <ClInclude Include="..\..\qyCommProc\INCLUDE\qySharedQ.h" />
+    <ClInclude Include="..\..\qyCommProc\INCLUDE\syncMtCnt.h" />
+    <ClInclude Include="include\DlgMessageBox.h" />
+    <ClInclude Include="include\DlgProgress.h" />
+    <ClInclude Include="qisGuiPublic.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="qisGuiPublic.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\atPublic\ancCore\ancCore.vcxproj">
+      <Project>{d597b53f-57db-4450-8f4c-7bddfd428b76}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\qyMcPublic\qyPublic\qyPublic2012.vcxproj">
+      <Project>{aab8de7c-7262-461b-8c10-ee4fa4b1511e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\qyMcPublic\qyShowInfo\qyShowInfo2012.vcxproj">
+      <Project>{32fc6695-1451-47bf-a185-41c2d3d80bcb}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

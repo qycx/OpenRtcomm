@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\qySyncObj.cpp" />
+    <ClCompile Include="..\..\qymcPublic\DlgIp.cpp" />
+    <ClCompile Include="..\..\qymcPublic\qmCommonFunc.cpp" />
+    <ClCompile Include="..\..\qymcPublic\qmUiFunc.cpp" />
+    <ClCompile Include="..\..\qymcPublic\QyPs.cpp" />
+    <ClCompile Include="DlgFilters.cpp" />
+    <ClCompile Include="DlgQyCommStatus.cpp" />
+    <ClCompile Include="qyStatusTool.cpp" />
+    <ClCompile Include="qyStatusToolProc.cpp" />
+    <ClCompile Include="statusPipeServ.cpp" />
+    <ClCompile Include="StdAfx.cpp" />
+    <ClCompile Include="..\..\qyCommProc\qnmCommProc.cpp" />
+    <ClCompile Include="..\..\qyCommProc\qnmOsAuditCommProc.cpp" />
+    <ClCompile Include="..\..\qyCommProc\qwmDynFunc.cpp" />
+    <ClCompile Include="..\..\qyCommProc\qwmNetworkStatusCommProc.cpp" />
+    <ClCompile Include="..\..\qyCommProc\qyCommProc.cpp" />
+    <ClCompile Include="..\..\qyCommProc\qyDmItemCommProc.cpp" />
+    <ClCompile Include="..\..\qyCommProc\qyLangCommProc.cpp" />
+    <ClCompile Include="..\..\qyCommProc\qyString.cpp" />
+    <ClCompile Include="..\..\qyCommProc\qySyncCommProc.cpp" />
+    <ClCompile Include="..\..\qyCommProc\qyTmpMemory.cpp" />
+    <ClCompile Include="..\..\qyCommProc\tmpCeLib.cpp" />
+    <ClCompile Include="..\..\qyCustom\qyCusResHelp.cpp" />
+    <ClCompile Include="..\..\qyCustom\qyCustom.cpp" />
+    <ClCompile Include="..\..\qyCommProc\qyCommFunc.cpp">
+      <Filter>qyCommProc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyCommProc\displayShortTime.cpp">
+      <Filter>qyCommProc</Filter>
+    </ClCompile>
+    <ClCompile Include="public\qmdProc_qyStatus.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\qyStatusDaemon.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyCommProc\qyGenericDaemon.cpp">
+      <Filter>qyCommProc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyCommProc\qyModuleFunc.cpp">
+      <Filter>qyCommProc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\ctxQyTmpl.cpp">
+      <Filter>qyOpen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyCommProc\qyMtSock.cpp">
+      <Filter>qyCommProc</Filter>
+    </ClCompile>
+    <ClCompile Include="CDlgState.cpp" />
+    <ClCompile Include="..\..\qyCommProc_mis\isFunc.cpp">
+      <Filter>qyCommProc_mis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\qyTCharCommProc.cpp">
+      <Filter>qyOpen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\qyCommProc_open.cpp">
+      <Filter>qyOpen</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DlgFilters.h" />
+    <ClInclude Include="DlgQyCommStatus.h" />
+    <ClInclude Include="qyStatusTool.h" />
+    <ClInclude Include="qyStatusToolCommon.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="..\include\DlgIp.h" />
+    <ClInclude Include="include\qyStatusDaemon.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\qyCommProc\INCLUDE\qyGenericDaemon.h">
+      <Filter>qyCommProc\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\qyOpen\include\ctxQyTmpl.h">
+      <Filter>qyOpen</Filter>
+    </ClInclude>
+    <ClInclude Include="CDlgState.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="qyStatusTool.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\qyStatusTool.ico" />
+    <None Include="res\qyStatusTool.rc2" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="qyCommProc">
+      <UniqueIdentifier>{82c45038-f018-42af-804a-a0f9b46dc250}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="public">
+      <UniqueIdentifier>{1a789170-37e5-487c-a7e1-d7b5207167ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{984f9ade-4716-442a-99f6-f5e1daeba9c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyCommProc\include">
+      <UniqueIdentifier>{7aa8f108-cd12-43e3-9437-98a71e79e4ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyOpen">
+      <UniqueIdentifier>{4fb7464d-4a3a-460b-8132-35d84215b115}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyCommProc_mis">
+      <UniqueIdentifier>{601a482c-03c4-4024-b4cd-114cf1fa9888}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\bitmap1.bmp" />
+    <Image Include="res\bitmap2.bmp" />
+  </ItemGroup>
+</Project>

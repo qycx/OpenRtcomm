@@ -1,0 +1,32 @@
+<div class="msg-wrap left" ddd="{{HTMLID}}">
+    <table style="float:left;">
+        <tr>
+           <td rowspan="2" style="vertical-align: initial;">
+                <img class="header" userid="{{USERID}}" chatType="{{TYPE}}" src="qrc:/Resources/Images/WinMain//person.png" ondragstart="return false;" onselectstart="return false;">
+            </td>
+            <td><div class="username">{{USERNAME}}</div></td>
+        </tr>
+        <tr>
+           <td>
+               <div class="left_msg">
+                <div  id="{{HTMLID}}"  class="msg_msg" ddd="{{HTMLID}}" userid = "" >
+                    <div class="fileName" style="word-break: break-all;border-bottom:3px solid #fff;padding-bottom:4px;padding-right: 50px;">
+                        <span style="font-size:15px;font-weight:bold;"> {{FILENAME}}</span>
+                        <br>
+                        <div class="filesize"> <span> {{FILESIZE}} </span> </div>
+                        <br>
+                        <div style="line-height:20px">   
+                            <img src="qrc:/Resources/Images/WinMain//file_x.png" alt="" height="20"> File
+                            <span class="progress" style="display:none; float:right;">{{PROGRESS}}</span>
+                        </div>
+                    </div> 
+                    <div class="btn" style="font-size:17px;text-align: center;font-weight:bold;">
+                        <span class="btn_do"><a href="javascript:;" onclick="fileRecv(this)" btnType="1" mid="{{HTMLID}}">{{RECE}}</a></span>
+                        <span class="open_s" style="display:none;"></span>
+                        <span class="btn_do" style="display:none;"><a href="javascript:;" onclick="fileCancel(this)"  mid="{{HTMLID}}">{{CANCEL}}</a></span>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div> 

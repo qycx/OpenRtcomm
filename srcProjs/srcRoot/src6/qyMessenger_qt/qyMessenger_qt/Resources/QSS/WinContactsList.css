@@ -1,0 +1,54 @@
+*{
+  font-family: Microsoft YaHei;
+}
+QWidget[leftbottomskin=true] 
+{
+     background-color:rgba(22,154,218,50);
+}  
+
+QWidget#WinContactsList
+{  
+    border-right: 1px solid rgba(22,154,218,100);
+    border-bottom: 1px solid rgba(22,154,218,100);
+}
+
+QPushButton#searchBtn
+{
+	 border:none;
+   background:transparent;
+}  
+ 
+QLineEdit#searchLineEdit {
+    background-color:#ffffff; 
+    border-radius:14px;
+    padding-left:5px;
+} 
+ 
+QLabel#groupName{
+	 font-size: 20px;
+   color:#000000;
+} 
+
+QWidget#WinContactItem
+{  
+    border-bottom: 1px solid rgba(22,154,218,100);
+}
+
+QWidget#headIcoBtn 
+{
+    background-color:#f2725e;
+    border-radius:27px;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+QLabel#userName {
+    font-size:18px;
+    color:#000000;
+}
+
+QLabel#signName {
+    font-size:14px;
+    color:#808080;
+}

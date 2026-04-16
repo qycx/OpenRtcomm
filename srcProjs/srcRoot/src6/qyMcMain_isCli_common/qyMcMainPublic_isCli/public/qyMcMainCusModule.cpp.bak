@@ -1,0 +1,1273 @@
+
+
+#include	"stdafx.h"
+#include	<tchar.h>
+
+#include	"qyMcMainCommon.h"
+#include	"qyMcMainCusModule.h"
+#include	"qyCusResTemp.h"
+#include	"qyVDev.h"
+#include	"myresource.h"
+#include	"qyCustom.h"
+#include	"module_qisCamCap.h"
+#include	"qdcLyraPublic.h"
+
+
+//  2015/10/03
+#include	"qyDynLib.h"
+
+#ifdef  __isCli__
+#include	"get_pf_createDXGIFactory1.h"
+		#include	"ctxQmc.h"
+#endif
+
+//
+ extern  "C"  __declspec(  dllexport  )  int  decNv_qdcInit(  QDC_MGR  *  p  );
+ extern  "C"  int  __declspec(  dllexport  )decNv_qdcExit(  QDC_MGR  *  p  );
+
+ extern  "C"  int  __declspec(  dllexport  )decNv_qdcInitDecompressVideo(  void  *  pVideoCompressorCfg_reserved,  QY_VIDEO_HEADER  *  pVh_compress,  QY_VIDEO_HEADER  *  pVh_decompress,  QDC_OBJ_INFO  *  pQdcObjInfo  );
+ extern  "C"  int  __declspec(  dllexport  )decNv_qdcExitDecompressVideo(  QDC_OBJ_INFO  *  pQdcObjInfo  );
+ extern  "C"  int  __declspec(  dllexport  )decNv_qdcDecompressVideo(  QDC_OBJ_INFO  *  pQdcObjInfo,  BITMAPINFO  *  pBmpInfo_input,  BYTE  *  pInput,  int  iSampleTimeInMs  );
+
+ //
+ extern  "C"  int  __declspec(  dllexport  )decNv_qdcDecompressVideoAndOutput(  QDC_OBJ_INFO  *  pQdcObjInfo,  BITMAPINFO  *  pBmpInfo_input,  BYTE  *  pInput,  BITMAPINFO  *  pBmpInfo_output,  BYTE  *  pOutput  );
+ extern  "C"  int  __declspec(  dllexport  )  decNv_qdcDecompressVideoRun(  QDC_OBJ_INFO  *  pQdcObjInfo  );
+ //
+ extern  "C"  int  __declspec(  dllexport  )decNv_qdcGetOutputByIndex(  QDC_OBJ_INFO  *  pQdcObjInfo,  int  index,  BYTE *  pbOutData,  unsigned  int  *  puiDataSize,  unsigned  int  *  puiSampleTimeInMs,  unsigned  int  *  pui_rtTimeLen  );
+ extern  "C"  int  __declspec(  dllexport  )decNv_qdcClearOutputs(  QDC_OBJ_INFO  *  pQdcObjInfo  );
+
+ //
+ extern  "C"  __declspec(  dllexport  )  int  encNv_qdcInit(  QDC_MGR  *  p  );
+ extern  "C"  int  __declspec(  dllexport  )encNv_qdcExit(  QDC_MGR  *  p  );
+
+ extern  "C"  int  __declspec(  dllexport  )encNv_qdcGetCompressVideoCfg(  char  *  fourccStr,  unsigned  int  size  );
+
+ extern  "C"  int  __declspec(  dllexport  )encNv_qdcInitCompressVideo(  void  *  pVideoCompressorCfg_reserved,  QY_VIDEO_HEADER  *  pVh_decompress,  QY_VIDEO_HEADER  *  pVh_compress,  QDC_OBJ_INFO  *  pQdcObjInfo  );
+ extern  "C"  int  __declspec(  dllexport  )encNv_qdcExitCompressVideo(  QDC_OBJ_INFO  *  pQdcObjInfo  );
+ extern  "C"  int  __declspec(  dllexport  )encNv_qdcCompressVideo(  QDC_OBJ_INFO  *  pQdcObjInfo,  BITMAPINFO  *  pBmpInfo_input,  BYTE  *  pInput,  int  iSampleTimeInMs  );
+ extern  "C"  int  __declspec(  dllexport  )  encNv_qdcCompressVideoRun(  QDC_OBJ_INFO  *  pQdcObjInfo  );
+ extern  "C"  __declspec(  dllexport  )  int  encNv_qdcGetSpsPps(  QDC_OBJ_INFO  *  pQdcObjInfo,  char  *  spsBuf,  unsigned  int  *  puiSpsSize,  char  *  ppsBuf,  unsigned  int  *  puiPpsSize,  char  *  kk,  unsigned  int  *  puiKkSize  );
+
+
+ //
+ extern  "C"  int  __declspec(  dllexport  )encNv_qdcGetOutputByIndex(  QDC_OBJ_INFO  *  pQdcObjInfo,  int  index,  BYTE *  pbOutData,  unsigned  int  *  puiDataSize,  unsigned  int  *  puiSampleTimeInMs,  unsigned  int  *  pui_rtTimeLen  );
+ extern  "C"  int  __declspec(  dllexport  )encNv_qdcClearOutputs(  QDC_OBJ_INFO  *  pQdcObjInfo  );
+
+
+ //  2015/10/03
+ //void  *  get_pf_CreateDXGIFactory1(  QY_ENV  *  pEnv  );
+
+#ifdef  __isCli__
+#include	"tmpFfmpegPublic.h"
+#include	"tmpAACPublic.h"
+#endif
+#include <gpuFunc.h>
+#include <nvHelpPublic.h>
+ //
+
+
+
+
+
+
+ 
+
+
+
+
+  //
+  //void  *  p0,  DEBUG_step_common  *  pDebugStepCommon,  nMyStep  //  2014/07/17
+  int  mySetDebugStep(  void  *  p0,  DEBUG_step_common  *  pDebugStep,  int  nStep  )
+{
+	//
+	if  (  !pDebugStep  )  return  -1;
+	
+	//		
+	MACRO_setMyStep(  *pDebugStep,  nStep  );
+	
+	return  0;
+}
+
+ 
+
+  //
+	//
+  int  loadCusModules(void* pQyMcParam)
+  {
+	  int					iErr = -1;
+	  int					index = 0;
+	  QY_MC* pQyMc = (QY_MC*)pQyMcParam;
+	  CUS_MODULE_U* pModule = NULL;
+	  TCHAR				tBuf[256] = _T("");
+	  unsigned  int		uiVDevId = DEFAULT_vDevId_base;
+	  //
+	  CQyRWLock			syncObj;
+	  //
+#if  0
+	  if (syncObj.wLock(pQyMc->cfg.cusModules.mutexName, pQyMc->cfg.cusModules.uiMilliSeconds_mutex_w, pQyMc->hSema_syncCusModules, pQyMc->cfg.cusModules.uiMilliSeconds_sema_w, pQyMc->cfg.cusModules.uiInitCnt_sema))  return  -1;
+#else
+	  if (syncObj.wLock(pQyMc->pRw_syncCusModules, pQyMc->cfg.cusModules.uiMilliSeconds_sema_w))  return  -1;
+#endif
+
+#ifndef  __WINCE__
+	  //  2008/01/02, 填充guiOpen
+	  pQyMc->guiOpen_vDev.pf_bGetLongProperty = NULL;	//  bGetLongProperty_open;
+	  pQyMc->guiOpen_vDev.pf_bQyOpenMcView = (PF_commonHandler)bQyOpenMcView;
+	  pQyMc->guiOpen_vDev.pf_qyMcView_delAllColumns = (PF_commonHandler)qyMcView_delAllColumns;
+	  pQyMc->guiOpen_vDev.pf_qyMcView_bAddColumns = (PF_commonHandler)qyMcView_bAddColumns;
+	  //
+	  pQyMc->guiOpen_vDev.pf_enumLvSelEventFunc = enumLvSelEventFunc;
+	  pQyMc->guiOpen_vDev.pf_getLvColContent = getLvColContent;
+	  //
+	  pQyMc->guiOpen_vDev.pf_postHint2Mgr_mc_open = NULL;	//  postHint2Mgr_mc_open;
+	  pQyMc->guiOpen_vDev.pf_postStr2Mgr_mc_open = NULL;	//  postStr2Mgr_mc_open;
+	  pQyMc->guiOpen_vDev.pf_postReq2Mgr_mc_open = NULL;	//  postReq2Mgr_mc_open;
+#endif
+
+	  //  2010/07/29
+	  pQyMc->guiOpen.g_hInst = pQyMc->g_hInst;
+	  pQyMc->guiOpen.pCusModuleDir = pQyMc->cfg.cusModuleDir;
+	  pQyMc->guiOpen.pf_showNotification = showNotification_open;
+	  pQyMc->guiOpen.pf_showInfo = showInfo_open0;
+	  //  2014/06/20
+	  pQyMc->guiOpen.pf_qPostMsg = qPostMsg;
+	  pQyMc->guiOpen.pf_qGetMsg = qGetMsg;
+	  //
+	  pQyMc->guiOpen.pf_setDebugStep = (PF_commonHandler)mySetDebugStep;	//  2014/07/17
+	  pQyMc->guiOpen.pf_getDebugStep_sth = (PF_pCommonHandler)getDebugStep_sth;
+	  //  2014/07/20
+	  pQyMc->guiOpen.ucbAppX64 = bAppX64();
+
+	  //  2015/10/03
+	  pQyMc->guiOpen.pf_CreateDXGIFactory1 = get_pf_CreateDXGIFactory1(&pQyMc->env);
+
+	  //  2015/10/30
+#ifdef  __isCli__
+	  {
+		  MC_VAR_common* pProcInfo = (MC_VAR_common*)pQyMc->get_pProcInfo();
+		  if (pProcInfo) {
+			  pQyMc->guiOpen.pf_DXUTSaveTextureToFile = (PF_DXUTSaveTextureToFile)pProcInfo->get_pf_DXUTSaveTextureToFile();
+		  }
+	  }
+#endif
+
+	  //
+	  NvHelpInfo  nvHelpInfo;
+	  memset(&nvHelpInfo, 0, sizeof(nvHelpInfo));
+	  if (getNvHelpInfo(0, 0, &nvHelpInfo)) {
+		  memset(&nvHelpInfo, 0, sizeof(nvHelpInfo));
+		  //
+		  showInfo_open(0, 0, 0, _T("getNvHelpInfo failed"));
+	  }
+	  //
+	  if (nvHelpInfo.major) {
+		  if (nvHelpInfo.major >= 6) { // 计算能力 6.x (Pascal)
+			  printf("Pascal架构，建议优先尝试: Video Codec SDK 13.1\n");
+		  }
+		  else if (nvHelpInfo.major >= 5) { // 计算能力 5.x (Maxwell)
+			  printf("Maxwell架构，建议使用: Video Codec SDK 11.1.5\n");
+			  pQyMc->bUse_videoCodecSdk11_1_5 = true;
+		  }
+		  else {
+			  printf("架构较老，建议使用: Video Codec SDK 11.1.5 或更早版本\n");
+			  pQyMc->bUse_videoCodecSdk11_1_5 = true;
+		  }
+	  }
+	  _sntprintf(tBuf, mycountof(tBuf), _T("nv: %s: major %d, minor %d, bUse_videoCodecSdk11_1_5 %d"), nvHelpInfo.name, nvHelpInfo.major, nvHelpInfo.minor, pQyMc->bUse_videoCodecSdk11_1_5);
+	  showInfo_open(0, 0, 0, tBuf);
+
+
+	  //
+#ifdef  __DEBUG__
+	    //
+#if  0
+	  pQyMc->bUse_videoCodecSdk11_1_5 = true;
+	  traceLog((TCHAR*)_T("test: set bUse_11.15 to true"));
+#endif 
+	  //
+#endif 
+
+	  //  
+	  index = 0;
+
+#ifdef  __SUPPORT_CUSMODULE_gsmModem__
+	  pModule = &pQyMc->cusModules.mems[index];
+	  pModule->common.uiType = CONST_moduleType_vDev;
+	  lstrcpyn(pModule->common.name, _T("GSM Modems"), mycountof(pModule->common.name));
+	  _sntprintf(pModule->common.path, mycountof(pModule->common.path), _T("%s%s"), pQyMc->cfg.cusModuleDir, _T("qyVDev_coms.dll"));
+	  index++;
+#endif
+#ifdef  __SUPPORT_CUSMODULE_compress__
+	  pModule = &pQyMc->cusModules.mems[index];
+	  pModule->common.uiType = CONST_moduleType_compress;
+	  lstrcpyn(pModule->common.name, _T("compress"), mycountof(pModule->common.name));
+	  _sntprintf(pModule->common.path, mycountof(pModule->common.path), _T("%s%s"), pQyMc->cfg.cusModuleDir, _T("qisCompress.dll"));
+	  index++;
+#endif
+	  //
+#ifdef  __SUPPORT_CUSMODULE_camCap__				//  2010/07/26
+#if 0
+			//
+	  tBuf[0] = 0;
+	  if (pQyMc->cfg.bGetPolicyFromIni) {
+		  if (getCfgValByNameT(pQyMc->cfg.iniFullFileName, (TCHAR*)_T(CONST_regValName_camCapDll), tBuf, mycountof(tBuf)))  tBuf[0] = 0;
+		  else {
+			  tTrim(tBuf);
+		  }
+	  }
+	  if (!tBuf[0])  safeTcsnCpy(_T("qisCamCap.dll"), tBuf, mycountof(tBuf));
+	  //
+	  pModule = &pQyMc->cusModules.mems[index];
+	  pModule->common.uiType = CONST_moduleType_camCap;
+	  lstrcpyn(pModule->common.name, _T("camCap"), mycountof(pModule->common.name));
+	  _sntprintf(pModule->common.path, mycountof(pModule->common.path), _T("%s%s"), pQyMc->cfg.cusModuleDir, tBuf);
+	  index++;
+#endif
+#endif
+
+#ifdef	__SUPPORT_CUSMODULE_ipp__				//  2011/07/31
+	  pModule = &pQyMc->cusModules.mems[index];
+	  pModule->common.uiType = CONST_moduleType_ipp;
+	  lstrcpyn(pModule->common.name, _T("ipp"), mycountof(pModule->common.name));
+	  _sntprintf(pModule->common.path, mycountof(pModule->common.path), _T("%s%s"), pQyMc->cfg.cusModuleDir, _T("h264Compress.dll"));
+	  index++;
+
+	  //  2014/03/07
+#ifdef  __DEBUG__
+#if  0
+	  _sntprintf(pModule->common.path, mycountof(pModule->common.path), _T("%s\\bin\\%s"), pQyMc->cfg.installDir, _T("h264Compress.dll"));
+	  traceLog((TCHAR*)_T("Note: for test, set ipp path to %s"), pModule->common.path);
+#endif
+#endif
+#endif
+
+#ifdef	__SUPPORT_CUSMODULE_mediaSdk__				//  2011/11/25
+	  //
+	  //  #define		CONST_fn_hdCompress				"hdCompress.dll"
+#define		CONST_fn_hdDec					"hdDec.dll"  
+#define		CONST_fn_hdEnc					"hdEnc.dll"
+	  //
+//#define		CONST_fn_hdEnc_conf				"hdEnc_conf.dll"
+		//
+#define		CONST_fn_dec_vpl				"dec_vpl.dll"  
+#define		CONST_fn_enc_vpl				"enc_vpl.dll"  
+
+
+//
+	  pModule = &pQyMc->cusModules.mems[index];
+	  pModule->common.uiType = CONST_moduleType_mediaSdk_dec;
+	  lstrcpyn(pModule->common.name, _T("mediaSdk_dec"), mycountof(pModule->common.name));
+	  _sntprintf(pModule->common.path, mycountof(pModule->common.path), _T("%s%s"), pQyMc->cfg.cusModuleDir, _T(CONST_fn_hdDec));
+	  index++;
+
+
+	  //
+	  pModule = &pQyMc->cusModules.mems[index];
+	  pModule->common.uiType = CONST_moduleType_mediaSdk_enc;
+	  lstrcpyn(pModule->common.name, _T("mediaSdk_enc"), mycountof(pModule->common.name));
+	  _sntprintf(pModule->common.path, mycountof(pModule->common.path), _T("%s%s"), pQyMc->cfg.cusModuleDir, _T(CONST_fn_hdEnc));
+	  index++;
+
+	  //
+	  pModule = &pQyMc->cusModules.mems[index];
+	  pModule->common.uiType = CONST_moduleType_dec_vpl;
+	  lstrcpyn(pModule->common.name, _T("dec_vpl"), mycountof(pModule->common.name));
+	  _sntprintf(pModule->common.path, mycountof(pModule->common.path), _T("%s%s"), pQyMc->cfg.cusModuleDir, _T(CONST_fn_dec_vpl));
+	  index++;
+
+	  //
+	  pModule = &pQyMc->cusModules.mems[index];
+	  pModule->common.uiType = CONST_moduleType_enc_vpl;
+	  lstrcpyn(pModule->common.name, _T("enc_vpl"), mycountof(pModule->common.name));
+	  _sntprintf(pModule->common.path, mycountof(pModule->common.path), _T("%s%s"), pQyMc->cfg.cusModuleDir, _T(CONST_fn_enc_vpl));
+	  index++;
+
+
+
+	  //
+#endif
+
+#ifdef  __SUPPORT_CUSMODULE_nv__					//  2012/06/17
+		//#define		CONST_fn_cuda					"hd1Compress.dll"
+
+	  //
+	  if (pQyMc->bUse_videoCodecSdk11_1_5) {
+		  //
+		  pModule = &pQyMc->cusModules.mems[index];
+		  pModule->common.uiType = CONST_moduleType_dec_nv;
+		  lstrcpyn(pModule->common.name, _T("dec_nv11.1.5"), mycountof(pModule->common.name));
+		  _sntprintf(pModule->common.path, mycountof(pModule->common.path), _T("%s%s"), pQyMc->cfg.cusModuleDir, _T("hdDec_nv11.1.5.dll"));
+		  index++;
+
+		  //
+		  pModule = &pQyMc->cusModules.mems[index];
+		  pModule->common.uiType = CONST_moduleType_enc_nv;
+		  lstrcpyn(pModule->common.name, _T("enc_nv11.1.5"), mycountof(pModule->common.name));
+		  _sntprintf(pModule->common.path, mycountof(pModule->common.path), _T("%s%s"), pQyMc->cfg.cusModuleDir, _T("hdEnc_nv11.1.5.dll"));
+		  index++;
+
+	  }
+	  else {
+
+		  //
+		  pModule = &pQyMc->cusModules.mems[index];
+		  pModule->common.uiType = CONST_moduleType_dec_nv;
+		  lstrcpyn(pModule->common.name, _T("dec_nv"), mycountof(pModule->common.name));
+		  _sntprintf(pModule->common.path, mycountof(pModule->common.path), _T("%s%s"), pQyMc->cfg.cusModuleDir, _T("hdDec_nv.dll"));
+		  index++;
+
+		  //
+		  pModule = &pQyMc->cusModules.mems[index];
+		  pModule->common.uiType = CONST_moduleType_enc_nv;
+		  lstrcpyn(pModule->common.name, _T("enc_nv"), mycountof(pModule->common.name));
+		  _sntprintf(pModule->common.path, mycountof(pModule->common.path), _T("%s%s"), pQyMc->cfg.cusModuleDir, _T("hdEnc_nv.dll"));
+		  index++;
+
+	  }
+
+	  //
+	  pModule = &pQyMc->cusModules.mems[index];
+	  pModule->common.uiType = CONST_moduleType_decD3d_nv;
+	  lstrcpyn(pModule->common.name, _T("decD3d_nv"), mycountof(pModule->common.name));
+	  _sntprintf(pModule->common.path, mycountof(pModule->common.path), _T("%s%s"), pQyMc->cfg.cusModuleDir, _T("hdDecD3d_nv.dll"));
+	  index++;
+
+	  //
+	  pModule = &pQyMc->cusModules.mems[index];
+	  pModule->common.uiType = CONST_moduleType_encD3d_nv;
+	  lstrcpyn(pModule->common.name, _T("encD3d_nv"), mycountof(pModule->common.name));
+	  _sntprintf(pModule->common.path, mycountof(pModule->common.path), _T("%s%s"), pQyMc->cfg.cusModuleDir, _T("hdEncD3d_nv.dll"));
+	  index++;
+
+#endif
+
+	  //
+#ifdef  __SUPPORT_CUSMODULE_amf__				//  2015/04/30
+		//
+	  pModule = &pQyMc->cusModules.mems[index];
+	  pModule->common.uiType = CONST_moduleType_dec_amf;
+	  lstrcpyn(pModule->common.name, _T("dec_amf"), mycountof(pModule->common.name));
+	  _sntprintf(pModule->common.path, mycountof(pModule->common.path), _T("%s%s"), pQyMc->cfg.cusModuleDir, _T("dec_amf.dll"));
+	  index++;
+
+	  //
+	  pModule = &pQyMc->cusModules.mems[index];
+	  pModule->common.uiType = CONST_moduleType_enc_amf;
+	  lstrcpyn(pModule->common.name, _T("enc_amf"), mycountof(pModule->common.name));
+	  _sntprintf(pModule->common.path, mycountof(pModule->common.path), _T("%s%s"), pQyMc->cfg.cusModuleDir, _T("enc_amf.dll"));
+	  index++;
+
+#endif
+
+	  //  
+#ifdef  __SUPPORT_CUSMODULE_vorbis__			//  2015/02/13
+		//
+	  pModule = &pQyMc->cusModules.mems[index];
+	  pModule->common.uiType = CONST_moduleType_qdc_vorbis_dec;
+	  lstrcpyn(pModule->common.name, _T("qdc_vorbis_dec"), mycountof(pModule->common.name));
+	  _sntprintf(pModule->common.path, mycountof(pModule->common.path), _T("%s%s"), pQyMc->cfg.cusModuleDir, _T("qdc_vorbis_dec.dll"));
+	  index++;
+	  //
+	  pModule = &pQyMc->cusModules.mems[index];
+	  pModule->common.uiType = CONST_moduleType_qdc_vorbis_enc;
+	  lstrcpyn(pModule->common.name, _T("qdc_vorbis_enc"), mycountof(pModule->common.name));
+	  _sntprintf(pModule->common.path, mycountof(pModule->common.path), _T("%s%s"), pQyMc->cfg.cusModuleDir, _T("qdc_vorbis_enc.dll"));
+	  index++;
+
+
+
+#endif
+
+	  //
+#ifdef  __SUPPORT_CUSMODULE_vp8__				//  2014/07/17
+		//
+	  pModule = &pQyMc->cusModules.mems[index];
+	  pModule->common.uiType = CONST_moduleType_dec_vp8;
+	  lstrcpyn(pModule->common.name, _T("dec_vp8"), mycountof(pModule->common.name));
+	  _sntprintf(pModule->common.path, mycountof(pModule->common.path), _T("%s%s"), pQyMc->cfg.cusModuleDir, _T("dec_vp8.dll"));
+	  index++;
+
+	  //
+	  pModule = &pQyMc->cusModules.mems[index];
+	  pModule->common.uiType = CONST_moduleType_enc_vp8;
+	  lstrcpyn(pModule->common.name, _T("enc_vp8"), mycountof(pModule->common.name));
+	  _sntprintf(pModule->common.path, mycountof(pModule->common.path), _T("%s%s"), pQyMc->cfg.cusModuleDir, _T("enc_vp8.dll"));
+	  index++;
+#endif
+
+	  //			  
+	  //int  qdcInitCompressAudio_ffmpeg(  void  *  pAudioCompressorCfg_reserved,  QY_AUDIO_HEADER  *  pAh_decompress,  QY_AUDIO_HEADER  *  pAh_compress,  QDC_OBJ_INFO  *  pQdcObjInfo  )
+		
+	  //
+	  pModule = &pQyMc->cusModules.mems[index];
+	  pModule->common.uiType = CONST_moduleType_ffmpeg;
+	  lstrcpyn(pModule->common.name, _T("ffmpeg"), mycountof(pModule->common.name));
+	  //_sntprintf(  pModule->common.path,  mycountof(  pModule->common.path  ),  _T(  "%s%s"  ),  pQyMc->cfg.cusModuleDir,  _T(  "dec_vp8.dll"  )  );
+	  index++;
+
+	  //
+	  pModule = &pQyMc->cusModules.mems[index];
+	  pModule->common.uiType = CONST_moduleType_aac;
+	  lstrcpyn(pModule->common.name, _T("aac"), mycountof(pModule->common.name));
+	  //_sntprintf(  pModule->common.path,  mycountof(  pModule->common.path  ),  _T(  "%s%s"  ),  pQyMc->cfg.cusModuleDir,  _T(  "dec_vp8.dll"  )  );
+	  index++;
+
+	  //
+	  pModule = &pQyMc->cusModules.mems[index];
+	  pModule->common.uiType = CONST_moduleType_lyra;
+	  lstrcpyn(pModule->common.name, _T("lyra"), mycountof(pModule->common.name));
+	  //_sntprintf(  pModule->common.path,  mycountof(  pModule->common.path  ),  _T(  "%s%s"  ),  pQyMc->cfg.cusModuleDir,  _T(  "dec_vp8.dll"  )  );
+	  index++;
+
+
+
+	  //
+	  pQyMc->cusModules.usCnt = index;
+
+	  MACRO_qyAssert(pQyMc->cusModules.usCnt <= mycountof(pQyMc->cusModules.mems), _T("Too many modules"));
+
+	  //
+	  for (index = 0; index < pQyMc->cusModules.usCnt; index++) {
+		  pModule = &pQyMc->cusModules.mems[index];
+
+		  //
+
+		  //  2014/06/19
+#ifdef  __DEBUG__  //  2017/01/07
+		  switch (pModule->common.uiType) {
+		  case  CONST_moduleType_decD3d_nv: {
+			  int  ii = 0;
+		  }
+										  break;
+		  case  CONST_moduleType_enc_vpl: {
+			  //
+			  int  ii = 0;
+			  //
+		  }
+										break;
+		  case  CONST_moduleType_dec_vp8: {
+			  int  ii = 0;
+		  }
+										break;
+		  case  CONST_moduleType_dec_nv: {
+			  int  ii = 0;
+		  }
+			  break;
+		  case  CONST_moduleType_enc_nv: {
+			  int  ii = 0;
+		  }
+			  break;
+		  default:
+			  break;
+		  }
+#endif
+
+		  //  2014/06/19
+		  if (pModule->common.bLoaded) {
+			  continue;
+		  }
+
+		  if (pModule->common.path[0]) {
+			  if (!(pModule->common.hModule = LoadLibrary(pModule->common.path))) {
+				  _sntprintf(tBuf, mycountof(tBuf), _T("vvFailed to load (%s)"), pModule->common.path);
+				  showInfo_open0(0, 0, tBuf);
+#ifdef  __DEBUG__
+				  traceLog((TCHAR*)_T("Failed to load the module %s ( %s )"), pModule->common.name, pModule->common.path);
+#endif
+				  continue;
+			  }
+		  }
+		  pModule->common.bLoaded = TRUE;
+
+		  switch (pModule->common.uiType) {
+		  case  CONST_moduleType_vDev:
+			  pModule->vDev.pf_qyVDev_getPtrProperty = (PF_commonHandler)myGetProcAddress(pModule->common.hModule, "qyVDev_getPtrProperty");
+			  pModule->vDev.pf_qyVDev_getInfo = (PF_commonHandler)myGetProcAddress(pModule->common.hModule, "qyVDev_getInfo");
+			  pModule->vDev.pf_qyVDev_getCfg = (PF_commonHandler)myGetProcAddress(pModule->common.hModule, "qyVDev_getCfg");
+			  pModule->vDev.pf_qyVDev_chkBeforeInit = (PF_commonHandler)myGetProcAddress(pModule->common.hModule, "qyVDev_chkBeforeInit");
+			  pModule->vDev.pf_qyVDev_chkAfterInit = (PF_commonHandler)myGetProcAddress(pModule->common.hModule, "qyVDev_chkAfterInit");
+			  pModule->vDev.pf_qyVDev_op = (PF_commonHandler)myGetProcAddress(pModule->common.hModule, "qyVDev_op");
+			  pModule->vDev.pf_qyVDev_postStr2Dev = (PF_qyVDev_postStr2Dev)myGetProcAddress(pModule->common.hModule, "qyVDev_postStr2Dev");
+			  pModule->vDev.pf_qyVDev_postData2Dev = (PF_qyVDev_postData2Dev)myGetProcAddress(pModule->common.hModule, "qyVDev_postData2Dev");
+			  pModule->vDev.pf_qyVDev_init = (PF_commonHandler)myGetProcAddress(pModule->common.hModule, "qyVDev_init");
+			  pModule->vDev.pf_qyVDev_start = (PF_commonHandler)myGetProcAddress(pModule->common.hModule, "qyVDev_start");
+			  pModule->vDev.pf_qyVDev_stop = (PF_commonHandler)myGetProcAddress(pModule->common.hModule, "qyVDev_stop");
+			  pModule->vDev.pf_qyVDev_exit = (PF_commonHandler)myGetProcAddress(pModule->common.hModule, "qyVDev_exit");
+			  pModule->vDev.pf_qyVDev_isSendable = (PF_bCommonHandler)myGetProcAddress(pModule->common.hModule, "qyVDev_isSendable");
+
+			  if (!pModule->vDev.pf_qyVDev_getPtrProperty)  goto  errLabel;
+			  QY_VDEV* pVDev;
+			  if (!(pVDev = (QY_VDEV*)pModule->vDev.pf_qyVDev_getPtrProperty(0, (void*)CONST_qyPropertyId_vDev, 0)))  goto  errLabel;
+			  //
+			  pVDev->uiVDevId = uiVDevId;	uiVDevId++;	//  这是为了识别vDev的需要
+			  //
+			  pVDev->hModule = pModule->common.hModule;
+			  pVDev->pGuiOpen = &pQyMc->guiOpen_vDev;
+			  //
+			  break;
+		  case  CONST_moduleType_compress:
+		  case  CONST_moduleType_ipp:
+		  case  CONST_moduleType_mediaSdk_dec:
+		  case  CONST_moduleType_mediaSdk_enc:
+		  case  CONST_moduleType_mediaSdk_enc_conf:
+			  //
+		  case  CONST_moduleType_dec_vpl:
+		  case  CONST_moduleType_enc_vpl:
+			  //
+		  case  CONST_moduleType_dec_amf:			//  2015/04/30
+		  case  CONST_moduleType_enc_amf:
+			  //
+		  case  CONST_moduleType_dec_nv:				//  2017/01/07
+		  case  CONST_moduleType_decD3d_nv:
+		  case  CONST_moduleType_enc_nv:
+		  case  CONST_moduleType_encD3d_nv:
+			  //
+		  //case  CONST_moduleType_cuda:
+		  case  CONST_moduleType_qdc_vorbis_dec:		//  2015/02/13
+		  case  CONST_moduleType_qdc_vorbis_enc:		//  2015/02/13
+			  //
+		  case  CONST_moduleType_dec_vp8:			//  2014/07/19
+		  case  CONST_moduleType_enc_vp8:
+			  //
+			  pModule->compress.pf_qdcInit = (PF_qdcInit)myGetProcAddress(pModule->common.hModule, "qdcInit");
+			  pModule->compress.pf_qdcExit = (PF_qdcExit)myGetProcAddress(pModule->common.hModule, "qdcExit");
+
+			  //  2015/10/20
+			  pModule->compress.pf_qdcGetProp = (PF_qdcGetProp)myGetProcAddress(pModule->common.hModule, "qdcGetProp");
+			  //  2016/04/09
+			  pModule->compress.pf_qdcSetProp = (PF_qdcSetProp)myGetProcAddress(pModule->common.hModule, "qdcSetProp");
+			  if (pModule->compress.pf_qdcSetProp) {
+				  int  ii = 0;
+			  }
+
+			  //
+			  pModule->compress.pf_qdcGetCompressAudioCfg = (PF_qdcGetCompressAudioCfg)myGetProcAddress(pModule->common.hModule, "qdcGetCompressAudioCfg");
+			  pModule->compress.pf_qdcGetCompressVideoCfg = (PF_qdcGetCompressVideoCfg)myGetProcAddress(pModule->common.hModule, "qdcGetCompressVideoCfg");
+
+			  pModule->compress.pf_qdcInitCompressAudio = (PF_qdcInitCompressAudio)myGetProcAddress(pModule->common.hModule, "qdcInitCompressAudio");
+			  pModule->compress.pf_qdcExitCompressAudio = (PF_qdcExitCompressAudio)myGetProcAddress(pModule->common.hModule, "qdcExitCompressAudio");
+			  pModule->compress.pf_qdcCompressAudio = (PF_qdcCompressAudio)myGetProcAddress(pModule->common.hModule, "qdcCompressAudio");
+			  //  2016/12/05
+			  pModule->compress.pf_qdcCompressAudioRun = (PF_qdcCompressAudioRun)myGetProcAddress(pModule->common.hModule, "qdcCompressAudioRun");
+
+			  //
+			  pModule->compress.pf_qdcInitDecompressAudio = (PF_qdcInitDecompressAudio)myGetProcAddress(pModule->common.hModule, "qdcInitDecompressAudio");
+			  pModule->compress.pf_qdcExitDecompressAudio = (PF_qdcExitDecompressAudio)myGetProcAddress(pModule->common.hModule, "qdcExitDecompressAudio");
+			  pModule->compress.pf_qdcDecompressAudio = (PF_qdcDecompressAudio)myGetProcAddress(pModule->common.hModule, "qdcDecompressAudio");
+			  //  2016/12/05
+			  pModule->compress.pf_qdcDecompressAudioRun = (PF_qdcDecompressAudioRun)myGetProcAddress(pModule->common.hModule, "qdcDecompressAudioRun");
+
+
+			  //
+			  pModule->compress.pf_qdcInitCompressVideo = (PF_qdcInitCompressVideo)myGetProcAddress(pModule->common.hModule, "qdcInitCompressVideo");
+			  pModule->compress.pf_qdcExitCompressVideo = (PF_qdcExitCompressVideo)myGetProcAddress(pModule->common.hModule, "qdcExitCompressVideo");
+			  pModule->compress.pf_qdcCompressVideo = (PF_qdcCompressVideo)myGetProcAddress(pModule->common.hModule, "qdcCompressVideo");
+			  pModule->compress.pf_qdcCompressVideoRun = (PF_qdcCompressVideoRun)myGetProcAddress(pModule->common.hModule, "qdcCompressVideoRun");	//  2014/04/02
+			  pModule->compress.pf_qdcGetSpsPps = (PF_qdcGetSpsPps)myGetProcAddress(pModule->common.hModule, "qdcGetSpsPps");	//  2014/03/30
+			  //
+			  pModule->compress.pf_qdcInitDecompressVideo = (PF_qdcInitDecompressVideo)myGetProcAddress(pModule->common.hModule, "qdcInitDecompressVideo");
+			  pModule->compress.pf_qdcExitDecompressVideo = (PF_qdcExitDecompressVideo)myGetProcAddress(pModule->common.hModule, "qdcExitDecompressVideo");
+			  pModule->compress.pf_qdcDecompressVideo = (PF_qdcDecompressVideo)myGetProcAddress(pModule->common.hModule, "qdcDecompressVideo");
+
+			  //  2011/12/10
+			  pModule->compress.pf_qdcDecompressVideoAndOutput = (PF_qdcDecompressVideoAndOutput)myGetProcAddress(pModule->common.hModule, "qdcDecompressVideoAndOutput");
+
+			  //  2014/03/28
+			  pModule->compress.pf_qdcDecompressVideoRun = (PF_qdcDecompressVideoRun)myGetProcAddress(pModule->common.hModule, "qdcDecompressVideoRun");
+
+			  //
+			  pModule->compress.pf_qdcGetOutputByIndex = (PF_qdcGetOutputByIndex)myGetProcAddress(pModule->common.hModule, "qdcGetOutputByIndex");
+			  pModule->compress.pf_qdcClearOutputs = (PF_qdcClearOutputs)myGetProcAddress(pModule->common.hModule, "qdcClearOutputs");
+
+			  break;
+		  case  CONST_moduleType_ffmpeg: {
+			  //
+			  pModule->compress.pf_qdcInit = qdcInit_ffmpeg;
+			  pModule->compress.pf_qdcExit = qdcExit_ffmpeg;
+
+			  //				   
+			  pModule->compress.pf_qdcInitCompressVideo = qdcInitCompressVideo_ffmpeg;
+			  pModule->compress.pf_qdcExitCompressVideo = qdcExitCompressVideo_ffmpeg;
+			  pModule->compress.pf_qdcGetSpsPps = qdcGetSpsPps_ffmpeg;
+			  pModule->compress.pf_qdcCompressVideo = qdcCompressVideo_ffmpeg;
+
+			  //
+			  pModule->compress.pf_qdcInitDecompressVideo = qdcInitDecompressVideo_ffmpeg;
+			  pModule->compress.pf_qdcExitDecompressVideo = qdcExitDecompressVideo_ffmpeg;
+			  pModule->compress.pf_qdcDecompressVideo = qdcDecompressVideo_ffmpeg;
+
+			  //
+			  pModule->compress.pf_qdcInitCompressAudio = qdcInitCompressAudio_ffmpeg;
+			  pModule->compress.pf_qdcExitCompressAudio = qdcExitCompressAudio_ffmpeg;
+			  pModule->compress.pf_qdcCompressAudio = qdcCompressAudio_ffmpeg;
+			  pModule->compress.pf_qdcCompressAudioRun = qdcCompressAudioRun_ffmpeg;
+			  pModule->compress.pf_qdcGetOutputByIndex = qdcGetOutputByIndex_ffmpeg;
+			  pModule->compress.pf_qdcClearOutputs = qdcClearOutputs_ffmpeg;
+			  //
+			  pModule->compress.pf_qdcInitDecompressAudio = qdcInitDecompressAudio_ffmpeg;
+			  pModule->compress.pf_qdcExitDecompressAudio = qdcExitDecompressAudio_ffmpeg;
+			  pModule->compress.pf_qdcDecompressAudio = qdcDecompressAudio_ffmpeg;
+			  pModule->compress.pf_qdcCompressAudioRun = qdcDecompressAudioRun_ffmpeg;
+
+		  }
+									   break;
+		  case  CONST_moduleType_lyra: {
+			  //
+			  pModule->compress.pf_qdcInit = qdcInit_lyra;
+			  pModule->compress.pf_qdcExit = qdcExit_lyra;
+
+			  //
+			  pModule->compress.pf_qdcInitCompressAudio = qdcInitCompressAudio_lyra;
+			  pModule->compress.pf_qdcExitCompressAudio = qdcExitCompressAudio_lyra;
+			  pModule->compress.pf_qdcCompressAudio = qdcCompressAudio_lyra;
+			  pModule->compress.pf_qdcCompressAudioRun = qdcCompressAudioRun_lyra;
+			  pModule->compress.pf_qdcGetOutputByIndex = qdcGetOutputByIndex_lyra;
+			  pModule->compress.pf_qdcClearOutputs = qdcClearOutputs_lyra;
+			  //
+			  pModule->compress.pf_qdcInitDecompressAudio = qdcInitDecompressAudio_lyra;
+			  pModule->compress.pf_qdcExitDecompressAudio = qdcExitDecompressAudio_lyra;
+			  pModule->compress.pf_qdcDecompressAudio = qdcDecompressAudio_lyra;
+			  pModule->compress.pf_qdcCompressAudioRun = qdcDecompressAudioRun_lyra;
+
+		  }
+									 //
+									 break;
+
+		  case CONST_moduleType_aac: {
+			  pModule->compress.pf_qdcInit = qdcInit_aac;
+			  pModule->compress.pf_qdcExit = qdcExit_aac;
+
+			  pModule->compress.pf_qdcGetOutputByIndex = qdcGetOutputByIndex_aac;
+			  pModule->compress.pf_qdcClearOutputs = qdcClearOutputs_aac;
+
+			  pModule->compress.pf_qdcInitDecompressAudio = qdcInitDecompressAudio_aac;
+			  pModule->compress.pf_qdcExitDecompressAudio = qdcExitDecompressAudio_aac;
+			  pModule->compress.pf_qdcDecompressAudio = qdcDecompressAudio_aac;
+			  pModule->compress.pf_qdcCompressAudioRun = qdcDecompressAudioRun_aac;
+		  }
+								   break;
+		  case  CONST_moduleType_camCap:
+			  if (sizeof(MODULE_camCap) > sizeof(pModule[0]))  goto  errLabel;
+			  MODULE_camCap* pCamCap;	pCamCap = (MODULE_camCap*)pModule;
+
+			  pCamCap->pf_setGuiOpen = (PF_setGuiOpen)myGetProcAddress(pModule->common.hModule, "setGuiOpen");
+
+			  //
+			  pCamCap->pf_doInitRecordSound = (PF_doInitRecordSound)myGetProcAddress(pModule->common.hModule, "doInitRecordSound");
+			  pCamCap->pf_doExitRecordSound = (PF_doExitRecordSound)myGetProcAddress(pModule->common.hModule, "doExitRecordSound");
+
+			  //
+			  pCamCap->pf_initVideoCapDev = (PF_initVideoCapDev)myGetProcAddress(pModule->common.hModule, "initVideoCapDev");
+			  pCamCap->pf_exitVideoCapDev = (PF_exitVideoCapDev)myGetProcAddress(pModule->common.hModule, "exitVideoCapDev");
+			  pCamCap->pf_bGetCapturePara = (PF_bGetCapturePara)myGetProcAddress(pModule->common.hModule, "bGetCapturePara");
+			  pCamCap->pf_startCapture = (PF_startCapture)myGetProcAddress(pModule->common.hModule, "startCapture");
+			  pCamCap->pf_stopCapture = (PF_stopCapture)myGetProcAddress(pModule->common.hModule, "stopCapture");
+
+#ifdef  __DEBUG__
+#if  0
+			  //  for test
+			  pCamCap->pf_initVideoCapDev = initVideoCapDev_dx;
+			  pCamCap->pf_exitVideoCapDev = exitVideoCapDev_dx;
+			  pCamCap->pf_bGetCapturePara = bGetCapturePara_dx;
+			  pCamCap->pf_startCapture = startCapture_dx;
+			  pCamCap->pf_stopCapture = stopCapture_dx;
+#endif
+#endif
+
+			  traceLog((TCHAR*)_T("module camCap loaded"));
+			  //
+			  break;
+		  default:
+			  break;
+		  }
+
+		  //
+		  continue;
+	  }
+
+	  //
+#if  0
+	  pQyMc->cusModules.pIpp = getCusModule(&pQyMc->cusModules, CONST_moduleType_ipp);
+#endif 
+
+	  //
+	  pQyMc->cusModules.pMediaSdk_dec = getCusModule(&pQyMc->cusModules, CONST_moduleType_mediaSdk_dec);
+	  pQyMc->cusModules.pMediaSdk_enc = getCusModule(&pQyMc->cusModules, CONST_moduleType_mediaSdk_enc);
+	  //pQyMc->cusModules.pMediaSdk_enc_conf = getCusModule(&pQyMc->cusModules, CONST_moduleType_mediaSdk_enc_conf);
+	  //
+	  pQyMc->cusModules.pDec_vpl = getCusModule(&pQyMc->cusModules, CONST_moduleType_dec_vpl);
+	  pQyMc->cusModules.pEnc_vpl = getCusModule(&pQyMc->cusModules, CONST_moduleType_enc_vpl);
+
+
+	  //  
+	  pQyMc->cusModules.pDec_nv = getCusModule(&pQyMc->cusModules, CONST_moduleType_dec_nv);
+	  pQyMc->cusModules.pDecD3d_nv = getCusModule(&pQyMc->cusModules, CONST_moduleType_decD3d_nv);
+	  pQyMc->cusModules.pEnc_nv = getCusModule(&pQyMc->cusModules, CONST_moduleType_enc_nv);
+	  pQyMc->cusModules.pEncD3d_nv = getCusModule(&pQyMc->cusModules, CONST_moduleType_encD3d_nv);
+
+	  //  2015/04/30
+	  pQyMc->cusModules.pDec_amf = getCusModule(&pQyMc->cusModules, CONST_moduleType_dec_amf);
+	  pQyMc->cusModules.pEnc_amf = getCusModule(&pQyMc->cusModules, CONST_moduleType_enc_amf);
+
+
+	  //  2015/02/13
+	  pQyMc->cusModules.pQdc_vorbis_dec = getCusModule(&pQyMc->cusModules, CONST_moduleType_qdc_vorbis_dec);
+	  pQyMc->cusModules.pQdc_vorbis_enc = getCusModule(&pQyMc->cusModules, CONST_moduleType_qdc_vorbis_enc);
+
+
+	  //  2014/07/18 
+	  pQyMc->cusModules.pDec_vp8 = getCusModule(&pQyMc->cusModules, CONST_moduleType_dec_vp8);
+	  pQyMc->cusModules.pEnc_vp8 = getCusModule(&pQyMc->cusModules, CONST_moduleType_enc_vp8);
+
+	  //
+	  pQyMc->cusModules.pFfmpeg = getCusModule(&pQyMc->cusModules, CONST_moduleType_ffmpeg);
+
+	  pQyMc->cusModules.pAAC = getCusModule(&pQyMc->cusModules, CONST_moduleType_aac);
+
+	  //
+	  pQyMc->cusModules.pLyra = getCusModule(&pQyMc->cusModules, CONST_moduleType_lyra);
+
+
+	  //
+	  PARAM_getModuleInfo param_getModuleInfo;
+	  memset(&param_getModuleInfo, 0, sizeof(param_getModuleInfo));
+	  if (pQyMc->cusModules.pEnc_vpl) {
+		  CUS_MODULE_U* pModule = pQyMc->cusModules.pEnc_vpl;
+		  if (pModule && pModule->common.bLoaded) {
+			  if (pModule->compress.pf_qdcGetSpsPps) {
+				  //
+				  pModule->compress.pf_qdcGetProp(CONST_adcPropId_getModuleInfo, mynull, &param_getModuleInfo);
+				  //
+				  _sntprintf(tBuf, mycountof(tBuf), _T("vpl apiVer: %d.%d"), (int)param_getModuleInfo.usMajor, (int)param_getModuleInfo.usMinor);
+				  showInfo_open(0, 0, 0, tBuf);
+				  //
+				  int  ii = 0;
+			  }
+		  }
+	  }
+	  //
+	  bool bUse_msdk;  bUse_msdk = true;
+	  //
+	  bool bIntelGpu;
+	  UINT deviceId;
+	  deviceId = 0;
+	  bIntelGpu = bDetectIntelGPU(deviceId);
+	  if (bIntelGpu) {
+		  int gen;
+		  gen = getIntelGPUGen(deviceId);
+		  //
+		  _sntprintf(tBuf, mycountof(tBuf), _T("intelGrp gen: %d."), gen);
+		  showInfo_open(0, 0, 0, tBuf);
+
+		  //  为判断是否使用vpl, 还需要检查api版本号。只有>=2.2才能用vpl. 否则，用msdk
+		  //
+		  if (gen >= 9
+			  &&  param_getModuleInfo.usMajor  >=2
+			  //&&  param_getModuleInfo.usMinor >=2  
+			  )
+		  {
+			  bUse_msdk = false;
+		  }
+	  }
+	  //
+#ifdef  __DEBUG__
+	  //
+	  if (0) {
+		  //showInfo_open(0, 0, 0, _T("test: bUse_msdk set to true"));
+		  //bUse_msdk = true;
+	  }
+	  //
+#endif 
+
+	  //
+	  pQyMc->bUse_msdk = bUse_msdk;
+	  //
+	  //
+	  if (  bUse_msdk  ) {
+		  showInfo_open(0, 0, 0, _T("use msdk"));
+	  }
+	  else {
+		  showInfo_open(0, 0, 0, _T("use vpl"));
+
+	  }
+
+	  
+
+
+	  //  2014/06/19
+#if  0
+	  myMessageBox(0, _T("Fake dec_nv as msdk_dec"), _T("Test"), MB_OK);
+	  pQyMc->cusModules.pMediaSdk_dec = pQyMc->cusModules.pDec_nv;
+#endif
+
+	  //
+	  iErr = 0;
+
+  errLabel:
+
+#ifdef  __DEBUG__
+	  traceLog((TCHAR*)_T("loadCusModule leaves %s"), iErr ? _T("failed") : _T("ok"));
+#endif
+
+	  return  iErr;
+  }
+
+
+  //
+  int  initCusModules(void* pProcInfoParam)
+  {
+	  int						iErr = -1;
+
+	  MC_VAR_common* pProcInfo = (MC_VAR_common*)pProcInfoParam;
+	  if (!pProcInfo)  return  -1;
+	  QY_MC* pQyMc = (QY_MC*)pProcInfo->pQyMc;
+	  if (!pQyMc)  return  -1;
+
+	  int						index = 0;
+	  CUS_MODULE_U* pModule = NULL;
+
+	  CQyRWLock		syncObj;
+	  //
+#if  0
+	  if (syncObj.wLock(pQyMc->cfg.cusModules.mutexName, pQyMc->cfg.cusModules.uiMilliSeconds_mutex_w, pQyMc->hSema_syncCusModules, pQyMc->cfg.cusModules.uiMilliSeconds_sema_w, pQyMc->cfg.cusModules.uiInitCnt_sema))  return  -1;
+#else
+	  if (syncObj.wLock(pQyMc->pRw_syncCusModules, pQyMc->cfg.cusModules.uiMilliSeconds_sema_w))  return  -1;
+#endif
+
+
+	  for (index = 0; index < pQyMc->cusModules.usCnt; index++) {
+		  pModule = &pQyMc->cusModules.mems[index];
+		  //
+		  //  if  (  !pModule->common.hModule  )  continue;
+		  if (!pModule->common.bLoaded)  continue;
+
+		  switch (pModule->common.uiType) {
+		  case  CONST_moduleType_vDev:
+			  if (pModule->vDev.pf_qyVDev_getCfg && pModule->vDev.pf_qyVDev_getCfg(0, 0, 0))  goto  errLabel;
+			  if (pModule->vDev.pf_qyVDev_chkBeforeInit && pModule->vDev.pf_qyVDev_chkBeforeInit(0, 0, 0))  goto  errLabel;
+			  if (pModule->vDev.pf_qyVDev_init && pModule->vDev.pf_qyVDev_init(0, 0, 0))  goto  errLabel;
+			  pModule->vDev.ucbVDevInited = TRUE;
+			  if (pModule->vDev.pf_qyVDev_chkAfterInit && pModule->vDev.pf_qyVDev_chkAfterInit(0, 0, 0))  goto  errLabel;
+			  break;
+		  case  CONST_moduleType_camCap: {
+			  MODULE_camCap* pCamCap = (MODULE_camCap*)pModule;
+			  if (pCamCap->pf_setGuiOpen)  pCamCap->pf_setGuiOpen(&pQyMc->guiOpen);
+		  }
+									   break;
+
+		  case  CONST_moduleType_compress:
+		  case  CONST_moduleType_ipp:
+			  //
+		  case  CONST_moduleType_mediaSdk_dec:
+		  case  CONST_moduleType_mediaSdk_enc:
+		  case  CONST_moduleType_mediaSdk_enc_conf:
+			  //
+		  case  CONST_moduleType_dec_nv:
+		  case  CONST_moduleType_decD3d_nv:
+		  case  CONST_moduleType_enc_nv:
+		  case  CONST_moduleType_encD3d_nv:
+			  //
+		  case  CONST_moduleType_dec_amf:
+		  case  CONST_moduleType_enc_amf:
+			  //
+		  case  CONST_moduleType_qdc_vorbis_dec:
+		  case  CONST_moduleType_qdc_vorbis_enc:
+			  //
+		  case  CONST_moduleType_dec_vp8:
+		  case  CONST_moduleType_enc_vp8:
+			  //
+		  case CONST_moduleType_ffmpeg:
+			  //
+
+		  default:
+			  //
+			  if (pModule->common.uiType == CONST_moduleType_decD3d_nv) {
+				  int jj = 0;
+			  }
+
+			  //
+			  pModule->compress.mgr.pGuiOpen = &pQyMc->guiOpen;
+			  //
+			  if (pModule->compress.pf_qdcInit && pModule->compress.pf_qdcInit(&pModule->compress.mgr))  goto  errLabel;
+			  pModule->compress.ucbInited = TRUE;
+			  break;
+		  }
+	  }
+
+
+	  for (index = 0; index < pQyMc->cusModules.usCnt; index++) {
+		  pModule = &pQyMc->cusModules.mems[index];
+		  //
+		  switch (pModule->common.uiType) {
+		  case  CONST_moduleType_vDev:
+			  if (pModule->vDev.ucbVDevInited) {
+				  QY_VDEV* pVDev;
+
+				  if (!(pVDev = (QY_VDEV*)pModule->vDev.pf_qyVDev_getPtrProperty(0, (void*)CONST_qyPropertyId_vDev, 0)))  goto  errLabel;
+
+				  if (pQyMc->iServiceId == CONST_qyServiceId_is) {
+#if  0
+					  MC_VAR_isCli* pProcInfo = (MC_VAR_isCli*)pSci->pVar;
+					  if (!pProcInfo)  goto  errLabel;
+
+					  //  此标志的存在，是为了决定是否PhoneMsgrList下载。2008/02/01
+					  if (pModule->vDev.pf_qyVDev_isSendable && pModule->vDev.pf_qyVDev_isSendable(0, (void*)CONST_objType_phoneMessenger, NULL))  pProcInfo->bPhoneModuleLoaded = TRUE;
+					  //
+#endif
+				  }
+				  break;
+			  }
+		  }
+	  }
+
+	  //  2014/12/06
+#define		CONST_ver_dec_vp8			"02650115"	//"02620301"
+#define		CONST_ver_enc_vp8			"02650115"	//"02620301"
+
+	  TCHAR  tBuf[128];
+	  if (strcmp(pQyMc->cusModules.pDec_vp8->compress.mgr.ver, CONST_ver_dec_vp8)) {
+		  _sntprintf(tBuf, mycountof(tBuf), _T("decVp8 ver err: loaded is %s. correct is %s"), CQyString(pQyMc->cusModules.pDec_vp8->compress.mgr.ver), CQyString((char*)CONST_ver_dec_vp8));
+		  showNotification_open(0, 0, 0, tBuf);
+	  }
+	  if (strcmp(pQyMc->cusModules.pEnc_vp8->compress.mgr.ver, CONST_ver_enc_vp8)) {
+		  _sntprintf(tBuf, mycountof(tBuf), _T("encVp8 ver err: loaded is %s. correct is %s"), CQyString(pQyMc->cusModules.pEnc_vp8->compress.mgr.ver), CQyString((char*)CONST_ver_enc_vp8));
+		  showNotification_open(0, 0, 0, tBuf);
+	  }
+
+	  //
+#define		CONST_ver_dec_msdk			"02660251"	//  2017/1007	//  "02650115"	//	2016/04/10,2015/11/02,2015/10/18	//  2015/10/08	//  "02622836"	//"02620301"
+//
+#define		CONST_ver_enc_msdk			"02660254"	//"02660251"	//  2017/10/07	//  "02650115"	//  2016/04/10	//  "02630246"	//	2015/11/02,2015/10/17	//  2015/10/04	//  "02617701"
+
+//
+#define		CONST_ver_ipp				"02660142"	//  2017/08/20	"02650115"	//  2015/11/02,2015/10/05	//  "02620301"	//	2014/05/13,"025982";		// 2014/02/27,"02592301";		//  2013/03/06,"02550501";  2012/11/12
+
+	//
+#define		CONST_ver_dec_nv			"02660777"	//  2017/12/19	"02650115"	//  2015/11/02,2015/10/18	//  2015/10/08,		"02622853"	//  2015/04/30
+#define		CONST_ver_enc_nv			"02660777"	//  2017/12/19	"02650115"	//  2015/11/02,2015/10/18	//  2015/10/08,		"02622853"	//  2015/04/30
+
+	//
+#define		CONST_ver_dec_amf			"02650115"	//  2015/11/02,2015/10/18	//  2015/10/08,		"02622853"	//  2015/04/30
+#define		CONST_ver_enc_amf			"02650115"	//  2015/11/02,2015/10/18	//  2015/10/08,		"02622853"	//  2015/04/30
+
+#define		CONST_ver_vorbis_dec			"02650117"	//  2016/12/16
+#define		CONST_ver_vorbis_enc			"02650117"	//  2016/12/16
+	//  2015/04/28
+	//  这里差了nv的版本比较
+
+	//  2014/12/24
+	  if (pQyMc->cusModules.pMediaSdk_dec && pQyMc->cusModules.pMediaSdk_dec->common.bLoaded) {
+		  if (strcmp(pQyMc->cusModules.pMediaSdk_dec->compress.mgr.ver, CONST_ver_dec_msdk)) {
+			  _sntprintf(tBuf, mycountof(tBuf), _T("dec_msdk ver err:"));
+			  showNotification_open(0, 0, 0, tBuf);
+		  }
+	  }
+	  if (pQyMc->cusModules.pMediaSdk_enc && pQyMc->cusModules.pMediaSdk_enc->common.bLoaded) {
+		  if (strcmp(pQyMc->cusModules.pMediaSdk_enc->compress.mgr.ver, CONST_ver_enc_msdk)) {
+			  _sntprintf(tBuf, mycountof(tBuf), _T("enc_msdk ver err:"));
+			  showNotification_open(0, 0, 0, tBuf);
+		  }
+	  }
+#if  0
+	  if (pQyMc->cusModules.pMediaSdk_enc_conf && pQyMc->cusModules.pMediaSdk_enc_conf->common.bLoaded) {
+		  if (strcmp(pQyMc->cusModules.pMediaSdk_enc_conf->compress.mgr.ver, CONST_ver_enc_conf_msdk)) {
+			  _sntprintf(tBuf, mycountof(tBuf), _T("enc_conf_msdk ver err:"));
+			  showNotification_open(0, 0, 0, tBuf);
+		  }	  
+	  }
+#endif 
+	  //  2017/01/08
+	  if (pQyMc->cusModules.pDec_nv && pQyMc->cusModules.pDec_nv->common.bLoaded) {
+		  if (strcmp(pQyMc->cusModules.pDec_nv->compress.mgr.ver, CONST_ver_dec_nv)) {
+			  _sntprintf(tBuf, mycountof(tBuf), _T("dec_nv ver err:"));
+			  //showNotification_open(  0,  0,  0,  tBuf  );
+			  showInfo_open0(0, 0, tBuf);
+		  }
+	  }
+	  if (pQyMc->cusModules.pEnc_nv && pQyMc->cusModules.pEnc_nv->common.bLoaded) {
+		  if (strcmp(pQyMc->cusModules.pEnc_nv->compress.mgr.ver, CONST_ver_enc_nv)) {
+			  _sntprintf(tBuf, mycountof(tBuf), _T("enc_nv ver err:"));
+			  //showNotification_open(  0,  0,  0,  tBuf  );
+			  showInfo_open0(0, 0, tBuf);
+		  }
+	  }
+	  //
+#define		CONST_ver_decD3d_nv		"02661256"
+#define		CONST_ver_encD3d_nv		"02661256"
+	  //
+	  if (pQyMc->cusModules.pDecD3d_nv && pQyMc->cusModules.pDecD3d_nv->common.bLoaded) {
+		  if (strcmp(pQyMc->cusModules.pDecD3d_nv->compress.mgr.ver, CONST_ver_decD3d_nv)) {
+			  _sntprintf(tBuf, mycountof(tBuf), _T("decD3d_nv ver err:"));
+			  //showNotification_open(  0,  0,  0,  tBuf  );
+			  showInfo_open0(0, 0, tBuf);
+		  }
+	  }
+	  //
+	  if (pQyMc->cusModules.pEncD3d_nv && pQyMc->cusModules.pEncD3d_nv->common.bLoaded) {
+		  if (strcmp(pQyMc->cusModules.pEncD3d_nv->compress.mgr.ver, CONST_ver_encD3d_nv)) {
+			  _sntprintf(tBuf, mycountof(tBuf), _T("encD3d_nv ver err:"));
+			  //showNotification_open(  0,  0,  0,  tBuf  );
+			  showInfo_open0(0, 0, tBuf);
+		  }
+	  }
+
+
+	  //  2015/04/30
+	  if (pQyMc->cusModules.pDec_amf && pQyMc->cusModules.pDec_amf->common.bLoaded) {
+		  if (strcmp(pQyMc->cusModules.pDec_amf->compress.mgr.ver, CONST_ver_dec_amf)) {
+			  _sntprintf(tBuf, mycountof(tBuf), _T("dec_amf ver err:"));
+			  showNotification_open(0, 0, 0, tBuf);
+		  }
+	  }
+	  if (pQyMc->cusModules.pEnc_amf && pQyMc->cusModules.pEnc_amf->common.bLoaded) {
+		  if (strcmp(pQyMc->cusModules.pEnc_amf->compress.mgr.ver, CONST_ver_enc_amf)) {
+			  _sntprintf(tBuf, mycountof(tBuf), _T("enc_amf ver err:"));
+			  showNotification_open(0, 0, 0, tBuf);
+		  }
+	  }
+
+	  //
+#if  0
+	  if (pQyMc->cusModules.pIpp && pQyMc->cusModules.pIpp->common.bLoaded) {
+		  if (strcmp(pQyMc->cusModules.pIpp->compress.mgr.ver, CONST_ver_ipp)) {
+			  _sntprintf(tBuf, mycountof(tBuf), _T("ipp ver err: loaded is %s. correct is %s"), CQyString(pQyMc->cusModules.pIpp->compress.mgr.ver), CQyString((char*)CONST_ver_ipp));
+			  showNotification_open(0, 0, 0, tBuf);
+		  }
+	  }
+#endif 
+
+	  //  2016/12/16
+	  if (pQyMc->cusModules.pQdc_vorbis_dec && pQyMc->cusModules.pQdc_vorbis_dec->common.bLoaded) {
+		  if (strcmp(pQyMc->cusModules.pQdc_vorbis_dec->compress.mgr.ver, CONST_ver_vorbis_dec)) {
+			  _sntprintf(tBuf, mycountof(tBuf), _T("vorbis_dec ver err: loaded is %s. correct is %s"), CQyString(pQyMc->cusModules.pQdc_vorbis_dec->compress.mgr.ver), CQyString((char*)CONST_ver_vorbis_dec));
+			  showNotification_open(0, 0, 0, tBuf);
+		  }
+	  }
+	  if (pQyMc->cusModules.pQdc_vorbis_enc && pQyMc->cusModules.pQdc_vorbis_enc->common.bLoaded) {
+		  if (strcmp(pQyMc->cusModules.pQdc_vorbis_enc->compress.mgr.ver, CONST_ver_vorbis_enc)) {
+			  _sntprintf(tBuf, mycountof(tBuf), _T("vorbis_enc ver err: loaded is %s. correct is %s"), CQyString(pQyMc->cusModules.pQdc_vorbis_enc->compress.mgr.ver), CQyString((char*)CONST_ver_vorbis_enc));
+			  showNotification_open(0, 0, 0, tBuf);
+		  }
+	  }
+
+
+
+#ifdef  __DEBUG__
+
+#endif
+
+	  iErr = 0;
+  errLabel:
+	  return  iErr;
+
+  }
+
+
+
+  int  startCusModules(void* pQyMcParam)
+  {
+	  int					iErr = -1;
+	  int					index = 0;
+	  QY_MC* pQyMc = (QY_MC*)pQyMcParam;
+	  CUS_MODULE_U* pModule = NULL;
+
+	  CQyRWLock		syncObj;
+	  //
+#if  0
+	  if (syncObj.wLock(pQyMc->cfg.cusModules.mutexName, pQyMc->cfg.cusModules.uiMilliSeconds_mutex_w, pQyMc->hSema_syncCusModules, pQyMc->cfg.cusModules.uiMilliSeconds_sema_w, pQyMc->cfg.cusModules.uiInitCnt_sema))  return  -1;
+#else
+	  if (syncObj.wLock(pQyMc->pRw_syncCusModules, pQyMc->cfg.cusModules.uiMilliSeconds_sema_w))  return  -1;
+#endif
+
+	  for (index = 0; index < pQyMc->cusModules.usCnt; index++) {
+		  pModule = &pQyMc->cusModules.mems[index];
+		  //
+		  //  if  (  !pModule->common.hModule  )  continue;
+		  if (!pModule->common.bLoaded)  continue;
+
+		  switch (pModule->common.uiType) {
+		  case  CONST_moduleType_vDev:
+			  if (pModule->vDev.ucbVDevStarted)  continue;
+			  if (!pModule->vDev.ucbVDevInited)  goto  errLabel;
+			  //
+			  if (pModule->vDev.pf_qyVDev_start && pModule->vDev.pf_qyVDev_start(0, 0, 0))  goto  errLabel;
+			  pModule->vDev.ucbVDevStarted = TRUE;
+			  break;
+		  default:
+			  break;
+		  }
+	  }
+
+
+	  iErr = 0;
+  errLabel:
+	  return  iErr;
+  }
+
+  int  stopCusModules(void* pQyMcParam)
+  {
+	  int					iErr = -1;
+	  int					index = 0;
+	  QY_MC* pQyMc = (QY_MC*)pQyMcParam;
+	  CUS_MODULE_U* pModule = NULL;
+
+	  CQyRWLock		syncObj;
+	  //
+#if  0
+	  if (syncObj.wLock(pQyMc->cfg.cusModules.mutexName, pQyMc->cfg.cusModules.uiMilliSeconds_mutex_w, pQyMc->hSema_syncCusModules, pQyMc->cfg.cusModules.uiMilliSeconds_sema_w, pQyMc->cfg.cusModules.uiInitCnt_sema))  return  -1;
+#else
+	  if (syncObj.wLock(pQyMc->pRw_syncCusModules, pQyMc->cfg.cusModules.uiMilliSeconds_sema_w))  return  -1;
+#endif
+
+	  for (index = 0; index < pQyMc->cusModules.usCnt; index++) {
+		  pModule = &pQyMc->cusModules.mems[index];
+		  //
+		  //  if  (  !pModule->common.hModule  )  continue;
+		  if (!pModule->common.bLoaded)  continue;
+
+
+		  switch (pModule->common.uiType) {
+		  case  CONST_moduleType_vDev:
+			  if (pModule->vDev.ucbVDevStarted) {
+				  if (pModule->vDev.pf_qyVDev_stop && pModule->vDev.pf_qyVDev_stop(0, 0, 0))  goto  errLabel;
+				  pModule->vDev.ucbVDevStarted = FALSE;
+			  }
+			  break;
+		  default:
+			  break;
+		  }
+	  }
+
+
+	  iErr = 0;
+  errLabel:
+	  return  iErr;
+  }
+
+
+  int  unloadCusModules(void* pQyMcParam)
+  {
+	  int					index = 0;
+	  QY_MC* pQyMc = (QY_MC*)pQyMcParam;
+	  CUS_MODULE_U* pModule = NULL;
+
+	  stopCusModules(pQyMcParam);
+
+	  CQyRWLock		syncObj;
+	  //
+#if  0
+	  if (syncObj.wLock(pQyMc->cfg.cusModules.mutexName, pQyMc->cfg.cusModules.uiMilliSeconds_mutex_w, pQyMc->hSema_syncCusModules, pQyMc->cfg.cusModules.uiMilliSeconds_sema_w, pQyMc->cfg.cusModules.uiInitCnt_sema))  return  -1;
+#else
+	  if (syncObj.wLock(pQyMc->pRw_syncCusModules, pQyMc->cfg.cusModules.uiMilliSeconds_sema_w))  return  -1;
+#endif
+
+	  //
+	  for (index = 0; index < pQyMc->cusModules.usCnt; index++) {
+		  pModule = &pQyMc->cusModules.mems[index];
+		  //
+		  //  if  (  !pModule->common.hModule  )  continue;
+		  if (!pModule->common.bLoaded)  continue;
+
+		  switch (pModule->common.uiType) {
+		  case  CONST_moduleType_vDev:
+			  //
+			  if (pModule->vDev.ucbVDevInited) {
+				  if (pModule->vDev.pf_qyVDev_exit)  pModule->vDev.pf_qyVDev_exit(0, 0, 0);
+				  pModule->vDev.ucbVDevInited = FALSE;
+			  }
+			  break;
+		  case  CONST_moduleType_compress:
+		  case  CONST_moduleType_ipp:
+		  case  CONST_moduleType_mediaSdk_dec:
+		  case  CONST_moduleType_mediaSdk_enc:
+		  case  CONST_moduleType_mediaSdk_enc_conf:
+			  //case  CONST_moduleType_cuda:
+		  case  CONST_moduleType_dec_nv:
+		  case  CONST_moduleType_enc_nv:
+			  //
+		  case  CONST_moduleType_dec_amf:	//  2015/04/30
+		  case  CONST_moduleType_enc_amf:
+			  //
+		  case  CONST_moduleType_dec_vp8:
+		  case  CONST_moduleType_enc_vp8:
+			  //
+		  case CONST_moduleType_ffmpeg:
+		  case CONST_moduleType_aac:
+			  //
+		  default:
+			  //
+			  if (pModule->compress.ucbInited) {
+				  if (pModule->compress.pf_qdcExit)  pModule->compress.pf_qdcExit(&pModule->compress.mgr);
+				  pModule->compress.ucbInited = FALSE;
+			  }
+			  break;
+
+		  }
+
+		  if (pModule->common.hModule) {
+			  FreeLibrary(pModule->common.hModule);  pModule->common.hModule = NULL;
+		  }
+		  pModule->common.bLoaded = FALSE;	//  2014/06/19
+	  }
+
+	  return  0;
+  }
+
+
+
+ 
+
+
+ //
+ int  myVDev_postStr2Dev(  void  *  pQyMcParam,  char  *  idStr_from,  time_t  tStartTime,  unsigned  int  uiTranNo,  unsigned  int  uiSeqNo,  LPCTSTR  str,  unsigned  int  uiDevType_to,  WCHAR  *  wDevIdStr_to,  WCHAR  *  wForwardPath,  HWND  hWnd_notify,  int  iUsrData  )
+{
+	int					iErr		=	-1;
+	QY_MC			*	pQyMc		=	(  QY_MC  *  )pQyMcParam;//
+	CUS_MODULE_U	*	pModule		=	NULL;
+
+	CQyRWLock		syncObj;
+	//
+#if  0
+	if  (  syncObj.rLock(  pQyMc->cfg.cusModules.mutexName,  pQyMc->cfg.cusModules.uiMilliSeconds_mutex_r,  pQyMc->hSema_syncCusModules,  pQyMc->cfg.cusModules.uiMilliSeconds_sema_r  )  )  return  -1;
+#else
+	if  (  syncObj.rLock(  pQyMc->pRw_syncCusModules,  pQyMc->cfg.cusModules.uiMilliSeconds_sema_r  )  )  return  -1;
+#endif
+
+	if  (  !(  pModule  =  getCusModule(  &pQyMc->cusModules,  CONST_moduleType_vDev,  0,  uiDevType_to,  wDevIdStr_to  )  )  )  goto  errLabel;
+
+	if  (  pModule->vDev.pf_qyVDev_postStr2Dev  &&  pModule->vDev.pf_qyVDev_postStr2Dev(  idStr_from,  tStartTime,  uiTranNo,  uiSeqNo,  str,  uiDevType_to,  wDevIdStr_to,  wForwardPath,  hWnd_notify,  iUsrData  )  )  goto  errLabel;
+	
+	iErr  =  0;
+errLabel:
+	return  iErr;
+
+}
+  
+
+
+ int  myVDev_postData2Dev(  void  *  pQyMcParam,  unsigned  int  uiVDevId,  char  *  idStr_from,  time_t  tStartTime,  unsigned  int  uiTranNo,  unsigned  int  uiSeqNo,  void  *  pQyVDevData,  unsigned  int  uiDataLen,  unsigned  int  uiDevType_to,  WCHAR  *  wDevIdStr_to,  unsigned  int  uiDevIndex  )
+{
+	int					iErr		=	-1;
+	QY_MC			*	pQyMc		=	(  QY_MC  *  )pQyMcParam;//
+	CUS_MODULE_U	*	pModule		=	NULL;
+
+	CQyRWLock		syncObj;
+	//
+#if  0
+	if  (  syncObj.rLock(  pQyMc->cfg.cusModules.mutexName,  pQyMc->cfg.cusModules.uiMilliSeconds_mutex_r,  pQyMc->hSema_syncCusModules,  pQyMc->cfg.cusModules.uiMilliSeconds_sema_r  )  )  return  -1;
+#else
+	if  (  syncObj.rLock(  pQyMc->pRw_syncCusModules,  pQyMc->cfg.cusModules.uiMilliSeconds_sema_r  )  )  return  -1;
+#endif
+	
+	if  (  !(  pModule  =  getCusModule(  &pQyMc->cusModules,  CONST_moduleType_vDev,  uiVDevId,  0,  0  )  )  )  goto  errLabel;
+
+	if  (  pModule->vDev.pf_qyVDev_postData2Dev  &&  pModule->vDev.pf_qyVDev_postData2Dev(   idStr_from,  tStartTime,  uiTranNo,  uiSeqNo,  pQyVDevData,  uiDataLen,  uiDevType_to,  wDevIdStr_to,  uiDevIndex  )  )  goto  errLabel;
+
+	iErr  =  0;
+errLabel:
+	return  iErr;
+
+}
+
+
+
