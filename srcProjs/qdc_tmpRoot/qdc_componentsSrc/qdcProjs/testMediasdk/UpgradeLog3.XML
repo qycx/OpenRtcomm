@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="testMediasdk">
+</Property><Property Name="Solution File" Value="D:\qycx4\develop6\srcProjs\qdc_tmpRoot\componentsSrc\qdcProjs\testMediasdk\testMediasdk.sln">
+</Property><Property Name="Date" Value="2014年3月21日">
+</Property><Property Name="Time" Value="10:17:23">
+</Property><Property Name="Log Number" Value="3">
+</Property></Properties><Event ErrorLevel="0" Project="testMediasdk" Source="testMediasdk.vcproj" Description="Converting project file 'D:\qycx4\develop6\srcProjs\qdc_tmpRoot\componentsSrc\qdcProjs\testMediasdk\testMediasdk.vcproj'.">
+</Event><Event ErrorLevel="1" Project="testMediasdk" Source="testMediasdk.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="1" Project="testMediasdk" Source="testMediasdk.vcproj" Description="MSB8012: $(TargetPath) ('D:\qycx4\develop6\srcProjs\qdc_tmpRoot\componentsSrc\qdcProjs\testMediasdk\.\..\..\..\Win32\Debug\cusModule\testMediasdk.exe') does not match the Linker's OutputFile property value '.\..\..\..\Win32\Debug\cusModule\testMediasdk.exe' ('D:\qycx4\develop6\srcProjs\qdc_tmpRoot\Win32\Debug\cusModule\testMediasdk.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).">
+</Event><Event ErrorLevel="1" Project="testMediasdk" Source="testMediasdk.vcproj" Description="MSB8012: $(TargetPath) ('D:\qycx4\develop6\srcProjs\qdc_tmpRoot\componentsSrc\qdcProjs\testMediasdk\.\..\..\..\Win32\Release\cusModule\testMediasdk.exe') does not match the Linker's OutputFile property value '.\..\..\..\Win32\Release\cusModule\testMediasdk.exe' ('D:\qycx4\develop6\srcProjs\qdc_tmpRoot\Win32\Release\cusModule\testMediasdk.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).">
+</Event><Event ErrorLevel="0" Project="testMediasdk" Source="testMediasdk.vcproj" Description="Done converting to new project file 'D:\qycx4\develop6\srcProjs\qdc_tmpRoot\componentsSrc\qdcProjs\testMediasdk\testMediasdk.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="testMediasdk" Source="testMediasdk.vcproj" Description="Converted">
+</Event></UpgradeLog>

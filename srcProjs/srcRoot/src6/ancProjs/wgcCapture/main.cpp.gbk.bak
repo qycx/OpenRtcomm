@@ -1,0 +1,165 @@
+
+#include <windows.h>
+#include <iostream>
+#include <thread>
+#include <chrono>
+
+#include <winrt/base.h>
+
+#include "D3DHelpers.h"
+#include "Capture.h"
+#include    "Readback.h"
+#include    "Bitmap.h"
+
+//
+int iimain()
+{
+    winrt::init_apartment();
+
+    //
+    Readback readback;
+
+    std::vector<unsigned char> pixels;
+
+    int w, h;
+
+    std::cout << "Windows Graphics Capture Demo\n";
+
+    auto last =
+        std::chrono::steady_clock::now();
+
+    int frames = 0;
+
+    //
+    // 创建 D3D11
+    //
+    D3DHelpers d3d;
+
+    if (!d3d.Initialize())
+    {
+        std::cout
+            << "D3D initialize failed\n";
+
+        return -1;
+    }
+
+
+    std::cout
+        << "D3D OK\n";
+
+
+    //
+    // 创建 Capture
+    //
+    WGCCapture capture;
+
+
+    if (!capture.Initialize(d3d))
+    {
+        std::cout
+            << "Capture initialize failed\n";
+
+        return -1;
+    }
+
+
+    capture.Start();
+
+
+    std::cout
+        << "Capture started\n";
+
+
+    //
+    // 主循环
+    //
+    while (true)
+    {
+        winrt::com_ptr<ID3D11Texture2D> texture;
+
+#if  0
+        if (capture.GetFrame(texture))
+        {
+            std::cout
+                << "Frame received\n";
+        }
+#endif 
+        //
+        if (capture.GetFrame(texture))
+        {
+            if (readback.Copy(
+                d3d.Device(),
+                d3d.Context(),
+                texture.get(),
+                pixels,
+                w,
+                h))
+            {
+                std::cout
+                    << "CPU Frame "
+                    << w
+                    << "x"
+                    << h
+                    << "\n";
+
+                //
+                static bool saved = false;
+
+                if (!saved)
+                {
+                    SaveBMP(
+                        L"d:\\tttbbb\\screen.bmp",
+                        pixels.data(),
+                        w,
+                        h);
+
+                    saved = true;
+
+                    std::cout
+                        << "BMP saved\n";
+                }
+
+                //
+            }
+        }
+
+        //
+        frames++;
+
+        auto now =
+            std::chrono::steady_clock::now();
+
+
+        auto ms =
+            std::chrono::duration_cast<
+            std::chrono::milliseconds>
+            (now - last).count();
+
+
+        if (ms >= 1000)
+        {
+            std::cout
+                << "FPS="
+                << frames
+                << "\n";
+
+
+            frames = 0;
+            last = now;
+        }
+
+
+        //
+        // 控制一下 CPU
+        //
+        std::this_thread::sleep_for(
+            std::chrono::milliseconds(5));
+    }
+
+
+    capture.Stop();
+
+
+    return 0;
+}
+

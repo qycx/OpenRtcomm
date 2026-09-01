@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Intel C++ Project"
+	Version="12.1"
+	Name="testIpp"
+	ProjectGUID="{CB61BA50-6AE3-41C4-B427-ABBF067C5369}"
+	VCNestedProjectGUID="{FB19F37E-643E-483C-877A-AF7C7DC00479}"
+	VCNestedProjectFileName="testIpp.vcproj"
+	>
+	<Configurations/>
+	<Files/>
+</VisualStudioProject>

@@ -1,0 +1,175 @@
+
+
+
+#include	"stdafx.h"
+
+#include	<qstring.h>
+
+
+
+
+#include "CQmcLogin.h"
+
+#include	"qyCusResTemp.h"
+
+#include "ctxQmc.h"
+
+#include	"qmcCommFunc_isCli.h"
+#include	"isCliHelpPublic.h"
+#include	"ctxQmc_sm.h"
+#include <qmcVideoCapture_isCli.h>
+
+
+
+//
+extern  "C"  BOOL  bServConnected_mis(QY_ENV * pEnv, char* serverIp, unsigned  short  serverPort, void* pParam, int  serviceId, char* ver, QY_ENC_CTX * pCommEncCtx, __int64  i64StartTime_base,  SOCK_TIMEOUT * pTo);
+int  doMisCntLogon(MIS_CNT* pMisCnt, MIS_CHANNEL* pChannel, HWND    hDlg, TCHAR* respHint, int  cntof_respHint);
+BOOL  bAutoRun(BOOL  bNoAutoLogon, int iServerNo, TCHAR* pUsr, TCHAR* pPasswd);
+
+
+//
+BOOL  bAnotherInstanceExists(QY_MC* pQyMc, LPCTSTR  appObjPrefix);
+
+
+
+
+
+
+//
+BOOL CALLBACK myEnumWindowsProc_singleInstance(HWND hwnd, LPARAM lParam);
+
+
+void  GetSpecialIpcConf(TCHAR* smCfgFile, IpcProcInitCfg* pCfg)
+{
+
+	TCHAR  cfgVal[128] = { '\0' };
+
+	//USB Video Device
+	pCfg->m_iNvrLog = 0;
+	if (getCfgValByNameT(smCfgFile, (TCHAR*)CONST_cfgName_NvrLog, cfgVal, mycountof(cfgVal)) == 0) {
+		tTrim(cfgVal);
+		pCfg->m_iNvrLog = _ttol(cfgVal);
+	}
+	
+	pCfg->m_iDevType = 0;
+	if (getCfgValByNameT(smCfgFile, (TCHAR*)CONST_cfgName_devType, cfgVal, mycountof(cfgVal)) == 0) {
+		tTrim(cfgVal);
+		pCfg->m_iDevType = _ttol(cfgVal);
+	}
+}
+
+//
+//int sm_afterMcClientLogonOK(HWND  hDlgQmcLogin, DLG_mcClientLogon_var& m_var)
+int sm_afterMcClientLogonOK()
+{
+	int iErr = -1;
+	CCtxQyMc* pQyMc = QY_GET_GBUF();
+	CCtxQmc_sm* pProcInfo = (CCtxQmc_sm*)pQyMc->get_pProcInfo();
+
+	
+
+	//
+	pQyMc->cfg.db.iDbType = CONST_dbType_myDb;
+
+	//
+	QM_dbFuncs* pDbFuncs = pQyMc->p_g_dbFuncs;
+	if (!pDbFuncs)  return  -1;// goto  errLabel;
+	QM_dbFuncs& g_dbFuncs = *pDbFuncs;
+
+
+	//
+	//
+	if (0 != getProcedObjsCfg(pQyMc)) goto errLabel;
+
+	if (initQyMcDb(0, 0, &getProcedObjDbs(pQyMc)[pQyMc->iDsnIndex_mainSys])) {
+#ifdef  __DEBUG__
+		traceLogA((char*)"initQyMc: initQyMcDb failed.");
+#endif
+		goto  errLabel;
+	}
+	pQyMc->gui.pDb = getProcedObjDbs(pQyMc)[pQyMc->iDsnIndex_mainSys].pDb;
+	//  2013/01/30
+	pQyMc->setQmDbFuncs(pQyMc->cfg.db.iDbType, &g_dbFuncs);
+
+	//
+	pProcInfo->m_var.pDBManager = pProcInfo->DBManager_new();
+	if (pProcInfo->m_var.pDBManager == mynull)goto  errLabel;
+	if (pProcInfo->initDBManager(pProcInfo->m_var.pDBManager))  goto  errLabel;
+
+
+	//
+	if (!loadCusModules(pQyMc)) {
+		pQyMc->bCusModulesLoaded = TRUE;
+		//  2007/12/31
+		if (initCusModules(pQyMc)) {
+			qyShowInfo1(CONST_qyShowType_qwmComm, 0, (char*)(""), _T("IsClient"), 0, _T(""), _T(""), _T("initCusModules failed."));
+			goto  errLabel;
+		}
+		if (startCusModules(pQyMc)) {
+			qyShowInfo1(CONST_qyShowType_qwmComm, 0, (char*)(""), _T("IsClient"), 0, _T(""), _T(""), _T("startCusModules failed."));
+			goto  errLabel;
+		}
+		//
+		qyShowInfo1(CONST_qyShowType_qwmComm, 0, (char*)(""), _T("IsClient"), 0, _T(""), _T(""), _T("loadCusModules ok."));
+	}
+
+
+	//
+	if (pQyMc->iAppType == CONST_qyAppType_client)
+	{
+		//  要在登陆后立即运行此函数. 2011/10/22
+		if (initPolicyAvParams() != 0) goto errLabel;
+	}
+
+	if (pProcInfo->m_iCtxType != CONST_ctxType_qmc) goto errLabel;
+
+	POLICY_isClient policy;
+	if (0 == getPolicyIsClient(pProcInfo, &policy))
+	{
+		pProcInfo->cfg.policy = policy;
+	}
+
+	//
+	bGetIpcProcInitCfg(pQyMc->cfg.ipcProcInitFile, &pProcInfo->cfg.ipcProcInitCfg);
+	GetSpecialIpcConf(pQyMc->cfg.smCfgFile, &pProcInfo->cfg.ipcProcInitCfg);
+
+	bGetShareProcInitCfg(pQyMc->cfg.shareProcInitFile, &pProcInfo->cfg.shareProcInitCfg);
+
+
+	//
+	showInfo_open0(0, mynull, _T("doMcClientLogon: before start threadProcs"));
+
+	int  i;
+	DWORD  dwThreadDaemonId;
+	for (i = 0; i < mycountof(pQyMc->hDaemonThreads); i++) {
+		if (pQyMc->threadProcs[i]) {
+			pQyMc->hDaemonThreads[i] = CreateThread(NULL, 0, pQyMc->threadProcs[i], pQyMc, 0, &dwThreadDaemonId);
+			if (pQyMc->hDaemonThreads[i] == NULL) goto errLabel;
+		}
+	}
+
+
+	//
+	showInfo_open0(0, mynull, _T("doMcClientLogon: after start threadProcs"));
+
+
+
+	//
+	iErr = 0;
+
+errLabel:
+
+	if (0 != iErr)
+	{
+		qmcLogoff();
+	}
+
+
+
+	return iErr;
+}
+
+
+
+
+

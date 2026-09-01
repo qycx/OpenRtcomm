@@ -1,0 +1,137 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: assetMgrModule - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x804 /fo"..\..\..\..\..\o\assetMgrModule\Debug/assetMgrModule.res" /d "_DEBUG" /d "_AFXDLL" "H:\qycx4\Develop6\srcRoot\src6\PROJECTS\netMc\assetMgr\assetMgrModule\assetMgrModule.rc"" 
+Creating temporary file "G:\DOCUME~1\TESTAD~1\LOCALS~1\Temp\RSP2B8.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /I "..\..\..\..\asrInclude" /I "..\..\..\..\qyInclude" /I "..\..\..\..\qyPublic\include" /I "..\include" /I "include" /I "." /I "..\..\..\..\qyCommProc\include" /I "..\..\..\..\qyEncLib\include" /I "..\..\..\..\qyCustom\include" /I "..\..\..\..\qyPublic2\include" /I "..\..\..\..\tmpInclude" /I "..\..\..\..\..\qyOpen\qyCommProc_open\include" /I "..\..\..\..\qyCommProc_mis\include" /D "_DEBUG" /D "WIN32" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_MBCS" /D "_USRDLL" /D "_UNICODE" /D "UNICODE" /D WINVER=0x0400 /Fr"..\..\..\..\..\o\assetMgrModule\Debug/" /Fp"..\..\..\..\..\o\assetMgrModule\Debug/assetMgrModule.pch" /Yu"stdafx.h" /Fo"..\..\..\..\..\o\assetMgrModule\Debug/" /Fd"..\..\..\..\..\o\assetMgrModule\Debug/" /FD /GZ /c 
+"H:\qycx4\Develop6\srcRoot\src6\PROJECTS\netMc\assetMgr\assetMgrModule\assetMgrModule.cpp"
+"H:\qycx4\Develop6\srcRoot\src6\PROJECTS\netMc\assetMgr\assetMgrModule\AssetMgrModuleDaemon.cpp"
+"H:\qycx4\Develop6\srcRoot\src6\PROJECTS\netMc\assetMgr\assetMgrModule\assetMgrModuleProc.cpp"
+]
+Creating command line "cl.exe @G:\DOCUME~1\TESTAD~1\LOCALS~1\Temp\RSP2B8.tmp" 
+Creating temporary file "G:\DOCUME~1\TESTAD~1\LOCALS~1\Temp\RSP2B9.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /I "..\..\..\..\asrInclude" /I "..\..\..\..\qyInclude" /I "..\..\..\..\qyPublic\include" /I "..\include" /I "include" /I "." /I "..\..\..\..\qyCommProc\include" /I "..\..\..\..\qyEncLib\include" /I "..\..\..\..\qyCustom\include" /I "..\..\..\..\qyPublic2\include" /I "..\..\..\..\tmpInclude" /I "..\..\..\..\..\qyOpen\qyCommProc_open\include" /I "..\..\..\..\qyCommProc_mis\include" /D "_DEBUG" /D "WIN32" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_MBCS" /D "_USRDLL" /D "_UNICODE" /D "UNICODE" /D WINVER=0x0400 /Fr"..\..\..\..\..\o\assetMgrModule\Debug/" /Fp"..\..\..\..\..\o\assetMgrModule\Debug/assetMgrModule.pch" /Yc"stdafx.h" /Fo"..\..\..\..\..\o\assetMgrModule\Debug/" /Fd"..\..\..\..\..\o\assetMgrModule\Debug/" /FD /GZ /c 
+"H:\qycx4\Develop6\srcRoot\src6\PROJECTS\netMc\assetMgr\assetMgrModule\StdAfx.cpp"
+]
+Creating command line "cl.exe @G:\DOCUME~1\TESTAD~1\LOCALS~1\Temp\RSP2B9.tmp" 
+Creating temporary file "G:\DOCUME~1\TESTAD~1\LOCALS~1\Temp\RSP2BA.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /I "..\..\..\..\asrInclude" /I "..\..\..\..\qyInclude" /I "..\..\..\..\qyPublic\include" /I "..\include" /I "include" /I "." /I "..\..\..\..\qyCommProc\include" /I "..\..\..\..\qyEncLib\include" /I "..\..\..\..\qyCustom\include" /I "..\..\..\..\qyPublic2\include" /I "..\..\..\..\tmpInclude" /I "..\..\..\..\..\qyOpen\qyCommProc_open\include" /I "..\..\..\..\qyCommProc_mis\include" /D "_DEBUG" /D "WIN32" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_MBCS" /D "_USRDLL" /D "_UNICODE" /D "UNICODE" /D WINVER=0x0400 /Fr"..\..\..\..\..\o\assetMgrModule\Debug/" /Fo"..\..\..\..\..\o\assetMgrModule\Debug/" /Fd"..\..\..\..\..\o\assetMgrModule\Debug/" /FD /GZ /c 
+"H:\qycx4\Develop6\srcRoot\src6\qyCommProc\genericqueue.cpp"
+"H:\qycx4\Develop6\srcRoot\src6\qyCommProc\qnmCommProc.cpp"
+"H:\qycx4\Develop6\srcRoot\src6\qyCommProc\qnmCommProc1.cpp"
+"H:\qycx4\Develop6\srcRoot\src6\qyCommProc\qnmOsAuditCommProc.cpp"
+"H:\qycx4\Develop6\srcRoot\src6\qyCommProc\qnmsCommProc.cpp"
+"H:\qycx4\Develop6\srcRoot\src6\qyCommProc\qwmDynFunc.cpp"
+"H:\qycx4\Develop6\srcRoot\src6\qyCommProc\qwmNetworkStatusCommProc.cpp"
+"H:\qycx4\Develop6\srcRoot\src6\qyCommProc\qyCommProc.cpp"
+"H:\qycx4\Develop6\srcRoot\src6\qyCommProc\qyDmItemCommProc.cpp"
+"H:\qycx4\Develop6\srcRoot\src6\qyCommProc\qyGenericDaemon.cpp"
+"H:\qycx4\Develop6\srcRoot\src6\qyCommProc\qyModuleFunc.cpp"
+"H:\qycx4\Develop6\srcRoot\src6\qyCommProc\qyShowInfoCommProc.cpp"
+"H:\qycx4\Develop6\srcRoot\src6\qyCommProc\qySqlFunc.cpp"
+"H:\qycx4\Develop6\srcRoot\src6\qyCommProc\qySyncCommProc.cpp"
+"H:\qycx4\Develop6\srcRoot\src6\qyCommProc\qyTCharCommProc.cpp"
+"H:\qycx4\Develop6\srcRoot\src6\qyMc\qymcPublic\qnmScan.cpp"
+"H:\qycx4\Develop6\srcRoot\src6\qyCommProc\traceLogA.cpp"
+]
+Creating command line "cl.exe @G:\DOCUME~1\TESTAD~1\LOCALS~1\Temp\RSP2BA.tmp" 
+Creating temporary file "G:\DOCUME~1\TESTAD~1\LOCALS~1\Temp\RSP2BB.tmp" with contents
+[
+qyPublic.lib qyEncLib.lib qyLicense.lib libDes.lib Spromeps.lib ws2_32.lib /nologo /subsystem:windows /dll /incremental:yes /pdb:"..\..\..\..\..\Debug\bin/assetMgrModule.pdb" /debug /machine:I386 /def:".\assetMgrModule.def" /out:"..\..\..\..\..\Debug\bin/assetMgrModule.dll" /implib:"..\..\..\..\..\Debug\bin/assetMgrModule.lib" /pdbtype:sept /libpath:"..\..\..\..\..\..\Debug\lib" 
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\assetMgrModule.obj
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\AssetMgrModuleDaemon.obj
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\assetMgrModuleProc.obj
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\StdAfx.obj
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\genericqueue.obj
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\qnmCommProc.obj
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\qnmCommProc1.obj
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\qnmOsAuditCommProc.obj
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\qnmsCommProc.obj
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\qwmDynFunc.obj
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\qwmNetworkStatusCommProc.obj
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\qyCommProc.obj
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\qyDmItemCommProc.obj
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\qyGenericDaemon.obj
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\qyModuleFunc.obj
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\qyShowInfoCommProc.obj
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\qySqlFunc.obj
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\qySyncCommProc.obj
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\qyTCharCommProc.obj
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\qnmScan.obj
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\assetMgrModule.res
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\traceLogA.obj
+]
+Creating command line "link.exe @G:\DOCUME~1\TESTAD~1\LOCALS~1\Temp\RSP2BB.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+assetMgrModule.cpp
+AssetMgrModuleDaemon.cpp
+assetMgrModuleProc.cpp
+Generating Code...
+Compiling...
+genericqueue.cpp
+qnmCommProc.cpp
+qnmCommProc1.cpp
+qnmOsAuditCommProc.cpp
+qnmsCommProc.cpp
+qwmDynFunc.cpp
+qwmNetworkStatusCommProc.cpp
+qyCommProc.cpp
+qyDmItemCommProc.cpp
+qyGenericDaemon.cpp
+qyModuleFunc.cpp
+qyShowInfoCommProc.cpp
+qySqlFunc.cpp
+qySyncCommProc.cpp
+qyTCharCommProc.cpp
+qnmScan.cpp
+traceLogA.cpp
+Generating Code...
+Linking...
+   Creating library ..\..\..\..\..\Debug\bin/assetMgrModule.lib and object ..\..\..\..\..\Debug\bin/assetMgrModule.exp
+Creating temporary file "G:\DOCUME~1\TESTAD~1\LOCALS~1\Temp\RSP2BF.tmp" with contents
+[
+/nologo /o"..\..\..\..\..\Debug\bin/assetMgrModule.bsc" 
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\StdAfx.sbr
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\assetMgrModule.sbr
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\AssetMgrModuleDaemon.sbr
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\assetMgrModuleProc.sbr
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\genericqueue.sbr
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\qnmCommProc.sbr
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\qnmCommProc1.sbr
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\qnmOsAuditCommProc.sbr
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\qnmsCommProc.sbr
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\qwmDynFunc.sbr
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\qwmNetworkStatusCommProc.sbr
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\qyCommProc.sbr
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\qyDmItemCommProc.sbr
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\qyGenericDaemon.sbr
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\qyModuleFunc.sbr
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\qyShowInfoCommProc.sbr
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\qySqlFunc.sbr
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\qySyncCommProc.sbr
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\qyTCharCommProc.sbr
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\qnmScan.sbr
+\qycx4\Develop6\srcRoot\o\assetMgrModule\Debug\traceLogA.sbr]
+Creating command line "bscmake.exe @G:\DOCUME~1\TESTAD~1\LOCALS~1\Temp\RSP2BF.tmp"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+assetMgrModule.dll - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

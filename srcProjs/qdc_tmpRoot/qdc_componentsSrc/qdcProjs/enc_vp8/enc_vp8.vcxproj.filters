@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="qyOpen">
+      <UniqueIdentifier>{e0bd4789-4dea-4b10-b70d-eeb47921bc1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyOpen\qdcOpenInclude">
+      <UniqueIdentifier>{96f8cb7e-392c-4d9a-8400-bf077ffcd1f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qisCompressPublic">
+      <UniqueIdentifier>{4349edcf-c32b-4d16-b913-9bc945dbc68c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qisCompressInclude">
+      <UniqueIdentifier>{571de832-a0b3-448f-ab13-64a06b76b463}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qdcPublic">
+      <UniqueIdentifier>{11897d84-092e-4f3a-a0cc-6f9e7d6e8147}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="public\qisCompress.cpp">
+      <Filter>qisCompressPublic</Filter>
+    </ClCompile>
+    <ClCompile Include="public\qisEncVideo.cpp">
+      <Filter>qisCompressPublic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\videoFunc_open.cpp">
+      <Filter>qyOpen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\tmpGuiOpenFunc.cpp">
+      <Filter>qyOpen</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\qyOpen\qdc_open\include\qdcCommProc_open.h">
+      <Filter>qyOpen\qdcOpenInclude</Filter>
+    </ClInclude>
+    <ClInclude Include="include\qisCompressProc.h">
+      <Filter>qisCompressInclude</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="qisCompress.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

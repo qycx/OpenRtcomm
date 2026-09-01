@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="qisCompress">
+</Property><Property Name="Solution File" Value="D:\qycx4\develop6\tmpRoot\componentsSrc\qdcProjs\qisCompress_ipp\qisCompress.sln">
+</Property><Property Name="User Options File" Value="D:\qycx4\develop6\tmpRoot\componentsSrc\qdcProjs\qisCompress_ipp\qisCompress.suo">
+</Property><Property Name="Date" Value="2012年9月20日">
+</Property><Property Name="Time" Value="10:53">
+</Property><Property Name="Log Number" Value="8">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="qisCompress.sln" Description="File successfully backed up as D:\qycx4\develop6\tmpRoot\componentsSrc\qdcProjs\qisCompress_ipp\Backup\qisCompress.sln">
+</Event><Event ErrorLevel="0" Project="" Source="qisCompress.suo" Description="File successfully backed up as D:\qycx4\develop6\tmpRoot\componentsSrc\qdcProjs\qisCompress_ipp\Backup\qisCompress.suo">
+</Event><Event ErrorLevel="0" Project="" Source="qisCompress.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="qisCompress.sln" Description="Converted">
+</Event></UpgradeLog>

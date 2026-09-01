@@ -1,0 +1,138 @@
+#include "Readback.h"
+
+
+
+#include "Readback.h"
+
+#include <cstring>
+
+
+bool Readback::Copy(
+    ID3D11Device* device,
+    ID3D11DeviceContext* context,
+    ID3D11Texture2D* src,
+    std::vector<unsigned char>& buffer,
+    int& width,
+    int& height)
+{
+
+    D3D11_TEXTURE2D_DESC desc{};
+
+    src->GetDesc(&desc);
+
+
+    width = desc.Width;
+    height = desc.Height;
+
+
+
+    //
+    // 分辨率变化时重新创建
+    //
+    if (!m_staging ||
+        m_width != width ||
+        m_height != height)
+    {
+
+        D3D11_TEXTURE2D_DESC stagingDesc =
+            desc;
+
+
+        stagingDesc.BindFlags = 0;
+
+        stagingDesc.MiscFlags = 0;
+
+        stagingDesc.Usage =
+            D3D11_USAGE_STAGING;
+
+
+        stagingDesc.CPUAccessFlags =
+            D3D11_CPU_ACCESS_READ;
+
+
+
+        m_staging = nullptr;
+
+
+        HRESULT hr =
+            device->CreateTexture2D(
+                &stagingDesc,
+                nullptr,
+                m_staging.put());
+
+
+        if (FAILED(hr))
+            return false;
+
+
+        m_width = width;
+
+        m_height = height;
+    }
+
+
+
+    //
+    // GPU copy
+    //
+    context->CopyResource(
+        m_staging.get(),
+        src);
+
+
+
+    D3D11_MAPPED_SUBRESOURCE map{};
+
+
+    HRESULT hr =
+        context->Map(
+            m_staging.get(),
+            0,
+            D3D11_MAP_READ,
+            0,
+            &map);
+
+
+
+    if (FAILED(hr))
+        return false;
+
+
+
+    buffer.resize(
+        width *
+        height *
+        4);
+
+
+
+    unsigned char* dst =
+        buffer.data();
+
+
+
+    unsigned char* srcPtr =
+        reinterpret_cast<unsigned char*>(
+            map.pData);
+
+
+
+    for (UINT y = 0; y < height; y++)
+    {
+        memcpy(
+            dst + y * width * 4,
+            srcPtr + y * map.RowPitch,
+            width * 4);
+    }
+
+
+
+    context->Unmap(
+        m_staging.get(),
+        0);
+
+
+
+    return true;
+}
+

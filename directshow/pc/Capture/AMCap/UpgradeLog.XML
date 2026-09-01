@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="amcap">
+</Property><Property Name="Solution File" Value="D:\qycx4\testProjs\DirectShow\Capture\AMCap\amcap.sln">
+</Property><Property Name="Date" Value="Thursday, October 29, 2009">
+</Property><Property Name="Time" Value="17:52 PM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="amcap.sln" Description="File successfully backed up as D:\qycx4\testProjs\DirectShow\Capture\AMCap\amcap.sln.old">
+</Event><Event ErrorLevel="0" Project="AmCap" Source="AmCap.vcproj" Description="Project upgraded successfully.">
+</Event><Event ErrorLevel="3" Project="AmCap" Source="AmCap.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="amcap.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="amcap.sln" Description="Converted">
+</Event></UpgradeLog>

@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="cbc3_enc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cbc_cksm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cbc_enc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cfb64ede.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cfb64enc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cfb_enc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="des_enc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ecb3_enc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ecb_enc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ede_enc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="enc_read.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="enc_writ.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fcrypt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ncbc_enc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ofb64ede.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ofb64enc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ofb_enc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcbc_enc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="qud_cksm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rand_key.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="read_pwd.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rpc_enc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="set_key.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="str2key.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="supp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xcbc_enc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DES.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="des_locl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DES_VER.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PODD.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RPC_DES.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SK.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SPR.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\md5">
+      <UniqueIdentifier>{45b2fb52-551d-4dc9-844a-5b85ec875088}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\md5\md5Include">
+      <UniqueIdentifier>{dbf1bad8-20b4-41d1-bf23-90189d30573c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\qyCommon">
+      <UniqueIdentifier>{320a22f9-8604-4b44-b056-e3b42152fa5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\qyGuiLib">
+      <UniqueIdentifier>{68faa027-c044-42ba-9e45-d9be2f488e78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\qyLog">
+      <UniqueIdentifier>{dabd6393-4bba-4ff1-9597-bb948a909ad1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\qySock">
+      <UniqueIdentifier>{7256f777-7c4e-4573-b623-27ab392cdbec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\qySock\qySockInclude">
+      <UniqueIdentifier>{b335ac64-ed60-442a-8e64-214f56b1a44b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\qyInclude">
+      <UniqueIdentifier>{5475f455-99df-46c9-b730-8736fe65d2d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Source Files\qyCommon0">
+      <UniqueIdentifier>{e5e9f565-6684-498c-93df-e46c52b1fd5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\qyCommon2">
+      <UniqueIdentifier>{241fde6a-a3fb-4861-a6e4-1a836e3ac764}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="MD5\asrMd5.c">
+      <Filter>Source Files\md5</Filter>
+    </ClCompile>
+    <ClCompile Include="MD5\MD5C.C">
+      <Filter>Source Files\md5</Filter>
+    </ClCompile>
+    <ClCompile Include="MD5\MDDRIVER.C">
+      <Filter>Source Files\md5</Filter>
+    </ClCompile>
+    <ClCompile Include="MD5\qwmMd5.c">
+      <Filter>Source Files\md5</Filter>
+    </ClCompile>
+    <ClCompile Include="qyCommon\qyCommonFunc3.cpp">
+      <Filter>Source Files\qyCommon</Filter>
+    </ClCompile>
+    <ClCompile Include="qyCommon\qyCommonFunc4.cpp">
+      <Filter>Source Files\qyCommon</Filter>
+    </ClCompile>
+    <ClCompile Include="qyCommon\qyCommonFunc7.cpp">
+      <Filter>Source Files\qyCommon</Filter>
+    </ClCompile>
+    <ClCompile Include="qyCommon\qyCommonFunc8.cpp">
+      <Filter>Source Files\qyCommon</Filter>
+    </ClCompile>
+    <ClCompile Include="qyCommon\qyCommonFunc9.cpp">
+      <Filter>Source Files\qyCommon</Filter>
+    </ClCompile>
+    <ClCompile Include="qyCommon\qyCommonObj.cpp">
+      <Filter>Source Files\qyCommon</Filter>
+    </ClCompile>
+    <ClCompile Include="qyCommon\qyDebugFunc.cpp">
+      <Filter>Source Files\qyCommon</Filter>
+    </ClCompile>
+    <ClCompile Include="qyCommon\qyModifyPeFunc.cpp">
+      <Filter>Source Files\qyCommon</Filter>
+    </ClCompile>
+    <ClCompile Include="qyGuiLib\qyGuiFunc.cpp">
+      <Filter>Source Files\qyGuiLib</Filter>
+    </ClCompile>
+    <ClCompile Include="qyLog\qyLogFunc.cpp">
+      <Filter>Source Files\qyLog</Filter>
+    </ClCompile>
+    <ClCompile Include="qySock\qyCommonSock.cpp">
+      <Filter>Source Files\qySock</Filter>
+    </ClCompile>
+    <ClCompile Include="qySock\qySockFunc.cpp">
+      <Filter>Source Files\qySock</Filter>
+    </ClCompile>
+    <ClCompile Include="qyCommon0\commonfunc.cpp">
+      <Filter>Source Files\qyCommon0</Filter>
+    </ClCompile>
+    <ClCompile Include="qyCommon0\commonFunc1.cpp">
+      <Filter>Source Files\qyCommon0</Filter>
+    </ClCompile>
+    <ClCompile Include="qyCommon0\commonFunc2.cpp">
+      <Filter>Source Files\qyCommon0</Filter>
+    </ClCompile>
+    <ClCompile Include="qyCommon0\commonFunc3.cpp">
+      <Filter>Source Files\qyCommon0</Filter>
+    </ClCompile>
+    <ClCompile Include="qyCommon0\commonSock.cpp">
+      <Filter>Source Files\qyCommon0</Filter>
+    </ClCompile>
+    <ClCompile Include="qyCommon0\commonSql.cpp">
+      <Filter>Source Files\qyCommon0</Filter>
+    </ClCompile>
+    <ClCompile Include="qyCommon2\detectNetworkWithSnmp.cpp">
+      <Filter>Source Files\qyCommon2</Filter>
+    </ClCompile>
+    <ClCompile Include="qyCommon2\qnmCommonFunc.cpp">
+      <Filter>Source Files\qyCommon2</Filter>
+    </ClCompile>
+    <ClCompile Include="qyCommon2\qwmCommonFunc.cpp">
+      <Filter>Source Files\qyCommon2</Filter>
+    </ClCompile>
+    <ClCompile Include="qyCommon2\qyCommonFunc5.cpp">
+      <Filter>Source Files\qyCommon2</Filter>
+    </ClCompile>
+    <ClCompile Include="qyCommon2\qyErrFunc.cpp">
+      <Filter>Source Files\qyCommon2</Filter>
+    </ClCompile>
+    <ClCompile Include="qyCommon2\traceLog.cpp">
+      <Filter>Source Files\qyCommon2</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MD5\INCLUDE\GLOBAL.H">
+      <Filter>Source Files\md5\md5Include</Filter>
+    </ClInclude>
+    <ClInclude Include="MD5\INCLUDE\MD5.H">
+      <Filter>Source Files\md5\md5Include</Filter>
+    </ClInclude>
+    <ClInclude Include="qySock\include\qyCommonSock.h">
+      <Filter>Source Files\qySock\qySockInclude</Filter>
+    </ClInclude>
+    <ClInclude Include="qySock\include\qySockPublic.h">
+      <Filter>Source Files\qySock\qySockInclude</Filter>
+    </ClInclude>
+    <ClInclude Include="..\qyInclude\qyCommon.h">
+      <Filter>Header Files\qyInclude</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>D:\root\pc.anc.v3\openRtComm-windows\VS2012\Win32\Debug\bin\qyPublic.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>D:\root\pc.anc.v3\openRtComm-windows\VS2012\Win32\Debug\bin\qyShowInfo.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>D:\root\pc.anc.v3\openRtComm-windows\VS2012\Win32\Debug\bin\qisPublic.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>D:\root\pc.anc.v3\openRtComm-windows\srcProjs\srcRoot\src6\thirdParty\ipcProc\d4k\d4kDeviceControl\bin\x86debug\d4kDeviceControl.exe</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles />
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>

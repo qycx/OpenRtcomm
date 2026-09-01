@@ -1,0 +1,168 @@
+#pragma once
+
+//菜单键
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_MENU								"07f57" 
+
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_MENU_QUIT							"07f4e" //"8168a"  
+
+//确认键
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_OK								"07f5a" 
+
+//上箭头
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_UP								"07f5e"
+
+//下箭头
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_NEXT								"07f56"
+
+//左箭头
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_LEFT								"07f5b"
+
+//右箭头
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_RIGHT								"07f58"
+
+//1键
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_ONE								"07fe"
+
+//2键
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_TWO								"07f6"
+
+//3键
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_THREE								"07ff"
+
+//4键
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_FOUR								"07f12"
+
+//5键
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_FIVE								"07f7"
+
+//6键
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_SIX								"07f13"
+
+//7键
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_SEVEN								"07f16"
+
+//8键
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_EIGHT 							"07f2"
+
+//9键
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_NINE								"07f17"
+
+//0键
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_ZERO								"07f1a"
+
+//退格键
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_BACKSPACE							"07f1b"
+
+//点
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_DOT    							"07f41"
+
+//数字字母输入法切换
+//#define			DEFAULT_INFRARED_INSTRUCT_CMD_LEETER_CUT						"07f9"
+
+//大小写切换
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_CAPSLOCK_CUT						"07f54"
+
+//ABC
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_ABC								"07f4c"
+
+//DEF
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_DEF								"07f44"
+
+//GHI
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_GHI								"07f19"
+
+//JKL
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_JKL								"07f45"
+
+//MNO
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_MNO								"07f18"
+
+//PQRS
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_PQRS								"07f47"
+
+//TUV
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_TUV								"07f46"
+
+//WXYZ
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_WXYZ								"07fc"
+
+//*
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_XINGHAO							"07f9"
+
+//#
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_JINGHAO							"07fd"
+
+//?
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_WENHAO							"07f10"
+
+//,
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_DOUHAO							"07f5c"
+
+//@
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_AHAO								"07f1f"
+
+//音量加 +
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_LABA_JIA							"07f1e"
+
+//音量 -
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_LABA_JIAN							"07f5f"
+
+//发言按钮
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_FAYAN								"07f53"
+
+//退出会议
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_TUIHUI							"07fb"
+
+//电源键
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_POWER								"07fa"
+
+//喇叭静音
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_LABA_WU							"07f50"
+
+//中划线
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_ZHONGHUAXIAN						"07f55"
+
+//%
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_BAIFENHAO							"07f48"
+
+//+
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_JIAHAO							"07f4a"
+
+//-
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_JIANHAO							"07f4f"
+
+// 斜杠 \ 
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_XIEGANG							"07f4b"
+
+//反斜杠 /
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_FANXIEGANG						"07f40"
+
+//冒号 :
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_MAOHAO							"07f59"
+
+//引号 ‘
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_YINHAO							"07f49"
+
+//中英文切换
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_EN_CN								"07f4d"
+
+//TAB键
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_TAB								"07f11"
+
+//空格
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_KONGGE							"07f5d"
+
+//摄像头
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_SXT								"07f1"
+
+//麦克风
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_MKF								"07f0"
+
+//辅流
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_FL								"07f4"
+
+//录制
+#define			DEFAULT_INFRARED_INSTRUCT_CMD_LZ								"07f5"
+
+
+

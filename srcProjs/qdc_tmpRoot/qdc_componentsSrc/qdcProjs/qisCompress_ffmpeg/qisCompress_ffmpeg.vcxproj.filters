@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="public\qdcSplitter_ffmpeg.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\qisCompress.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\tmp_readAndSave.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\qdcSpl_dynFunc.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="include\qisCompressProc.h" />
+    <ClInclude Include="..\..\..\..\qyOpen\qdc_open\include\qdcCommProc_open.h" />
+    <ClInclude Include="include\my_mfxsplmux++.h">
+      <Filter>include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="qisCompress.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="public">
+      <UniqueIdentifier>{e50d63e0-3771-413a-a5e7-1a966988cb40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{f860fee5-5052-463a-b764-1f56bc7d179d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

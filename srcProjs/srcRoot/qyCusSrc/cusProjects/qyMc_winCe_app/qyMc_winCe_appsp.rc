@@ -1,0 +1,1677 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resourcesp.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#include "resdefce.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_QYMC_WINCE_APP      ICON                    "qyMc_winCe_app.ico"
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resourcesp.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#include ""resdefce.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""qyMc_winCe_appsp.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_talk_ce DIALOG  0, 0, 208, 180
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+MENU IDR_MENU_const
+FONT 10, "MS Shell Dlg"
+BEGIN
+    LTEXT           "video",IDC_STATIC_peerDesc,0,4,208,108,SS_NOTIFY | SS_SUNKEN | NOT WS_VISIBLE | WS_TABSTOP
+    LISTBOX         IDC_LIST_msg,4,116,165,14,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_LIST_task,175,116,16,14,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Status",IDC_BUTTON_status,4,133,165,20
+    PUSHBUTTON      "op0",IDC_BUTTON_op0,173,156,27,20
+    PUSHBUTTON      "op1",IDC_BUTTON_op1,140,156,27,20
+    PUSHBUTTON      "av",IDC_BUTTON_av,107,156,27,20
+    PUSHBUTTON      "task",IDC_BUTTON_task,74,156,27,20
+    PUSHBUTTON      "msg",IDC_BUTTON_msg,41,156,27,20
+    PUSHBUTTON      "Cancel",IDCANCEL,8,156,27,20
+    LTEXT           "me",IDC_STATIC_meDesc,177,133,18,20
+END
+
+IDD_qyRegTool DIALOG  0, 0, 272, 223
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "?????IDC_*?"
+FONT 9, "Tahoma"
+BEGIN
+    DEFPUSHBUTTON   "??",IDOK,59,179,50,14
+    PUSHBUTTON      "??",IDCANCEL,183,179,50,14
+    CTEXT           "???????????",IDC_title,46,9,192,18,SS_CENTERIMAGE
+    LTEXT           "??????????(*?????)",IDC_hint0,14,35,138,9
+    LTEXT           "???2003? ? ????????,?????????",IDC_hint1,9,151,220,10
+    CONTROL         "Progress1",IDC_PROGRESS_reg,"msctls_progress32",NOT WS_VISIBLE | WS_BORDER,9,161,186,10
+    LTEXT           "Static",IDC_STATIC0,9,55,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC1,18,65,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC2,27,73,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC3,37,83,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC4,46,93,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC5,55,101,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC6,65,111,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC7,74,121,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC8,38,55,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC9,47,65,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC10,57,75,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC11,66,83,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC12,75,93,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC13,85,103,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC14,94,111,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC15,103,121,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC16,64,55,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC17,73,65,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC18,83,75,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC19,92,83,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC20,101,93,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC21,111,103,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC22,120,111,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC23,129,121,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC24,91,55,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC25,101,65,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC26,110,75,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC27,119,83,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC28,129,93,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC29,138,103,13,11,NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT0,117,55,12,8,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT1,127,65,12,8,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT2,136,73,12,8,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT3,145,83,12,8,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT4,155,93,12,8,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT5,164,101,12,8,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT6,173,111,12,8,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT7,183,121,12,8,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT8,135,55,12,8,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT9,145,65,12,8,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT10,154,73,12,8,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT11,163,83,12,8,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT12,173,93,12,8,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT13,182,101,12,8,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT14,191,111,12,8,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT15,201,121,12,8,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT16,210,129,12,8,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT17,219,139,12,8,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT18,229,149,12,8,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT19,238,157,12,8,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    COMBOBOX        IDC_COMBO0,164,53,11,124,CBS_DROPDOWNLIST | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO1,173,63,11,124,CBS_DROPDOWNLIST | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO2,183,71,11,124,CBS_DROPDOWNLIST | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO3,192,81,11,124,CBS_DROPDOWNLIST | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO4,201,91,11,124,CBS_DROPDOWNLIST | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO5,211,99,11,124,CBS_DROPDOWNLIST | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO6,220,109,11,124,CBS_DROPDOWNLIST | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO7,229,119,11,124,CBS_DROPDOWNLIST | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO8,239,127,11,124,CBS_DROPDOWNLIST | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO9,248,137,11,124,CBS_DROPDOWNLIST | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Static",IDC_STATIC_licenseHint,205,169,48,6,NOT WS_VISIBLE
+END
+
+IDD_QYMC_WINCE_DIALOG DIALOG  0, 0, 200, 179
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "qyMessenger"
+FONT 10, "MS Shell Dlg"
+BEGIN
+    PUSHBUTTON      "Contact",IDC_BUTTON_contact,64,22,81,20
+    PUSHBUTTON      "Group",IDC_BUTTON_group,64,59,81,20
+    PUSHBUTTON      "Status",IDC_BUTTON_status,64,102,81,20
+    PUSHBUTTON      "Cancel",IDCANCEL,20,140,44,20
+END
+
+IDD_qnmCfgOptions_isClient_ce DIALOG  0, 0, 145, 118
+STYLE DS_SETFONT | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 10, "Microsoft Sans Serif"
+BEGIN
+    EDITTEXT        IDC_cntName,47,14,81,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_cntIp,47,30,81,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_cntAddr1,47,46,81,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_cntAddr2,47,62,81,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_cntPort,47,78,81,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,83,101,42,14
+    PUSHBUTTON      "Cancel",IDCANCEL,19,101,42,14
+    LTEXT           "addr1:",IDC_STATIC_cntAddr1,12,46,32,14,SS_CENTERIMAGE
+    LTEXT           "addr2:",IDC_STATIC_cntAddr2,12,62,32,14,SS_CENTERIMAGE
+    LTEXT           "addr0:",IDC_STATIC_cntAddr0,12,30,32,14,SS_CENTERIMAGE
+    LTEXT           "Name:",IDC_STATIC_cntName,12,14,32,14,SS_CENTERIMAGE
+    LTEXT           "Port:",IDC_STATIC_cntPort,12,78,32,14,SS_CENTERIMAGE
+    GROUPBOX        "Default Server:",IDC_STATIC_centerAddr,0,0,145,118
+END
+
+IDD_policy_isClient DIALOG  0, 0, 395, 390
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "policy"
+FONT 9, "Tahoma"
+BEGIN
+    COMBOBOX        IDC_COMBO_ruleIfMsgArrive,121,18,227,88,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_dirToSaveFile,121,35,227,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BUTTON_browseDir,353,35,12,14
+    CONTROL         "ucbOnlyNetSm",IDC_CHECK_ucbOnlyNetSm,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,31,52,138,14
+    EDITTEXT        IDC_EDIT_baud,297,52,28,14,ES_AUTOHSCROLL
+    CONTROL         "ucbOnlyPhoneMsgr",IDC_CHECK_ucbOnlyPhoneMsgr,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,31,67,138,14
+    CONTROL         "ucbPermitOtherSm",IDC_CHECK_ucbPermitOtherSm,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,194,67,138,14
+    PUSHBUTTON      "...",IDC_BUTTON_avCompressor,353,88,12,14
+    PUSHBUTTON      "...",IDC_BUTTON_screenCompressor,353,107,12,14
+    PUSHBUTTON      "...",IDC_BUTTON_mediaFileCompressor,353,127,12,14
+    EDITTEXT        IDC_EDIT_ucSeconds_perFrame,159,151,28,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_usFrames_perSecond,159,168,28,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_usTimeoutInMsToSwitch,159,185,28,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_usTimeoutInMsToSwitch_rt,159,202,28,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_usMaxFPS_toShareBmp,159,219,28,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_usMaxFPS_capScreen,159,236,28,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_usMaxFps_mediaFile,159,253,28,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_usMinFps_mediaFile,159,269,28,14,ES_AUTOHSCROLL
+    CONTROL         "munally permit to speak on video conference",IDC_CHECK_ucbManullyPermitToSpeakOnVideoConference,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,31,310,202,14
+    LTEXT           "iTimeoutInMs_channelIdle",IDC_STATIC_iTimeoutInMs_channelIdle,25,331,131,14
+    EDITTEXT        IDC_EDIT_iTimeoutInMs_channelIdle,159,331,28,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Set advanced settings",IDC_BUTTON_setAdvancedSettings,204,290,161,14
+    PUSHBUTTON      "Set Slow Settings",IDC_BUTTON_setSlowSettings,204,310,161,14
+    PUSHBUTTON      "Restore default settings",IDC_BUTTON_restoreDefaultSettings,204,331,161,14
+    DEFPUSHBUTTON   "OK",IDOK,107,358,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,235,358,50,14
+    LTEXT           "ruleIfMsgArrive",IDC_STATIC_staticRuleIfMsgArrive,25,18,58,12,SS_CENTERIMAGE
+    LTEXT           "Dir to save file",IDC_STATIC_staticDirToSaveFile,25,35,58,12,SS_CENTERIMAGE
+    LTEXT           "Av compressor:",IDC_STATIC_avCompressor,25,88,104,12,SS_CENTERIMAGE
+    LTEXT           "Xvid",IDC_STATIC_avCompressorVal,130,88,218,14,SS_CENTERIMAGE | SS_SUNKEN
+    LTEXT           "seconds_perFrame",IDC_STATIC_ucSeconds_perFrame,25,151,131,14,SS_CENTERIMAGE
+    LTEXT           "frames_perSecond",IDC_STATIC_usFrames_perSecond,25,168,131,14,SS_CENTERIMAGE
+    LTEXT           "usTimeoutInSToSwitch",IDC_STATIC_usTimeoutInMsToSwitch,25,185,131,14,SS_CENTERIMAGE
+    LTEXT           "usTimeoutInSToSwitch_rt",IDC_STATIC_usTimeoutInMsToSwitch_rt,25,202,131,14,SS_CENTERIMAGE
+    LTEXT           "baud",IDC_STATIC_baud,194,52,79,14,SS_CENTERIMAGE
+    LTEXT           "usMaxFPS_toShareBmp",IDC_STATIC_usMaxFPS_toShareBmp,25,219,131,14,SS_CENTERIMAGE
+    LTEXT           "usMaxFPS_capScreen",IDC_STATIC_usMaxFPS_capScreen,25,236,131,14,SS_CENTERIMAGE
+    LTEXT           "Screen compressor:",IDC_STATIC_screenCompressor,25,109,104,12
+    LTEXT           "Static",IDC_STATIC_screenCompressorVal,130,107,218,14,SS_SUNKEN
+    LTEXT           "Media file compressor:",IDC_STATIC_mediaFileCompressor,25,127,104,12
+    LTEXT           "Static",IDC_STATIC_mediaFileCompressorVal,130,127,218,14,SS_SUNKEN
+    LTEXT           "usMaxFps_mediaFile",IDC_STATIC_usMaxFps_mediaFile,25,253,131,14,SS_CENTERIMAGE
+    LTEXT           "usMinFps_mediaFile",IDC_STATIC_usMinFps_mediaFile,25,269,131,14,SS_CENTERIMAGE
+END
+
+IDD_objs DIALOG  0, 0, 211, 198
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 10, "MS Shell Dlg"
+BEGIN
+    LISTBOX         IDC_LIST0,14,2,180,154,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "OK",IDOK,164,165,25,20
+    PUSHBUTTON      "Status",IDC_BUTTON_status,128,165,25,20
+    PUSHBUTTON      "Group",IDC_BUTTON_group,92,165,25,20
+    PUSHBUTTON      "Contact",IDC_BUTTON_contact,56,165,25,20
+    PUSHBUTTON      "Cancel",IDCANCEL,20,165,25,20
+END
+
+IDD_mcClient_logon DIALOG  0, 0, 199, 178
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "logon"
+FONT 10, "MS Shell Dlg"
+BEGIN
+    COMBOBOX        IDC_COMBO_logonServer,91,14,58,84,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_NAME,91,35,58,20,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PASSWD,91,67,58,20,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,134,132,44,20
+    PUSHBUTTON      "Cancel",IDCANCEL,20,132,44,20
+    PUSHBUTTON      "Option",IDC_BUTTON_option,77,132,44,20
+    LTEXT           "usrName:",IDC_STATIC_usrName,50,35,36,20
+    LTEXT           "passwd:",IDC_STATIC_passwd,50,67,36,20
+    LTEXT           "",IDC_STATIC_hint,32,97,136,20
+    LTEXT           "logon:",IDC_STATIC_logonServer,50,14,36,20
+END
+
+IDD_instantAssistant DIALOG  0, 0, 121, 111
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_SYSMENU
+FONT 8, "MS Shell Dlg"
+BEGIN
+    PUSHBUTTON      "request",IDC_request,29,16,63,14
+    LISTBOX         IDC_talkerList,29,46,63,38,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_input DIALOG  0, 0, 256, 81
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    EDITTEXT        IDC_EDIT_input,51,17,154,22,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,63,52,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,141,52,50,14
+END
+
+IDD_ABOUTBOX_WIDE DIALOG  0, 0, 210, 129
+STYLE DS_SETFONT | WS_POPUP | WS_CAPTION
+EXSTYLE 0x80000000L
+CAPTION "About qyMc_winCe_app"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_QYMC_WINCE_APP,IDC_STATIC_1,12,12,21,20,SS_REALSIZEIMAGE
+    LTEXT           "qyMc_winCe_app Version 1.0",IDC_STATIC_2,48,12,66,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2010",IDC_STATIC_3,48,24,66,8
+END
+
+IDD_ABOUTBOX DIALOG  0, 0, 156, 129
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_CAPTION
+EXSTYLE 0x80000000L
+CAPTION "About qyMc_winCe_app"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_QYMC_WINCE_APP,IDC_STATIC_1,12,12,21,20,SS_REALSIZEIMAGE
+    LTEXT           "qyMc_winCe_app Version 1.0",IDC_STATIC_2,12,36,70,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2010",IDC_STATIC_3,12,48,66,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_QYMCPOPUP MENU 
+BEGIN
+    POPUP "Popup - 0"
+    BEGIN
+        MENUITEM "qyProperties(&S)",            ID_qyProperties
+    END
+    POPUP "popup_viewPcList  - 1"
+    BEGIN
+        MENUITEM "qyEdit(&B)",                  ID_qyEdit
+        MENUITEM SEPARATOR
+        MENUITEM "qySendMsg(&F)",               ID_qySendMsg
+        MENUITEM SEPARATOR
+        MENUITEM "qyDel(&S)",                   ID_qyDel
+        MENUITEM SEPARATOR
+        MENUITEM "qyProperties(&H)",            ID_qyProperties
+    END
+    POPUP "popup_viewPcUsrList  - 2"
+    BEGIN
+        MENUITEM "qyEdit(&B)",                  ID_qyEdit
+        MENUITEM SEPARATOR
+        MENUITEM "??(&S)",                      ID_qyDelPcUsr
+        MENUITEM SEPARATOR
+        MENUITEM "??(&H)",                      ID_qyProperties
+    END
+    POPUP "popup_viewPcRuleList - 3"
+    BEGIN
+        MENUITEM "????????(&D)",                ID_qyCfgPcRule
+        MENUITEM SEPARATOR
+        MENUITEM "??(&S)",                      ID_qyDelPcRule
+    END
+    POPUP "popup_viewVlanMgrList - 4"
+    BEGIN
+        MENUITEM "???Lan???(&H)",               ID_qyRefreshVlanPolicy
+        MENUITEM SEPARATOR
+        MENUITEM "????????(&B)",                ID_qyCfgProxyRule
+        MENUITEM SEPARATOR
+        MENUITEM "??(&S)",                      ID_qyDelProxy
+    END
+    POPUP "popup_viewUnchkedPcList - 5"
+    BEGIN
+        MENUITEM "?????(&S)",                   ID_qyStopUnchk
+    END
+    POPUP "popup_viewWillAttackPcList - 6"
+    BEGIN
+        MENUITEM "????(&T)",                    ID_qyStopWillAttack
+    END
+    POPUP "popup_viewPcUsrInTab1List  - 7"
+    BEGIN
+        MENUITEM "qyEditPcUsrInTab1(&B)",       ID_qyEditPcUsrInTab1
+        MENUITEM SEPARATOR
+        MENUITEM "??(&S)",                      ID_qyDelPcUsrInTab1
+    END
+    POPUP "popup_viewPcList_netMc2  - 8"
+    BEGIN
+        POPUP "monitor(&J)"
+        BEGIN
+            MENUITEM "monitoring Desktop",          ID_monDesktop
+            MENUITEM "Cancel Monitoring Desktop",   ID_cancelMonDesktop
+            MENUITEM SEPARATOR
+            MENUITEM "secChk Event",                ID_pcSecChkEventList
+            MENUITEM SEPARATOR
+            MENUITEM "ID_pcRegistryList",           ID_pcRegistryList
+            MENUITEM "ID_pcRegistryRuleStatusList", ID_pcRegistryRuleStatusList
+            MENUITEM SEPARATOR
+            MENUITEM "ID_pcEventLogList(&T)",       ID_pcEventLogList
+            MENUITEM "ID_pcOsUsrList(&Z)",          ID_pcOsUsrList
+            MENUITEM "NetStat??(&L)",               ID_qyPcNetStatList
+            MENUITEM "ID_pcPrinterPropList(&Y)",    ID_pcPrinterPropList
+            MENUITEM "ID_qyPcSpList(&B)",           ID_qyPcSpList
+        END
+        MENUITEM "ID_qyCfgPcRule(&D)",          ID_qyCfgPcRule
+        POPUP "yuanChengZhuoMianGuanLi(&P)"
+        BEGIN
+            MENUITEM "view Remote Desktop(&Y)",     ID_viewRemoteDesktop
+            MENUITEM "cancel Remote Desktop(C)",    ID_cancelRemoteDesktop
+            MENUITEM SEPARATOR
+            MENUITEM "queryNetworkProp(&W)",        ID_queryNetworkProp
+            MENUITEM "queryProxyCfg(&D)",           ID_queryProxyCfg
+            MENUITEM "queryComputerInfo(&J)",       ID_queryComputerInfo
+            MENUITEM "query windows update policy", ID_queryPcWindowsUpdatePolicyProp
+            MENUITEM SEPARATOR
+            MENUITEM "pcProcessPropList",           ID_pcProcessPropList
+            MENUITEM SEPARATOR
+            MENUITEM "pcNetFlowPropList(&L)",       ID_pcNetFlowPropList
+            MENUITEM "ID_pcNetFlowPropList_ethernet(&E)", ID_pcNetFlowPropList_ethernet
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "ID_qyEdit(&B)",               ID_qyEdit
+        MENUITEM "ID_qyCfgStandardName(&G)",    ID_qyCfgStandardName
+        MENUITEM SEPARATOR
+        MENUITEM "ID_qyDel(&S)",                ID_qyDel
+        MENUITEM SEPARATOR
+        MENUITEM "ID_qySendMsg(&F)",            ID_qySendMsg
+        MENUITEM "ID_qyProperties(&H)",         ID_qyProperties
+    END
+    POPUP "popup_tree_network 9"
+    BEGIN
+        MENUITEM "??(&H)",                      ID_qyProperties_network
+    END
+    POPUP "popup_tree_switch 10"
+    BEGIN
+        MENUITEM "????(&H)",                    ID_qyRefresh
+        MENUITEM SEPARATOR
+        MENUITEM "?????????(&B)",               ID_qyEdit_switchInfo
+        MENUITEM "????????(?????)(&D)",         ID_qyEdit_switchAndAllConns
+        MENUITEM "??????(?????)??(&H)",         ID_qyCancel_switchAndAllConns
+        MENUITEM "??????????????(&Q)",          ID_qyCancel_allConns
+        MENUITEM SEPARATOR
+        MENUITEM "??????(&C)",                  ID_qyCfgSnmpObjRule
+        MENUITEM SEPARATOR
+        MENUITEM "??(&S)",                      ID_qyDel_switch
+        MENUITEM SEPARATOR
+        MENUITEM "??(&H)",                      ID_qyProperties_switch
+    END
+    POPUP "popup_tree_switchPort 11"
+    BEGIN
+        MENUITEM "??(&Z)",                      ID_qyWillAttack
+        MENUITEM "????(&T)",                    ID_qyStopWillAttack
+        MENUITEM SEPARATOR
+        MENUITEM "???????????????(&J)",         ID_beStaticAccessModeAndEnablePortSecurity
+        MENUITEM "??????(&T)",                  ID_disablePortSecurity
+        MENUITEM SEPARATOR
+        MENUITEM "????????MAC?(&S)",            ID_setCpsIfMaxSecureMacAddr
+        MENUITEM SEPARATOR
+        MENUITEM "??????(&C)",                  ID_qyCfgSnmpObjPortRule
+        MENUITEM SEPARATOR
+        MENUITEM "??(&S)",                      ID_qyProperties_switchPort
+    END
+    POPUP "popup_rootList 12"
+    BEGIN
+        MENUITEM "MAC??(&M)",                   ID_qySearch_mac
+        MENUITEM "????(&L)",                    ID_qySearchConnection
+        MENUITEM SEPARATOR
+        MENUITEM "??????(&B)",                  ID_qyEdit_portUsrInfo
+        MENUITEM "????(&Q)",                    ID_qyCancel_portUsrInfo
+        MENUITEM SEPARATOR
+        MENUITEM "??(&S)",                      ID_qyDel_connection
+        MENUITEM SEPARATOR
+        MENUITEM "????(&D)",                    ID_secureMac
+        MENUITEM "????(&U)",                    ID_cancelSecureMac
+        MENUITEM SEPARATOR
+        MENUITEM "??(&H)",                      ID_qyProperties
+    END
+    POPUP "popup_viewPcList_secChk  - 13"
+    BEGIN
+        MENUITEM "?????(&J)",                   ID_doSecChk
+        MENUITEM "????(&Q)",                    ID_undoSecChk
+        MENUITEM SEPARATOR
+        MENUITEM "????????(&D)",                ID_qyCfgPcRule
+        MENUITEM SEPARATOR
+        MENUITEM "????????(&B)",                ID_qyEdit
+        MENUITEM SEPARATOR
+        MENUITEM "????(&F)",                    ID_qySendMsg
+        MENUITEM SEPARATOR
+        MENUITEM "??(&S)",                      ID_qyDel
+        MENUITEM SEPARATOR
+        MENUITEM "??(&H)",                      ID_qyProperties
+    END
+    POPUP "popup_viewNetDevConn 14"
+    BEGIN
+        MENUITEM "??(&D)",                      ID_qySearchSwitchPort
+        MENUITEM SEPARATOR
+        MENUITEM "??(&S)",                      ID_qyProperties
+        MENUITEM "??MAC?????(&S)",              ID_qyProperties_viewNetDevConn
+    END
+    POPUP "popup_viewPcList_nms  - 15"
+    BEGIN
+        MENUITEM "????(&L)",                    ID_qySearchConnection
+        MENUITEM SEPARATOR
+        MENUITEM "????????(&B)",                ID_qyEdit
+        MENUITEM SEPARATOR
+        MENUITEM "????(&F)",                    ID_qySendMsg
+        MENUITEM SEPARATOR
+        MENUITEM "??(&S)",                      ID_qyDel
+        MENUITEM SEPARATOR
+        MENUITEM "??(&H)",                      ID_qyProperties
+    END
+    POPUP "Popup_viewPcEventList_nms - 16"
+    BEGIN
+        MENUITEM "????(&L)",                    ID_qySearchConnection
+        MENUITEM SEPARATOR
+        MENUITEM "??(&S)",                      ID_qyProperties
+    END
+    POPUP "Popup_viewNetDevEventList_nms - 17"
+    BEGIN
+        MENUITEM "??(&D)",                      ID_qySearchSwitchPort
+        MENUITEM SEPARATOR
+        MENUITEM "??(&S)",                      ID_qyProperties
+        MENUITEM "??MAC?????(&S)",              ID_qyProperties_viewNetDevConn
+    END
+    POPUP "Popup_viewSearchList_nms - 18"
+    BEGIN
+        MENUITEM "??(&D)",                      ID_qySearchSwitchPort
+        MENUITEM "????(&L)",                    ID_qySearchConnection
+        MENUITEM SEPARATOR
+        MENUITEM "??(&S)",                      ID_qyProperties
+    END
+    POPUP "popup_viewPcSpList  - 19"
+    BEGIN
+        MENUITEM "SearchPcSp(&B)",              ID_qySearchPcSp
+        MENUITEM SEPARATOR
+        MENUITEM "CusPcSp(&C)",                 ID_qyCusPcSp
+        MENUITEM SEPARATOR
+        MENUITEM "DelPcSp(&S)",                 ID_qyDelPcSp
+        MENUITEM SEPARATOR
+        MENUITEM "Properties(&H)",              ID_qyProperties
+    END
+    POPUP "popup_viewPcList_assetMgr  - 20"
+    BEGIN
+        MENUITEM "????????(&D)",                ID_qyCfgPcRule
+        MENUITEM SEPARATOR
+        MENUITEM "????????(&B)",                ID_qyEdit
+        MENUITEM SEPARATOR
+        MENUITEM "????(&F)",                    ID_qySendMsg
+        MENUITEM SEPARATOR
+        MENUITEM "??(&S)",                      ID_qyDel
+        MENUITEM SEPARATOR
+        MENUITEM "??(&H)",                      ID_qyProperties
+    END
+    POPUP "Popup_viewAssets_pc - 21"
+    BEGIN
+        MENUITEM "??(&S)",                      ID_qyDel
+        MENUITEM SEPARATOR
+        MENUITEM "??(&S)",                      ID_qyProperties
+    END
+    POPUP "Popup_viewAssets_os - 22"
+    BEGIN
+        MENUITEM "??(&S)",                      ID_qyDel
+    END
+    POPUP "Popup_cfgSp_os - 23"
+    BEGIN
+        MENUITEM "??(&N)",                      ID_addServicePack
+    END
+    POPUP "Popup_cfgSp_servicePack - 24"
+    BEGIN
+        MENUITEM "??(&N)",                      ID_addSp
+        MENUITEM "??(&E)",                      ID_qyEdit
+        MENUITEM SEPARATOR
+        MENUITEM "??(&S)",                      ID_delServicePack
+        MENUITEM SEPARATOR
+        MENUITEM "??(&S)",                      ID_qyProperties
+    END
+    POPUP "Popup_viewSp - 25"
+    BEGIN
+        MENUITEM "??(&E)",                      ID_qyEdit
+        MENUITEM SEPARATOR
+        MENUITEM "??(&S)",                      ID_qyDel
+        MENUITEM SEPARATOR
+        MENUITEM "??(&S)",                      ID_qyProperties
+    END
+    POPUP "popup_viewSnmpObjRuleList - 26"
+    BEGIN
+        MENUITEM "??????(&B)",                  ID_qyCfgSnmpObjRule
+        MENUITEM SEPARATOR
+        MENUITEM "??(&S)",                      ID_qyDelSnmpObjRule
+    END
+    POPUP "popup_viewConflictConnList - 27"
+    BEGIN
+        MENUITEM "????(&Q)",                    ID_qyCancelConnLock
+        MENUITEM SEPARATOR
+        MENUITEM "??(&S)",                      ID_qyDelConnLock
+        MENUITEM SEPARATOR
+        MENUITEM "??????????(&B)",              ID_qyDelSwitchConnLock
+    END
+    POPUP "popup_viewPcNetworkProp - 28"
+    BEGIN
+        MENUITEM "??(&B)",                      ID_qyEdit_pcNetwork
+        MENUITEM SEPARATOR
+        MENUITEM "??(&D)",                      ID_qyDel_pcNetwork
+        MENUITEM SEPARATOR
+        MENUITEM "????(&S)",                    ID_qyProperties
+        MENUITEM SEPARATOR
+        MENUITEM "??(&S)",                      ID_qyProp_pcNetwork
+    END
+    POPUP "Popup_view_auditSth - 29"
+    BEGIN
+        MENUITEM "qyDel(&S)",                   ID_qyDel
+        MENUITEM SEPARATOR
+        MENUITEM "qyProperties(&S)",            ID_qyProperties
+    END
+    POPUP "Popup_viewPcProcess - 30"
+    BEGIN
+        MENUITEM "qyProhibit(&J)",              ID_qyProhibit
+        MENUITEM "qyProhibitAll(&Z)",           ID_qyProhibitAll
+        MENUITEM SEPARATOR
+        MENUITEM "qyDel(&S)",                   ID_qyDel
+        MENUITEM SEPARATOR
+        MENUITEM "ID_addPcProcessPermitRule(&Y)", ID_addPcProcessPermitRule
+        MENUITEM "ID_viewPcProcessRule(&C)",    ID_viewPcProcessRule
+        MENUITEM SEPARATOR
+        MENUITEM "editPcModuleKnowlege(&E)",    ID_editPcModuleKnowlege
+        MENUITEM SEPARATOR
+        MENUITEM "qyProp_pcModuleKnowlege(&K)", ID_qyProp_pcModuleKnowlege
+        MENUITEM SEPARATOR
+        MENUITEM "qyProperties(&S)",            ID_qyProperties
+    END
+    POPUP "Popup_cfgPcModuleKnowlege_notSel - 31"
+    BEGIN
+        MENUITEM "add(&A)",                     ID_addModuleKnowlege
+        MENUITEM SEPARATOR
+        MENUITEM "Import(&I)",                  ID_importModuleKnowlege
+        MENUITEM "Export(&E)",                  ID_exportModuleKnowlege
+        MENUITEM "Clearup(&C)",                 ID_clearupModuleKnowlege
+    END
+    POPUP "Popup_cfgPcModuleKnowlege - 32"
+    BEGIN
+        MENUITEM "edit(&E)",                    ID_editModuleKnowlege
+        MENUITEM SEPARATOR
+        MENUITEM "del(&D)",                     ID_delModuleKnowlege
+        MENUITEM SEPARATOR
+        MENUITEM "prop(&P)",                    ID_qyProp_pcModuleKnowlege
+    END
+    POPUP "Popup_viewPcRegistry - 33"
+    BEGIN
+        MENUITEM "qyDel(&S)",                   ID_qyDel
+        MENUITEM SEPARATOR
+        MENUITEM "editPcModuleKnowlege(&E)",    ID_editPcModuleKnowlege
+        MENUITEM SEPARATOR
+        MENUITEM "qyProp_pcModuleKnowlege(&K)", ID_qyProp_pcModuleKnowlege
+        MENUITEM SEPARATOR
+        MENUITEM "qyProperties(&S)",            ID_qyProperties
+    END
+    POPUP "Popup_viewMessengerList - 101"
+    BEGIN
+        MENUITEM "qyEdit(&B)",                  ID_qyEdit
+        MENUITEM "ID_qyCfgStandardName(&G)",    ID_qyCfgStandardName
+        MENUITEM SEPARATOR
+        MENUITEM "qyAddPhone",                  ID_qyAddPhone
+        MENUITEM "qyDelPhone",                  ID_qyDelPhone
+        MENUITEM SEPARATOR
+        MENUITEM "qyAddTo",                     ID_qyAddTo
+        MENUITEM SEPARATOR
+        MENUITEM "wwwQmCfg",                    ID_wwwQmCfg
+        MENUITEM SEPARATOR
+        MENUITEM "qyModifyMessengerId",         ID_qyModifyMessengerId
+        MENUITEM SEPARATOR
+        MENUITEM "ID_qyDel(&S)",                ID_qyDel
+        MENUITEM SEPARATOR
+        MENUITEM "ID_qyProperties(&H)",         ID_qyProperties
+    END
+    POPUP "Popup_imAmList - 109"
+    BEGIN
+        MENUITEM "setPasswd(&P)",               ID_setPasswd
+        MENUITEM SEPARATOR
+        MENUITEM "ID_qyProperties(&H)",         ID_qyProperties
+    END
+    POPUP "Popup_viewPhoneMessengerAuthList_isMgr - 110"
+    BEGIN
+        MENUITEM "qyEdit(&B)",                  ID_qyEdit
+        MENUITEM SEPARATOR
+        MENUITEM "qyImObjAuthList",             ID_qyImObjAuthList
+        MENUITEM SEPARATOR
+        MENUITEM "qyAddTo",                     ID_qyAddTo
+        MENUITEM SEPARATOR
+        MENUITEM "ID_qyDel(&S)",                ID_qyDel
+        MENUITEM SEPARATOR
+        MENUITEM "ID_qyProperties(&H)",         ID_qyProperties
+    END
+    POPUP "Popup_viewImTaskList - 150"
+    BEGIN
+        MENUITEM "talk to task peer(&T)",       ID_qyTalkToTaskPeer
+        MENUITEM SEPARATOR
+        MENUITEM "qyProp_imTask",               33148
+    END
+    POPUP "Popup_wwwQmCfgList_is - 200"
+    BEGIN
+        MENUITEM "qyEdit(&B)",                  ID_qyEdit
+        MENUITEM SEPARATOR
+        MENUITEM "qyDel(&S)",                   ID_qyDel
+        MENUITEM SEPARATOR
+        MENUITEM "qyProperties(&H)",            ID_qyProperties
+    END
+    POPUP "Popup_phoneGuestList - 201"
+    BEGIN
+        MENUITEM "qySendSm(&M)",                ID_qySendSm
+        MENUITEM SEPARATOR
+        MENUITEM "qyEdit(&B)",                  ID_qyEdit
+        MENUITEM SEPARATOR
+        MENUITEM "qyDel(&S)",                   ID_qyDel
+        MENUITEM SEPARATOR
+        MENUITEM "qyProperties(&H)",            ID_qyProperties
+    END
+    POPUP "Popup_phoneGuestList_multiSel - 202"
+    BEGIN
+        MENUITEM "qyDel(&S)",                   ID_qyDel
+    END
+    POPUP "Popup_gsmModemList - 220"
+    BEGIN
+        MENUITEM "qyViewSmContacts",            ID_qyViewSmContacts
+        MENUITEM SEPARATOR
+        MENUITEM "cfgSmContact",                ID_qyCfgSmContact
+        MENUITEM "cfgDefaultSmContact",         ID_qyCfgDefaultSmContact
+        MENUITEM "cfgDefaultSmServer",          ID_qyCfgDefaultSmServer
+        MENUITEM SEPARATOR
+        MENUITEM "qyProperties(&H)",            ID_qyProperties
+    END
+    POPUP "Popup_dynBmpList_isMgr - 221"
+    BEGIN
+        MENUITEM "cfgVistor",                   ID_cfgVisitor
+    END
+    MENUITEM "Popup_dynBmpList_multiSel_isMgr - 222", 0
+    POPUP "Popup_dynBmpList_isClient - 224"
+    BEGIN
+        MENUITEM "viewDynBmp",                  ID_viewDynBmp
+    END
+    POPUP "Popup_dynBmpList_notSel_isClient - 225"
+    BEGIN
+        MENUITEM "viewDynBmp",                  ID_viewDynBmp
+    END
+    POPUP "Popup_dynBmpRuleList_isMgr - 228"
+    BEGIN
+        MENUITEM "qyDel(&S)",                   ID_qyDel
+    END
+    POPUP "Popup_trayNotify - 300"
+    BEGIN
+        MENUITEM SEPARATOR
+        MENUITEM "About(&A)",                   ID_APP_ABOUT
+    END
+    POPUP "Popup_viewProcedObj - 334 ..."
+    BEGIN
+        MENUITEM "loadProcedObj(&L)",           ID_loadProcedObj
+        MENUITEM "unloadProcedObj(&X)",         ID_unloadProcedObj
+    END
+    POPUP "Popup_me - 501"
+    BEGIN
+        MENUITEM "qyUnprocedNewTaskList(&U)",   ID_qyUnprocedNewTaskList
+        MENUITEM "qyRealTimeTaskList(&R)",      ID_qyRealTimeTaskList
+        MENUITEM "qyNewTaskList(&R)",           ID_qyNewTaskList
+        MENUITEM SEPARATOR
+        MENUITEM "qyEdit(&B)",                  ID_qyEdit
+        MENUITEM SEPARATOR
+        MENUITEM "qyProperties(&P)",            ID_qyProperties
+    END
+    POPUP "Popup_messenger_isClient - 502"
+    BEGIN
+        MENUITEM "talk to(&T)",                 ID_qyTalk
+        MENUITEM SEPARATOR
+        MENUITEM "qyProperties(&P)",            ID_qyProperties
+    END
+    POPUP "Popup_messenger_isMgr - 503"
+    BEGIN
+        MENUITEM "ID_qyDel(&S)",                ID_qyDel
+        MENUITEM SEPARATOR
+        MENUITEM "qyProperties(&P)",            ID_qyProperties
+    END
+    POPUP "Popup_imGrp_isClient - 504"
+    BEGIN
+        MENUITEM "qyDiscuss",                   ID_qyDiscuss
+    END
+    POPUP "Popup_instantAssistMem - 508"
+    BEGIN
+        MENUITEM "stop speaking",               ID_stopSpeaking
+        MENUITEM "request to speak",            ID_requestToSpeak
+    END
+    POPUP "Popup_htmlEdit - 509"
+    BEGIN
+        MENUITEM "Copy",                        ID_qyCopy
+        MENUITEM "Paste",                       ID_qyPaste
+    END
+    POPUP "Popup_vWall - 510"
+    BEGIN
+        MENUITEM "custom name",                 ID_qyCusName
+        MENUITEM SEPARATOR
+        MENUITEM "Set Background",              ID_qySetBackground
+        MENUITEM "Reset Background",            ID_qyResetBackground
+    END
+    POPUP "Popup_zone - 511"
+    BEGIN
+        MENUITEM "Set dynamic image",           ID_qySetDynBmp
+        MENUITEM "Set group member image",      ID_qySetImGrpMemBmp
+    END
+    POPUP "Popup_commonList_notSel - 600"
+    BEGIN
+        MENUITEM "Add(&A)",                     ID_qyAdd
+        MENUITEM SEPARATOR
+        MENUITEM "Import(&I)",                  ID_qyImport
+        MENUITEM "Export(&E)",                  32890
+        MENUITEM "Clearup(&C)",                 ID_qyClearUp
+    END
+    POPUP "Popup_commonList - 601"
+    BEGIN
+        MENUITEM "qyEdit(&B)",                  ID_qyEdit
+        MENUITEM SEPARATOR
+        MENUITEM "qyDel(&S)",                   ID_qyDel
+        MENUITEM SEPARATOR
+        MENUITEM "qyProperties(&H)",            ID_qyProperties
+    END
+    POPUP "menu_dlgTalk - 700"
+    BEGIN
+        MENUITEM "stop Av Call",                ID_stopAvCall
+        MENUITEM "start Av Call",               ID_startAvCall
+        MENUITEM SEPARATOR
+        MENUITEM SEPARATOR
+        MENUITEM "view instant assistant",      ID_viewInstantAssistant
+        MENUITEM SEPARATOR
+        MENUITEM "view conference",             ID_MENU_VIEWCONFERENCE
+        MENUITEM SEPARATOR
+        POPUP "conference wall"
+        BEGIN
+            MENUITEM "vWall0",                      ID_vWall0
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "new conference wall",         ID_conferenceWall_new
+        MENUITEM "reset conference wall",       ID_conferenceWall_reset
+        MENUITEM SEPARATOR
+        MENUITEM "stop Share Screen",           ID_stopShareScreen
+        MENUITEM "start share Screen",          ID_startShareScreen
+        MENUITEM "start share Full Screen",     ID_startShareFullScreen
+        MENUITEM SEPARATOR
+        MENUITEM "stop Remote Assist",          ID_stopRemoteAssist
+        MENUITEM "start Remote Assist",         ID_startRemoteAssist
+        MENUITEM "start Full Screen Remote Assist", 33280
+        MENUITEM SEPARATOR
+        MENUITEM "startShareScreen( DirectX )", 33283
+        MENUITEM "start share Full Screen( DirectX )", ID_startShareFullScreen_dx
+        MENUITEM SEPARATOR
+        MENUITEM "cfgVideoConference",          ID_cfgVideoConference
+        MENUITEM SEPARATOR
+        MENUITEM "test",                        ID_qyTest
+    END
+    POPUP "menu_dlgVideos - 702"
+    BEGIN
+        MENUITEM "stopScrollBar",               ID_stopScrollBar
+        MENUITEM "startScrollBar",              ID_startScrollBar
+    END
+    MENUITEM "menu_dlgSharedWebcams - 703", ID_MENU
+    POPUP "menu_dlgVWall - 704"
+    BEGIN
+        MENUITEM "stopScrollBar",               ID_stopScrollBar
+        MENUITEM "startScrollBar",              ID_startScrollBar
+        MENUITEM SEPARATOR
+        MENUITEM "toolbox",                     ID_viewToolbox
+        MENUITEM SEPARATOR
+        MENUITEM "stopEditing",                 ID_stopEditing
+        MENUITEM "start to edit",               ID_startToEdit
+        MENUITEM "stopShowingRules",            ID_stopShowingRules
+        MENUITEM "start to show rules",         ID_startToShowRules
+        MENUITEM SEPARATOR
+        MENUITEM "open",                        ID_open
+        MENUITEM SEPARATOR
+        MENUITEM "save",                        ID_save
+        MENUITEM SEPARATOR
+        MENUITEM "Close",                       IDCANCEL
+    END
+END
+
+IDR_MENU_const MENU 
+BEGIN
+    POPUP "const"
+    BEGIN
+        MENUITEM "ID_MENU_conferenceWall_minCmd", ID_MENU_conferenceWall_minCmd
+        MENUITEM "ID_MENU_conferenceWall_maxCmd", ID_MENU_conferenceWall_maxCmd
+        MENUITEM SEPARATOR
+        MENUITEM "ID_MENU_isCmd_min",           ID_MENU_isCmd_min
+        MENUITEM "ID_MENU_isCmd_max",           ID_MENU_isCmd_max
+        MENUITEM SEPARATOR
+        MENUITEM "ID_qyLeftKey",                ID_qyLeftKey
+        MENUITEM "ID_qyRightKey",               ID_qyRightKey
+    END
+END
+
+IDR_MENU MENU 
+BEGIN
+    POPUP "Help"
+    BEGIN
+        MENUITEM "About",                       IDM_HELP_ABOUT
+    END
+END
+
+IDR_MC_MGR MENU 
+BEGIN
+    POPUP "0 nms Mgr(&G)"
+    BEGIN
+        POPUP "?????(&G)"
+        BEGIN
+            MENUITEM "?????(&J)",                   ID_qyPcList
+            MENUITEM "????(&B)",                    ID_qyPcSpList
+        END
+        POPUP "????"
+        BEGIN
+            MENUITEM "????(&Y)",                    ID_qyPcUsrList
+            MENUITEM "????????????(&C)",            ID_qyPcUsrInTab1List
+        END
+        MENUITEM SEPARATOR
+        POPUP "????(&K)"
+        BEGIN
+            MENUITEM "qyNetworkView(&S)",           ID_qyNetworkView
+            MENUITEM "qyConnectionView(&J)",        ID_qyConnectionView
+            MENUITEM "qyNetworkSpeedView(&L)",      ID_qyNetworkSpeedView
+            MENUITEM SEPARATOR
+            MENUITEM "snmpObjRuleList(&C)",         ID_snmpObjRuleList
+            MENUITEM "conflictConnList(&D)",        ID_conflictConnList
+            MENUITEM SEPARATOR
+            MENUITEM "directConnList(J)",           ID_directConnList
+        END
+        MENUITEM SEPARATOR
+        POPUP "qyEvent(&S)"
+        BEGIN
+            MENUITEM "qyEventAll(&S)",              ID_qyEventAll
+            MENUITEM "qyNetDevEventAll(&W)",        ID_qyNetDevEventAll
+            MENUITEM SEPARATOR
+            MENUITEM "qyOpEventAll(&Y)",            ID_qyOpEventAll
+        END
+        MENUITEM SEPARATOR
+        POPUP "??(&C)"
+        BEGIN
+            MENUITEM "????????(&W)",                ID_qySearch_netDevEvent
+            MENUITEM "???????(&S)",                 ID_qySearch_pcEvent
+            MENUITEM SEPARATOR
+            MENUITEM "?????(&J)",                   ID_qySearch_pcList
+            MENUITEM "????(B)",                     ID_qySearch_pcSpList
+            MENUITEM "MAC??(&M)",                   ID_qySearch_mac
+            MENUITEM "IP??(&I)",                    ID_qySearch_ip
+            MENUITEM "??????(&W)",                  ID_qySearch_unusedConn
+        END
+        MENUITEM "??(&T)",                      ID_qyStat
+        MENUITEM SEPARATOR
+        MENUITEM "??(&R)",                      ID_qyImport
+        MENUITEM "??(&H)",                      ID_qyExport
+        MENUITEM "??(&Q)",                      ID_qyClearUp
+        MENUITEM SEPARATOR
+        MENUITEM "????(&R)...",                 ID_FILE_PRINT_SETUP
+        MENUITEM "??(&P)",                      ID_FILE_PRINT
+        MENUITEM SEPARATOR
+        MENUITEM "??(&X)",                      ID_APP_EXIT
+    END
+    POPUP "1 nms sysMenu(&T)"
+    BEGIN
+        MENUITEM "ID_qyStopSnmpScan(&J)",       ID_qyStopSnmpScan
+        MENUITEM "ID_qyStartSnmpScan(&R)",      ID_qyStartSnmpScan
+        MENUITEM "ID_qyStopMacScan(&S)",        ID_qyStopMacScan
+        MENUITEM "ID_qyStartMacScan(&U)",       ID_qyStartMacScan
+        MENUITEM SEPARATOR
+        MENUITEM "ID_qyStopWatchIp(&B)",        ID_qyStopWatchIp
+        MENUITEM "ID_qyStartWatchIp(G)",        ID_qyStartWatchIp
+        MENUITEM SEPARATOR
+        MENUITEM "ID_qyStopRegScan(&A)",        ID_qyStopRegScan
+        MENUITEM "ID_qyStartRegScan(&H)",       ID_qyStartRegScan
+        MENUITEM SEPARATOR
+        MENUITEM "ID_qyStopDownPortIfMacChanged(&Z)", ID_qyStopDownPortIfMacChanged
+        MENUITEM "ID_qyStartDownPortIfMacChanged(&D)", ID_qyStartDownPortIfMacChanged
+        MENUITEM "ID_qyStopDownPortIfWarnSpeed", ID_qyStopDownPortIfWarnSpeed
+        MENUITEM "ID_qyStartDownPortIfWarnSpeed", ID_qyStartDownPortIfWarnSpeed
+        MENUITEM SEPARATOR
+        MENUITEM "ID_qyStartUpdate(&J)",        ID_qyStartUpdate
+        MENUITEM "ID_qyStopUpdate(&C)",         ID_qyStopUpdate
+    END
+    POPUP "2 netMc2 Mgr(&G)"
+    BEGIN
+        MENUITEM "?¡ì|??¨¬??¡ì?¡ì??¡ì?2aIP?¡ì?¨¦D?¡§¡è?¡ìa(&I)", ID_qyScannedIpList
+        MENUITEM SEPARATOR
+        POPUP "??????¡ì21?¡ì1?¡ì?¨¨?¡ìa(&G)"
+        BEGIN
+            MENUITEM "??????¡ì21?¡ì1?¡ì?¨¨?¡ìa?¡ìo?¡ì??¡ìa?(&G)", ID_qyPcView
+            MENUITEM "??????¡ì2?¡ì?¨¦D?¡§¡è?¡ìa(&J)", ID_qyPcList
+        END
+        POPUP "?¡ì????¡§?1?¡ì1?¡ì?¨¨?¡ìa(&Y)"
+        BEGIN
+            MENUITEM "?¡ì????¡§??¡ì?¨¦D?¡§¡è?¡ìa(&Y)", ID_qyPcUsrList
+            MENUITEM "?¡ì????¡ì|?¡ì?o?|¡§????????¡§¡é?¡§|2?¡ì?¨¦?¡ì????¡§??¡ì?¨¦D?¡§¡è?¡ìa(&C)", ID_qyPcUsrInTab1List
+        END
+        POPUP "??¡ìa??¡§???1?¡ì1?¡ì?¨¨?¡ìa(&K)"
+        BEGIN
+            MENUITEM "??¡ìa??¡§????¡ì?¨¦D?¡§¡è?¡ìa(&K)", ID_qwmSvrList
+        END
+        MENUITEM SEPARATOR
+        POPUP "??????¡ì2??¡ì?¨¨???¡ì???¡ì|?¡ì???(&J)"
+        BEGIN
+            MENUITEM "??¡ì?2?¡ì|??¡ì?¨¦1??¡ì?¨¦D?¡§¡è?¡ìa(&J)", ID_pcSecChkEventList
+            MENUITEM SEPARATOR
+            MENUITEM "?|¡§??¡ìa3?¡ì?¡ì????¡ì?¨¦D?¡§¡è?¡ìa(&T)", ID_pcEventLogList
+            MENUITEM "2?¡ì???¡§¡é???|¡§??¡ìa3?¡ì????¡§??¡ì?¨¦D?¡§¡è?¡ìa(&Z)", ID_pcOsUsrList
+            MENUITEM "NetStat?¡ì?¨¦D?¡§¡è?¡ìa(&L)", 33062
+            MENUITEM "???¡ì???¡ì????¡ì2?¡ì?¨¦D?¡§¡è?¡ìa(&Y)", 33063
+            MENUITEM "21???¡ì?¨¦D?¡§¡è?¡ìa(&B)",    ID_qyPcSpList
+        END
+        POPUP "??????¡ì2??2?¡ì?¡ì?1?¡ì1?¡ì?¨¨?¡ìa(&A)"
+        BEGIN
+            MENUITEM "|¡§??¨º?¨¨??¡ì21?¡ì1?¡ì?¨¨?¡ìa2????¡ì?¨¦D?¡§¡è?¡ìa(&D)", ID_pcRuleList
+        END
+        POPUP "??3?¡ì??¡§¡é?¡ì?¨¨??1?¡ì1?¡ì?¨¨?¡ìa(&P)"
+        BEGIN
+            MENUITEM "?¡ìa????¡ì?¨¦???¡ì?????|¡§???¡§¡é???¡ì???¡ì?¨¦D?¡§¡è?¡ìa(&W)", ID_pcNetworkPropList
+            MENUITEM "?¡ìa????¡ì?¨¦???¡ì?????|¡§??2????¡ì?¨¦D?¡§¡è?¡ìa(&L)", ID_pcNetworkRuleList
+            MENUITEM SEPARATOR
+            MENUITEM "???¡ì2?¡ì?¨¨?¡ìa??¨¨t?????????|¡§???¡§¡é???¡ì???¡ì?¨¦D?¡§¡è?¡ìa(&D)", ID_pcProxyCfgPropList
+            MENUITEM "???¡ì2?¡ì?¨¨?¡ìa??¨¨t?????????|¡§??2????¡ì?¨¦D?¡§¡è?¡ìa(&W)", ID_pcProxyCfgRuleList
+            MENUITEM SEPARATOR
+            MENUITEM "??????¡ì2D???¡§|????|¡§???¡§¡é???¡ì???¡ì?¨¦D?¡§¡è?¡ìa(&M)", ID_pcComputerPropList
+            MENUITEM "??????¡ì2D???¡§|????|¡§??2????¡ì?¨¦D?¡§¡è?¡ìa(&S)", ID_pcComputerRuleList
+            MENUITEM SEPARATOR
+            MENUITEM "21????¨¨???¨¨?¡§|????|¡§???¡§¡é???¡ì???¡ì?¨¦D?¡§¡è?¡ìa(&B)", ID_pcWindowsUpdatePolicyPropList
+            MENUITEM "21????¨¨???¨¨?¡§|????|¡§??2????¡ì?¨¦D?¡§¡è?¡ìa(&I)", ID_pcWindowsUpdatePolicyRuleList
+            MENUITEM SEPARATOR
+            MENUITEM "??3?¡ì??¡ì?¨¦D?¡§¡è?¡ìa(&J)", ID_pcProcessPropList
+            MENUITEM "pcProcessModulesList(&M)",    ID_pcProcessModulePropList
+            MENUITEM "??3?¡ì?1?¡ì1?¡ì?¨¨?¡ìa|¡§??2????¡ì?¨¦D?¡§¡è?¡ìa(&C)", ID_pcProcessRuleList
+            MENUITEM SEPARATOR
+            MENUITEM "pcNetFlowPropList(&L)",       ID_pcNetFlowPropList
+            MENUITEM SEPARATOR
+            MENUITEM "pcNetSharePropList(&N)",      ID_pcNetSharePropList
+        END
+        MENUITEM "?¡§¡é???¡ê¡è|¡§?????¡ì????¡§??¡ì?¨¦D?¡§¡è?¡ìa(&Z)", ID_autoLogonList
+        MENUITEM SEPARATOR
+        POPUP "?¡ìo??t2?¡ì|???(&S)"
+        BEGIN
+            MENUITEM "??¡ì???¡ì?D?¡ìo??t(&S)",      ID_qyEventAll
+            MENUITEM SEPARATOR
+            MENUITEM "2|o?(&B)",                    ID_qyRas
+            MENUITEM "???¡ì2?¡ì?¨¨?¡ìa?¡ì|?¡ì?¡ì????¡ì?2?¡ì|(&D)", ID_qyProxyServer
+            MENUITEM "??¨¨???¨¨??¨¬?¡ìaa?¡ì?¨¦a(&W)", ID_qyOnInternet
+            MENUITEM "????¡ì|?¡ì2?????¡ì2??¡ì??¡ì?¡ì?(&M)", ID_qyIntraConn
+            MENUITEM "?¡ìa????¨¬?¡§¡è???¡ì1(&C)",   ID_qyDevChanged
+            MENUITEM "??¡ìa??¡§????¡ì?¡ì?¡ìa?t??DD?¡ì???¡ì?3?¡§o(&Y)", ID_qyQwmDel
+            MENUITEM SEPARATOR
+            MENUITEM "?|¡§??¡ìa3?¡ìo??t(&Y)",       ID_qyOpEventAll
+        END
+        MENUITEM SEPARATOR
+    END
+    POPUP "3 netMc2 sysMenu(&T)"
+    BEGIN
+        MENUITEM "stop mon(&K)",                ID_qyStopMon
+        MENUITEM "start mon(&B)",               ID_qyStartMon
+        MENUITEM SEPARATOR
+        MENUITEM "stop IP scan(&N)",            ID_qyStopIpScan
+        MENUITEM "start IP scan(&I)",           ID_qyStartIpScan
+        MENUITEM "stop reg scan(&A)",           ID_qyStopRegScan
+        MENUITEM "start reg scan(&H)",          ID_qyStartRegScan
+        MENUITEM SEPARATOR
+        MENUITEM "stop file mon(&T)",           ID_stopFileMon
+        MENUITEM "start file mon(&W)",          ID_startFileMon
+        MENUITEM "stop module mon(&M)",         ID_stopModuleMon
+        MENUITEM "start module mon(&K)",        ID_startModuleMon
+        MENUITEM "stop pc registry mon",        ID_stopPcRegistryMon
+        MENUITEM "star tPc Registry Mon",       ID_startPcRegistryMon
+        MENUITEM SEPARATOR
+        MENUITEM "start update(&J)",            ID_qyStartUpdate
+        MENUITEM "stop update(&C)",             ID_qyStopUpdate
+    END
+    POPUP "4 secChk??(&G)"
+    BEGIN
+        POPUP "?????(&G)"
+        BEGIN
+            MENUITEM "?????(&J)",                   ID_qyPcList
+            MENUITEM "????(&B)",                    ID_qyPcSpList
+        END
+        POPUP "????(&Y)"
+        BEGIN
+            MENUITEM "????(&Y)",                    ID_qyPcUsrList
+            MENUITEM "????????????(&C)",            ID_qyPcUsrInTab1List
+        END
+        POPUP "?????(&K)"
+        BEGIN
+            MENUITEM "?????(&K)",                   ID_qwmSvrList
+        END
+        MENUITEM SEPARATOR
+        POPUP "???????"
+        BEGIN
+            MENUITEM "????????(&D)",                ID_pcRuleList
+        END
+        MENUITEM SEPARATOR
+        POPUP "????(&S)"
+        BEGIN
+            MENUITEM "????(&S)",                    ID_qyEventAll
+            MENUITEM SEPARATOR
+            MENUITEM "????(&Y)",                    ID_qyOpEventAll
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "??(&C)",                      ID_qySearch
+        MENUITEM "??(&T)",                      ID_qyStat
+        MENUITEM SEPARATOR
+        MENUITEM "??(&R)",                      ID_qyImport
+        MENUITEM "??(&H)",                      ID_qyExport
+        MENUITEM "??(&Q)",                      ID_qyClearUp
+        MENUITEM SEPARATOR
+        MENUITEM "????(&R)...",                 ID_FILE_PRINT_SETUP
+        MENUITEM "??(&P)",                      ID_FILE_PRINT
+        MENUITEM SEPARATOR
+        MENUITEM "??(&X)",                      ID_APP_EXIT
+    END
+    POPUP "5 secChk??(&T)"
+    BEGIN
+        MENUITEM "????(&K)",                    ID_qyStopSecChk
+        MENUITEM "????(&B)",                    ID_qyStartSecChk
+    END
+    POPUP "6 bhb??(&G)"
+    BEGIN
+        MENUITEM "????(&Y)",                    ID_qyOpEventAll
+        MENUITEM SEPARATOR
+        MENUITEM "??(&R)",                      ID_qyImport
+        MENUITEM "??(&H)",                      ID_qyExport
+        MENUITEM "??(&Q)",                      ID_qyClearUp
+        MENUITEM SEPARATOR
+        MENUITEM "????(&R)...",                 ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "??(&X)",                      ID_APP_EXIT
+    END
+    POPUP "7 bhb??(&T)"
+    BEGIN
+        MENUITEM "???????????(&K)",             ID_qyStopIntraMon
+        MENUITEM "???????????(&B)",             ID_qyStartIntraMon
+    END
+    POPUP "8 netMc4??(&G)"
+    BEGIN
+        MENUITEM "????IP??(&I)",                ID_qyScannedIpList
+        MENUITEM SEPARATOR
+        POPUP "?????(&G)"
+        BEGIN
+            MENUITEM "?????(&J)",                   ID_qyPcList
+            MENUITEM "????(&B)",                    ID_qyPcSpList
+            MENUITEM "????????(&D)",                ID_pcRuleList
+        END
+        POPUP "????"
+        BEGIN
+            MENUITEM "????(&Y)",                    ID_qyPcUsrList
+            MENUITEM "????????????(&C)",            ID_qyPcUsrInTab1List
+        END
+        MENUITEM SEPARATOR
+        POPUP "????(&S)"
+        BEGIN
+            MENUITEM "????(&S)",                    ID_qyEventAll
+            MENUITEM SEPARATOR
+            MENUITEM "??(&B)",                      ID_qyRas
+            MENUITEM "??????(&D)",                  ID_qyProxyServer
+            MENUITEM "??????(&M)",                  ID_qyIntraConn
+            MENUITEM "????(&C)",                    ID_qyDevChanged
+            MENUITEM "?????????(&Y)",               ID_qyQwmDel
+            MENUITEM SEPARATOR
+            MENUITEM "????(&Y)",                    ID_qyOpEventAll
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "??(&C)",                      ID_qySearch
+        MENUITEM "??(&T)",                      ID_qyStat
+        MENUITEM SEPARATOR
+        MENUITEM "??(&R)",                      ID_qyImport
+        MENUITEM "??(&H)",                      ID_qyExport
+        MENUITEM "??(&Q)",                      ID_qyClearUp
+        MENUITEM SEPARATOR
+        MENUITEM "????(&R)...",                 ID_FILE_PRINT_SETUP
+        MENUITEM "??(&P)",                      ID_FILE_PRINT
+        MENUITEM SEPARATOR
+        MENUITEM "??(&X)",                      ID_APP_EXIT
+    END
+    POPUP "9 netMc4??(&T)"
+    BEGIN
+        MENUITEM "????????????(&K)",            ID_qyStopMon
+        MENUITEM "?????????????(&B)",           ID_qyStartMon
+        MENUITEM SEPARATOR
+        MENUITEM "??IP????(&N)",                ID_qyStopIpScan
+        MENUITEM "??IP????(&I)",                ID_qyStartIpScan
+        MENUITEM "??????(&A)",                  ID_qyStopRegScan
+        MENUITEM "??????(&H)",                  ID_qyStartRegScan
+        MENUITEM SEPARATOR
+        MENUITEM "????????,??????(&J)",         ID_qyStartUpdate
+        MENUITEM "????????,??????(&C)",         ID_qyStopUpdate
+    END
+    POPUP "10 bhb?????(&G)"
+    BEGIN
+        MENUITEM "??????(&L)",                  ID_LOG_DISPLAY
+        MENUITEM "??????(&Z)",                  ID_LOG_DISPLAY_OFF
+        MENUITEM SEPARATOR
+        MENUITEM "????(&Y)",                    ID_qyOpEventAll
+        MENUITEM SEPARATOR
+        MENUITEM "??(&C)",                      ID_qySearch
+        MENUITEM SEPARATOR
+        MENUITEM "??(&H)",                      ID_qyExport
+        MENUITEM "??(&Q)",                      ID_qyClearUp
+        MENUITEM SEPARATOR
+        MENUITEM "????(&R)...",                 ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "??(&X)",                      ID_APP_EXIT
+    END
+    POPUP "11 bhb?????(&T)"
+    BEGIN
+        MENUITEM "????(&S)",                    ID_SYS_START
+        MENUITEM "????(&P)",                    ID_SYS_STOP
+        MENUITEM SEPARATOR
+        MENUITEM "??IP?????????(J)",            ID_qyStartPermitNat
+        MENUITEM "??IP?????????(&U)",           ID_qyStopPermitNat
+    END
+    POPUP "12 assetMgr??(&G)"
+    BEGIN
+        POPUP "?????(&G)"
+        BEGIN
+            MENUITEM "?????(&J)",                   ID_qyPcList
+            MENUITEM "????(&B)",                    ID_qyPcSpList
+        END
+        POPUP "????"
+        BEGIN
+            MENUITEM "????(&Y)",                    ID_qyPcUsrList
+            MENUITEM "????????????(&C)",            ID_qyPcUsrInTab1List
+        END
+        POPUP "?????(&K)"
+        BEGIN
+            MENUITEM "?????(&K)",                   ID_qwmSvrList
+        END
+        MENUITEM SEPARATOR
+        POPUP "???????"
+        BEGIN
+            MENUITEM "????????(&D)",                ID_pcRuleList
+        END
+        MENUITEM SEPARATOR
+        POPUP "????(&Z)"
+        BEGIN
+            MENUITEM "qyAssetsView(&Z)",            ID_qyAssetsView
+        END
+        MENUITEM SEPARATOR
+        POPUP "????(&S)"
+        BEGIN
+            MENUITEM "????(&S)",                    ID_qyEventAll
+            MENUITEM SEPARATOR
+            MENUITEM "????(&Y)",                    ID_qyOpEventAll
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "??(&C)",                      ID_qySearch
+        MENUITEM "??(&T)",                      ID_qyStat
+        POPUP "qyReport(&B)"
+        BEGIN
+            POPUP "qyReportAssetsInfo(&J)"
+            BEGIN
+                MENUITEM "qyReportAssetsInfo_byMac(&J)", ID_qyReportAssetsInfo_byMac
+                MENUITEM "qyReportAssetsInfo_byOs(&C)", ID_qyReportAssetsInfo_byOs
+            END
+            POPUP "qyReportAssetsInfo_en(&Y)"
+            BEGIN
+                MENUITEM "qyReportAssetsInfo_en_byMac(&J)", ID_qyReportAssetsInfo_en_byMac
+                MENUITEM "qyReportAssetsInfo_en_byOs(&C)", ID_qyReportAssetsInfo_en_byOs
+            END
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "??(&R)",                      ID_qyImport
+        MENUITEM "??(&H)",                      ID_qyExport
+        MENUITEM "??(&Q)",                      ID_qyClearUp
+        MENUITEM SEPARATOR
+        MENUITEM "????(&R)...",                 ID_FILE_PRINT_SETUP
+        MENUITEM "??(&P)",                      ID_FILE_PRINT
+        MENUITEM SEPARATOR
+        MENUITEM "??(&X)",                      ID_APP_EXIT
+    END
+    POPUP "13 assetMgr??(&T)"
+    BEGIN
+        MENUITEM "????????????(&K)",            ID_qyStopMon
+        MENUITEM "?????????????(&B)",           ID_qyStartMon
+        MENUITEM SEPARATOR
+        MENUITEM "???????(&S)",                 ID_qyStopMacScan
+        MENUITEM "???????(&U)",                 ID_qyStartMacScan
+        MENUITEM SEPARATOR
+        MENUITEM "????IP??(&B)",                ID_qyStopWatchIp
+        MENUITEM "????IP??(G)",                 ID_qyStartWatchIp
+        MENUITEM SEPARATOR
+        MENUITEM "????????,??????(&J)",         ID_qyStartUpdate
+        MENUITEM "????????,??????(&C)",         ID_qyStopUpdate
+    END
+    MENUITEM "14 make clients",             ID_qyMakeClients
+    POPUP "15 totalMgr(&T)"
+    BEGIN
+        MENUITEM "mgr Systems(&M)",             ID_qyMgrSystems
+        MENUITEM SEPARATOR
+        MENUITEM "Cfg Systems(&P)",             ID_qyCfgSystems
+        MENUITEM SEPARATOR
+        MENUITEM "Search(&C)",                  ID_qySearch
+        MENUITEM "Stat(&T)",                    ID_qyStat
+        MENUITEM SEPARATOR
+        MENUITEM "Import(&R)",                  ID_qyImport
+        MENUITEM "Export(&H)",                  ID_qyExport
+        MENUITEM "ClearUp(&Q)",                 ID_qyClearUp
+        MENUITEM SEPARATOR
+        MENUITEM "Print Setup(&R)...",          ID_FILE_PRINT_SETUP
+        MENUITEM "Print(&P)",                   ID_FILE_PRINT
+        MENUITEM SEPARATOR
+        MENUITEM "Exit(&X)",                    ID_APP_EXIT
+    END
+    POPUP "17 is Client(&G)"
+    BEGIN
+        POPUP "Contact(&G)"
+        BEGIN
+            MENUITEM "qyMessengerView(&F)",         ID_qyMessengerView
+            MENUITEM SEPARATOR
+            MENUITEM "qyMessengerList(&L)",         ID_qyMessengerList
+            MENUITEM SEPARATOR
+            MENUITEM "qyImGrpList(&G)",             ID_qyImGrpList
+            MENUITEM "qyImGrpMemList(&M)",          ID_qyImGrpMemList
+        END
+        MENUITEM SEPARATOR
+        POPUP "PhoneGuest(&P)"
+        BEGIN
+            MENUITEM "phoneGuestList(&G)",          ID_qyPhoneGuestList
+        END
+        MENUITEM "verifiedPhoneList(&H)",       ID_qyVerifiedPhoneList
+        MENUITEM SEPARATOR
+        POPUP "modules(&O)"
+        BEGIN
+            MENUITEM "gsm modems",                  33199
+            MENUITEM "client module1",              33200
+            MENUITEM "client module2",              33201
+            MENUITEM "client module 3",             33202
+            MENUITEM "client module4",              33203
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "qyStartLocalVideo(&V)",       ID_qyStartLocalVideo
+        MENUITEM SEPARATOR
+        MENUITEM "qyStartLocalAudio(&A)",       ID_qyStartLocalAudio
+        MENUITEM "qyStopLocalAudio(&U)",        ID_qyStopLocalAudio
+        MENUITEM SEPARATOR
+        POPUP "Share(&S)"
+        BEGIN
+            MENUITEM "Dynamic Images",              ID_shareDynBmps
+        END
+        POPUP "Virtual Wall"
+        BEGIN
+            MENUITEM "newVirtualWall",              ID_newVirtualWall
+            MENUITEM "Virtual Wall List",           ID_virtualWallList
+        END
+        MENUITEM SEPARATOR
+        POPUP "TaskInfo(&T)"
+        BEGIN
+            MENUITEM "qyUnprocedNewTaskList(&U)",   33143
+            MENUITEM "qyRealTimeTaskList(&R)",      33265
+            MENUITEM SEPARATOR
+            MENUITEM "Sharing Ojbect List(&S)",     ID_sharingObjectList
+            MENUITEM SEPARATOR
+            MENUITEM "PlayerList(&P)",              ID_playerList
+            MENUITEM SEPARATOR
+            MENUITEM "WallList(W)",                 ID_wallList
+            MENUITEM SEPARATOR
+            MENUITEM "qyNetStatList(&N)",           ID_imNetStatList
+            MENUITEM SEPARATOR
+            MENUITEM "talkerList(&T)",              ID_talkerList
+            MENUITEM "qList(&Q)",                   ID_qList
+            MENUITEM SEPARATOR
+            MENUITEM "qyNewTaskList(&R)",           33140
+            MENUITEM SEPARATOR
+            MENUITEM "qyTaskHisList(&L)",           ID_qyTaskHisList
+        END
+        POPUP "Msg(&M)"
+        BEGIN
+            MENUITEM "qyMsgToday",                  ID_qyMsgToday
+            MENUITEM SEPARATOR
+            MENUITEM "qyMsgList(&M)",               ID_qyMsgList
+        END
+        MENUITEM SEPARATOR
+        POPUP "Event(&E)"
+        BEGIN
+            MENUITEM "Event All(&S)",               ID_qyEventAll
+            MENUITEM SEPARATOR
+            MENUITEM "Op Event All(&Y)",            ID_qyOpEventAll
+        END
+    END
+    POPUP "16 is Mgr(&G)"
+    BEGIN
+        POPUP "Contact(&G)"
+        BEGIN
+            MENUITEM "qyMessengerView(&F)",         ID_qyMessengerView
+            MENUITEM SEPARATOR
+            MENUITEM "newMessenger(&N)",            ID_qyNewMessenger
+            MENUITEM "qyMessengerAuthList",         ID_qyMessengerAuthList
+            MENUITEM "qyMessengerAuthList_needAudited(&L)", ID_qyMessengerAuthList_needAudited
+            MENUITEM SEPARATOR
+            MENUITEM "qyImAmList(&A)",              ID_qyImAmList
+            MENUITEM SEPARATOR
+            MENUITEM "qyPhoneMessengerList",        ID_qyPhoneMessengerList
+            MENUITEM SEPARATOR
+            MENUITEM "newImGrp(&N)",                ID_qyNewImGrp
+            MENUITEM "qyImGrpAuthList",             ID_qyImGrpAuthList
+            MENUITEM SEPARATOR
+            MENUITEM "qyMessengerList(&L)",         ID_qyMessengerList
+            MENUITEM SEPARATOR
+            MENUITEM "qyImGrpList(&G)",             ID_qyImGrpList
+            MENUITEM "qyImGrpMemList(&M)",          ID_qyImGrpMemList
+        END
+        POPUP "wwwQm(&W)"
+        BEGIN
+            MENUITEM "wwwQmCfgList(&W)",            ID_wwwQmCfgList
+            MENUITEM "ipKnowledgeList(&I)",         ID_ipKnowledgeList
+        END
+        MENUITEM SEPARATOR
+        POPUP "Shared resources(&S)"
+        BEGIN
+            MENUITEM "dynBmps(&D)",                 ID_sharedDynBmpList
+            MENUITEM "sharedDynBmpRuleList",        ID_sharedDynBmpRuleList
+        END
+        MENUITEM SEPARATOR
+        POPUP "modules(&O)"
+        BEGIN
+            MENUITEM "gsm modemList",               ID_qyGsmModemList
+            MENUITEM "smContactList",               ID_qySmContactList
+            MENUITEM SEPARATOR
+            MENUITEM "client module1",              33200
+            MENUITEM "client module2",              33201
+            MENUITEM "client module 3",             33202
+            MENUITEM "client module4",              33203
+        END
+        MENUITEM SEPARATOR
+        POPUP "Task(&T)"
+        BEGIN
+            MENUITEM SEPARATOR
+            MENUITEM "qyUnprocedNewTaskList(&U)",   33143
+            MENUITEM "qyNewTaskList(&R)",           33140
+            MENUITEM "qyTaskHisList(&L)",           ID_qyTaskHisList
+        END
+        POPUP "Msg(&M)"
+        BEGIN
+            MENUITEM "qyMsgList(&M)",               ID_qyMsgList
+        END
+        MENUITEM SEPARATOR
+        POPUP "Event(&S)"
+        BEGIN
+            MENUITEM "Event All(&S)",               ID_qyEventAll
+            MENUITEM SEPARATOR
+            MENUITEM "Op Event All(&Y)",            ID_qyOpEventAll
+        END
+    END
+END
+
+IDR_MC_CFG MENU 
+BEGIN
+    POPUP "0 nms??(&P)"
+    BEGIN
+        MENUITEM "????(&F)",                    ID_qyMgrPcGrp
+        MENUITEM "snmp?????(&J)",               ID_qyCfgSwitchPolicyGrps
+        MENUITEM "????????(&S)",                ID_qyMgrSwitchPolicyGrps
+        MENUITEM SEPARATOR
+        MENUITEM "???(&L)",                     ID_qyCfgBoard
+        MENUITEM "?????(&B)",                   ID_qyCfgSp
+        MENUITEM SEPARATOR
+        MENUITEM "????(&D)",                    ID_qyCfgCustom
+        MENUITEM SEPARATOR
+        MENUITEM "??(&X)",                      ID_cfgOptions
+        MENUITEM "????(&G)",                    ID_cfgAdvancedOptions
+        MENUITEM SEPARATOR
+        MENUITEM "??????(&Z)",                  ID_CFGUSR
+    END
+    POPUP "1 netMc2 Cfg(&P)"
+    BEGIN
+        MENUITEM "qyCfgIpScan(&I)",             ID_qyCfgIpScan
+        MENUITEM "qyMgrPcGrp(&F)",              ID_qyMgrPcGrp
+        MENUITEM "qyCfgUnchk(&U)",              ID_qyCfgUnchk
+        MENUITEM "cfgSkippedMacs",              ID_qyCfgSkippedMacs
+        MENUITEM SEPARATOR
+        MENUITEM "cfgSystemParams(&T)",         ID_cfgSystemParams
+        MENUITEM SEPARATOR
+        MENUITEM "cfgRasOptions(&B)",           ID_cfgRasOptions
+        MENUITEM "cfgPcNetworkOptions(&W)",     ID_cfgPcNetworkOptions
+        MENUITEM "cfgPcMonOptions(J)",          ID_cfgPcMonOptions
+        MENUITEM SEPARATOR
+        MENUITEM "qyCfgBoard(&L)",              ID_qyCfgBoard
+        MENUITEM "qyCfgSp(&B)",                 ID_qyCfgSp
+        MENUITEM "cfg module info(&M)",         ID_qyCfgModuleInfo
+        MENUITEM "qyCfgPcRegistryKnowledge(&R)", ID_qyCfgPcRegistryKnowledge
+        MENUITEM SEPARATOR
+        MENUITEM "qyCfgAutoLogon(&A)",          ID_qyCfgAutoLogon
+        MENUITEM SEPARATOR
+        MENUITEM "qyCfgCustom(&D)",             ID_qyCfgCustom
+        MENUITEM "ID_qyCfgStandardNames(&G)",   ID_qyCfgStandardNames
+        MENUITEM SEPARATOR
+        MENUITEM "cfgOptions(&X)",              ID_cfgOptions
+        MENUITEM "cfgAdvancedOptions(&G)",      ID_cfgAdvancedOptions
+        MENUITEM "CFGWARN[&S]",                 ID_CFGWARN
+        MENUITEM SEPARATOR
+        MENUITEM "CFGUSR[&Z]",                  ID_CFGUSR
+    END
+    POPUP "2 secChk??(&P)"
+    BEGIN
+        MENUITEM "??????(&T)",                  ID_cfgSystemParams
+        MENUITEM SEPARATOR
+        MENUITEM "??(&X)",                      ID_cfgOptions
+        MENUITEM "????(&G)",                    ID_cfgAdvancedOptions
+        MENUITEM SEPARATOR
+        MENUITEM "??????(&Z)",                  ID_CFGUSR
+    END
+    POPUP "3 bhb??(&P)"
+    BEGIN
+        MENUITEM "????(&S)",                    ID_cfgBhbSysOptions
+        MENUITEM "??????(&M)",                  ID_cfgBhbScannedNetSegs
+        MENUITEM SEPARATOR
+        MENUITEM "??????(&Z)",                  ID_CFGUSR
+    END
+    POPUP "4 netMc4??(&P)"
+    BEGIN
+        MENUITEM "IP??????(&I)",                ID_qyCfgIpScan
+        MENUITEM "??????(&F)",                  ID_qyMgrPcGrp
+        MENUITEM "?????????(&T)",               ID_qyCfgUnchk
+        MENUITEM SEPARATOR
+        MENUITEM "??(&X)",                      ID_cfgOptions
+        MENUITEM "??????(&B)",                  ID_cfgRasOptions
+        MENUITEM SEPARATOR
+        MENUITEM "??????",                      ID_CFGWARN
+        MENUITEM SEPARATOR
+        MENUITEM "??????",                      ID_CFGUSR
+    END
+    POPUP "5 bhb?????(&P)"
+    BEGIN
+        MENUITEM "???IP??(&S)",                 ID_cfgInterMonIp
+        MENUITEM "????(&W)",                    ID_CFGWARN
+        MENUITEM SEPARATOR
+        MENUITEM "??????(&Z)",                  ID_CFGUSR
+    END
+    POPUP "6 assetMgr??(&P)"
+    BEGIN
+        MENUITEM "????(&F)",                    ID_qyMgrPcGrp
+        MENUITEM SEPARATOR
+        MENUITEM "??????(&T)",                  ID_cfgSystemParams
+        MENUITEM SEPARATOR
+        MENUITEM "???(&L)",                     ID_qyCfgBoard
+        MENUITEM "?????(&B)",                   ID_qyCfgSp
+        MENUITEM SEPARATOR
+        MENUITEM "????(&D)",                    ID_qyCfgCustom
+        MENUITEM SEPARATOR
+        MENUITEM "??(&X)",                      ID_cfgOptions
+        MENUITEM "????(&G)",                    ID_cfgAdvancedOptions
+        MENUITEM SEPARATOR
+        MENUITEM "??????(&Z)",                  ID_CFGUSR
+    END
+    POPUP "7 is Mgr Cfg "
+    BEGIN
+        MENUITEM "cfgRasOptions(&B)",           ID_cfgRasOptions
+        MENUITEM "cfg im auth cond",            ID_cfgImAuthCond
+    END
+    POPUP "8 is Client Cfg "
+    BEGIN
+        MENUITEM "cfgRasOptions(&B)",           ID_cfgRasOptions
+        MENUITEM SEPARATOR
+        MENUITEM "setPasswd(&P)",               ID_setPasswd
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_talk_ce, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 201
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 173
+    END
+
+    IDD_QYMC_WINCE_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 193
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 172
+    END
+
+    IDD_qnmCfgOptions_isClient_ce, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 138
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 111
+    END
+
+    IDD_policy_isClient, DIALOG
+    BEGIN
+        RIGHTMARGIN, 387
+        BOTTOMMARGIN, 376
+    END
+
+    IDD_objs, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 204
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 191
+    END
+
+    IDD_mcClient_logon, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 192
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 171
+    END
+
+    IDD_instantAssistant, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 114
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 104
+    END
+
+    IDD_input, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 249
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 74
+    END
+
+    IDD_ABOUTBOX_WIDE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 203
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 122
+    END
+
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 149
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 122
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_APP_TITLE           "qyMc_winCe_app"
+    IDC_QYMC_WINCE_APP      "QYMC_WINCE_APP"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_OK                  "Ok"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#include "qyMc_winCe_appsp.rc2"  // non-Microsoft Visual C++ edited resources
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,79 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: qyVDev_coms - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x804 /fo"..\..\..\o\qyVDev_coms\Debug/qyVDev_coms.res" /d "_DEBUG" /d "_AFXDLL" "H:\qycx4\Develop6\srcRoot\componentsSrc\qyVDev_coms\qyVDev_coms.rc"" 
+Creating temporary file "G:\DOCUME~1\TESTAD~1\LOCALS~1\Temp\RSPFC13.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /I "..\..\src6\asrInclude" /I "..\..\src6\qyInclude" /I "..\..\src6\qyPublic\include" /I "..\..\src6\qyEncLib\include" /I "..\include" /I "include" /I "." /I "..\..\src6\qyCustom\include" /I "..\..\src6\tmpInclude" /I "..\..\qyCusResSrc\qyCusRes\include" /I "..\..\src6\qyCommProc\include" /I "..\..\src6\qyCommProc_mis\include" /I "..\..\qyOpen\qyCommProc_open\include" /I "sms" /D "_DEBUG" /D "WIN32" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_MBCS" /D "_USRDLL" /D "_UNICODE" /D "UNICODE" /D WINVER=0x0500 /FR"..\..\..\o\qyVDev_coms\Debug/" /Fp"..\..\..\o\qyVDev_coms\Debug/qyVDev_coms.pch" /Yu"stdafx.h" /Fo"..\..\..\o\qyVDev_coms\Debug/" /Fd"..\..\..\o\qyVDev_coms\Debug/" /FD /GZ /c 
+"H:\qycx4\Develop6\srcRoot\componentsSrc\qyVDev_coms\dlgQyTestProc.cpp"
+"H:\qycx4\Develop6\srcRoot\componentsSrc\qyVDev_coms\qyComPort.cpp"
+"H:\qycx4\Develop6\srcRoot\componentsSrc\qyVDev_coms\qyVDev_coms.cpp"
+"H:\qycx4\Develop6\srcRoot\componentsSrc\qyVDev_coms\qyVDevProc.cpp"
+"H:\qycx4\Develop6\srcRoot\componentsSrc\qyVDev_coms\sms\Comm.cpp"
+"H:\qycx4\Develop6\srcRoot\componentsSrc\qyVDev_coms\sms\Sms.cpp"
+"H:\qycx4\Develop6\srcRoot\componentsSrc\qyVDev_coms\sms\SmsTraffic.cpp"
+]
+Creating command line "cl.exe @G:\DOCUME~1\TESTAD~1\LOCALS~1\Temp\RSPFC13.tmp" 
+Creating temporary file "G:\DOCUME~1\TESTAD~1\LOCALS~1\Temp\RSPFC14.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /I "..\..\src6\asrInclude" /I "..\..\src6\qyInclude" /I "..\..\src6\qyPublic\include" /I "..\..\src6\qyEncLib\include" /I "..\include" /I "include" /I "." /I "..\..\src6\qyCustom\include" /I "..\..\src6\tmpInclude" /I "..\..\qyCusResSrc\qyCusRes\include" /I "..\..\src6\qyCommProc\include" /I "..\..\src6\qyCommProc_mis\include" /I "..\..\qyOpen\qyCommProc_open\include" /I "sms" /D "_DEBUG" /D "WIN32" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_MBCS" /D "_USRDLL" /D "_UNICODE" /D "UNICODE" /D WINVER=0x0500 /FR"..\..\..\o\qyVDev_coms\Debug/" /Fo"..\..\..\o\qyVDev_coms\Debug/" /Fd"..\..\..\o\qyVDev_coms\Debug/" /FD /GZ /c 
+"H:\qycx4\Develop6\srcRoot\src6\qyCommProc\genericqueue.cpp"
+"H:\qycx4\Develop6\srcRoot\src6\qyCommProc\qnmCommProc.cpp"
+"H:\qycx4\Develop6\srcRoot\src6\qyCommProc\qyCommProc.cpp"
+"H:\qycx4\Develop6\srcRoot\src6\qyCommProc\qyDmItemCommProc.cpp"
+"H:\qycx4\Develop6\srcRoot\src6\qyCommProc\qyLangCommProc.cpp"
+"H:\qycx4\Develop6\srcRoot\src6\qyCommProc\qyShowInfoCommProc.cpp"
+"H:\qycx4\Develop6\srcRoot\src6\qyCommProc\qySyncCommProc.cpp"
+"H:\qycx4\Develop6\srcRoot\src6\qyCommProc\qyTCharCommProc.cpp"
+"H:\qycx4\Develop6\srcRoot\src6\qyCommProc\traceLogA.cpp"
+"H:\qycx4\Develop6\srcRoot\src6\qyCustom\qyCusResHelp.cpp"
+"H:\qycx4\Develop6\srcRoot\src6\qyCustom\qyCustom.cpp"
+"H:\qycx4\Develop6\srcRoot\src6\qyCommProc_mis\qyWmComm_is.cpp"
+]
+Creating command line "cl.exe @G:\DOCUME~1\TESTAD~1\LOCALS~1\Temp\RSPFC14.tmp" 
+Creating temporary file "G:\DOCUME~1\TESTAD~1\LOCALS~1\Temp\RSPFC15.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /I "..\..\src6\asrInclude" /I "..\..\src6\qyInclude" /I "..\..\src6\qyPublic\include" /I "..\..\src6\qyEncLib\include" /I "..\include" /I "include" /I "." /I "..\..\src6\qyCustom\include" /I "..\..\src6\tmpInclude" /I "..\..\qyCusResSrc\qyCusRes\include" /I "..\..\src6\qyCommProc\include" /I "..\..\src6\qyCommProc_mis\include" /I "..\..\qyOpen\qyCommProc_open\include" /I "sms" /D "_DEBUG" /D "WIN32" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_MBCS" /D "_USRDLL" /D "_UNICODE" /D "UNICODE" /D WINVER=0x0500 /FR"..\..\..\o\qyVDev_coms\Debug/" /Fp"..\..\..\o\qyVDev_coms\Debug/qyVDev_coms.pch" /Yc"stdafx.h" /Fo"..\..\..\o\qyVDev_coms\Debug/" /Fd"..\..\..\o\qyVDev_coms\Debug/" /FD /GZ /c 
+"H:\qycx4\Develop6\srcRoot\componentsSrc\qyVDev_coms\StdAfx.cpp"
+]
+Creating command line "cl.exe @G:\DOCUME~1\TESTAD~1\LOCALS~1\Temp\RSPFC15.tmp" 
+Creating temporary file "G:\DOCUME~1\TESTAD~1\LOCALS~1\Temp\RSPFC16.tmp" with contents
+[
+netapi32.lib qyPublic.lib qyEncLib.lib libDes.lib ws2_32.lib /nologo /subsystem:windows /dll /incremental:yes /pdb:"..\..\..\Debug\cusModule/qyVDev_coms.pdb" /debug /machine:I386 /def:".\qyVDev_coms.def" /out:"..\..\..\Debug\cusModule/qyVDev_coms.dll" /implib:"..\..\..\Debug\cusModule/qyVDev_coms.lib" /pdbtype:sept /libpath:"..\..\..\Debug\lib" 
+\qycx4\Develop6\o\qyVDev_coms\Debug\dlgQyTestProc.obj
+\qycx4\Develop6\o\qyVDev_coms\Debug\qyComPort.obj
+\qycx4\Develop6\o\qyVDev_coms\Debug\qyVDev_coms.obj
+\qycx4\Develop6\o\qyVDev_coms\Debug\qyVDevProc.obj
+\qycx4\Develop6\o\qyVDev_coms\Debug\StdAfx.obj
+\qycx4\Develop6\o\qyVDev_coms\Debug\genericqueue.obj
+\qycx4\Develop6\o\qyVDev_coms\Debug\qnmCommProc.obj
+\qycx4\Develop6\o\qyVDev_coms\Debug\qyCommProc.obj
+\qycx4\Develop6\o\qyVDev_coms\Debug\qyDmItemCommProc.obj
+\qycx4\Develop6\o\qyVDev_coms\Debug\qyLangCommProc.obj
+\qycx4\Develop6\o\qyVDev_coms\Debug\qyShowInfoCommProc.obj
+\qycx4\Develop6\o\qyVDev_coms\Debug\qySyncCommProc.obj
+\qycx4\Develop6\o\qyVDev_coms\Debug\qyTCharCommProc.obj
+\qycx4\Develop6\o\qyVDev_coms\Debug\traceLogA.obj
+\qycx4\Develop6\o\qyVDev_coms\Debug\qyCusResHelp.obj
+\qycx4\Develop6\o\qyVDev_coms\Debug\qyCustom.obj
+\qycx4\Develop6\o\qyVDev_coms\Debug\qyWmComm_is.obj
+\qycx4\Develop6\o\qyVDev_coms\Debug\Comm.obj
+\qycx4\Develop6\o\qyVDev_coms\Debug\Sms.obj
+\qycx4\Develop6\o\qyVDev_coms\Debug\SmsTraffic.obj
+\qycx4\Develop6\o\qyVDev_coms\Debug\qyVDev_coms.res
+]
+Creating command line "link.exe @G:\DOCUME~1\TESTAD~1\LOCALS~1\Temp\RSPFC16.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+cl.exe terminated at user request.
+
+</pre>
+</body>
+</html>

@@ -1,0 +1,7 @@
+; secChkModule.def : Declares the module parameters for the DLL.
+
+LIBRARY      "secChkModule"
+DESCRIPTION  'secChkModule Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

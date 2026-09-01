@@ -1,0 +1,152 @@
+﻿#include <list>
+
+
+#ifndef  __mapExtTmpl_h__
+#define  __mapExtTmpl_h__	//  {
+
+//
+#define     MAX_locStrLen               256
+#define     MAX_markStrLen              256
+#define     MAX_plottingStrLen          256
+
+
+//
+#include    "myTypes.h"
+#include <qyDefs_open.h>
+//
+
+
+
+
+
+
+//
+class  CParam_onRecv_locations {
+
+public:
+    struct {
+        //
+        void* pTransferLocData;
+    }   m_var;
+
+            //
+public:
+    CParam_onRecv_locations()
+    {
+        memset(&m_var, 0, sizeof(m_var));
+    }
+
+}  ;
+
+
+//
+typedef  struct   {
+    __int64 ui64Id;
+    char  markStr[MAX_markStrLen  +  1];
+}AncMark;
+
+//
+class CParam_onRecv_marks {
+    __int64  imGrp_ui64Id;
+    std::list<AncMark>  m_marks;
+};
+
+
+/////////
+typedef  struct   {
+    __int64 ui64Id;
+    char plottingStr[MAX_plottingStrLen  +  1];
+}AncPlotting;
+
+
+class  CParam_onRecv_plottings
+{
+    long imGrp_ui64Id;
+    std::list<AncPlotting> m_plottings;
+};
+
+
+//
+class CCtxQmc;
+
+
+//
+typedef  struct  __mapExtVar_t {
+                 
+                 //
+                 CCtxQmc            *   pProcInfo;
+                 
+                 //
+                 QY_MESSENGER_ID        locServIdInfo;
+                 //
+                 char                   mapServCfgStr[256];     //  map server的配置字符串，建议 ip:port
+
+
+                 //
+}        MapExtVar;
+
+
+
+//
+//
+class MapExtTmpl {
+
+
+    /////////////////////////
+    //
+public:
+    MapExtVar   m_var;
+
+    //
+public:
+    MapExtTmpl();
+    virtual ~MapExtTmpl();
+
+    //
+    virtual int  gui_onTimer(void* p0, void* pVar, void* p2);
+
+    //
+public:
+    //
+    virtual bool bExists_locDataReq() = mynull;
+
+    //
+    virtual int Application_onCreate_init()=mynull;
+
+    //
+    virtual  void  * new_Fragment_map()=mynull;
+
+    //
+    // 定位信息，一个字符串，关联一个组号，发送到 locServer_idInfo
+    virtual int sendLocation(void  * p0,  char  *  locStr, __int64 imGrp_related_ui64Id)  =  mynull;
+
+
+    //  接收很多定位信息的接口
+    virtual int onRecv_locations(CParam_onRecv_locations  * param)  =  mynull;
+
+
+    // //  标注：一个字符串，关联一个组号, 发送到locServer_idInfo
+    virtual  int sendMark(void  *  p0,  char  *  markStr, __int64 imGrp_related_ui64Id)  =  mynull;
+
+
+    // 接收很多并标注信息的接口
+    virtual int onRecv_marks(CParam_onRecv_marks  * param)=mynull;
+
+
+    // 接收标绘信息的接口
+    virtual int onRecv_plottings(CParam_onRecv_plottings  * param)=mynull;
+
+
+
+
+};
+
+
+
+
+
+
+
+#endif  //  }
+
+

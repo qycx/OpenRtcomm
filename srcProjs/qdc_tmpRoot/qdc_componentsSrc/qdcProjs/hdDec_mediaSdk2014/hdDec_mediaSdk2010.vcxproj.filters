@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="public\myDecPipeline.cpp" />
+    <ClCompile Include="public\qisCompress.cpp" />
+    <ClCompile Include="public\qisDecompress.cpp" />
+    <ClCompile Include="decode\public\decode_render.cpp" />
+    <ClCompile Include="decode\public\pipeline_decode.cpp" />
+    <ClCompile Include="..\public\myFunc_mediaSdk.cpp">
+      <Filter>qdcPublic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\myutils.cpp">
+      <Filter>qdcPublic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\videoFunc_open.cpp">
+      <Filter>qyOpen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\yv12rgb.cpp">
+      <Filter>qyOpen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\tmpGuiOpenFunc.cpp">
+      <Filter>qyOpen</Filter>
+    </ClCompile>
+    <ClCompile Include="public\myDecode_render.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="..\..\..\qyOpen\qdc_open\include\qdcCommProc_open.h" />
+    <ClInclude Include="include\myDecPipeline.h" />
+    <ClInclude Include="include\qisCompressProc.h" />
+    <ClInclude Include="videoconf\include\action_processor.h" />
+    <ClInclude Include="videoconf\include\actions.h" />
+    <ClInclude Include="videoconf\include\brc.h" />
+    <ClInclude Include="videoconf\include\interface.h" />
+    <ClInclude Include="decode\include\decode_render.h" />
+    <ClInclude Include="decode\include\pipeline_decode.h" />
+    <ClInclude Include="..\include\myFunc_mediaSdk.h">
+      <Filter>qdcInclude</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\myutils.h">
+      <Filter>qdcInclude</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="qisCompress.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="qdcPublic">
+      <UniqueIdentifier>{22c168d9-f8cd-4ca8-945f-bf4b9393fdf0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qdcInclude">
+      <UniqueIdentifier>{5f2d965f-8bd2-4709-aba0-03cb6a7d90f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyOpen">
+      <UniqueIdentifier>{f6a16042-457c-4553-b6be-d7595f4b84ea}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

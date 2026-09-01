@@ -1,0 +1,14 @@
+prefix=/home/Windows/ffmpeg-4.1.6/nv
+exec_prefix=${prefix}
+libdir=/home/Windows/ffmpeg-4.1.6/nv/lib
+includedir=/home/Windows/ffmpeg-4.1.6/nv/include
+
+Name: libavutil
+Description: FFmpeg utility library
+Version: 56.22.100
+Requires: 
+Requires.private: 
+Conflicts:
+Libs: -L${libdir}  -lavutil 
+Libs.private: user32.lib bcrypt.lib
+Cflags: -I${includedir}

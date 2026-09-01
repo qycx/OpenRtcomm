@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\yv12rgb.cpp" />
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="encode\public\pipeline_encode.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="public\mypipeline_user.cpp" />
+    <ClCompile Include="public\qisCompress.cpp" />
+    <ClCompile Include="public\qisDecompress.cpp" />
+    <ClCompile Include="..\public\myFunc_mediaSdk.cpp">
+      <Filter>qdcPublic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\myutils.cpp">
+      <Filter>qdcPublic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\videoFunc_open.cpp">
+      <Filter>qyOpen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\tmpGuiOpenFunc.cpp">
+      <Filter>qyOpen</Filter>
+    </ClCompile>
+    <ClCompile Include="public\myEncode_render.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\tmp_decode_render.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="encode\include\pipeline_encode.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="..\..\..\qyOpen\qdc_open\include\qdcCommProc_open.h" />
+    <ClInclude Include="include\mypipeline_user.h" />
+    <ClInclude Include="include\qisCompressProc.h" />
+    <ClInclude Include="videoconf\include\action_processor.h" />
+    <ClInclude Include="videoconf\include\actions.h" />
+    <ClInclude Include="videoconf\include\brc.h" />
+    <ClInclude Include="videoconf\include\interface.h" />
+    <ClInclude Include="..\include\myFunc_mediaSdk.h">
+      <Filter>qdcInclude</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\myutils.h">
+      <Filter>qdcInclude</Filter>
+    </ClInclude>
+    <ClInclude Include="include\myEncode_render.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\tmp_decode_render.h">
+      <Filter>include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="qisCompress.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="qdcPublic">
+      <UniqueIdentifier>{43e30180-63e1-48da-a97b-7dd3bffa9c39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qdcInclude">
+      <UniqueIdentifier>{7785950e-7bec-4efe-8aad-946030ea5285}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyOpen">
+      <UniqueIdentifier>{6f82716b-2d9d-4cdd-8b7b-579ad0d7d206}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{a18bdab6-bc3d-42d8-a3c4-536146157226}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="public">
+      <UniqueIdentifier>{c99cc80f-bedc-414c-b0da-d9222e60d218}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

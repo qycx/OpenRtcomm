@@ -1,0 +1,119 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "Xregion"="..\..\..\vnc-3.3.7-winsrc\Xregion\Xregion.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "qwmHelp3"=..\..\..\qnmHelp\qwmHelp3\qwmHelp3.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "qwmRd"="..\..\..\vnc-3.3.7-winsrc\winvnc\winvnc\qwmRd.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name qwmHelp3
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name rdr
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Xregion
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name zlib
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name qwmRdHelp
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "qwmRdHelp"="..\..\..\vnc-3.3.7-winsrc\winvnc\vnchooks\qwmRdHelp.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "rdr"="..\..\..\vnc-3.3.7-winsrc\rdr\rdr.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "testRd"=..\..\..\testDir\testRd\testRd.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name qwmRd
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "zlib"="..\..\..\vnc-3.3.7-winsrc\zlib\zlib.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

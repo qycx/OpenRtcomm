@@ -1,0 +1,86 @@
+﻿
+#ifndef  __myMapExt_h__
+#define  __myMapExt_h__		//  {
+
+
+//
+#include	"mapExtTmpl.h"
+//
+//#include	"mapExt_null.h"
+
+
+
+
+//
+class myMapExt :public MapExtTmpl {
+
+
+    /////////////////////////
+    //
+
+    /////////////////////////////////////
+    //
+public:
+    virtual int  gui_onTimer(void* p0, void* p1, void* p2);
+
+
+    //
+public:
+
+    virtual bool bExists_locDataReq() {
+        return true;
+    }
+
+
+    virtual int Application_onCreate_init() {
+        return  0;
+    }
+
+    //
+    virtual  void* new_Fragment_map() {
+        return  0;
+    }
+
+    //
+    // 定位信息，一个字符串，关联一个组号，发送到 locServer_idInfo
+    virtual int sendLocation(void  *  p0,  char* locStr, __int64 imGrp_related_ui64Id);
+
+
+
+    //  接收很多定位信息的接口
+    virtual int onRecv_locations(CParam_onRecv_locations* param);
+
+
+
+    // //  标注：一个字符串，关联一个组号, 发送到locServer_idInfo
+    virtual  int sendMark(void  *  p0,  char* markStr, __int64 imGrp_related_ui64Id)
+    {
+        return  0;
+    }
+
+
+    // 接收很多并标注信息的接口
+    virtual int onRecv_marks(CParam_onRecv_marks* param)
+    {
+        return  0;
+    }
+
+
+    // 接收标绘信息的接口
+    virtual int onRecv_plottings(CParam_onRecv_plottings* param)
+    {
+        return  0;
+    }
+
+
+
+
+};
+
+
+
+
+//
+#endif  //  }
+
+

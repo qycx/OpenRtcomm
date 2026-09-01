@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="libDes2010">
+</Property><Property Name="Solution File" Value="D:\qycx4\develop6\srcRoot\src6\qyEncLib\libDes\libDes2010.sln">
+</Property><Property Name="User Options File" Value="D:\qycx4\develop6\srcRoot\src6\qyEncLib\libDes\libDes2010.suo">
+</Property><Property Name="Date" Value="2012年9月12日">
+</Property><Property Name="Time" Value="22:45">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="libDes2010.sln" Description="File successfully backed up as D:\qycx4\develop6\srcRoot\src6\qyEncLib\libDes\libDes2010.sln.old">
+</Event><Event ErrorLevel="0" Project="" Source="libDes2010.suo" Description="File successfully backed up as D:\qycx4\develop6\srcRoot\src6\qyEncLib\libDes\libDes2010.suo.old">
+</Event><Event ErrorLevel="0" Project="libDes2010" Source="libDes2010.vcproj" Description="Converting project file 'D:\qycx4\develop6\srcRoot\src6\qyEncLib\libDes\libDes2010.vcproj'.">
+</Event><Event ErrorLevel="1" Project="libDes2010" Source="libDes2010.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="0" Project="libDes2010" Source="libDes2010.vcproj" Description="Done converting to new project file 'D:\qycx4\develop6\srcRoot\src6\qyEncLib\libDes\libDes2010.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="libDes2010" Source="libDes2010.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="libDes2010.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="libDes2010.sln" Description="Converted">
+</Event></UpgradeLog>

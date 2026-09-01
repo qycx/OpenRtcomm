@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\yv12rgb.cpp" />
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="public\mypipeline_user.cpp" />
+    <ClCompile Include="public\qisCompress.cpp" />
+    <ClCompile Include="public\qisDecompress.cpp" />
+    <ClCompile Include="videoconf\public\video_conf_pipeline.cpp">
+      <Filter>videoConf\public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\myutils.cpp">
+      <Filter>videoConf\qdcPublic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\myFunc_mediaSdk.cpp">
+      <Filter>qdcPublic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\videoFunc_open.cpp">
+      <Filter>qyOpen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\tmpGuiOpenFunc.cpp">
+      <Filter>qyOpen</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="..\..\..\qyOpen\qdc_open\include\qdcCommProc_open.h" />
+    <ClInclude Include="include\mypipeline_user.h" />
+    <ClInclude Include="include\qisCompressProc.h" />
+    <ClInclude Include="videoconf\include\action_processor.h" />
+    <ClInclude Include="videoconf\include\actions.h" />
+    <ClInclude Include="videoconf\include\brc.h" />
+    <ClInclude Include="videoconf\include\interface.h" />
+    <ClInclude Include="videoconf\include\video_conf_pipeline.h">
+      <Filter>videoConf\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\myutils.h">
+      <Filter>videoConf\qdcInclude</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\myFunc_mediaSdk.h">
+      <Filter>qdcInclude</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="qisCompress.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="videoConf">
+      <UniqueIdentifier>{b44dd301-c497-4919-843c-5591278b9e79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="videoConf\public">
+      <UniqueIdentifier>{532346cb-bd66-4344-a553-40ab310ee4d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="videoConf\include">
+      <UniqueIdentifier>{ef1436f4-248a-4cbc-993b-cc0572927053}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="videoConf\qdcPublic">
+      <UniqueIdentifier>{4de633f7-16c8-4a9e-800f-b34e8e5b501d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="videoConf\qdcInclude">
+      <UniqueIdentifier>{bb1adbbd-6153-443a-bab3-ab23a33d6e6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qdcPublic">
+      <UniqueIdentifier>{283a3511-5acf-4ee6-896d-a57ac957ba08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qdcInclude">
+      <UniqueIdentifier>{51a89485-59a9-498b-933d-a12edb4bc160}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyOpen">
+      <UniqueIdentifier>{a77ffb7e-6dbb-47ef-ab8f-a07e728eb081}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

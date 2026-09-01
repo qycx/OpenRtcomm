@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "myOpenRtsp", "myOpenRtsp.vcxproj", "{E3D66F10-6A01-43F3-B4CB-13554E2888BA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "myTestRtspClient", "myTestRtspClient.vcxproj", "{51C6E910-1B42-4550-9EFD-D8E6E92AC665}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rtspCliHelp", "..\..\rtspCliHelp\rtspCliHelp.vcxproj", "{FD3BFECC-A952-4FDD-A27C-19F051C40B0B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E3D66F10-6A01-43F3-B4CB-13554E2888BA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E3D66F10-6A01-43F3-B4CB-13554E2888BA}.Debug|Win32.Build.0 = Debug|Win32
+		{E3D66F10-6A01-43F3-B4CB-13554E2888BA}.Release|Win32.ActiveCfg = Release|Win32
+		{E3D66F10-6A01-43F3-B4CB-13554E2888BA}.Release|Win32.Build.0 = Release|Win32
+		{51C6E910-1B42-4550-9EFD-D8E6E92AC665}.Debug|Win32.ActiveCfg = Debug|Win32
+		{51C6E910-1B42-4550-9EFD-D8E6E92AC665}.Debug|Win32.Build.0 = Debug|Win32
+		{51C6E910-1B42-4550-9EFD-D8E6E92AC665}.Release|Win32.ActiveCfg = Release|Win32
+		{51C6E910-1B42-4550-9EFD-D8E6E92AC665}.Release|Win32.Build.0 = Release|Win32
+		{FD3BFECC-A952-4FDD-A27C-19F051C40B0B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FD3BFECC-A952-4FDD-A27C-19F051C40B0B}.Debug|Win32.Build.0 = Debug|Win32
+		{FD3BFECC-A952-4FDD-A27C-19F051C40B0B}.Release|Win32.ActiveCfg = Release|Win32
+		{FD3BFECC-A952-4FDD-A27C-19F051C40B0B}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

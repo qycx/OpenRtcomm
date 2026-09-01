@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="testMediasdk">
+</Property><Property Name="Solution File" Value="D:\qycx4\develop6\srcProjs\qdc_tmpRoot\componentsSrc\qdcProjs\testMediasdk\testMediasdk.sln">
+</Property><Property Name="Date" Value="2014年3月21日">
+</Property><Property Name="Time" Value="10:17:01">
+</Property><Property Name="Log Number" Value="2">
+</Property></Properties><Event ErrorLevel="0" Project="testIpp" Source="..\testIpp\testIpp.vcproj" Description="Converting project file 'D:\qycx4\develop6\srcProjs\qdc_tmpRoot\componentsSrc\qdcProjs\testIpp\testIpp.vcproj'.">
+</Event><Event ErrorLevel="1" Project="testIpp" Source="..\testIpp\testIpp.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="1" Project="testIpp" Source="..\testIpp\testIpp.vcproj" Description="MSB8012: $(TargetPath) ('D:\qycx4\develop6\srcProjs\qdc_tmpRoot\componentsSrc\qdcProjs\testIpp\.\..\..\..\Win32\Debug\cusModule\testIpp.exe') does not match the Linker's OutputFile property value 'C:\Program Files\QYCX\misClient\cusModule\testIpp.exe' ('C:\Program Files\QYCX\misClient\cusModule\testIpp.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).">
+</Event><Event ErrorLevel="1" Project="testIpp" Source="..\testIpp\testIpp.vcproj" Description="MSB8012: $(TargetPath) ('D:\qycx4\develop6\srcProjs\qdc_tmpRoot\componentsSrc\qdcProjs\testIpp\.\..\..\..\Win32\Release\cusModule\testIpp.exe') does not match the Linker's OutputFile property value '.\..\..\..\Win32\Release\cusModule\testIpp.exe' ('D:\qycx4\develop6\srcProjs\qdc_tmpRoot\Win32\Release\cusModule\testIpp.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).">
+</Event><Event ErrorLevel="0" Project="testIpp" Source="..\testIpp\testIpp.vcproj" Description="Done converting to new project file 'D:\qycx4\develop6\srcProjs\qdc_tmpRoot\componentsSrc\qdcProjs\testIpp\testIpp.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="testIpp" Source="..\testIpp\testIpp.vcproj" Description="Converted">
+</Event></UpgradeLog>

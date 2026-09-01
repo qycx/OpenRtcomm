@@ -1,0 +1,138 @@
+#ifndef  __QNMCUSRESDEFS_COMMON_H__															
+#define  __QNMCUSRESDEFS_COMMON_H__		//  {													
+											
+//  qnmcustomgui_statusTool.cpp
+#define		CONST_str_qwmCommStatus							_T(  "Communication status"  )
+#define		CONST_str_qnmChkingStatus						_T(  "Scanning process"  )
+#define		CONST_str_scanningIpStatus						_T(  "IP scanning monitoring"  )
+#define		CONST_str_serviceStatus							_T(  "To display service status of application system"  )
+#define		CONST_str_nm									_T(  "To display management & control status"  )
+#define		CONST_str_communicationStatus					_T(	 "Monitor all clients"  )
+#define		CONST_str_filters								_T(  "Monitor with filters"  )
+	#define		CONST_str_clientIp0								_T(  "Client1 IP addr"  )
+	#define		CONST_str_clientIp1								_T(  "Client2 IP addr"  )
+	#define		CONST_str_staticFilter0							_T(  "Filter 1"  )
+	#define		CONST_str_staticFilter1							_T(  "Filter 2"  )
+	#define		CONST_str_staticFilter2							_T(  "Content filter 1"  )
+	#define		CONST_str_staticFilter3							_T(  "Content filter 2"  )
+#define		CONST_str_communicationStatusWithFilters		CONST_str_filters
+#define		CONST_str_export								_T(  "Export"  )
+#define		CONST_str_resetWhenUpTo							_T(  "items, reset automaticlly"  )
+#define		CONST_str_uninstallClient						_T(  "Uninstall client"  )
+#define		CONST_str_allClientsAllowed						_T(  "All clients allowed"  )
+#define		CONST_str_onlyMgrRegList						_T(  "Only manage those computers that included registration management list"  )
+#define		CONST_str_mgrAnyOne								_T(  "Manage any computer"  )
+#define		CONST_str_serviceIsRunning						_T(  "Service is running"  )
+#define		CONST_str_serviceHaveStopped					_T(  "Service have stopped"  )
+#define		CONST_str_hintToEmpty							_T(  "records,those will auto clear up"  )
+#define		CONST_str_ip									_T(  "Enter IP to be monitored"  )
+#define		CONST_str_OK									_T(  "OK"  )
+#define		CONST_str_CANCEL								_T(  "Cancel"  )
+#define		CONST_str_ipScan								_T(  "To display detection and control status of IP scanning"  )					
+#define		CONST_str_scanningNetworkSegment				_T(  "To display scanning detected network segment"  )									
+#define		CONST_str_scanningIp							_T(  "To display status of scanning host"  )						
+#define		CONST_str_bhbScanningNetworkSegment				_T(  "To display scanning process of dialing detection"  )									
+#define		CONST_str_staticFilter0							_T(  "Identifier 0"  )						
+#define		CONST_str_staticFilter1							_T(  "Identifier 1"  )		
+//
+#define		CONST_ID_cfgSystemParams		_T(  "System parameter configuration (&T)"  )										
+#define		CONST_str_cfgSystemParams		_T(  "System parameter configuration "  )
+#define		CONST_ID_cfgRasOptions			_T(  "Management policy(&M)"  )									
+#define		CONST_str_cfgRasOptions			_T(  "Configure overall management strategy"  )									
+#define		CONST_ID_qyCfgCustom				_T(  "Customization configuration  (&D)"  )								
+#define		CONST_str_qyCfgCustom				_T(  "Customization configuration "  )								
+#define		CONST_ID_qyCfgStandardNames			_T(  "Standard name configuration (&G)"  )									
+
+//  Customization configuration															
+#define		CONST_IDD_cfgCustom								_T(  "Customization configuration "  )					
+	#define		CONST_IDC_STATIC_hint_cfgStandardName			_T(  "    Prompt:The following menus are used to change user information into standard information, and the special character * is used to mean no choice"  )
+#define		CONST_IDD_cfgStandardNames						_T(  "Standard name configuration "  )							
+	#define		CONST_IDC_BUTTON_cfgStandardNames			_T(  "Standardize"  )	//	_T(  "Standardize all users"  )
+#define		CONST_IDD_cfgStandardName						_T(  "Standard user information "  )							
+	#define		CONST_IDC_STATIC_standardName					_T(  "Standardization"  )//	_T(  "Name after standardization"  )							
+	#define		CONST_IDC_CHECK_zb								_T(  "Group:"  )				//Headquarters
+	#define		CONST_IDC_CHECK_bb								_T(  "Local branch:"  )				
+	#define		CONST_IDC_CHECK_dw								_T(  "Company:"  )				
+	#define		CONST_IDC_CHECK_bm								_T(  "Department:"  )				
+	#define		CONST_IDC_CHECK_syr								_T(  "User:"  )	
+//
+#define		CONST_str_qiYongShiJian							_T(  "Start time"  )						
+#define		CONST_str_gengXinShiJian						_T(  "Refresh time"  )							
+#define		CONST_str_mingChen								_T(  "Name"  )					
+#define		CONST_str_zhuCeShiJian							_T(  "Registration time"  )						
+#define		CONST_str_shenHeShiJian							_T(  "Audit time")	
+#define		CONST_str_lastModifiedTime						_T(  "Modified time"  )		
+//
+#define		CONST_str_subtype								_T(  "Subtype"  )
+//
+#define		CONST_str_ziChanBianHao							_T(  "Asset No"  )	//	_T(  "Asset serial number"  )						
+#define		CONST_str_ziChanBianHao1						_T(  "Asset No 1"  )	//	_T(  "Asset serial number1"  )							
+#define		CONST_str_ziChanBianHao2						_T(  "Asset No 2"  )	//	_T(  "Asset serial number 2"  )							
+#define		CONST_str_ziChanShuoMing1						_T(  "Asset des 1"  )	//	_T(  "Asset statement 1"  )							
+#define		CONST_str_ziChanShuoMing2						_T(  "Asset des 2"  )	//	_T(  "Asset statement 2"  )							
+#define		CONST_str_sheBeiLeiXing							_T(  "Equipment type"  )						
+#define		CONST_str_tiJiaoShiJian							_T(  "Submission time")						
+#define		CONST_str_yuYan									_T(  "Language"  )				
+#define		CONST_str_fenFaShiJian							_T(  "Distribution time"  )									
+#define		CONST_str_zuiXinShuaXinShiJian					_T(  "Latest refresh time"  )											
+#define		CONST_str_bieMing								_T(  "Alias")					
+#define		CONST_str_ceLue									_T(  "Rule"  )					
+#define		CONST_str_event									_T(  "Event"  )				
+#define		CONST_str_miaoShu								_T(  "Description"  )					
+#define		CONST_str_fuJiaMiaoShu							_T(  "Additional description"  )						
+#define		CONST_str_dengLvYongHu							_T(  "Logon user"  )						
+#define		CONST_str_dsnName								_T(  "Data source"  )					
+#define		CONST_str_benDiShiJian							_T(  "Local time"  )						
+#define		CONST_str_guanLiZhongXinShiJian					_T(  "Management center time"  )								
+#define		CONST_str_beiZhu								_T(  "Remarks"  )
+#define		CONST_str_beiZhu1								_T(  "Remarks1"  )
+#define		CONST_str_beiZhu2								_T(  "Remarks2"  )
+//
+#define		CONST_str_nm_newReg								_T(  "Initial registration"  )					
+#define		CONST_str_nm_reReg								_T(  "Registration again"  )					
+//
+#define		CONST_str_nm_logon								_T(  "Logon"  )					
+#define		CONST_str_nm_logoff								_T(  "Log out"  )			
+#define		CONST_str_nm_addUsr								_T(  "Add user"  )					
+#define		CONST_str_nm_delUsr								_T(  "Delete user"  )	
+#define		CONST_str_nm_modifyUsr							_T(  "Modify user"  )						
+#define		CONST_str_nm_clearupEvent						_T(  "Clear event"  )		
+#define		CONST_str_nm_pzcz								_T(  "Configure operation "  )					
+#define		CONST_str_nm_sysWarn							_T(  "System warning"  )						
+#define		CONST_str_nm_logonFailed						_T(  "Logon fails")							
+#define		CONST_str_nm_export								_T(  "Export"  )					
+#define		CONST_str_nm_bak								_T(  "Backup"  )					
+#define		CONST_str_nm_import								_T(  "Import"  )					
+#define		CONST_str_nm_clearupImMsg						_T(  "Clear message"  )							
+#define		CONST_str_nm_clearupImHisTask					_T(  "Clear historic task"  )								
+//
+#define		CONST_str_yongHuMing							_T(  "User name"  )						
+#define		CONST_str_caoZuoXiTong							_T(  "Operating system"  )						
+#define		CONST_str_zuiJinJianCeShiJian					_T(  "Recent detection time")								
+#define		CONST_str_shouCiJianCeShiJian					_T(  "Initial detection time")				
+//
+#define		CONST_IDC_STATIC_staticPort					_T(  "Port:"  )							
+	#define		CONST_IDC_STATIC_cfgName								_T(  "Name:"  )				
+	#define		CONST_IDC_STATIC_logon								_T(  "Logon:"  )
+	#define		CONST_IDC_STATIC_usrName							_T(  "User name:"  )
+	#define		CONST_IDC_STATIC_passwd								_T(  "Password:"  )
+	#define		CONST_IDC_STATIC_option								_T(  "Option"  )
+//
+#define		CONST_str_STATIC_grpName						_T(  "Group name"  )
+#define		CONST_str_grpNameCannotEmpty					_T(  "Group name cannot be empty"  )
+#define		CONST_str_messengerNameCannotEmpty				_T(  "Messenger name cannot be empty"  )
+#define		CONST_str_passwdCannotEmpty						_T(  "Password cannot be empty"  )
+#define		CONST_str_passwdNotConfirmed					_T(  "Password cannot be confirmed"  )
+#define		CONST_str_overall								_T(  "Overall"  )
+#define		CONST_str_lianJieMAC							_T(  "Connection MAC"  )						
+
+//
+#define		CONST_str_role									_T(  "Role"  )
+
+#define		CONST_str_speaker								_T(  "Speaker"  )
+
+
+
+
+															
+#endif  //  }															

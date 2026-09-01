@@ -1,0 +1,14 @@
+prefix=/home/Windows/ffmpeg-4.1.6/nv
+exec_prefix=${prefix}
+libdir=/home/Windows/ffmpeg-4.1.6/nv/lib
+includedir=/home/Windows/ffmpeg-4.1.6/nv/include
+
+Name: libpostproc
+Description: FFmpeg postprocessing library
+Version: 55.3.100
+Requires: 
+Requires.private: libavutil >= 56.22.100
+Conflicts:
+Libs: -L${libdir}  -lpostproc 
+Libs.private: 
+Cflags: -I${includedir}

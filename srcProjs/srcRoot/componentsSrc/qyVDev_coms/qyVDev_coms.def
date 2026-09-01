@@ -1,0 +1,7 @@
+; qyVDev_coms.def : Declares the module parameters for the DLL.
+
+LIBRARY      "qyVDev_coms"
+DESCRIPTION  'qyVDev_coms Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

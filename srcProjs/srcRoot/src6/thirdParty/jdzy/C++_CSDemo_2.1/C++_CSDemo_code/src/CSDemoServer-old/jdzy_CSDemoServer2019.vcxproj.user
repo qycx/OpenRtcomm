@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LocalDebuggerCommandArguments>"E:\tmp_root\develop2019\VS2012\x64\Debug\thirdParty\jdzy\jdzyServ.exe" -ca=2 -tn=7198 -sys=1 -devPre=dev -dev=1 -who=ca.serv:c.auth -caServ=10.0.1.151 -caPort=6180 -log=d:\qycx\\log\\qmd_status.log</LocalDebuggerCommandArguments>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LocalDebuggerCommandArguments>-ca=2 -tn=1510 -sys=1 -devPre=管理员4436 -dev=1 -who=ca.serv:c.auth</LocalDebuggerCommandArguments>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+</Project>

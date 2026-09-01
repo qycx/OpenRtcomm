@@ -1,0 +1,92 @@
+﻿
+#include "Bitmap.h"
+
+#include <windows.h>
+#include <fstream>
+
+
+bool SaveBMP(
+    const std::wstring& filename,
+    const unsigned char* data,
+    int width,
+    int height)
+{
+    BITMAPFILEHEADER fileHeader{};
+    BITMAPINFOHEADER infoHeader{};
+
+
+    int rowSize =
+        width * 4;
+
+
+    int imageSize =
+        rowSize * height;
+
+
+    fileHeader.bfType =
+        0x4D42; // "BM"
+
+
+    fileHeader.bfSize =
+        sizeof(BITMAPFILEHEADER)
+        +
+        sizeof(BITMAPINFOHEADER)
+        +
+        imageSize;
+
+
+    fileHeader.bfOffBits =
+        sizeof(BITMAPFILEHEADER)
+        +
+        sizeof(BITMAPINFOHEADER);
+
+
+
+    infoHeader.biSize =
+        sizeof(BITMAPINFOHEADER);
+
+    infoHeader.biWidth =
+        width;
+
+    infoHeader.biHeight =
+        -height;  // 顶向下，避免翻转
+
+    infoHeader.biPlanes =
+        1;
+
+    infoHeader.biBitCount =
+        32;       // BGRA
+
+    infoHeader.biCompression =
+        BI_RGB;
+
+
+
+    std::ofstream file(
+        filename,
+        std::ios::binary);
+
+
+
+    if (!file)
+        return false;
+
+
+
+    file.write(
+        reinterpret_cast<char*>(&fileHeader),
+        sizeof(fileHeader));
+
+
+    file.write(
+        reinterpret_cast<char*>(&infoHeader),
+        sizeof(infoHeader));
+
+
+    file.write(
+        reinterpret_cast<const char*>(data),
+        imageSize);
+
+
+    return true;
+}

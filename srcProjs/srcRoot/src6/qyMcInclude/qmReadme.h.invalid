@@ -1,0 +1,28 @@
+
+#ifndef  __QMREADME_H__
+#define	 __QMREADME_H__	/*  {  */
+
+/*  如下是数据库表中的数据存储格式
+    qyPcRuleTab:
+				stopMon,	BOOL量，	以"1",  "0"存储
+				rasCmd,		unsigned  char量，	以rasCmd值直接存储.
+
+	修改Title:	qnmCustom.cpp
+		管理中心：QY_DMITEM  CONST_qyMcAppNameTable
+		独立分发：QY_DMITEM  CONST_qySimpleMcAppNameTable
+
+
+
+
+
+
+
+
+
+
+*/
+
+
+
+#endif  /*  }  */
+

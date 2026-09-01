@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\qyProjShare_isCli\sketchpadProj\issameplacespobj.cpp" />
+    <ClCompile Include="..\..\qyProjShare_isCli\sketchpadProj\isspobjselected.cpp" />
+    <ClCompile Include="..\..\qyProjShare_isCli\sketchpadProj\opsp.cpp" />
+    <ClCompile Include="..\..\qyProjShare_isCli\sketchpadProj\preopsp.cpp" />
+    <ClCompile Include="..\..\qyProjShare_isCli\sketchpadProj\spconstruct.cpp" />
+    <ClCompile Include="..\..\qyProjShare_isCli\sketchpadProj\spdiscmd.cpp" />
+    <ClCompile Include="..\..\qyProjShare_isCli\sketchpadProj\spdisplay.cpp" />
+    <ClCompile Include="..\..\qyProjShare_isCli\sketchpadProj\spfunc.cpp" />
+    <ClCompile Include="..\..\qyProjShare_isCli\sketchpadProj\spmain.cpp" />
+    <ClCompile Include="..\..\qyProjShare_isCli\sketchpadProj\spproc.cpp" />
+    <ClCompile Include="..\..\qyProjShare_isCli\sketchpadProj\spreflect.cpp" />
+    <ClCompile Include="..\..\qyProjShare_isCli\sketchpadProj\sprotate.cpp" />
+    <ClCompile Include="..\..\qyProjShare_isCli\sketchpadProj\sptransform.cpp" />
+    <ClCompile Include="..\..\qyProjShare_isCli\sketchpadProj\tempsp.cpp" />
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="isCliCore.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="public\isCli_globals.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\isCliCoreCommon.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="resource1.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="isCliCore.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="public">
+      <UniqueIdentifier>{32da1fc6-691c-4d2d-b270-56ebb543aa9d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

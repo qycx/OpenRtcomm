@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>D:\dev\openRtComm-windows\VS2012\Win32\Release\bin\qyPublic.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>D:\dev\openRtComm-windows\VS2012\Win32\Release\bin\qyShowInfo.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>D:\dev\openRtComm-windows\srcProjs\srcRoot\src6\qyMessenger\qyMessenger_ts_noMfc\Release\jdzy_SxrzDemo.exe</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles />
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>

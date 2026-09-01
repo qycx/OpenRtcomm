@@ -1,0 +1,489 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#include "resdefce.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_QYMC_WINCE_APP      ICON                    "qyMc_winCe_app.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "E&xit",                       IDM_FILE_EXIT
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About",                      IDM_HELP_ABOUT
+    END
+END
+
+IDR_MENU_const MENU 
+BEGIN
+    POPUP "const"
+    BEGIN
+        MENUITEM "ID_MENU_conferenceWall_minCmd", ID_MENU_conferenceWall_minCmd
+        MENUITEM "ID_MENU_conferenceWall_maxCmd", ID_MENU_conferenceWall_maxCmd
+        MENUITEM SEPARATOR
+        MENUITEM "ID_MENU_isCmd_min",           ID_MENU_isCmd_min
+        MENUITEM "ID_MENU_isCmd_max",           ID_MENU_isCmd_max
+        MENUITEM SEPARATOR
+        MENUITEM "ID_qyLeftKey",                ID_qyLeftKey
+        MENUITEM "ID_qyRightKey",               ID_qyRightKey
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDC_QYMC_WINCE_APP ACCELERATORS 
+BEGIN
+    "A",            IDM_HELP_ABOUT,         VIRTKEY, CONTROL, NOINVERT
+    "Q",            IDOK,                   VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG  0, 0, 125, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE 0x80000000L
+CAPTION "About qyMc_winCe_app"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_QYMC_WINCE_APP,IDC_STATIC,11,17,20,20
+    LTEXT           "qyMc_winCe_app Version 1.0",IDC_STATIC,38,10,70,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2010",IDC_STATIC,38,25,70,8
+END
+
+IDD_talk_ce DIALOG  0, 0, 208, 180
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+MENU IDR_MENU_const
+FONT 10, "MS Shell Dlg"
+BEGIN
+    LTEXT           "video",IDC_STATIC_peerDesc,0,4,208,108,SS_NOTIFY | SS_SUNKEN | NOT WS_VISIBLE | WS_TABSTOP
+    LISTBOX         IDC_LIST_msg,4,116,165,14,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_LIST_task,175,116,16,14,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Status",IDC_BUTTON_status,4,133,165,20
+    PUSHBUTTON      "op0",IDC_BUTTON_op0,173,156,27,20
+    PUSHBUTTON      "op1",IDC_BUTTON_op1,140,156,27,20
+    PUSHBUTTON      "av",IDC_BUTTON_av,107,156,27,20
+    PUSHBUTTON      "task",IDC_BUTTON_task,74,156,27,20
+    PUSHBUTTON      "msg",IDC_BUTTON_msg,41,156,27,20
+    PUSHBUTTON      "Cancel",IDCANCEL,8,156,27,20
+    LTEXT           "me",IDC_STATIC_meDesc,177,133,18,20
+END
+
+IDD_qyRegTool DIALOG  0, 0, 272, 223
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "?????IDC_*?"
+FONT 9, "Tahoma"
+BEGIN
+    DEFPUSHBUTTON   "??",IDOK,59,179,50,14
+    PUSHBUTTON      "??",IDCANCEL,183,179,50,14
+    CTEXT           "???????????",IDC_title,46,9,192,18,SS_CENTERIMAGE
+    LTEXT           "??????????(*?????)",IDC_hint0,14,35,138,9
+    LTEXT           "???2003? ? ????????,?????????",IDC_hint1,9,151,220,10
+    CONTROL         "Progress1",IDC_PROGRESS_reg,"msctls_progress32",NOT WS_VISIBLE | WS_BORDER,9,161,186,10
+    LTEXT           "Static",IDC_STATIC0,9,55,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC1,18,65,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC2,27,73,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC3,37,83,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC4,46,93,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC5,55,101,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC6,65,111,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC7,74,121,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC8,38,55,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC9,47,65,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC10,57,75,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC11,66,83,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC12,75,93,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC13,85,103,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC14,94,111,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC15,103,121,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC16,64,55,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC17,73,65,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC18,83,75,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC19,92,83,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC20,101,93,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC21,111,103,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC22,120,111,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC23,129,121,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC24,91,55,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC25,101,65,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC26,110,75,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC27,119,83,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC28,129,93,13,11,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC29,138,103,13,11,NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT0,117,55,12,8,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT1,127,65,12,8,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT2,136,73,12,8,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT3,145,83,12,8,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT4,155,93,12,8,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT5,164,101,12,8,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT6,173,111,12,8,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT7,183,121,12,8,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT8,135,55,12,8,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT9,145,65,12,8,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT10,154,73,12,8,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT11,163,83,12,8,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT12,173,93,12,8,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT13,182,101,12,8,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT14,191,111,12,8,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT15,201,121,12,8,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT16,210,129,12,8,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT17,219,139,12,8,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT18,229,149,12,8,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT19,238,157,12,8,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    COMBOBOX        IDC_COMBO0,164,53,11,124,CBS_DROPDOWNLIST | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO1,173,63,11,124,CBS_DROPDOWNLIST | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO2,183,71,11,124,CBS_DROPDOWNLIST | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO3,192,81,11,124,CBS_DROPDOWNLIST | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO4,201,91,11,124,CBS_DROPDOWNLIST | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO5,211,99,11,124,CBS_DROPDOWNLIST | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO6,220,109,11,124,CBS_DROPDOWNLIST | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO7,229,119,11,124,CBS_DROPDOWNLIST | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO8,239,127,11,124,CBS_DROPDOWNLIST | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO9,248,137,11,124,CBS_DROPDOWNLIST | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Static",IDC_STATIC_licenseHint,205,169,48,6,NOT WS_VISIBLE
+END
+
+IDD_QYMC_WINCE_DIALOG DIALOG  0, 0, 200, 179
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "qyMessenger"
+FONT 10, "MS Shell Dlg"
+BEGIN
+    PUSHBUTTON      "Contact",IDC_BUTTON_contact,64,22,81,20
+    PUSHBUTTON      "Group",IDC_BUTTON_group,64,59,81,20
+    PUSHBUTTON      "Status",IDC_BUTTON_status,64,102,81,20
+    PUSHBUTTON      "Cancel",IDCANCEL,20,140,44,20
+END
+
+IDD_qnmCfgOptions_isClient_ce DIALOG  0, 0, 145, 118
+STYLE DS_SETFONT | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 10, "Microsoft Sans Serif"
+BEGIN
+    EDITTEXT        IDC_cntName,47,14,81,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_cntIp,47,30,81,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_cntAddr1,47,46,81,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_cntAddr2,47,62,81,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_cntPort,47,78,81,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,83,101,42,14
+    PUSHBUTTON      "Cancel",IDCANCEL,19,101,42,14
+    LTEXT           "addr1:",IDC_STATIC_cntAddr1,12,46,32,14,SS_CENTERIMAGE
+    LTEXT           "addr2:",IDC_STATIC_cntAddr2,12,62,32,14,SS_CENTERIMAGE
+    LTEXT           "addr0:",IDC_STATIC_cntAddr0,12,30,32,14,SS_CENTERIMAGE
+    LTEXT           "Name:",IDC_STATIC_cntName,12,14,32,14,SS_CENTERIMAGE
+    LTEXT           "Port:",IDC_STATIC_cntPort,12,78,32,14,SS_CENTERIMAGE
+    GROUPBOX        "Default Server:",IDC_STATIC_centerAddr,0,0,145,118
+END
+
+IDD_policy_isClient DIALOG  0, 0, 395, 390
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "policy"
+FONT 9, "Tahoma"
+BEGIN
+    COMBOBOX        IDC_COMBO_ruleIfMsgArrive,121,18,227,88,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_dirToSaveFile,121,35,227,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BUTTON_browseDir,353,35,12,14
+    CONTROL         "ucbOnlyNetSm",IDC_CHECK_ucbOnlyNetSm,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,31,52,138,14
+    EDITTEXT        IDC_EDIT_baud,297,52,28,14,ES_AUTOHSCROLL
+    CONTROL         "ucbOnlyPhoneMsgr",IDC_CHECK_ucbOnlyPhoneMsgr,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,31,67,138,14
+    CONTROL         "ucbPermitOtherSm",IDC_CHECK_ucbPermitOtherSm,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,194,67,138,14
+    PUSHBUTTON      "...",IDC_BUTTON_avCompressor,353,88,12,14
+    PUSHBUTTON      "...",IDC_BUTTON_screenCompressor,353,107,12,14
+    PUSHBUTTON      "...",IDC_BUTTON_mediaFileCompressor,353,127,12,14
+    EDITTEXT        IDC_EDIT_ucSeconds_perFrame,159,151,28,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_usFrames_perSecond,159,168,28,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_usTimeoutInMsToSwitch,159,185,28,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_usTimeoutInMsToSwitch_rt,159,202,28,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_usMaxFPS_toShareBmp,159,219,28,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_usMaxFPS_capScreen,159,236,28,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_usMaxFps_mediaFile,159,253,28,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_usMinFps_mediaFile,159,269,28,14,ES_AUTOHSCROLL
+    CONTROL         "munally permit to speak on video conference",IDC_CHECK_ucbManullyPermitToSpeakOnVideoConference,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,31,310,202,14
+    LTEXT           "iTimeoutInMs_channelIdle",IDC_STATIC_iTimeoutInMs_channelIdle,25,331,131,14
+    EDITTEXT        IDC_EDIT_iTimeoutInMs_channelIdle,159,331,28,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Set advanced settings",IDC_BUTTON_setAdvancedSettings,204,290,161,14
+    PUSHBUTTON      "Set Slow Settings",IDC_BUTTON_setSlowSettings,204,310,161,14
+    PUSHBUTTON      "Restore default settings",IDC_BUTTON_restoreDefaultSettings,204,331,161,14
+    DEFPUSHBUTTON   "OK",IDOK,107,358,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,235,358,50,14
+    LTEXT           "ruleIfMsgArrive",IDC_STATIC_staticRuleIfMsgArrive,25,18,58,12,SS_CENTERIMAGE
+    LTEXT           "Dir to save file",IDC_STATIC_staticDirToSaveFile,25,35,58,12,SS_CENTERIMAGE
+    LTEXT           "Av compressor:",IDC_STATIC_avCompressor,25,88,104,12,SS_CENTERIMAGE
+    LTEXT           "Xvid",IDC_STATIC_avCompressorVal,130,88,218,14,SS_CENTERIMAGE | SS_SUNKEN
+    LTEXT           "seconds_perFrame",IDC_STATIC_ucSeconds_perFrame,25,151,131,14,SS_CENTERIMAGE
+    LTEXT           "frames_perSecond",IDC_STATIC_usFrames_perSecond,25,168,131,14,SS_CENTERIMAGE
+    LTEXT           "usTimeoutInSToSwitch",IDC_STATIC_usTimeoutInMsToSwitch,25,185,131,14,SS_CENTERIMAGE
+    LTEXT           "usTimeoutInSToSwitch_rt",IDC_STATIC_usTimeoutInMsToSwitch_rt,25,202,131,14,SS_CENTERIMAGE
+    LTEXT           "baud",IDC_STATIC_baud,194,52,79,14,SS_CENTERIMAGE
+    LTEXT           "usMaxFPS_toShareBmp",IDC_STATIC_usMaxFPS_toShareBmp,25,219,131,14,SS_CENTERIMAGE
+    LTEXT           "usMaxFPS_capScreen",IDC_STATIC_usMaxFPS_capScreen,25,236,131,14,SS_CENTERIMAGE
+    LTEXT           "Screen compressor:",IDC_STATIC_screenCompressor,25,109,104,12
+    LTEXT           "Static",IDC_STATIC_screenCompressorVal,130,107,218,14,SS_SUNKEN
+    LTEXT           "Media file compressor:",IDC_STATIC_mediaFileCompressor,25,127,104,12
+    LTEXT           "Static",IDC_STATIC_mediaFileCompressorVal,130,127,218,14,SS_SUNKEN
+    LTEXT           "usMaxFps_mediaFile",IDC_STATIC_usMaxFps_mediaFile,25,253,131,14,SS_CENTERIMAGE
+    LTEXT           "usMinFps_mediaFile",IDC_STATIC_usMinFps_mediaFile,25,269,131,14,SS_CENTERIMAGE
+END
+
+IDD_mcClient_logon DIALOG  0, 0, 199, 178
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "logon"
+FONT 10, "MS Shell Dlg"
+BEGIN
+    COMBOBOX        IDC_COMBO_logonServer,91,14,58,84,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_NAME,91,35,58,20,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PASSWD,91,67,58,20,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,134,132,44,20
+    PUSHBUTTON      "Cancel",IDCANCEL,20,132,44,20
+    PUSHBUTTON      "Option",IDC_BUTTON_option,77,132,44,20
+    LTEXT           "usrName:",IDC_STATIC_usrName,50,35,36,20
+    LTEXT           "passwd:",IDC_STATIC_passwd,50,67,36,20
+    LTEXT           "",IDC_STATIC_hint,32,97,136,20
+    LTEXT           "logon:",IDC_STATIC_logonServer,50,14,36,20
+END
+
+IDD_instantAssistant DIALOG  0, 0, 121, 111
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_SYSMENU
+FONT 8, "MS Shell Dlg"
+BEGIN
+    PUSHBUTTON      "request",IDC_request,29,16,63,14
+    LISTBOX         IDC_talkerList,29,46,63,38,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_input DIALOG  0, 0, 256, 81
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    EDITTEXT        IDC_EDIT_input,51,17,154,22,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,63,52,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,141,52,50,14
+END
+
+IDD_objs DIALOG  0, 0, 211, 198
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 10, "MS Shell Dlg"
+BEGIN
+    LISTBOX         IDC_LIST0,14,2,180,154,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "OK",IDOK,164,165,25,20
+    PUSHBUTTON      "Status",IDC_BUTTON_status,128,165,25,20
+    PUSHBUTTON      "Group",IDC_BUTTON_group,92,165,25,20
+    PUSHBUTTON      "Contact",IDC_BUTTON_contact,56,165,25,20
+    PUSHBUTTON      "Cancel",IDCANCEL,20,165,25,20
+END
+
+IDD_MessageBox DIALOG  0, 0, 199, 182
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 10, "MS Shell Dlg"
+BEGIN
+    PUSHBUTTON      "Cancel",IDCANCEL,8,156,50,20
+    DEFPUSHBUTTON   "OK",IDOK,139,156,50,20
+    LTEXT           "Static",IDC_STATIC_hint,38,60,122,20
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 118
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_talk_ce, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 201
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 173
+    END
+
+    IDD_QYMC_WINCE_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 193
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 172
+    END
+
+    IDD_qnmCfgOptions_isClient_ce, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 138
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 111
+    END
+
+    IDD_policy_isClient, DIALOG
+    BEGIN
+        RIGHTMARGIN, 387
+        BOTTOMMARGIN, 376
+    END
+
+    IDD_mcClient_logon, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 192
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 171
+    END
+
+    IDD_instantAssistant, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 114
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 104
+    END
+
+    IDD_input, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 249
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 74
+    END
+
+    IDD_objs, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 204
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 191
+    END
+
+    IDD_MessageBox, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 192
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 175
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#include ""resdefce.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""qyMc_winCe_app.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_APP_TITLE           "qyMc_winCe_app"
+    IDC_QYMC_WINCE_APP      "QYMC_WINCE_APP"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_TOOLS               "Tools"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#include "qyMc_winCe_app.rc2"  // non-Microsoft Visual C++ edited resources
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

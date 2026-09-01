@@ -1,0 +1,7 @@
+; assetMgrModule.def : Declares the module parameters for the DLL.
+
+LIBRARY      "assetMgrModule"
+DESCRIPTION  'assetMgrModule Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

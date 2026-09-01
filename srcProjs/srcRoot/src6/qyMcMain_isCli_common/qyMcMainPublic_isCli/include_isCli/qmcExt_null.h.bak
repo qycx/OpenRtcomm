@@ -1,0 +1,30 @@
+
+#ifndef  __qmcExt_null_h__
+#define  __qmcExt_null_h__		//  {
+
+#include	"qmcExtTmpl.h"
+
+
+class QmcExt_null : public QmcExtTmpl {
+
+public:
+	QmcExt_null() {};
+	virtual ~QmcExt_null() {};
+
+	//
+	virtual int doAnHgData(AnHgData* p) {
+		return  0;
+	}
+
+	virtual int  getPolicyIsClient_post(POLICY_isClient* p) {
+		return  0;
+	}
+
+};
+
+
+
+
+//
+#endif  //  }
+

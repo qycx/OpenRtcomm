@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="pushsource">
+</Property><Property Name="Solution File" Value="D:\qycx4\testProjs\DirectShow\Filters\PushSource\pushsource.sln">
+</Property><Property Name="Date" Value="Monday, June 07, 2010">
+</Property><Property Name="Time" Value="13:49 PM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="pushsource.sln" Description="File successfully backed up as D:\qycx4\testProjs\DirectShow\Filters\PushSource\pushsource.sln.old">
+</Event><Event ErrorLevel="0" Project="PushSource" Source="PushSource.vcproj" Description="Project upgraded successfully.">
+</Event><Event ErrorLevel="3" Project="PushSource" Source="PushSource.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="pushsource.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="pushsource.sln" Description="Converted">
+</Event></UpgradeLog>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LocalDebuggerCommandArguments> -ca=1 -tn=1 -sys=0 -devName=DEV-18 -dev=1 -who=jdzy.ca -caServ=218.240.128.210 -caPort=6180 -log=d:\qycx\\log\qmc_status.log</LocalDebuggerCommandArguments>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerCommandArgumentsHistory> -ca=1 -tn=1 -sys=0 -devName=DEV-18 -dev=1 -who=jdzy.ca -caServ=218.240.128.210 -caPort=6180 -log=d:\qycx\\log\qmc_status.log|</LocalDebuggerCommandArgumentsHistory>
+  </PropertyGroup>
+</Project>

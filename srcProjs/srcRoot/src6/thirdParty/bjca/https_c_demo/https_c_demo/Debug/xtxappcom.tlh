@@ -1,0 +1,2062 @@
+﻿// Created by Microsoft (R) C/C++ Compiler Version 10.00.30319.01 (b495f1d3).
+//
+// c:\root\develop2019\srcprojs\srcroot\src6\thirdparty\bjca\https_c_demo\https_c_demo\debug\xtxappcom.tlh
+//
+// C++ source equivalent of Win32 type library C:\\Program Files (x86)\\BJCAClient\\CertAppEnvV3.8\\Program\\XTXAppCOM.dll
+// compiler-generated file created 01/14/23 at 02:42:04 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+//
+// Forward references and typedefs
+//
+
+struct __declspec(uuid("b8490a7b-56f2-482f-a71d-3d5b26dc61bb"))
+/* LIBID */ __XTXAppCOMLib;
+struct __declspec(uuid("27d955fd-e864-4369-8da6-5105dcd94fc5"))
+/* dispinterface */ _IBJCASACEvents;
+struct /* coclass */ BJCASAC;
+struct __declspec(uuid("8ab905b4-a0e5-4f4f-9a97-0e15b128592f"))
+/* dual interface */ IBJCASAC;
+struct __declspec(uuid("5efaf5ba-42cd-4e85-b298-bb550208adc0"))
+/* dispinterface */ _IXTXAppEvents;
+struct /* coclass */ XTXApp;
+struct __declspec(uuid("6c12d5b5-343c-4d55-b37e-7e7a151dce71"))
+/* dual interface */ IXTXApp;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(_IBJCASACEvents, __uuidof(_IBJCASACEvents));
+_COM_SMARTPTR_TYPEDEF(IBJCASAC, __uuidof(IBJCASAC));
+_COM_SMARTPTR_TYPEDEF(_IXTXAppEvents, __uuidof(_IXTXAppEvents));
+_COM_SMARTPTR_TYPEDEF(IXTXApp, __uuidof(IXTXApp));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("27d955fd-e864-4369-8da6-5105dcd94fc5"))
+_IBJCASACEvents : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    // Methods:
+    HRESULT OnUsbkeyChange ( );
+};
+
+struct __declspec(uuid("2ddce69b-5144-425c-8bef-b06d148928d0"))
+BJCASAC;
+    // [ default ] interface IBJCASAC
+    // [ default, source ] dispinterface _IBJCASACEvents
+
+struct __declspec(uuid("8ab905b4-a0e5-4f4f-9a97-0e15b128592f"))
+IBJCASAC : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetShowError,put=PutShowError))
+    _bstr_t ShowError;
+    __declspec(property(get=GetCertListFormElement,put=PutCertListFormElement))
+    _bstr_t CertListFormElement;
+    __declspec(property(get=GetAlertBeforeCertDate,put=PutAlertBeforeCertDate))
+    _bstr_t AlertBeforeCertDate;
+    __declspec(property(get=GetServerSignedData,put=PutServerSignedData))
+    _bstr_t ServerSignedData;
+    __declspec(property(get=GetServerRan,put=PutServerRan))
+    _bstr_t ServerRan;
+    __declspec(property(get=GetServerCert,put=PutServerCert))
+    _bstr_t ServerCert;
+    __declspec(property(get=GetServerMode,put=PutServerMode))
+    _bstr_t ServerMode;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    long GetCardCount ( );
+    _bstr_t GetAllCardInfoList ( );
+    _bstr_t GetCardDevName (
+        short iIndex );
+    long GetLastError ( );
+    _bstr_t GetErrorMsg ( );
+    VARIANT_BOOL OpenCard (
+        _bstr_t sKeySN );
+    _bstr_t GetKeySN ( );
+    long Login (
+        _bstr_t sPass );
+    long GetRetryCount ( );
+    long GenSignKeyPair (
+        _bstr_t sContainerName );
+    _bstr_t ExportSignPublicKey (
+        _bstr_t sContainerName );
+    long ImportSignCert (
+        _bstr_t sContainerName,
+        _bstr_t sCert,
+        _bstr_t sCertPass );
+    long ImportEncKeyPair (
+        _bstr_t sContainerName,
+        _bstr_t sCert,
+        _bstr_t sPriKeyCipher,
+        _bstr_t sPfxPass );
+    long SetENVSN (
+        _bstr_t sEnvsn );
+    _bstr_t GetENVSN ( );
+    long GetContainerCount ( );
+    long DelContainer (
+        _bstr_t sContainerName );
+    long ChangeAdminPin (
+        _bstr_t sOldPin,
+        _bstr_t sNewPin );
+    long ChangeUserPin (
+        _bstr_t sOldPin,
+        _bstr_t sNewPin );
+    long UnlockUserPin (
+        _bstr_t sAdminPin,
+        _bstr_t sNewUserPin );
+    VARIANT_BOOL IsContainerExist (
+        _bstr_t sContainerName );
+    _bstr_t Sign (
+        _bstr_t sInData,
+        VARIANT_BOOL bNeedBase64DecodeData );
+    VARIANT_BOOL Verify (
+        _bstr_t sCert,
+        _bstr_t sInData,
+        VARIANT_BOOL bNeedBase64DecodeData,
+        _bstr_t SignValue );
+    _bstr_t GetCert (
+        VARIANT_BOOL bSign );
+    HRESULT About ( );
+    _bstr_t GetCertListFormElement ( );
+    void PutCertListFormElement (
+        _bstr_t pVal );
+    _bstr_t GetAlertBeforeCertDate ( );
+    void PutAlertBeforeCertDate (
+        _bstr_t pVal );
+    _bstr_t GetServerSignedData ( );
+    void PutServerSignedData (
+        _bstr_t pVal );
+    _bstr_t GetServerRan ( );
+    void PutServerRan (
+        _bstr_t pVal );
+    _bstr_t GetServerCert ( );
+    void PutServerCert (
+        _bstr_t pVal );
+    _bstr_t GetServerMode ( );
+    void PutServerMode (
+        _bstr_t pVal );
+    _bstr_t GetShowError ( );
+    void PutShowError (
+        _bstr_t pVal );
+    long AddSignInfo (
+        _bstr_t sUserPin );
+    _bstr_t SignData (
+        _bstr_t CertID,
+        _bstr_t sInData );
+    VARIANT_BOOL VerifySignedData (
+        _bstr_t sCert,
+        _bstr_t sInData,
+        _bstr_t sSignValue );
+    _bstr_t SignDataXML (
+        _bstr_t CertID,
+        _bstr_t sInData );
+    VARIANT_BOOL verifySignedDataXML (
+        _bstr_t sInData );
+    _bstr_t SignDataByP7_0 (
+        _bstr_t CertID,
+        _bstr_t sInData );
+    VARIANT_BOOL VerifySignedDatabyP7_0 (
+        _bstr_t sInData );
+    _bstr_t EncodeP7EnvelopedData (
+        _bstr_t CertID,
+        _bstr_t sInData );
+    _bstr_t DecodeP7EnvelopedData (
+        _bstr_t sInData );
+    _bstr_t GenRandom (
+        short iRandomLen );
+    _bstr_t PubKeyEncrypt (
+        _bstr_t sCert,
+        _bstr_t sInData );
+    _bstr_t PriKeyDecrypt (
+        _bstr_t CertID,
+        _bstr_t sInData );
+    _bstr_t EncryptData (
+        _bstr_t sSymKey,
+        _bstr_t sInData );
+    _bstr_t DecryptData (
+        _bstr_t sSymKey,
+        _bstr_t sInData );
+    _bstr_t ExportUserCert (
+        _bstr_t CertID,
+        VARIANT_BOOL bSignCert );
+    _bstr_t GetKeyInfo (
+        long iType );
+    _bstr_t GetCertInfo (
+        long iType );
+    _bstr_t GetCertName ( );
+    _bstr_t GetCertOID ( );
+    VARIANT_BOOL FormatCard (
+        _bstr_t sInfo );
+    long ExtExec1 (
+        long iMethod,
+        _bstr_t str1,
+        _bstr_t str2,
+        _bstr_t str3 );
+    _bstr_t ExtExec2 (
+        long iMethod,
+        _bstr_t str1,
+        _bstr_t str2,
+        _bstr_t str3 );
+    _bstr_t GetCertInfoByOID (
+        _bstr_t sOID );
+    _bstr_t ExportP10 (
+        _bstr_t sContainerName,
+        _bstr_t sDN );
+    _bstr_t SignDataByP7 (
+        _bstr_t inData,
+        VARIANT_BOOL isDetached,
+        long hashAlg );
+    VARIANT_BOOL VerifySignedDatabyP7 (
+        _bstr_t inData,
+        _bstr_t P7Data );
+    VARIANT_BOOL ResetCard (
+        _bstr_t sKeySN,
+        _bstr_t sAdminPin );
+    long ResetUserPin (
+        _bstr_t sAdminPin,
+        _bstr_t sNewUserPin );
+    VARIANT_BOOL Logout (
+        _bstr_t sKeySN );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall raw_GetCardCount (
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_GetAllCardInfoList (
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_GetCardDevName (
+        /*[in]*/ short iIndex,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_GetLastError (
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_GetErrorMsg (
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_OpenCard (
+        /*[in]*/ BSTR sKeySN,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_GetKeySN (
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_Login (
+        /*[in]*/ BSTR sPass,
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_GetRetryCount (
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_GenSignKeyPair (
+        /*[in]*/ BSTR sContainerName,
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_ExportSignPublicKey (
+        /*[in]*/ BSTR sContainerName,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_ImportSignCert (
+        /*[in]*/ BSTR sContainerName,
+        /*[in]*/ BSTR sCert,
+        /*[in]*/ BSTR sCertPass,
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_ImportEncKeyPair (
+        /*[in]*/ BSTR sContainerName,
+        /*[in]*/ BSTR sCert,
+        /*[in]*/ BSTR sPriKeyCipher,
+        /*[in]*/ BSTR sPfxPass,
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SetENVSN (
+        /*[in]*/ BSTR sEnvsn,
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_GetENVSN (
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_GetContainerCount (
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_DelContainer (
+        /*[in]*/ BSTR sContainerName,
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_ChangeAdminPin (
+        /*[in]*/ BSTR sOldPin,
+        /*[in]*/ BSTR sNewPin,
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_ChangeUserPin (
+        /*[in]*/ BSTR sOldPin,
+        /*[in]*/ BSTR sNewPin,
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_UnlockUserPin (
+        /*[in]*/ BSTR sAdminPin,
+        /*[in]*/ BSTR sNewUserPin,
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_IsContainerExist (
+        /*[in]*/ BSTR sContainerName,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_Sign (
+        /*[in]*/ BSTR sInData,
+        /*[in]*/ VARIANT_BOOL bNeedBase64DecodeData,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_Verify (
+        /*[in]*/ BSTR sCert,
+        /*[in]*/ BSTR sInData,
+        /*[in]*/ VARIANT_BOOL bNeedBase64DecodeData,
+        /*[in]*/ BSTR SignValue,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_GetCert (
+        /*[in]*/ VARIANT_BOOL bSign,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_About ( ) = 0;
+      virtual HRESULT __stdcall get_CertListFormElement (
+        /*[out,retval]*/ BSTR * pVal ) = 0;
+      virtual HRESULT __stdcall put_CertListFormElement (
+        /*[in]*/ BSTR pVal ) = 0;
+      virtual HRESULT __stdcall get_AlertBeforeCertDate (
+        /*[out,retval]*/ BSTR * pVal ) = 0;
+      virtual HRESULT __stdcall put_AlertBeforeCertDate (
+        /*[in]*/ BSTR pVal ) = 0;
+      virtual HRESULT __stdcall get_ServerSignedData (
+        /*[out,retval]*/ BSTR * pVal ) = 0;
+      virtual HRESULT __stdcall put_ServerSignedData (
+        /*[in]*/ BSTR pVal ) = 0;
+      virtual HRESULT __stdcall get_ServerRan (
+        /*[out,retval]*/ BSTR * pVal ) = 0;
+      virtual HRESULT __stdcall put_ServerRan (
+        /*[in]*/ BSTR pVal ) = 0;
+      virtual HRESULT __stdcall get_ServerCert (
+        /*[out,retval]*/ BSTR * pVal ) = 0;
+      virtual HRESULT __stdcall put_ServerCert (
+        /*[in]*/ BSTR pVal ) = 0;
+      virtual HRESULT __stdcall get_ServerMode (
+        /*[out,retval]*/ BSTR * pVal ) = 0;
+      virtual HRESULT __stdcall put_ServerMode (
+        /*[in]*/ BSTR pVal ) = 0;
+      virtual HRESULT __stdcall get_ShowError (
+        /*[out,retval]*/ BSTR * pVal ) = 0;
+      virtual HRESULT __stdcall put_ShowError (
+        /*[in]*/ BSTR pVal ) = 0;
+      virtual HRESULT __stdcall raw_AddSignInfo (
+        /*[in]*/ BSTR sUserPin,
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SignData (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ BSTR sInData,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_VerifySignedData (
+        /*[in]*/ BSTR sCert,
+        /*[in]*/ BSTR sInData,
+        /*[in]*/ BSTR sSignValue,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SignDataXML (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ BSTR sInData,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_verifySignedDataXML (
+        /*[in]*/ BSTR sInData,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SignDataByP7_0 (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ BSTR sInData,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_VerifySignedDatabyP7_0 (
+        /*[in]*/ BSTR sInData,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_EncodeP7EnvelopedData (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ BSTR sInData,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_DecodeP7EnvelopedData (
+        /*[in]*/ BSTR sInData,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_GenRandom (
+        /*[in]*/ short iRandomLen,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_PubKeyEncrypt (
+        /*[in]*/ BSTR sCert,
+        /*[in]*/ BSTR sInData,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_PriKeyDecrypt (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ BSTR sInData,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_EncryptData (
+        /*[in]*/ BSTR sSymKey,
+        /*[in]*/ BSTR sInData,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_DecryptData (
+        /*[in]*/ BSTR sSymKey,
+        /*[in]*/ BSTR sInData,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_ExportUserCert (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ VARIANT_BOOL bSignCert,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_GetKeyInfo (
+        /*[in]*/ long iType,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_GetCertInfo (
+        /*[in]*/ long iType,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_GetCertName (
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_GetCertOID (
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_FormatCard (
+        /*[in]*/ BSTR sInfo,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_ExtExec1 (
+        /*[in]*/ long iMethod,
+        /*[in]*/ BSTR str1,
+        /*[in]*/ BSTR str2,
+        /*[in]*/ BSTR str3,
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_ExtExec2 (
+        /*[in]*/ long iMethod,
+        /*[in]*/ BSTR str1,
+        /*[in]*/ BSTR str2,
+        /*[in]*/ BSTR str3,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_GetCertInfoByOID (
+        /*[in]*/ BSTR sOID,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_ExportP10 (
+        /*[in]*/ BSTR sContainerName,
+        /*[in]*/ BSTR sDN,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SignDataByP7 (
+        /*[in]*/ BSTR inData,
+        /*[in]*/ VARIANT_BOOL isDetached,
+        /*[in]*/ long hashAlg,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_VerifySignedDatabyP7 (
+        /*[in]*/ BSTR inData,
+        /*[in]*/ BSTR P7Data,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_ResetCard (
+        /*[in]*/ BSTR sKeySN,
+        /*[in]*/ BSTR sAdminPin,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_ResetUserPin (
+        /*[in]*/ BSTR sAdminPin,
+        /*[in]*/ BSTR sNewUserPin,
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_Logout (
+        /*[in]*/ BSTR sKeySN,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+};
+
+struct __declspec(uuid("5efaf5ba-42cd-4e85-b298-bb550208adc0"))
+_IXTXAppEvents : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    // Methods:
+    HRESULT OnUsbkeyChange ( );
+    HRESULT OnUsbkeyInsert ( );
+    HRESULT OnUsbkeyRemove ( );
+};
+
+struct __declspec(uuid("3f367b74-92d9-4c5e-ab93-234f8a91d5e6"))
+XTXApp;
+    // [ default ] interface IXTXApp
+    // [ default, source ] dispinterface _IXTXAppEvents
+
+struct __declspec(uuid("6c12d5b5-343c-4d55-b37e-7e7a151dce71"))
+IXTXApp : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetCertListFormElement,put=PutCertListFormElement))
+    _bstr_t CertListFormElement;
+    __declspec(property(get=GetAlertBeforeCertDate,put=PutAlertBeforeCertDate))
+    _bstr_t AlertBeforeCertDate;
+    __declspec(property(get=GetServerSignedData,put=PutServerSignedData))
+    _bstr_t ServerSignedData;
+    __declspec(property(get=GetServerRan,put=PutServerRan))
+    _bstr_t ServerRan;
+    __declspec(property(get=GetServerCert,put=PutServerCert))
+    _bstr_t ServerCert;
+    __declspec(property(get=GetServerMode,put=PutServerMode))
+    _bstr_t ServerMode;
+    __declspec(property(get=GetShowError,put=PutShowError))
+    _bstr_t ShowError;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    long SOF_SetSignMethod (
+        long SignMethod );
+    long SOF_GetSignMethod ( );
+    long SOF_SetEncryptMethod (
+        long EncryptMethod );
+    long SOF_GetEncryptMethod ( );
+    _bstr_t SOF_GetUserList ( );
+    _bstr_t SOF_ExportUserCert (
+        _bstr_t CertID );
+    VARIANT_BOOL SOF_Login (
+        _bstr_t CertID,
+        _bstr_t PassWd );
+    long SOF_GetPinRetryCount (
+        _bstr_t CertID );
+    VARIANT_BOOL SOF_ChangePassWd (
+        _bstr_t CertID,
+        _bstr_t oldPass,
+        _bstr_t newPass );
+    _bstr_t SOF_GetCertInfo (
+        _bstr_t Cert,
+        short type );
+    _bstr_t SOF_GetCertInfoByOid (
+        _bstr_t Cert,
+        _bstr_t Oid );
+    _bstr_t SOF_SignData (
+        _bstr_t CertID,
+        _bstr_t inData );
+    VARIANT_BOOL SOF_VerifySignedData (
+        _bstr_t Cert,
+        _bstr_t inData,
+        _bstr_t SignValue );
+    _bstr_t SOF_SignFile (
+        _bstr_t CertID,
+        _bstr_t InFile );
+    VARIANT_BOOL SOF_VerifySignedFile (
+        _bstr_t Cert,
+        _bstr_t InFile,
+        _bstr_t SignValue );
+    _bstr_t SOF_EncryptData (
+        _bstr_t Cert,
+        _bstr_t inData );
+    _bstr_t SOF_DecryptData (
+        _bstr_t CertID,
+        _bstr_t inData );
+    VARIANT_BOOL SOF_EncryptFile (
+        _bstr_t Cert,
+        _bstr_t InFile,
+        _bstr_t OutFile );
+    VARIANT_BOOL SOF_DecryptFile (
+        _bstr_t CertID,
+        _bstr_t InFile,
+        _bstr_t OutFile );
+    _bstr_t SOF_SignMessage (
+        short dwFlag,
+        _bstr_t CertID,
+        _bstr_t inData );
+    VARIANT_BOOL SOF_VerifySignedMessage (
+        _bstr_t MessageData,
+        _bstr_t inData );
+    _bstr_t SOF_GetInfoFromSignedMessage (
+        _bstr_t SignedMessage,
+        short type );
+    _bstr_t SOF_SignDataXML (
+        _bstr_t CertID,
+        _bstr_t inData );
+    VARIANT_BOOL SOF_VerifySignedDataXML (
+        _bstr_t inData );
+    _bstr_t SOF_GetXMLSignatureInfo (
+        _bstr_t XMLSignedData,
+        short type );
+    _bstr_t SOF_GenRandom (
+        long RandomLen );
+    _bstr_t SOF_PubKeyEncrypt (
+        _bstr_t Cert,
+        _bstr_t inData );
+    _bstr_t SOF_PriKeyDecrypt (
+        _bstr_t CertID,
+        _bstr_t inData );
+    _bstr_t SOF_SecertSegment (
+        _bstr_t Secert,
+        short m,
+        short n,
+        short k );
+    _bstr_t SOF_SecertRecovery (
+        _bstr_t Seg );
+    long SOF_GetLastError ( );
+    long GetDeviceCount ( );
+    _bstr_t GetAllDeviceSN ( );
+    _bstr_t GetDeviceSNByIndex (
+        long iIndex );
+    _bstr_t GetDeviceInfo (
+        _bstr_t sDeviceSN,
+        long iType );
+    VARIANT_BOOL ChangeAdminPass (
+        _bstr_t sDeviceSN,
+        _bstr_t sOldPass,
+        _bstr_t sNewPass );
+    VARIANT_BOOL UnlockUserPass (
+        _bstr_t sDeviceSN,
+        _bstr_t sAdminPass,
+        _bstr_t sNewUserPass );
+    VARIANT_BOOL GenerateKeyPair (
+        _bstr_t sDeviceSN,
+        _bstr_t sContainerName,
+        long iKeyType,
+        VARIANT_BOOL bSign );
+    _bstr_t ExportPubKey (
+        _bstr_t sDeviceSN,
+        _bstr_t sContainerName,
+        VARIANT_BOOL bSign );
+    VARIANT_BOOL ImportSignCert (
+        _bstr_t sDeviceSN,
+        _bstr_t sContainerName,
+        _bstr_t sCert );
+    VARIANT_BOOL ImportEncCert (
+        _bstr_t sDeviceSN,
+        _bstr_t sContainerName,
+        _bstr_t sCert,
+        _bstr_t sPriKeyCipher );
+    _bstr_t ReadFile (
+        _bstr_t sDeviceSN,
+        _bstr_t sFileName );
+    VARIANT_BOOL WriteFile (
+        _bstr_t sDeviceSN,
+        _bstr_t sFileName,
+        _bstr_t sContent,
+        VARIANT_BOOL bPrivate );
+    VARIANT_BOOL IsContainerExist (
+        _bstr_t sDeviceSN,
+        _bstr_t sContainerName );
+    VARIANT_BOOL DeleteContainer (
+        _bstr_t sDeviceSN,
+        _bstr_t sContainerName );
+    _bstr_t ExportPKCS10 (
+        _bstr_t sDeviceSN,
+        _bstr_t sContainerName,
+        _bstr_t sDN,
+        VARIANT_BOOL bSign );
+    VARIANT_BOOL InitDevice (
+        _bstr_t sDeviceSN,
+        _bstr_t sAdminPass );
+    _bstr_t GetCertListFormElement ( );
+    void PutCertListFormElement (
+        _bstr_t pVal );
+    _bstr_t GetAlertBeforeCertDate ( );
+    void PutAlertBeforeCertDate (
+        _bstr_t pVal );
+    _bstr_t GetServerSignedData ( );
+    void PutServerSignedData (
+        _bstr_t pVal );
+    _bstr_t GetServerRan ( );
+    void PutServerRan (
+        _bstr_t pVal );
+    _bstr_t GetServerCert ( );
+    void PutServerCert (
+        _bstr_t pVal );
+    _bstr_t GetServerMode ( );
+    void PutServerMode (
+        _bstr_t pVal );
+    _bstr_t GetShowError ( );
+    void PutShowError (
+        _bstr_t pVal );
+    VARIANT_BOOL AddSignInfo (
+        _bstr_t sUserPass );
+    _bstr_t SOF_GetVersion ( );
+    _bstr_t SOF_ExportExChangeUserCert (
+        _bstr_t CertID );
+    long SOF_ValidateCert (
+        _bstr_t Cert );
+    _bstr_t GetENVSN (
+        _bstr_t sDeviceSN );
+    VARIANT_BOOL SetENVSN (
+        _bstr_t sDeviceSN,
+        _bstr_t sEnvsn );
+    VARIANT_BOOL IsDeviceExist (
+        _bstr_t sDeviceSN );
+    long GetContainerCount (
+        _bstr_t sDeviceSN );
+    _bstr_t SOF_SymEncryptData (
+        _bstr_t sKey,
+        _bstr_t inData );
+    _bstr_t SOF_SymDecryptData (
+        _bstr_t sKey,
+        _bstr_t inData );
+    VARIANT_BOOL SOF_SymEncryptFile (
+        _bstr_t sKey,
+        _bstr_t InFile,
+        _bstr_t OutFile );
+    VARIANT_BOOL SOF_SymDecryptFile (
+        _bstr_t sKey,
+        _bstr_t InFile,
+        _bstr_t OutFile );
+    _bstr_t SOF_GetLastErrMsg ( );
+    _bstr_t SOF_Base64Encode (
+        _bstr_t sInData );
+    _bstr_t SOF_Base64Decode (
+        _bstr_t sInData );
+    _bstr_t SOF_HashData (
+        long hashAlg,
+        _bstr_t sInData );
+    _bstr_t SOF_HashFile (
+        long hashAlg,
+        _bstr_t InFile );
+    VARIANT_BOOL UnlockUserPassEx (
+        _bstr_t sDeviceSN,
+        _bstr_t sAdminPin,
+        _bstr_t sNewUserPass );
+    VARIANT_BOOL DeleteOldContainer (
+        _bstr_t sDeviceSN );
+    VARIANT_BOOL WriteFileEx (
+        _bstr_t sDeviceSN,
+        _bstr_t sFileName,
+        _bstr_t sContent );
+    _bstr_t ReadFileEx (
+        _bstr_t sDeviceSN,
+        _bstr_t sFileName );
+    _bstr_t SOF_EncryptDataEx (
+        _bstr_t Cert,
+        _bstr_t inData );
+    _bstr_t Base64EncodeFile (
+        _bstr_t sInFile );
+    long SOF_GetRetryCount (
+        _bstr_t CertID );
+    _bstr_t SOF_GetAllContainerName (
+        _bstr_t sDeviceSN );
+    VARIANT_BOOL CreateSoftDevice (
+        _bstr_t sDeviceSN,
+        _bstr_t sLabel );
+    VARIANT_BOOL DeleteSoftDevice (
+        _bstr_t sDeviceSN,
+        _bstr_t sPasswd );
+    VARIANT_BOOL EnableSoftDevice (
+        VARIANT_BOOL enable,
+        _bstr_t sDeviceSN );
+    _bstr_t SoftDeviceBackup (
+        _bstr_t sDeviceSN,
+        _bstr_t sPasswd );
+    VARIANT_BOOL SoftDeviceRestore (
+        _bstr_t sDeviceSN,
+        _bstr_t sPasswd,
+        _bstr_t sInFilePath );
+    VARIANT_BOOL SOF_Logout (
+        _bstr_t CertID );
+    VARIANT_BOOL SetUserConfig (
+        long type,
+        _bstr_t strConfig );
+    _bstr_t SOF_SignByteData (
+        _bstr_t CertID,
+        unsigned char * byteInData,
+        long byteLen );
+    VARIANT_BOOL SOF_VerifySignedByteData (
+        _bstr_t Cert,
+        unsigned char * byteInData,
+        long byteLen,
+        _bstr_t SignValue );
+    _bstr_t OTP_GetChallengeCode (
+        _bstr_t sCertID );
+    VARIANT_BOOL ImportEncCertEx (
+        _bstr_t sDeviceSN,
+        _bstr_t sContainerName,
+        _bstr_t sCert,
+        _bstr_t sPriKeyCipher,
+        long ulSymAlg );
+    _bstr_t SOF_GetCertEntity (
+        _bstr_t sCert );
+    _bstr_t SOF_HMAC (
+        long hashid,
+        _bstr_t key,
+        _bstr_t inData );
+    _bstr_t SOF_SignDataByPriKey (
+        _bstr_t sPriKey,
+        _bstr_t sCert,
+        _bstr_t sInData );
+    VARIANT_BOOL ImportKeyCertToSoftDevice (
+        _bstr_t sDeviceSN,
+        _bstr_t sContainerName,
+        _bstr_t sPriKey,
+        _bstr_t sCert,
+        VARIANT_BOOL bSign );
+    VARIANT_BOOL InitDeviceEx (
+        _bstr_t sDeviceSN,
+        _bstr_t sAdminPass,
+        _bstr_t sUserPin,
+        _bstr_t sKeyLabel,
+        long adminPinMaxRetry,
+        long userPinMaxRetry );
+    _bstr_t SelectFile ( );
+    _bstr_t SOF_SignHashData (
+        _bstr_t CertID,
+        _bstr_t b64ashData,
+        long hashAlg );
+    VARIANT_BOOL SOF_VerifySignedHashData (
+        _bstr_t Cert,
+        _bstr_t b64ashData,
+        _bstr_t SignValue,
+        long hashAlg );
+    VARIANT_BOOL CheckSoftDeviceEnv ( );
+    _bstr_t SOF_SignBinaryData (
+        _bstr_t CertID,
+        const _variant_t & inData );
+    VARIANT_BOOL SOF_VerifySignedBinaryData (
+        _bstr_t Cert,
+        const _variant_t & inData,
+        _bstr_t SignValue );
+    _bstr_t SOF_EncryptBinaryData (
+        _bstr_t Cert,
+        const _variant_t & inData );
+    _bstr_t SOF_EncryptBinaryDataEx (
+        _bstr_t Cert,
+        const _variant_t & inData );
+    _variant_t SOF_DecryptBinaryData (
+        _bstr_t CertID,
+        _bstr_t inData );
+    _bstr_t SOF_SignBinaryMessage (
+        short dwFlag,
+        _bstr_t CertID,
+        const _variant_t & inData );
+    VARIANT_BOOL SOF_VerifySignedBinaryMessage (
+        _bstr_t MessageData,
+        const _variant_t & inData );
+    _bstr_t SOF_PubKeyBinaryEncrypt (
+        _bstr_t Cert,
+        const _variant_t & inData );
+    _variant_t SOF_PriKeyBinaryDecrypt (
+        _bstr_t CertID,
+        _bstr_t inData );
+    _bstr_t SOF_Base64BinaryEncode (
+        const _variant_t & sInData );
+    _variant_t SOF_Base64BinaryDecode (
+        _bstr_t sInData );
+    _bstr_t SOF_HashBinaryData (
+        long hashAlg,
+        const _variant_t & sInData,
+        _bstr_t sCert,
+        _bstr_t sID );
+    _bstr_t SOF_SignBinaryDataByPriKey (
+        _bstr_t sPriKey,
+        _bstr_t sCert,
+        const _variant_t & sInData );
+    VARIANT_BOOL ImportPfxToDevice (
+        _bstr_t sDeviceSN,
+        _bstr_t sContainerName,
+        VARIANT_BOOL bSign,
+        _bstr_t strPfx,
+        _bstr_t strPfxPass );
+    _bstr_t SOF_HashDataEx (
+        long hashAlg,
+        _bstr_t sInData,
+        _bstr_t sCert,
+        _bstr_t sID );
+    _bstr_t SOF_HashFileEx (
+        long hashAlg,
+        _bstr_t InFile,
+        _bstr_t sCert,
+        _bstr_t sID );
+    long GetDeviceCountEx (
+        long type );
+    _bstr_t GetAllDeviceSNEx (
+        long type );
+    long SOF_UpdateCert (
+        _bstr_t CertID,
+        long type );
+    HRESULT OpenSpecifiedFolder (
+        _bstr_t backupFilePath );
+    _bstr_t OTP_GetChallengeCodeEx (
+        _bstr_t sCertID,
+        _bstr_t szAccount,
+        long money );
+    VARIANT_BOOL Base64DecodeFile (
+        _bstr_t sInData,
+        _bstr_t sFilePath );
+    _bstr_t EnumFilesInDevice (
+        _bstr_t sDeviceSN );
+    VARIANT_BOOL OTP_Halt (
+        _bstr_t sCertID );
+    _bstr_t SOF_TSGenREQ (
+        _bstr_t b64Hash,
+        long hashAlg,
+        VARIANT_BOOL bReqCert,
+        _bstr_t policyID,
+        _bstr_t b64Nonce,
+        _bstr_t b64Extension );
+    VARIANT_BOOL SOF_TSCompareNonce (
+        _bstr_t b64TSReq,
+        _bstr_t b64TSAResp );
+    _bstr_t SOF_TSGenPDFSignature (
+        _bstr_t b64TSAResp,
+        _bstr_t b64OriPDFSignature );
+    VARIANT_BOOL SOF_TSVerifyPDFSignature (
+        _bstr_t b64TSPDFSignature );
+    _bstr_t SOF_TSGetPDFSignatureInfo (
+        _bstr_t b64TSPDFSignature,
+        long iType );
+    _bstr_t OTP_GetState (
+        _bstr_t sCertID,
+        VARIANT_BOOL bCert );
+    _bstr_t OTP_GetSyncCode (
+        _bstr_t sCertID,
+        _bstr_t ChallengeCode );
+    VARIANT_BOOL SOF_IsLogin (
+        _bstr_t CertID );
+    VARIANT_BOOL SOF_LoginEx (
+        _bstr_t CertID,
+        _bstr_t PassWd,
+        long updateFlag );
+    _bstr_t EnumSupportDeviceList ( );
+    _bstr_t ExportPfxFromDevice (
+        _bstr_t sDeviceSN,
+        _bstr_t sContainerName,
+        VARIANT_BOOL bSign,
+        _bstr_t strPfxPass );
+    _bstr_t SOF_SignHashMessage (
+        _bstr_t CertID,
+        _bstr_t InHashData,
+        long hashAlg );
+    _bstr_t ExportPfxToFile (
+        _bstr_t sDeviceSN,
+        _bstr_t sContainerName,
+        VARIANT_BOOL bSign,
+        _bstr_t strPfxPass );
+    _bstr_t SOF_SignAPK (
+        _bstr_t CertID,
+        _bstr_t strOriSignature );
+    VARIANT_BOOL YZT_GenerateKeyPair (
+        _bstr_t sDeviceSN,
+        _bstr_t sContainerName,
+        long iKeyTypeRSA,
+        long iKeyTypeSM2 );
+    _bstr_t YZT_ExportPubKey (
+        _bstr_t sDeviceSN,
+        _bstr_t sContainerName,
+        VARIANT_BOOL bSign );
+    VARIANT_BOOL YZT_ImportSignCert (
+        _bstr_t sDeviceSN,
+        _bstr_t sContainerName,
+        _bstr_t sRSACert,
+        _bstr_t sSM2Cert );
+    VARIANT_BOOL YZT_ImportEncCert (
+        _bstr_t sDeviceSN,
+        _bstr_t sContainerName,
+        _bstr_t sRSACert,
+        _bstr_t sRSAPriKeyCipher,
+        long ulRSASymAlg,
+        _bstr_t sSM2Cert,
+        _bstr_t sSM2PriKeyCipher,
+        long ulSM2SymAlg );
+    _bstr_t SOF_ListenUKey (
+        long Parm );
+    _bstr_t SOF_EnableLoginWindow (
+        long Parm );
+    _bstr_t SOF_SignEnvelope (
+        _bstr_t CertID,
+        _bstr_t Cert,
+        _bstr_t inData );
+    _bstr_t SOF_UnSignEnvelope (
+        _bstr_t CertID,
+        _bstr_t inData );
+    _bstr_t BIO_MAKExportPKCS10 (
+        _bstr_t sDeviceSN,
+        long iKeyType,
+        _bstr_t sDN );
+    VARIANT_BOOL BIO_MAKImportSignEncCert (
+        _bstr_t sDeviceSN,
+        _bstr_t sSignCert,
+        _bstr_t sEncCert,
+        _bstr_t sPriKeyCipher );
+    VARIANT_BOOL BIO_IssueDAKCert (
+        _bstr_t sDeviceSN,
+        long iKeyType,
+        _bstr_t sDN );
+    _bstr_t BIO_InfoCollect ( );
+    _bstr_t BIO_GetBioInfo (
+        _bstr_t sDeviceSN );
+    _bstr_t SOF_GetLastLoginCertID ( );
+    _bstr_t SOF_ReadESealData (
+        _bstr_t CertID,
+        long ulKeyIndex,
+        long ulKeyAlgId,
+        long ulFlags );
+    _bstr_t SOF_ReadKFXESealData (
+        _bstr_t CertID,
+        long ulKeyIndex,
+        long ulKeyAlgId,
+        long ulFlags );
+    _bstr_t SOF_SymDecryptFileToData (
+        _bstr_t sKey,
+        _bstr_t InFile );
+    _bstr_t SOF_SignMessageBase64 (
+        short dwFlag,
+        _bstr_t CertID,
+        _bstr_t inData );
+    VARIANT_BOOL SOF_VerifySignedMessageBase64 (
+        _bstr_t MessageData,
+        _bstr_t inData );
+    VARIANT_BOOL SOF_VerifySignedHashMessage (
+        _bstr_t MessageData,
+        _bstr_t InHashData );
+    _bstr_t SOF_SignDataBase64 (
+        _bstr_t CertID,
+        _bstr_t inData );
+    VARIANT_BOOL SOF_VerifySignedDataBase64 (
+        _bstr_t Cert,
+        _bstr_t inData,
+        _bstr_t SignValue );
+    _bstr_t SOF_HashDataExBase64 (
+        long hashAlg,
+        _bstr_t sInData,
+        _bstr_t sCert,
+        _bstr_t sID );
+    _bstr_t SOF_GetProductVersion ( );
+    long SOF_UpdateCertEx (
+        _bstr_t CertID,
+        _bstr_t PassWd );
+    _bstr_t SOF_GetLastSignDataCertID (
+        _bstr_t CertID );
+    VARIANT_BOOL BIO_SetUserConfig (
+        _bstr_t CertID,
+        long type,
+        _bstr_t strConfig );
+    _bstr_t BIO_InvokeCommand (
+        _bstr_t CertID,
+        _bstr_t bstrCommand );
+    VARIANT_BOOL SOF_ImportSymmKey (
+        _bstr_t CertID,
+        long ulKeyIndex,
+        _bstr_t inData,
+        long ulFlags );
+    VARIANT_BOOL SOF_WriteESealData (
+        _bstr_t CertID,
+        _bstr_t inData,
+        long ulFlags );
+    _bstr_t SOF_EPS_Encrypt (
+        _bstr_t CertID,
+        long ulKeyIndex,
+        long ulKeyAlgId,
+        _bstr_t IVData,
+        long DivCount,
+        _bstr_t DivComponent,
+        _bstr_t inData,
+        long ulFlags );
+    _bstr_t SOF_EPS_Decrypt (
+        _bstr_t CertID,
+        long ulKeyIndex,
+        long ulKeyAlgId,
+        _bstr_t IVData,
+        long DivCount,
+        _bstr_t DivComponent,
+        _bstr_t inData,
+        long ulFlags );
+    _bstr_t SOF_EPS_Mac (
+        _bstr_t CertID,
+        long ulKeyIndex,
+        long ulKeyAlgId,
+        _bstr_t IVData,
+        long DivCount,
+        _bstr_t DivComponent,
+        _bstr_t inData,
+        long ulFlags );
+    _bstr_t SOF_PriKeyDecryptEx (
+        _bstr_t CertID,
+        _bstr_t inData );
+    _bstr_t SOF_EPS_ReadESealData (
+        _bstr_t CertID,
+        long ulKeyIndex,
+        long ulKeyAlgId,
+        long ulFlags );
+    VARIANT_BOOL SOF_EPS_WriteESealData (
+        _bstr_t CertID,
+        _bstr_t inData,
+        long ulFlags );
+    _bstr_t EnumESeal (
+        _bstr_t sDeviceSN );
+    _bstr_t GetPicture (
+        _bstr_t bstrConName );
+    VARIANT_BOOL SOF_SignEnvelopeFile (
+        _bstr_t CertID,
+        _bstr_t Cert,
+        _bstr_t InFile,
+        _bstr_t OutFile );
+    VARIANT_BOOL SOF_UnSignEnvelopeFile (
+        _bstr_t CertID,
+        _bstr_t InFile,
+        _bstr_t OutFile );
+    VARIANT_BOOL SOFX_EncryptFile (
+        _bstr_t CertID,
+        _bstr_t Cert,
+        _bstr_t InFile,
+        _bstr_t OutFile,
+        long ulFlags );
+    VARIANT_BOOL SOFX_DecryptFile (
+        _bstr_t CertID,
+        _bstr_t InFile,
+        _bstr_t OutFile,
+        long ulFlags );
+    VARIANT_BOOL WriteFileBase64 (
+        _bstr_t sDeviceSN,
+        _bstr_t sFileName,
+        _bstr_t sContent );
+    VARIANT_BOOL DeleteFile (
+        _bstr_t sDeviceSN,
+        _bstr_t sFileName );
+    _bstr_t SOF_SignDataEx (
+        _bstr_t CertID,
+        _bstr_t inData,
+        long signFlag );
+    VARIANT_BOOL SOF_VerifySignedDataEx (
+        _bstr_t Cert,
+        _bstr_t inData,
+        _bstr_t SignValue,
+        long signFlag );
+    _bstr_t SOF_SymEncryptDataEx (
+        _bstr_t sKey,
+        _bstr_t sIV,
+        _bstr_t inData );
+    _bstr_t SOF_SymDecryptDataEx (
+        _bstr_t sKey,
+        _bstr_t sIV,
+        _bstr_t inData );
+    VARIANT_BOOL InitDeviceWithParam (
+        _bstr_t sDeviceSN,
+        _bstr_t sAppName,
+        _bstr_t sAdminPass,
+        _bstr_t sUserPin,
+        _bstr_t sKeyLabel,
+        long adminPinMaxRetry,
+        long userPinMaxRetry,
+        long createFileRights );
+    VARIANT_BOOL SOF_SymEncryptFileEx (
+        _bstr_t sKey,
+        _bstr_t sIV,
+        _bstr_t InFile,
+        _bstr_t OutFile );
+    VARIANT_BOOL SOF_SymDecryptFileEx (
+        _bstr_t sKey,
+        _bstr_t sIV,
+        _bstr_t InFile,
+        _bstr_t OutFile );
+    _bstr_t SOF_SymDecryptFileToDataEx (
+        _bstr_t sKey,
+        _bstr_t sIV,
+        _bstr_t InFile );
+    _bstr_t SOFX_SymEncryptDataWithPadding (
+        _bstr_t sKey,
+        _bstr_t sIV,
+        long ulPaddingType,
+        _bstr_t inData );
+    _bstr_t SOFX_SymDecryptDataWithPadding (
+        _bstr_t sKey,
+        _bstr_t sIV,
+        long ulPaddingType,
+        _bstr_t inData );
+    VARIANT_BOOL SOFX_SymEncryptFileWithPadding (
+        _bstr_t sKey,
+        _bstr_t sIV,
+        long ulPaddingType,
+        _bstr_t InFile,
+        _bstr_t OutFile );
+    VARIANT_BOOL SOFX_SymDecryptFileWithPadding (
+        _bstr_t sKey,
+        _bstr_t sIV,
+        long ulPaddingType,
+        _bstr_t InFile,
+        _bstr_t OutFile );
+    _bstr_t SOFX_InvokeCommand (
+        _bstr_t DllName,
+        _bstr_t InParam );
+    VARIANT_BOOL SOFX_VerifySignedDataWithID (
+        _bstr_t Cert,
+        _bstr_t inData,
+        _bstr_t SignValue,
+        _bstr_t userId );
+    VARIANT_BOOL SOFX_VerifySignedFileWithID (
+        _bstr_t Cert,
+        _bstr_t InFile,
+        _bstr_t SignValue,
+        _bstr_t userId );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall raw_SOF_SetSignMethod (
+        /*[in]*/ long SignMethod,
+        /*[out,retval]*/ long * ret ) = 0;
+      virtual HRESULT __stdcall raw_SOF_GetSignMethod (
+        /*[out,retval]*/ long * ret ) = 0;
+      virtual HRESULT __stdcall raw_SOF_SetEncryptMethod (
+        /*[in]*/ long EncryptMethod,
+        /*[out,retval]*/ long * ret ) = 0;
+      virtual HRESULT __stdcall raw_SOF_GetEncryptMethod (
+        /*[out,retval]*/ long * ret ) = 0;
+      virtual HRESULT __stdcall raw_SOF_GetUserList (
+        /*[out,retval]*/ BSTR * ret ) = 0;
+      virtual HRESULT __stdcall raw_SOF_ExportUserCert (
+        /*[in]*/ BSTR CertID,
+        /*[out,retval]*/ BSTR * ret ) = 0;
+      virtual HRESULT __stdcall raw_SOF_Login (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ BSTR PassWd,
+        /*[out,retval]*/ VARIANT_BOOL * ret ) = 0;
+      virtual HRESULT __stdcall raw_SOF_GetPinRetryCount (
+        /*[in]*/ BSTR CertID,
+        /*[out,retval]*/ long * ret ) = 0;
+      virtual HRESULT __stdcall raw_SOF_ChangePassWd (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ BSTR oldPass,
+        /*[in]*/ BSTR newPass,
+        /*[out,retval]*/ VARIANT_BOOL * ret ) = 0;
+      virtual HRESULT __stdcall raw_SOF_GetCertInfo (
+        /*[in]*/ BSTR Cert,
+        /*[in]*/ short type,
+        /*[out,retval]*/ BSTR * ret ) = 0;
+      virtual HRESULT __stdcall raw_SOF_GetCertInfoByOid (
+        /*[in]*/ BSTR Cert,
+        /*[in]*/ BSTR Oid,
+        /*[out,retval]*/ BSTR * ret ) = 0;
+      virtual HRESULT __stdcall raw_SOF_SignData (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ BSTR inData,
+        /*[out,retval]*/ BSTR * ret ) = 0;
+      virtual HRESULT __stdcall raw_SOF_VerifySignedData (
+        /*[in]*/ BSTR Cert,
+        /*[in]*/ BSTR inData,
+        /*[in]*/ BSTR SignValue,
+        /*[out,retval]*/ VARIANT_BOOL * ret ) = 0;
+      virtual HRESULT __stdcall raw_SOF_SignFile (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ BSTR InFile,
+        /*[out,retval]*/ BSTR * ret ) = 0;
+      virtual HRESULT __stdcall raw_SOF_VerifySignedFile (
+        /*[in]*/ BSTR Cert,
+        /*[in]*/ BSTR InFile,
+        /*[in]*/ BSTR SignValue,
+        /*[out,retval]*/ VARIANT_BOOL * ret ) = 0;
+      virtual HRESULT __stdcall raw_SOF_EncryptData (
+        /*[in]*/ BSTR Cert,
+        /*[in]*/ BSTR inData,
+        /*[out,retval]*/ BSTR * ret ) = 0;
+      virtual HRESULT __stdcall raw_SOF_DecryptData (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ BSTR inData,
+        /*[out,retval]*/ BSTR * ret ) = 0;
+      virtual HRESULT __stdcall raw_SOF_EncryptFile (
+        /*[in]*/ BSTR Cert,
+        /*[in]*/ BSTR InFile,
+        /*[in]*/ BSTR OutFile,
+        /*[out,retval]*/ VARIANT_BOOL * ret ) = 0;
+      virtual HRESULT __stdcall raw_SOF_DecryptFile (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ BSTR InFile,
+        /*[in]*/ BSTR OutFile,
+        /*[out,retval]*/ VARIANT_BOOL * ret ) = 0;
+      virtual HRESULT __stdcall raw_SOF_SignMessage (
+        /*[in]*/ short dwFlag,
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ BSTR inData,
+        /*[out,retval]*/ BSTR * ret ) = 0;
+      virtual HRESULT __stdcall raw_SOF_VerifySignedMessage (
+        /*[in]*/ BSTR MessageData,
+        /*[in]*/ BSTR inData,
+        /*[out,retval]*/ VARIANT_BOOL * ret ) = 0;
+      virtual HRESULT __stdcall raw_SOF_GetInfoFromSignedMessage (
+        /*[in]*/ BSTR SignedMessage,
+        /*[in]*/ short type,
+        /*[out,retval]*/ BSTR * ret ) = 0;
+      virtual HRESULT __stdcall raw_SOF_SignDataXML (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ BSTR inData,
+        /*[out,retval]*/ BSTR * ret ) = 0;
+      virtual HRESULT __stdcall raw_SOF_VerifySignedDataXML (
+        /*[in]*/ BSTR inData,
+        /*[out,retval]*/ VARIANT_BOOL * ret ) = 0;
+      virtual HRESULT __stdcall raw_SOF_GetXMLSignatureInfo (
+        /*[in]*/ BSTR XMLSignedData,
+        /*[in]*/ short type,
+        /*[out,retval]*/ BSTR * ret ) = 0;
+      virtual HRESULT __stdcall raw_SOF_GenRandom (
+        /*[in]*/ long RandomLen,
+        /*[out,retval]*/ BSTR * ret ) = 0;
+      virtual HRESULT __stdcall raw_SOF_PubKeyEncrypt (
+        /*[in]*/ BSTR Cert,
+        /*[in]*/ BSTR inData,
+        /*[out,retval]*/ BSTR * ret ) = 0;
+      virtual HRESULT __stdcall raw_SOF_PriKeyDecrypt (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ BSTR inData,
+        /*[out,retval]*/ BSTR * ret ) = 0;
+      virtual HRESULT __stdcall raw_SOF_SecertSegment (
+        /*[in]*/ BSTR Secert,
+        /*[in]*/ short m,
+        /*[in]*/ short n,
+        /*[in]*/ short k,
+        /*[out,retval]*/ BSTR * ret ) = 0;
+      virtual HRESULT __stdcall raw_SOF_SecertRecovery (
+        /*[in]*/ BSTR Seg,
+        /*[out,retval]*/ BSTR * ret ) = 0;
+      virtual HRESULT __stdcall raw_SOF_GetLastError (
+        /*[out,retval]*/ long * ret ) = 0;
+      virtual HRESULT __stdcall raw_GetDeviceCount (
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_GetAllDeviceSN (
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_GetDeviceSNByIndex (
+        /*[in]*/ long iIndex,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_GetDeviceInfo (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[in]*/ long iType,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_ChangeAdminPass (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[in]*/ BSTR sOldPass,
+        /*[in]*/ BSTR sNewPass,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_UnlockUserPass (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[in]*/ BSTR sAdminPass,
+        /*[in]*/ BSTR sNewUserPass,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_GenerateKeyPair (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[in]*/ BSTR sContainerName,
+        /*[in]*/ long iKeyType,
+        /*[in]*/ VARIANT_BOOL bSign,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_ExportPubKey (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[in]*/ BSTR sContainerName,
+        /*[in]*/ VARIANT_BOOL bSign,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_ImportSignCert (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[in]*/ BSTR sContainerName,
+        /*[in]*/ BSTR sCert,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_ImportEncCert (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[in]*/ BSTR sContainerName,
+        /*[in]*/ BSTR sCert,
+        /*[in]*/ BSTR sPriKeyCipher,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_ReadFile (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[in]*/ BSTR sFileName,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_WriteFile (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[in]*/ BSTR sFileName,
+        /*[in]*/ BSTR sContent,
+        VARIANT_BOOL bPrivate,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_IsContainerExist (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[in]*/ BSTR sContainerName,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_DeleteContainer (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[in]*/ BSTR sContainerName,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_ExportPKCS10 (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[in]*/ BSTR sContainerName,
+        /*[in]*/ BSTR sDN,
+        /*[in]*/ VARIANT_BOOL bSign,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_InitDevice (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[in]*/ BSTR sAdminPass,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall get_CertListFormElement (
+        /*[out,retval]*/ BSTR * pVal ) = 0;
+      virtual HRESULT __stdcall put_CertListFormElement (
+        /*[in]*/ BSTR pVal ) = 0;
+      virtual HRESULT __stdcall get_AlertBeforeCertDate (
+        /*[out,retval]*/ BSTR * pVal ) = 0;
+      virtual HRESULT __stdcall put_AlertBeforeCertDate (
+        /*[in]*/ BSTR pVal ) = 0;
+      virtual HRESULT __stdcall get_ServerSignedData (
+        /*[out,retval]*/ BSTR * pVal ) = 0;
+      virtual HRESULT __stdcall put_ServerSignedData (
+        /*[in]*/ BSTR pVal ) = 0;
+      virtual HRESULT __stdcall get_ServerRan (
+        /*[out,retval]*/ BSTR * pVal ) = 0;
+      virtual HRESULT __stdcall put_ServerRan (
+        /*[in]*/ BSTR pVal ) = 0;
+      virtual HRESULT __stdcall get_ServerCert (
+        /*[out,retval]*/ BSTR * pVal ) = 0;
+      virtual HRESULT __stdcall put_ServerCert (
+        /*[in]*/ BSTR pVal ) = 0;
+      virtual HRESULT __stdcall get_ServerMode (
+        /*[out,retval]*/ BSTR * pVal ) = 0;
+      virtual HRESULT __stdcall put_ServerMode (
+        /*[in]*/ BSTR pVal ) = 0;
+      virtual HRESULT __stdcall get_ShowError (
+        /*[out,retval]*/ BSTR * pVal ) = 0;
+      virtual HRESULT __stdcall put_ShowError (
+        /*[in]*/ BSTR pVal ) = 0;
+      virtual HRESULT __stdcall raw_AddSignInfo (
+        /*[in]*/ BSTR sUserPass,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_GetVersion (
+        /*[out,retval]*/ BSTR * ret ) = 0;
+      virtual HRESULT __stdcall raw_SOF_ExportExChangeUserCert (
+        /*[in]*/ BSTR CertID,
+        /*[out,retval]*/ BSTR * ret ) = 0;
+      virtual HRESULT __stdcall raw_SOF_ValidateCert (
+        /*[in]*/ BSTR Cert,
+        /*[out,retval]*/ long * ret ) = 0;
+      virtual HRESULT __stdcall raw_GetENVSN (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SetENVSN (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[in]*/ BSTR sEnvsn,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_IsDeviceExist (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_GetContainerCount (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_SymEncryptData (
+        /*[in]*/ BSTR sKey,
+        /*[in]*/ BSTR inData,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_SymDecryptData (
+        /*[in]*/ BSTR sKey,
+        /*[in]*/ BSTR inData,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_SymEncryptFile (
+        /*[in]*/ BSTR sKey,
+        /*[in]*/ BSTR InFile,
+        /*[in]*/ BSTR OutFile,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_SymDecryptFile (
+        /*[in]*/ BSTR sKey,
+        /*[in]*/ BSTR InFile,
+        /*[in]*/ BSTR OutFile,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_GetLastErrMsg (
+        /*[out,retval]*/ BSTR * ret ) = 0;
+      virtual HRESULT __stdcall raw_SOF_Base64Encode (
+        /*[in]*/ BSTR sInData,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_Base64Decode (
+        /*[in]*/ BSTR sInData,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_HashData (
+        /*[in]*/ long hashAlg,
+        /*[in]*/ BSTR sInData,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_HashFile (
+        /*[in]*/ long hashAlg,
+        /*[in]*/ BSTR InFile,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_UnlockUserPassEx (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[in]*/ BSTR sAdminPin,
+        /*[in]*/ BSTR sNewUserPass,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_DeleteOldContainer (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_WriteFileEx (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[in]*/ BSTR sFileName,
+        /*[in]*/ BSTR sContent,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_ReadFileEx (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[in]*/ BSTR sFileName,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_EncryptDataEx (
+        /*[in]*/ BSTR Cert,
+        /*[in]*/ BSTR inData,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_Base64EncodeFile (
+        /*[in]*/ BSTR sInFile,
+        /*[out,retval]*/ BSTR * retValue ) = 0;
+      virtual HRESULT __stdcall raw_SOF_GetRetryCount (
+        /*[in]*/ BSTR CertID,
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_GetAllContainerName (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_CreateSoftDevice (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[in]*/ BSTR sLabel,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_DeleteSoftDevice (
+        /*[in]*/ BSTR sDeviceSN,
+        BSTR sPasswd,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_EnableSoftDevice (
+        /*[in]*/ VARIANT_BOOL enable,
+        /*[in]*/ BSTR sDeviceSN,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SoftDeviceBackup (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[in]*/ BSTR sPasswd,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SoftDeviceRestore (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[in]*/ BSTR sPasswd,
+        /*[in]*/ BSTR sInFilePath,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_Logout (
+        /*[in]*/ BSTR CertID,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SetUserConfig (
+        /*[in]*/ long type,
+        /*[in]*/ BSTR strConfig,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_SignByteData (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ unsigned char * byteInData,
+        /*[in]*/ long byteLen,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_VerifySignedByteData (
+        /*[in]*/ BSTR Cert,
+        /*[in]*/ unsigned char * byteInData,
+        /*[in]*/ long byteLen,
+        /*[in]*/ BSTR SignValue,
+        /*[out,retval]*/ VARIANT_BOOL * ret ) = 0;
+      virtual HRESULT __stdcall raw_OTP_GetChallengeCode (
+        /*[in]*/ BSTR sCertID,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_ImportEncCertEx (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[in]*/ BSTR sContainerName,
+        /*[in]*/ BSTR sCert,
+        /*[in]*/ BSTR sPriKeyCipher,
+        /*[in]*/ long ulSymAlg,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_GetCertEntity (
+        /*[in]*/ BSTR sCert,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_HMAC (
+        /*[in]*/ long hashid,
+        /*[in]*/ BSTR key,
+        /*[in]*/ BSTR inData,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_SignDataByPriKey (
+        /*[in]*/ BSTR sPriKey,
+        /*[in]*/ BSTR sCert,
+        /*[in]*/ BSTR sInData,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_ImportKeyCertToSoftDevice (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[in]*/ BSTR sContainerName,
+        /*[in]*/ BSTR sPriKey,
+        /*[in]*/ BSTR sCert,
+        /*[in]*/ VARIANT_BOOL bSign,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_InitDeviceEx (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[in]*/ BSTR sAdminPass,
+        /*[in]*/ BSTR sUserPin,
+        /*[in]*/ BSTR sKeyLabel,
+        /*[in]*/ long adminPinMaxRetry,
+        /*[in]*/ long userPinMaxRetry,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SelectFile (
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_SignHashData (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ BSTR b64ashData,
+        /*[in]*/ long hashAlg,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_VerifySignedHashData (
+        /*[in]*/ BSTR Cert,
+        /*[in]*/ BSTR b64ashData,
+        /*[in]*/ BSTR SignValue,
+        /*[in]*/ long hashAlg,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_CheckSoftDeviceEnv (
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_SignBinaryData (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ VARIANT inData,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_VerifySignedBinaryData (
+        /*[in]*/ BSTR Cert,
+        /*[in]*/ VARIANT inData,
+        /*[in]*/ BSTR SignValue,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_EncryptBinaryData (
+        /*[in]*/ BSTR Cert,
+        /*[in]*/ VARIANT inData,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_EncryptBinaryDataEx (
+        /*[in]*/ BSTR Cert,
+        /*[in]*/ VARIANT inData,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_DecryptBinaryData (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ BSTR inData,
+        /*[out,retval]*/ VARIANT * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_SignBinaryMessage (
+        /*[in]*/ short dwFlag,
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ VARIANT inData,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_VerifySignedBinaryMessage (
+        /*[in]*/ BSTR MessageData,
+        /*[in]*/ VARIANT inData,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_PubKeyBinaryEncrypt (
+        /*[in]*/ BSTR Cert,
+        /*[in]*/ VARIANT inData,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_PriKeyBinaryDecrypt (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ BSTR inData,
+        /*[out,retval]*/ VARIANT * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_Base64BinaryEncode (
+        /*[in]*/ VARIANT sInData,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_Base64BinaryDecode (
+        /*[in]*/ BSTR sInData,
+        /*[out,retval]*/ VARIANT * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_HashBinaryData (
+        /*[in]*/ long hashAlg,
+        /*[in]*/ VARIANT sInData,
+        /*[in]*/ BSTR sCert,
+        /*[in]*/ BSTR sID,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_SignBinaryDataByPriKey (
+        /*[in]*/ BSTR sPriKey,
+        /*[in]*/ BSTR sCert,
+        /*[in]*/ VARIANT sInData,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_ImportPfxToDevice (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[in]*/ BSTR sContainerName,
+        /*[in]*/ VARIANT_BOOL bSign,
+        /*[in]*/ BSTR strPfx,
+        /*[in]*/ BSTR strPfxPass,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_HashDataEx (
+        /*[in]*/ long hashAlg,
+        /*[in]*/ BSTR sInData,
+        /*[in]*/ BSTR sCert,
+        /*[in]*/ BSTR sID,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_HashFileEx (
+        /*[in]*/ long hashAlg,
+        /*[in]*/ BSTR InFile,
+        /*[in]*/ BSTR sCert,
+        /*[in]*/ BSTR sID,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_GetDeviceCountEx (
+        /*[in]*/ long type,
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_GetAllDeviceSNEx (
+        /*[in]*/ long type,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_UpdateCert (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ long type,
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_OpenSpecifiedFolder (
+        /*[in]*/ BSTR backupFilePath ) = 0;
+      virtual HRESULT __stdcall raw_OTP_GetChallengeCodeEx (
+        /*[in]*/ BSTR sCertID,
+        /*[in]*/ BSTR szAccount,
+        /*[in]*/ long money,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_Base64DecodeFile (
+        /*[in]*/ BSTR sInData,
+        /*[in]*/ BSTR sFilePath,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_EnumFilesInDevice (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_OTP_Halt (
+        /*[in]*/ BSTR sCertID,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_TSGenREQ (
+        /*[in]*/ BSTR b64Hash,
+        /*[in]*/ long hashAlg,
+        VARIANT_BOOL bReqCert,
+        /*[in]*/ BSTR policyID,
+        /*[in]*/ BSTR b64Nonce,
+        /*[in]*/ BSTR b64Extension,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_TSCompareNonce (
+        /*[in]*/ BSTR b64TSReq,
+        /*[in]*/ BSTR b64TSAResp,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_TSGenPDFSignature (
+        /*[in]*/ BSTR b64TSAResp,
+        /*[in]*/ BSTR b64OriPDFSignature,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_TSVerifyPDFSignature (
+        /*[in]*/ BSTR b64TSPDFSignature,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_TSGetPDFSignatureInfo (
+        /*[in]*/ BSTR b64TSPDFSignature,
+        /*[in]*/ long iType,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_OTP_GetState (
+        /*[in]*/ BSTR sCertID,
+        /*[in]*/ VARIANT_BOOL bCert,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_OTP_GetSyncCode (
+        /*[in]*/ BSTR sCertID,
+        /*[in]*/ BSTR ChallengeCode,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_IsLogin (
+        /*[in]*/ BSTR CertID,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_LoginEx (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ BSTR PassWd,
+        /*[in]*/ long updateFlag,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_EnumSupportDeviceList (
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_ExportPfxFromDevice (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[in]*/ BSTR sContainerName,
+        /*[in]*/ VARIANT_BOOL bSign,
+        /*[in]*/ BSTR strPfxPass,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_SignHashMessage (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ BSTR InHashData,
+        /*[in]*/ long hashAlg,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_ExportPfxToFile (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[in]*/ BSTR sContainerName,
+        /*[in]*/ VARIANT_BOOL bSign,
+        /*[in]*/ BSTR strPfxPass,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_SignAPK (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ BSTR strOriSignature,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_YZT_GenerateKeyPair (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[in]*/ BSTR sContainerName,
+        /*[in]*/ long iKeyTypeRSA,
+        /*[in]*/ long iKeyTypeSM2,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_YZT_ExportPubKey (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[in]*/ BSTR sContainerName,
+        /*[in]*/ VARIANT_BOOL bSign,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_YZT_ImportSignCert (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[in]*/ BSTR sContainerName,
+        /*[in]*/ BSTR sRSACert,
+        /*[in]*/ BSTR sSM2Cert,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_YZT_ImportEncCert (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[in]*/ BSTR sContainerName,
+        /*[in]*/ BSTR sRSACert,
+        /*[in]*/ BSTR sRSAPriKeyCipher,
+        /*[in]*/ long ulRSASymAlg,
+        /*[in]*/ BSTR sSM2Cert,
+        /*[in]*/ BSTR sSM2PriKeyCipher,
+        /*[in]*/ long ulSM2SymAlg,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_ListenUKey (
+        /*[in]*/ long Parm,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_EnableLoginWindow (
+        /*[in]*/ long Parm,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_SignEnvelope (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ BSTR Cert,
+        /*[in]*/ BSTR inData,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_UnSignEnvelope (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ BSTR inData,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_BIO_MAKExportPKCS10 (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[in]*/ long iKeyType,
+        /*[in]*/ BSTR sDN,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_BIO_MAKImportSignEncCert (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[in]*/ BSTR sSignCert,
+        /*[in]*/ BSTR sEncCert,
+        /*[in]*/ BSTR sPriKeyCipher,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_BIO_IssueDAKCert (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[in]*/ long iKeyType,
+        /*[in]*/ BSTR sDN,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_BIO_InfoCollect (
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_BIO_GetBioInfo (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_GetLastLoginCertID (
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_ReadESealData (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ long ulKeyIndex,
+        /*[in]*/ long ulKeyAlgId,
+        /*[in]*/ long ulFlags,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_ReadKFXESealData (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ long ulKeyIndex,
+        /*[in]*/ long ulKeyAlgId,
+        /*[in]*/ long ulFlags,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_SymDecryptFileToData (
+        /*[in]*/ BSTR sKey,
+        /*[in]*/ BSTR InFile,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_SignMessageBase64 (
+        /*[in]*/ short dwFlag,
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ BSTR inData,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_VerifySignedMessageBase64 (
+        /*[in]*/ BSTR MessageData,
+        /*[in]*/ BSTR inData,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_VerifySignedHashMessage (
+        /*[in]*/ BSTR MessageData,
+        /*[in]*/ BSTR InHashData,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_SignDataBase64 (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ BSTR inData,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_VerifySignedDataBase64 (
+        /*[in]*/ BSTR Cert,
+        /*[in]*/ BSTR inData,
+        /*[in]*/ BSTR SignValue,
+        /*[out,retval]*/ VARIANT_BOOL * ret ) = 0;
+      virtual HRESULT __stdcall raw_SOF_HashDataExBase64 (
+        /*[in]*/ long hashAlg,
+        /*[in]*/ BSTR sInData,
+        /*[in]*/ BSTR sCert,
+        /*[in]*/ BSTR sID,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_GetProductVersion (
+        /*[out,retval]*/ BSTR * ret ) = 0;
+      virtual HRESULT __stdcall raw_SOF_UpdateCertEx (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ BSTR PassWd,
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_GetLastSignDataCertID (
+        /*[in]*/ BSTR CertID,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_BIO_SetUserConfig (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ long type,
+        /*[in]*/ BSTR strConfig,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_BIO_InvokeCommand (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ BSTR bstrCommand,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_ImportSymmKey (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ long ulKeyIndex,
+        /*[in]*/ BSTR inData,
+        /*[in]*/ long ulFlags,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_WriteESealData (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ BSTR inData,
+        /*[in]*/ long ulFlags,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_EPS_Encrypt (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ long ulKeyIndex,
+        /*[in]*/ long ulKeyAlgId,
+        /*[in]*/ BSTR IVData,
+        /*[in]*/ long DivCount,
+        /*[in]*/ BSTR DivComponent,
+        /*[in]*/ BSTR inData,
+        /*[in]*/ long ulFlags,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_EPS_Decrypt (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ long ulKeyIndex,
+        /*[in]*/ long ulKeyAlgId,
+        /*[in]*/ BSTR IVData,
+        /*[in]*/ long DivCount,
+        /*[in]*/ BSTR DivComponent,
+        /*[in]*/ BSTR inData,
+        /*[in]*/ long ulFlags,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_EPS_Mac (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ long ulKeyIndex,
+        /*[in]*/ long ulKeyAlgId,
+        /*[in]*/ BSTR IVData,
+        /*[in]*/ long DivCount,
+        /*[in]*/ BSTR DivComponent,
+        /*[in]*/ BSTR inData,
+        /*[in]*/ long ulFlags,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_PriKeyDecryptEx (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ BSTR inData,
+        /*[out,retval]*/ BSTR * ret ) = 0;
+      virtual HRESULT __stdcall raw_SOF_EPS_ReadESealData (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ long ulKeyIndex,
+        /*[in]*/ long ulKeyAlgId,
+        /*[in]*/ long ulFlags,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_EPS_WriteESealData (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ BSTR inData,
+        /*[in]*/ long ulFlags,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_EnumESeal (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_GetPicture (
+        /*[in]*/ BSTR bstrConName,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_SignEnvelopeFile (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ BSTR Cert,
+        /*[in]*/ BSTR InFile,
+        /*[in]*/ BSTR OutFile,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_UnSignEnvelopeFile (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ BSTR InFile,
+        /*[in]*/ BSTR OutFile,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOFX_EncryptFile (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ BSTR Cert,
+        /*[in]*/ BSTR InFile,
+        /*[in]*/ BSTR OutFile,
+        /*[in]*/ long ulFlags,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOFX_DecryptFile (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ BSTR InFile,
+        /*[in]*/ BSTR OutFile,
+        /*[in]*/ long ulFlags,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_WriteFileBase64 (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[in]*/ BSTR sFileName,
+        /*[in]*/ BSTR sContent,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_DeleteFile (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[in]*/ BSTR sFileName,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_SignDataEx (
+        /*[in]*/ BSTR CertID,
+        /*[in]*/ BSTR inData,
+        /*[in]*/ long signFlag,
+        /*[out,retval]*/ BSTR * ret ) = 0;
+      virtual HRESULT __stdcall raw_SOF_VerifySignedDataEx (
+        /*[in]*/ BSTR Cert,
+        /*[in]*/ BSTR inData,
+        /*[in]*/ BSTR SignValue,
+        /*[in]*/ long signFlag,
+        /*[out,retval]*/ VARIANT_BOOL * ret ) = 0;
+      virtual HRESULT __stdcall raw_SOF_SymEncryptDataEx (
+        /*[in]*/ BSTR sKey,
+        /*[in]*/ BSTR sIV,
+        /*[in]*/ BSTR inData,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_SymDecryptDataEx (
+        /*[in]*/ BSTR sKey,
+        /*[in]*/ BSTR sIV,
+        /*[in]*/ BSTR inData,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_InitDeviceWithParam (
+        /*[in]*/ BSTR sDeviceSN,
+        /*[in]*/ BSTR sAppName,
+        /*[in]*/ BSTR sAdminPass,
+        /*[in]*/ BSTR sUserPin,
+        /*[in]*/ BSTR sKeyLabel,
+        /*[in]*/ long adminPinMaxRetry,
+        /*[in]*/ long userPinMaxRetry,
+        /*[in]*/ long createFileRights,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_SymEncryptFileEx (
+        /*[in]*/ BSTR sKey,
+        /*[in]*/ BSTR sIV,
+        /*[in]*/ BSTR InFile,
+        /*[in]*/ BSTR OutFile,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_SymDecryptFileEx (
+        /*[in]*/ BSTR sKey,
+        /*[in]*/ BSTR sIV,
+        /*[in]*/ BSTR InFile,
+        /*[in]*/ BSTR OutFile,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOF_SymDecryptFileToDataEx (
+        /*[in]*/ BSTR sKey,
+        /*[in]*/ BSTR sIV,
+        /*[in]*/ BSTR InFile,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOFX_SymEncryptDataWithPadding (
+        /*[in]*/ BSTR sKey,
+        /*[in]*/ BSTR sIV,
+        /*[in]*/ long ulPaddingType,
+        /*[in]*/ BSTR inData,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOFX_SymDecryptDataWithPadding (
+        /*[in]*/ BSTR sKey,
+        /*[in]*/ BSTR sIV,
+        /*[in]*/ long ulPaddingType,
+        /*[in]*/ BSTR inData,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOFX_SymEncryptFileWithPadding (
+        /*[in]*/ BSTR sKey,
+        /*[in]*/ BSTR sIV,
+        /*[in]*/ long ulPaddingType,
+        /*[in]*/ BSTR InFile,
+        /*[in]*/ BSTR OutFile,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOFX_SymDecryptFileWithPadding (
+        /*[in]*/ BSTR sKey,
+        /*[in]*/ BSTR sIV,
+        /*[in]*/ long ulPaddingType,
+        /*[in]*/ BSTR InFile,
+        /*[in]*/ BSTR OutFile,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOFX_InvokeCommand (
+        /*[in]*/ BSTR DllName,
+        /*[in]*/ BSTR InParam,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SOFX_VerifySignedDataWithID (
+        /*[in]*/ BSTR Cert,
+        /*[in]*/ BSTR inData,
+        /*[in]*/ BSTR SignValue,
+        /*[in]*/ BSTR userId,
+        /*[out,retval]*/ VARIANT_BOOL * ret ) = 0;
+      virtual HRESULT __stdcall raw_SOFX_VerifySignedFileWithID (
+        /*[in]*/ BSTR Cert,
+        /*[in]*/ BSTR InFile,
+        /*[in]*/ BSTR SignValue,
+        /*[in]*/ BSTR userId,
+        /*[out,retval]*/ VARIANT_BOOL * ret ) = 0;
+};
+
+//
+// Wrapper method implementations
+//
+
+#include "c:\root\develop2019\srcprojs\srcroot\src6\thirdparty\bjca\https_c_demo\https_c_demo\debug\xtxappcom.tli"
+
+#pragma pack(pop)

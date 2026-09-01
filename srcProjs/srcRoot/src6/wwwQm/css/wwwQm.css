@@ -1,0 +1,211 @@
+
+
+
+
+
+
+.dlgTalk_content {
+	overflow:hidden;
+	color: #000;
+	font-family: Tahoma, Arial, sans-serif;
+	font-size: 10px;
+	background-color:#ebe6e1;
+	padding: 0;
+}
+
+
+a { color: #333; }
+
+input, textarea {
+   margin: 2px 4px 2px 4px;
+   border: 1px solid #dddcd8;
+   font-size: 12px;
+}
+
+.recentMsgListCls, input {
+   font-family: Tahoma, Verdana, Arial, sans-serif;
+}
+
+.recentMsgListCls {
+   display: block;
+   position: absolute;
+   left: 5px;
+   right: 10px;
+   margin-top: 5px;
+   padding-top: 2px;
+   padding-left: 2px;
+   border-width: 1px;
+   border-style: solid;
+   border-color: #bfbcb8 #e0dcd8 #e0dcd8 #bfbcb8;
+   background-color: #fff;
+   overflow: auto;
+   font-size: 11px;
+   text-align: left;
+}
+
+.recentMsgListCls a {
+   color: #5c78cb;
+}
+
+
+.inputText {
+   position: absolute;
+   left: 5px;
+   right: 10px;
+   margin-top: 5px;
+   height: 50px;
+   border: 1px solid #bfbcb8;
+   padding: 3px;
+   font-family: Tahoma, sans-serif;
+}
+
+
+
+a.setFontLink {
+   position: absolute;
+   /*left: 105px;*/
+   left: 5px;
+   display: block;
+   -moz-outline-style: none;
+   text-decoration: none;
+   width: 85px;
+   height: 14px;
+   font-family: Tahoma, Arial, sans-serif;
+   font-size: 10px;
+   vertical-align: middle;
+   background-color: #ebe6e1;
+   padding: 2px;
+   background-image: url(../images/arrow.png);
+   background-position: center right;
+   background-repeat: no-repeat;
+   border: 1px solid #bfbcb8;
+   overflow: hidden;
+}
+
+a.setFontSizeLink {
+   position: absolute;
+   /*  left: 205px;  */
+   left:  95px;
+   display: block;
+   -moz-outline-style: none;
+   text-decoration: none;
+   width: 24px;
+   height: 14px;
+   font-family: Tahoma, Arial, sans-serif;
+   font-size: 10px;
+   vertical-align: middle;
+   background-color: #ebe6e1;
+   padding: 2px;
+   background-image: url(../images/arrow.png);
+   background-position: center right;
+   background-repeat: no-repeat;
+   border: 1px solid #bfbcb8;
+   overflow: hidden;
+}
+
+
+
+.imToolbarCls {
+   position: absolute;
+   /*  left: 5px;  */
+   left:  125px;
+   right: 10px;
+   margin-top: 5px;
+   height: 16px;
+}
+
+
+
+a.setFontColorLink {
+   position: absolute;
+   /*  left: 244px;  */
+   left:  213px;
+   display: block;
+   -moz-outline-style: none;
+   text-decoration: none;
+   width: 24px;
+   font-family: Tahoma, Arial, sans-serif;
+   font-size: 10px;
+   vertical-align: middle;
+   background-color: #ebe6e1;
+   padding: 2px;
+   background-image: url(../images/arrow.png);
+   background-position: center right;
+   background-repeat: no-repeat;
+   border: 1px solid #bfbcb8;
+   overflow: hidden;
+}
+
+
+a.insertEmotLink {
+   position: absolute;
+   left: 243px;
+   display: block;
+   -moz-outline-style: none;
+   text-decoration: none;
+   width: 24px;
+   height: 14px;
+   font-family: Tahoma, Arial, sans-serif;
+   font-size: 10px;
+   vertical-align: middle;
+   background-color: #ebe6e1;
+   padding: 2px;
+   background-image: url(../images/arrow.png);
+   background-position: center right;
+   background-repeat: no-repeat;
+   border: 1px solid #bfbcb8;
+   overflow: hidden;
+}
+
+
+
+.advCls  {
+   display: block;
+   position: absolute;
+   left: 5px;
+   right: 10px;
+   margin-top: 5px;
+   padding-top: 2px;
+   padding-left: 2px;
+   border-width: 1px;
+   border-style: solid;
+   border-color: #bfbcb8 #e0dcd8 #e0dcd8 #bfbcb8;
+   /*  background-color: #0ff;  */
+   overflow: auto;
+   font-size: 13px;
+   text-align: left;
+}
+
+
+div.vLst {
+   display: none;
+   position: absolute;
+   border: 1px solid #bfbcb8;
+   background-color: #ebe6e1;
+   z-index: 1000;
+}
+
+div.vLst a {
+   padding: 1px 3px 1px 3px;
+   display: block;
+   font-family: Tahoma, Arial, sans-serif;
+   font-size: 10px;
+   background-color: #ebe6e1;
+   text-decoration: none;
+}
+
+div.vLst a:hover {
+   background-color: #e1ebf7;
+}
+
+
+
+
+
+
+
+
+
+
+
+

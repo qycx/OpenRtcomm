@@ -1,0 +1,67 @@
+*{
+   font-family: Microsoft YaHei;
+}   
+ 
+QPushButton#btnSendMsg,QPushButton#benSendMeeting,QPushButton#setBtn
+{
+  font-size:15px;
+  background:rgb(7, 189, 253);
+  color:#ffffff;
+  border:none;
+  border-radius:4px;
+  font-weight:bold;
+} 
+
+QWidget#bottomWidget
+{  
+    border-right: 1px solid rgba(22,154,218,100);
+    border-bottom: 1px solid rgba(22,154,218,100);
+} 
+
+QWidget#centerWidget
+{  
+    border-right: 1px solid rgba(22,154,218,100);  
+} 
+
+QWidget#grpWidget{
+	 background-color: transparent; 
+}
+
+QScrollArea{
+	border: 0px solid;
+	border-right-width: 1px;
+	border-right-color: #dcdbdc;
+	background-color: transparent; 
+}
+
+QScrollBar:vertical {
+	border: none;
+	background: #f5f5f7;
+	width: 10px;
+	margin: 0px 0 0px 0;
+}
+QScrollBar::handle:vertical {
+	background: Gainsboro;
+	min-height: 20px;
+	border-radius: 5px;
+	border: none;
+}
+QScrollBar::add-line:vertical {
+	border: 0px solid grey;
+	background: #32CC99;
+	height: 0px;
+	subcontrol-position: bottom;
+	subcontrol-origin: margin;
+}
+QScrollBar::sub-line:vertical {
+	border: 0px solid grey;
+	background: #32CC99;
+	height: 0px;
+	subcontrol-position: top;
+	subcontrol-origin: margin;
+}
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+	background: none;
+	width: 0px;
+	height: 0px;
+}

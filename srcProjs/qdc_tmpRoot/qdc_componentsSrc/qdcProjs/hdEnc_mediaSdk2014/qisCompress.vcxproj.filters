@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="qyOpen">
+      <UniqueIdentifier>{81d8fdff-94e0-4456-90e4-a246058d3038}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyOpen\qdcOpenInclude">
+      <UniqueIdentifier>{7635e880-e7fd-41d9-acd1-f5ddc1af79ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qisCompressPublic">
+      <UniqueIdentifier>{18f5e509-dd01-4beb-af8f-d732435cd253}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qisCompressPublic\qisCompressInclude">
+      <UniqueIdentifier>{a36afdb0-5c9d-440d-b87b-9961917c05d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="videoconf">
+      <UniqueIdentifier>{6f287332-7999-4752-8c78-a8148dfcb5d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="videoconf\videoconfInclude">
+      <UniqueIdentifier>{1e653715-f585-43fe-8abb-499612696207}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="decode">
+      <UniqueIdentifier>{87c2eeba-1206-4ff0-8c5d-52f68e038dab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="decode\decodeInclude">
+      <UniqueIdentifier>{b0d24eef-792d-4c6b-84b7-f4b9b05ca35e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="public\myDecPipeline.cpp">
+      <Filter>qisCompressPublic</Filter>
+    </ClCompile>
+    <ClCompile Include="public\mypipeline_user.cpp">
+      <Filter>qisCompressPublic</Filter>
+    </ClCompile>
+    <ClCompile Include="public\pipeline_encode.cpp">
+      <Filter>qisCompressPublic</Filter>
+    </ClCompile>
+    <ClCompile Include="public\qisCompress.cpp">
+      <Filter>qisCompressPublic</Filter>
+    </ClCompile>
+    <ClCompile Include="public\qisCompress_videoconf.cpp">
+      <Filter>qisCompressPublic</Filter>
+    </ClCompile>
+    <ClCompile Include="public\qisDecompress.cpp">
+      <Filter>qisCompressPublic</Filter>
+    </ClCompile>
+    <ClCompile Include="videoconf\public\video_conf_pipeline.cpp">
+      <Filter>videoconf</Filter>
+    </ClCompile>
+    <ClCompile Include="decode\public\decode_render.cpp">
+      <Filter>decode</Filter>
+    </ClCompile>
+    <ClCompile Include="decode\public\pipeline_decode.cpp">
+      <Filter>decode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\yv12rgb.cpp">
+      <Filter>qyOpen</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\qyOpen\qdc_open\include\qdcCommProc_open.h">
+      <Filter>qyOpen\qdcOpenInclude</Filter>
+    </ClInclude>
+    <ClInclude Include="include\myDecPipeline.h">
+      <Filter>qisCompressPublic\qisCompressInclude</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mypipeline_user.h">
+      <Filter>qisCompressPublic\qisCompressInclude</Filter>
+    </ClInclude>
+    <ClInclude Include="include\qisCompressProc.h">
+      <Filter>qisCompressPublic\qisCompressInclude</Filter>
+    </ClInclude>
+    <ClInclude Include="videoconf\include\action_processor.h">
+      <Filter>videoconf\videoconfInclude</Filter>
+    </ClInclude>
+    <ClInclude Include="videoconf\include\actions.h">
+      <Filter>videoconf\videoconfInclude</Filter>
+    </ClInclude>
+    <ClInclude Include="videoconf\include\brc.h">
+      <Filter>videoconf\videoconfInclude</Filter>
+    </ClInclude>
+    <ClInclude Include="videoconf\include\interface.h">
+      <Filter>videoconf\videoconfInclude</Filter>
+    </ClInclude>
+    <ClInclude Include="videoconf\include\video_conf_pipeline.h">
+      <Filter>videoconf\videoconfInclude</Filter>
+    </ClInclude>
+    <ClInclude Include="decode\include\decode_render.h">
+      <Filter>decode\decodeInclude</Filter>
+    </ClInclude>
+    <ClInclude Include="decode\include\pipeline_decode.h">
+      <Filter>decode\decodeInclude</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="qisCompress.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

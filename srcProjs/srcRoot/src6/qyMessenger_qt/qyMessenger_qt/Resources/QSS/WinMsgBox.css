@@ -1,0 +1,60 @@
+*{font-family:Microsoft YaHei;} 
+
+QLabel#MessageContent
+{
+    font-size:14px;
+}
+
+QWidget#WinMsgBox
+{
+    background-color:#ffffff;
+    border: 1px solid #cccccc; 
+    padding-right:10px;
+} 
+
+QPushButton#pButtonOk
+{
+    color:white;
+    background:rgb(7, 189, 253);
+    border: 1px solid rgb(7, 189, 253);
+}
+
+QPushButton#pButtonOk:hover
+{
+    color:white;
+    background:rgb(33, 200, 253);
+    border: 1px solid rgb(33, 200, 253);
+}
+
+QPushButton#pButtonOk:pressed
+{
+    color:white;
+    background:rgb(7, 189, 253);
+    border: 1px solid rgb(7, 189, 253);
+    padding-left:3px;
+    padding-top:3px;
+}
+
+QPushButton#pButtonCancel
+{
+    color:black;
+    background-color:rgb(238 , 238 , 238);
+    border: 1px solid rgb(183 , 183 , 183);
+}
+
+QPushButton#pButtonCancel:hover
+{
+    color:black;
+    background-color:rgb(228 , 240 , 250);
+    border: 1px solid rgb(15 , 150 , 255);
+}
+
+QPushButton#pButtonCancel:pressed
+{
+    color:black;
+    background-color:rgb(204 , 228 , 247);
+    border: 1px solid rgb(1 , 84 , 153);
+    padding-left:3px;
+    padding-top:3px;
+}
+  

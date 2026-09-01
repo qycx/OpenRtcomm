@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="testMediasdk">
+</Property><Property Name="Solution File" Value="D:\qycx4\develop6\srcProjs\qdc_tmpRoot\componentsSrc\qdcProjs\testMediasdk\testMediasdk.sln">
+</Property><Property Name="User Options File" Value="D:\qycx4\develop6\srcProjs\qdc_tmpRoot\componentsSrc\qdcProjs\testMediasdk\testMediasdk.suo">
+</Property><Property Name="Date" Value="2014年3月21日">
+</Property><Property Name="Time" Value="10:16">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="testMediasdk.sln" Description="File successfully backed up as D:\qycx4\develop6\srcProjs\qdc_tmpRoot\componentsSrc\qdcProjs\testMediasdk\testMediasdk.sln.old">
+</Event><Event ErrorLevel="0" Project="" Source="testMediasdk.suo" Description="File successfully backed up as D:\qycx4\develop6\srcProjs\qdc_tmpRoot\componentsSrc\qdcProjs\testMediasdk\testMediasdk.suo.old">
+</Event><Event ErrorLevel="0" Project="testMediasdk" Source="testMediasdk\testMediasdk.vcproj" Description="Converting project file 'D:\qycx4\develop6\srcProjs\qdc_tmpRoot\componentsSrc\qdcProjs\testMediasdk\testMediasdk\testMediasdk.vcproj'.">
+</Event><Event ErrorLevel="2" Project="testMediasdk" Source="testMediasdk\testMediasdk.vcproj" Description="File 'D:\qycx4\develop6\srcProjs\qdc_tmpRoot\componentsSrc\qdcProjs\testMediasdk\testMediasdk\testMediasdk.vcproj' was not found.">
+</Event><Event ErrorLevel="2" Project="testMediasdk" Source="testMediasdk\testMediasdk.vcproj" Description="Project upgrade failed.">
+</Event><Event ErrorLevel="3" Project="testMediasdk" Source="testMediasdk\testMediasdk.vcproj" Description="Not Converted">
+</Event><Event ErrorLevel="0" Project="" Source="testMediasdk.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="testMediasdk.sln" Description="Converted">
+</Event></UpgradeLog>

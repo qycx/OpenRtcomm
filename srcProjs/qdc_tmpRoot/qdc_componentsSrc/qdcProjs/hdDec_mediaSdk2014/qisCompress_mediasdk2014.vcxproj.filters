@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\yv12rgb.cpp" />
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="public\myDecPipeline.cpp" />
+    <ClCompile Include="public\mypipeline_user.cpp" />
+    <ClCompile Include="public\qisCompress.cpp" />
+    <ClCompile Include="public\qisDecompress.cpp" />
+    <ClCompile Include="encode\public\pipeline_encode.cpp">
+      <Filter>encode</Filter>
+    </ClCompile>
+    <ClCompile Include="decode\public\pipeline_decode.cpp">
+      <Filter>decode</Filter>
+    </ClCompile>
+    <ClCompile Include="decode\public\decode_render.cpp">
+      <Filter>decode</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="..\..\..\qyOpen\qdc_open\include\qdcCommProc_open.h" />
+    <ClInclude Include="include\myDecPipeline.h" />
+    <ClInclude Include="include\mypipeline_user.h" />
+    <ClInclude Include="include\qisCompressProc.h" />
+    <ClInclude Include="videoconf\include\action_processor.h" />
+    <ClInclude Include="videoconf\include\actions.h" />
+    <ClInclude Include="videoconf\include\brc.h" />
+    <ClInclude Include="videoconf\include\interface.h" />
+    <ClInclude Include="decode\include\decode_render.h">
+      <Filter>decode</Filter>
+    </ClInclude>
+    <ClInclude Include="decode\include\pipeline_decode.h">
+      <Filter>decode</Filter>
+    </ClInclude>
+    <ClInclude Include="encode\include\pipeline_encode.h">
+      <Filter>encode</Filter>
+    </ClInclude>
+    <ClInclude Include="include\myutils.h">
+      <Filter>include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="qisCompress.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="encode">
+      <UniqueIdentifier>{c5512716-d9d7-43e1-87ed-c08665b23e8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="decode">
+      <UniqueIdentifier>{880f3b56-812b-43fd-a326-bcaaff6468e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{2c61ac9a-b373-4acb-ac29-d101d2838483}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

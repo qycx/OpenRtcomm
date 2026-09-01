@@ -1,0 +1,13 @@
+
+
+#include	"resource.h"
+
+#include	"isCmdConst.h"		//  2010/04/14
+
+//
+//  这2个id是无效的。为了编译通过在这里定义. 2026/07/12
+//
+#define		ID_qyProperties		1
+#define		ID_qyTalk			2
+//
+#define		ID_mmm				10

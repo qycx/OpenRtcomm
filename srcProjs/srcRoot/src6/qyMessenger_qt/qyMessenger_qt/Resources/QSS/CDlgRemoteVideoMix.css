@@ -1,0 +1,11 @@
+
+ 
+QPushButton,QPushButton#btn,QPushButton#btnIc,QPushButton#btnRtsp
+{
+  font-size:15px;
+  background:rgb(7, 189, 253);
+  color:#ffffff;
+  border:none;
+  border-radius:4px;
+  font-weight:bold;
+} 

@@ -1,0 +1,231 @@
+
+#include <windows.h>
+#include "asrCommon.h"
+#include "commonSock.h"
+#include "mtSockFunc.h"
+
+MT_SOCK gMS;
+
+ extern "C" int setSockTimeout( SOCK_TIMEOUT *p )
+{
+	p->iAccept = 2000;
+	p->iConnect = 3000;
+	p->iRead = 2000;
+	p->iWrite = 2000;
+	
+	return 0;
+}
+
+ extern "C" int initMtSock( char *servIp, unsigned short port, PF_DO_CLI_WORK pf )
+{
+	int iErr = -1;
+	DWORD dwThreadDaemonId;
+	int i;
+
+	memset( &gMS, 0, sizeof( gMS ) );
+	gMS.servSockFd = -1;
+	for ( i = 0; i < MAX_CONNS; i ++ )
+		gMS.cliSockFd[i] = -1;
+
+	if ( strlen( servIp ) > MAX_IP_ADDR_LEN ) goto errLabel;
+	strcpy( gMS.servIp, servIp );
+	gMS.port = port;
+
+	if ( setSockTimeout( &gMS.sT ) ) goto errLabel;
+	gMS.iWaitTimeout = 3000;
+
+	for ( i = 0; i < MAX_CONNS; i ++ ) {
+		gMS.hEvent[i] = CreateEvent( NULL, FALSE, FALSE, NULL );
+		if ( !gMS.hEvent[i] ) goto errLabel;
+	}
+
+	gMS.bQuit = FALSE;
+	gMS.hServThread = CreateThread( NULL, 0, mtServSockThreadProc, 0, 0, &dwThreadDaemonId );
+	if ( !gMS.hServThread ) goto errLabel;
+	
+	if ( pf ) gMS.pfDoCliWork = pf;
+
+	for ( i = 0; i < MAX_CONNS; i ++ ) {
+		gMS.hCliThread[i] = CreateThread( NULL, 0, mtCliSockThreadProc, ( LPVOID )i, 0, &dwThreadDaemonId );
+		debugLog( "initMtSock( ): CreateThread( )[%lu] runs..", dwThreadDaemonId );
+		if ( !gMS.hCliThread[i] ) goto errLabel;
+	}
+	
+	iErr = 0;
+
+errLabel:
+
+	if ( iErr ) {
+		gMS.bQuit = TRUE;
+		
+		for ( i = 0; i < MAX_CONNS; i ++ ) {
+			if ( gMS.hCliThread[i] ) {
+				::WaitForSingleObject( gMS.hCliThread[i], INFINITE );
+				gMS.hCliThread[i] = NULL;
+			}
+			if ( gMS.hEvent[i] ) {
+				CloseHandle( gMS.hEvent[i] );
+				gMS.hEvent[i] = NULL;
+			}
+		}
+
+		if ( gMS.hServThread ) {
+			::WaitForSingleObject( gMS.hServThread, INFINITE );
+			gMS.hServThread = NULL;
+		}
+		
+		
+	}
+
+	return iErr;
+
+}
+
+
+ extern "C" void exitMtSock( )
+{
+	int i;
+
+	gMS.bQuit = TRUE;
+		
+	for ( i = 0; i < MAX_CONNS; i ++ ) {
+		if ( gMS.hEvent[i] ) SetEvent( gMS.hEvent[i] ); 
+		if ( gMS.hCliThread[i] ) {
+			debugLog( "exitMtSock( ): before WaitFor thread[%d]", i );
+			::WaitForSingleObject( gMS.hCliThread[i], INFINITE );
+			if ( CloseHandle( gMS.hCliThread[i] ) ) {
+				debugLog( "exitMtSock( ): CloseHandle( hCliThread[%d] ) succeeded", i );
+			}
+			else debugLog(  "exitMtSock( ): CloseHandle( hCliThread[%d] ) failed.", i );
+			gMS.hCliThread[i] = NULL;
+		}		
+		if ( gMS.hEvent[i] ) {
+			debugLog( "exitMtSock( ): before CloseHandle( hEvent[%d] )", i );
+			CloseHandle( gMS.hEvent[i] );
+			gMS.hEvent[i] = NULL;
+		}		
+	}
+
+	if ( gMS.hServThread ) {
+		::WaitForSingleObject( gMS.hServThread, INFINITE );
+		if ( CloseHandle( gMS.hServThread ) ) {
+			debugLog( "exitMtSock( ): CloseHandle( hServThread[%d] ) succeeded", i );
+			}
+		else debugLog(  "exitMtSock( ): CloseHandle( hServThread[%d] ) failed.", i );
+		gMS.hServThread = NULL;
+	}
+
+	return;
+	
+}
+
+ extern "C" DWORD WINAPI mtServSockThreadProc( LPVOID lpParameter )
+{
+	int iErr = -1;
+	int i;
+
+	if ( asrListen( gMS.port, &gMS.servSockFd ) ) goto errLabel;
+	while ( !gMS.bQuit ) {
+		OutputDebugString( "try to get an available socket.\n" );
+		debugLog( "try to get an available socket." );
+		while ( !gMS.bQuit ) {
+			for ( i = 0; i < MAX_CONNS; i ++ ) {
+				if ( !gMS.bUsed[i] ) break;
+			}
+			if ( i < MAX_CONNS ) break;
+			Sleep( 2000 );
+			OutputDebugString( "no availabel socket, wait.\n" );
+			debugLog( "no availabel socket, wait." );
+		}
+		if ( gMS.bQuit ) break;
+
+		if ( asrAccept( gMS.servSockFd, &gMS.cliSockFd[i], gMS.sT.iAccept ) )
+			continue;
+		gMS.bUsed[i] = TRUE;
+		if ( !SetEvent( gMS.hEvent[i] ) ) goto errLabel;
+		
+		continue;
+
+	}
+
+errLabel:
+
+	if ( gMS.servSockFd >= 0 ) { closesocket( gMS.servSockFd ); gMS.servSockFd = -1; }
+
+	return iErr;
+}
+
+ extern "C" DWORD WINAPI mtCliSockThreadProc( LPVOID lpParameter )
+{
+	int iErr = -1;
+	int iRet;
+	int id = ( int )lpParameter;
+	
+	AWM_MUTEX_PROC_INFO aMRI;
+	
+	memset( ( char * )&aMRI, 0, sizeof( aMRI ) );
+
+	// aMRI.hMutex = OpenMutex( SYNCHRONIZE, FALSE, "wawmMutex" );
+	aMRI.hMutex = CreateMutex( NULL, FALSE, "awmMutex" );
+	if ( !aMRI.hMutex ) {
+		debugLog( "CreateMutex( ) failed." );
+		goto errLabel;
+	}
+
+	// debugLog( "mtCliSockThreadProc( ): start." );
+
+
+	while ( !gMS.bQuit ) {
+		// debugLog( "mtCliSockThreadProc( ): before WaitForSingleObject( )" );
+		iRet = ::WaitForSingleObject( gMS.hEvent[id], gMS.iWaitTimeout );
+		if ( iRet == WAIT_FAILED ) goto errLabel;
+		if ( iRet == WAIT_TIMEOUT ) continue;
+		if ( gMS.bQuit ) break;
+		if ( gMS.pfDoCliWork ) gMS.pfDoCliWork( gMS.cliSockFd[id], ( void * )&aMRI );
+		else {
+			MessageBox( NULL, "pfDocCliWork is not given.", "", MB_OK );
+			Sleep( 1000 );
+		}
+		closesocket( gMS.cliSockFd[id] ); gMS.cliSockFd[id] = -1;
+		gMS.bUsed[id] = FALSE;
+		continue;
+	}
+	
+	iErr = 0;
+
+errLabel:
+	debugLog( "mtCliSockThreadProc( ): before CloseHandle( hMutex )" );
+	::ReleaseMutex( aMRI.hMutex );
+	if ( aMRI.hMutex ) ::CloseHandle( aMRI.hMutex );	
+	debugLog( "muCliSockThreadProc( ): after CloseHandle( hMutex )" );
+
+	return iErr;
+
+}
+
+
+ /*
+ extern "C" int doCliWork( int sockFd )
+{
+	char buf[256];
+	ASR_SOCK aS;
+	int len = sizeof( buf ) - 1;
+	int i = 0;
+	int iRet = -1;
+
+	aS.sockFd = sockFd;
+
+	while ( !gMS.bQuit ) {
+		if ( i == 10 ) break;
+		iRet = asrRecv( &aS, buf, &len, gMS.sT.iRead );
+		if ( iRet < 0 ) break;
+		if ( iRet ) continue;
+		buf[len] = 0;
+		OutputDebugString( buf );
+	}
+	
+
+	 return 0;
+}
+
+*/

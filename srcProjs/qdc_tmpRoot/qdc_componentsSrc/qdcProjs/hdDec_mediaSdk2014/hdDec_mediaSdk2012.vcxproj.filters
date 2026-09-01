@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\yv12rgb.cpp" />
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="public\qisCompress.cpp" />
+    <ClCompile Include="public\qisDecompress.cpp" />
+    <ClCompile Include="..\public\myutils.cpp">
+      <Filter>qdcPublic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\myFunc_mediaSdk.cpp">
+      <Filter>qdcPublic</Filter>
+    </ClCompile>
+    <ClCompile Include="public\myDecPipeline.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="decode\public\pipeline_decode.cpp">
+      <Filter>decode</Filter>
+    </ClCompile>
+    <ClCompile Include="public\myDecode_render.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\myD3d11_device.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\tmpGuiOpenFunc.cpp">
+      <Filter>qyOpen\qyCommProc_open</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\videoFunc_open.cpp">
+      <Filter>qyOpen\qyCommProc_open</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\qyOpen\qisD3d_open\qisD3dFunc_open.cpp">
+      <Filter>qyOpen\qidD3d_open</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\qyOpen\qdc_open\tmpDecOpenFunc.cpp">
+      <Filter>qyOpen\qdcOpen</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\myutils.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="..\..\..\qyOpen\qdc_open\include\qdcCommProc_open.h" />
+    <ClInclude Include="include\qisCompressProc.h" />
+    <ClInclude Include="videoconf\include\interface.h" />
+    <ClInclude Include="..\include\myFunc_mediaSdk.h">
+      <Filter>qdcInclude</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\myutils.h">
+      <Filter>qdcInclude</Filter>
+    </ClInclude>
+    <ClInclude Include="include\myDecPipeline.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="decode\include\pipeline_decode.h">
+      <Filter>decode</Filter>
+    </ClInclude>
+    <ClInclude Include="include\myDecode_render.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\myD3d11_device.h">
+      <Filter>include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="qisCompress.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="qdcInclude">
+      <UniqueIdentifier>{96dbaad4-17d0-4916-9eac-a0be244fc3e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qdcPublic">
+      <UniqueIdentifier>{8270dd9e-138b-4dc0-92dd-a81f0bb72336}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyOpen">
+      <UniqueIdentifier>{47fef437-56ab-46e0-a284-b4ac12619b01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="public">
+      <UniqueIdentifier>{f6fcdbc6-e107-4c2f-b0c4-076993183cee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{51c81815-ca2b-46a1-a8ef-68031a14f339}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="decode">
+      <UniqueIdentifier>{83e43602-8b69-4dc7-aa69-0679007b394d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyOpen\qyCommProc_open">
+      <UniqueIdentifier>{7e927410-e49c-4452-9fbc-6414b7c7e8ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyOpen\qidD3d_open">
+      <UniqueIdentifier>{5344c198-62b7-4753-93e3-460f5e9fea97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyOpen\qdcOpen">
+      <UniqueIdentifier>{3493c1fd-9b79-4e4d-856d-fc44df1a6b09}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

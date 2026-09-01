@@ -1,0 +1,127 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37411.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "anWgcTool", "anWgcTool.vcxproj", "{72DD0F5B-9B18-45E8-99E1-726AB8CF6B9D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ancCore", "..\..\..\atPublic\ancCore\ancCore.vcxproj", "{9BD2DE03-F6A9-42C2-ABA7-C6E568EE8BF5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "atPublic", "atPublic", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ancPublic", "..\..\..\atPublic\ancPublic\ancPublic.vcxproj", "{D613DAFB-F6F2-415B-A1FC-D4F590A90639}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "avCapHelp_common", "..\avCapHelp\avCapHelp2012.vcxproj", "{44A79A7B-A3B3-4955-A9F1-5FC9F87A279D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "imgProcess_common", "..\imgProcess\imgProcess2012.vcxproj", "{52018E0E-1933-496D-A1DC-7222F862BEC6}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "isCliCore_common", "..\isCliCore\isCliCore2012.vcxproj", "{B1B80105-3CD4-4E55-A4A9-90A0CE80A336}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "isCliCore1_common", "..\isCliCore1\isCliCore1_2012.vcxproj", "{79F19A57-3505-4A85-8C1D-8E1FE340E33C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "isCliEx_common", "..\..\isCliEx\isCliEx2012.vcxproj", "{FF7C3C9E-FBAE-4F03-B633-FE81B930C2EB}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qisPublic2012", "..\..\..\qyMcPublic\qisPublic\qisPublic2012.vcxproj", "{076879CF-A7F2-4C26-9048-BE8E49C5AAEE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qyPublic2012", "..\..\..\qyMcPublic\qyPublic\qyPublic2012.vcxproj", "{AAB8DE7C-7262-461B-8C10-EE4FA4B1511E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qyShowInfo2012", "..\..\..\qyMcPublic\qyShowInfo\qyShowInfo2012.vcxproj", "{32FC6695-1451-47BF-A185-41C2D3D80BCB}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "smCa", "..\..\..\smCa\smCa\smCa.vcxproj", "{D8A89958-26C9-424E-BAC6-9F96BD6FB560}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qisGuiPublic2012", "..\..\..\qyMcMainPublic\qisGuiPublic\qisGuiPublic2012.vcxproj", "{AAD7ED30-CC86-4F26-8C95-3CCD5B6CAA4A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qyHookHelp_common", "..\qyHookHelp\qyHookHelp2012.vcxproj", "{0B9E80B6-5E75-44C8-B175-9622D1C14FE0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "isCliHelp2012", "..\..\..\qyMcMain_isCli\qyMcMainPublic_isCli\isCliHelp\isCliHelp2012.vcxproj", "{7322EED5-F85F-4328-8C4C-D5980BAB0C80}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "help_webRtc2012", "..\..\..\..\..\qis_tmpHelp\help_webRtc\help_webRtc2012.vcxproj", "{C2E1A500-3055-4A14-A0D1-0984211C9E1E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WGCCapture", "..\..\..\ancProjs\wgcCapture\WGCCapture.vcxproj", "{7CAD484C-0C93-4AC1-AA6D-EE75EAFA1D66}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{72DD0F5B-9B18-45E8-99E1-726AB8CF6B9D}.Debug|x64.ActiveCfg = Debug|x64
+		{72DD0F5B-9B18-45E8-99E1-726AB8CF6B9D}.Debug|x64.Build.0 = Debug|x64
+		{72DD0F5B-9B18-45E8-99E1-726AB8CF6B9D}.Release|x64.ActiveCfg = Release|x64
+		{72DD0F5B-9B18-45E8-99E1-726AB8CF6B9D}.Release|x64.Build.0 = Release|x64
+		{9BD2DE03-F6A9-42C2-ABA7-C6E568EE8BF5}.Debug|x64.ActiveCfg = Debug|x64
+		{9BD2DE03-F6A9-42C2-ABA7-C6E568EE8BF5}.Debug|x64.Build.0 = Debug|x64
+		{9BD2DE03-F6A9-42C2-ABA7-C6E568EE8BF5}.Release|x64.ActiveCfg = Release|x64
+		{9BD2DE03-F6A9-42C2-ABA7-C6E568EE8BF5}.Release|x64.Build.0 = Release|x64
+		{D613DAFB-F6F2-415B-A1FC-D4F590A90639}.Debug|x64.ActiveCfg = Debug|x64
+		{D613DAFB-F6F2-415B-A1FC-D4F590A90639}.Debug|x64.Build.0 = Debug|x64
+		{D613DAFB-F6F2-415B-A1FC-D4F590A90639}.Release|x64.ActiveCfg = Release|x64
+		{D613DAFB-F6F2-415B-A1FC-D4F590A90639}.Release|x64.Build.0 = Release|x64
+		{44A79A7B-A3B3-4955-A9F1-5FC9F87A279D}.Debug|x64.ActiveCfg = Debug|x64
+		{44A79A7B-A3B3-4955-A9F1-5FC9F87A279D}.Debug|x64.Build.0 = Debug|x64
+		{44A79A7B-A3B3-4955-A9F1-5FC9F87A279D}.Release|x64.ActiveCfg = Release|x64
+		{44A79A7B-A3B3-4955-A9F1-5FC9F87A279D}.Release|x64.Build.0 = Release|x64
+		{52018E0E-1933-496D-A1DC-7222F862BEC6}.Debug|x64.ActiveCfg = Debug|x64
+		{52018E0E-1933-496D-A1DC-7222F862BEC6}.Debug|x64.Build.0 = Debug|x64
+		{52018E0E-1933-496D-A1DC-7222F862BEC6}.Release|x64.ActiveCfg = Release|x64
+		{52018E0E-1933-496D-A1DC-7222F862BEC6}.Release|x64.Build.0 = Release|x64
+		{B1B80105-3CD4-4E55-A4A9-90A0CE80A336}.Debug|x64.ActiveCfg = Debug|x64
+		{B1B80105-3CD4-4E55-A4A9-90A0CE80A336}.Debug|x64.Build.0 = Debug|x64
+		{B1B80105-3CD4-4E55-A4A9-90A0CE80A336}.Release|x64.ActiveCfg = Release|x64
+		{B1B80105-3CD4-4E55-A4A9-90A0CE80A336}.Release|x64.Build.0 = Release|x64
+		{79F19A57-3505-4A85-8C1D-8E1FE340E33C}.Debug|x64.ActiveCfg = Debug|x64
+		{79F19A57-3505-4A85-8C1D-8E1FE340E33C}.Debug|x64.Build.0 = Debug|x64
+		{79F19A57-3505-4A85-8C1D-8E1FE340E33C}.Release|x64.ActiveCfg = Release|x64
+		{79F19A57-3505-4A85-8C1D-8E1FE340E33C}.Release|x64.Build.0 = Release|x64
+		{FF7C3C9E-FBAE-4F03-B633-FE81B930C2EB}.Debug|x64.ActiveCfg = Debug|x64
+		{FF7C3C9E-FBAE-4F03-B633-FE81B930C2EB}.Debug|x64.Build.0 = Debug|x64
+		{FF7C3C9E-FBAE-4F03-B633-FE81B930C2EB}.Release|x64.ActiveCfg = Release|x64
+		{FF7C3C9E-FBAE-4F03-B633-FE81B930C2EB}.Release|x64.Build.0 = Release|x64
+		{076879CF-A7F2-4C26-9048-BE8E49C5AAEE}.Debug|x64.ActiveCfg = Debug|x64
+		{076879CF-A7F2-4C26-9048-BE8E49C5AAEE}.Debug|x64.Build.0 = Debug|x64
+		{076879CF-A7F2-4C26-9048-BE8E49C5AAEE}.Release|x64.ActiveCfg = Release|x64
+		{076879CF-A7F2-4C26-9048-BE8E49C5AAEE}.Release|x64.Build.0 = Release|x64
+		{AAB8DE7C-7262-461B-8C10-EE4FA4B1511E}.Debug|x64.ActiveCfg = Debug|x64
+		{AAB8DE7C-7262-461B-8C10-EE4FA4B1511E}.Debug|x64.Build.0 = Debug|x64
+		{AAB8DE7C-7262-461B-8C10-EE4FA4B1511E}.Release|x64.ActiveCfg = Release|x64
+		{AAB8DE7C-7262-461B-8C10-EE4FA4B1511E}.Release|x64.Build.0 = Release|x64
+		{32FC6695-1451-47BF-A185-41C2D3D80BCB}.Debug|x64.ActiveCfg = Debug|x64
+		{32FC6695-1451-47BF-A185-41C2D3D80BCB}.Debug|x64.Build.0 = Debug|x64
+		{32FC6695-1451-47BF-A185-41C2D3D80BCB}.Release|x64.ActiveCfg = Release|x64
+		{32FC6695-1451-47BF-A185-41C2D3D80BCB}.Release|x64.Build.0 = Release|x64
+		{D8A89958-26C9-424E-BAC6-9F96BD6FB560}.Debug|x64.ActiveCfg = Debug|x64
+		{D8A89958-26C9-424E-BAC6-9F96BD6FB560}.Debug|x64.Build.0 = Debug|x64
+		{D8A89958-26C9-424E-BAC6-9F96BD6FB560}.Release|x64.ActiveCfg = Release|x64
+		{D8A89958-26C9-424E-BAC6-9F96BD6FB560}.Release|x64.Build.0 = Release|x64
+		{AAD7ED30-CC86-4F26-8C95-3CCD5B6CAA4A}.Debug|x64.ActiveCfg = Debug|x64
+		{AAD7ED30-CC86-4F26-8C95-3CCD5B6CAA4A}.Debug|x64.Build.0 = Debug|x64
+		{AAD7ED30-CC86-4F26-8C95-3CCD5B6CAA4A}.Release|x64.ActiveCfg = Release|x64
+		{AAD7ED30-CC86-4F26-8C95-3CCD5B6CAA4A}.Release|x64.Build.0 = Release|x64
+		{0B9E80B6-5E75-44C8-B175-9622D1C14FE0}.Debug|x64.ActiveCfg = Debug|x64
+		{0B9E80B6-5E75-44C8-B175-9622D1C14FE0}.Debug|x64.Build.0 = Debug|x64
+		{0B9E80B6-5E75-44C8-B175-9622D1C14FE0}.Release|x64.ActiveCfg = Release|x64
+		{0B9E80B6-5E75-44C8-B175-9622D1C14FE0}.Release|x64.Build.0 = Release|x64
+		{7322EED5-F85F-4328-8C4C-D5980BAB0C80}.Debug|x64.ActiveCfg = Debug|x64
+		{7322EED5-F85F-4328-8C4C-D5980BAB0C80}.Debug|x64.Build.0 = Debug|x64
+		{7322EED5-F85F-4328-8C4C-D5980BAB0C80}.Release|x64.ActiveCfg = Release|x64
+		{7322EED5-F85F-4328-8C4C-D5980BAB0C80}.Release|x64.Build.0 = Release|x64
+		{C2E1A500-3055-4A14-A0D1-0984211C9E1E}.Debug|x64.ActiveCfg = Debug|x64
+		{C2E1A500-3055-4A14-A0D1-0984211C9E1E}.Debug|x64.Build.0 = Debug|x64
+		{C2E1A500-3055-4A14-A0D1-0984211C9E1E}.Release|x64.ActiveCfg = Release|x64
+		{C2E1A500-3055-4A14-A0D1-0984211C9E1E}.Release|x64.Build.0 = Release|x64
+		{7CAD484C-0C93-4AC1-AA6D-EE75EAFA1D66}.Debug|x64.ActiveCfg = Debug|x64
+		{7CAD484C-0C93-4AC1-AA6D-EE75EAFA1D66}.Debug|x64.Build.0 = Debug|x64
+		{7CAD484C-0C93-4AC1-AA6D-EE75EAFA1D66}.Release|x64.ActiveCfg = Release|x64
+		{7CAD484C-0C93-4AC1-AA6D-EE75EAFA1D66}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9BD2DE03-F6A9-42C2-ABA7-C6E568EE8BF5} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{D613DAFB-F6F2-415B-A1FC-D4F590A90639} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {105324E8-5292-4D8A-BC64-54B404AE2554}
+	EndGlobalSection
+EndGlobal

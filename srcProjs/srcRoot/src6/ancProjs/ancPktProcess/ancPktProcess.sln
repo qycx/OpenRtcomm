@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36511.14 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ancPktProcess", "ancPktProcess.vcxproj", "{68583623-A874-43FE-AEFB-1DEA1607C2E0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{68583623-A874-43FE-AEFB-1DEA1607C2E0}.Debug|x64.ActiveCfg = Debug|x64
+		{68583623-A874-43FE-AEFB-1DEA1607C2E0}.Debug|x64.Build.0 = Debug|x64
+		{68583623-A874-43FE-AEFB-1DEA1607C2E0}.Release|x64.ActiveCfg = Release|x64
+		{68583623-A874-43FE-AEFB-1DEA1607C2E0}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BC5CD288-BF79-4EEA-B89C-DFEFEA5FF209}
+	EndGlobalSection
+EndGlobal

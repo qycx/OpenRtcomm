@@ -1,0 +1,14 @@
+﻿
+
+#include	"resource.h"
+
+#include	"isCmdConst.h"		//  2010/04/14
+
+//
+// 这里定义是为了编译。本身是无效的
+//
+#define		ID_qyProperties		1
+#define		ID_qyTalk			2
+
+#define		IDR_TRAY_online		3
+#define		IDR_TRAY_offline	4	

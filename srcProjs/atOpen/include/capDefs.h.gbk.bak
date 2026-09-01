@@ -1,0 +1,45 @@
+
+#ifndef  __capDefs_h__
+#define  __capDefs_h__		//  {
+
+
+
+//
+#define		CONST_capType_null									0
+#define		CONST_capType_av									1
+#define		CONST_capType_screen								2
+#define		CONST_capType_mediaFile								3
+#define		CONST_capType_mediaDevice							4			//  2011/12/28
+//
+#define		CONST_capType_mosaic								20			//  2013/12/10. d3dWall的欢迎字幕，或者note等
+//
+#define		CONST_capType_slave									25			//  2016/04/06
+
+//
+#define		CONST_capType_qvcf									30			//  2015/05/25, 本地播放qvcf文件，不需要压缩，不需要resize
+
+
+//
+#define		CONST_subCapType_null								0
+#define		CONST_subCapType_webcam								1
+#define		CONST_subCapType_mosaic_video						2			//  2014/12/01
+#define		CONST_subCapType_mosaic_resource					3			//  2014/12/01
+//
+#define		CONST_subCapType_unresizable						10			//  2015/03/11
+//
+#define		CONST_subCapType_slave_video						20			//  2016/04/06	
+
+
+
+
+//  2014/11/13
+#define		CONST_capUsage_null									0
+#define		CONST_capUsage_conf									1
+#define		CONST_capUsage_3dConf								2			//  2014/12/15
+#define		CONST_usage_mosaic_sys								3			//  2014/12/21
+
+
+
+#endif  //  }
+
+

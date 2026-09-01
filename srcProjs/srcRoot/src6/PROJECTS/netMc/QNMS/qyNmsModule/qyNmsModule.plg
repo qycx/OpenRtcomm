@@ -1,0 +1,42 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: qyNmsModule - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "G:\DOCUME~1\TESTAD~1\LOCALS~1\Temp\RSP943.tmp" with contents
+[
+/nologo /o"..\..\..\..\..\..\Debug\bin/qyNmsModule.bsc" 
+\qycx4\Develop6\o\qyNmsModule\Debug\QnmsModuleDaemon.sbr
+\qycx4\Develop6\o\qyNmsModule\Debug\qyNmsModule.sbr
+\qycx4\Develop6\o\qyNmsModule\Debug\qyNmsProc.sbr
+\qycx4\Develop6\o\qyNmsModule\Debug\genericqueue.sbr
+\qycx4\Develop6\o\qyNmsModule\Debug\qnmCommProc.sbr
+\qycx4\Develop6\o\qyNmsModule\Debug\qnmCommProc1.sbr
+\qycx4\Develop6\o\qyNmsModule\Debug\qnmOsAuditCommProc.sbr
+\qycx4\Develop6\o\qyNmsModule\Debug\qnmsCommProc.sbr
+\qycx4\Develop6\o\qyNmsModule\Debug\qwmDynFunc.sbr
+\qycx4\Develop6\o\qyNmsModule\Debug\qwmNetworkStatusCommProc.sbr
+\qycx4\Develop6\o\qyNmsModule\Debug\qyCommProc.sbr
+\qycx4\Develop6\o\qyNmsModule\Debug\qyDmItemCommProc.sbr
+\qycx4\Develop6\o\qyNmsModule\Debug\qyGenericDaemon.sbr
+\qycx4\Develop6\o\qyNmsModule\Debug\qyModuleFunc.sbr
+\qycx4\Develop6\o\qyNmsModule\Debug\qyShowInfoCommProc.sbr
+\qycx4\Develop6\o\qyNmsModule\Debug\qySqlFunc.sbr
+\qycx4\Develop6\o\qyNmsModule\Debug\qySyncCommProc.sbr
+\qycx4\Develop6\o\qyNmsModule\Debug\qyTCharCommProc.sbr
+\qycx4\Develop6\o\qyNmsModule\Debug\traceLogA.sbr
+\qycx4\Develop6\o\qyNmsModule\Debug\qnmScan.sbr]
+Creating command line "bscmake.exe @G:\DOCUME~1\TESTAD~1\LOCALS~1\Temp\RSP943.tmp"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+qyNmsModule.dll - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

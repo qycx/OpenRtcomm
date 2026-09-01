@@ -1,0 +1,1417 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: qyEncLib - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4CD3.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /I "include" /I "libDes" /I "..\qyInclude" /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_LIB" /Fp"..\..\o\qyEncLib\Release/qyEncLib.pch" /YX /Fo"..\..\o\qyEncLib\Release/" /Fd"..\..\o\qyEncLib\Release/" /FD /c 
+"E:\Qycx2\Develop\src4\qyEncLib\D3Des.c"
+"E:\Qycx2\Develop\src4\qyEncLib\licenseEncFunc.cpp"
+"E:\Qycx2\Develop\src4\qyEncLib\qnmEncFunc.cpp"
+"E:\Qycx2\Develop\src4\qyEncLib\qyEncFunc.cpp"
+"E:\Qycx2\Develop\src4\qyEncLib\qyRand.c"
+]
+Creating command line "cl.exe @D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4CD3.tmp" 
+Creating temporary file "D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4CD4.tmp" with contents
+[
+/nologo /out:"..\..\Release\lib\qyEncLib.lib" 
+\Qycx2\Develop\o\qyEncLib\Release\D3Des.obj
+\Qycx2\Develop\o\qyEncLib\Release\licenseEncFunc.obj
+\Qycx2\Develop\o\qyEncLib\Release\qnmEncFunc.obj
+\Qycx2\Develop\o\qyEncLib\Release\qyEncFunc.obj
+\Qycx2\Develop\o\qyEncLib\Release\qyRand.obj
+]
+Creating command line "link.exe -lib @D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4CD4.tmp"
+<h3>Output Window</h3>
+Compiling...
+D3Des.c
+E:\Qycx2\Develop\src4\qyEncLib\D3Des.c(209) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+E:\Qycx2\Develop\src4\qyEncLib\D3Des.c(210) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+E:\Qycx2\Develop\src4\qyEncLib\D3Des.c(211) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+E:\Qycx2\Develop\src4\qyEncLib\D3Des.c(212) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+E:\Qycx2\Develop\src4\qyEncLib\D3Des.c(213) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+E:\Qycx2\Develop\src4\qyEncLib\D3Des.c(214) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+E:\Qycx2\Develop\src4\qyEncLib\D3Des.c(215) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+E:\Qycx2\Develop\src4\qyEncLib\D3Des.c(216) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+licenseEncFunc.cpp
+qnmEncFunc.cpp
+qyEncFunc.cpp
+qyRand.c
+Creating library...
+
+
+
+<h3>Results</h3>
+qyEncLib.lib - 0 error(s), 8 warning(s)
+<h3>
+--------------------Configuration: qyEncLib - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4CD9.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /I "include" /I "libDes" /I "..\qyInclude" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /D "_AFXDLL" /FR"..\..\o\qyEncLib\Debug/" /Fp"..\..\o\qyEncLib\Debug/qyEncLib.pch" /YX /Fo"..\..\o\qyEncLib\Debug/" /Fd"..\..\o\qyEncLib\Debug/" /FD /GZ /c 
+"E:\Qycx2\Develop\src4\qyEncLib\D3Des.c"
+"E:\Qycx2\Develop\src4\qyEncLib\licenseEncFunc.cpp"
+"E:\Qycx2\Develop\src4\qyEncLib\qnmEncFunc.cpp"
+"E:\Qycx2\Develop\src4\qyEncLib\qyEncFunc.cpp"
+"E:\Qycx2\Develop\src4\qyEncLib\qyRand.c"
+]
+Creating command line "cl.exe @D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4CD9.tmp" 
+Creating temporary file "D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4CDA.tmp" with contents
+[
+/nologo /out:"..\..\Debug\lib\qyEncLib.lib" 
+\Qycx2\Develop\o\qyEncLib\Debug\D3Des.obj
+\Qycx2\Develop\o\qyEncLib\Debug\licenseEncFunc.obj
+\Qycx2\Develop\o\qyEncLib\Debug\qnmEncFunc.obj
+\Qycx2\Develop\o\qyEncLib\Debug\qyEncFunc.obj
+\Qycx2\Develop\o\qyEncLib\Debug\qyRand.obj
+]
+Creating command line "link.exe -lib @D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4CDA.tmp"
+<h3>Output Window</h3>
+Compiling...
+D3Des.c
+e:\qycx2\develop\src4\qyenclib\d3des.c(209) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+e:\qycx2\develop\src4\qyenclib\d3des.c(210) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+e:\qycx2\develop\src4\qyenclib\d3des.c(211) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+e:\qycx2\develop\src4\qyenclib\d3des.c(212) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+e:\qycx2\develop\src4\qyenclib\d3des.c(213) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+e:\qycx2\develop\src4\qyenclib\d3des.c(214) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+e:\qycx2\develop\src4\qyenclib\d3des.c(215) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+e:\qycx2\develop\src4\qyenclib\d3des.c(216) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+licenseEncFunc.cpp
+qnmEncFunc.cpp
+qyEncFunc.cpp
+qyRand.c
+Creating library...
+Creating temporary file "D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4CDD.tmp" with contents
+[
+/nologo /o"..\..\Debug\lib/qyEncLib.bsc" 
+\Qycx2\Develop\o\qyEncLib\Debug\D3Des.sbr
+\Qycx2\Develop\o\qyEncLib\Debug\licenseEncFunc.sbr
+\Qycx2\Develop\o\qyEncLib\Debug\qnmEncFunc.sbr
+\Qycx2\Develop\o\qyEncLib\Debug\qyEncFunc.sbr
+\Qycx2\Develop\o\qyEncLib\Debug\qyRand.sbr]
+Creating command line "bscmake.exe @D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4CDD.tmp"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+qyEncLib.lib - 0 error(s), 8 warning(s)
+<h3>
+--------------------Configuration: qyEncLib - Win32 Debug Static--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4CDE.tmp" with contents
+[
+/nologo /MTd /W3 /Gm /GX /ZI /Od /I "include" /I "libDes" /I "..\qyInclude" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /FR"..\..\o\qyEncLib\DebugStatic/" /Fp"..\..\o\qyEncLib\DebugStatic/qyEncLib.pch" /YX /Fo"..\..\o\qyEncLib\DebugStatic/" /Fd"..\..\o\qyEncLib\DebugStatic/" /FD /GZ /c 
+"E:\Qycx2\Develop\src4\qyEncLib\D3Des.c"
+"E:\Qycx2\Develop\src4\qyEncLib\licenseEncFunc.cpp"
+"E:\Qycx2\Develop\src4\qyEncLib\qnmEncFunc.cpp"
+"E:\Qycx2\Develop\src4\qyEncLib\qyEncFunc.cpp"
+"E:\Qycx2\Develop\src4\qyEncLib\qyRand.c"
+]
+Creating command line "cl.exe @D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4CDE.tmp" 
+Creating temporary file "D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4CDF.tmp" with contents
+[
+/nologo /out:"..\..\Debug\lib\qyEncLibStatic.lib" 
+\Qycx2\Develop\o\qyEncLib\DebugStatic\D3Des.obj
+\Qycx2\Develop\o\qyEncLib\DebugStatic\licenseEncFunc.obj
+\Qycx2\Develop\o\qyEncLib\DebugStatic\qnmEncFunc.obj
+\Qycx2\Develop\o\qyEncLib\DebugStatic\qyEncFunc.obj
+\Qycx2\Develop\o\qyEncLib\DebugStatic\qyRand.obj
+]
+Creating command line "link.exe -lib @D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4CDF.tmp"
+<h3>Output Window</h3>
+Compiling...
+D3Des.c
+e:\qycx2\develop\src4\qyenclib\d3des.c(209) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+e:\qycx2\develop\src4\qyenclib\d3des.c(210) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+e:\qycx2\develop\src4\qyenclib\d3des.c(211) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+e:\qycx2\develop\src4\qyenclib\d3des.c(212) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+e:\qycx2\develop\src4\qyenclib\d3des.c(213) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+e:\qycx2\develop\src4\qyenclib\d3des.c(214) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+e:\qycx2\develop\src4\qyenclib\d3des.c(215) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+e:\qycx2\develop\src4\qyenclib\d3des.c(216) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+licenseEncFunc.cpp
+qnmEncFunc.cpp
+qyEncFunc.cpp
+qyRand.c
+Creating library...
+
+
+
+<h3>Results</h3>
+qyEncLibStatic.lib - 0 error(s), 8 warning(s)
+<h3>
+--------------------Configuration: qyEncLib - Win32 Release Static--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4CE2.tmp" with contents
+[
+/nologo /MT /W3 /GX /O2 /I "include" /I "libDes" /I "..\qyInclude" /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_LIB" /Fp"..\..\o\qyEncLib\ReleaseStatic/qyEncLib.pch" /YX /Fo"..\..\o\qyEncLib\ReleaseStatic/" /Fd"..\..\o\qyEncLib\ReleaseStatic/" /FD /c 
+"E:\Qycx2\Develop\src4\qyEncLib\D3Des.c"
+"E:\Qycx2\Develop\src4\qyEncLib\licenseEncFunc.cpp"
+"E:\Qycx2\Develop\src4\qyEncLib\qnmEncFunc.cpp"
+"E:\Qycx2\Develop\src4\qyEncLib\qyEncFunc.cpp"
+"E:\Qycx2\Develop\src4\qyEncLib\qyRand.c"
+]
+Creating command line "cl.exe @D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4CE2.tmp" 
+Creating temporary file "D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4CE3.tmp" with contents
+[
+/nologo /out:"..\..\Release\lib\qyEncLibStatic.lib" 
+\Qycx2\Develop\o\qyEncLib\ReleaseStatic\D3Des.obj
+\Qycx2\Develop\o\qyEncLib\ReleaseStatic\licenseEncFunc.obj
+\Qycx2\Develop\o\qyEncLib\ReleaseStatic\qnmEncFunc.obj
+\Qycx2\Develop\o\qyEncLib\ReleaseStatic\qyEncFunc.obj
+\Qycx2\Develop\o\qyEncLib\ReleaseStatic\qyRand.obj
+]
+Creating command line "link.exe -lib @D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4CE3.tmp"
+<h3>Output Window</h3>
+Compiling...
+D3Des.c
+E:\Qycx2\Develop\src4\qyEncLib\D3Des.c(209) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+E:\Qycx2\Develop\src4\qyEncLib\D3Des.c(210) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+E:\Qycx2\Develop\src4\qyEncLib\D3Des.c(211) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+E:\Qycx2\Develop\src4\qyEncLib\D3Des.c(212) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+E:\Qycx2\Develop\src4\qyEncLib\D3Des.c(213) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+E:\Qycx2\Develop\src4\qyEncLib\D3Des.c(214) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+E:\Qycx2\Develop\src4\qyEncLib\D3Des.c(215) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+E:\Qycx2\Develop\src4\qyEncLib\D3Des.c(216) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+licenseEncFunc.cpp
+qnmEncFunc.cpp
+qyEncFunc.cpp
+qyRand.c
+Creating library...
+
+
+
+<h3>Results</h3>
+qyEncLibStatic.lib - 0 error(s), 8 warning(s)
+<h3>
+--------------------Configuration: qyEncLib - Win32 Debug Static No Mfc--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4CE4.tmp" with contents
+[
+/nologo /MTd /W3 /Gm /GX /ZI /Od /I "include" /I "libDes" /I "..\qyInclude" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /FR"..\..\o\qyEncLib\DebugStaticNoMfc/" /Fp"..\..\o\qyEncLib\DebugStaticNoMfc/qyEncLib.pch" /YX /Fo"..\..\o\qyEncLib\DebugStaticNoMfc/" /Fd"..\..\o\qyEncLib\DebugStaticNoMfc/" /FD /GZ /c 
+"E:\Qycx2\Develop\src4\qyEncLib\D3Des.c"
+"E:\Qycx2\Develop\src4\qyEncLib\licenseEncFunc.cpp"
+"E:\Qycx2\Develop\src4\qyEncLib\qnmEncFunc.cpp"
+"E:\Qycx2\Develop\src4\qyEncLib\qyEncFunc.cpp"
+"E:\Qycx2\Develop\src4\qyEncLib\qyRand.c"
+]
+Creating command line "cl.exe @D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4CE4.tmp" 
+Creating temporary file "D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4CE5.tmp" with contents
+[
+/nologo /out:"..\..\Debug\lib\qyEncLibStaticNoMfc.lib" 
+\Qycx2\Develop\o\qyEncLib\DebugStaticNoMfc\D3Des.obj
+\Qycx2\Develop\o\qyEncLib\DebugStaticNoMfc\licenseEncFunc.obj
+\Qycx2\Develop\o\qyEncLib\DebugStaticNoMfc\qnmEncFunc.obj
+\Qycx2\Develop\o\qyEncLib\DebugStaticNoMfc\qyEncFunc.obj
+\Qycx2\Develop\o\qyEncLib\DebugStaticNoMfc\qyRand.obj
+]
+Creating command line "link.exe -lib @D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4CE5.tmp"
+<h3>Output Window</h3>
+Compiling...
+D3Des.c
+e:\qycx2\develop\src4\qyenclib\d3des.c(209) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+e:\qycx2\develop\src4\qyenclib\d3des.c(210) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+e:\qycx2\develop\src4\qyenclib\d3des.c(211) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+e:\qycx2\develop\src4\qyenclib\d3des.c(212) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+e:\qycx2\develop\src4\qyenclib\d3des.c(213) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+e:\qycx2\develop\src4\qyenclib\d3des.c(214) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+e:\qycx2\develop\src4\qyenclib\d3des.c(215) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+e:\qycx2\develop\src4\qyenclib\d3des.c(216) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+licenseEncFunc.cpp
+qnmEncFunc.cpp
+qyEncFunc.cpp
+qyRand.c
+Creating library...
+
+
+
+<h3>Results</h3>
+qyEncLibStaticNoMfc.lib - 0 error(s), 8 warning(s)
+<h3>
+--------------------Configuration: qyEncLib - Win32 Release Static No Mfc--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4CE8.tmp" with contents
+[
+/nologo /MT /W3 /GX /O2 /I "include" /I "libDes" /I "..\qyInclude" /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_LIB" /Fp"..\..\o\qyEncLib\ReleaseStaticNoMfc/qyEncLib.pch" /YX /Fo"..\..\o\qyEncLib\ReleaseStaticNoMfc/" /Fd"..\..\o\qyEncLib\ReleaseStaticNoMfc/" /FD /c 
+"E:\Qycx2\Develop\src4\qyEncLib\D3Des.c"
+"E:\Qycx2\Develop\src4\qyEncLib\licenseEncFunc.cpp"
+"E:\Qycx2\Develop\src4\qyEncLib\qnmEncFunc.cpp"
+"E:\Qycx2\Develop\src4\qyEncLib\qyEncFunc.cpp"
+"E:\Qycx2\Develop\src4\qyEncLib\qyRand.c"
+]
+Creating command line "cl.exe @D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4CE8.tmp" 
+Creating temporary file "D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4CE9.tmp" with contents
+[
+/nologo /out:"..\..\Release\lib\qyEncLibStaticNoMfc.lib" 
+\Qycx2\Develop\o\qyEncLib\ReleaseStaticNoMfc\D3Des.obj
+\Qycx2\Develop\o\qyEncLib\ReleaseStaticNoMfc\licenseEncFunc.obj
+\Qycx2\Develop\o\qyEncLib\ReleaseStaticNoMfc\qnmEncFunc.obj
+\Qycx2\Develop\o\qyEncLib\ReleaseStaticNoMfc\qyEncFunc.obj
+\Qycx2\Develop\o\qyEncLib\ReleaseStaticNoMfc\qyRand.obj
+]
+Creating command line "link.exe -lib @D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4CE9.tmp"
+<h3>Output Window</h3>
+Compiling...
+D3Des.c
+E:\Qycx2\Develop\src4\qyEncLib\D3Des.c(209) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+E:\Qycx2\Develop\src4\qyEncLib\D3Des.c(210) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+E:\Qycx2\Develop\src4\qyEncLib\D3Des.c(211) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+E:\Qycx2\Develop\src4\qyEncLib\D3Des.c(212) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+E:\Qycx2\Develop\src4\qyEncLib\D3Des.c(213) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+E:\Qycx2\Develop\src4\qyEncLib\D3Des.c(214) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+E:\Qycx2\Develop\src4\qyEncLib\D3Des.c(215) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+E:\Qycx2\Develop\src4\qyEncLib\D3Des.c(216) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+licenseEncFunc.cpp
+qnmEncFunc.cpp
+qyEncFunc.cpp
+qyRand.c
+Creating library...
+
+
+
+<h3>Results</h3>
+qyEncLibStaticNoMfc.lib - 0 error(s), 8 warning(s)
+<h3>
+--------------------Configuration: qyEncLibForQwm - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4CEC.tmp" with contents
+[
+/nologo /MT /W3 /GX /O2 /I "include" /I "libDes" /I "..\qyInclude" /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_LIB" /Fp"..\..\o\qyEncLibForQwm\Release/qyEncLibForQwm.pch" /YX /Fo"..\..\o\qyEncLibForQwm\Release/" /Fd"..\..\o\qyEncLibForQwm\Release/" /FD /c 
+"E:\Qycx2\Develop\src4\qyEncLib\D3Des.c"
+"E:\Qycx2\Develop\src4\qyEncLib\qnmEncFunc.cpp"
+"E:\Qycx2\Develop\src4\qyEncLib\qyEncFunc.cpp"
+"E:\Qycx2\Develop\src4\qyEncLib\qyRand.c"
+]
+Creating command line "cl.exe @D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4CEC.tmp" 
+Creating temporary file "D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4CED.tmp" with contents
+[
+/nologo /out:"..\..\Release\lib\qyEncLibForQwm.lib" 
+\Qycx2\Develop\o\qyEncLibForQwm\Release\D3Des.obj
+\Qycx2\Develop\o\qyEncLibForQwm\Release\qnmEncFunc.obj
+\Qycx2\Develop\o\qyEncLibForQwm\Release\qyEncFunc.obj
+\Qycx2\Develop\o\qyEncLibForQwm\Release\qyRand.obj
+]
+Creating command line "link.exe -lib @D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4CED.tmp"
+<h3>Output Window</h3>
+Compiling...
+D3Des.c
+E:\Qycx2\Develop\src4\qyEncLib\D3Des.c(209) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+E:\Qycx2\Develop\src4\qyEncLib\D3Des.c(210) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+E:\Qycx2\Develop\src4\qyEncLib\D3Des.c(211) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+E:\Qycx2\Develop\src4\qyEncLib\D3Des.c(212) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+E:\Qycx2\Develop\src4\qyEncLib\D3Des.c(213) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+E:\Qycx2\Develop\src4\qyEncLib\D3Des.c(214) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+E:\Qycx2\Develop\src4\qyEncLib\D3Des.c(215) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+E:\Qycx2\Develop\src4\qyEncLib\D3Des.c(216) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+qnmEncFunc.cpp
+qyEncFunc.cpp
+qyRand.c
+Creating library...
+
+
+
+<h3>Results</h3>
+qyEncLibForQwm.lib - 0 error(s), 8 warning(s)
+<h3>
+--------------------Configuration: qyEncLibForQwm - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4CEF.tmp" with contents
+[
+/nologo /MTd /W3 /Gm /GX /ZI /Od /I "include" /I "libDes" /I "..\qyInclude" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /FR"..\..\o\qyEncLibForQwm\debug/" /Fp"..\..\o\qyEncLibForQwm\debug/qyEncLibForQwm.pch" /YX /Fo"..\..\o\qyEncLibForQwm\debug/" /Fd"..\..\o\qyEncLibForQwm\debug/" /FD /c 
+"E:\Qycx2\Develop\src4\qyEncLib\D3Des.c"
+"E:\Qycx2\Develop\src4\qyEncLib\qnmEncFunc.cpp"
+"E:\Qycx2\Develop\src4\qyEncLib\qyEncFunc.cpp"
+"E:\Qycx2\Develop\src4\qyEncLib\qyRand.c"
+]
+Creating command line "cl.exe @D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4CEF.tmp" 
+Creating temporary file "D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4CF0.tmp" with contents
+[
+/nologo /out:"..\..\debug\lib\qyEncLibForQwm.lib" 
+\Qycx2\Develop\o\qyEncLibForQwm\debug\D3Des.obj
+\Qycx2\Develop\o\qyEncLibForQwm\debug\qnmEncFunc.obj
+\Qycx2\Develop\o\qyEncLibForQwm\debug\qyEncFunc.obj
+\Qycx2\Develop\o\qyEncLibForQwm\debug\qyRand.obj
+]
+Creating command line "link.exe -lib @D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4CF0.tmp"
+<h3>Output Window</h3>
+Compiling...
+D3Des.c
+e:\qycx2\develop\src4\qyenclib\d3des.c(209) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+e:\qycx2\develop\src4\qyenclib\d3des.c(210) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+e:\qycx2\develop\src4\qyenclib\d3des.c(211) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+e:\qycx2\develop\src4\qyenclib\d3des.c(212) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+e:\qycx2\develop\src4\qyenclib\d3des.c(213) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+e:\qycx2\develop\src4\qyenclib\d3des.c(214) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+e:\qycx2\develop\src4\qyenclib\d3des.c(215) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+e:\qycx2\develop\src4\qyenclib\d3des.c(216) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned char ', possible loss of data
+qnmEncFunc.cpp
+qyEncFunc.cpp
+qyRand.c
+Creating library...
+Creating temporary file "D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4CF2.tmp" with contents
+[
+/nologo /o"..\..\debug\lib/qyEncLibForQwm.bsc" 
+\Qycx2\Develop\o\qyEncLibForQwm\debug\D3Des.sbr
+\Qycx2\Develop\o\qyEncLibForQwm\debug\qnmEncFunc.sbr
+\Qycx2\Develop\o\qyEncLibForQwm\debug\qyEncFunc.sbr
+\Qycx2\Develop\o\qyEncLibForQwm\debug\qyRand.sbr]
+Creating command line "bscmake.exe @D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4CF2.tmp"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+qyEncLibForQwm.lib - 0 error(s), 8 warning(s)
+<h3>
+--------------------Configuration: qyPublic - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4CF4.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /I "..\asrInclude" /I "..\qyInclude" /I "..\asrComm\include" /I "..\asrLog\Include" /I "include" /I "contentFilter\include" /I "md5\include" /I "..\qyEncLib\include" /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_LIB" /D "_AFXDLL" /FR"..\..\o\qyPublic\Release/" /Fp"..\..\o\qyPublic\Release/qyPublic.pch" /YX /Fo"..\..\o\qyPublic\Release/" /Fd"..\..\o\qyPublic\Release/" /FD /c 
+"E:\Qycx2\Develop\src4\qyPublic\qyLog\qyLogFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyDbLib\qySqlFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyCommonFunc3.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyCommonFunc4.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyCommonFunc7.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyCommonFunc8.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyCommonFunc9.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyCommonObj.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyDebugFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyModifyPeFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyGuiLib\qyGuiFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyDaemonLib\qyGenericDaemon.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qySock\qyCommonSock.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qySock\qyMtSock.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qySock\qySockFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyMfcLib\BTNST.CPP"
+"E:\Qycx2\Develop\src4\qyPublic\qyMfcLib\QyRestrictEdit.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyComm\qyCommFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\cfCfgServ.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\cfCommon.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\cfKeyValue.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\contentfilter.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\EmailProcess.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\keyvalue.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\littlefunction.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\setupCfDict.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\zhFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\md5\asrMd5.c"
+"E:\Qycx2\Develop\src4\qyPublic\md5\md5c.c"
+"E:\Qycx2\Develop\src4\qyPublic\md5\mddriver.c"
+"E:\Qycx2\Develop\src4\qyPublic\qyModuleLib\qyModuleFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic2\detectNetworkWithSnmp.cpp"
+"E:\Qycx2\Develop\src4\qyPublic2\qnmCommonFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic2\qwmCommonFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic2\qyCommonFunc5.cpp"
+"E:\Qycx2\Develop\src4\qyPublic2\qyErrFunc.cpp"
+"E:\Qycx2\Develop\src4\asrPublic\commonfunc.cpp"
+"E:\Qycx2\Develop\src4\asrPublic\commonFunc1.cpp"
+"E:\Qycx2\Develop\src4\asrPublic\commonFunc2.cpp"
+"E:\Qycx2\Develop\src4\asrPublic\commonFunc3.cpp"
+"E:\Qycx2\Develop\src4\asrPublic\commonSock.cpp"
+"E:\Qycx2\Develop\src4\asrPublic\commonSql.cpp"
+"E:\Qycx2\Develop\src4\asrPublic\genericqueue.c"
+]
+Creating command line "cl.exe @D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4CF4.tmp" 
+Creating temporary file "D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4CF5.tmp" with contents
+[
+/nologo /out:"..\..\Release\lib\qyPublic.lib" 
+\Qycx2\Develop\o\qyPublic\Release\qyLogFunc.obj
+\Qycx2\Develop\o\qyPublic\Release\qySqlFunc.obj
+\Qycx2\Develop\o\qyPublic\Release\qyCommonFunc3.obj
+\Qycx2\Develop\o\qyPublic\Release\qyCommonFunc4.obj
+\Qycx2\Develop\o\qyPublic\Release\qyCommonFunc7.obj
+\Qycx2\Develop\o\qyPublic\Release\qyCommonFunc8.obj
+\Qycx2\Develop\o\qyPublic\Release\qyCommonFunc9.obj
+\Qycx2\Develop\o\qyPublic\Release\qyCommonObj.obj
+\Qycx2\Develop\o\qyPublic\Release\qyDebugFunc.obj
+\Qycx2\Develop\o\qyPublic\Release\qyModifyPeFunc.obj
+\Qycx2\Develop\o\qyPublic\Release\qyGuiFunc.obj
+\Qycx2\Develop\o\qyPublic\Release\qyGenericDaemon.obj
+\Qycx2\Develop\o\qyPublic\Release\qyCommonSock.obj
+\Qycx2\Develop\o\qyPublic\Release\qyMtSock.obj
+\Qycx2\Develop\o\qyPublic\Release\qySockFunc.obj
+\Qycx2\Develop\o\qyPublic\Release\BTNST.OBJ
+\Qycx2\Develop\o\qyPublic\Release\QyRestrictEdit.obj
+\Qycx2\Develop\o\qyPublic\Release\qyCommFunc.obj
+\Qycx2\Develop\o\qyPublic\Release\cfCfgServ.obj
+\Qycx2\Develop\o\qyPublic\Release\cfCommon.obj
+\Qycx2\Develop\o\qyPublic\Release\cfKeyValue.obj
+\Qycx2\Develop\o\qyPublic\Release\contentfilter.obj
+\Qycx2\Develop\o\qyPublic\Release\EmailProcess.obj
+\Qycx2\Develop\o\qyPublic\Release\keyvalue.obj
+\Qycx2\Develop\o\qyPublic\Release\littlefunction.obj
+\Qycx2\Develop\o\qyPublic\Release\setupCfDict.obj
+\Qycx2\Develop\o\qyPublic\Release\zhFunc.obj
+\Qycx2\Develop\o\qyPublic\Release\asrMd5.obj
+\Qycx2\Develop\o\qyPublic\Release\md5c.obj
+\Qycx2\Develop\o\qyPublic\Release\mddriver.obj
+\Qycx2\Develop\o\qyPublic\Release\qyModuleFunc.obj
+\Qycx2\Develop\o\qyPublic\Release\detectNetworkWithSnmp.obj
+\Qycx2\Develop\o\qyPublic\Release\qnmCommonFunc.obj
+\Qycx2\Develop\o\qyPublic\Release\qwmCommonFunc.obj
+\Qycx2\Develop\o\qyPublic\Release\qyCommonFunc5.obj
+\Qycx2\Develop\o\qyPublic\Release\qyErrFunc.obj
+\Qycx2\Develop\o\qyPublic\Release\commonfunc.obj
+\Qycx2\Develop\o\qyPublic\Release\commonFunc1.obj
+\Qycx2\Develop\o\qyPublic\Release\commonFunc2.obj
+\Qycx2\Develop\o\qyPublic\Release\commonFunc3.obj
+\Qycx2\Develop\o\qyPublic\Release\commonSock.obj
+\Qycx2\Develop\o\qyPublic\Release\commonSql.obj
+\Qycx2\Develop\o\qyPublic\Release\genericqueue.obj
+]
+Creating command line "link.exe -lib @D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4CF5.tmp"
+<h3>Output Window</h3>
+Compiling...
+qyLogFunc.cpp
+qySqlFunc.cpp
+qyCommonFunc3.cpp
+qyCommonFunc4.cpp
+qyCommonFunc7.cpp
+qyCommonFunc8.cpp
+qyCommonFunc9.cpp
+qyCommonObj.cpp
+qyDebugFunc.cpp
+qyModifyPeFunc.cpp
+qyGuiFunc.cpp
+qyGenericDaemon.cpp
+qyCommonSock.cpp
+qyMtSock.cpp
+qySockFunc.cpp
+BTNST.CPP
+QyRestrictEdit.cpp
+qyCommFunc.cpp
+cfCfgServ.cpp
+cfCommon.cpp
+cfKeyValue.cpp
+contentfilter.cpp
+EmailProcess.cpp
+keyvalue.cpp
+littlefunction.cpp
+setupCfDict.cpp
+zhFunc.cpp
+asrMd5.c
+md5c.c
+mddriver.c
+qyModuleFunc.cpp
+detectNetworkWithSnmp.cpp
+qnmCommonFunc.cpp
+qwmCommonFunc.cpp
+qyCommonFunc5.cpp
+qyErrFunc.cpp
+commonfunc.cpp
+commonFunc1.cpp
+commonFunc2.cpp
+commonFunc3.cpp
+commonSock.cpp
+commonSql.cpp
+genericqueue.c
+Creating library...
+
+
+
+<h3>Results</h3>
+qyPublic.lib - 0 error(s), 0 warning(s)
+<h3>
+--------------------Configuration: qyPublic - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4D1D.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /I "..\asrInclude" /I "..\qyInclude" /I "include" /I "contentFilter\include" /I "md5\include" /I "..\qyEncLib\include" /I "..\qyPublic2\include" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /D "_AFXDLL" /FR"..\..\o\qyPublic\debug/" /Fp"..\..\o\qyPublic\debug/qyPublic.pch" /YX /Fo"..\..\o\qyPublic\debug/" /Fd"..\..\o\qyPublic\debug/" /FD /GZ /c 
+"E:\Qycx2\Develop\src4\qyPublic\qyLog\qyLogFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyDbLib\qySqlFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyCommonFunc3.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyCommonFunc4.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyCommonFunc7.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyCommonFunc8.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyCommonFunc9.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyCommonObj.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyDebugFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyModifyPeFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyGuiLib\qyGuiFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyDaemonLib\qyGenericDaemon.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qySock\qyCommonSock.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qySock\qyMtSock.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qySock\qySockFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyMfcLib\BTNST.CPP"
+"E:\Qycx2\Develop\src4\qyPublic\qyMfcLib\QyRestrictEdit.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyComm\qyCommFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\cfCfgServ.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\cfCommon.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\cfKeyValue.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\contentfilter.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\EmailProcess.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\keyvalue.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\littlefunction.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\setupCfDict.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\zhFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\md5\asrMd5.c"
+"E:\Qycx2\Develop\src4\qyPublic\md5\md5c.c"
+"E:\Qycx2\Develop\src4\qyPublic\md5\mddriver.c"
+"E:\Qycx2\Develop\src4\qyPublic\qyModuleLib\qyModuleFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic2\detectNetworkWithSnmp.cpp"
+"E:\Qycx2\Develop\src4\qyPublic2\qnmCommonFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic2\qwmCommonFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic2\qyCommonFunc5.cpp"
+"E:\Qycx2\Develop\src4\qyPublic2\qyErrFunc.cpp"
+"E:\Qycx2\Develop\src4\asrPublic\commonfunc.cpp"
+"E:\Qycx2\Develop\src4\asrPublic\commonFunc1.cpp"
+"E:\Qycx2\Develop\src4\asrPublic\commonFunc2.cpp"
+"E:\Qycx2\Develop\src4\asrPublic\commonFunc3.cpp"
+"E:\Qycx2\Develop\src4\asrPublic\commonSock.cpp"
+"E:\Qycx2\Develop\src4\asrPublic\commonSql.cpp"
+"E:\Qycx2\Develop\src4\asrPublic\genericqueue.c"
+]
+Creating command line "cl.exe @D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4D1D.tmp" 
+Creating temporary file "D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4D1E.tmp" with contents
+[
+/nologo /out:"..\..\debug\lib\qyPublic.lib" 
+\Qycx2\Develop\o\qyPublic\debug\qyLogFunc.obj
+\Qycx2\Develop\o\qyPublic\debug\qySqlFunc.obj
+\Qycx2\Develop\o\qyPublic\debug\qyCommonFunc3.obj
+\Qycx2\Develop\o\qyPublic\debug\qyCommonFunc4.obj
+\Qycx2\Develop\o\qyPublic\debug\qyCommonFunc7.obj
+\Qycx2\Develop\o\qyPublic\debug\qyCommonFunc8.obj
+\Qycx2\Develop\o\qyPublic\debug\qyCommonFunc9.obj
+\Qycx2\Develop\o\qyPublic\debug\qyCommonObj.obj
+\Qycx2\Develop\o\qyPublic\debug\qyDebugFunc.obj
+\Qycx2\Develop\o\qyPublic\debug\qyModifyPeFunc.obj
+\Qycx2\Develop\o\qyPublic\debug\qyGuiFunc.obj
+\Qycx2\Develop\o\qyPublic\debug\qyGenericDaemon.obj
+\Qycx2\Develop\o\qyPublic\debug\qyCommonSock.obj
+\Qycx2\Develop\o\qyPublic\debug\qyMtSock.obj
+\Qycx2\Develop\o\qyPublic\debug\qySockFunc.obj
+\Qycx2\Develop\o\qyPublic\debug\BTNST.OBJ
+\Qycx2\Develop\o\qyPublic\debug\QyRestrictEdit.obj
+\Qycx2\Develop\o\qyPublic\debug\qyCommFunc.obj
+\Qycx2\Develop\o\qyPublic\debug\cfCfgServ.obj
+\Qycx2\Develop\o\qyPublic\debug\cfCommon.obj
+\Qycx2\Develop\o\qyPublic\debug\cfKeyValue.obj
+\Qycx2\Develop\o\qyPublic\debug\contentfilter.obj
+\Qycx2\Develop\o\qyPublic\debug\EmailProcess.obj
+\Qycx2\Develop\o\qyPublic\debug\keyvalue.obj
+\Qycx2\Develop\o\qyPublic\debug\littlefunction.obj
+\Qycx2\Develop\o\qyPublic\debug\setupCfDict.obj
+\Qycx2\Develop\o\qyPublic\debug\zhFunc.obj
+\Qycx2\Develop\o\qyPublic\debug\asrMd5.obj
+\Qycx2\Develop\o\qyPublic\debug\md5c.obj
+\Qycx2\Develop\o\qyPublic\debug\mddriver.obj
+\Qycx2\Develop\o\qyPublic\debug\qyModuleFunc.obj
+\Qycx2\Develop\o\qyPublic\debug\detectNetworkWithSnmp.obj
+\Qycx2\Develop\o\qyPublic\debug\qnmCommonFunc.obj
+\Qycx2\Develop\o\qyPublic\debug\qwmCommonFunc.obj
+\Qycx2\Develop\o\qyPublic\debug\qyCommonFunc5.obj
+\Qycx2\Develop\o\qyPublic\debug\qyErrFunc.obj
+\Qycx2\Develop\o\qyPublic\debug\commonfunc.obj
+\Qycx2\Develop\o\qyPublic\debug\commonFunc1.obj
+\Qycx2\Develop\o\qyPublic\debug\commonFunc2.obj
+\Qycx2\Develop\o\qyPublic\debug\commonFunc3.obj
+\Qycx2\Develop\o\qyPublic\debug\commonSock.obj
+\Qycx2\Develop\o\qyPublic\debug\commonSql.obj
+\Qycx2\Develop\o\qyPublic\debug\genericqueue.obj
+]
+Creating command line "link.exe -lib @D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4D1E.tmp"
+<h3>Output Window</h3>
+Compiling...
+qyLogFunc.cpp
+qySqlFunc.cpp
+qyCommonFunc3.cpp
+qyCommonFunc4.cpp
+qyCommonFunc7.cpp
+qyCommonFunc8.cpp
+qyCommonFunc9.cpp
+qyCommonObj.cpp
+qyDebugFunc.cpp
+qyModifyPeFunc.cpp
+qyGuiFunc.cpp
+qyGenericDaemon.cpp
+qyCommonSock.cpp
+qyMtSock.cpp
+qySockFunc.cpp
+BTNST.CPP
+QyRestrictEdit.cpp
+qyCommFunc.cpp
+cfCfgServ.cpp
+cfCommon.cpp
+cfKeyValue.cpp
+contentfilter.cpp
+EmailProcess.cpp
+keyvalue.cpp
+littlefunction.cpp
+setupCfDict.cpp
+zhFunc.cpp
+asrMd5.c
+md5c.c
+mddriver.c
+qyModuleFunc.cpp
+detectNetworkWithSnmp.cpp
+qnmCommonFunc.cpp
+qwmCommonFunc.cpp
+qyCommonFunc5.cpp
+qyErrFunc.cpp
+commonfunc.cpp
+commonFunc1.cpp
+commonFunc2.cpp
+commonFunc3.cpp
+commonSock.cpp
+commonSql.cpp
+genericqueue.c
+Creating library...
+Creating temporary file "D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4D43.tmp" with contents
+[
+/nologo /o"..\..\debug\lib/qyPublic.bsc" 
+\Qycx2\Develop\o\qyPublic\debug\qyLogFunc.sbr
+\Qycx2\Develop\o\qyPublic\debug\qySqlFunc.sbr
+\Qycx2\Develop\o\qyPublic\debug\qyCommonFunc3.sbr
+\Qycx2\Develop\o\qyPublic\debug\qyCommonFunc4.sbr
+\Qycx2\Develop\o\qyPublic\debug\qyCommonFunc7.sbr
+\Qycx2\Develop\o\qyPublic\debug\qyCommonFunc8.sbr
+\Qycx2\Develop\o\qyPublic\debug\qyCommonFunc9.sbr
+\Qycx2\Develop\o\qyPublic\debug\qyCommonObj.sbr
+\Qycx2\Develop\o\qyPublic\debug\qyDebugFunc.sbr
+\Qycx2\Develop\o\qyPublic\debug\qyModifyPeFunc.sbr
+\Qycx2\Develop\o\qyPublic\debug\qyGuiFunc.sbr
+\Qycx2\Develop\o\qyPublic\debug\qyGenericDaemon.sbr
+\Qycx2\Develop\o\qyPublic\debug\qyCommonSock.sbr
+\Qycx2\Develop\o\qyPublic\debug\qyMtSock.sbr
+\Qycx2\Develop\o\qyPublic\debug\qySockFunc.sbr
+\Qycx2\Develop\o\qyPublic\debug\BTNST.SBR
+\Qycx2\Develop\o\qyPublic\debug\QyRestrictEdit.sbr
+\Qycx2\Develop\o\qyPublic\debug\qyCommFunc.sbr
+\Qycx2\Develop\o\qyPublic\debug\cfCfgServ.sbr
+\Qycx2\Develop\o\qyPublic\debug\cfCommon.sbr
+\Qycx2\Develop\o\qyPublic\debug\cfKeyValue.sbr
+\Qycx2\Develop\o\qyPublic\debug\contentfilter.sbr
+\Qycx2\Develop\o\qyPublic\debug\EmailProcess.sbr
+\Qycx2\Develop\o\qyPublic\debug\keyvalue.sbr
+\Qycx2\Develop\o\qyPublic\debug\littlefunction.sbr
+\Qycx2\Develop\o\qyPublic\debug\setupCfDict.sbr
+\Qycx2\Develop\o\qyPublic\debug\zhFunc.sbr
+\Qycx2\Develop\o\qyPublic\debug\asrMd5.sbr
+\Qycx2\Develop\o\qyPublic\debug\md5c.sbr
+\Qycx2\Develop\o\qyPublic\debug\mddriver.sbr
+\Qycx2\Develop\o\qyPublic\debug\qyModuleFunc.sbr
+\Qycx2\Develop\o\qyPublic\debug\detectNetworkWithSnmp.sbr
+\Qycx2\Develop\o\qyPublic\debug\qnmCommonFunc.sbr
+\Qycx2\Develop\o\qyPublic\debug\qwmCommonFunc.sbr
+\Qycx2\Develop\o\qyPublic\debug\qyCommonFunc5.sbr
+\Qycx2\Develop\o\qyPublic\debug\qyErrFunc.sbr
+\Qycx2\Develop\o\qyPublic\debug\commonfunc.sbr
+\Qycx2\Develop\o\qyPublic\debug\commonFunc1.sbr
+\Qycx2\Develop\o\qyPublic\debug\commonFunc2.sbr
+\Qycx2\Develop\o\qyPublic\debug\commonFunc3.sbr
+\Qycx2\Develop\o\qyPublic\debug\commonSock.sbr
+\Qycx2\Develop\o\qyPublic\debug\commonSql.sbr
+\Qycx2\Develop\o\qyPublic\debug\genericqueue.sbr]
+Creating command line "bscmake.exe @D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4D43.tmp"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+qyPublic.lib - 0 error(s), 0 warning(s)
+<h3>
+--------------------Configuration: qyPublic - Win32 Debug Static--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4D48.tmp" with contents
+[
+/nologo /MTd /W3 /Gm /GX /ZI /Od /I "..\asrInclude" /I "..\qyInclude" /I "..\asrComm\include" /I "..\asrLog\Include" /I "include" /I "contentFilter\include" /I "md5\include" /I "..\qyEncLib\include" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /FR"..\..\o\qyPublic\debugStatic/" /Fp"..\..\o\qyPublic\debugStatic/qyPublic.pch" /YX /Fo"..\..\o\qyPublic\debugStatic/" /Fd"..\..\o\qyPublic\debugStatic/" /FD /GZ /c 
+"E:\Qycx2\Develop\src4\qyPublic\qyLog\qyLogFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyDbLib\qySqlFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyCommonFunc3.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyCommonFunc4.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyCommonFunc7.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyCommonFunc8.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyCommonFunc9.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyCommonObj.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyDebugFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyModifyPeFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyGuiLib\qyGuiFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyDaemonLib\qyGenericDaemon.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qySock\qyCommonSock.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qySock\qyMtSock.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qySock\qySockFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyMfcLib\BTNST.CPP"
+"E:\Qycx2\Develop\src4\qyPublic\qyMfcLib\QyRestrictEdit.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyComm\qyCommFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\cfCfgServ.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\cfCommon.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\cfKeyValue.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\contentfilter.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\EmailProcess.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\keyvalue.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\littlefunction.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\setupCfDict.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\zhFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\md5\asrMd5.c"
+"E:\Qycx2\Develop\src4\qyPublic\md5\md5c.c"
+"E:\Qycx2\Develop\src4\qyPublic\md5\mddriver.c"
+"E:\Qycx2\Develop\src4\qyPublic\qyModuleLib\qyModuleFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic2\detectNetworkWithSnmp.cpp"
+"E:\Qycx2\Develop\src4\qyPublic2\qnmCommonFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic2\qwmCommonFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic2\qyCommonFunc5.cpp"
+"E:\Qycx2\Develop\src4\qyPublic2\qyErrFunc.cpp"
+"E:\Qycx2\Develop\src4\asrPublic\commonfunc.cpp"
+"E:\Qycx2\Develop\src4\asrPublic\commonFunc1.cpp"
+"E:\Qycx2\Develop\src4\asrPublic\commonFunc2.cpp"
+"E:\Qycx2\Develop\src4\asrPublic\commonFunc3.cpp"
+"E:\Qycx2\Develop\src4\asrPublic\commonSock.cpp"
+"E:\Qycx2\Develop\src4\asrPublic\commonSql.cpp"
+"E:\Qycx2\Develop\src4\asrPublic\genericqueue.c"
+]
+Creating command line "cl.exe @D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4D48.tmp" 
+Creating temporary file "D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4D49.tmp" with contents
+[
+/nologo /out:"..\..\debug\lib\qyPublicStatic.lib" 
+\Qycx2\Develop\o\qyPublic\debugStatic\qyLogFunc.obj
+\Qycx2\Develop\o\qyPublic\debugStatic\qySqlFunc.obj
+\Qycx2\Develop\o\qyPublic\debugStatic\qyCommonFunc3.obj
+\Qycx2\Develop\o\qyPublic\debugStatic\qyCommonFunc4.obj
+\Qycx2\Develop\o\qyPublic\debugStatic\qyCommonFunc7.obj
+\Qycx2\Develop\o\qyPublic\debugStatic\qyCommonFunc8.obj
+\Qycx2\Develop\o\qyPublic\debugStatic\qyCommonFunc9.obj
+\Qycx2\Develop\o\qyPublic\debugStatic\qyCommonObj.obj
+\Qycx2\Develop\o\qyPublic\debugStatic\qyDebugFunc.obj
+\Qycx2\Develop\o\qyPublic\debugStatic\qyModifyPeFunc.obj
+\Qycx2\Develop\o\qyPublic\debugStatic\qyGuiFunc.obj
+\Qycx2\Develop\o\qyPublic\debugStatic\qyGenericDaemon.obj
+\Qycx2\Develop\o\qyPublic\debugStatic\qyCommonSock.obj
+\Qycx2\Develop\o\qyPublic\debugStatic\qyMtSock.obj
+\Qycx2\Develop\o\qyPublic\debugStatic\qySockFunc.obj
+\Qycx2\Develop\o\qyPublic\debugStatic\BTNST.OBJ
+\Qycx2\Develop\o\qyPublic\debugStatic\QyRestrictEdit.obj
+\Qycx2\Develop\o\qyPublic\debugStatic\qyCommFunc.obj
+\Qycx2\Develop\o\qyPublic\debugStatic\cfCfgServ.obj
+\Qycx2\Develop\o\qyPublic\debugStatic\cfCommon.obj
+\Qycx2\Develop\o\qyPublic\debugStatic\cfKeyValue.obj
+\Qycx2\Develop\o\qyPublic\debugStatic\contentfilter.obj
+\Qycx2\Develop\o\qyPublic\debugStatic\EmailProcess.obj
+\Qycx2\Develop\o\qyPublic\debugStatic\keyvalue.obj
+\Qycx2\Develop\o\qyPublic\debugStatic\littlefunction.obj
+\Qycx2\Develop\o\qyPublic\debugStatic\setupCfDict.obj
+\Qycx2\Develop\o\qyPublic\debugStatic\zhFunc.obj
+\Qycx2\Develop\o\qyPublic\debugStatic\asrMd5.obj
+\Qycx2\Develop\o\qyPublic\debugStatic\md5c.obj
+\Qycx2\Develop\o\qyPublic\debugStatic\mddriver.obj
+\Qycx2\Develop\o\qyPublic\debugStatic\qyModuleFunc.obj
+\Qycx2\Develop\o\qyPublic\debugStatic\detectNetworkWithSnmp.obj
+\Qycx2\Develop\o\qyPublic\debugStatic\qnmCommonFunc.obj
+\Qycx2\Develop\o\qyPublic\debugStatic\qwmCommonFunc.obj
+\Qycx2\Develop\o\qyPublic\debugStatic\qyCommonFunc5.obj
+\Qycx2\Develop\o\qyPublic\debugStatic\qyErrFunc.obj
+\Qycx2\Develop\o\qyPublic\debugStatic\commonfunc.obj
+\Qycx2\Develop\o\qyPublic\debugStatic\commonFunc1.obj
+\Qycx2\Develop\o\qyPublic\debugStatic\commonFunc2.obj
+\Qycx2\Develop\o\qyPublic\debugStatic\commonFunc3.obj
+\Qycx2\Develop\o\qyPublic\debugStatic\commonSock.obj
+\Qycx2\Develop\o\qyPublic\debugStatic\commonSql.obj
+\Qycx2\Develop\o\qyPublic\debugStatic\genericqueue.obj
+]
+Creating command line "link.exe -lib @D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4D49.tmp"
+<h3>Output Window</h3>
+Compiling...
+qyLogFunc.cpp
+qySqlFunc.cpp
+qyCommonFunc3.cpp
+qyCommonFunc4.cpp
+qyCommonFunc7.cpp
+qyCommonFunc8.cpp
+qyCommonFunc9.cpp
+qyCommonObj.cpp
+qyDebugFunc.cpp
+qyModifyPeFunc.cpp
+qyGuiFunc.cpp
+qyGenericDaemon.cpp
+qyCommonSock.cpp
+qyMtSock.cpp
+qySockFunc.cpp
+BTNST.CPP
+QyRestrictEdit.cpp
+qyCommFunc.cpp
+cfCfgServ.cpp
+cfCommon.cpp
+cfKeyValue.cpp
+contentfilter.cpp
+EmailProcess.cpp
+keyvalue.cpp
+littlefunction.cpp
+setupCfDict.cpp
+zhFunc.cpp
+asrMd5.c
+md5c.c
+mddriver.c
+qyModuleFunc.cpp
+detectNetworkWithSnmp.cpp
+qnmCommonFunc.cpp
+qwmCommonFunc.cpp
+qyCommonFunc5.cpp
+qyErrFunc.cpp
+commonfunc.cpp
+commonFunc1.cpp
+commonFunc2.cpp
+commonFunc3.cpp
+commonSock.cpp
+commonSql.cpp
+genericqueue.c
+Creating library...
+
+
+
+<h3>Results</h3>
+qyPublicStatic.lib - 0 error(s), 0 warning(s)
+<h3>
+--------------------Configuration: qyPublic - Win32 Release Static--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4D6E.tmp" with contents
+[
+/nologo /MT /W3 /GX /O2 /I "..\asrInclude" /I "..\qyInclude" /I "..\asrComm\include" /I "..\asrLog\Include" /I "include" /I "contentFilter\include" /I "md5\include" /I "..\qyEncLib\include" /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_LIB" /FR"..\..\o\qyPublic\ReleaseStatic/" /Fp"..\..\o\qyPublic\ReleaseStatic/qyPublic.pch" /YX /Fo"..\..\o\qyPublic\ReleaseStatic/" /Fd"..\..\o\qyPublic\ReleaseStatic/" /FD /c 
+"E:\Qycx2\Develop\src4\qyPublic\qyLog\qyLogFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyDbLib\qySqlFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyCommonFunc3.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyCommonFunc4.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyCommonFunc7.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyCommonFunc8.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyCommonFunc9.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyCommonObj.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyDebugFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyModifyPeFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyGuiLib\qyGuiFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyDaemonLib\qyGenericDaemon.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qySock\qyCommonSock.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qySock\qyMtSock.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qySock\qySockFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyMfcLib\BTNST.CPP"
+"E:\Qycx2\Develop\src4\qyPublic\qyMfcLib\QyRestrictEdit.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyComm\qyCommFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\cfCfgServ.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\cfCommon.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\cfKeyValue.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\contentfilter.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\EmailProcess.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\keyvalue.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\littlefunction.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\setupCfDict.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\zhFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\md5\asrMd5.c"
+"E:\Qycx2\Develop\src4\qyPublic\md5\md5c.c"
+"E:\Qycx2\Develop\src4\qyPublic\md5\mddriver.c"
+"E:\Qycx2\Develop\src4\qyPublic\qyModuleLib\qyModuleFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic2\detectNetworkWithSnmp.cpp"
+"E:\Qycx2\Develop\src4\qyPublic2\qnmCommonFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic2\qwmCommonFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic2\qyCommonFunc5.cpp"
+"E:\Qycx2\Develop\src4\qyPublic2\qyErrFunc.cpp"
+"E:\Qycx2\Develop\src4\asrPublic\commonfunc.cpp"
+"E:\Qycx2\Develop\src4\asrPublic\commonFunc1.cpp"
+"E:\Qycx2\Develop\src4\asrPublic\commonFunc2.cpp"
+"E:\Qycx2\Develop\src4\asrPublic\commonFunc3.cpp"
+"E:\Qycx2\Develop\src4\asrPublic\commonSock.cpp"
+"E:\Qycx2\Develop\src4\asrPublic\commonSql.cpp"
+"E:\Qycx2\Develop\src4\asrPublic\genericqueue.c"
+]
+Creating command line "cl.exe @D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4D6E.tmp" 
+Creating temporary file "D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4D6F.tmp" with contents
+[
+/nologo /out:"..\..\Release\lib\qyPublicStatic.lib" 
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\qyLogFunc.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\qySqlFunc.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\qyCommonFunc3.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\qyCommonFunc4.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\qyCommonFunc7.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\qyCommonFunc8.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\qyCommonFunc9.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\qyCommonObj.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\qyDebugFunc.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\qyModifyPeFunc.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\qyGuiFunc.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\qyGenericDaemon.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\qyCommonSock.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\qyMtSock.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\qySockFunc.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\BTNST.OBJ
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\QyRestrictEdit.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\qyCommFunc.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\cfCfgServ.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\cfCommon.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\cfKeyValue.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\contentfilter.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\EmailProcess.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\keyvalue.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\littlefunction.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\setupCfDict.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\zhFunc.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\asrMd5.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\md5c.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\mddriver.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\qyModuleFunc.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\detectNetworkWithSnmp.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\qnmCommonFunc.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\qwmCommonFunc.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\qyCommonFunc5.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\qyErrFunc.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\commonfunc.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\commonFunc1.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\commonFunc2.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\commonFunc3.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\commonSock.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\commonSql.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStatic\genericqueue.obj
+]
+Creating command line "link.exe -lib @D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4D6F.tmp"
+<h3>Output Window</h3>
+Compiling...
+qyLogFunc.cpp
+qySqlFunc.cpp
+qyCommonFunc3.cpp
+qyCommonFunc4.cpp
+qyCommonFunc7.cpp
+qyCommonFunc8.cpp
+qyCommonFunc9.cpp
+qyCommonObj.cpp
+qyDebugFunc.cpp
+qyModifyPeFunc.cpp
+qyGuiFunc.cpp
+qyGenericDaemon.cpp
+qyCommonSock.cpp
+qyMtSock.cpp
+qySockFunc.cpp
+BTNST.CPP
+QyRestrictEdit.cpp
+qyCommFunc.cpp
+cfCfgServ.cpp
+cfCommon.cpp
+cfKeyValue.cpp
+contentfilter.cpp
+EmailProcess.cpp
+keyvalue.cpp
+littlefunction.cpp
+setupCfDict.cpp
+zhFunc.cpp
+asrMd5.c
+md5c.c
+mddriver.c
+qyModuleFunc.cpp
+detectNetworkWithSnmp.cpp
+qnmCommonFunc.cpp
+qwmCommonFunc.cpp
+qyCommonFunc5.cpp
+qyErrFunc.cpp
+commonfunc.cpp
+commonFunc1.cpp
+commonFunc2.cpp
+commonFunc3.cpp
+commonSock.cpp
+commonSql.cpp
+genericqueue.c
+Creating library...
+
+
+
+<h3>Results</h3>
+qyPublicStatic.lib - 0 error(s), 0 warning(s)
+<h3>
+--------------------Configuration: qyPublic - Win32 Debug Static No Mfc--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4D94.tmp" with contents
+[
+/nologo /MTd /W3 /Gm /GX /ZI /Od /I "..\asrInclude" /I "..\qyInclude" /I "..\asrComm\include" /I "..\asrLog\Include" /I "include" /I "contentFilter\include" /I "md5\include" /I "..\qyEncLib\include" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /FR"..\..\o\qyPublic\debugStaticNoMfc/" /Fp"..\..\o\qyPublic\debugStaticNoMfc/qyPublic.pch" /YX /Fo"..\..\o\qyPublic\debugStaticNoMfc/" /Fd"..\..\o\qyPublic\debugStaticNoMfc/" /FD /GZ /c 
+"E:\Qycx2\Develop\src4\qyPublic\qyLog\qyLogFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyDbLib\qySqlFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyCommonFunc3.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyCommonFunc4.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyCommonFunc7.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyCommonFunc8.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyCommonFunc9.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyCommonObj.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyDebugFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyModifyPeFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyGuiLib\qyGuiFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyDaemonLib\qyGenericDaemon.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qySock\qyCommonSock.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qySock\qyMtSock.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qySock\qySockFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyMfcLib\BTNST.CPP"
+"E:\Qycx2\Develop\src4\qyPublic\qyMfcLib\QyRestrictEdit.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyComm\qyCommFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\cfCfgServ.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\cfCommon.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\cfKeyValue.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\contentfilter.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\EmailProcess.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\keyvalue.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\littlefunction.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\setupCfDict.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\zhFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\md5\asrMd5.c"
+"E:\Qycx2\Develop\src4\qyPublic\md5\md5c.c"
+"E:\Qycx2\Develop\src4\qyPublic\md5\mddriver.c"
+"E:\Qycx2\Develop\src4\qyPublic\qyModuleLib\qyModuleFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic2\detectNetworkWithSnmp.cpp"
+"E:\Qycx2\Develop\src4\qyPublic2\qnmCommonFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic2\qwmCommonFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic2\qyCommonFunc5.cpp"
+"E:\Qycx2\Develop\src4\qyPublic2\qyErrFunc.cpp"
+"E:\Qycx2\Develop\src4\asrPublic\commonfunc.cpp"
+"E:\Qycx2\Develop\src4\asrPublic\commonFunc1.cpp"
+"E:\Qycx2\Develop\src4\asrPublic\commonFunc2.cpp"
+"E:\Qycx2\Develop\src4\asrPublic\commonFunc3.cpp"
+"E:\Qycx2\Develop\src4\asrPublic\commonSock.cpp"
+"E:\Qycx2\Develop\src4\asrPublic\commonSql.cpp"
+"E:\Qycx2\Develop\src4\asrPublic\genericqueue.c"
+]
+Creating command line "cl.exe @D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4D94.tmp" 
+Creating temporary file "D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4D95.tmp" with contents
+[
+/nologo /out:"..\..\debug\lib\qyPublicStaticNoMfc.lib" 
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\qyLogFunc.obj
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\qySqlFunc.obj
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\qyCommonFunc3.obj
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\qyCommonFunc4.obj
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\qyCommonFunc7.obj
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\qyCommonFunc8.obj
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\qyCommonFunc9.obj
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\qyCommonObj.obj
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\qyDebugFunc.obj
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\qyModifyPeFunc.obj
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\qyGuiFunc.obj
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\qyGenericDaemon.obj
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\qyCommonSock.obj
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\qyMtSock.obj
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\qySockFunc.obj
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\BTNST.OBJ
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\QyRestrictEdit.obj
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\qyCommFunc.obj
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\cfCfgServ.obj
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\cfCommon.obj
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\cfKeyValue.obj
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\contentfilter.obj
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\EmailProcess.obj
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\keyvalue.obj
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\littlefunction.obj
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\setupCfDict.obj
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\zhFunc.obj
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\asrMd5.obj
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\md5c.obj
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\mddriver.obj
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\qyModuleFunc.obj
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\detectNetworkWithSnmp.obj
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\qnmCommonFunc.obj
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\qwmCommonFunc.obj
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\qyCommonFunc5.obj
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\qyErrFunc.obj
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\commonfunc.obj
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\commonFunc1.obj
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\commonFunc2.obj
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\commonFunc3.obj
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\commonSock.obj
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\commonSql.obj
+\Qycx2\Develop\o\qyPublic\debugStaticNoMfc\genericqueue.obj
+]
+Creating command line "link.exe -lib @D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4D95.tmp"
+<h3>Output Window</h3>
+Compiling...
+qyLogFunc.cpp
+qySqlFunc.cpp
+qyCommonFunc3.cpp
+qyCommonFunc4.cpp
+qyCommonFunc7.cpp
+qyCommonFunc8.cpp
+qyCommonFunc9.cpp
+qyCommonObj.cpp
+qyDebugFunc.cpp
+qyModifyPeFunc.cpp
+qyGuiFunc.cpp
+qyGenericDaemon.cpp
+qyCommonSock.cpp
+qyMtSock.cpp
+qySockFunc.cpp
+BTNST.CPP
+QyRestrictEdit.cpp
+qyCommFunc.cpp
+cfCfgServ.cpp
+cfCommon.cpp
+cfKeyValue.cpp
+contentfilter.cpp
+EmailProcess.cpp
+keyvalue.cpp
+littlefunction.cpp
+setupCfDict.cpp
+zhFunc.cpp
+asrMd5.c
+md5c.c
+mddriver.c
+qyModuleFunc.cpp
+detectNetworkWithSnmp.cpp
+qnmCommonFunc.cpp
+qwmCommonFunc.cpp
+qyCommonFunc5.cpp
+qyErrFunc.cpp
+commonfunc.cpp
+commonFunc1.cpp
+commonFunc2.cpp
+commonFunc3.cpp
+commonSock.cpp
+commonSql.cpp
+genericqueue.c
+Creating library...
+
+
+
+<h3>Results</h3>
+qyPublicStaticNoMfc.lib - 0 error(s), 0 warning(s)
+<h3>
+--------------------Configuration: qyPublic - Win32 Release Static No Mfc--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4DBA.tmp" with contents
+[
+/nologo /MT /W3 /GX /O2 /I "..\asrInclude" /I "..\qyInclude" /I "..\asrComm\include" /I "..\asrLog\Include" /I "include" /I "contentFilter\include" /I "md5\include" /I "..\qyEncLib\include" /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_LIB" /FR"..\..\o\qyPublic\ReleaseStaticNoMfc/" /Fp"..\..\o\qyPublic\ReleaseStaticNoMfc/qyPublic.pch" /YX /Fo"..\..\o\qyPublic\ReleaseStaticNoMfc/" /Fd"..\..\o\qyPublic\ReleaseStaticNoMfc/" /FD /c 
+"E:\Qycx2\Develop\src4\qyPublic\qyLog\qyLogFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyDbLib\qySqlFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyCommonFunc3.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyCommonFunc4.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyCommonFunc7.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyCommonFunc8.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyCommonFunc9.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyCommonObj.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyDebugFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyCommon\qyModifyPeFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyGuiLib\qyGuiFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyDaemonLib\qyGenericDaemon.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qySock\qyCommonSock.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qySock\qyMtSock.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qySock\qySockFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyMfcLib\BTNST.CPP"
+"E:\Qycx2\Develop\src4\qyPublic\qyMfcLib\QyRestrictEdit.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\qyComm\qyCommFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\cfCfgServ.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\cfCommon.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\cfKeyValue.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\contentfilter.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\EmailProcess.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\keyvalue.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\littlefunction.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\setupCfDict.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\contentFilter\zhFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic\md5\asrMd5.c"
+"E:\Qycx2\Develop\src4\qyPublic\md5\md5c.c"
+"E:\Qycx2\Develop\src4\qyPublic\md5\mddriver.c"
+"E:\Qycx2\Develop\src4\qyPublic\qyModuleLib\qyModuleFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic2\detectNetworkWithSnmp.cpp"
+"E:\Qycx2\Develop\src4\qyPublic2\qnmCommonFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic2\qwmCommonFunc.cpp"
+"E:\Qycx2\Develop\src4\qyPublic2\qyCommonFunc5.cpp"
+"E:\Qycx2\Develop\src4\qyPublic2\qyErrFunc.cpp"
+"E:\Qycx2\Develop\src4\asrPublic\commonfunc.cpp"
+"E:\Qycx2\Develop\src4\asrPublic\commonFunc1.cpp"
+"E:\Qycx2\Develop\src4\asrPublic\commonFunc2.cpp"
+"E:\Qycx2\Develop\src4\asrPublic\commonFunc3.cpp"
+"E:\Qycx2\Develop\src4\asrPublic\commonSock.cpp"
+"E:\Qycx2\Develop\src4\asrPublic\commonSql.cpp"
+"E:\Qycx2\Develop\src4\asrPublic\genericqueue.c"
+]
+Creating command line "cl.exe @D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4DBA.tmp" 
+Creating temporary file "D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4DBB.tmp" with contents
+[
+/nologo /out:"..\..\Release\lib\qyPublicStaticNoMfc.lib" 
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\qyLogFunc.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\qySqlFunc.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\qyCommonFunc3.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\qyCommonFunc4.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\qyCommonFunc7.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\qyCommonFunc8.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\qyCommonFunc9.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\qyCommonObj.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\qyDebugFunc.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\qyModifyPeFunc.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\qyGuiFunc.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\qyGenericDaemon.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\qyCommonSock.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\qyMtSock.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\qySockFunc.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\BTNST.OBJ
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\QyRestrictEdit.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\qyCommFunc.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\cfCfgServ.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\cfCommon.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\cfKeyValue.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\contentfilter.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\EmailProcess.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\keyvalue.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\littlefunction.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\setupCfDict.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\zhFunc.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\asrMd5.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\md5c.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\mddriver.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\qyModuleFunc.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\detectNetworkWithSnmp.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\qnmCommonFunc.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\qwmCommonFunc.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\qyCommonFunc5.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\qyErrFunc.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\commonfunc.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\commonFunc1.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\commonFunc2.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\commonFunc3.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\commonSock.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\commonSql.obj
+\Qycx2\Develop\o\qyPublic\ReleaseStaticNoMfc\genericqueue.obj
+]
+Creating command line "link.exe -lib @D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4DBB.tmp"
+<h3>Output Window</h3>
+Compiling...
+qyLogFunc.cpp
+qySqlFunc.cpp
+qyCommonFunc3.cpp
+qyCommonFunc4.cpp
+qyCommonFunc7.cpp
+qyCommonFunc8.cpp
+qyCommonFunc9.cpp
+qyCommonObj.cpp
+qyDebugFunc.cpp
+qyModifyPeFunc.cpp
+qyGuiFunc.cpp
+qyGenericDaemon.cpp
+qyCommonSock.cpp
+qyMtSock.cpp
+qySockFunc.cpp
+BTNST.CPP
+QyRestrictEdit.cpp
+qyCommFunc.cpp
+cfCfgServ.cpp
+cfCommon.cpp
+cfKeyValue.cpp
+contentfilter.cpp
+EmailProcess.cpp
+keyvalue.cpp
+littlefunction.cpp
+setupCfDict.cpp
+zhFunc.cpp
+asrMd5.c
+md5c.c
+mddriver.c
+qyModuleFunc.cpp
+detectNetworkWithSnmp.cpp
+qnmCommonFunc.cpp
+qwmCommonFunc.cpp
+qyCommonFunc5.cpp
+qyErrFunc.cpp
+commonfunc.cpp
+commonFunc1.cpp
+commonFunc2.cpp
+commonFunc3.cpp
+commonSock.cpp
+commonSql.cpp
+genericqueue.c
+Creating library...
+
+
+
+<h3>Results</h3>
+qyPublicStaticNoMfc.lib - 0 error(s), 0 warning(s)
+<h3>
+--------------------Configuration: qyPublicForQwm - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4DDE.tmp" with contents
+[
+/nologo /MT /W3 /GX /O2 /I "..\asrInclude" /I "..\qyInclude" /I "..\asrComm\include" /I "..\asrLog\Include" /I "include" /I "contentFilter\include" /I "md5\include" /I "..\qyEncLib\include" /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_LIB" /Fp"..\..\o\qyPublicForQwm\Release/qyPublicForQwm.pch" /YX /Fo"..\..\o\qyPublicForQwm\Release/" /Fd"..\..\o\qyPublicForQwm\Release/" /FD /c 
+"E:\Qycx2\Develop\src4\qyPublic\md5\asrMd5.c"
+"E:\Qycx2\Develop\src4\qyPublic\md5\md5c.c"
+"E:\Qycx2\Develop\src4\qyPublic\md5\mddriver.c"
+"E:\Qycx2\Develop\src4\qyPublic\md5\qwmMd5.c"
+"E:\Qycx2\Develop\src4\qyPublic2\detectNetworkWithSnmp.cpp"
+"E:\Qycx2\Develop\src4\qyPublic2\qwmCommonFunc.cpp"
+]
+Creating command line "cl.exe @D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4DDE.tmp" 
+Creating temporary file "D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4DDF.tmp" with contents
+[
+/nologo /out:"..\..\Release\lib\qyPublicForQwm.lib" 
+\Qycx2\Develop\o\qyPublicForQwm\Release\asrMd5.obj
+\Qycx2\Develop\o\qyPublicForQwm\Release\md5c.obj
+\Qycx2\Develop\o\qyPublicForQwm\Release\mddriver.obj
+\Qycx2\Develop\o\qyPublicForQwm\Release\qwmMd5.obj
+\Qycx2\Develop\o\qyPublicForQwm\Release\detectNetworkWithSnmp.obj
+\Qycx2\Develop\o\qyPublicForQwm\Release\qwmCommonFunc.obj
+]
+Creating command line "link.exe -lib @D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4DDF.tmp"
+<h3>Output Window</h3>
+Compiling...
+asrMd5.c
+md5c.c
+mddriver.c
+qwmMd5.c
+detectNetworkWithSnmp.cpp
+qwmCommonFunc.cpp
+Creating library...
+
+
+
+<h3>Results</h3>
+qyPublicForQwm.lib - 0 error(s), 0 warning(s)
+<h3>
+--------------------Configuration: qyPublicForQwm - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4DE4.tmp" with contents
+[
+/nologo /MTd /W3 /Gm /GX /ZI /Od /I "..\asrInclude" /I "..\qyInclude" /I "..\asrComm\include" /I "..\asrLog\Include" /I "include" /I "contentFilter\include" /I "md5\include" /I "..\qyEncLib\include" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /FR"..\..\o\qyPublicForQwm\debug/" /Fp"..\..\o\qyPublicForQwm\debug/qyPublicForQwm.pch" /YX /Fo"..\..\o\qyPublicForQwm\debug/" /Fd"..\..\o\qyPublicForQwm\debug/" /FD /c 
+"E:\Qycx2\Develop\src4\qyPublic\md5\asrMd5.c"
+"E:\Qycx2\Develop\src4\qyPublic\md5\md5c.c"
+"E:\Qycx2\Develop\src4\qyPublic\md5\mddriver.c"
+"E:\Qycx2\Develop\src4\qyPublic\md5\qwmMd5.c"
+"E:\Qycx2\Develop\src4\qyPublic2\detectNetworkWithSnmp.cpp"
+"E:\Qycx2\Develop\src4\qyPublic2\qwmCommonFunc.cpp"
+]
+Creating command line "cl.exe @D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4DE4.tmp" 
+Creating temporary file "D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4DE5.tmp" with contents
+[
+/nologo /out:"..\..\debug\lib\qyPublicForQwm.lib" 
+\Qycx2\Develop\o\qyPublicForQwm\debug\asrMd5.obj
+\Qycx2\Develop\o\qyPublicForQwm\debug\md5c.obj
+\Qycx2\Develop\o\qyPublicForQwm\debug\mddriver.obj
+\Qycx2\Develop\o\qyPublicForQwm\debug\qwmMd5.obj
+\Qycx2\Develop\o\qyPublicForQwm\debug\detectNetworkWithSnmp.obj
+\Qycx2\Develop\o\qyPublicForQwm\debug\qwmCommonFunc.obj
+]
+Creating command line "link.exe -lib @D:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4DE5.tmp"
+<h3>Output Window</h3>
+Compiling...
+asrMd5.c
+md5c.c
+mddriver.c
+qwmMd5.c
+detectNetworkWithSnmp.cpp
+qwmCommonFunc.cpp
+Creating library...
+
+
+
+<h3>Results</h3>
+qyPublicForQwm.lib - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

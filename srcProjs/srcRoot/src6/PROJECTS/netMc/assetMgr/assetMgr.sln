@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "assetMgrModule", "assetMgrModule\assetMgrModule.vcproj", "{126D68F4-1D17-4D37-AA00-F41DF5D83F4C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qySnmpHelp", "..\..\..\net-snmp-5.0.9\win32\qySnmpHelp\qySnmpHelp.vcproj", "{A5CAA05B-6605-46B1-A121-F098CFF4FD40}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{126D68F4-1D17-4D37-AA00-F41DF5D83F4C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{126D68F4-1D17-4D37-AA00-F41DF5D83F4C}.Debug|Win32.Build.0 = Debug|Win32
+		{126D68F4-1D17-4D37-AA00-F41DF5D83F4C}.Release|Win32.ActiveCfg = Release|Win32
+		{126D68F4-1D17-4D37-AA00-F41DF5D83F4C}.Release|Win32.Build.0 = Release|Win32
+		{A5CAA05B-6605-46B1-A121-F098CFF4FD40}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A5CAA05B-6605-46B1-A121-F098CFF4FD40}.Debug|Win32.Build.0 = Debug|Win32
+		{A5CAA05B-6605-46B1-A121-F098CFF4FD40}.Release|Win32.ActiveCfg = Release|Win32
+		{A5CAA05B-6605-46B1-A121-F098CFF4FD40}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

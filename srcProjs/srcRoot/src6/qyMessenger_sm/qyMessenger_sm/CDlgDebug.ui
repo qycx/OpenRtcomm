@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CDlgDebugClass</class>
+ <widget class="QDialog" name="CDlgDebugClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>446</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>CDlgDebug</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QWidget" name="widget" native="true">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="meeting_lab">
+        <property name="text">
+         <string>11111111111</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="meetingCompere">
+        <property name="text">
+         <string>222222222222222</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="meetingConvener">
+        <property name="text">
+         <string>会议召集人</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="meetingType">
+        <property name="text">
+         <string>33333333333333</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="localIpStr">
+        <property name="text">
+         <string>444444444</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="str1stMcu">
+        <property name="text">
+         <string>5555555555555555</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="str2ndMcu">
+        <property name="text">
+         <string>777777777777</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="confMcu">
+        <property name="text">
+         <string>999999999999999999</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="meetingId">
+        <property name="text">
+         <string>6666666666666666</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="diskSize">
+        <property name="text">
+         <string>88888888888888888</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="io">
+        <property name="text">
+         <string>io</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="packet">
+        <property name="text">
+         <string>丢包率</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="version">
+        <property name="text">
+         <string>版本</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="isNv">
+        <property name="text">
+         <string>编解码方式</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="meetingStartTime">
+        <property name="text">
+         <string>1010010101010</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="meetingDurationInMin">
+        <property name="text">
+         <string>12121212121</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="idInfo">
+        <property name="text">
+         <string>1313131313131</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="commEnc">
+        <property name="text">
+         <string>14141414144141</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="fps">
+        <property name="text">
+         <string>1515151515</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="meeting_item3">
+        <property name="text">
+         <string>1616161616</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="meeting_lab2">
+        <property name="text">
+         <string>171717171717</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="meeting_item2">
+        <property name="text">
+         <string>18181818118</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="meeting_item1">
+        <property name="text">
+         <string>1919191919</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="audioDeviceIn">
+        <property name="text">
+         <string>已选麦克风设备</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="audioDeviceOut">
+        <property name="text">
+         <string>已选喇叭设备</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
