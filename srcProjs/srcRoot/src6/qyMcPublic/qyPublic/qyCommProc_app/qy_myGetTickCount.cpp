@@ -1,4 +1,4 @@
-
+﻿
 
 #include	"stdafx.h"
 
@@ -49,7 +49,8 @@ extern "C"  __declspec(dllexport) unsigned  __int64  get_g_tickCnt0_us()
 
 
 //
-extern  "C"  __declspec(  dllexport  )  unsigned  __int64  myGetMicroseconds()
+#if  0
+extern  "C"  __declspec(  dllexport  )  unsigned  __int64  ii_myGetMicroseconds()
 {
 	if(!g_tFreq.QuadPart  )  return  0;
 	LARGE_INTEGER t1;
@@ -59,7 +60,23 @@ extern  "C"  __declspec(  dllexport  )  unsigned  __int64  myGetMicroseconds()
 
 	return elapseInMs  +  g_tickCnt0_us;
 }
+#endif 
 
+
+
+extern "C" __declspec(dllexport) unsigned __int64 myGetMicroseconds()
+{
+	FILETIME ft;
+	GetSystemTimePreciseAsFileTime(&ft);
+
+	unsigned __int64 fileTime =
+		((unsigned __int64)ft.dwHighDateTime << 32) |
+		ft.dwLowDateTime;
+
+	// FILETIME: 从 1601-01-01 UTC 开始，单位 100ns
+	// Unix:     从 1970-01-01 UTC 开始，单位 us
+	return (fileTime - 116444736000000000ULL) / 10;
+}
 
  extern  "C"  __declspec(  dllexport  )  DWORD  myGetTickCount(  CTX_qm_thread  *  pCtx  )
  {

@@ -69,7 +69,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin\</OutDir>
+    <OutDir>..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin\</OutDir>
     <IntDir>..\..\..\..\..\..\VS2012\$(Platform)\o\qyMessenger_ts_noMfc\$(Configuration)\</IntDir>
     <IncludePath>$(IncludePath);$(DXSDK_DIR)include</IncludePath>
     <TargetName>qyMessenger_mfc</TargetName>
@@ -87,7 +87,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin\</OutDir>
+    <OutDir>..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin\</OutDir>
     <IntDir>..\..\..\..\..\..\VS2012\$(Platform)\o\qyMessenger_ts_noMfc\$(Configuration)\</IntDir>
     <IncludePath>$(IncludePath);$(DXSDK_DIR)include</IncludePath>
     <TargetName>qyMessenger_mfc</TargetName>
@@ -115,7 +115,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\lib;..\..\..\..\..\aac\lib_$(Platform);..\..\..\..\..\ffmpegLibs\$(Platform)\bin;..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\lib;..\..\..\..\..\aac\lib_$(Platform);..\..\..\..\..\ffmpegLibs\$(Platform)\bin;..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>libfdk-aacd.lib;comctl32.lib;dxgi.lib;qyBaseLibNoMfc.lib;qyEncLibNoMfc.lib;ws2_32.lib;winmm.lib;vfw32.lib;strmiids.lib;Dmoguids.lib;msdmo.lib;wmcodecdspuuid.lib;dsound.lib;Msacm32.lib;help_webRtc.lib;msimg32.lib;avcodec.lib;avformat.lib;avutil.lib;swresample.lib;avfilter.lib;swscale.lib;..\..\..\..\..\VS2012\x64\$(Configuration)\bin\nvHelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -151,7 +151,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\lib;..\..\..\..\..\aac\lib_$(Platform);..\..\..\..\..\ffmpegLibs\$(Platform)\bin;..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\lib;..\..\..\..\..\aac\lib_$(Platform);..\..\..\..\..\ffmpegLibs\$(Platform)\bin;..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>libfdk-aacd.lib;comctl32.lib;dxgi.lib;qyBaseLibNoMfc.lib;qyEncLibNoMfc.lib;ws2_32.lib;winmm.lib;vfw32.lib;strmiids.lib;Dmoguids.lib;msdmo.lib;wmcodecdspuuid.lib;dsound.lib;Msacm32.lib;help_webRtc.lib;msimg32.lib;avcodec.lib;avformat.lib;avutil.lib;swresample.lib;avfilter.lib;swscale.lib;..\..\..\..\..\VS2012\x64\$(Configuration)\bin\nvHelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>

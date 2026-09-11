@@ -155,18 +155,18 @@ atbool  get_bCfgVal(TCHAR* smCfgFile, TCHAR* cfgName)
 //
 int waitFor_dbg_service(char  *  hint)
 {
-	if (!hint)  hint = ("");
+	if (!hint)  hint = (char*)("");
 
 #ifdef  _DEBUG
 	int i;
 	int max_i = 10000;
 
 	//
-	debugLog("wait for dbg_service to be true");
+	debugLog((char*)"wait for dbg_service to be true");
 	//
 	for (i = 0; i < max_i; i++) {
 		int  iVal;
-		iVal = get_iCfgVal(_T("d:\\qycx\\mgr_smCfg.ini"), _T("dbg_service"));
+		iVal = get_iCfgVal((TCHAR*)_T("d:\\qycx\\mgr_smCfg.ini"), (TCHAR*)_T("dbg_service"));
 		if (iVal) {
 			break;
 		}
@@ -174,7 +174,7 @@ int waitFor_dbg_service(char  *  hint)
 		Sleep(1000);
 		continue;
 	}
-	debugLog("wait finished. i %d. l169", i);
+	debugLog((char*)"wait finished. i %d. l169", i);
 #endif
 
 	//

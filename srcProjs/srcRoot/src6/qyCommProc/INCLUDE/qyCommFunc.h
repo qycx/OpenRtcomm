@@ -31,9 +31,12 @@ int  qyTellService(  unsigned  int  serviceId,  char * version,  void  *  pCommE
 int  qyAcceptService(  QY_SOCK  * pSock,  SOCK_TIMEOUT  *  pTo,  char  *  startTime,  QY_COMM_SESSION  *  pSession  );
 int  qyRecvReq(  QY_COMM_SESSION  * pSession,  QY_SOCK  *  pSock,  SOCK_TIMEOUT  *  pTo,  QY_COMM_REQ  *  pReq,  char  *  dataBuf,  unsigned  int  bufSize  );
 int  qyRecvResp(  QY_COMM_SESSION  *  pSession,  QY_SOCK  *  pSock,  SOCK_TIMEOUT  *  pTo,  QY_COMM_RESP * pResp,  char  *  dataBuf,  unsigned  int  bufSize  );
-int  qySendReq(  QY_COMM_SESSION  *  pSession,  QY_SOCK  *  pSock,  SOCK_TIMEOUT  *  pTo,  unsigned  short  cmdCode,  char  *  data,  unsigned  int  dataLen  );
-int  qySendResp(  QY_COMM_SESSION  *  pSession,  QY_SOCK  *  pSock,  SOCK_TIMEOUT  *  pTo,  unsigned  short  respCode,  char  *  data,  unsigned  int  dataLen  );
+//
+int  qySendReq1(  QY_COMM_SESSION  *  pSession,  QY_SOCK  *  pSock,  SOCK_TIMEOUT  *  pTo,  unsigned  short  cmdCode,  char  *  data,  unsigned  int  dataLen  );
+int  qySendResp1(  QY_COMM_SESSION  *  pSession,  QY_SOCK  *  pSock,  SOCK_TIMEOUT  *  pTo,  unsigned  short  respCode,  char  *  data,  unsigned  int  dataLen  );
 
+
+//
 #ifdef  __cplusplus
   }
 #endif

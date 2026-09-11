@@ -131,7 +131,7 @@ __declspec(dllexport)  BOOL  dlgTalk_bQuitDlg(HWND  hDlgTalk,void * pm_var_param
 				}
 			}
 			//
-			setSaveMsgFlg(  bEnable  );
+			setSaveMsgFlg(  pProcInfo, bEnable  );
 		}
 
 		//  2011/03/07. 要把instantAssistant放在这里，因为如果resourceWnd或者会议窗口先关闭时，instantAssistant作为resourceWnd的子窗口将失效，所以就关不了了，会造成内存泄露。

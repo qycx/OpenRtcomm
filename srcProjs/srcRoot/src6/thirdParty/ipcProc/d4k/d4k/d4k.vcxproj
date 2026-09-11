@@ -45,12 +45,12 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>..\..\..\..\..\..\..\vs2012\x64\$(Configuration)\bin\</OutDir>
+    <OutDir>..\..\..\..\..\..\..\..\vs2012\x64\$(Configuration)\bin\</OutDir>
     <IntDir>..\..\..\..\..\..\..\..\vs2012\$(Platform)\o\d4k\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>..\..\..\..\..\..\..\vs2012\x64\$(Configuration)\bin\</OutDir>
+    <OutDir>..\..\..\..\..\..\..\..\vs2012\x64\$(Configuration)\bin\</OutDir>
     <IntDir>..\..\..\..\..\..\..\..\vs2012\$(Platform)\o\d4k\$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

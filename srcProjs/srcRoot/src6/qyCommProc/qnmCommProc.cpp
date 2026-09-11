@@ -2423,7 +2423,7 @@ errLabel:
 
 	 if  (  bQySockOpen(  pSock  )  )  {
 		 if  (  isRcOk(  pSession->usLastRespCode_i  )  ||  pSession->usLastRespCode_i  ==  CONST_qyRc_user  )  {
-			 if  (  !qySendReq(  pSession,  pSock,  pTo,  CONST_qyCmd_end,  NULL,  0  )  )  {
+			 if  (  !qySendReq1(  pSession,  pSock,  pTo,  CONST_qyCmd_end,  NULL,  0  )  )  {
 				qyRecvResp(  pSession,  pSock,  pTo,  &tmpResp,  NULL,  0  );
 			 }
 		 }

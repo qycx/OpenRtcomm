@@ -71,7 +71,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>..\..\..\..\..\VS2012\$(Platform)\\$(Configuration)\bin\</OutDir>
+    <OutDir>..\..\..\..\..\..\VS2012\$(Platform)\\$(Configuration)\bin\</OutDir>
     <IntDir>..\..\..\..\..\..\VS2012\$(Platform)\o\$(ProjectName)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -79,7 +79,7 @@
     <IntDir>..\..\..\..\..\..\VS2012\$(Platform)\o\$(ProjectName)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>..\..\..\..\..\VS2012\$(Platform)\\$(Configuration)\bin\</OutDir>
+    <OutDir>..\..\..\..\..\..\VS2012\$(Platform)\\$(Configuration)\bin\</OutDir>
     <IntDir>..\..\..\..\..\..\VS2012\$(Platform)\o\$(ProjectName)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -173,9 +173,6 @@
     </ProjectReference>
     <ProjectReference Include="..\..\..\atProjs\openRtComm\srcProjs\srcRoot\src6\qyMcPublic\qyPublic\qyPublic2012.vcxproj">
       <Project>{aab8de7c-7262-461b-8c10-ee4fa4b1511e}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\atProjs\openRtComm\srcProjs\srcRoot\src6\qyMcPublic\qyShowInfo\qyShowInfo2012.vcxproj">
-      <Project>{32fc6695-1451-47bf-a185-41c2d3d80bcb}</Project>
     </ProjectReference>
     <ProjectReference Include="..\..\atDevelop\srcProjs\srcRoot\src6\qyMcPublic\qyPublic\qyPublic2012.vcxproj">
       <Project>{aab8de7c-7262-461b-8c10-ee4fa4b1511e}</Project>

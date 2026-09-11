@@ -28,56 +28,57 @@ int  getCntFromVarVal(  void  *  pCDBVariant  );
 }
 #endif
 
-#define		CONST_dbType_null						0
-#define		CONST_dbType_access						1
-#define		CONST_dbType_sqlServer					2
-#define		CONST_dbType_oracle						3
-#define		CONST_dbType_mySql						4
+#define		CONST_dbType_null							0
+#define		CONST_dbType_access							1
+#define		CONST_dbType_sqlServer						2
+#define		CONST_dbType_oracle							3
+#define		CONST_dbType_mySql							4
 //
-#define		CONST_dbType_mariaDb					5
+#define		CONST_dbType_mariaDb						5
 
 //
-#define		CONST_dbType_myDb						50			//  2012/07/12
+#define		CONST_dbType_myDb							50			//  2012/07/12
 //
-#define		CONST_dbType_oscar						60
+#define		CONST_dbType_oscar							60
 
 
 //
-#define		CONST_dbTypeName_myDb					"myDb"		//  2013/02/20
-#define		CONST_dbTypeName_oracle					"Oracle"
-#define		CONST_dbTypeName_sqlServer				"Sql Server"
-#define		CONST_dbTypeName_access					"Access"
-#define		CONST_dbTypeName_mySql					"MySql"
+#define		CONST_dbTypeName_myDb						"myDb"		//  2013/02/20
+#define		CONST_dbTypeName_oracle						"Oracle"
+#define		CONST_dbTypeName_sqlServer					"Sql Server"
+#define		CONST_dbTypeName_access						"Access"
+#define		CONST_dbTypeName_mySql						"MySql"
 //
-#define		CONST_dbTypeName_mariaDb				"MariaDB"
+#define		CONST_dbTypeName_mariaDb					"MariaDB"
 //
-#define		CONST_dbTypeName_oscar					"OSCAR"
+#define		CONST_dbTypeName_oscar						"OSCAR"
 
 //
-#define		CONST_dbDriver_access					"{Microsoft Access Driver (*.mdb)}"
-#define		CONST_dbDriver_sqlServer				"{SQL Server}"
-#define		CONST_dbDriver_oracle					"{Microsoft ODBC for Oracle}"
+#define		CONST_dbDriver_access						"{Microsoft Access Driver (*.mdb)}"
+#define		CONST_dbDriver_sqlServer					"{SQL Server}"
+#define		CONST_dbDriver_oracle						"{Microsoft ODBC for Oracle}"
 
 //
 //#define		CONST_dbDriver_mySql8					"{MySQL ODBC 8.0 Unicode Driver}"
- #define		CONST_dbDriver_mySql8					"{MySQL ODBC 26.7 Unicode Driver}"
+// #define		CONST_dbDriver_mySql8					"{MySQL ODBC 26.7 Unicode Driver}"
 //
 //#define		CONST_dbDriver_mySql					"{MySQL ODBC 9.1 Unicode Driver}"
-#define		CONST_dbDriver_mySql					"{MySQL ODBC 9.5 Unicode Driver}"
+#define		CONST_dbDriver_mySql9_5						"{MySQL ODBC 9.5 Unicode Driver}"
+
 
 //
-#define		CONST_dbDriver_mariaDb					"{MARIADB ODBC 3.1 Driver}"
+#define		CONST_dbDriver_mariaDb						"{MARIADB ODBC 3.1 Driver}"
 //
-#define		CONST_dbDriver_oscar					"{OSCAR ODBC DRIVER}"
+#define		CONST_dbDriver_oscar						"{OSCAR ODBC DRIVER}"
 //#define		CONST_dbDriver_oscar					"{OSCAR ODBCW DRIVER}"
 
 //
-#define		CONST_qnmDbUid_access					"admin"
-#define		CONST_qnmDbPwd_access					"lxdkgj!2004"
+#define		CONST_qnmDbUid_access						"admin"
+#define		CONST_qnmDbPwd_access						"lxdkgj!2004"
 
 //
-#define		CONST_qnmDbUid_oracle					"scott"
-#define		CONST_qnmDbPwd_oracle					"tiger"
+#define		CONST_qnmDbUid_oracle						"scott"
+#define		CONST_qnmDbPwd_oracle						"tiger"
 
 
 extern  QY_DMITEM  CONST_dbTypeTable[];

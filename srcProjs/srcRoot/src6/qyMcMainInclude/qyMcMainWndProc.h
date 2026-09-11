@@ -78,6 +78,8 @@ LRESULT mainWnd_OnQyGraphNotify_mediaDevice(  QY_MC  * pQyMc,  HWND  hMainWnd,  
 //int  mainWnd_OnQyShowMainWnd(  HWND  hMainWnd  );
 
 int  dlgAbout_OnInitDialog_qyMc(  HWND  hDlg,  int  iIDD  );
+int  dlgAbout_set_ds(TCHAR* dsStr, HWND  hDlg, int  iIDD);
+
 
 BOOL  bViewActiveImObjList(  );
 

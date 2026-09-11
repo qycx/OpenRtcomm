@@ -210,8 +210,12 @@ errLabel:
  BOOL bChkQyMcEnv_db(  QY_MC  *  pQyMc  )
 {
 	//
-	qyShowInfo1(  CONST_qyShowType_qwmComm,  0,  (char*)(  ""  ),  _T(  "Gui"  ),  0,  _T(  ""  ),  _T(  ""  ),  _T(  "bChkQyMcEnv_db, bUseDb %d, dbType %s"  ),  bUseDb(  ),  qyGetDesByType1(  CONST_dbTypeTable,  pQyMc->cfg.db.iDbType  )  );
+	 TCHAR						tBuf[512 + 1] = _T("");
+	 _sntprintf(tBuf,mycountof(tBuf),  _T(  "bChkQyMcEnv_db, bUseDb %d, dbType %s"  ),  bUseDb(  ),  qyGetDesByType1(  CONST_dbTypeTable,  pQyMc->cfg.db.iDbType  )  );
+	 showInfo_open(0, 0, 0, tBuf);
+	 tBuf[0] = 0;
 
+	 //
 #ifdef  __NOTSUPPORT_DB__
 		return  TRUE;
 #else
@@ -220,7 +224,6 @@ errLabel:
 	 DWORD						dwMajor, dwMinor;
 	 QY_SYSTEMINFO_RCD			systemInfo;
 	 BOOL						bDbVerOk							=	FALSE;
-	 TCHAR						tBuf[512  +  1]						=	_T(  ""  );
 	 TCHAR						tmplFile[MAX_PATH  +  1]			=	_T(  ""  );     
 	 BOOL						bStartToChkDbVer					=	FALSE;
 	 //

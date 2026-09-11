@@ -670,6 +670,15 @@ __declspec(dllexport)  int  parseHgCmd_servReqX(void* p0, short  sCmd, char* dat
 				}
 				break;
 
+				//
+			case  CONST_hgType_localIp:
+				safeStrnCpy(pStart, buf, min(mycountof(buf), len + 1));
+				safeStrnCpy(buf, pParam->localIp_buf, mycountof(pParam->localIp_buf));				  
+				break;
+				//
+			case  CONST_hgType_svcId:
+				pParam->iSvcId = atol(pStart);
+				break;
 
 				//
 			default:

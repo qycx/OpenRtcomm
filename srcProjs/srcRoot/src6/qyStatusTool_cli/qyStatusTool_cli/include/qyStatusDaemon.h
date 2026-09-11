@@ -48,7 +48,7 @@ public:
 
 	//
 	CtxFw_and	ctxFw_and;
-	MtSockDbgStatusInfo		mtSockDbgStatusInfo;
+	MtSockDbgStatus		mtSockDbgStatusInfo;
 
 
 	//

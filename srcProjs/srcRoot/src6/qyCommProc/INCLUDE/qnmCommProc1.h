@@ -89,7 +89,11 @@ int  qyEnumModulesProc(  void  *  modulesParam,  LPCWSTR  funcName,  void  *  p1
 //  int  getObjIndex(  QY_OBJ_DB  *  pObjDb,  int  iObjId,  QY_OBJINDEX_RCD  *  pObjIndex  );
 
 //
-bool  bUseMySql8();
+//bool  bUseMySql8();
+bool  bGetMySqlVersion(char* ver, int cnt);
+bool  bGetMySqlDrv(TCHAR * drvStr, int cntof_drvStr);
+
+
 
 //
 bool  bUse_decD3d_nv(TCHAR* smCfgFile);

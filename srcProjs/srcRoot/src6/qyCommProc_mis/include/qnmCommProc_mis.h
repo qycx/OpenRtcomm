@@ -4108,6 +4108,9 @@ struct  __anHgData_t {
 				 unsigned  char										ucbResp;
 
 				 //
+				 int												iSvcId;
+
+				 //
 				 short												sHgCmd;
 
 				 //
@@ -4682,9 +4685,12 @@ typedef  struct  __qmdStatus_channelMem_t							{
 
 
 //
-#define		CONST_iDaemonStatusType_null							0
-#define		CONST_iDaemonStatusType_msgr							1
-#define		CONST_iDaemonStatusType_channel							2
+#define		CONST_iDaemonStatus_subType_null						0
+#define		CONST_iDaemonStatus_subType_msgr						1
+#define		CONST_iDaemonStatus_subType_channel						2
+#define		CONST_iDaemonStatus_subType_ds							3
+
+
 
 //
 typedef  struct  __qmdStatus_t										{
@@ -4717,6 +4723,9 @@ typedef  struct  __qmdStatus_t										{
 					 struct											{
 						 QMD_status_channelMem						mems[256];
 					 }												channel;
+					 struct {
+						 char  dsStr[128];
+					 }												ds;
 				 }													u;
 
 }		 QMD_status;

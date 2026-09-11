@@ -1181,6 +1181,8 @@ typedef  struct  __qnmCommAuthInfo_t							{
 #define		CONST_qnmCfgId_caGwCfg									(  CONST_qnmCfgId_base_common  +  4504  )
 //
 #define		CONST_qnmCfgId_hg_cliData								(  CONST_qnmCfgId_base_common  +  4505  )				//
+//
+#define		CONST_qnmCfgId_iSvcId									(  CONST_qnmCfgId_base_common  +  4506  )				//  2026/09/08
 
 
 //
@@ -1311,6 +1313,9 @@ typedef  struct  __qnmCommAuthInfo_t							{
 #define		CONST_qnmCfgId_netStats_total							(  CONST_qnmCfgId_debug_base  +  201  )
 #define		CONST_qnmCfgId_qmdStatus_msgrMem						(  CONST_qnmCfgId_debug_base  +  202  )
 #define		CONST_qnmCfgId_qmdStatus_channelMem						(  CONST_qnmCfgId_debug_base  +  203  )
+//
+#define		CONST_anCfgId_ds										(  CONST_qnmCfgId_debug_base  +  204  )
+
 //
 #define		CONST_qnmCfgId_showInfoFlgs								(  CONST_qnmCfgId_debug_base  +  210  )		//  2015/09/01
 #define		CONST_qnmCfgId_debugStatusInfo							(  CONST_qnmCfgId_debug_base  +  211  )

@@ -6,7 +6,13 @@
 #define  __hgCommProc_h__  //  {
 
 //
-#define		CONST_hgCmd_sxrz_get
+//
+#define		MAX_hgs		5
+
+
+
+//
+//#define		CONST_hgCmd_sxrz_get
 
 //  cli->serv
 #define		CONST_hgCmd_getKey									1000
@@ -282,6 +288,11 @@
 //
 #define		CONST_hgType_markStr								250
 
+//
+#define		CONST_hgType_localIp								270
+
+//
+#define		CONST_hgType_svcId									275
 
 
 //
@@ -612,7 +623,7 @@ typedef  struct  __param_hgCmd_servReqX_t {
 	//
 	QY_MESSENGER_ID			idInfo_grp;
 
-	TCHAR						meetingName[128];
+	TCHAR					meetingName[128];
 
 	//
 	int						iHz;				//  画质
@@ -621,30 +632,27 @@ typedef  struct  __param_hgCmd_servReqX_t {
 	int						bitrateInKbps_dl;
 	int						bitrateInKbps_ul;
 	//s
-	int  iNSpeakers;
+	int						iNSpeakers;
 
 	//
-	int							iTaskType;
-	int							shareDevice_grp_index;
+	int						iTaskType;
+	int						shareDevice_grp_index;
 	//
-	unsigned  short				grp_usIndex;
-
-	//
-	unsigned  short									conf_usFps;											//  指定会议帧速. 发给mcu.
-	//
-	unsigned  char										conf_ucb100k;										//  是否使用100k模式。不是只有100k.是指必须严格限制流量，支持最小的带宽模式。要发给所有的客户端
+	unsigned  short			grp_usIndex;
 
 	//
-	unsigned  short									usConfType;
+	unsigned  short			conf_usFps;											//  指定会议帧速. 发给mcu.
+	//
+	unsigned  char			conf_ucb100k;										//  是否使用100k模式。不是只有100k.是指必须严格限制流量，支持最小的带宽模式。要发给所有的客户端
 
 	//
-	CONF_hg_info				hgInfo;
-
-
-
+	unsigned  short			usConfType;
 
 	//
-	bool						isDisable;
+	CONF_hg_info			hgInfo;
+
+	//
+	bool					isDisable;
 
 	//
 	int						iMaxElapseInDay;
@@ -652,6 +660,11 @@ typedef  struct  __param_hgCmd_servReqX_t {
 
 	//
 	unsigned  short			usOp;
+
+	//
+	char					localIp_buf[32];
+	int						iSvcId;
+
 
 	//
 	struct {

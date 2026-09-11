@@ -64,12 +64,12 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <OutDir>..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin\.\</OutDir>
+    <OutDir>..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin\.\</OutDir>
     <IntDir>..\..\..\..\..\..\VS2012\$(Platform)\o\qyMessenger_sm\$(Configuration)\</IntDir>
     <TargetName>qyMessenger_sm</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
-    <OutDir>..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin\.\</OutDir>
+    <OutDir>..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin\.\</OutDir>
     <IntDir>..\..\..\..\..\..\VS2012\$(Platform)\o\qyMessenger_sm\$(Configuration)\</IntDir>
     <TargetName>qyMessenger_sm</TargetName>
   </PropertyGroup>
@@ -80,7 +80,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\lib;..\..\..\..\..\aac\lib_$(Platform);..\..\..\..\..\ffmpegLibs\$(Platform)\bin;C:\Program Files (x86)\Visual Leak Detector\lib\Win64;..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\lib;..\..\..\..\..\aac\lib_$(Platform);..\..\..\..\..\ffmpegLibs\$(Platform)\bin;C:\Program Files (x86)\Visual Leak Detector\lib\Win64;..\..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>libfdk-aacd.lib;comctl32.lib;qyBaseLibNoMfc.lib;qyEncLibNoMfc.lib;ws2_32.lib;winmm.lib;vfw32.lib;strmiids.lib;Dmoguids.lib;msdmo.lib;wmcodecdspuuid.lib;dsound.lib;Msacm32.lib;help_webRtc.lib;msimg32.lib;avcodec.lib;avformat.lib;avutil.lib;swresample.lib;avfilter.lib;swscale.lib;dxgi.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Manifest>
@@ -108,7 +108,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\lib;..\..\..\..\..\aac\lib_$(Platform);..\..\..\..\..\ffmpegLibs\$(Platform)\bin;C:\Program Files (x86)\Visual Leak Detector\lib\Win64;..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\lib;..\..\..\..\..\aac\lib_$(Platform);..\..\..\..\..\ffmpegLibs\$(Platform)\bin;C:\Program Files (x86)\Visual Leak Detector\lib\Win64;..\..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>libfdk-aacd.lib;comctl32.lib;qyBaseLibNoMfc.lib;qyEncLibNoMfc.lib;ws2_32.lib;winmm.lib;vfw32.lib;strmiids.lib;Dmoguids.lib;msdmo.lib;wmcodecdspuuid.lib;dsound.lib;Msacm32.lib;help_webRtc.lib;msimg32.lib;avcodec.lib;avformat.lib;avutil.lib;swresample.lib;avfilter.lib;swscale.lib;dxgi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <GenerateMapFile>true</GenerateMapFile>
     </Link>
@@ -795,14 +795,11 @@
     <None Include="cpp.hint" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\..\..\atProjs_priv\ancExts\ancPktProcess\ancPktProcess.vcxproj">
-      <Project>{68583623-a874-43fe-aefb-1dea1607c2e0}</Project>
-    </ProjectReference>
     <ProjectReference Include="..\..\ancProjs\ancPktProcess\ancPktProcess.vcxproj">
       <Project>{6bb53c59-ccd7-4cb0-84a3-57aa575afc1f}</Project>
     </ProjectReference>
     <ProjectReference Include="..\..\ancProjs\module_lyra\module_lyra.vcxproj">
-      <Project>{ac8c8a62-0f38-49bc-b7eb-dc58303df54a}</Project>
+      <Project>{fd162f18-00ca-4a03-adb9-bd4b825e6cab}</Project>
     </ProjectReference>
     <ProjectReference Include="..\..\ancProjs\nvHelp\nvHelp.vcxproj">
       <Project>{6be706e1-5cc8-4a25-882d-99fe2705ba0f}</Project>
@@ -815,9 +812,6 @@
     </ProjectReference>
     <ProjectReference Include="..\..\qyMcMain_isCli\qyMcMainPublic_isCli\isCliHelp_noMfc\isCliHelp_noMfc.vcxproj">
       <Project>{be5ece96-267a-45aa-a282-199f79390817}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\..\qyMcMain_isCli\qyMcMainPublic_isCli\isCliProcs\module_lyra\module_lyra.vcxproj">
-      <Project>{ac8c8a62-0f38-49bc-b7eb-dc58303df54a}</Project>
     </ProjectReference>
     <ProjectReference Include="..\..\qyMcMain_isCli\qyMcMainPublic_isCli\qyMessenger_help_noMfc\qyMessenger_help_noMfc.vcxproj">
       <Project>{027394db-3ce2-4e21-b179-8084ef5f9d61}</Project>

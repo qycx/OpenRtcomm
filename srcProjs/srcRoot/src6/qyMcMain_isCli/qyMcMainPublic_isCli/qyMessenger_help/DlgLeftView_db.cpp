@@ -71,6 +71,10 @@ static char THIS_FILE[] = __FILE__;
 	int								iServiceId				=	CONST_qyServiceId_mis;
 	MC_VAR_isCli  			*		pProcInfo				=	QY_GET_procInfo_isCli(  );
 	if  (  !pProcInfo  )  return  -1;
+	if (IsBadWritePtr(pProcInfo, sizeof(MC_VAR_isCli))) {
+		return  -1;
+	}
+
 
 	CDlgLeftView_db			*		pDlg					=	NULL;
 	RECT							rect;

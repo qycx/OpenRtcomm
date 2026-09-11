@@ -175,7 +175,7 @@ __declspec(  dllexport  ) int  viewRemotePtzControl(  HWND  hParent,  HWND  hCur
   __declspec(  dllexport  )  int  showDlgPolicyAv(  HWND  hParent,  unsigned  int  uiCapType,  unsigned  int  uiSubCapType,  int  iCapUsage  );
 
   //
-  __declspec(  dllexport  )  int  setSaveMsgFlg(  BOOL  bEnable  );
+  __declspec(  dllexport  )  int  setSaveMsgFlg( CCtxQmc  *  pProcInfo, BOOL  bEnable  );
 
   //
   int  getNewIndex_rtspUrlList(  );

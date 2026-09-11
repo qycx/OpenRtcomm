@@ -175,7 +175,7 @@ typedef  struct  __param_stream2Data_t {
 
 
  //
-#if  1  //  def  _DEBUG
+#if  0  //  def  _DEBUG
  extern  "C"  int  AT_MSG_HEAD16_hton(CTX_caller  *  pCaller, __int64  i64StartTime_base,  QY_MSG_HEAD_h* pH, AT_MSG_HEAD16_n* pN);
  extern  "C"  int  AT_MSG_HEAD16_ntoh(CTX_caller* pCaller, __int64  i64StartTime_base,  QY_MSG_HEAD16_n* pN, QY_MSG_HEAD_h* pH);
 #endif 

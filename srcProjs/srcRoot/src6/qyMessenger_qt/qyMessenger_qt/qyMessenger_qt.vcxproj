@@ -64,12 +64,12 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <OutDir>..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin\.\</OutDir>
+    <OutDir>..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin\.\</OutDir>
     <IntDir>..\..\..\..\..\..\VS2012\$(Platform)\o\qyMessenger_qt\$(Configuration)\</IntDir>
     <TargetName>qyMessenger</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
-    <OutDir>..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin\.\</OutDir>
+    <OutDir>..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin\.\</OutDir>
     <IntDir>..\..\..\..\..\..\VS2012\$(Platform)\o\qyMessenger_qt\$(Configuration)\</IntDir>
     <TargetName>qyMessenger</TargetName>
   </PropertyGroup>
@@ -81,7 +81,7 @@
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>..\..\..\..\..\aac\lib_$(Platform);..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\lib;..\..\..\..\..\ffmpegLibs\$(Platform)\bin;C:\Program Files (x86)\Visual Leak Detector\lib\Win64;..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\..\..\..\aac\lib_$(Platform);..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\lib;..\..\..\..\..\ffmpegLibs\$(Platform)\bin;C:\Program Files (x86)\Visual Leak Detector\lib\Win64;..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>libfdk-aacd.lib;comctl32.lib;qyBaseLibNoMfc.lib;qyEncLibNoMfc.lib;ws2_32.lib;winmm.lib;vfw32.lib;strmiids.lib;Dmoguids.lib;msdmo.lib;wmcodecdspuuid.lib;dsound.lib;Msacm32.lib;help_webRtc.lib;msimg32.lib;avcodec.lib;avformat.lib;avutil.lib;swresample.lib;avfilter.lib;swscale.lib;dxgi.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Manifest>
@@ -111,7 +111,7 @@
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>..\..\..\..\..\aac\lib_$(Platform);..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\lib;..\..\..\..\..\ffmpegLibs\$(Platform)\bin;C:\Program Files (x86)\Visual Leak Detector\lib\Win64;..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\..\..\..\aac\lib_$(Platform);..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\lib;..\..\..\..\..\ffmpegLibs\$(Platform)\bin;C:\Program Files (x86)\Visual Leak Detector\lib\Win64;..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>libfdk-aacd.lib;comctl32.lib;qyBaseLibNoMfc.lib;qyEncLibNoMfc.lib;ws2_32.lib;winmm.lib;vfw32.lib;strmiids.lib;Dmoguids.lib;msdmo.lib;wmcodecdspuuid.lib;dsound.lib;Msacm32.lib;help_webRtc.lib;msimg32.lib;avcodec.lib;avformat.lib;avutil.lib;swresample.lib;avfilter.lib;swscale.lib;dxgi.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>

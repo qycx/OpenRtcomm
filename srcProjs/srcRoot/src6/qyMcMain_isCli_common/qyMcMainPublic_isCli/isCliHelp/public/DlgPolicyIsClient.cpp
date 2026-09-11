@@ -1465,11 +1465,11 @@ void CDlgPolicyIsClient::OnBnClickedCheckucbsavemsg()
 			return;
 		}
 	
-		setSaveMsgFlg(  TRUE  );
+		setSaveMsgFlg( pProcInfo, TRUE  );
 		//
 		}
 	else  {
-		  setSaveMsgFlg(  FALSE  );
+		  setSaveMsgFlg(  pProcInfo, FALSE  );
 	}
 
 		
