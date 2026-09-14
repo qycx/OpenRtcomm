@@ -414,6 +414,7 @@ private:
 	QPoint m_meDescPos;
 
 	bool testFlag = false;
+	QString m_mkfSxtStr = "";
 	
 };
 

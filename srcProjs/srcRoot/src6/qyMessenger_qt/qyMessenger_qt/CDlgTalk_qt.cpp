@@ -465,7 +465,24 @@ void CDlgTalk_qt::initControl()
     ui->lineSearch->setFocusPolicy(Qt::FocusPolicy::ClickFocus);
     // HWND wid = StartShareScreen();
 
+    //ui->label_tip->setStyleSheet("color: white; font-size: 28px;");
 
+    /*
+    ui->label_tip->setStyleSheet(
+        "color: white;"
+        "font-size: 28px;"
+        "background: transparent;"
+    );*/
+
+    ui->label_tip->setStyleSheet(
+        "color: white;"
+        "font-size: 28px;"
+        "background-color: rgba(0, 0, 0, 0);"
+    );
+
+    //label->setStyleSheet("background-color: rgba(0, 0, 0, 0);");
+
+    ui->label_tip->setAutoFillBackground(false);
 
     m_meDescRect =  ui->meDesc->geometry();
     
@@ -2705,6 +2722,8 @@ int CDlgTalk_qt::refreshTransmissionMode()
     //CCtxQmc* pProcInfo = QY_GET_procInfo_isCli();
     MIS_CNT* pMisCnt = pProcInfo->getMisCntByName(_T(""));
 
+    
+
     TCHAR  tBuf[128];
 
     DLG_TALK_var* pm_var = get_pm_var();
@@ -2729,7 +2748,7 @@ int CDlgTalk_qt::refreshTransmissionMode()
 
         bool bNoV_val = qy_pProcInfo->m_pTalkExt->bNoVDownload(pMgrVar->av.taskInfo.iTaskId);
 
-        QString mkfSxtStr = "";
+       
 
         if (bNoV_val != lastFlag) {
           
@@ -2741,17 +2760,24 @@ int CDlgTalk_qt::refreshTransmissionMode()
                 ui->meDesc->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);                
 
                 //判断发言状态
+                m_mkfSxtStr = " ";
                 if (qy_pProcInfo->xt.bSpeak) {
-                    mkfSxtStr += u8" (正在调看)";
+                    m_mkfSxtStr += pMisCnt->talkerDesc;
+                    m_mkfSxtStr += u8" (正在调看)";
                 }
                 else {
-                    mkfSxtStr += u8" (未调看)";
+                    m_mkfSxtStr += pMisCnt->talkerDesc;
+                    m_mkfSxtStr += u8" (未调看)";
                 }
 
             }
             else {
                 ui->meDesc->setFixedSize(m_meDescRect.width(), m_meDescRect.height());
                 //ui->meDesc->move(0, 0);
+
+                m_mkfSxtStr = " ";
+                //m_mkfSxtStr += pMisCnt->talkerDesc;
+                
             }
 
             refreshLayout();
@@ -2771,8 +2797,9 @@ int CDlgTalk_qt::refreshTransmissionMode()
         }
 #endif 
 
-        //ui->lab_io->setText(QString::fromUtf16((char16_t*)pProcInfo->av.confLayout.login_termialName) + mkfSxtStr);
-        ui->lab_io->setText(mkfSxtStr);
+        ui->label_tip->setText(m_mkfSxtStr);
+        //ui->label_tip->setStyleSheet("color: white;");
+        
 
 
     }

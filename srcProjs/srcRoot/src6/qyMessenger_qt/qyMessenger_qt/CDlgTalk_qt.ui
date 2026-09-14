@@ -130,7 +130,7 @@
          </font>
         </property>
         <property name="frameShape">
-         <enum>QFrame::NoFrame</enum>
+         <enum>QFrame::Shape::NoFrame</enum>
         </property>
         <property name="text">
          <string/>
@@ -140,10 +140,10 @@
       <item>
        <spacer name="horizontalSpacer_14">
         <property name="orientation">
-         <enum>Qt::Horizontal</enum>
+         <enum>Qt::Orientation::Horizontal</enum>
         </property>
         <property name="sizeType">
-         <enum>QSizePolicy::Expanding</enum>
+         <enum>QSizePolicy::Policy::Expanding</enum>
         </property>
         <property name="sizeHint" stdset="0">
          <size>
@@ -252,7 +252,7 @@ border-right:1px solid #000;
               </property>
              </widget>
             </item>
-            <item alignment="Qt::AlignRight">
+            <item alignment="Qt::AlignmentFlag::AlignRight">
              <widget class="QLabel" name="labMaxCount">
               <property name="text">
                <string/>
@@ -288,7 +288,6 @@ border-right:1px solid #000;
                </property>
                <property name="font">
                 <font>
-                 <weight>75</weight>
                  <bold>true</bold>
                 </font>
                </property>
@@ -299,7 +298,6 @@ border-right:1px solid #000;
                </property>
                <property name="font">
                 <font>
-                 <weight>75</weight>
                  <bold>true</bold>
                 </font>
                </property>
@@ -310,7 +308,6 @@ border-right:1px solid #000;
                </property>
                <property name="font">
                 <font>
-                 <weight>75</weight>
                  <bold>true</bold>
                 </font>
                </property>
@@ -321,7 +318,6 @@ border-right:1px solid #000;
                </property>
                <property name="font">
                 <font>
-                 <weight>75</weight>
                  <bold>true</bold>
                 </font>
                </property>
@@ -371,7 +367,7 @@ border-right:1px solid #000;
                   </size>
                  </property>
                  <property name="focusPolicy">
-                  <enum>Qt::ClickFocus</enum>
+                  <enum>Qt::FocusPolicy::ClickFocus</enum>
                  </property>
                  <property name="placeholderText">
                   <string>搜索</string>
@@ -389,7 +385,6 @@ border-right:1px solid #000;
                </property>
                <property name="font">
                 <font>
-                 <weight>75</weight>
                  <bold>true</bold>
                 </font>
                </property>
@@ -400,7 +395,6 @@ border-right:1px solid #000;
                </property>
                <property name="font">
                 <font>
-                 <weight>75</weight>
                  <bold>true</bold>
                 </font>
                </property>
@@ -411,7 +405,6 @@ border-right:1px solid #000;
                </property>
                <property name="font">
                 <font>
-                 <weight>75</weight>
                  <bold>true</bold>
                 </font>
                </property>
@@ -422,14 +415,13 @@ border-right:1px solid #000;
                </property>
                <property name="font">
                 <font>
-                 <weight>75</weight>
                  <bold>true</bold>
                 </font>
                </property>
               </column>
              </widget>
             </item>
-            <item alignment="Qt::AlignLeft">
+            <item alignment="Qt::AlignmentFlag::AlignLeft">
              <widget class="QWidget" name="widget_5" native="true">
               <property name="minimumSize">
                <size>
@@ -575,7 +567,7 @@ background:#fff;</string>
                </property>
               </widget>
              </item>
-             <item row="10" column="1" alignment="Qt::AlignHCenter">
+             <item row="10" column="1" alignment="Qt::AlignmentFlag::AlignHCenter">
               <widget class="QPushButton" name="btnGrpDel">
                <property name="enabled">
                 <bool>false</bool>
@@ -602,7 +594,7 @@ color:#eee;</string>
                </property>
               </widget>
              </item>
-             <item row="9" column="1" colspan="2" alignment="Qt::AlignLeft">
+             <item row="9" column="1" colspan="2" alignment="Qt::AlignmentFlag::AlignLeft">
               <widget class="QLabel" name="labCreator">
                <property name="enabled">
                 <bool>false</bool>
@@ -615,7 +607,7 @@ color:#eee;</string>
              <item row="4" column="0" colspan="4">
               <widget class="Line" name="lineContactInfo">
                <property name="orientation">
-                <enum>Qt::Horizontal</enum>
+                <enum>Qt::Orientation::Horizontal</enum>
                </property>
               </widget>
              </item>
@@ -625,11 +617,11 @@ color:#eee;</string>
                 <string>TextLabel</string>
                </property>
                <property name="alignment">
-                <set>Qt::AlignCenter</set>
+                <set>Qt::AlignmentFlag::AlignCenter</set>
                </property>
               </widget>
              </item>
-             <item row="0" column="1" colspan="2" alignment="Qt::AlignHCenter">
+             <item row="0" column="1" colspan="2" alignment="Qt::AlignmentFlag::AlignHCenter">
               <widget class="QPushButton" name="headIcoBtn">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -666,7 +658,7 @@ color:#eee;</string>
              <item row="13" column="1">
               <spacer name="verticalSpacer_2">
                <property name="orientation">
-                <enum>Qt::Vertical</enum>
+                <enum>Qt::Orientation::Vertical</enum>
                </property>
                <property name="sizeHint" stdset="0">
                 <size>
@@ -682,7 +674,7 @@ color:#eee;</string>
                 <string>TextLabel</string>
                </property>
                <property name="alignment">
-                <set>Qt::AlignCenter</set>
+                <set>Qt::AlignmentFlag::AlignCenter</set>
                </property>
               </widget>
              </item>
@@ -692,11 +684,11 @@ color:#eee;</string>
                 <string>TextLabel</string>
                </property>
                <property name="alignment">
-                <set>Qt::AlignCenter</set>
+                <set>Qt::AlignmentFlag::AlignCenter</set>
                </property>
               </widget>
              </item>
-             <item row="6" column="1" colspan="2" alignment="Qt::AlignLeft">
+             <item row="6" column="1" colspan="2" alignment="Qt::AlignmentFlag::AlignLeft">
               <widget class="QPushButton" name="btnRule">
                <property name="minimumSize">
                 <size>
@@ -774,7 +766,7 @@ background:#fff;</string>
                <string notr="true"/>
               </property>
               <property name="frameShape">
-               <enum>QFrame::NoFrame</enum>
+               <enum>QFrame::Shape::NoFrame</enum>
               </property>
               <property name="text">
                <string/>
@@ -784,7 +776,7 @@ background:#fff;</string>
             <item>
              <spacer name="horizontalSpacer_5">
               <property name="orientation">
-               <enum>Qt::Horizontal</enum>
+               <enum>Qt::Orientation::Horizontal</enum>
               </property>
               <property name="sizeHint" stdset="0">
                <size>
@@ -946,7 +938,7 @@ border-left:1px solid rgb(160,160,160);</string>
                  </property>
                 </widget>
                </item>
-               <item row="0" column="6" alignment="Qt::AlignRight">
+               <item row="0" column="6" alignment="Qt::AlignmentFlag::AlignRight">
                 <widget class="QPushButton" name="btnVideo">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -1023,10 +1015,10 @@ border-left:1px solid rgb(160,160,160);</string>
                   <string>发送</string>
                  </property>
                  <property name="popupMode">
-                  <enum>QToolButton::MenuButtonPopup</enum>
+                  <enum>QToolButton::ToolButtonPopupMode::MenuButtonPopup</enum>
                  </property>
                  <property name="arrowType">
-                  <enum>Qt::NoArrow</enum>
+                  <enum>Qt::ArrowType::NoArrow</enum>
                  </property>
                  <property name="titleskin" stdset="0">
                   <bool>true</bool>
@@ -1054,23 +1046,23 @@ border-left:1px solid rgb(160,160,160);</string>
                   </size>
                  </property>
                  <property name="focusPolicy">
-                  <enum>Qt::ClickFocus</enum>
+                  <enum>Qt::FocusPolicy::ClickFocus</enum>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">border:none;</string>
                  </property>
                  <property name="frameShape">
-                  <enum>QFrame::Box</enum>
+                  <enum>QFrame::Shape::Box</enum>
                  </property>
                  <property name="textInteractionFlags">
-                  <set>Qt::TextEditorInteraction</set>
+                  <set>Qt::TextInteractionFlag::TextEditorInteraction</set>
                  </property>
                 </widget>
                </item>
                <item row="2" column="5">
                 <spacer name="horizontalSpacer_10">
                  <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
+                  <enum>Qt::Orientation::Horizontal</enum>
                  </property>
                  <property name="sizeHint" stdset="0">
                   <size>
@@ -1083,10 +1075,10 @@ border-left:1px solid rgb(160,160,160);</string>
                <item row="2" column="0" colspan="5">
                 <spacer name="horizontalSpacer">
                  <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
+                  <enum>Qt::Orientation::Horizontal</enum>
                  </property>
                  <property name="sizeType">
-                  <enum>QSizePolicy::Preferred</enum>
+                  <enum>QSizePolicy::Policy::Preferred</enum>
                  </property>
                  <property name="sizeHint" stdset="0">
                   <size>
@@ -1099,10 +1091,10 @@ border-left:1px solid rgb(160,160,160);</string>
                <item row="0" column="4" colspan="2">
                 <spacer name="horizontalSpacer_2">
                  <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
+                  <enum>Qt::Orientation::Horizontal</enum>
                  </property>
                  <property name="sizeType">
-                  <enum>QSizePolicy::Fixed</enum>
+                  <enum>QSizePolicy::Policy::Fixed</enum>
                  </property>
                  <property name="sizeHint" stdset="0">
                   <size>
@@ -1193,7 +1185,7 @@ border-left:1px solid rgb(160,160,160);</string>
               </property>
              </widget>
             </item>
-            <item alignment="Qt::AlignRight">
+            <item alignment="Qt::AlignmentFlag::AlignRight">
              <widget class="QPushButton" name="video_in_do">
               <property name="cursor">
                <cursorShape>PointingHandCursor</cursorShape>
@@ -1246,8 +1238,8 @@ border-left:1px solid rgb(160,160,160);</string>
             <rect>
              <x>9</x>
              <y>-5</y>
-             <width>610</width>
-             <height>771</height>
+             <width>1150</width>
+             <height>713</height>
             </rect>
            </property>
            <property name="sizePolicy">
@@ -1295,38 +1287,45 @@ border-left:1px solid rgb(160,160,160);</string>
             <property name="spacing">
              <number>0</number>
             </property>
-            <item row="0" column="1">
-             <widget class="QWidget" name="otherDesc" native="true">
-              <property name="enabled">
-               <bool>false</bool>
+            <item row="1" column="1">
+             <spacer name="verticalSpacer">
+              <property name="orientation">
+               <enum>Qt::Orientation::Vertical</enum>
               </property>
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>268</height>
+               </size>
               </property>
+             </spacer>
+            </item>
+            <item row="3" column="1" alignment="Qt::AlignmentFlag::AlignRight">
+             <widget class="QLabel" name="lab_io">
               <property name="minimumSize">
                <size>
-                <width>330</width>
-                <height>200</height>
+                <width>260</width>
+                <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>330</width>
-                <height>200</height>
+                <width>260</width>
+                <height>16777215</height>
                </size>
               </property>
-              <property name="mouseTracking">
-               <bool>true</bool>
-              </property>
               <property name="styleSheet">
-               <string notr="true">background-color: rgb(219, 255, 240);</string>
+               <string notr="true">color:#fff;</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignmentFlag::AlignCenter</set>
               </property>
              </widget>
             </item>
-            <item row="2" column="1" alignment="Qt::AlignRight|Qt::AlignBottom">
+            <item row="2" column="1" alignment="Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignBottom">
              <widget class="QWidget" name="meDesc" native="true">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -1355,23 +1354,10 @@ padding-bottom:100px;</string>
               </property>
              </widget>
             </item>
-            <item row="1" column="1">
-             <spacer name="verticalSpacer">
-              <property name="orientation">
-               <enum>Qt::Vertical</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>20</width>
-                <height>268</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
             <item row="0" column="0">
              <spacer name="horizontalSpacer_11">
               <property name="orientation">
-               <enum>Qt::Horizontal</enum>
+               <enum>Qt::Orientation::Horizontal</enum>
               </property>
               <property name="sizeHint" stdset="0">
                <size>
@@ -1381,28 +1367,34 @@ padding-bottom:100px;</string>
               </property>
              </spacer>
             </item>
-            <item row="3" column="1" alignment="Qt::AlignRight">
-             <widget class="QLabel" name="lab_io">
+            <item row="0" column="1">
+             <widget class="QWidget" name="otherDesc" native="true">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="minimumSize">
                <size>
-                <width>260</width>
-                <height>0</height>
+                <width>330</width>
+                <height>200</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>260</width>
-                <height>16777215</height>
+                <width>330</width>
+                <height>200</height>
                </size>
               </property>
+              <property name="mouseTracking">
+               <bool>true</bool>
+              </property>
               <property name="styleSheet">
-               <string notr="true">color:#fff;</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
+               <string notr="true">background-color: rgb(219, 255, 240);</string>
               </property>
              </widget>
             </item>
@@ -1454,7 +1446,7 @@ padding-bottom:100px;</string>
             <item>
              <spacer name="horizontalSpacer_4">
               <property name="orientation">
-               <enum>Qt::Horizontal</enum>
+               <enum>Qt::Orientation::Horizontal</enum>
               </property>
               <property name="sizeHint" stdset="0">
                <size>
@@ -1576,7 +1568,7 @@ padding-bottom:100px;</string>
             <item>
              <spacer name="horizontalSpacer_3">
               <property name="orientation">
-               <enum>Qt::Horizontal</enum>
+               <enum>Qt::Orientation::Horizontal</enum>
               </property>
               <property name="sizeHint" stdset="0">
                <size>
@@ -1612,6 +1604,25 @@ font-size:18px;</string>
              </widget>
             </item>
            </layout>
+          </widget>
+          <widget class="QLabel" name="label_tip">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>816</width>
+             <height>40</height>
+            </rect>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
           </widget>
          </widget>
         </item>
