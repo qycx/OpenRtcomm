@@ -9881,7 +9881,7 @@ int  tmpHandler_showMsg_task_confKey(void* hDlgTalkParam, DLG_TALK_var& m_var, v
 		//
 		//
 		//  relayout()。因为在sm版本里，要发生位置的变化. 同时要重新绘制一下
-		pProcInfo->m_pTalkGuiExt->refreshTransmissionMode(hDlg, &m_var);
+		//pProcInfo->m_pTalkGuiExt->refreshTransmissionMode(hDlg, &m_var);
 
 
 	}

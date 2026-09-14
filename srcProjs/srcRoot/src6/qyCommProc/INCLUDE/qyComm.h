@@ -138,14 +138,8 @@ typedef  struct  __qyCommBufSize_t					{
 				 char							*	data;
 }		 QY_COMM_BUFSIZE;
 
-/*
-typedef  struct  __qyCommHead_t  {
-				 unsigned  short					usCode;				// 
-				 char								reserved[2];			
-				 unsigned  int						len;				// 
-}		 QY_COMM_HEAD;
-*/
 
+#if  0
 //  2007/04/22, 
 typedef  struct  __qyCommHead_t						{
 				 unsigned  short					usCode;				// 
@@ -153,6 +147,17 @@ typedef  struct  __qyCommHead_t						{
 				 char								reserved[1];			
 				 unsigned  int						len;				//  
 }		 QY_COMM_HEAD;
+#endif 
+
+//  2026/09/07
+typedef  struct  __qyCommHead_t {
+				 unsigned  char						ucFlg;				//  2007/04/22, 
+				 char								reserved[1];
+				 unsigned  short					usCode;				// 
+				 unsigned  int						len;				//  
+}		 QY_COMM_HEAD;
+
+
 
 
 #ifdef  __USE_atCommVer_1__

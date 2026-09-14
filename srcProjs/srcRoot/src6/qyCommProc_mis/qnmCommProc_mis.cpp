@@ -6644,6 +6644,10 @@ errLabel:
 		 if (data2Stream(CONST_qyDataType_char, CONST_qnmCfgId_ucbResp, (void*)pReq->ucbResp, 0, &ptr, &len))  goto  errLabel;
 	 }
 
+	 //
+	 if (pReq->iSvcId) {
+		 if (data2Stream(CONST_qyDataType_l32, CONST_qnmCfgId_iSvcId, (void*)pReq->iSvcId, 0, &ptr, &len))  goto  errLabel;
+	 }
 
 	 //
 	 if (pReq->hg_cliDataLen) {
@@ -6695,6 +6699,11 @@ errLabel:
 			 //			 
 		 case  CONST_qnmCfgId_ucbResp:
 			 if (getFieldData_char(pItem, (char*)&pReq->ucbResp)) goto  errLabel;
+			 break;
+
+			 //
+		 case  CONST_qnmCfgId_iSvcId:
+			 if (getFieldData_long(pItem, (long*)&pReq->iSvcId))  goto  errLabel;
 			 break;
 
 		 case  CONST_qnmCfgId_hg_cliData:
@@ -8625,7 +8634,7 @@ errLabel:
 	 }
 
 	 switch  (  pReq->iSubType  )  {			
-			 case  CONST_iDaemonStatusType_msgr:
+			 case  CONST_iDaemonStatus_subType_msgr:
 				   if  (  pReq->usCnt  )  {
 					   if  (  pReq->usCnt  >  mycountof(  pReq->u.msgr.mems  )  )  goto  errLabel;
 					   if  (  data2Stream(  CONST_qyDataType_short,  CONST_qnmCfgId_usCnt,  (  void  *  )pReq->usCnt,  0,  &ptr,  &len  )  )  goto  errLabel;
@@ -8645,7 +8654,7 @@ errLabel:
 					   }
 				   }
 				   break;
-			 case  CONST_iDaemonStatusType_channel:
+			 case  CONST_iDaemonStatus_subType_channel:
 				   if  (  pReq->usCnt  )  {
 					   if  (  pReq->usCnt  >  mycountof(  pReq->u.channel.mems  )  )  goto  errLabel;
 					   if  (  data2Stream(  CONST_qyDataType_short,  CONST_qnmCfgId_usCnt,  (  void  *  )pReq->usCnt,  0,  &ptr,  &len  )  )  goto  errLabel;
@@ -8666,6 +8675,10 @@ errLabel:
 				   }
 
 				   break;
+			 case  CONST_iDaemonStatus_subType_ds:
+				   if (data2Stream(CONST_qyDataType_str, CONST_anCfgId_ds, (void*)pReq->u.ds.dsStr, strlen(pReq->u.ds.dsStr), &ptr, &len))  goto  errLabel;
+				   break;
+				   //
 			 default:
 				    traceLog((TCHAR*)  _T(  "getDaemonStatusReq2Stream failed, iSubType %d error"  ),  pReq->iSubType  );
 					goto  errLabel;
@@ -8732,7 +8745,7 @@ errLabel:
 							     break;
 						   case  CONST_qnmCfgId_usCnt:
 							     if  (  getFieldData_short(  pItem,  (  short  *  )&pReq->usCnt  )  )  goto  errLabel;
-								 if  (  pReq->iSubType  ==  CONST_iDaemonStatusType_msgr  )  {
+								 if  (  pReq->iSubType  ==  CONST_iDaemonStatus_subType_msgr  )  {
 									 if  (  pReq->usCnt  >  mycountof(  pReq->u.msgr.mems  )  )  {
 										 traceLog((TCHAR*)  _T(  "tmpHandler_stream2GetDaemonStatusGrp failed: usCnt is too big"  )  );  goto  errLabel;
 									 }
@@ -8741,7 +8754,7 @@ errLabel:
 										  memset(  &pReq->u.msgr.mems[i],  0,  sizeof(  pReq->u.msgr.mems[i]  )  );								 
 									 }
 									 }
-								 else  if  (  pReq->iSubType  ==  CONST_iDaemonStatusType_channel  )  {
+								 else  if  (  pReq->iSubType  ==  CONST_iDaemonStatus_subType_channel  )  {
 									       if  (  pReq->usCnt  >  mycountof(  pReq->u.channel.mems  )  )  {
 											   traceLog((TCHAR*)  _T(  "tmpHandler_stream2GetDaemonStatusGrp failed: usCnt is too big"  )  );  goto  errLabel;
 										   }
@@ -8754,12 +8767,17 @@ errLabel:
 								 else  
 									 goto  errLabel;
 							     break;
+						   case  CONST_anCfgId_ds:
+							     if (getFieldData_str(pItem, pReq->u.ds.dsStr, mycountof(pReq->u.ds.dsStr)) ){
+								   goto  errLabel;
+								 }
+							     break;
 						   default:
 								  break;
 				   }				 
 				   break;
 			 case  CONST_imCommType_mem:  {
-				   if  (  pReq->iSubType  ==  CONST_iDaemonStatusType_msgr  )  {				   
+				   if  (  pReq->iSubType  ==  CONST_iDaemonStatus_subType_msgr  )  {				   
 					   QMD_status_msgrMem  *  pMem		=	NULL;
 					   //
 					   if  (  pReq->tmpInternal.usCnt_mems  >=  mycountof(  pReq->u.msgr.mems  )  )  {
@@ -8781,7 +8799,7 @@ errLabel:
 									 break;				   
 					   }
 					   }
-				   else  if  (  pReq->iSubType  ==  CONST_iDaemonStatusType_channel  )  {
+				   else  if  (  pReq->iSubType  ==  CONST_iDaemonStatus_subType_channel  )  {
 							  QMD_status_channelMem  *  pMem		=	NULL;
 							  //
 							  if  (  pReq->tmpInternal.usCnt_mems  >=  mycountof(  pReq->u.channel.mems  )  )  {

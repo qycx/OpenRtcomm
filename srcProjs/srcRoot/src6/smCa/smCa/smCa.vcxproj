@@ -44,11 +44,11 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin\</OutDir>
+    <OutDir>..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin\</OutDir>
     <IntDir>..\..\..\..\..\..\VS2012\$(Platform)\o\smCa\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin\</OutDir>
+    <OutDir>..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin\</OutDir>
     <IntDir>..\..\..\..\..\..\VS2012\$(Platform)\o\smCa\$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -67,7 +67,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
       <AdditionalDependencies>libssl.lib;libcrypto.lib;openssl.lib;comctl32.lib;dxgi.lib;qyBaseLibNoMfc.lib;qyEncLibNoMfc.lib;ws2_32.lib;winmm.lib;vfw32.lib;strmiids.lib;Dmoguids.lib;msdmo.lib;wmcodecdspuuid.lib;dsound.lib;Msacm32.lib;help_webRtc.lib;msimg32.lib;avcodec.lib;avformat.lib;avutil.lib;swresample.lib;avfilter.lib;swscale.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\lib;..\..\..\..\..\ffmpegLibs\$(Platform)\bin;..\..\..\..\..\openssl\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\lib;..\..\..\..\..\ffmpegLibs\$(Platform)\bin;..\..\..\..\..\openssl\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -90,7 +90,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
       <AdditionalDependencies>libssl.lib;libcrypto.lib;openssl.lib;comctl32.lib;dxgi.lib;qyBaseLibNoMfc.lib;qyEncLibNoMfc.lib;ws2_32.lib;winmm.lib;vfw32.lib;strmiids.lib;Dmoguids.lib;msdmo.lib;wmcodecdspuuid.lib;dsound.lib;Msacm32.lib;help_webRtc.lib;msimg32.lib;avcodec.lib;avformat.lib;avutil.lib;swresample.lib;avfilter.lib;swscale.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\lib;..\..\..\..\..\ffmpegLibs\$(Platform)\bin;..\..\..\..\..\openssl\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\lib;..\..\..\..\..\ffmpegLibs\$(Platform)\bin;..\..\..\..\..\openssl\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -114,6 +114,7 @@
     <ClCompile Include="..\..\atCommProc_nc\anProtocol.cpp" />
     <ClCompile Include="..\..\atCommProc_nc\CtxFw_and.cpp" />
     <ClCompile Include="..\..\atCommProc_nc\IsFw.cpp" />
+    <ClCompile Include="..\..\qyCommProc\getCfgVal.cpp" />
     <ClCompile Include="..\..\qyCommProc\qnmCommProc.cpp" />
     <ClCompile Include="..\..\qyCommProc\qnmFwCommProc.cpp" />
     <ClCompile Include="..\..\qyCommProc\qwmDynFunc.cpp" />

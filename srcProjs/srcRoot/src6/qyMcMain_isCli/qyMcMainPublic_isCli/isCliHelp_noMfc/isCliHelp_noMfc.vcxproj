@@ -42,12 +42,12 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin\</OutDir>
+    <OutDir>..\..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin\</OutDir>
     <IntDir>..\..\..\..\..\..\..\VS2012\$(Platform)\o\isCliHelp_noMfc\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin\</OutDir>
+    <OutDir>..\..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin\</OutDir>
     <IntDir>..\..\..\..\..\..\..\VS2012\$(Platform)\o\isCliHelp_noMfc\$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -62,8 +62,8 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\..\..\..\..\..\ffmpegLibs\$(Platform)\bin;..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\lib;..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin</AdditionalLibraryDirectories>
-      <AdditionalDependencies>avcodec.lib;avformat.lib;avutil.lib;swresample.lib;avfilter.lib;swscale.lib;msacm32.lib;qyBaseLibNoMfc.lib;qyEncLibNoMfc.lib;winmm.lib;vfw32.lib;strmiids.lib;Dmoguids.lib;msdmo.lib;wmcodecdspuuid.lib;help_webRtc.lib;ws2_32.lib;dxgi.lib;ancPktProcess.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\..\..\..\ffmpegLibs\$(Platform)\bin;..\..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\lib;..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin</AdditionalLibraryDirectories>
+      <AdditionalDependencies>avcodec.lib;avformat.lib;avutil.lib;swresample.lib;avfilter.lib;swscale.lib;msacm32.lib;qyBaseLibNoMfc.lib;qyEncLibNoMfc.lib;winmm.lib;vfw32.lib;strmiids.lib;Dmoguids.lib;msdmo.lib;wmcodecdspuuid.lib;help_webRtc.lib;ws2_32.lib;dxgi.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -82,8 +82,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>..\..\..\..\..\..\ffmpegLibs\$(Platform)\bin;..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\lib;..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin</AdditionalLibraryDirectories>
-      <AdditionalDependencies>avcodec.lib;avformat.lib;avutil.lib;swresample.lib;avfilter.lib;swscale.lib;msacm32.lib;qyBaseLibNoMfc.lib;qyEncLibNoMfc.lib;winmm.lib;vfw32.lib;strmiids.lib;Dmoguids.lib;msdmo.lib;wmcodecdspuuid.lib;help_webRtc.lib;ws2_32.lib;dxgi.lib;ancPktProcess.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\..\..\..\ffmpegLibs\$(Platform)\bin;..\..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\lib;..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin</AdditionalLibraryDirectories>
+      <AdditionalDependencies>avcodec.lib;avformat.lib;avutil.lib;swresample.lib;avfilter.lib;swscale.lib;msacm32.lib;qyBaseLibNoMfc.lib;qyEncLibNoMfc.lib;winmm.lib;vfw32.lib;strmiids.lib;Dmoguids.lib;msdmo.lib;wmcodecdspuuid.lib;help_webRtc.lib;ws2_32.lib;dxgi.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -162,6 +162,7 @@
     <ClCompile Include="..\..\..\qyMcMainPublic\qmcGuid.cpp" />
     <ClCompile Include="..\..\..\qyMcMainPublic\qyMcMainFunc.cpp" />
     <ClCompile Include="..\..\..\qyMcMainPublic\qyMcMainObj.cpp" />
+    <ClCompile Include="..\..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\isCliHelp\public\dlgPolicyIsClient_help.cpp" />
     <ClCompile Include="..\..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\isCliProcs\dbFuncs\myDb\qmCommonDbFunc_myDb_isCli.cpp" />
     <ClCompile Include="..\..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\isCliProcs\dbFuncs\myDb\qmCommonDbFunc_myDb_mis_help.cpp" />
     <ClCompile Include="..\..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\isCliProcs\soundProc_coreAudio\qmcSound_coreAudio.cpp" />
@@ -245,7 +246,6 @@
     <ClCompile Include="..\isCliHelp\public\dlgDynBmpsProc.cpp" />
     <ClCompile Include="..\isCliHelp\public\dlgInstantAssistant_help.cpp" />
     <ClCompile Include="..\isCliHelp\public\dlgOfflineResProc.cpp" />
-    <ClCompile Include="..\isCliHelp\public\dlgPolicyIsClient_help.cpp" />
     <ClCompile Include="..\isCliHelp\public\dlgSelectAvCompressor_help.cpp" />
     <ClCompile Include="..\isCliHelp\public\dlgTalkProc_help.cpp" />
     <ClCompile Include="..\isCliHelp\public\dlgTalkProc_isCliHelp.cpp" />
@@ -332,6 +332,9 @@
     <ProjectReference Include="..\..\..\..\..\qis_tmpHelp\help_webRtc\help_webRtc2012.vcxproj">
       <Project>{c2e1a500-3055-4a14-a0d1-0984211c9e1e}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\ancProjs\ancPktProcess\ancPktProcess.vcxproj">
+      <Project>{6bb53c59-ccd7-4cb0-84a3-57aa575afc1f}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\atPublic\ancCore\ancCore.vcxproj">
       <Project>{d597b53f-57db-4450-8f4c-7bddfd428b76}</Project>
     </ProjectReference>
@@ -361,9 +364,6 @@
     </ProjectReference>
     <ProjectReference Include="..\..\..\qyMcPublic\qyShowInfo\qyShowInfo2012.vcxproj">
       <Project>{32fc6695-1451-47bf-a185-41c2d3d80bcb}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\..\isCliEx\isCliEx2012.vcxproj">
-      <Project>{ff7c3c9e-fbae-4f03-b633-fe81b930c2eb}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

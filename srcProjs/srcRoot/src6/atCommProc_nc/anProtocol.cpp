@@ -804,7 +804,8 @@ int toh_cfgHead(char* tmp_p, int size, int* piDataType, unsigned  short* p_usCfg
 
 
 	 //
-	 extern  "C"  int  AT_MSG_HEAD16_hton(CTX_caller* pCaller, __int64  i64StartTime_base,  QY_MSG_HEAD_h* pH, AT_MSG_HEAD16_n* pN)
+#if  0
+	 extern  "C"  int  iiAT_MSG_HEAD16_hton(CTX_caller* pCaller, __int64  i64StartTime_base,  QY_MSG_HEAD_h* pH, AT_MSG_HEAD16_n* pN)
 	 {
 		 unsigned  char* tmp_p;
 		 int  tmpLen;
@@ -880,6 +881,8 @@ int toh_cfgHead(char* tmp_p, int size, int* piDataType, unsigned  short* p_usCfg
 		 //
 		 return  0;
 	 }
+#endif 
+
 
 
 	 //
@@ -959,7 +962,8 @@ int toh_cfgHead(char* tmp_p, int size, int* piDataType, unsigned  short* p_usCfg
 
 
 	 //
-	 extern  "C"  int  AT_MSG_HEAD16_ntoh(CTX_caller* pCaller, __int64  i64StartTime_base,  QY_MSG_HEAD16_n* pN, QY_MSG_HEAD_h* pH)
+#if  0
+	 extern  "C"  int  iiAT_MSG_HEAD16_ntoh(CTX_caller* pCaller, __int64  i64StartTime_base,  QY_MSG_HEAD16_n* pN, QY_MSG_HEAD_h* pH)
 	 {
 		 //
 		 unsigned  char* tmp_p;
@@ -1049,6 +1053,7 @@ int toh_cfgHead(char* tmp_p, int size, int* piDataType, unsigned  short* p_usCfg
 		 //
 		 return  0;
 	 }
+#endif 
 
 
 	 //	

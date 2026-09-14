@@ -133,6 +133,7 @@ QY_DMITEM  CONST_audioCompressorsTable_hd[] =
 #endif
 	{	CONST_audioCompressors_ipp,		_T("mp3"),	},
 	{	CONST_audioCompressors_ffmpeg,		_T("ffmpeg mp3"),	},
+	{	CONST_audioCompressors_aac,		_T("aac"),	},
 #ifdef  __SUPPORT_CUSMODULE_compress__
 	{	CONST_audioCompressors_custom,	_T("custom"),	},			//  2010/04/28
 #endif
@@ -169,6 +170,7 @@ QY_DMITEM  CONST_audioCompressorsTable_fullHd[] =
 #endif
 	{	CONST_audioCompressors_ipp,		_T("mp3"),	},				//  2012/01/19
 	{	CONST_audioCompressors_ffmpeg,		_T("ffmpeg mp3"),	},
+	{	CONST_audioCompressors_aac,		_T("aac"),	},
 #ifdef  __SUPPORT_CUSMODULE_compress__
 	{	CONST_audioCompressors_custom,	_T("custom"),	},			//  2010/04/28
 #endif
@@ -207,7 +209,7 @@ QY_DMITEM	CONST_ruleIfMsgArriveTable[] =
 
 
 //
-__declspec(dllexport)  int  setSaveMsgFlg(BOOL  bEnable)
+__declspec(dllexport)  int  setSaveMsgFlg(CCtxQmc  *  pProcInfo1, BOOL  bEnable)
 {
 
 	int  iErr = -1;
@@ -216,7 +218,10 @@ __declspec(dllexport)  int  setSaveMsgFlg(BOOL  bEnable)
 
 	QY_REG	reg;
 	QY_MC* pQyMc = QY_GET_GBUF();
-	MC_VAR_isCli* pProcInfo1 = QY_GET_procInfo_isCli();
+	//MC_VAR_isCli* pProcInfo1 = QY_GET_procInfo_isCli();
+	if (!pProcInfo1) {
+		return  -1;
+	}
 
 	memset(&reg, 0, sizeof(reg));
 	reg.hKeyRoot0 = HKEY_CURRENT_USER;
@@ -460,6 +465,20 @@ __declspec(dllexport) int  initPolicyAvParams()	//  要在登陆后立即运行�
 	//
 	//  p->DEFAULT_audioPlayCfg_webcam  =  p->CONST_audioPlayCfg_1s;	
 	getDefault_audioPlayCfg(0, &p->DEFAULT_audioPlayCfg_webcam);
+
+	//
+	level = CONST_policyAvLevel_256x144;
+	//getDefault_audioPlayCfg(level, &p->audioPlayCfg_240p);	//  2013/03/08  
+
+	p->QCIF.videoCompressors_av = CONST_videoCompressors_hwAccl;	//  CONST_videoCompressors_dmo;
+	//safeStrnCpy(CONST_fourcc_HEVC, p->QCIF.videoFourccStr_av, mycountof(p->QCIF.videoFourccStr_av));
+	iFourcc2Str(CONST_fourcc_HEVC, p->QCIF.videoFourccStr_av, mycountof(p->QCIF.videoFourccStr_av));
+	p->QCIF.usMaxFps_toShareBmp = 30;					//24;				//  DEFAULT_LD_usMaxFps_toShareBmp;	//  5;
+	p->QCIF.usFps_toShareBmp_videoConference = 30;		//24;	//  DEFAULT_LD_usFps_toShareBmp_videoConference;	//  5;
+	p->QCIF.iW_av = CONST_w_256x144;	//  320;
+	p->QCIF.iH_av = CONST_h_256x144;	//  240;
+
+
 
 	//
 	level = CONST_policyAvLevel_240p;

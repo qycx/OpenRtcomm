@@ -40,7 +40,7 @@
 		  
 		  //
 		  CtxFw_and* pCtxFw = mynull;
-		  MtSockDbgStatusInfo* pDbgStatusInfo = mynull;
+		  MtSockDbgStatus* pDbgStatusInfo = mynull;
 		  {
 			  pCtxFw = &this->ctxFw_and;
 			  pDbgStatusInfo = &this->mtSockDbgStatusInfo;

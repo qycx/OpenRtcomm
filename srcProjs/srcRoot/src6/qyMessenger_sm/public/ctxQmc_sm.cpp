@@ -83,6 +83,7 @@
 #include    "confCli_func.h"
 //
 #include    "myTalkExt.h"
+#include    "talkGuiExt_sm.h"
 #include    "myQmcExt.h"
 
 
@@ -231,6 +232,12 @@ TalkExtTmpl* CCtxQmc_sm::new_talkExt()
 {
     return  new myTalkExt();
 }
+
+TalkGuiExtTmpl* CCtxQmc_sm::new_talkGuiExt()
+{
+    return  new TalkGuiExt_sm();
+}
+
 
 QmcExtTmpl* CCtxQmc_sm::new_qmcExt()
 {

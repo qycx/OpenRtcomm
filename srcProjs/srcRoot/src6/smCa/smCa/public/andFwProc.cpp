@@ -29,10 +29,15 @@ extern  "C"  SMCA_API  void  andFw_freeCtx(CtxFw_and** pp)
 }
 
 //
-extern  "C"  SMCA_API  int  andFw_init(CtxFw_and* pCtx)
+extern  "C"  SMCA_API  int  andFw_init(TCHAR  *  smCfgFile,  CtxFw_and* pCtx)
 {
 	IsFw* pFw = &pCtx->fw_and;
+	
+	//
+	safeTcsnCpy(smCfgFile, pCtx->m_smCfgFileName, mycountof(pCtx->m_smCfgFileName));
 
+
+	//
 	//
 	safeStrnCpy((char*)CONST_mtxName_andFw, pFw->m_var.mtxName, mycountof(pFw->m_var.mtxName));
 
@@ -96,7 +101,7 @@ extern  "C"  SMCA_API  int  andFw_refeshCfg(CtxFw_and* pCtx)
 
 //
 	//
-extern  "C"  SMCA_API  int andFw_filterIp(CtxFw_and * pCtx, Param_isFwFilterIp* pParam, void* p0, void* p1, IsCliInfo* pCliInfo)
+extern  "C"  SMCA_API  int andFw_filterIp(CtxFw_and * pCtx, Param_isFwFilterIp* pParam, void* p0, void* p1, IsFwCliInfo* pCliInfo)
 {
 	int  iErr = -1;
 	TCHAR  tBuf[128];  tBuf[0] = 0;
@@ -106,7 +111,7 @@ extern  "C"  SMCA_API  int andFw_filterIp(CtxFw_and * pCtx, Param_isFwFilterIp* 
 	if (!pCliInfo)  return  -1;
 
 	//
-	if (!pParam->pMtSockDbgStatusInfo)  return  -1;
+	if (!pParam->pMtSockDbgStatus)  return  -1;
 
 	//
 	do {
@@ -129,7 +134,7 @@ extern  "C"  SMCA_API  int andFw_filterIp(CtxFw_and * pCtx, Param_isFwFilterIp* 
 			//
 			if (_stricmp(pCliInfo->cliIp, pMem->ip) == 0) {
 				//
-				if (pParam->pMtSockDbgStatusInfo->m_var.bDbgDetail_andFw) {
+				if (pParam->pMtSockDbgStatus->bDbgDetail_andFw) {
 					_sntprintf(tBuf, mycountof(tBuf), _T("andFwFilterIp failed: %S is denyed"), pCliInfo->cliIp);
 					showInfo_open(0, 0, 0, tBuf);
 				}

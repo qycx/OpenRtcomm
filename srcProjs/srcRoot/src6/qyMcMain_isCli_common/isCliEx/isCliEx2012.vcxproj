@@ -43,13 +43,13 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin\</OutDir>
+    <OutDir>..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin\</OutDir>
     <IntDir>..\..\..\..\..\..\VS2012\$(Platform)\o\$(TargetName)\$(Configuration)\</IntDir>
     <TargetName>isCliEx_common</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin\</OutDir>
+    <OutDir>..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin\</OutDir>
     <IntDir>..\..\..\..\..\..\VS2012\$(Platform)\o\$(TargetName)\$(Configuration)\</IntDir>
     <TargetName>isCliEx_common</TargetName>
   </PropertyGroup>

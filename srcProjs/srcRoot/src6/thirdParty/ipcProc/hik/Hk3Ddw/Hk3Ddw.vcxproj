@@ -60,11 +60,11 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <OutDir>..\..\..\..\..\..\..\vs2012\x64\$(Configuration)\thirdParty\hik\</OutDir>
+    <OutDir>..\..\..\..\..\..\..\..\vs2012\x64\$(Configuration)\thirdParty\hik\</OutDir>
     <IntDir>..\..\..\..\..\..\..\..\vs2012\$(Platform)\o\hk3ddw\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
-    <OutDir>..\..\..\..\..\..\..\vs2012\x64\$(Configuration)\thirdParty\hik\</OutDir>
+    <OutDir>..\..\..\..\..\..\..\..\vs2012\x64\$(Configuration)\thirdParty\hik\</OutDir>
     <IntDir>..\..\..\..\..\..\..\..\vs2012\$(Platform)\o\hk3ddw\$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

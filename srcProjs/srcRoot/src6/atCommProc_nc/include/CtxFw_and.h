@@ -10,6 +10,9 @@
 class  CtxFw_and {
 	//
 public:
+	TCHAR  m_smCfgFileName[MAX_PATH + 1]{};
+
+	//
 	IsFw	fw_and;
 	IsFw	fw_hg;
 	//

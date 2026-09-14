@@ -203,7 +203,6 @@
     <ClCompile Include="public\dlgOfflineResProc.cpp" />
     <ClCompile Include="public\DlgPolicyAv.cpp" />
     <ClCompile Include="public\DlgPolicyIsClient.cpp" />
-    <ClCompile Include="public\dlgPolicyIsClient_help.cpp" />
     <ClCompile Include="public\DlgPropImMsg.cpp" />
     <ClCompile Include="public\DlgPropImTask.cpp" />
     <ClCompile Include="public\DlgPropMessenger.cpp" />
@@ -521,6 +520,7 @@
     <ClCompile Include="..\..\..\qyCommProc\getCfgVal.cpp">
       <Filter>qyCommProc</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\isCliHelp\public\dlgPolicyIsClient_help.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\qyCommProc\INCLUDE\syncMtCnt.h" />

@@ -52,6 +52,12 @@
 
 #include <QMessageBox>
 #include <ptzFunc.h>
+
+#include    "talkExtTmpl.h"
+
+
+
+
 //
 namespace {
     const int kMouseRegionLeft = 10;
@@ -2673,8 +2679,116 @@ int CDlgTalk_qt::doTimerProc()
     // SetDlgItemText(hDlgTalk, m_var.guiData.iIDC_STATIC_status, tBuf);
 #endif
 
+
+    //
+    refreshTransmissionMode();
+
+
+    //
     return  0;
 }
+
+
+//
+// //实时判断单双向视频热切换状态
+int CDlgTalk_qt::refreshTransmissionMode()
+{
+    CCtxQyMc* pQyMc = g_pQyMc;
+    CCtxQmc_qt* pProcInfo = (CCtxQmc_qt*)pQyMc->get_pProcInfo();
+
+    MC_VAR_isCli* qy_pProcInfo = QY_GET_procInfo_isCli();
+
+    //CCtxQmc* pProcInfo = QY_GET_procInfo_isCli();
+    MIS_CNT* pMisCnt = pProcInfo->getMisCntByName(_T(""));
+
+    TCHAR  tBuf[128];
+
+    DLG_TALK_var* pm_var = get_pm_var();
+    if (!pm_var)return -1;
+
+    HWND  hCurTalk = (HWND)this->winId();
+    DLG_TALK_var* pCurVar = pm_var;
+    HWND  hMgr = mynull;
+    DLG_TALK_var* pMgrVar = mynull;
+    if (isTalkerShadowMgr(pCurVar->addr)) {
+        hMgr = hCurTalk;
+    }
+    else {
+        TALKER_shadow* pShadowInfo = (TALKER_shadow*)pCurVar->pShadowInfo;
+        hMgr = pShadowInfo->hMgr;
+    }
+    CHelp_getDlgTalkVar getDlgTalkVar_mgr;
+    pMgrVar = (DLG_TALK_var*)getDlgTalkVar_mgr.getVar(hMgr);
+    if (pMgrVar == mynull)return -1;
+
+    if (pMgrVar->av.taskInfo.iTaskId) {
+
+        bool bNoV_val = qy_pProcInfo->m_pTalkExt->bNoVDownload(pMgrVar->av.taskInfo.iTaskId);
+
+        if (bNoV_val != lastFlag) {
+            //
+
+            if (bNoV_val) {
+                ui->meDesc->setFixedSize(ui->widgetVideoShow->width(), ui->widgetVideoShow->height());
+
+                ui->meDesc->move(0, 0);
+
+                this->showFullScreen();
+
+                ui->meDesc->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+
+
+                ui->meDesc->setVisible(true);
+
+                //ui->load_widget->setVisible(true);
+
+            }
+            else {
+                ui->meDesc->setFixedSize(300, 200);
+                ui->meDesc->move(0, 0);
+
+                this->showFullScreen();
+
+                ui->meDesc->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+
+
+                ui->meDesc->setVisible(true);
+                //ui->load_widget->setVisible(false);
+            }
+            refreshLayout();
+            lastFlag = bNoV_val;
+        }
+
+        //实时判断发言和麦克状态变更
+        QString mkfSxtStr = "";
+
+        //判断发言状态
+        if (qy_pProcInfo->xt.bSpeak) {
+            mkfSxtStr += u8" (正在调看)";
+        }
+        else {
+            mkfSxtStr += u8" (未调看)";
+        }
+
+        ////判断麦克风状态
+#if  0
+        if (_isAudio) {
+            mkfSxtStr += u8" (麦克风已关闭)";
+        }
+        else {
+            mkfSxtStr += u8" (麦克风已打开)";
+        }
+#endif 
+
+        ui->lab_io->setText(QString::fromUtf16((char16_t*)pProcInfo->av.confLayout.login_termialName) + mkfSxtStr);
+
+
+    }
+
+    return  0;
+}
+
+
 
 
 //远程视频

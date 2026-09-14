@@ -674,7 +674,7 @@ errLabel:
 	 }
 
 	 //
-	 setSaveMsgFlg(true);
+	 setSaveMsgFlg(pProcInfo, true);
 
 	 //  2016/04/28
 	 pProcInfo->m_pf_doDecodeVideo_dvtCli  =  doDecodeVideo_dvtCli;

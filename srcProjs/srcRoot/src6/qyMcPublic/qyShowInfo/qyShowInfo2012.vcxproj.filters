@@ -21,9 +21,6 @@
     <ClCompile Include="public\qyShowInfoCommProc.cpp">
       <Filter>public</Filter>
     </ClCompile>
-    <ClCompile Include="public\showInfo_open0.cpp">
-      <Filter>public</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\qyCommProc\qyCommFunc.cpp">
       <Filter>qyCommProc</Filter>
     </ClCompile>
@@ -42,6 +39,7 @@
     <ClCompile Include="..\..\..\..\qyOpen\qyCommProc_open\qyTCharCommProc.cpp">
       <Filter>qyOpen\qyCommProc_open</Filter>
     </ClCompile>
+    <ClCompile Include="public\showInfo_open.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />

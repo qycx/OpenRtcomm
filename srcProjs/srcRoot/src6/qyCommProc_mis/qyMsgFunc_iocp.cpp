@@ -321,10 +321,13 @@ int  qyRecvMsg_iocp(MT_SOCK_IOCP * pMtSock, PER_SOCKET_CONTEXT * pPerSocketConte
 		//
 		int  headLen = 0;
 		//
-		if (pMtSock->pMtSockDbgStatusInfo->m_var.bUse_head16) {
+#if  0
+		if (pMtSock->pMtSockDbgStatus->m_var.bUse_head16) {
 			headLen = 16;// sizeof(AT_MSG_HEAD_n);
 		}
-		else {
+		else 
+#endif
+		{
 			if (isUcFlgHead14(ucFlg)) {
 				headLen = 14;// sizeof(AT_MSG_HEAD14_n);
 				if (!isUcFlgMoreData(ucFlg))  headLen -= 2;
@@ -357,14 +360,17 @@ int  qyRecvMsg_iocp(MT_SOCK_IOCP * pMtSock, PER_SOCKET_CONTEXT * pPerSocketConte
 		//  讀完head,就要轉成本地結構
 		byte  ucFlg = pIoContext->buf[0];
 		//
-		if (pMtSock->pMtSockDbgStatusInfo->m_var.bUse_head16) {
+#if  0
+		if (pMtSock->pMtSockDbgStatus->m_var.bUse_head16) {
 			AT_MSG_HEAD16_n  tmpHead_n;
 			//		
 			memcpy(&tmpHead_n, pIoContext->buf, pIoContext->headLen);
 			//
 			AT_MSG_HEAD16_ntoh(&caller,pCliInfo->i64StartTime_base2, &tmpHead_n, &pIoContext->msgHead);
 		}
-		else {
+		else
+#endif 
+		{
 			//
 			if (isUcFlgHead14(ucFlg)) {
 				AT_MSG_HEAD14_n  tmpHead14_n;
@@ -834,7 +840,7 @@ int  qySendMsg_iocp(MT_SOCK_IOCP * pMtSock, PER_SOCKET_CONTEXT * pPerSocketConte
 		}
 		//
 #ifdef  __DEBUG__
-		if (pMtSock->pMtSockDbgStatusInfo->m_var.bNo_head14) {	//  爲了測試，把head14關掉.
+		if (pMtSock->pMtSockDbgStatus->bNo_head14) {	//  爲了測試，把head14關掉.
 			bHead14 = false;
 		}
 #endif 

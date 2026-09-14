@@ -71,7 +71,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>..\..\..\..\..\VS2012\x64\$(Configuration)\bin\</OutDir>
+    <OutDir>..\..\..\..\..\..\VS2012\x64\$(Configuration)\bin\</OutDir>
     <IntDir>..\..\..\..\..\..\vs2012\x64\o\wgcCapture\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -79,7 +79,7 @@
     <IntDir>..\..\..\..\..\..\vs2012\Win32\o\wgcCapture\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>..\..\..\..\..\VS2012\x64\$(Configuration)\bin\</OutDir>
+    <OutDir>..\..\..\..\..\..\VS2012\x64\$(Configuration)\bin\</OutDir>
     <IntDir>..\..\..\..\..\..\vs2012\x64\o\wgcCapture\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

@@ -186,7 +186,7 @@ errLabel:
 
 	//
 	if  (  pDaemon  )  {
-		pDaemon->startToQuit();
+		pDaemon->startToQuit(_T(""));
 		//
 		pDaemon->stop(  );
 		pDaemon->exit(  );

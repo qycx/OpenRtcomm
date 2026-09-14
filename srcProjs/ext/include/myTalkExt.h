@@ -27,8 +27,7 @@ class myTalkExt : public TalkExtTmpl {
 	//
 	virtual int doOp_switchTransmissionMode(__int64  idInfo_imGrp_related, bool b_noVDownload);
 	
-	//
-	virtual int refreshTransmissionMode(void* hDlgTalkParam, void* pm_var);
+	
 
 
 

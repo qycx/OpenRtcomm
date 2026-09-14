@@ -260,7 +260,7 @@ errLabel:
 	 traceLogA(  "doNetMcMgr enters, iSessionId is %d",  pSession->comm.uiSessionId  );
 
 	 //
-	 if  (  qySendResp(  &pSession->comm,  pSock,  pSubThreadInfo->pTo,  CONST_qyRc_ok,  0,  0  )  )  goto  errLabel;
+	 if  (  qySendResp1(  &pSession->comm,  pSock,  pSubThreadInfo->pTo,  CONST_qyRc_ok,  0,  0  )  )  goto  errLabel;
 
 
 	 //
@@ -350,7 +350,7 @@ errLabel:
 			//  	  doMisMgr(  pSubThreadInfo,  (  void  *  )&tmpSession,  &tmpSock,  pSubThreadInfo->pTo  );
 			//  	  break;
 			default:
-					qySendResp(  &tmpSession.comm,  &tmpSock,  pSubThreadInfo->pTo,  CONST_qyRc_err,  NULL,  0  );
+					qySendResp1(  &tmpSession.comm,  &tmpSock,  pSubThreadInfo->pTo,  CONST_qyRc_err,  NULL,  0  );
 					break;				
 	}
 	

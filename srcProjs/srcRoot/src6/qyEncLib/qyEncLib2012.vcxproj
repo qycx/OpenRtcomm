@@ -231,18 +231,18 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\..\..\VS2012\$(PlatformName)\Debug\lib\</OutDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debuf_No_Mfc|Win32'">..\..\..\..\VS2012\$(PlatformName)\Debug\lib\</OutDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug_Static_No_Mfc|Win32'">..\..\..\..\VS2012\$(PlatformName)\Debug\lib\</OutDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug_Static|Win32'">..\..\..\..\VS2012\$(PlatformName)\Debug\lib\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\..\..\..\VS2012\$(PlatformName)\Debug\lib\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debuf_No_Mfc|Win32'">..\..\..\..\..\VS2012\$(PlatformName)\Debug\lib\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug_Static_No_Mfc|Win32'">..\..\..\..\..\VS2012\$(PlatformName)\Debug\lib\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug_Static|Win32'">..\..\..\..\..\VS2012\$(PlatformName)\Debug\lib\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\..\..\..\VS2012\$(PlatformName)\o\$(ProjectName)\$(Configuration)\</IntDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debuf_No_Mfc|Win32'">..\..\..\..\..\VS2012\$(PlatformName)\o\$(ProjectName)\$(Configuration)\</IntDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug_Static_No_Mfc|Win32'">..\..\..\..\..\VS2012\$(PlatformName)\o\$(ProjectName)\$(Configuration)\</IntDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug_Static|Win32'">..\..\..\..\..\VS2012\$(PlatformName)\o\$(ProjectName)\$(Configuration)\</IntDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\..\..\VS2012\$(PlatformName)\Release\lib\</OutDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release_No_Mfc|Win32'">..\..\..\..\VS2012\$(PlatformName)\Release\lib\</OutDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release_Static_No_Mfc|Win32'">..\..\..\..\VS2012\$(PlatformName)\Release\lib\</OutDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release_Static|Win32'">..\..\..\..\VS2012\$(PlatformName)\Release\lib\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\..\..\..\VS2012\$(PlatformName)\Release\lib\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release_No_Mfc|Win32'">..\..\..\..\..\VS2012\$(PlatformName)\Release\lib\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release_Static_No_Mfc|Win32'">..\..\..\..\..\VS2012\$(PlatformName)\Release\lib\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release_Static|Win32'">..\..\..\..\..\VS2012\$(PlatformName)\Release\lib\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\..\..\..\VS2012\$(PlatformName)\o\$(ProjectName)\$(Configuration)\</IntDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release_No_Mfc|Win32'">..\..\..\..\..\VS2012\$(PlatformName)\o\$(ProjectName)\$(Configuration)\</IntDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release_Static_No_Mfc|Win32'">..\..\..\..\..\VS2012\$(PlatformName)\o\$(ProjectName)\$(Configuration)\</IntDir>
@@ -265,36 +265,36 @@
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release_Static|x64'">qyEncLibStatic</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Static_No_Mfc|x64'">
-    <OutDir>..\..\..\..\VS2012\$(PlatformName)\Release\lib\</OutDir>
+    <OutDir>..\..\..\..\..\VS2012\$(PlatformName)\Release\lib\</OutDir>
     <IntDir>..\..\..\..\..\VS2012\$(PlatformName)\o\$(ProjectName)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_No_Mfc|x64'">
-    <OutDir>..\..\..\..\VS2012\$(PlatformName)\Release\lib\</OutDir>
+    <OutDir>..\..\..\..\..\VS2012\$(PlatformName)\Release\lib\</OutDir>
     <IntDir>..\..\..\..\..\VS2012\$(PlatformName)\o\$(ProjectName)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>..\..\..\..\VS2012\$(PlatformName)\Release\lib\</OutDir>
+    <OutDir>..\..\..\..\..\VS2012\$(PlatformName)\Release\lib\</OutDir>
     <IntDir>..\..\..\..\..\VS2012\$(PlatformName)\o\$(ProjectName)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Static|x64'">
-    <OutDir>..\..\..\..\VS2012\$(PlatformName)\Release\lib\</OutDir>
+    <OutDir>..\..\..\..\..\VS2012\$(PlatformName)\Release\lib\</OutDir>
     <IntDir>..\..\..\..\..\VS2012\$(PlatformName)\o\$(ProjectName)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Static_No_Mfc|x64'">
     <IntDir>..\..\..\..\..\VS2012\$(PlatformName)\o\$(ProjectName)\$(Configuration)\</IntDir>
-    <OutDir>..\..\..\..\VS2012\$(PlatformName)\Debug\lib\</OutDir>
+    <OutDir>..\..\..\..\..\VS2012\$(PlatformName)\Debug\lib\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IntDir>..\..\..\..\..\VS2012\$(PlatformName)\o\$(ProjectName)\$(Configuration)\</IntDir>
-    <OutDir>..\..\..\..\VS2012\$(PlatformName)\Debug\lib\</OutDir>
+    <OutDir>..\..\..\..\..\VS2012\$(PlatformName)\Debug\lib\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debuf_No_Mfc|x64'">
     <IntDir>..\..\..\..\..\VS2012\$(PlatformName)\o\$(ProjectName)\$(Configuration)\</IntDir>
-    <OutDir>..\..\..\..\VS2012\$(PlatformName)\Debug\lib\</OutDir>
+    <OutDir>..\..\..\..\..\VS2012\$(PlatformName)\Debug\lib\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Static|x64'">
     <IntDir>..\..\..\..\..\VS2012\$(PlatformName)\o\$(ProjectName)\$(Configuration)\</IntDir>
-    <OutDir>..\..\..\..\VS2012\$(PlatformName)\Debug\lib\</OutDir>
+    <OutDir>..\..\..\..\..\VS2012\$(PlatformName)\Debug\lib\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

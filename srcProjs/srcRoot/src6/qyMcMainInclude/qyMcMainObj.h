@@ -537,6 +537,11 @@ typedef  struct  __qyMcGui_t									{
 				 QY_PROGRESS									progress;
 
 				 //
+				 struct {
+					 char										dsStr[128];
+				 }												ds;
+
+				 //
 }		 QY_MC_GUI;
 
 

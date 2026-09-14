@@ -238,7 +238,7 @@ errLabel:
 }
 
   //
-  bool  g_bUse_head16 = false;
+  //bool  g_bUse_head16 = false;
 
   //
   extern  "C"  int  qySendMsg(QY_COMM_SESSION* pSession, QY_SOCK* pSock, SOCK_TIMEOUT* pTo, unsigned  char  ucFlg, unsigned  short  cmdCode, time_t  uiStartTime, unsigned  int  uiTranNo, unsigned  short  usSeqNo, char* data, unsigned  int  dataLen)
@@ -292,6 +292,7 @@ errLabel:
 	  //
 	  int nBytes;  nBytes = 0;
 	  //
+#if  0
 	  if (g_bUse_head16) {
 		  AT_MSG_HEAD16_n  tmpHead_n;
 		  AT_MSG_HEAD16_hton(&caller,pSession->service.i64StartTime_base, &tmpHead, &tmpHead_n);
@@ -300,7 +301,9 @@ errLabel:
 			  traceLogA((char*)"qySend msgHead failed");  goto  errLabel;
 		  }
 	  }
-	  else {
+	  else
+#endif 
+	  {
 		  //
 		  bool  bHead14;  bHead14 = false;
 		   //

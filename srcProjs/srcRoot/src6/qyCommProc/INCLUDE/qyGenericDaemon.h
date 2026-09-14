@@ -142,7 +142,7 @@ class CQyGenericDaemon : public  CCtxQyTmpl {
 
 public:
 	CQyGenericDaemon(  );
-	~CQyGenericDaemon(  );
+	virtual ~CQyGenericDaemon(  );
 
 private:
 	QY_GENERIC_DAEMON		var;

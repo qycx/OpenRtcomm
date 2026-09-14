@@ -49,7 +49,7 @@ extern  "C"  bool  isImGrp(int  uiType)
 	 memcpy(  service.data,  data,  min(  dataLen,  sizeof(  service.data  )  )  );
 
 	 len  =  offsetof(  QY_COMM_SERVICE_n,  data  )  +  min(  dataLen,  sizeof(  service.data  )  );	//  2007/04/19, 原来发送的len为sizeof(  service  ), 现在做了修改。主要为了让发送的数据能灵活控制
-	 if  (  qySendReq(  pSession,  pSock,  pTo,  CONST_qyCmd_tellService,  (  char  *  )&service,  len  )  )  goto  errLabel;
+	 if  (  qySendReq1(  pSession,  pSock,  pTo,  CONST_qyCmd_tellService,  (  char  *  )&service,  len  )  )  goto  errLabel;
 
 	 //  将service赋入pSession中
 	 service.serviceId  =  serviceId;			//
@@ -265,6 +265,11 @@ errLabel:
 	 
 	 memset(  &tmpHead,  0,  sizeof(  tmpHead  )  );
 	 tmpHead.usCode  =  qyhtons(  cmdCode  );
+	 //
+	 if (bResp) {
+		 tmpHead.ucFlg |= CONST_commFlg_resp;
+	 }
+	 //
 	 if  (  !data  )  dataLen  =  0;
 
 	 if  (  dataLen  )  {		//  2004/01/02里加入了加密的处理
@@ -320,13 +325,13 @@ errLabel:
 
 }
 
-  extern  "C"  int  qySendReq(  QY_COMM_SESSION  * pSession, QY_SOCK * pSock, SOCK_TIMEOUT * pTo, unsigned  short  cmdCode,  char  *  data,  unsigned  int  dataLen  )
+  extern  "C"  int  qySendReq1(  QY_COMM_SESSION  * pSession, QY_SOCK * pSock, SOCK_TIMEOUT * pTo, unsigned  short  cmdCode,  char  *  data,  unsigned  int  dataLen  )
 {
 	  return  tmpqySendReq(  pSession,  pSock,  pTo,  FALSE,  cmdCode,  data,  dataLen  );
 }
 
 
-  extern  "C"  int  qySendResp(  QY_COMM_SESSION  *  pSession,  QY_SOCK  *  pSock,  SOCK_TIMEOUT * pTo,  unsigned  short  respCode,  char  *  data,  unsigned  int  dataLen  )
+  extern  "C"  int  qySendResp1(  QY_COMM_SESSION  *  pSession,  QY_SOCK  *  pSock,  SOCK_TIMEOUT * pTo,  unsigned  short  respCode,  char  *  data,  unsigned  int  dataLen  )
 {
 	 return  tmpqySendReq(  pSession,  pSock,  pTo,  TRUE,  respCode,  data,  dataLen  );
 	 

@@ -168,6 +168,8 @@ typedef  struct  {
 
 //
 int outputVerInfo(TCHAR* filePrefix);
+int outputDsInfo(TCHAR* filePrefix, char* dsStr);
+
 
 //
 bool bGetQmInitCfg(TCHAR* smCfgFile, Qm_initCfg* pCfg);

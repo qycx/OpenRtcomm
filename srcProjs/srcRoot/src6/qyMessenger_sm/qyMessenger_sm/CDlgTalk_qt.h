@@ -68,6 +68,10 @@ public:
 	//
 	int doTimerProc();
 
+	//
+	int refreshTransmissionMode();
+
+	//
 	QString formatHHMMSS(qint64 ms); //秒转分秒
 
 	void sxrzStatus();//检测认证状态

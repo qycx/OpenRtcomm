@@ -26,19 +26,65 @@
 
 
  //
- bool  bUseMySql8()
+ //bool  bUseMySql8()
+ bool  bGetMySqlVersion(char* ver, int cnt)
  {
 	 bool  bRet = false;
 	 TCHAR  tBuf[128];
 
 	 if (!qyGetRegCfgT(HKEY_LOCAL_MACHINE, _T(CONST_qyRootKey_qnmScheduler_mis), _T("mySqlVersion"), (char*)tBuf, sizeof(tBuf), 0)) {
-		 if (_ttol(tBuf) == 8) {
-			 bRet = true;
-		 }
+		 //if (_ttol(tBuf) == 8)
+		 myTChar2Utf8(tBuf, ver, cnt);
+		 
+		 //			
+		 bRet = true;
+		 
 	 }
 
 	 return  bRet;
  }
+
+ //
+ bool  bGetMySqlDrv(TCHAR  *drvStr, int cntof_drvStr) 
+ {
+	 bool  bRet = false;
+	 TCHAR* drv = (TCHAR*)_T(CONST_dbDriver_mySql9_5);
+	 TCHAR  tBuf[128];
+
+	 //
+	 if (!drvStr || !cntof_drvStr)  return  false;
+
+	 //
+	 do {
+		 safeTcsnCpy(drv, tBuf, mycountof(tBuf));
+		 TCHAR* pPre = _tcschr(tBuf, _T('9'));
+		 if (!pPre)  break;
+		 *pPre = 0;
+		 //
+		 TCHAR* pPost = _tcschr(pPre + 1, _T('5'));
+		 if (!pPost)  break;
+		 pPost++;
+		 //
+		 char  ver[128];
+		 if (!bGetMySqlVersion(ver, mycountof(ver)) ) {
+			 break;
+		 }
+		 //
+		 _sntprintf(drvStr, cntof_drvStr, _T("%s%S%s"), tBuf, ver, pPost);
+
+		 bRet = true;
+	 } while (false);
+
+	 //
+	 if (!bRet) {
+		 safeTcsnCpy(drv, drvStr, cntof_drvStr);
+		 bRet = true;
+	 }
+
+	 //
+	 return  bRet;
+ }
+
 
 
  //
@@ -120,10 +166,21 @@
 				}
 		  else  if  (  iDbType  ==  CONST_dbType_mySql  )  {
 					//
-					bool  bUseV8 = bUseMySql8();
-					TCHAR* driverStr = (TCHAR*)_T(  CONST_dbDriver_mySql  );
-					if (bUseV8)  driverStr = (TCHAR*)_T(CONST_dbDriver_mySql8);
-
+#if  0
+					//bool  bUseV8 = bUseMySql8();
+					char  mySqlVer[128];
+					if (!bGetMySqlVersion(mySqlVer, mycountof(mySqlVer))) {
+						mySqlVer[0] = 0;
+					}
+					TCHAR* driverStr = (TCHAR*)_T(  CONST_dbDriver_mySql9_5  );
+					//if (bUseV8)  driverStr = (TCHAR*)_T(CONST_dbDriver_mySql8);
+#endif 
+					//
+					TCHAR  driverStr[128];  driverStr[0] = 0;
+					bGetMySqlDrv(driverStr, mycountof(driverStr));
+					//
+					showInfo_open(0, _T("mySql:"), 0, driverStr);
+					
 					//
 			        _sntprintf(  tmpConnectStr,  size,  _T(  "DRIVER=%s;SERVER=%s;DATABASE=%s;USER=%s;PASSWORD=%s;OPTION=3;"  ),  driverStr,  tDbServNameBuf,  dbName,  uid,  pwd  );
 		 		    }

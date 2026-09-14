@@ -58,6 +58,12 @@ public:
 
 	//
 	int doTimerProc();
+	//
+	int refreshTransmissionMode();
+
+	//单向双向热切换，记录最后一次操作
+	bool lastFlag;
+
 
 	//
 	void more_loadFinished(int page, int count);
@@ -131,6 +137,8 @@ public:
 
 	//
 	bool _is_device_screen = false;
+
+
 
 protected:
 	//自己重新实现拖动操作

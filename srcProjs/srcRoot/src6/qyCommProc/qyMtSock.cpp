@@ -47,7 +47,7 @@ extern  "C"  DWORD WINAPI mtCliSockThreadProc( LPVOID lpParameter );
 
 
  //extern  "C"  int  initQyMtSock(  char  *  servIp,  unsigned  short  port,  MT_SERVWORK  *  pServWork,  void  *  pParentParam,  int  iType_pParentParam,  void  **  ppMtSock  )
- int initQyMtSock(char* servIp, unsigned short port, MT_SERVWORK* pServWork, void* pParentParam, int  iType_pParentParam, void* pCtxFw, void* pDbgStatusInfo, void** ppMtSock)
+ int initQyMtSock(char* servIp, unsigned short port, MT_SERVWORK* pServWork, void* pParentParam, int  iType_pParentParam, void* pCtxFw, MtSockDbgStatus* pDbgStatusInfo, void** ppMtSock)
 {
 	int				iErr				=	-1;
 	DWORD			dwThreadDaemonId;
@@ -98,7 +98,7 @@ extern  "C"  DWORD WINAPI mtCliSockThreadProc( LPVOID lpParameter );
 
 	//
 	pMtSock->pCtxFw_and = (CtxFw_and  *  )pCtxFw;
-	pMtSock->pMtSockDbgStatusInfo = (MtSockDbgStatusInfo*)pDbgStatusInfo;
+	pMtSock->pMtSockDbgStatus = (MtSockDbgStatus*)pDbgStatusInfo;
 
 	//
 	for  (  i  =  0;  i  <  pMtSock->servWork.usMaxConns;  i  ++  )  {
@@ -215,16 +215,24 @@ errLabel:
 
 	if  (  asrListen(  pMtSock->port,  &pMtSock->servSockFd  )  )  {
 		pMtSock->bListenFailed  =  TRUE;
-		traceLogA(  "不能监听端口%d",  pMtSock->port  );
+		//
+		TCHAR  tBuf[128];
+		_sntprintf(tBuf,mycountof(tBuf),  _T(  "astListen %d failed"  ),  pMtSock->port  );
+		showInfo_open(0, 0, 0, tBuf);
+		//
 		goto  errLabel;
 	}
-	traceLogA(  "监听端口%d",  pMtSock->port  );
+	//
+	traceLogA(  "Listen on %d. l226",  pMtSock->port  );
 	qyShowInfo1(  CONST_qyShowType_sysInfo,  0,  (  ""  ),  _T(  "127.0.0.1"  ),  0,  _T(  "(Server)"  ),  _T(  "Listen on "  ),  _T(  "%u"  ),  pMtSock->port  ); 
 
 
 	//
 	while  (  !pMtSock->bQuit  )  {
+		   
 		   //  OutputDebugString( "try to get an available socket.\n" );
+
+		   //
 		   while  (  !pMtSock->bQuit  )  {
 				  for  (  i  =  0;  i  <  pMtSock->servWork.usMaxConns;  i  ++  )  {
 					   if  (  !pMtSock->bUseds[i]  )  break;
@@ -235,8 +243,10 @@ errLabel:
 		   }
 		   if  (  pMtSock->bQuit  )  break;
 
+		   //
 		   if  (  asrAccept(  pMtSock->servSockFd,  &pMtSock->cliSockFds[i],  pMtSock->servWork.sT.iAccept  )  )  continue;
-		   //  OutputDebugString(  "asrAccept .. succeeded.\n"  );
+		   
+		   //
 		   pMtSock->bUseds[i] = TRUE;
 		   if  (  !SetEvent(  pMtSock->hEvents[i]  )  )  goto errLabel;
 		
@@ -255,6 +265,15 @@ errLabel:
 }
  
 
+
+ //
+ MtSockCliInfo* getCliInfo(MT_SOCK* pMtSock, int  cliInfo_id)
+ {
+	 if (cliInfo_id < 0 || cliInfo_id >= mycountof(pMtSock->cliInfos)) {
+		 return  mynull;
+	 }
+	 return  &pMtSock->cliInfos[cliInfo_id];
+ }
 
  
  extern  "C"  DWORD  WINAPI  mtCliSockThreadProc(  LPVOID  lpParameter  )
@@ -281,6 +300,10 @@ errLabel:
 
 	memset( ( char * )&subThreadInfo, 0, sizeof( subThreadInfo ) );
 
+	//
+	subThreadInfo.cliInfo_id = id;		//  2026/09/05
+
+	//
 	subThreadInfo.iServiceId  =  pMtSock->servWork.iServiceId;		//  2007/03/12
 	if  (  pMtSock->servWork.mutexName[0]  )  {
 		subThreadInfo.hMutex = CreateMutex(  NULL,  FALSE,  pMtSock->servWork.mutexName  );

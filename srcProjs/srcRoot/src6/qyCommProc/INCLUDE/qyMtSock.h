@@ -69,9 +69,19 @@ typedef  struct  __mtSockCommont_					{						//  2007/08/14
 				 MACRO_mtSock_common
 }		 MT_SOCK_COMMON;
 
+
+//
+typedef  struct {
+					
+					char						hg_ip1[15 + 1];
+					char						hg_localIp[15 + 1];
+
+}		 MtSockCliInfo;
+
+
 //
 class CtxFw_and;
-class MtSockDbgStatusInfo;
+class MtSockDbgStatus;
 
 //
 typedef  struct  __mt_sock_t						{
@@ -86,11 +96,14 @@ typedef  struct  __mt_sock_t						{
 				 DWORD								dwThreadIds[MAX_CONNS];	//  2007/03/29
 
 				 HANDLE								hEvents[MAX_CONNS];		//  多线程：事件的同步机制
+
+				 //
+				 MtSockCliInfo						cliInfos[MAX_CONNS];
 				 
 				 //
 				 CtxFw_and					*		pCtxFw_and;
 				 //
-				 MtSockDbgStatusInfo* pMtSockDbgStatusInfo;
+				 MtSockDbgStatus			*		pMtSockDbgStatus;
 
 }		MT_SOCK;
 
@@ -124,6 +137,8 @@ typedef  struct  __mtSubThreadInfo_t				{
 				 //
 				 CTX_fixConnectTimeout				ctxFixConnectTimeout;
 				 //
+				 int								cliInfo_id;		//  2026/09/05
+				 //
 				 TCHAR								tHint[128];				//  2023/03/12
 				 //
 }		 MT_SUBTHREADINFO;
@@ -147,11 +162,13 @@ typedef  struct  __mtSockState_t					{
 
 
 //  int initQyMtSock( char *servIp, unsigned short port, MT_SERVWORK *pServWork, void * p );
-int initQyMtSock( char *servIp, unsigned short port, MT_SERVWORK * pServWork, void * pParentParam,  int  iType_pParentParam,  void  *  pCtxFw,  void  *  pDbgStatusInfo, void  **  ppMtSock  );
+int initQyMtSock( char *servIp, unsigned short port, MT_SERVWORK * pServWork, void * pParentParam,  int  iType_pParentParam,  void  *  pCtxFw,  MtSockDbgStatus  *  pDbgStatusInfo, void  **  ppMtSock  );
 void exitQyMtSock(  void  *  pMtSockParam  );
 int  getQyMtSockState(  void  *  pMtSockparam,  MT_SOCK_STATE  *  pState  );
 BOOL  bQyMtSockQuit(  void  *  pMtSockParam  );
-//  MT_SERVWORK  *  getQyMtSockServWork(  );
+
+//
+MtSockCliInfo* getCliInfo(MT_SOCK* pMtSock, int  cliInfo_id);
 
 
 

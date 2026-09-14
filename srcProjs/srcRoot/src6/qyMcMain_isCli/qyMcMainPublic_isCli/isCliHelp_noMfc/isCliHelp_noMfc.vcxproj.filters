@@ -71,7 +71,6 @@
     <ClCompile Include="..\isCliHelp\public\dlgDynBmpsProc.cpp" />
     <ClCompile Include="..\isCliHelp\public\dlgInstantAssistant_help.cpp" />
     <ClCompile Include="..\isCliHelp\public\dlgOfflineResProc.cpp" />
-    <ClCompile Include="..\isCliHelp\public\dlgPolicyIsClient_help.cpp" />
     <ClCompile Include="..\isCliHelp\public\dlgSelectAvCompressor_help.cpp" />
     <ClCompile Include="..\isCliHelp\public\dlgTalkProc_help.cpp" />
     <ClCompile Include="..\isCliHelp\public\dlgTalkProc_isCliHelp.cpp" />
@@ -328,6 +327,7 @@
     <ClCompile Include="..\..\..\qyCommProc\getCfgVal.cpp">
       <Filter>qyCommProc</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\isCliHelp\public\dlgPolicyIsClient_help.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\qyCommProc\INCLUDE\syncMtCnt.h" />

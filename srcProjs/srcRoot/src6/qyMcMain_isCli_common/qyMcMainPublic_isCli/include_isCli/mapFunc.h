@@ -13,7 +13,7 @@ __declspec(dllexport)  int ancSndLocation(void* p0, char* locStr, __int64 imGrp_
 __declspec(dllexport) int ancSndTransferLocData(void* p0, void  *  pTransferLocData, __int64 imGrp_related_ui64Id, __int64  ui64Id_dst);
 
 
-__declspec(dllexport)  int ancRequestAFile(int loopCtrl);
+__declspec(dllexport)  int ancRequestAFile(int loopCtrl, int iSvcId);
 
 __declspec(dllexport)  int ancSndMark(char* markStr);
 

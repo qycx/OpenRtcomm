@@ -42,6 +42,27 @@ int outputVerInfo(TCHAR* filePrefix)
 }
 
 //
+int outputDsInfo(TCHAR* filePrefix, char  *  dsStr)
+{
+	TCHAR  fileName[256];
+
+	if (!filePrefix) return  -1;
+	if (!dsStr)  return  -1;
+
+	_sntprintf(fileName, mycountof(fileName), _T("d:\\qycx\\log\\%s.ds.%S"), filePrefix, dsStr);
+	FILE* fp;
+	fp = _tfopen(fileName, _T("a"));
+	if (fp) {
+		fclose(fp);
+	}
+
+	//
+	return  0;
+}
+
+
+
+//
 bool bGetQmInitCfg(TCHAR* smCfgFile, Qm_initCfg* pCfg)
 {
 	TCHAR  tBuf[128];

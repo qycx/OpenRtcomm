@@ -15,6 +15,9 @@ class TalkGuiExt_sm :public TalkGuiExtTmpl {
 		return  0;
 	}
 
+	//
+	virtual int refreshTransmissionMode(void* hDlgTalkParam, void* pm_var);
+
 
 };
 

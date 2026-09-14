@@ -44,13 +44,13 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin\</OutDir>
+    <OutDir>..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin\</OutDir>
     <IntDir>..\..\..\..\..\..\VS2012\$(Platform)\o\$(ProjectName)\$(Configuration)\</IntDir>
     <TargetName>qisGuiPublic</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin\</OutDir>
+    <OutDir>..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin\</OutDir>
     <IntDir>..\..\..\..\..\..\VS2012\$(Platform)\o\$(ProjectName)\$(Configuration)\</IntDir>
     <TargetName>qisGuiPublic</TargetName>
   </PropertyGroup>
@@ -67,7 +67,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ModuleDefinitionFile>.\qisGuiPublic.def</ModuleDefinitionFile>
       <AdditionalDependencies>qyBaseLib.lib;qyEncLib.lib;winmm.lib;vfw32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\lib</AdditionalLibraryDirectories>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -96,7 +96,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <ModuleDefinitionFile>.\qisGuiPublic.def</ModuleDefinitionFile>
       <AdditionalDependencies>qyBaseLib.lib;qyEncLib.lib;winmm.lib;vfw32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\lib</AdditionalLibraryDirectories>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>

@@ -46,7 +46,7 @@ public:
 
 	//
 	CtxFw_and  ctxFw_and;
-	MtSockDbgStatusInfo	mtSockDbgStatusInfo;
+	MtSockDbgStatus	mtSockDbgStatusInfo;
 
 
 	//
@@ -58,6 +58,11 @@ public:
 	virtual  int	getInitialCfg(  );
 	BOOL			bChkBeforeRunning(  );
 	virtual  int	refreshCfg(  );
+
+	//
+	virtual  void			startToQuit(TCHAR* hint);
+	virtual int				getProgramDataDir(TCHAR* tDir, int cntOf_tDir);
+
 
 
 

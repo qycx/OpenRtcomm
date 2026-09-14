@@ -7,7 +7,7 @@
 //
 #include	"qyMtSock.h"
 #include	"qyq2.h"
-#include	"mtSockDebugStatusInfo.h"
+#include	"mtSockDbgStatus.h"
 
 
 //
@@ -191,7 +191,7 @@ typedef  struct  __mt_sock_iOCP_t					{
 				 //
 				 CtxFw_and * pCtxFw_and;
 				 //
-				 MtSockDbgStatusInfo  *  pMtSockDbgStatusInfo;
+				 MtSockDbgStatus  *  pMtSockDbgStatus;
 				 
 				 //
 }		MT_SOCK_IOCP;
@@ -301,7 +301,7 @@ typedef  struct  __perSocketContext_t				{
 
 
 //
-int initQyMtSock_iocp(char* servIp, unsigned short port, MT_SERVWORK* pServWork, void* pParentParam, int  iType_pParentParam, void* pCtxFw, void* pDbgStatusInfo, void** ppMtSock);
+int initQyMtSock_iocp(char* servIp, unsigned short port, MT_SERVWORK* pServWork, void* pParentParam, int  iType_pParentParam, void* pCtxFw, MtSockDbgStatus* pDbgStatus, void** ppMtSock);
 void exitQyMtSock_iocp(  void  *  pMtSockParam  );
 
 //

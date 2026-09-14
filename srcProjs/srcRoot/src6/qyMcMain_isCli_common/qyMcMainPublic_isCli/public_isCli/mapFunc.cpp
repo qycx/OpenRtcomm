@@ -185,7 +185,7 @@ __declspec(dllexport) int ancSndTransferLocData(void* p0, void* pTransferLocData
 DWORD  g_dwLastTickCnt_requestAFile = 0;
 
 //
-__declspec(dllexport)  int ancRequestAFile(int loopCtrl)
+__declspec(dllexport)  int ancRequestAFile(int loopCtrl,int iSvcId)
 {
 	CCtxQyMc* pQyMc = g_pQyMc;
 	CCtxQmc* pProcInfo = (CCtxQmc*)pQyMc->get_pProcInfo();
@@ -205,6 +205,8 @@ __declspec(dllexport)  int ancRequestAFile(int loopCtrl)
 	//
 	memset(&req, 0, sizeof(req));
 	req.uiType = CONST_imCommType_anHgData;
+	//
+	req.iSvcId = iSvcId;
 
 	//
 	req.sHgCmd = CONST_hgCmd_requestAFile;

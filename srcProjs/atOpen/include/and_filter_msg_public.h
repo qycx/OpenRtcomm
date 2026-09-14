@@ -4,6 +4,13 @@
 #define  __amd_filter_msg_public_h__		//  {
 
 
+//
+#define		CONST_nWhere_hg_afterAccepted					1
+//
+//#define		CONST_nWhere_hg_serviceAccepted				3
+
+
+
 
 
 //

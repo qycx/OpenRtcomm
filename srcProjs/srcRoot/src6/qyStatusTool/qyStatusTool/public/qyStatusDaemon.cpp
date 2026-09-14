@@ -40,7 +40,7 @@
 		  
 		  //
 		  CtxFw_and* pCtxFw = mynull;
-		  MtSockDbgStatusInfo* pDbgStatusInfo = mynull;
+		  MtSockDbgStatus* pDbgStatusInfo = mynull;
 		  {
 			  pCtxFw = &this->ctxFw_and;
 			  pDbgStatusInfo = &this->mtSockDbgStatusInfo;
@@ -199,7 +199,16 @@ errLabel:
 		return  0;
 	}
 
-	
+	void	CQyStatusDaemon::startToQuit(TCHAR* hint)
+	{
+		CQyGenericDaemon::startToQuit(hint);
+	}
+
+
+	int  CQyStatusDaemon::getProgramDataDir(TCHAR* tDir, int cntOf_tDir)
+	{
+		return  0;
+	}
 
 
 

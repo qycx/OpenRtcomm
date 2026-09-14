@@ -706,7 +706,7 @@ DWORD  WINAPI  showInfoThreadProc(LPVOID  lpParameter)
 				//
 				//
 				int sizeShowStruct = sizeof(showStruct);
-				if (qySendReq(&session, &sock, &to, CONST_qyCmd_showInfo, (char*)&showStruct, sizeShowStruct)) {
+				if (qySendReq1(&session, &sock, &to, CONST_qyCmd_showInfo, (char*)&showStruct, sizeShowStruct)) {
 					qnmCloseSession(&session, &sock, &to);
 					bSessionOpen = false;
 					continue;

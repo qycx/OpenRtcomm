@@ -125,6 +125,7 @@ public:
 		//
 		
 		virtual TalkExtTmpl* new_talkExt();
+		virtual TalkGuiExtTmpl* new_talkGuiExt();
 
 		virtual QmcExtTmpl* new_qmcExt();
 

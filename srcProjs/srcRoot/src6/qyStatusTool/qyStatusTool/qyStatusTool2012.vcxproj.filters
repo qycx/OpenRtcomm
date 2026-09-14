@@ -65,6 +65,9 @@
     <ClCompile Include="..\..\atCommProc_nc\IsFw.cpp">
       <Filter>atCommProc_nc</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\qyCommProc\getCfgVal.cpp">
+      <Filter>qyCommProc</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DlgFilters.h" />

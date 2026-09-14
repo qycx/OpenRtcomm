@@ -162,6 +162,7 @@
     <ClCompile Include="..\..\atCommProc_nc\CtxFw_and.cpp" />
     <ClCompile Include="..\..\atCommProc_nc\IsFw.cpp" />
     <ClCompile Include="..\..\qyCommProc\displayShortTime.cpp" />
+    <ClCompile Include="..\..\qyCommProc\getCfgVal.cpp" />
     <ClCompile Include="..\..\qyCommProc\qyCommFunc.cpp" />
     <ClCompile Include="..\..\qyCommProc\qyGenericDaemon.cpp" />
     <ClCompile Include="..\..\qyCommProc\qyModuleFunc.cpp" />

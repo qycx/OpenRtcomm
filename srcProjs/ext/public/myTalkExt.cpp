@@ -15,7 +15,7 @@ bool  myTalkExt::bNoVDownload(int  iTaskId)
 	//
 #ifdef  __DEBUG__
 	//
-	if (10) {
+	if (0) {
 
 		//
 		if (1) {
@@ -33,8 +33,10 @@ bool  myTalkExt::bNoVDownload(int  iTaskId)
 #endif 
 
 	//
-	if (pProcInfo->m_iCtxSubtype == CONST_ctxSubtype_qmcSm) {
-		if (pProcInfo->uiTerminalType == CONST_terminalType_mon) {
+	//if (pProcInfo->m_iCtxSubtype == CONST_ctxSubtype_qmcSm) 
+	{
+		//if (pProcInfo->uiTerminalType == CONST_terminalType_mon) 
+		{
 			//
 			if (m_var.confCtrl.iTaskId != iTaskId)  return  false;
 			//
@@ -53,8 +55,4 @@ int myTalkExt::doOp_switchTransmissionMode(__int64  idInfo_imGrp_related, bool b
 	return  0;
 }
 
-//
-int myTalkExt::refreshTransmissionMode(void* hDlgTalkParam, void* pm_var)
-{
-	return  0;
-}
+
