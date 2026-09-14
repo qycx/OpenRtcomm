@@ -474,20 +474,33 @@ void CDlgTalk_qt::initControl()
         "background: transparent;"
     );*/
 
+    
     ui->label_tip->setStyleSheet(
         "color: white;"
         "font-size: 28px;"
         "background-color: rgba(0, 0, 0, 0);"
     );
 
+    //ui->label_tip->adjustSize();
+
     //label->setStyleSheet("background-color: rgba(0, 0, 0, 0);");
 
+    /*
     ui->label_tip->setAutoFillBackground(false);
+    ui->label_tip->setWindowFlags(Qt::Window | Qt::FramelessWindowHint | Qt::Tool);
+    ui->label_tip->setAttribute(Qt::WA_TranslucentBackground);
+    ui->label_tip->setStyleSheet(
+        "color: white;"
+        "font-family: 'Microsoft YaHei';"
+        "font-size: 28px;"
+        "background: transparent;"
+    );
 
-    m_meDescRect =  ui->meDesc->geometry();
-    
+    ui->label_tip->raise();
+    ui->label_tip->show();*/
 
-	
+
+    m_meDescRect =  ui->meDesc->geometry();  
     m_meDescPos = ui->meDesc->pos();
 }
 
@@ -2757,26 +2770,17 @@ int CDlgTalk_qt::refreshTransmissionMode()
             if (bNoV_val) {
                 ui->meDesc->setFixedSize(ui->peerDesc->width(), ui->peerDesc->height());
                 ui->meDesc->move(0, 0);
-                ui->meDesc->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);                
+                ui->meDesc->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
 
-                //判断发言状态
-                m_mkfSxtStr = " ";
-                if (qy_pProcInfo->xt.bSpeak) {
-                    m_mkfSxtStr += pMisCnt->talkerDesc;
-                    m_mkfSxtStr += u8" (正在调看)";
-                }
-                else {
-                    m_mkfSxtStr += pMisCnt->talkerDesc;
-                    m_mkfSxtStr += u8" (未调看)";
-                }
-
+                ui->lab_io->setVisible(false);
             }
             else {
                 ui->meDesc->setFixedSize(m_meDescRect.width(), m_meDescRect.height());
                 //ui->meDesc->move(0, 0);
 
-                m_mkfSxtStr = " ";
-                //m_mkfSxtStr += pMisCnt->talkerDesc;
+                //ui->label_tip->setVisible(false);
+
+                ui->lab_io->setVisible(true);                
                 
             }
 
@@ -2785,6 +2789,29 @@ int CDlgTalk_qt::refreshTransmissionMode()
         }
 
         //实时判断发言和麦克状态变更
+
+         //判断发言状态
+
+        if (bNoV_val) {
+            m_mkfSxtStr = " ";
+            if (qy_pProcInfo->xt.bSpeak) {
+                m_mkfSxtStr += pMisCnt->talkerDesc;
+                m_mkfSxtStr += u8" (正在调看)";
+            }
+            else {
+                m_mkfSxtStr += pMisCnt->talkerDesc;
+                m_mkfSxtStr += u8" (未调看)";
+            }
+            ui->label_tip->setVisible(true);
+            ui->lab_io->setVisible(false);
+        }
+        else {
+            m_mkfSxtStr = "";
+            //m_mkfSxtStr = " ";
+              //m_mkfSxtStr += pMisCnt->talkerDesc;
+            ui->label_tip->setVisible(false);
+            ui->lab_io->setVisible(true);
+        }
         
 
         ////判断麦克风状态
@@ -2800,6 +2827,14 @@ int CDlgTalk_qt::refreshTransmissionMode()
         ui->label_tip->setText(m_mkfSxtStr);
         //ui->label_tip->setStyleSheet("color: white;");
         
+
+        QFont font = ui->label_tip->font();
+
+
+        QFontMetrics fm(font);
+        int textWidth = fm.horizontalAdvance(ui->label_tip->text());   
+        ui->label_tip->setFixedWidth(textWidth);
+        //ui->label_tip->resize(textWidth, ui->label_tip->height());
 
 
     }
