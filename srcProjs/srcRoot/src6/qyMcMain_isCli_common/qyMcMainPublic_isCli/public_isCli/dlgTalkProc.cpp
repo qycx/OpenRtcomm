@@ -9869,6 +9869,7 @@ int  tmpHandler_showMsg_task_confKey(void* hDlgTalkParam, DLG_TALK_var& m_var, v
 
 
 	//
+#if 0
 		//
 	if (pProcInfo->m_pTalkExt->m_var.confCtrl.bNoVDownload != pContent->confKey.confTmpCtrl.ucbNoVDownload
 		|| pProcInfo->m_pTalkExt->m_var.confCtrl.iTaskId != m_var.av.taskInfo.iTaskId)
@@ -9885,6 +9886,10 @@ int  tmpHandler_showMsg_task_confKey(void* hDlgTalkParam, DLG_TALK_var& m_var, v
 
 
 	}
+#endif 
+	//
+	pProcInfo->m_pTalkExt->switchTransmissionMode(m_var.addr.idInfo.ui64Id, m_var.av.taskInfo.iTaskId, pContent->confKey.confTmpCtrl.ucbNoVDownload);
+
 
 
 
