@@ -2757,7 +2757,7 @@ typedef  struct  __confLayoutStatus_t {
 				 ConfLayoutParam									confLayoutParam;
 
 				 //
-				 ConfTmpCtrl										confTmpCtrl;
+				 ConfTmpCtrl										unused_confTmpCtrl;
 				 //unsigned  char										ucbNoVDownload;		//  2026/06/25
 
 				 //

@@ -77,7 +77,9 @@ public:
     //
     virtual int confData_init();
     virtual int confData_exit();
-       
+    
+    //
+    virtual int switchTransmissionMode(__int64 talkerId, int  iTaskId,  atbool  bNoVDownloadVal)  =  mynull;
 
     //    
     //  对传输终端,不下载video. 

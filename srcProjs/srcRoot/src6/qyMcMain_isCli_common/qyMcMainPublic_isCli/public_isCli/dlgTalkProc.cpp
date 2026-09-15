@@ -10025,6 +10025,7 @@ int  tmpHandler_showMsg_task_confLayoutStatus(void* hDlgTalkParam, DLG_TALK_var&
 	}
 
 
+	#if  0
 	//  以下处理bNoVDownload
 	if (0) {
 		_sntprintf(tBuf, mycountof(tBuf), (TCHAR*)_T("confLayoutStatus: bNoVDownload %d"), (int)pContent->confLayoutStatus.confTmpCtrl.ucbNoVDownload);
@@ -10047,6 +10048,7 @@ int  tmpHandler_showMsg_task_confLayoutStatus(void* hDlgTalkParam, DLG_TALK_var&
 
 
 	}
+#endif 
 	
 
 
