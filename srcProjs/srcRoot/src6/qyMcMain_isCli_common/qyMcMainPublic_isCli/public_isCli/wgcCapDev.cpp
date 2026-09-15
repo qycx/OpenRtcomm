@@ -343,6 +343,15 @@ int  WgcCapDev::exitDev(void** ppShareMediaDeviceParam)
 	//
 	stopDev(mynull);
 
+
+	//
+	if (m_var.pQisPipe) {
+		qisPipeFree(&m_var.pQisPipe);
+	}
+	showInfo_open(0, 0, 0, _T("wgcCapDev.exitDev: qisPipeFree ok"));
+
+
+
 	//  close shm
 	//
 	QY_shm* pShm = &m_var.dataShm;
@@ -360,11 +369,6 @@ int  WgcCapDev::exitDev(void** ppShareMediaDeviceParam)
 	closeVt(pProcInfo, m_var.tn_cliPipe, &m_var.vtProcess);
 	showInfo_open(0, 0, 0, _T("wgcCapDev.exitDev: closeVt ok"));
 
-	//
-	if (m_var.pQisPipe) {
-		qisPipeFree(&m_var.pQisPipe);
-	}
-	showInfo_open(0, 0, 0, _T("wgcCapDev.exitDev: qisPipeFree ok"));
 
 	//
 	if (ppShareMediaDeviceParam) {

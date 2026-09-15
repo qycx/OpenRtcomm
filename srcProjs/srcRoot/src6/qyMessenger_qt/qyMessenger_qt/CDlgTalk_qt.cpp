@@ -1051,11 +1051,14 @@ DLG_TALK_var* CDlgTalk_qt::get_pm_var()
 //关闭
 void CDlgTalk_qt::closeCDlgTalk_qt()
 {
+    //
+    DeviceSelectDialog::closeDialog();
+
+    //
     isLeftDalk = true;
     HWND dlgHwnd = (HWND)this->winId();
     dlgTalk_bQuitDlg(dlgHwnd, get_pm_var(), FALSE);
 
-    DeviceSelectDialog::closeDialog();
 
 }
 
