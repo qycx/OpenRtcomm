@@ -86,6 +86,10 @@ public:
 	}													m_var;
 
 	//
+	int  m_total_nPkts{};
+
+
+	//
 	WgcCapture											m_wgc;
 
 
@@ -181,7 +185,7 @@ public:
 	//
 	virtual  int  initForWriteFrame(int iFmt, int w_org, int h_org, Param_initForWriteFrame* pParam);
 	virtual  int  exitForWriteFrame();
-	virtual  int  procWgsCaptureFrame(int  iFmt, unsigned  char* data, int  w, int  h);
+	virtual  int  procWgsCaptureFrame(int  iFmt, unsigned  char* data, int  w, int  h,Param_procWgsCaptureFrame  *  pParam) override;
 
 
 

@@ -10,9 +10,11 @@
 #include	<vtShmFunc.h>
 //
 #include	"funcsForIsCliHelp.h"
+//
+#include	"qmcVideoCapture.h"
 
 
-
+//
 WgcCapDev::WgcCapDev()
 {
 	memset(&m_var, 0, sizeof(m_var));
@@ -45,7 +47,10 @@ WgcCapDev::~WgcCapDev()
 
 
 //
-int  wgc_qisPipe_onRead(QIS_pipe* pQisPipe, void* pMsg, unsigned  int  msgLen, void* p0, void* p1)
+//  2026/09/15
+//  真正的回调处理. 外面套一层 wgc_qisPipe_onRead 做保护.
+//
+int  wgc_qisPipe_onRead_impl(QIS_pipe* pQisPipe, void* pMsg, unsigned  int  msgLen, void* p0, void* p1)
 {
 	int  iErr = false;
 	unsigned  int    dwByte = msgLen;
@@ -88,6 +93,8 @@ int  wgc_qisPipe_onRead(QIS_pipe* pQisPipe, void* pMsg, unsigned  int  msgLen, v
 		//
 		pWgcCapDev->m_var.status.wt_bShmOk = true;
 		//
+		pWgcCapDev->m_var.status.dwTickCnt_started = GetTickCount();	//  2026/09/15
+		//
 		makeBmpInfoHeader_rgb(24, pWgcCapDev->m_var.status.w, pWgcCapDev->m_var.status.h, &pWgcCapDev->m_var.bih_dec);
 		
 		//
@@ -120,7 +127,10 @@ int  wgc_qisPipe_onRead(QIS_pipe* pQisPipe, void* pMsg, unsigned  int  msgLen, v
 
 
 			//
-			pWgcCapDev->readShmPkt( pShmContent, pPkt->index_toRead);
+			if (!pWgcCapDev->readShmPkt( pShmContent, pPkt->index_toRead)) {
+				//  2026/09/15  有帧在流动, 供看门狗判活
+				pWgcCapDev->m_var.status.dwLastTickCnt_pktGot = GetTickCount();
+			}
 
 			//
 			int  tickCnt; 
@@ -170,7 +180,33 @@ errLabel:
 
 
 //
-int  WgcCapDev::initDev(void** ppCapStuff, AUDIO_COMPRESSOR_cfgCommon* pAudioCompressor, BITMAPINFOHEADER* pBih_suggested, HWND  hWnd_notify, LONG_PTR lInstanceData, void** ppShareMediaDeviceParam)
+//  2026/09/15
+//  读回调的外壳.
+//  p0 指向的 WgcCapDev 会被看门狗(WgcCapObj)整只删掉重建, 所以这里要:
+//    1) bStopping 一置位就不再碰共享内存;
+//    2) 用 nReaders 让退出方知道"回调都退出了", 才可以真的删对象.
+//
+int  wgc_qisPipe_onRead(QIS_pipe* pQisPipe, void* pMsg, unsigned  int  msgLen, void* p0, void* p1)
+{
+	WgcCapDev* pWgcCapDev = (WgcCapDev*)p0;
+	if (!pWgcCapDev)  return  -1;
+
+	//
+	if (!pWgcCapDev->beginReadArea())  return  -1;
+
+	//
+	int  iErr = wgc_qisPipe_onRead_impl(pQisPipe, pMsg, msgLen, p0, p1);
+
+	//
+	pWgcCapDev->endReadArea();
+
+	//
+	return  iErr;
+}
+
+
+//
+int  WgcCapDev::initDev(void*p0, BITMAPINFOHEADER* pBih_suggested1,LONG_PTR lInstanceData)
 {
 	int  iErr = -1;
 	CCtxQyMc* pQyMc = g_pQyMc;
@@ -343,6 +379,11 @@ int  WgcCapDev::exitDev(void** ppShareMediaDeviceParam)
 	//
 	stopDev(mynull);
 
+	//  2026/09/15
+	//  自保: 无论谁直接调 exitDev, 都先把读回调拦下来,
+	//  免得回调还在读共享内存时我们把 pBuf/hMap 解掉.
+	notifyStopReading(3000);
+
 
 	//
 	if (m_var.pQisPipe) {
@@ -498,7 +539,10 @@ int WgcCapDev::readShmPkt( VT_shm_content* pShmContent, int  index_toRead)
 				//pkts[0].head.uiSampleTimeInMs = timeGetTime();
 				int  uiSampleTimeInMs = timeGetTime();
 				//
-				pFuncs->pf_BufferCB_av(pProcInfo, m_var.index_capBmp, &var, uiSampleTimeInMs, (BYTE*)pImg, bih_shm.biSizeImage);
+				Param_BufferCB_av  param1;
+				param1.capPkt_iSn = pShmContent->mems[index_toRead].capPkt_iSn;
+				//
+				pFuncs->pf_BufferCB_av(pProcInfo, m_var.index_capBmp, &var, uiSampleTimeInMs, (BYTE*)pImg, bih_shm.biSizeImage,&param1);
 
 			}
 
@@ -554,6 +598,124 @@ int WgcCapDev::readShmPkt( VT_shm_content* pShmContent, int  index_toRead)
 
 	return  iErr;
 
+}
+
+
+//  ============================================================================
+//  2026/09/15
+//  下面这些只给外层 WgcCapObj 的看门狗用.
+//  WgcCapObj 监控本对象: 工具进程(anWgcTool.exe)掉了 / 长时间没有帧, 就整只重建.
+//  ============================================================================
+
+//
+//  读回调的进入/离开
+//
+bool  WgcCapDev::beginReadArea()
+{
+	InterlockedIncrement(&m_var.status.nReaders);
+
+	//  正在停止/重建, 不要再碰共享内存了
+	if (m_var.status.bStopping) {
+		InterlockedDecrement(&m_var.status.nReaders);
+		return  false;
+	}
+
+	return  true;
+}
+
+
+void  WgcCapDev::endReadArea()
+{
+	InterlockedDecrement(&m_var.status.nReaders);
+	return;
+}
+
+
+//
+//  让读回调停下: 置 bStopping, 然后等在途回调退出.
+//  必须在 exitDev / delete 之前调用, 否则回调可能踩到已释放的共享内存.
+//
+int  WgcCapDev::notifyStopReading(DWORD dwTimeoutMs)
+{
+	int  iErr = -1;
+
+	//  先置位, 再等
+	m_var.status.bStopping = true;
+
+	//
+	DWORD  dwTickCnt_start = GetTickCount();
+	for (; ;) {
+		if (InterlockedCompareExchange(&m_var.status.nReaders, 0, 0) <= 0) {
+			iErr = 0;
+			break;
+		}
+		//
+		if (GetTickCount() - dwTickCnt_start > dwTimeoutMs) {
+			break;
+		}
+		//
+		Sleep(5);
+	}
+
+	//
+	if (iErr) {
+		TCHAR  tBuf[160];
+		_sntprintf(tBuf, mycountof(tBuf), _T("wgcCapDev.notifyStopReading timeout(%dms), nReaders %d"),
+			(int)dwTimeoutMs, (int)m_var.status.nReaders);
+		showInfo_open0(0, 0, tBuf);
+	}
+	else {
+		showInfo_open(0, 0, 0, _T("wgcCapDev.notifyStopReading ok"));
+	}
+
+	//
+	return  iErr;
+}
+
+
+//
+//  工具进程还在吗
+//
+bool  WgcCapDev::isToolAlive()
+{
+	if (!isHandleValid_open(m_var.vtProcess.hProcess_vt))  return  false;
+
+	//
+	DWORD  dwRet = WaitForSingleObject(m_var.vtProcess.hProcess_vt, 0);
+	if (dwRet == WAIT_TIMEOUT)  return  true;		//  还在跑
+	if (dwRet == WAIT_OBJECT_0) return  false;		//  已退出
+
+	//
+	return  false;
+}
+
+
+//
+//  是否已经收到 shmOk(进入取帧阶段)
+//
+bool  WgcCapDev::isShmOk()
+{
+	return  m_var.status.wt_bShmOk;
+}
+
+
+//
+//  是否长时间没有取到帧
+//
+bool  WgcCapDev::isDataStale(DWORD dwTimeoutMs)
+{
+	//  还没进入取帧阶段: 由 initDev 自己的等待超时负责, 这里不判
+	if (!m_var.status.wt_bShmOk)  return  false;
+
+	//  一帧都还没来过: 同样交给启动等待
+	if (!m_var.status.dwLastTickCnt_pktGot)  return  false;
+
+	//
+	DWORD  dwNow = GetTickCount();
+	if (dwNow < m_var.status.dwLastTickCnt_pktGot)  return  false;		//  tick 回绕, 不判
+
+	//
+	return  ((dwNow - m_var.status.dwLastTickCnt_pktGot) > dwTimeoutMs);
 }
 
 

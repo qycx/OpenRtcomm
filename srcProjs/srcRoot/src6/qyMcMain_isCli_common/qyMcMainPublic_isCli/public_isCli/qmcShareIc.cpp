@@ -88,7 +88,7 @@
 
 	//回调函数触发
 	 int i = 1;
-	 BufferCB_av(pProcInfo, pIc->index_sharedObj, &pIc->m_var, 0, (BYTE*)pData, size);
+	 BufferCB_av(pProcInfo, pIc->index_sharedObj, &pIc->m_var, 0, (BYTE*)pData, size,mynull);
 
 	 //
 	 /*using namespace std::chrono;
@@ -253,7 +253,7 @@
 				 traceLog((TCHAR*)_T("ic_cap: get a img. threadId: %d"), dwThreadId);
 
 				 //
-				 BufferCB_av(pProcInfo, p->index_sharedObj, &p->m_var, 0, (BYTE*)buf, size);
+				 BufferCB_av(pProcInfo, p->index_sharedObj, &p->m_var, 0, (BYTE*)buf, size,mynull);
 
 			 }
 

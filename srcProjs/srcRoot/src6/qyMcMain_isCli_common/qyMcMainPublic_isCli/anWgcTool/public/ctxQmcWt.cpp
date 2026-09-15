@@ -523,11 +523,12 @@ void BGRA2BGRCrop(
 
 
 //
-int  CCtxQmcWt::procWgsCaptureFrame(int  iFmt, unsigned  char* data, int  w, int  h)
+int  CCtxQmcWt::procWgsCaptureFrame(int  iFmt, unsigned  char* data, int  w, int  h,Param_procWgsCaptureFrame  *  pParam)
 {
 	int  iErr = -1;
 	CCtxQmcTmpl* pBase = this;
 	TCHAR  tBuf[128];
+		
 
 	//
 	if (!pBase->wgsWriteFrame_m_bInited) {
@@ -552,8 +553,7 @@ int  CCtxQmcWt::procWgsCaptureFrame(int  iFmt, unsigned  char* data, int  w, int
 
 
 	//
-	int  total_nPkts = 0;
-
+	
 	//
 	do {
 		//
@@ -605,7 +605,7 @@ int  CCtxQmcWt::procWgsCaptureFrame(int  iFmt, unsigned  char* data, int  w, int
 		int  nWritten = 0;
 		for (i = 0; i < nPkts; i++) {
 			//  2015/02/18
-			total_nPkts++;
+			m_total_nPkts++;
 			//
 
 			index_toWrite = pShmContent->status.writeShm.uiCnt_writeShm % ucCnt_shmPkts;
@@ -622,6 +622,10 @@ int  CCtxQmcWt::procWgsCaptureFrame(int  iFmt, unsigned  char* data, int  w, int
 			pkt.bih = bih_shm;
 
 			//
+			if (pParam) {
+				pkt.cap_iSn = pParam->m_cap_iSn;// m_total_nPkts;
+			}
+
 			//
 			if (iCtrl < 100) {
 				TCHAR  fn[128];

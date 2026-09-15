@@ -1789,6 +1789,7 @@ typedef  struct  __myDrawVideoData_t								{
 				 unsigned  int										uiCapType;
 				 int												iIndex_capBmp;
 
+				 //
 				 struct												{
 					 //
 					 BOOL											bRtsp;									//  2015/03/14
@@ -1801,6 +1802,9 @@ typedef  struct  __myDrawVideoData_t								{
 
 					 //
 				 }													input;
+
+				 //
+				 int												cap_iSn;
 
 				 //  2015/05/07
 				 struct												{
@@ -3131,6 +3135,9 @@ typedef  struct  __vtShmPktInfo_t										{
 				 //
 				 PKT_sharedTex_info1									pktSharedTexInfo;
 				 //
+				 int													capPkt_iSn;
+				 __int64												i64TickCnt_cap;		//  捕获的时刻
+				 //
 				 BOOL													bDataReady;
 }		 VT_shm_pktInfo;
 
@@ -3187,8 +3194,12 @@ typedef  struct  __vtShmContent_t										{
 				 unsigned  int											uiBufSize_content;				 
 				 //
 				 struct													{
+					 
 					 //
 					 TCHAR												name[32];						//  2016/04/12
+
+					 //
+					 atbool												bDebugDetail_cap;				//  2026/09/15
 
 				 }														cfg;
 				 //

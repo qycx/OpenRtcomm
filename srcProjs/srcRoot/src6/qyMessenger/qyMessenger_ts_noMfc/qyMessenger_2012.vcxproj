@@ -352,6 +352,7 @@
     <ClInclude Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\include_isCli\wallMemTmpl.h" />
     <ClInclude Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\include_isCli\wallTalkers.h" />
     <ClInclude Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\include_isCli\wgcCapDev.h" />
+    <ClInclude Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\include_isCli\wgcCapObj.h" />
     <ClInclude Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\include_isCli\zone_objs.h" />
     <ClInclude Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\include_isCli\zone_objs_info.h" />
     <ClInclude Include="..\..\test\ffmpeg_encode.h" />
@@ -704,6 +705,7 @@
     <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\tmpProc.cpp" />
     <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\toShareDynBmp.cpp" />
     <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\wgcCapDev.cpp" />
+    <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\wgcCapObj.cpp" />
     <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\wgcCaptureProc.cpp" />
     <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\wnd_guiMsgProc.cpp" />
     <ClCompile Include="..\..\qyMcPublic\myDb.cpp" />

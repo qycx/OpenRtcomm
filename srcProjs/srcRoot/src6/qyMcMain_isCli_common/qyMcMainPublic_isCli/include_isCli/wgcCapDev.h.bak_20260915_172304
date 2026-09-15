@@ -1,4 +1,4 @@
-﻿
+
 #ifndef  __wgcCapDev_h__	
 #define  __wgcCapDev_h__	//  {
 
@@ -39,14 +39,6 @@ public:
 			//
 			DWORD			dwLastTickCnt_sndPktResp;
 
-			//  2026/09/15  供外层 WgcCapObj 的看门狗判断
-			DWORD			dwLastTickCnt_pktGot;			//  最后一次成功取到帧的时刻
-			DWORD			dwTickCnt_started;				//  shmOk 之后开始取帧的时刻
-
-			//  2026/09/15  停止/重建时保护共享内存
-			bool			bStopping;						//  正在停止, 读回调立即返回
-			volatile  LONG	nReaders;						//  正在回调内的线程数
-
 		}					status;
 
 		//
@@ -75,19 +67,6 @@ public:
 
 	//
 	int readShmPkt( VT_shm_content* pShmContent, int  index_toRead);
-
-	//  2026/09/15  供外层 WgcCapObj 的看门狗使用
-	//
-	bool  isToolAlive();								//  工具进程(anWgcTool.exe)还在吗
-	bool  isShmOk();									//  是否已经收到 shmOk(进入取帧阶段)
-	bool  isDataStale(DWORD dwTimeoutMs);				//  是否长时间没有取到帧
-
-	//  让读回调停下: 置 bStopping 并等在途回调退出. 必须在 exitDev 之前调用
-	int   notifyStopReading(DWORD dwTimeoutMs);
-
-	//  读回调的进入/离开(保护区)
-	bool  beginReadArea();
-	void  endReadArea();
 
 
 };

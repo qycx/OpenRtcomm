@@ -131,6 +131,7 @@ typedef  struct  __qmc_debugStatusInfo_t								{															//  2009/02/27
 
 						 //
 						 unsigned  char									bDbgDetail_wgc;
+						 atbool											bDbgDetaul_wgc_BufferCB_av;
 						 //
 						 unsigned  char									bDbgDetail_keepAlive;
 						 //

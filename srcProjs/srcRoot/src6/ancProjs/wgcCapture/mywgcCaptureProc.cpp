@@ -51,7 +51,7 @@ __declspec(dllexport) int test_wgc()
 
 
 
-
+int  g_total_pkts = 0;
 
 //
 //extern "C" DWORD WINAPI wgc_threadProc_cap(LPVOID lpParameter)
@@ -148,7 +148,9 @@ unsigned __stdcall wgc_threadProc_cap(void* arg)
     while (!pWgc->m_var.bQuit  &&  !bNeedQuit_initForWriteFrame  )
     {
         //
-        showInfo_open(0, 0, 0, _T("wgc_cap: l146"));
+        if (0) {
+            showInfo_open(0, 0, 0, _T("wgc_cap: l146"));
+        }
 
         //
         winrt::com_ptr<ID3D11Texture2D> texture;
@@ -157,8 +159,16 @@ unsigned __stdcall wgc_threadProc_cap(void* arg)
         if (capture.GetFrame(texture))
         {
             //
-            showInfo_open(0, 0, 0, _T("capture.GetFrame ok"));
+            g_total_pkts++;
 
+            //
+            if (10) {
+                TCHAR  tBuf[128];
+                _sntprintf(tBuf, mycountof(tBuf),  _T("capture.GetFrame ok. total_pkts %d. l160"), g_total_pkts);
+                showInfo_open(0, 0, 0, tBuf);
+            }
+
+            
             //
             if (readback.Copy(
                 d3d.Device(),
@@ -217,9 +227,11 @@ unsigned __stdcall wgc_threadProc_cap(void* arg)
                     _sntprintf(tBuf, mycountof(tBuf), _T("wgc: %dx%d, frames %d"), w, h, frames);
                     showInfo_open(0, 0, 0, tBuf);
                 }
-                 
+                 //
+                Param_procWgsCaptureFrame  param;
+                param.m_cap_iSn = g_total_pkts;
                 //
-                pWgc->m_var.pProcInfoTmpl->procWgsCaptureFrame(iFmt, pixels.data(), w, h);
+                pWgc->m_var.pProcInfoTmpl->procWgsCaptureFrame(iFmt, pixels.data(), w, h, &param);
                 
 
                 //

@@ -215,8 +215,8 @@ errLabel:
 
 			 //
 #ifdef  __DEBUG__
-#if 10
-			 _sntprintf(tBuf, mycountof(tBuf), _T("dec_parseEncVPkt_i: nalType %d, pts %d, st %d, len %d"), nalType, pPkt->head.uiPts, pPkt->head.uiSampleTimeInMs,  pPkt->uiLen_enc);
+#if 0
+			 _sntprintf(tBuf, mycountof(tBuf), _T("dec_parseEncVPkt_i: nalType %d, pts %d, st %d, len %d. l219"), nalType, pPkt->head.uiPts, pPkt->head.uiSampleTimeInMs,  pPkt->uiLen_enc);
 			 showInfo_open0(0, 0, tBuf);
 #endif
 #endif
@@ -549,14 +549,14 @@ errLabel:
 #endif
 
 //  這裏要計算解碼的包數. 2026/08/09
-		 if (1) {
+		 if (0) {
 			 //
 			 //compressor.common.pVideoQ2 = &pTransformVideo->q2;
 			 //
 			 int  nQNodes = getQ2Nodes(&pTransform->video.q2);
 			 //
 			 if (nQNodes) {
-				 _sntprintf(tBuf, mycountof(tBuf), _T("dec_parseEncVPkt_i: nQNodes %d"), nQNodes);
+				 _sntprintf(tBuf, mycountof(tBuf), _T("dec_parseEncVPkt_i: nQNodes %d. l559"), nQNodes);
 				 showInfo_open(0, 0, 0, tBuf);
 			 }
 		 }

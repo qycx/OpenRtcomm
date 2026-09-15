@@ -606,9 +606,6 @@ errLabel:
 #ifdef  __DEBUG__	//  2011/05/17
 			
 		//
-		if (1) {
-			pProcInfo->cfg.pDebugStatusInfo->bDbgDetail_wgc = true;
-		}
 
 #endif
 

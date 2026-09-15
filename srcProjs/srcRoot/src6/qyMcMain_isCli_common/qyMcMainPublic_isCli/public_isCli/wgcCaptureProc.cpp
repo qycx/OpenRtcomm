@@ -6,7 +6,7 @@
 #include <qmcVideoCapture.h>
 #include <qmcVideoCapture_isCli.h>
 #include	"policyAvParams.h"
-#include	"wgcCapDev.h"
+#include	"wgcCapObj.h"
 
 
 
@@ -130,7 +130,10 @@ int  doCmd_startShareWgcCapture(QY_MC* pQyMc, HWND  hDlgTalk, void  *  pDLG_TALK
 		goto  errLabel;
 	}
 	try {
-		pSharedObj->m_pCapDev = new WgcCapDev();
+		//
+		//pSharedObj->m_pCapDev = new WgcCapDev();
+		//
+		pSharedObj->m_pCapDev = new WgcCapObj();
 	}
 	catch (...) {
 		showInfo_open(0, 0, 0, _T("doCmd_startShareWgc failed, new WgcCapDev except"));
@@ -145,7 +148,7 @@ int  doCmd_startShareWgcCapture(QY_MC* pQyMc, HWND  hDlgTalk, void  *  pDLG_TALK
 	int  iIndex_capBmp; iIndex_capBmp = iIndex_screenCapProcInfo;
 
 	//
-	if (pSharedObj->m_pCapDev->initDev(mynull, &pCompressor->audio.common, &policy_bih, pQyMc->gui.hMainWnd, iIndex_sharedObj, &pSharedObj->pShareMediaObj))  goto  errLabel;
+	if (pSharedObj->m_pCapDev->initDev(mynull, &policy_bih, iIndex_sharedObj))  goto  errLabel;
 	//  pCapBmp->bCapDevConnected  =  TRUE;	//  2012/02/24
 
 	//  

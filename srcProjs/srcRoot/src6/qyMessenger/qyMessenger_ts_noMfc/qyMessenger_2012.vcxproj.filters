@@ -715,6 +715,9 @@
     <ClCompile Include="..\..\qyCommProc\getCfgVal.cpp">
       <Filter>qyCommProc</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\wgcCapObj.cpp">
+      <Filter>qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\qyOpen\include\ctxQyTmpl.h" />
@@ -1223,6 +1226,9 @@
     </ClInclude>
     <ClInclude Include="..\..\qyMcMainInclude\qyMcExtTmpl.h">
       <Filter>qyMcMainInclude</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\include_isCli\wgcCapObj.h">
+      <Filter>qyMcMain_isCli_common\qyMcMainPublic_isCli\include_isCli</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

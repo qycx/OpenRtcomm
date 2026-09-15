@@ -725,8 +725,9 @@ errLabel:
 		//if (pProcInfo->cfg.debugStatusInfo.ucbShowToDrawStatus) 
 		{
 			//if (!bSkip_showInfo) 
+			if  (  0  )
 			{
-				_sntprintf(tBuf, mycountof(tBuf), _T("playVideo: %I64u, uiSampleTimeInMs_start1 adjust"), pPlayer->idInfo_recorder.ui64Id);
+				_sntprintf(tBuf, mycountof(tBuf), _T("playVideo: %I64u, uiSampleTimeInMs_start1 adjust. l729"), pPlayer->idInfo_recorder.ui64Id);
 				if (pPlay->m_var.lowLatency.mql.mql_1s.last_mql > pPlay->m_var.lowLatency.mql.mql_ok) {
 					_sntprintf(tBuf, mycountof(tBuf), _T("%s. last.mql %d > mql_ok %d"), tBuf, pPlay->m_var.lowLatency.mql.mql_1s.last_mql, pPlay->m_var.lowLatency.mql.mql_ok);
 				}

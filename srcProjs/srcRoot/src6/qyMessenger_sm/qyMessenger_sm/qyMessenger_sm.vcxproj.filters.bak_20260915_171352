@@ -575,9 +575,6 @@
     <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\wgcCapDev.cpp">
       <Filter>qyMcMain_isCli_common\public_isCli</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\wgcCapObj.cpp">
-      <Filter>qyMcMain_isCli_common\public_isCli</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\avCapDevTmpl.cpp">
       <Filter>qyMcMain_isCli_common\public_isCli</Filter>
     </ClCompile>
@@ -720,9 +717,6 @@
       <Filter>qyMcMain_isCli_common\include_isCli</Filter>
     </ClInclude>
     <ClInclude Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\include_isCli\wgcCapDev.h">
-      <Filter>qyMcMain_isCli_common\include_isCli</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\include_isCli\wgcCapObj.h">
       <Filter>qyMcMain_isCli_common\include_isCli</Filter>
     </ClInclude>
     <ClInclude Include="..\include\qyMcExt_gui.h">
