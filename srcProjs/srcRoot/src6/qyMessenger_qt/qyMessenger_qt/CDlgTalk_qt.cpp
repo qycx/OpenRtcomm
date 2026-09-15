@@ -2714,8 +2714,12 @@ int CDlgTalk_qt::doTimerProc()
 #endif
 
 
-    //
-    refreshTransmissionMode();
+    HWND hDlgTalk = (HWND)this->winId();
+    bool  bIAmCompere = dlgTalk_bIAmConfCompere(hDlgTalk);
+
+    if (!bIAmCompere) {
+        refreshTransmissionMode();
+    }
 
 
     //
@@ -3542,53 +3546,58 @@ int  CDlgTalk_qt::mySizeAllControls_dlgTalk_me_other(HWND  hDlg, DLG_TALK_var& m
     //msgList->hide();
 
 
-  
+    HWND hDlgTalk = (HWND)this->winId();
+    bool  bIAmCompere = dlgTalk_bIAmConfCompere(hDlgTalk);
 
-    do {
-        CCtxQyMc* pQyMc = g_pQyMc;
-        CCtxQmc_qt* pProcInfo = (CCtxQmc_qt*)pQyMc->get_pProcInfo();
+    if (!bIAmCompere) {
 
-        MC_VAR_isCli* qy_pProcInfo = QY_GET_procInfo_isCli();
+        do {
+            CCtxQyMc* pQyMc = g_pQyMc;
+            CCtxQmc_qt* pProcInfo = (CCtxQmc_qt*)pQyMc->get_pProcInfo();
 
-        //CCtxQmc* pProcInfo = QY_GET_procInfo_isCli();
-        MIS_CNT* pMisCnt = pProcInfo->getMisCntByName(_T(""));
+            MC_VAR_isCli* qy_pProcInfo = QY_GET_procInfo_isCli();
 
-        TCHAR  tBuf[128];
+            //CCtxQmc* pProcInfo = QY_GET_procInfo_isCli();
+            MIS_CNT* pMisCnt = pProcInfo->getMisCntByName(_T(""));
 
-        DLG_TALK_var* pm_var = get_pm_var();
-        if (!pm_var) break;
+            TCHAR  tBuf[128];
 
-        HWND  hCurTalk = (HWND)this->winId();
-        DLG_TALK_var* pCurVar = pm_var;
-        HWND  hMgr = mynull;
-        DLG_TALK_var* pMgrVar = mynull;
-        if (isTalkerShadowMgr(pCurVar->addr)) {
-            hMgr = hCurTalk;
-        }
-        else {
-            TALKER_shadow* pShadowInfo = (TALKER_shadow*)pCurVar->pShadowInfo;
-            hMgr = pShadowInfo->hMgr;
-        }
-        CHelp_getDlgTalkVar getDlgTalkVar_mgr;
-        pMgrVar = (DLG_TALK_var*)getDlgTalkVar_mgr.getVar(hMgr);
-        if (pMgrVar == mynull) break;
+            DLG_TALK_var* pm_var = get_pm_var();
+            if (!pm_var) break;
 
-        if (pMgrVar->av.taskInfo.iTaskId) {
-
-            bool bNoV_val = qy_pProcInfo->m_pTalkExt->bNoVDownload(pMgrVar->av.taskInfo.iTaskId);
-
-            if (bNoV_val) {
-                ui->meDesc->setFixedSize(ui->peerDesc->width(), ui->peerDesc->height());
-                ui->meDesc->move(0, 0);
-                ui->meDesc->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+            HWND  hCurTalk = (HWND)this->winId();
+            DLG_TALK_var* pCurVar = pm_var;
+            HWND  hMgr = mynull;
+            DLG_TALK_var* pMgrVar = mynull;
+            if (isTalkerShadowMgr(pCurVar->addr)) {
+                hMgr = hCurTalk;
             }
             else {
-                ui->meDesc->setFixedSize(m_meDescRect.width(), m_meDescRect.height());
-                //ui->meDesc->move(0, 0);
+                TALKER_shadow* pShadowInfo = (TALKER_shadow*)pCurVar->pShadowInfo;
+                hMgr = pShadowInfo->hMgr;
             }
+            CHelp_getDlgTalkVar getDlgTalkVar_mgr;
+            pMgrVar = (DLG_TALK_var*)getDlgTalkVar_mgr.getVar(hMgr);
+            if (pMgrVar == mynull) break;
 
-        }
-    } while (0);
+            if (pMgrVar->av.taskInfo.iTaskId) {
+
+                bool bNoV_val = qy_pProcInfo->m_pTalkExt->bNoVDownload(pMgrVar->av.taskInfo.iTaskId);
+
+                if (bNoV_val) {
+                    ui->meDesc->setFixedSize(ui->peerDesc->width(), ui->peerDesc->height());
+                    ui->meDesc->move(0, 0);
+                    ui->meDesc->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+                }
+                else {
+                    ui->meDesc->setFixedSize(m_meDescRect.width(), m_meDescRect.height());
+                    //ui->meDesc->move(0, 0);
+                }
+
+            }
+        } while (0);
+
+    }
 
     //
     QWidget* meDesc = this->findChild<QWidget*>("meDesc");
