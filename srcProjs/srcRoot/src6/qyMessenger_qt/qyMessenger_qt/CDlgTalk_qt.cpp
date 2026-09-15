@@ -465,11 +465,43 @@ void CDlgTalk_qt::initControl()
     ui->lineSearch->setFocusPolicy(Qt::FocusPolicy::ClickFocus);
     // HWND wid = StartShareScreen();
 
+    //ui->label_tip->setStyleSheet("color: white; font-size: 28px;");
 
+    /*
+    ui->label_tip->setStyleSheet(
+        "color: white;"
+        "font-size: 28px;"
+        "background: transparent;"
+    );*/
 
     
+    ui->label_tip->setStyleSheet(
+        "color: white;"
+        "font-size: 28px;"
+        "background-color: rgba(0, 0, 0, 0);"
+    );
 
-	
+    //ui->label_tip->adjustSize();
+
+    //label->setStyleSheet("background-color: rgba(0, 0, 0, 0);");
+
+    /*
+    ui->label_tip->setAutoFillBackground(false);
+    ui->label_tip->setWindowFlags(Qt::Window | Qt::FramelessWindowHint | Qt::Tool);
+    ui->label_tip->setAttribute(Qt::WA_TranslucentBackground);
+    ui->label_tip->setStyleSheet(
+        "color: white;"
+        "font-family: 'Microsoft YaHei';"
+        "font-size: 28px;"
+        "background: transparent;"
+    );
+
+    ui->label_tip->raise();
+    ui->label_tip->show();*/
+
+
+    m_meDescRect =  ui->meDesc->geometry();  
+    m_meDescPos = ui->meDesc->pos();
 }
 
 void CDlgTalk_qt::slot_web_loadFinished(bool successed)
@@ -793,6 +825,8 @@ bool CDlgTalk_qt::bEnableScrollBar(bool bEnable, int  iw_scroll, int  ih_scroll)
         scrollArea_->setWidget(lab_);
         scrollArea_->show();
         scrollArea_->lower();
+
+
 
         //
         m_var.av.hCtrl_peer = (HWND)scrollArea_->widget()->winId();
@@ -2704,6 +2738,8 @@ int CDlgTalk_qt::refreshTransmissionMode()
     //CCtxQmc* pProcInfo = QY_GET_procInfo_isCli();
     MIS_CNT* pMisCnt = pProcInfo->getMisCntByName(_T(""));
 
+    
+
     TCHAR  tBuf[128];
 
     DLG_TALK_var* pm_var = get_pm_var();
@@ -2728,50 +2764,58 @@ int CDlgTalk_qt::refreshTransmissionMode()
 
         bool bNoV_val = qy_pProcInfo->m_pTalkExt->bNoVDownload(pMgrVar->av.taskInfo.iTaskId);
 
+       
+
         if (bNoV_val != lastFlag) {
-            //
+          
+            QWidget* peerDesc = ui->peerDesc; 
 
             if (bNoV_val) {
-                ui->meDesc->setFixedSize(ui->widgetVideoShow->width(), ui->widgetVideoShow->height());
-
+                ui->meDesc->setFixedSize(ui->peerDesc->width(), ui->peerDesc->height());
                 ui->meDesc->move(0, 0);
-
-                this->showFullScreen();
-
                 ui->meDesc->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
 
-
-                ui->meDesc->setVisible(true);
-
-                //ui->load_widget->setVisible(true);
-
+                ui->lab_io->setVisible(false);
             }
             else {
-                ui->meDesc->setFixedSize(300, 200);
-                ui->meDesc->move(0, 0);
+                ui->meDesc->setFixedSize(m_meDescRect.width(), m_meDescRect.height());
+                //ui->meDesc->move(0, 0);
 
-                this->showFullScreen();
+                //ui->label_tip->setVisible(false);
 
-                ui->meDesc->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
-
-
-                ui->meDesc->setVisible(true);
-                //ui->load_widget->setVisible(false);
+                ui->lab_io->setVisible(true);                
+                
             }
+
             refreshLayout();
             lastFlag = bNoV_val;
         }
 
         //实时判断发言和麦克状态变更
-        QString mkfSxtStr = "";
 
-        //判断发言状态
-        if (qy_pProcInfo->xt.bSpeak) {
-            mkfSxtStr += u8" (正在调看)";
+         //判断发言状态
+
+        if (bNoV_val) {
+            m_mkfSxtStr = " ";
+            if (qy_pProcInfo->xt.bSpeak) {
+                m_mkfSxtStr += pMisCnt->talkerDesc;
+                m_mkfSxtStr += u8" (正在调看)";
+            }
+            else {
+                m_mkfSxtStr += pMisCnt->talkerDesc;
+                m_mkfSxtStr += u8" (未调看)";
+            }
+            ui->label_tip->setVisible(true);
+            ui->lab_io->setVisible(false);
         }
         else {
-            mkfSxtStr += u8" (未调看)";
+            m_mkfSxtStr = "";
+            //m_mkfSxtStr = " ";
+              //m_mkfSxtStr += pMisCnt->talkerDesc;
+            ui->label_tip->setVisible(false);
+            ui->lab_io->setVisible(true);
         }
+        
 
         ////判断麦克风状态
 #if  0
@@ -2783,7 +2827,17 @@ int CDlgTalk_qt::refreshTransmissionMode()
         }
 #endif 
 
-        ui->lab_io->setText(QString::fromUtf16((char16_t*)pProcInfo->av.confLayout.login_termialName) + mkfSxtStr);
+        ui->label_tip->setText(m_mkfSxtStr);
+        //ui->label_tip->setStyleSheet("color: white;");
+        
+
+        QFont font = ui->label_tip->font();
+
+
+        QFontMetrics fm(font);
+        int textWidth = fm.horizontalAdvance(ui->label_tip->text());   
+        ui->label_tip->setFixedWidth(textWidth);
+        //ui->label_tip->resize(textWidth, ui->label_tip->height());
 
 
     }
@@ -3490,6 +3544,54 @@ int  CDlgTalk_qt::mySizeAllControls_dlgTalk_me_other(HWND  hDlg, DLG_TALK_var& m
     //QTextEdit* msgList = this->findChild<QTextEdit*>("showMsg");
     //msgList->hide();
 
+
+  
+
+    do {
+        CCtxQyMc* pQyMc = g_pQyMc;
+        CCtxQmc_qt* pProcInfo = (CCtxQmc_qt*)pQyMc->get_pProcInfo();
+
+        MC_VAR_isCli* qy_pProcInfo = QY_GET_procInfo_isCli();
+
+        //CCtxQmc* pProcInfo = QY_GET_procInfo_isCli();
+        MIS_CNT* pMisCnt = pProcInfo->getMisCntByName(_T(""));
+
+        TCHAR  tBuf[128];
+
+        DLG_TALK_var* pm_var = get_pm_var();
+        if (!pm_var) break;
+
+        HWND  hCurTalk = (HWND)this->winId();
+        DLG_TALK_var* pCurVar = pm_var;
+        HWND  hMgr = mynull;
+        DLG_TALK_var* pMgrVar = mynull;
+        if (isTalkerShadowMgr(pCurVar->addr)) {
+            hMgr = hCurTalk;
+        }
+        else {
+            TALKER_shadow* pShadowInfo = (TALKER_shadow*)pCurVar->pShadowInfo;
+            hMgr = pShadowInfo->hMgr;
+        }
+        CHelp_getDlgTalkVar getDlgTalkVar_mgr;
+        pMgrVar = (DLG_TALK_var*)getDlgTalkVar_mgr.getVar(hMgr);
+        if (pMgrVar == mynull) break;
+
+        if (pMgrVar->av.taskInfo.iTaskId) {
+
+            bool bNoV_val = qy_pProcInfo->m_pTalkExt->bNoVDownload(pMgrVar->av.taskInfo.iTaskId);
+
+            if (bNoV_val) {
+                ui->meDesc->setFixedSize(ui->peerDesc->width(), ui->peerDesc->height());
+                ui->meDesc->move(0, 0);
+                ui->meDesc->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+            }
+            else {
+                ui->meDesc->setFixedSize(m_meDescRect.width(), m_meDescRect.height());
+                //ui->meDesc->move(0, 0);
+            }
+
+        }
+    } while (0);
 
     //
     QWidget* meDesc = this->findChild<QWidget*>("meDesc");
@@ -4467,9 +4569,18 @@ void CDlgTalk_qt::on_SpeakBtn_click() {
     bool  canSpeak = dlgTalk_canSpeak(hMgr);
 
 
+    if (canSpeak) {
+        pProcInfo->xt.bSpeak = false;
+    }
+    else {
+        pProcInfo->xt.bSpeak = true;
+    }
+
     //
     //  requestToSpeak(  !m_var.canSpeak  );
     pFuncs->pf_dlgTalk_requestToSpeak(hMgr, !canSpeak,  true);
+
+   
     
     //
     QString qstr;
@@ -5148,6 +5259,12 @@ void CDlgTalk_qt::slot_device_screen() {
 //点击更多菜单
 void CDlgTalk_qt::on_MoreBtn_clicked() {
 
+    if (testFlag) {
+        testFlag = false;
+    }
+    else {
+        testFlag = true;
+    }
 
     QToolButton* button = ui->toolBtnMore;
     QPoint pt = button->mapToGlobal(QPoint{ 0,0 });

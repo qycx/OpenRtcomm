@@ -1237,7 +1237,9 @@ int CCtxQmc_qt::do_pleaseSpeak(HWND  hDlgTalk, QY_MESSENGER_ID  idInfo_from)
         //  2017/07/13
         setCurSharedObjUsr_localAv(pProcInfo, pMgrVar->av.iIndex_sharedObj_localAv, pMgrVar->av.iIndex_usr_localAv);
 
-        dlgTalk_requestToSpeak(hMgr, TRUE);
+        if (0 == dlgTalk_requestToSpeak(hMgr, TRUE)) {
+            pProcInfo->xt.bSpeak = true;            
+        }
     }
     //
     refreshTalkerList(hMgr);
@@ -1292,7 +1294,9 @@ int CCtxQmc_qt::do_pleaseStopSpeaking(HWND  hDlgTalk, QY_MESSENGER_ID  idInfo_fr
         //  2017/07/13
         setCurSharedObjUsr_localAv(pProcInfo, pMgrVar->av.iIndex_sharedObj_localAv, pMgrVar->av.iIndex_usr_localAv);
 
-        dlgTalk_requestToSpeak(hMgr, false);
+        if (0 == dlgTalk_requestToSpeak(hMgr, false)) {
+            pProcInfo->xt.bSpeak = false;
+        }
     }
     //
     refreshTalkerList(hMgr);

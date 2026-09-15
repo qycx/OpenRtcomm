@@ -410,7 +410,11 @@ private:
 	int m_iH_org = 0;
 	int m_iW_org = 0;*/
 
+	QRect m_meDescRect;
+	QPoint m_meDescPos;
 
+	bool testFlag = false;
+	QString m_mkfSxtStr = "";
 	
 };
 
