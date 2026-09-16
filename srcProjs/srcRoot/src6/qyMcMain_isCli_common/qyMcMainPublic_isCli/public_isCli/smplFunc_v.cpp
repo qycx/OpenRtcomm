@@ -1032,7 +1032,7 @@ errLabel:
 	 //
 #if  10
 	 //
-	 if (10) {
+	 if (0) {
 		 int eInMs;  eInMs = tickCnt - pTransform->lastVPkt_tickCnt_smplRead;
 		 //
 		 _sntprintf(tBuf, sizeof(tBuf) / sizeof(tBuf[0]), _T("smpl_v: %I64u, pts %d, st %d, eInMs %dms "), pTransform->video.idInfo.ui64Id, uiPts, uiSampleTimeInMs, eInMs);

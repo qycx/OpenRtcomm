@@ -303,6 +303,13 @@ typedef  struct  __param_initForWriteFrame_t {
 
 
 //
+class  Param_procWgsCaptureFrame {
+public:
+	int		m_cap_iSn{};
+};
+
+
+//
 class  CCtxQmcTmpl: public CCtxQyTmpl  
 {
 
@@ -508,7 +515,12 @@ virtual  int  stopLocalAudioRecorder(  int  index_sharedObj,  int  nTries  )  { 
 //
 virtual  int  initForWriteFrame(int iFmt, int w_org, int h_org,  Param_initForWriteFrame  *  pParam ) { return  -1; }
 virtual  int  exitForWriteFrame() { return -1; }
-virtual  int  procWgsCaptureFrame(int  iFmt, unsigned  char* data, int  w, int  h) { return  -1; }
+
+
+
+
+//
+virtual  int  procWgsCaptureFrame(int  iFmt, unsigned  char* data, int  w, int  h, Param_procWgsCaptureFrame  *  pParam) { return  -1; }
 
 //
 

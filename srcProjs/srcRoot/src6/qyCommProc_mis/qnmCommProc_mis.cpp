@@ -1638,9 +1638,11 @@ int  confLayoutStatus2Stream(unsigned  int  uiStreamId, ConfLayoutStatus* pReq, 
 	}
 
 	//
+#if  0
 	if (pReq->confTmpCtrl.ucbNoVDownload) {
 		if (data2Stream(CONST_qyDataType_char, CONST_qnmCfgId_ucbNoVDownload, (void*)pReq->confTmpCtrl.ucbNoVDownload, 0, &ptr, &len)) goto  errLabel;
 	}
+#endif 
 
 
 	//
@@ -1696,9 +1698,11 @@ int  tmpHandler_stream2ConfLayoutStatus(CTX_stream2Data* pCtx, void* p0, void* p
 			case  CONST_qnmCfgId_idInfo_grp_related:
 				if (getFieldData_l64(pItem, (__int64*)&pContent->idInfo_imGrp_related.ui64Id))  goto  errLabel;
 				break;
+#if  0
 			case  CONST_qnmCfgId_ucbNoVDownload:
 				if (getFieldData_char(pItem, (char*) & pContent->confTmpCtrl.ucbNoVDownload))  goto  errLabel;
 				break;
+#endif 
 				//
 			default:
 				break;

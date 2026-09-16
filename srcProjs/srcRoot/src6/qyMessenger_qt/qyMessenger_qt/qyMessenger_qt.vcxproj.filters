@@ -636,6 +636,9 @@
     <ClCompile Include="..\..\qyMcMainPublic\qyMcExtTmpl.cpp">
       <Filter>qyMcMainPublic</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\wgcCapObj.cpp">
+      <Filter>qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtTranslation Include="qymessenger_qt_zh.ts" />
@@ -737,6 +740,9 @@
     </ClInclude>
     <ClInclude Include="..\include\talkGuiExt_qt.h">
       <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\include_isCli\wgcCapObj.h">
+      <Filter>qyMcMain_isCli_common\qyMcMainPublic_isCli\include_isCli</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

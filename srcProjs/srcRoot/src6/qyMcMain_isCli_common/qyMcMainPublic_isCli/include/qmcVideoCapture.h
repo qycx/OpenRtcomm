@@ -408,9 +408,16 @@ extern "C" DWORD WINAPI mcThreadProc_saveAv( LPVOID lpParameter );
 //
 __declspec(  dllexport  ) int  refreshWebCamSettings(  VIDEO_COMPRESSOR_CFG  *  pVideoCompressorCfg,  CAP_procInfo_video  *  pVc  );
  
+
+//
+class  Param_BufferCB_av {
+public:
+	int capPkt_iSn{};
+};
+
 //
 //
-HRESULT  BufferCB_av(  void  *  pProcInfoParam,  int  iIndex_capProcInfo,  void  *  pSampleGrabberCbVar,  int  iSampleTimeInMs,  BYTE  *  pBuffer,  long  BufferLen  );
+HRESULT  BufferCB_av(  void  *  pProcInfoParam,  int  iIndex_capProcInfo,  void  *  pSampleGrabberCbVar,  int  iSampleTimeInMs,  BYTE  *  pBuffer,  long  BufferLen,  Param_BufferCB_av  *  pParam  );
 
 
 //

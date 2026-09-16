@@ -689,11 +689,14 @@ extern "C" DWORD WINAPI mcThreadProc_mis_io(LPVOID lpParameter)
 			if (msgHead.uiTranNo == 9876) {
 				int  ii = 0;
 			}
-			if (pChannel->uiType == CONST_channelType_rtMedia) {
-				TCHAR  tBuf[128];
-				_sntprintf(tBuf, mycountof(tBuf), _T("rtMedia: recv tn %d"), msgHead.uiTranNo);
-				showInfo_open(0, 0, 0, tBuf);
+			if (0) {
+				if (pChannel->uiType == CONST_channelType_rtMedia) {
+					TCHAR  tBuf[128];
+					_sntprintf(tBuf, mycountof(tBuf), _T("rtMedia: recv tn %d"), msgHead.uiTranNo);
+					showInfo_open(0, 0, 0, tBuf);
+				}
 			}
+			//
 #endif 
 
 

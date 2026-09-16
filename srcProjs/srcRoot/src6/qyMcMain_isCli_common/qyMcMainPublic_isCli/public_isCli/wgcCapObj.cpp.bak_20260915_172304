@@ -1,0 +1,160 @@
+
+
+
+#include	"stdafx.h"
+
+#include <iostream>
+#include <thread>
+#include <chrono>
+
+
+#include	"qyMcMainCommon.h"
+#include	"wgcCapObj.h"
+#include	<qisPipe_open.h>
+//
+#include	"CtxQmc.h"
+#include	<qisNameDefs.h>
+#include	<vtShmFunc.h>
+//
+#include	"funcsForIsCliHelp.h"
+
+
+//
+int doWgc(WgcCapObj  *  pWgo,  WgcCapDev* pDev)
+{
+	
+
+
+
+
+	return  0;
+}
+
+
+
+//////////////////
+//extern "C" DWORD WINAPI wgc_threadProc_cap(LPVOID lpParameter)
+unsigned __stdcall wgc_threadProc_keepalive(void* arg)
+{
+	//
+	WgcCapObj* pWgo = static_cast<WgcCapObj*>(arg);
+	//
+	WgcCapDev* pCapDev = mynull;
+
+	
+	
+	do {
+		//
+		if (pWgo->m_bQuit) {
+			break;
+		}
+
+		//
+
+
+
+
+
+		//
+	} while (true);
+
+
+
+
+
+	return  0;
+}
+
+
+//
+WgcCapObj::WgcCapObj()
+{
+	memset(&m_var, 0, sizeof(m_var));
+	//
+
+	//
+	return;
+}
+
+
+WgcCapObj::~WgcCapObj()
+{
+	//
+
+
+	//
+	return;
+}
+
+
+
+
+//
+int  WgcCapObj::initDev(void* p0, BITMAPINFOHEADER* pBih_suggested1, LONG_PTR lInstanceData)
+{
+	int  iErr = -1;
+	WgcCapObj* p = this;
+
+	do {
+		//
+		param_p0 = p0;
+		if (pBih_suggested1) {
+			param_bih_suggested = *pBih_suggested1;
+		}
+		param_lInstanceData = lInstanceData;
+
+		//
+		DWORD	dwThreadDaemonId;
+		//
+		p->m_hThread_capDev = (HANDLE)_beginthreadex(
+			nullptr,
+			0,
+			wgc_threadProc_keepalive,
+			p,
+			0,
+			nullptr
+		);
+
+		if (!isHandleValid_open(p->m_hThread_capDev)) {
+			break;
+		}
+		//				   
+		//pVDev->m_var.dwThreadId_dlg = dwThreadDaemonId;
+
+
+		iErr = 0;
+	} while (false);
+
+
+	return  iErr;
+}
+
+
+int  WgcCapObj::exitDev(void** ppShareMediaDeviceParam)
+{
+	this->m_bQuit = true;
+	waitForObject(&this->m_hThread_capDev, INFINITE);
+
+
+	//
+	return  0;
+}
+
+BOOL  WgcCapObj::bGetCapturePara(CCtxQmc* pProcInfo, int  iIndex_capAudio, int  iIndex_capBmp, void* pShareMediaDevice, WAVEFORMATEX* pWf_org, QY_VIDEO_HEADER* pVh_org, SAMPLE_grabberCb_cache* pCache)
+{
+	return  0;
+}
+
+int  WgcCapObj::runDev(void* pShareMediaDeviceParam)
+{
+	return  0;
+}
+
+
+int  WgcCapObj::stopDev(void* pShareMediaDeviceParam)
+{
+	return  0;
+}
+
+
+

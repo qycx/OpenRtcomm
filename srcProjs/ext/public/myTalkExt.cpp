@@ -2,6 +2,45 @@
 #include	"stdafx.h"
 #include	"myTalkExt.h"
 #include	"ctxQmc.h"
+#include <isCliHelpPublic.h>
+#include <dlgtalkproc.h>
+
+
+
+//
+int myTalkExt::switchTransmissionMode(__int64 talkerId, int  iTaskId, atbool  bNoVDownloadVal)
+{
+	CCtxQyMc * pQyMc = g_pQyMc;
+	CCtxQmc *pProcInfo = (CCtxQmc*)pQyMc->get_pProcInfo();
+	MIS_CNT* pMisCnt = pProcInfo->getMisCntByName(_T(""));
+	if (pMisCnt == mynull)  return  -1;
+
+	//
+	if (!iTaskId)  return  -1;
+
+	HWND  hTalk = mynull;
+
+	QY_MESSENGER_ID  idInfo;
+	idInfo.ui64Id = talkerId;
+	if (findTalker(pQyMc, &idInfo, &hTalk))  return -1;
+
+
+	//
+	m_var.confCtrl.iTaskId = iTaskId;
+
+	//
+	if (dlgTalk_bConfCompere(hTalk, pMisCnt->idInfo)) {
+		m_var.confCtrl.bNoVDownload = 0;
+	}
+	else {
+		m_var.confCtrl.bNoVDownload = bNoVDownloadVal;
+
+	}
+
+	return  0;
+}
+
+
 
 
 //

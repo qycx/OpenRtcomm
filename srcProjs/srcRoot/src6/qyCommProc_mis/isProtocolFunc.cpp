@@ -4236,10 +4236,10 @@ errLabel:
 					  //
 #ifdef  __DEBUG__
 					  //
-					  if (10) {
+					  if (0) {
 						  int  i;
 						  //
-						  _sntprintf(tHintBuf, mycountof(tHintBuf), _T("tvd.cnt %d, "), (int)pContent->transferVideoData.usCnt);
+						  _sntprintf(tHintBuf, mycountof(tHintBuf), _T("l4242: tvd.cnt %d, "), (int)pContent->transferVideoData.usCnt);
 						  
 						  //
 						  for (i = 0; i < pContent->transferVideoData.usCnt; i++) {

@@ -20,6 +20,13 @@ class TalkExt_null : public TalkExtTmpl {
 		return  0;
 	}
 
+	//
+	virtual int switchTransmissionMode(__int64 talkerId, int  iTaskId,  atbool  bNoVDownloadVal)
+	{
+		return  0;
+	}
+
+
 	virtual  bool  bNoVDownload(int iTaskId)
 	{
 		return false;

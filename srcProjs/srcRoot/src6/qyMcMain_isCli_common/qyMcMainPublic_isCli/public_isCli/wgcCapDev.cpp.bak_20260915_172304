@@ -1,4 +1,4 @@
-
+ï»¿
 
 #include	"stdafx.h"
 #include	"qyMcMainCommon.h"
@@ -35,12 +35,12 @@ WgcCapDev::~WgcCapDev()
 
 //
 #if  0
-1. cliÏÈ½¨¹ÜµÀ.
-2. Æô¶¯wgcTool
-3. wgcTool Á¬½Ó¹ÜµÀ
-4. wgcTool ½¨Á¢¹²ÏíÄÚ´æ¡£´Ó¹ÜµÀÍ¨Öªcli
-5. cliÊÕµ½Ö¸Áî£¬´ò¿ª¹²ÏíÄÚ´æ¡£
-6. ³õÊ¼»¯Íê±Ï¡·
+1. cliå…ˆå»ºç®¡é“.
+2. å¯åŠ¨wgcTool
+3. wgcTool è¿æ¥ç®¡é“
+4. wgcTool å»ºç«‹å…±äº«å†…å­˜ã€‚ä»ç®¡é“é€šçŸ¥cli
+5. cliæ”¶åˆ°æŒ‡ä»¤ï¼Œæ‰“å¼€å…±äº«å†…å­˜ã€‚
+6. åˆå§‹åŒ–å®Œæ¯•ã€‹
 #endif 
 
 
@@ -170,7 +170,7 @@ errLabel:
 
 
 //
-int  WgcCapDev::initDev(void** ppCapStuff, AUDIO_COMPRESSOR_cfgCommon* pAudioCompressor, BITMAPINFOHEADER* pBih_suggested, HWND  hWnd_notify, LONG_PTR lInstanceData, void** ppShareMediaDeviceParam)
+int  WgcCapDev::initDev(void*p0, BITMAPINFOHEADER* pBih_suggested1,LONG_PTR lInstanceData)
 {
 	int  iErr = -1;
 	CCtxQyMc* pQyMc = g_pQyMc;
@@ -230,7 +230,7 @@ int  WgcCapDev::initDev(void** ppCapStuff, AUDIO_COMPRESSOR_cfgCommon* pAudioCom
 				}
 				showInfo_open(0, 0, 0, _T("wgcCapDev.initDev: createVt ok"));
 
-				// ÕâÀïµÈ´ıbShmOkÖ¸Áî. ÒªÓĞ³¬Ê±´¦Àí
+				// è¿™é‡Œç­‰å¾…bShmOkæŒ‡ä»¤. è¦æœ‰è¶…æ—¶å¤„ç†
 				int  i = 0;
 				int maxCnt = 40;
 				//
@@ -251,7 +251,7 @@ int  WgcCapDev::initDev(void** ppCapStuff, AUDIO_COMPRESSOR_cfgCommon* pAudioCom
 					showInfo_open(0, 0, 0, _T("wgcCapDev.initDev failed, shmOk not waited"));
 					break;
 				}
-				//  ´ò¿ªshm
+				//  æ‰“å¼€shm
 				{
 
 					QY_shm* pShm = &m_var.dataShm;
@@ -291,7 +291,7 @@ int  WgcCapDev::initDev(void** ppCapStuff, AUDIO_COMPRESSOR_cfgCommon* pAudioCom
 				showInfo_open(0, 0, 0, _T("send shmOk to wt"));
 
 				//
-				//  ·¢ËÍÖ¸Áî¸øwt, shm ok. È»ºówt¿ªÊ¼ÍùshmÀïÌîÊı¾İ.
+				//  å‘é€æŒ‡ä»¤ç»™wt, shm ok. ç„¶åwtå¼€å§‹å¾€shmé‡Œå¡«æ•°æ®.
 				//
 				WgcMsg_shmOk  m = { 0 };
 				m.uiType = CONST_qisMsgType_onvif;
@@ -343,6 +343,15 @@ int  WgcCapDev::exitDev(void** ppShareMediaDeviceParam)
 	//
 	stopDev(mynull);
 
+
+	//
+	if (m_var.pQisPipe) {
+		qisPipeFree(&m_var.pQisPipe);
+	}
+	showInfo_open(0, 0, 0, _T("wgcCapDev.exitDev: qisPipeFree ok"));
+
+
+
 	//  close shm
 	//
 	QY_shm* pShm = &m_var.dataShm;
@@ -360,11 +369,6 @@ int  WgcCapDev::exitDev(void** ppShareMediaDeviceParam)
 	closeVt(pProcInfo, m_var.tn_cliPipe, &m_var.vtProcess);
 	showInfo_open(0, 0, 0, _T("wgcCapDev.exitDev: closeVt ok"));
 
-	//
-	if (m_var.pQisPipe) {
-		qisPipeFree(&m_var.pQisPipe);
-	}
-	showInfo_open(0, 0, 0, _T("wgcCapDev.exitDev: qisPipeFree ok"));
 
 	//
 	if (ppShareMediaDeviceParam) {

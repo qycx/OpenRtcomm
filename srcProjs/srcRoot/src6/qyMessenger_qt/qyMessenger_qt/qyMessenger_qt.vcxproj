@@ -489,6 +489,7 @@
     <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\tmpProc.cpp" />
     <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\toShareDynBmp.cpp" />
     <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\wgcCapDev.cpp" />
+    <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\wgcCapObj.cpp" />
     <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\wgcCaptureProc.cpp" />
     <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\wnd_guiMsgProc.cpp" />
     <ClCompile Include="..\..\qyMcPublic\myDb.cpp" />
@@ -664,6 +665,7 @@
     <ClInclude Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\include_isCli\talkExt_null.h" />
     <ClInclude Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\include_isCli\talkGuiExtTmpl.h" />
     <ClInclude Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\include_isCli\wgcCapDev.h" />
+    <ClInclude Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\include_isCli\wgcCapObj.h" />
     <ClInclude Include="..\include\ctxQmc_qt.h" />
     <ClInclude Include="..\include\qmcPublic_qt.h" />
     <QtMoc Include="CDlgTalk_imGrp_detail.h" />

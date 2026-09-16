@@ -78,6 +78,10 @@ int  writeShmPkt(myDRAW_VIDEO_DATA* pPkt, char* pkt_data, VT_shm_content* pShmCo
 
 	//
 	pShmContent->mems[index_toWrite].usPktResType  =  pPkt->usPktResType;
+	//
+	pShmContent->mems[index_toWrite].capPkt_iSn = pPkt->cap_iSn;			//  2026/09/15
+
+	//
 	if  (  pPkt->usPktResType  ==  CONST_pktResType_sharedTex  )  {		//2015/10/03
 		pShmContent->mems[index_toWrite].pktSharedTexInfo  =  pPkt->sharedTex.pktSharedTexInfo;
 		}

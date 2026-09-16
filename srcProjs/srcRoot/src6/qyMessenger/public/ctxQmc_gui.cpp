@@ -644,6 +644,12 @@ int  CCtxQmc_gui::initVar_post(void* p0, void* p1, void* p2)
 			traceLog((TCHAR*)_T("bTest_noLocData set to true"));	
 		}
 		//
+		//pProcInfo->cfg.pDebugStatusInfo->bDbgDetail_wgc = true;
+		//
+		pProcInfo->cfg.pDebugStatusInfo->bDbgDetaul_wgc_BufferCB_av = true;
+
+
+		//
 #endif 
 
 

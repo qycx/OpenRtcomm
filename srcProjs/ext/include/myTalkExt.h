@@ -22,6 +22,10 @@ class myTalkExt : public TalkExtTmpl {
 	}
 
 	//
+	virtual int switchTransmissionMode(__int64 talkerId, int  iTaskId, atbool  bNoVDownloadVal);
+
+
+	//
 	virtual bool bNoVDownload(int iTaskId);
 	
 	//

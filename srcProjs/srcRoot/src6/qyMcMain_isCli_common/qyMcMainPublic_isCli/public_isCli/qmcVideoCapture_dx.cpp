@@ -354,7 +354,8 @@ errLabel:
 
 
  //  2011/12/04
- HRESULT  BufferCB_av(  void  *  pProcInfoParam,  int  iIndex_capProcInfo,  void  *  pSampleGrabberCbVar,  int  iSampleTimeInMs,  BYTE  *  pBuffer,  long  BufferLen  )
+ //HRESULT  BufferCB_av(  void  *  pProcInfoParam,  int  iIndex_capProcInfo,  void  *  pSampleGrabberCbVar,  int  iSampleTimeInMs,  BYTE  *  pBuffer,  long  BufferLen  )
+ HRESULT  BufferCB_av(void* pProcInfoParam, int  iIndex_capProcInfo, void* pSampleGrabberCbVar, int  iSampleTimeInMs, BYTE* pBuffer, long  BufferLen, Param_BufferCB_av* pParam)
 {
 	HRESULT						hr					=	-1;
 	MC_VAR_isCli			*	pProcInfo			=	(  MC_VAR_isCli  *  )pProcInfoParam;
@@ -482,12 +483,17 @@ errLabel:
 		//
 		p->debugInfo.dwTickCnt_start  =  myGetTickCount( mynull  );			
 
+		//
+		if (pParam) {
+			p->cap_iSn = pParam->capPkt_iSn;
+		}
 
+		//
 #ifdef  __DEBUG__
 		//
-		if (pProcInfo->cfg.pDebugStatusInfo->bDbgDetail_wgc) {
+		if (pProcInfo->cfg.pDebugStatusInfo->bDbgDetaul_wgc_BufferCB_av) {
 			if (pSharedObj->iIndex_capBmp) {
-				_sntprintf(tBuf, mycountof(tBuf), _T("BufferCB_av: alloc %d"), p->lPktId_alloc);
+				_sntprintf(tBuf, mycountof(tBuf), _T("BufferCB_av: alloc %d. cap_sn %d,  org.sizeImg. %d, inputLen %d"), p->lPktId_alloc, p->cap_iSn,  p->bih.biSizeImage, BufferLen);
 				showInfo_open(0, 0, 0, tBuf);
 			}
 		}
@@ -791,7 +797,7 @@ errLabel:
 					  goto  errLabel;
 					  }
 				  else  {
-					    BufferCB_av(  pProcInfo,  m_var.iIndex_capProcInfo,  &m_var,  iSampleTimeInMs,  pBuffer,  BufferLen  );
+					    BufferCB_av(  pProcInfo,  m_var.iIndex_capProcInfo,  &m_var,  iSampleTimeInMs,  pBuffer,  BufferLen,mynull  );
 				  }
 
 				  }
@@ -810,7 +816,7 @@ errLabel:
 				  #endif
 
 				  if  (  !m_var.bAudio  )  {
-					  BufferCB_av(  pProcInfo,  m_var.iIndex_capProcInfo,  &m_var,  iSampleTimeInMs,  pBuffer,  BufferLen  );
+					  BufferCB_av(  pProcInfo,  m_var.iIndex_capProcInfo,  &m_var,  iSampleTimeInMs,  pBuffer,  BufferLen, mynull  );
 					  }
 				  else  {
 					    CQyMalloc				mallocObj;

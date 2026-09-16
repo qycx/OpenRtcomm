@@ -1,0 +1,80 @@
+
+#ifndef  __WgcCapObj_h__	
+#define  __WgcCapObj_h__	//  {
+
+//
+#include	"avCapDevTmpl.h"
+#include	"wgcCapturePublic.h"
+#include	"qisPipe_open.h"
+#include <wgcCapDev.h>
+
+
+//  wrapper
+//
+class WgcCapObj : public AvCapDevTmpl {
+
+public:
+
+	//
+	void				*	param_p0{};
+	BITMAPINFOHEADER		param_bih_suggested{};
+	LONG_PTR				param_lInstanceData{};
+
+	//
+	struct {
+		//
+
+
+		//
+		int					index_sharedObj;
+		int					index_capBmp;
+
+		
+
+		//
+		BITMAPINFOHEADER	bih_dec;
+
+
+		//
+	}  m_var;
+	
+
+
+
+	
+
+
+	//
+	HANDLE	m_hThread_capDev{};
+
+	//
+	bool  m_bQuit{};
+
+
+	//
+public:
+	WgcCapObj();
+	virtual  ~WgcCapObj();
+
+	//
+	virtual  int  initDev(void* p0, BITMAPINFOHEADER* pBih_suggested1, LONG_PTR lInstanceData);
+
+	//
+	virtual  int  exitDev(void** ppShareMediaDeviceParam);
+
+	virtual  BOOL  bGetCapturePara(CCtxQmc* pProcInfo, int  iIndex_capAudio, int  iIndex_capBmp, void* pShareMediaDevice, WAVEFORMATEX* pWf_org, QY_VIDEO_HEADER* pVh_org, SAMPLE_grabberCb_cache* pCache);
+
+	virtual  int  runDev(void* pShareMediaDeviceParam);
+	virtual  int  stopDev(void* pShareMediaDeviceParam);
+
+	//
+	int readShmPkt( VT_shm_content* pShmContent, int  index_toRead);
+
+
+};
+
+
+
+#endif  //  }
+
+
