@@ -8,7 +8,7 @@
 
 
 //
-int myTalkExt::switchTransmissionMode(__int64 talkerId, int  iTaskId, atbool  bNoVDownloadVal)
+int myTalkExt::cli_switchTransmissionMode(__int64 talkerId, int  iTaskId, atbool  bNoVDownloadVal)
 {
 	CCtxQyMc * pQyMc = g_pQyMc;
 	CCtxQmc *pProcInfo = (CCtxQmc*)pQyMc->get_pProcInfo();
@@ -23,6 +23,14 @@ int myTalkExt::switchTransmissionMode(__int64 talkerId, int  iTaskId, atbool  bN
 	QY_MESSENGER_ID  idInfo;
 	idInfo.ui64Id = talkerId;
 	if (findTalker(pQyMc, &idInfo, &hTalk))  return -1;
+
+	//
+	CHelp_getDlgTalkVar  help_getDlgTalkVar;
+	DLG_TALK_var* pm_var = (DLG_TALK_var  *  )help_getDlgTalkVar.getVar(hTalk);
+	if (!pm_var)  return  -1;
+
+	if (!pm_var->av.taskInfo.bTaskExists)  return  -1;
+	if (iTaskId != pm_var->av.taskInfo.iTaskId)   return  -1;
 
 
 	//

@@ -211,10 +211,12 @@ int  getConfKey(HWND  hDlgTalk, int  iTaskId, CONF_KEY* pStatus, LPCTSTR  hint)
 
 	//
 	ConfLayoutStatus confLayoutStatus = { 0 };
-	pProcInfo->m_pTalkExt->getConfLayoutStatus(hDlgTalk, iTaskId, &confLayoutStatus, _T(""));
+	ConfTmpCtrl  confTmpCtrl = { 0 };
+	pProcInfo->m_pTalkExt->getConfLayoutStatus(hDlgTalk, iTaskId, &confLayoutStatus,_T(""));
+	pProcInfo->m_pTalkExt->getConfTmpCtrl(hDlgTalk, iTaskId, &confTmpCtrl);
 	//
 	status.confLayoutParam = confLayoutStatus.confLayoutParam;
-	status.confTmpCtrl = confLayoutStatus.unused_confTmpCtrl;			//  这个标志位要从这里移出去，status要用
+	status.confTmpCtrl = confTmpCtrl;			//  这个标志位要从这里移出去，status要用
 
 
 	//

@@ -29,7 +29,7 @@ public:
 
 
 	//
-	virtual int refreshTransmissionMode(void* hDlgTalkParam, void  *  pm_var) = mynull;
+	virtual int unused_refreshTransmissionMode(void* hDlgTalkParam, void  *  pm_var) = mynull;
 
 	
 

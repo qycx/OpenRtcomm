@@ -860,11 +860,12 @@ __declspec(  dllexport  )  int  procSendAvInfo_conf(  MIS_CNT  *  pMisCnt,  HWND
 __declspec(  dllexport  )  int  procSendAvReplyInfo(  MIS_CNT  *  pMisCnt,  HWND  hWnd_task,  MIS_MSG_TASK  *  pMsgTask,  unsigned  char  ucbSendLocalAv,  int  iIndex_sharedObj,  int  iTaskId,  DYN_BMP_rule  *  pDynBmp,  TASK_av_props  *  pTaskAvProps,  MSGR_ADDR  *  pAddr  );
 
 //
-typedef  struct  __param_sendTaskProcReq_t {
+class  Param_sendTaskProcReq {
 				 //
-				 bool  bNoVDownload;
+public:
+	bool  bNoVDownload{};
 
-}		 Param_sendTaskProcReq;
+}		 ;
 
 
 //  
