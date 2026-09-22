@@ -878,7 +878,7 @@ public:
 		virtual int  do_mainWnd_OnTimer(HWND  hMainWnd, void* pVar, UINT  nIDEvent) = mynull;
 
 		//
-		virtual  int  displayRecentFriends(MIS_MSG_displayRecentFriends_qmc* pMsg) = mynull;
+		virtual  int  displayRecentFriends(MIS_MSGU* pMsg) = mynull;
 
 		//
 		virtual  int  confKeyChanged(HWND  hDlgTalk) = mynull;

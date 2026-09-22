@@ -122,7 +122,6 @@
     <ClCompile Include="..\public_isCli\dlgVideosProc.cpp" />
     <ClCompile Include="..\public_isCli\dyn_isCliSaveAv.cpp" />
     <ClCompile Include="..\public_isCli\dyn_messengerHelp.cpp" />
-    <ClCompile Include="..\public_isCli\getPeerImages_forD3d.cpp" />
     <ClCompile Include="..\public_isCli\hlslFunc.cpp" />
     <ClCompile Include="..\public_isCli\imObjHash.cpp" />
     <ClCompile Include="..\public_isCli\mcThreadProc_rtsp.cpp" />
@@ -521,6 +520,7 @@
       <Filter>qyCommProc</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\isCliHelp\public\dlgPolicyIsClient_help.cpp" />
+    <ClCompile Include="..\..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\getPeerImages_forD3d.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\qyCommProc\INCLUDE\syncMtCnt.h" />

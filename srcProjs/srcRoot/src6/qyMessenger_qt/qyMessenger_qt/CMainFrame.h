@@ -209,7 +209,7 @@ public:
 	int m_nContactsIndex = 0;
 
 	//
-	int  displayRecentFriends(MIS_MSG_displayRecentFriends_qmc* pMsg );
+	int  displayRecentFriends(MIS_MSGU* pMsgU );
 
 
 

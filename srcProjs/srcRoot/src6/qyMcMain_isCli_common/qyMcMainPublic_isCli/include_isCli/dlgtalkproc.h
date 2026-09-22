@@ -1288,7 +1288,7 @@ __declspec(  dllexport  ) int  sndViewDynBmpReq(  HWND  hDlgTalk,  void  *  pDLG
 __declspec(  dllexport  ) int  tryToFindSameRule_sndViewDynBmpReq(  HWND  hDlgTalk,  void  *  pDLG_TALK_var,  BOOL  bNeedProgress,  BOOL  *  pbImgRestarted,  int  talkerRuleIndex  );
 
 //
-__declspec(  dllexport  )  BOOL  bTaskImgActive(  HWND  hDlgTalk,  DLG_TALK_var  *  pm_var,  MIS_MSG_TASK  *  pMsgTask  );
+//__declspec(  dllexport  )  BOOL  bTaskImgActive(  HWND  hDlgTalk,  DLG_TALK_var  *  pm_var,  MIS_MSG_TASK  *  pMsgTask  );
  
 
 

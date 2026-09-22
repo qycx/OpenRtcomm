@@ -953,11 +953,14 @@ int CCtxQmc_gui::do_mainWnd_OnTimer(HWND  hMainWnd, void* pVar, UINT  nIDEvent)
 
 
   //
-  int  CCtxQmc_gui::displayRecentFriends(MIS_MSG_displayRecentFriends_qmc* pMsg)
+  int  CCtxQmc_gui::displayRecentFriends(MIS_MSGU* pMsg)
   {
 	  //
 #ifdef  __DEBUG__
-	  printRefreshRecentFriendsResp(&pMsg->resp,_T(""));
+	  if (pMsg->uiType == CONST_misMsgType_displayRecentFriends_qmc) {
+
+		  printRefreshRecentFriendsResp(&pMsg->displayRecentFriends_qmc.resp, _T(""));
+	  }
 #endif
 
 	  //

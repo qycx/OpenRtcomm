@@ -91,7 +91,9 @@
  int  mySendTalkResp(  MC_VAR_isCli  *  pProcInfo,  MIS_MSG_TALK  *  pMsg,  MIS_MSGU  *  pMsgBuf  );
 //
   BOOL  bPermitted_taskAv(  QY_MC  *  pQyMc,  QY_MESSENGER_ID  *  pIdInfo_grp,  TCHAR  *  hint,  unsigned  int  cnt  );
-  
+//
+ __declspec(dllexport)  BOOL  bTaskImgActive(HWND  hDlgTalk, DLG_TALK_var* pm_var, MIS_MSG_TASK* pMsgTask, int nElapseInS);
+
 
 
 
@@ -2099,6 +2101,98 @@ errLabel:
  }
 
 
+
+
+
+#if 0
+ //
+ __declspec(dllexport)  BOOL  ii_bTaskImgActive(HWND  hDlgTalk, DLG_TALK_var* pm_var, MIS_MSG_TASK* pMsgTask)
+ {
+	 int  iErr = -1;
+	 int					nElapseInS = MAX_nElapseInS;	//5;
+	 int  nTimeoutInS = MAX_nTimeoutInS;//65;
+
+
+	 BOOL			bTaskImgAlive = FALSE;
+
+	 time_t			t;
+	 int			minElapseInMs = nTimeoutInS * 1000 + 1;
+	 DWORD			dwTickCnt = GetTickCount();
+	 mytime(&t);
+
+	 TCHAR			tBuf[128];
+
+
+	 //
+	 CAP_IMAGES* pImgs = nullptr;// &pm_var->av.peerZone.images;
+	 int  i;
+
+	 //
+	 pImgs = getLayoutPeerImages_forD3d(pm_var);
+	 if (pImgs) {
+		 //
+		 if (pm_var->av.taskInfo.bTaskExists) {
+			 if (pMsgTask->iTaskId == pm_var->av.taskInfo.iTaskId) {
+				 int  iDiffInMs = myGetTickCount(NULL) - pm_var->av.taskInfo.dwTickCnt_start;
+				 if (iDiffInMs < nElapseInS * 1000) {
+					 bTaskImgAlive = TRUE;
+					 iErr = 0;  goto  errLabel;
+				 }
+			 }
+		 }
+
+
+		 //
+		 for (i = 0; i < mycountof(pImgs->mems); i++) {
+			 if (pImgs->mems[i].iTaskId == pMsgTask->iTaskId) {
+				 //minElapseInMs  =  min(  minElapseInMs,  dwTickCnt  -  pImgs->mems[i].dwTickCnt_lastDrawing  );							   
+				 minElapseInMs = dwTickCnt - pImgs->mems[i].dwTickCnt_lastDrawing;
+				 //
+				 //
+				 if (minElapseInMs < nElapseInS * 1000) {
+					 break;
+				 }
+				 //
+				 _sntprintf(tBuf, mycountof(tBuf), _T("talker%I64u.bTaskImgActive: task %d, elapse %dms. inactive"), pm_var->addr.idInfo.ui64Id, pMsgTask->iTaskId, minElapseInMs);
+				 showInfo_open0(0, 0, tBuf);
+				 //
+				 continue;
+			 }
+		 }
+
+		 if (i < mycountof(pImgs->mems)) {
+			 bTaskImgAlive = TRUE;
+			 iErr = 0;  goto  errLabel;
+		 }
+	 }
+
+	 //
+	 //pImgs  =  &pm_var->av.otherZone.images;	//.otherImages;
+	 pImgs = getLayoutOtherImages_forD3d(pm_var);
+	 if (pImgs) {
+
+		 for (i = 0; i < mycountof(pImgs->mems); i++) {
+			 if (pImgs->mems[i].iTaskId == pMsgTask->iTaskId) {
+				 minElapseInMs = dwTickCnt - pImgs->mems[i].dwTickCnt_lastDrawing;
+				 if (minElapseInMs < nElapseInS * 1000) {
+					 break;
+				 }
+			 }
+		 }
+
+		 if (i < mycountof(pImgs->mems)) {
+			 bTaskImgAlive = TRUE;
+			 iErr = 0;  goto  errLabel;
+		 }
+	 }
+
+	 //
+	 iErr = 0;
+ errLabel:
+	 return  iErr ? FALSE : bTaskImgAlive;
+ }
+#endif 
+
  //
  int  dlgTalk_chkRecvdTasks(  HWND  hDlgTalk,  DLG_TALK_var  &  m_var  )
 {
@@ -2154,26 +2248,14 @@ errLabel:
 			 
 			 //  2016/02/29
 			 if  (  pContent->uiType  ==  CONST_imCommType_transferAvInfo  )  {
-#if  0
-				 PROC_TASK_AV  *  pTask  =  get_transferAvInfo_pTask(  &pContent->transferAvInfo,  _T(  ""  )  );
-				 if  (  !pTask  )  goto  errLabel;
-				 if  (  pTask->canceledTask_status.bWaitingTo_beRe_accepted  )  {
-					 int  iDiffInMs  =  GetTickCount(  )  -  pTask->canceledTask_status.dwTickCnt_recentlyRefreshed;
-					 if  (  abs(  iDiffInMs  )  >  CONST_intervalInMs_task_screenAndMediaFile_re_accept  )  {
-						 pTask->canceledTask_status.bWaitingTo_beRe_accepted  =  FALSE;
-						 //
-						 bChanged_taskList  =  TRUE;
-						}
-					 else  {
-						   bWaitingTo_beRe_accepted  =  TRUE;						   
-					 }
-				 }
-#endif
+
+
 			 }
 			 //
 			 continue;
 		 }
 	 
+		 //
 		 switch  (  pContent->uiType  )  {
 				 case  CONST_imCommType_transferAvInfo:  {
 					   CAP_IMAGES	*	pImgs		=  &m_var.av.peerZone.images;
@@ -2201,22 +2283,32 @@ errLabel:
 					   //
 					   time_t			t;  
 					   mytime(  &t  );
-					   					   
-#if  0
+					   
+					   //  
 					   //
-					   for  (  i  =  0;  i  <  mycountof(  pImgs->mems  );  i  ++  )  {
-						   if  (  pImgs->mems[i].iTaskId  ==  pMsg->task.iTaskId  )  {
-							   minElapseInMs  =  min(  minElapseInMs,  dwTickCnt  -  pImgs->mems[i].dwTickCnt_lastDrawing  );
-							   if  (  minElapseInMs  <  nElapseInS  *  1000  )  {
-								   break;							   
+					   if (!bTaskImgActive(hDlgTalk, &m_var, &pMsg->task, 1)) {
+						   bool  bHaveV = true;
+						   //
+						   if (bHaveV) {
+							   //
+							   if (!pProcInfo->m_pTalkExt->bNoVDownload(m_var.av.taskInfo.iTaskId)) {
+								   bool  bNoVDownload = pProcInfo->m_pTalkExt->bNoVDownload(m_var.av.taskInfo.iTaskId);
+								   //
+								   //  发送chkTaskAlive来使mcu调整是否下发
+								   Param_sendTaskProcReq  param = { 0 };
+								   param.bNoVDownload = bNoVDownload;
+
+								   //
+								   sendTaskProcReq(&param, CONST_qyCmd_sendMedia, CONST_imOp_recv_applyForChkTaskAlive, m_var.av.taskInfo.tStartTime_org, m_var.av.taskInfo.uiTranNo_org, CONST_imCommType_transferAvInfo, m_var.addr.idInfo.ui64Id, m_var.addr.idInfo.ui64Id, m_var.av.taskInfo.iTaskId, 0, mynull, 0, true, _T("l236"), m_var.av.taskInfo.idInfo_starter.ui64Id);
+
+
 							   }
 						   }
+
 					   }
-					   if  (  i  <  mycountof(  pImgs->mems  )  )  {
-						   //  bTaskImgAlive  =  TRUE;
-						   continue;
-					   }
-#endif
+  
+
+
 					   //
 					   #ifdef  __DEBUG__
 
@@ -2228,8 +2320,9 @@ errLabel:
 					   iDiffInS = t - pMsg->task.tTime_alive;
 
 					   //
-					   if  (  iDiffInS  <  nElapseInS  
-						   ||  bTaskImgActive(  hDlgTalk,  &m_var,  &pMsg->task  )  )  
+					   if  (  abs(iDiffInS)  <  nElapseInS  
+						   //||  bTaskImgActive(  hDlgTalk,  &m_var,  &pMsg->task  )  
+						   )  
 					   {
 						   //
 						   pMsg->task.nTimes_applyForChkTaskAlive  =  0;
@@ -9888,7 +9981,7 @@ int  tmpHandler_showMsg_task_confKey(void* hDlgTalkParam, DLG_TALK_var& m_var, v
 	}
 #endif 
 	//
-	pProcInfo->m_pTalkExt->switchTransmissionMode(m_var.addr.idInfo.ui64Id, m_var.av.taskInfo.iTaskId, pContent->confKey.confTmpCtrl.ucbNoVDownload);
+	pProcInfo->m_pTalkExt->cli_switchTransmissionMode(m_var.addr.idInfo.ui64Id, m_var.av.taskInfo.iTaskId, pContent->confKey.confTmpCtrl.ucbNoVDownload);
 
 
 

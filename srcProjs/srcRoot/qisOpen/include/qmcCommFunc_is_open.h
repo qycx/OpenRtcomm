@@ -343,6 +343,9 @@ typedef  struct  __playVideoProcInfo_t							{												//  2009/05/02
 					 //
 					 int										nErr_pktIsSharedTex_tex2not;
 
+					 //
+					 int										nDbgStep;
+
 
 					 //
 				 }												m_var;

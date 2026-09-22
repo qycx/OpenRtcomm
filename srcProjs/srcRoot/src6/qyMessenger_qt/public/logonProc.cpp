@@ -103,6 +103,10 @@ int  dlgMcClientLogon_OnOK_qt(CQmcLogin* pDlg, char * m_server, LPTSTR  m_name, 
 	_sntprintf(m_var.cntCfg[m_var.iSeqNoSelected].passwd, mycountof(m_var.cntCfg[m_var.iSeqNoSelected].passwd), m_passwd);
 
  	memcpy(&pQyMc->cfg.dynCfg.cnt, &m_var.cntCfg[m_var.iSeqNoSelected], sizeof(QNM_CNT_CFG));
+	//
+	if (!pQyMc->cfg.dynCfg.cnt.usCntPort) {
+		pQyMc->cfg.dynCfg.cnt.usCntPort = DEFAULT_qyPort_mis;
+	}
 
 	//  2010/01/09
 	{

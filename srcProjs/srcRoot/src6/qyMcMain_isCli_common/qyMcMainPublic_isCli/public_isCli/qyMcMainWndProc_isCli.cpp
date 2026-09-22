@@ -1408,9 +1408,12 @@ int  dlgTalk_qPostMsg(  HWND  hDlgTalk,  Q_ELEM_T  *  pQElem,  unsigned  int  si
 								     break;
 
 							   case  CONST_misMsgType_displayRecentFriends_qmc: {
-								     pProcInfo->displayRecentFriends(&pMsg->displayRecentFriends_qmc);								     
+								     pProcInfo->displayRecentFriends(pMsg);								     
 									 }
 								     break;
+							   case  CONST_misMsgType_displayRecentFriends1_qmc:
+								   pProcInfo->displayRecentFriends(pMsg);
+								   break;
 
 							   default:
 								        traceLogA(  (char*)  "CMainFrame::OnQyPostComm: msgArrive:  unprocessed: msgType: %d",  pMsg->uiType  );

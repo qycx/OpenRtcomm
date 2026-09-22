@@ -7,6 +7,7 @@
 #include	"talkExtTmpl.h"
 
 
+#if  0
 //
 int talk_refreshLayout_transmissionMode( HWND  hTalk, bool  bNoVDownload )
 {
@@ -61,12 +62,13 @@ int talk_refreshLayout_transmissionMode( HWND  hTalk, bool  bNoVDownload )
 	//
 	return  iErr;
 }
+#endif 
 
 
 
 
 //
-int TalkGuiExt_gui::refreshTransmissionMode(void* hDlgTalkParam, void* pm_var1)
+int TalkGuiExt_gui::unused_refreshTransmissionMode(void* hDlgTalkParam, void* pm_var1)
 {
 	HWND  hDlgTalk = (HWND)hDlgTalkParam;
 	DLG_TALK_var* pm_var = (DLG_TALK_var*)pm_var1;
@@ -105,6 +107,7 @@ int TalkGuiExt_gui::refreshTransmissionMode(void* hDlgTalkParam, void* pm_var1)
 			break;
 		}
 
+#if  0
 		int  i;
 		for (i = 0; i < mycountof(pShadowMgr->shadows); i++) {
 			if (pShadowMgr->shadows[i].hShadow) {
@@ -114,7 +117,9 @@ int TalkGuiExt_gui::refreshTransmissionMode(void* hDlgTalkParam, void* pm_var1)
 
 		//
 		talk_refreshLayout_transmissionMode(hMgr, bNoVDownload);
-		
+#endif 
+
+#if  0
 
 		//
 		//  发送chkTaskAlive来使mcu调整是否下发
@@ -123,6 +128,7 @@ int TalkGuiExt_gui::refreshTransmissionMode(void* hDlgTalkParam, void* pm_var1)
 
 		//
 		sendTaskProcReq(&param, CONST_qyCmd_sendMedia, CONST_imOp_recv_applyForChkTaskAlive, m_var.av.taskInfo.tStartTime_org, m_var.av.taskInfo.uiTranNo_org, CONST_imCommType_transferAvInfo, m_var.addr.idInfo.ui64Id, m_var.addr.idInfo.ui64Id, m_var.av.taskInfo.iTaskId, 0, mynull, 0, true, _T("l236"), m_var.av.taskInfo.idInfo_starter.ui64Id);
+#endif 
 
 
 		//

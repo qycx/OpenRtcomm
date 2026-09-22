@@ -93,6 +93,7 @@ int  __cdecl  myCompare_searchPhoneMsgrByIdInfo(  const  void  *  key,  const  v
 
 BOOL  bMeInfoNeedReg(  void  *  pDb,  int  iDbType,  MIS_CNT  *  pMisCnt,  QY_MESSENGER_REGINFO  *  pRegInfo  );
 
+int  startToRefreshRecentFriends_new(MIS_CNT* pMisCnt, MIS_MSGU* pMsgBuf);
 
 
 
@@ -3090,7 +3091,7 @@ errLabel:
 
 
 
-
+ bool  g_bUse_refreshRecentFriends_new = false;
 
 
 
@@ -3107,6 +3108,14 @@ errLabel:
 	unsigned  int							uiQCnt;
 	//unsigned  int							uiTranNo;
 	TCHAR									tBuf[128];
+
+	//  2026/09/17
+#ifdef  __DEBUG__
+	if (g_bUse_refreshRecentFriends_new) {
+		return  startToRefreshRecentFriends_new(pMisCnt, pMsgBuf);
+	}
+#endif 
+
 
 	//
 	if  (  !pMisCnt  )  return  -1;
@@ -3187,8 +3196,13 @@ errLabel:
 	//
 	MACRO_prepareForTran();
 
-	//if  (  (  uiTranNo  =  getuiNextTranNo(  0,  0,  0  )  )  ==  -1  )  goto  errLabel;
-	if  (  pProcInfo->postMsg2Mgr_mc(  pMisCnt,  NULL,  CONST_misMsgType_req,  0,  CONST_qyCmd_refreshRecentFriendsReq,  tStartTran,  uiTranNo,  0,  (  char  *  )&req, len,  NULL,  0,  0,  pMsgBuf,  FALSE  )  )  goto  errLabel;
+	//
+	int  misMsgType = CONST_misMsgType_req;
+	//
+	//misMsgType = CONST_misMsgType_outputReq;
+	// 
+	//
+	if  (  pProcInfo->postMsg2Mgr_mc(  pMisCnt,  NULL,  misMsgType,  0,  CONST_qyCmd_refreshRecentFriendsReq,  tStartTran,  uiTranNo,  0,  (  char  *  )&req, len,  NULL,  0,  0,  pMsgBuf,  FALSE  )  )  goto  errLabel;
     
 	//
 	iErr  =  0;
@@ -3199,6 +3213,113 @@ errLabel:
 }
 
 
+//
+int  startToRefreshRecentFriends_new(MIS_CNT* pMisCnt, MIS_MSGU* pMsgBuf)
+{
+	int										iErr = -1;
+	int										i;
+	int										j;
+	AnRefreshRecentFriendsReq1_h				req;
+	MIS_MSG_RECENTFRIEND_QMC				msg;
+	unsigned  int							len;
+	unsigned  int							uiQCnt;
+	//unsigned  int							uiTranNo;
+	TCHAR									tBuf[128];
+
+	//
+	if (!pMisCnt)  return  -1;
+	MC_VAR_isCli* pProcInfo = (MC_VAR_isCli*)pMisCnt->pProcInfoParam;
+	if (!pProcInfo) {
+#ifdef  __DEBUG__
+		MACRO_qyAssert(0, _T("startToRefreshRecentFriends: pMisCnt->pProcInfo is null"));
+#endif
+		return  -1;
+	}
+
+#if  0
+	if (!isQEmpty(&pMisCnt->recentFriendQ)) {
+		traceLogA((char*)"start to print recentFriendQ");
+		qTraverse(&pMisCnt->recentFriendQ, (PF_commonHandler)printMisMsg, 0, 0);
+		traceLogA((char*)"end printing recentFriendQ");
+	}
+#endif
+
+
+#ifdef  __DEBUG__	//  2014/05/06
+#if 0
+	if (dbg_bNoRefreshRecentFriends()) {
+		return  0;
+	}
+#endif
+#endif
+
+
+	//  printQmObjQ(  (  QM_OBJQ  *  )pMisCnt->pObjQ  );
+	//
+
+	memset(&req, 0, sizeof(req));
+	//
+	req.uiType = CONST_anCommType_refreshRecentFriendsReq1;
+	req.tLastRefreshedTime_misServ = pMisCnt->refreshRecentFriends.tLastRefreshedTime_misServ;
+
+	uiQCnt = pMisCnt->recentFriendQ.uiQNodes;
+	//  traceLogA(  (char*)  "startToRefreshRecentFriends: mycountof( mems ) %d",  mycountof(  req.mems  )  );
+
+	for (i = 0; i < mycountof(req.mems) && i < (int)uiQCnt; i++) {
+
+		memset(&msg, 0, sizeof(msg));
+		len = sizeof(msg);
+		if (qGetMsg(&pMisCnt->recentFriendQ, &msg, &len))  break;
+		if (msg.uiType != CONST_misMsgType_recentFriend_qmc)  continue;
+
+		//  °ÑÕâ¸ö³ÉÔ±¼Óµ½ºóÃæµÄ¿Õ¼äÈ¥
+		for (j = 0; j < req.usCnt; j++) {
+			if (msg.idInfo.ui64Id == req.mems[req.usCnt].idInfo.ui64Id)  break;
+		}
+		if (j < req.usCnt)  continue;
+
+		//
+		isCli_addTo_qmObjQ(msg.idInfo);
+
+		//  ÕâÀïÒª¼ÓÈëÁË£¬Ê×ÏÈÔÚ¶ÓÁÐÀïÕÒÒ»ÏÂ£¬°Ñ¸ÃºÃÓÑµÄ×î½üË¢ÐÂÊ±¼äÈ¡³öÀ´£¬¿´ÊÇ·ñºÍ×ÜÊ±¼äÒ»Ñù
+		QM_OBJQ_MEM				mem;
+		QMEM_MESSENGER_CLI* pQMemObj;
+		if (findQMemByKey(0, pMisCnt->pObjQ, &msg.idInfo, &mem)) {
+			//
+#ifdef  __DEBUG__
+			_sntprintf(tBuf, mycountof(tBuf), _T("startToRefreshRecentFriends: findQMemByKey failed, idInfo %I64u"), msg.idInfo.ui64Id);
+			traceLog(tBuf);
+#endif
+			//
+			continue;
+		}
+		pQMemObj = (QMEM_MESSENGER_CLI*)mem.pQMemObj;
+
+		req.mems[req.usCnt].idInfo.ui64Id = msg.idInfo.ui64Id;
+		req.mems[req.usCnt].tLastRefreshedTime_misServ = pQMemObj->tLastRefreshedTickCnt_misServ;
+		req.usCnt++;
+	}
+	//
+	len = offsetof(AnRefreshRecentFriendsReq1_h, mems) + req.usCnt * sizeof(req.mems[0]);
+
+	//
+	MACRO_prepareForTran();
+
+	//
+	int  misMsgType = CONST_misMsgType_req;
+	//
+	misMsgType = CONST_misMsgType_outputReq;
+	// 
+	//
+	if (pProcInfo->postMsg2Mgr_mc(pMisCnt, NULL, misMsgType, 0, CONST_qyCmd_refreshRecentFriendsReq, tStartTran, uiTranNo, 0, (char*)&req, len, NULL, 0, 0, pMsgBuf, FALSE))  goto  errLabel;
+
+	//
+	iErr = 0;
+
+errLabel:
+
+	return  iErr;
+}
 
  
 

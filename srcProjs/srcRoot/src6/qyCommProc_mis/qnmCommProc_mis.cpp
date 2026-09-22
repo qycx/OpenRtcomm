@@ -173,6 +173,7 @@ errLabel:
 	 if  (  !pReq  )  return  -1;
 	 if  (  !buf  )  return  -1;
 
+	 //
 	 if  (  data2Stream(  CONST_qyDataType_long,  CONST_qnmCfgId_start,  (  void  *  )uiStreamId,  0,  &ptr,  &len  )  )  goto  errLabel;
 
 
@@ -747,6 +748,201 @@ errLabel:
 errLabel:
 	 return  iErr;
 }
+
+
+ ///
+
+  //
+ int  anRefreshRecentFriendsReq12Stream(unsigned  int  uiStreamId, AnRefreshRecentFriendsReq1_h* pReq, char* buf, unsigned  int* uiBufSize)
+ {
+	 int				iErr = -1;
+	 int				i = 0;
+	 char* ptr = buf;
+	 unsigned  int		len = *uiBufSize;
+
+	 if (!pReq)  return  -1;
+	 if (!buf)  return  -1;
+
+	 //
+	 if (data2Stream(CONST_qyDataType_long, CONST_qnmCfgId_start, (void*)uiStreamId, 0, &ptr, &len))  goto  errLabel;
+
+
+	 //  qyShowInfo1(  CONST_qyShowType_debug,  (  ""  ),  _T(  ""  ),  0,  _T(  ""  ),  _T(  ""  ),  _T(  "    transferVideoData2stream: uiTranNo_openAvDev %d"  ),  pReq->uiTranNo_openAvDev  );
+
+	 if (pReq->ucbResp) {
+		 if (data2Stream(CONST_qyDataType_char, CONST_qnmCfgId_ucbResp, (void*)pReq->ucbResp, 0, &ptr, &len))  goto  errLabel;
+	 }
+
+	 //
+	 if (pReq->usCnt) {
+
+		 if (pReq->usCnt > mycountof(pReq->mems))  goto  errLabel;
+
+		 if (data2Stream(CONST_qyDataType_short, CONST_qnmCfgId_usCnt, (void*)pReq->usCnt, 0, &ptr, &len))  goto  errLabel;
+		 //
+		 for (i = 0; i < pReq->usCnt; i++) {
+			 AnRefreshRecentFriendReq1_h* pMem = &pReq->mems[i];
+
+			 if (data2Stream(CONST_qyDataType_long, CONST_qnmCfgId_start, (void*)CONST_imCommType_mem, 0, &ptr, &len))  goto  errLabel;
+
+#if  0
+			 if (pMem->usIndex_ii) {
+				 if (data2Stream(CONST_qyDataType_short, CONST_qnmCfgId_index, (void*)pMem->usIndex_ii, 0, &ptr, &len))  goto  errLabel;
+			 }
+#endif
+			 //
+			 if (pMem->idInfo.ui64Id) {			//  2009/05/31
+				 if (data2Stream(CONST_qyDataType_l64, CONST_qnmCfgId_messengerId, (void*)&pMem->idInfo.ui64Id, sizeof(pMem->idInfo.ui64Id), &ptr, &len))  goto  errLabel;
+			 }
+			 //  2012/01/09
+
+
+
+
+			 if (pReq->ucbResp) {
+
+				 if (pMem->resp.usRunningStatus)  if (data2Stream(CONST_qyDataType_short, CONST_qnmCfgId_usRunningStatus, (void*)pMem->resp.usRunningStatus, 0, &ptr, &len))  goto  errLabel;
+				 if (pMem->resp.ulIp)  if (data2Stream(CONST_qyDataType_long, CONST_qnmCfgId_ulIp, (void*)pMem->resp.ulIp, 0, &ptr, &len))  goto  errLabel;
+				 if (pMem->resp.ulDetectedIp)  if (data2Stream(CONST_qyDataType_long, CONST_qnmCfgId_ulDetectedIp, (void*)pMem->resp.ulDetectedIp, 0, &ptr, &len))  goto  errLabel;
+				 //
+				 if (pMem->resp.conf_ui64Id) {
+					 if (data2Stream(CONST_qyDataType_l64, CONST_anCfgId_conf_ui64Id, (void*)&pMem->resp.conf_ui64Id, sizeof(pMem->resp.conf_ui64Id), &ptr, &len))  goto  errLabel;
+				 }
+
+			 }
+
+			 
+
+
+
+			 //
+			 if (data2Stream(CONST_qyDataType_long, CONST_qnmCfgId_null, 0, 0, &ptr, &len))  goto  errLabel;
+		 }
+
+	 }
+
+	 
+
+	 if (data2Stream(CONST_qyDataType_long, CONST_qnmCfgId_null, 0, 0, &ptr, &len))  goto  errLabel;
+
+	 iErr = 0;
+ errLabel:
+	 if (!iErr) {
+		 *uiBufSize = *uiBufSize - len;
+	 }
+	 return  iErr;
+
+ }
+
+
+ int  tmpHandler_stream2AnRefreshRecentFriendsReq1(CTX_stream2Data* pCtx, void* p0, void* p1, unsigned  int  uiStreamId, QY_CFGITEM_ntoh_U* pItem)
+ {
+	 int						iErr = -1;
+	 //  p0;
+	 AnRefreshRecentFriendsReq1_h* pContent = (AnRefreshRecentFriendsReq1_h*)p1;
+	 //  QY_CFGITEM				*	pItem		=	(  QY_CFGITEM  *  )p2;
+	 long						lVal;
+
+	 if (!pContent)  goto  errLabel;
+
+	 unsigned  short  tmp_cfgId;
+	 memcpy(&tmp_cfgId, &pItem->head.cfgId, sizeof(short));
+
+	 switch (uiStreamId) {
+	 case  CONST_anCommType_refreshRecentFriendsReq1:
+
+		 switch (tmp_cfgId) {
+		 case  CONST_qnmCfgId_start:
+			 pContent->uiType = uiStreamId;
+			 break;
+		 case  CONST_qnmCfgId_ucbResp:
+			 if (getFieldData_char(pItem, (char*) & pContent->ucbResp)) {
+				 goto  errLabel;
+			 }
+			 break;
+		 case  CONST_qnmCfgId_usCnt:
+			 if (getFieldData_short(pItem, (short*)&pContent->usCnt))  goto  errLabel;
+			 //  if  (  pContent->usCnt  >=  mycountof(  pContent->mems  )  )  
+			 if (pContent->usCnt > mycountof(pContent->mems))  //  2011/01/17
+			 {
+#ifdef  __DEBUG__
+				 traceLogA((char*)"tmpHandler_stream2AnRefreshRecentFriendsReq1 failed: usCnt is too big");
+#endif
+				 goto  errLabel;
+			 }
+			 int  i;	//  2009/05/20
+			 for (i = 0; i < pContent->usCnt; i++) {
+				 memset(&pContent->mems[i], 0, sizeof(pContent->mems[i]));
+			 }
+			 break;
+
+		 default:
+			 break;
+		 }
+		 break;
+
+	 case  CONST_imCommType_mem: {
+		 AnRefreshRecentFriendReq1_h* pMem = NULL;
+		 //
+		 if (pContent->tmpInternal.usCnt_mems >= mycountof(pContent->mems)) {
+#ifdef  __DEBUG__
+			 traceLogA((char*)"tmpHandler_stream2TransferVideoDataGrp failed: usCnt_mems is too big");
+#endif
+			 goto  errLabel;
+		 }
+		 //
+		 pMem = &pContent->mems[pContent->tmpInternal.usCnt_mems];
+		 switch (tmp_cfgId) {
+		 case  CONST_qnmCfgId_start:
+			 break;
+			 //
+		 case  CONST_qnmCfgId_messengerId:			//  2009/05/31
+			 if (getFieldData_l64(pItem, (__int64*)&pMem->idInfo.ui64Id))  goto  errLabel;
+			 break;
+			 //  2012/01/09
+		 case  CONST_qnmCfgId_usRunningStatus:
+			 if (getFieldData_short(pItem, (short*)&pMem->resp.usRunningStatus))  goto  errLabel;
+			 break;
+		 case  CONST_qnmCfgId_ulIp:
+			 if (getFieldData_long(pItem, (long*) &pMem->resp.ulIp))  goto  errLabel;
+			 break;
+		 case  CONST_qnmCfgId_ulDetectedIp:
+			 if (getFieldData_long(pItem, (long*) &pMem->resp.ulDetectedIp))  goto  errLabel;
+			 break;
+		 case  CONST_anCfgId_conf_ui64Id:
+			 if (getFieldData_l64(pItem, (__int64*)&pMem->resp.conf_ui64Id))  goto  errLabel;
+			 //
+			 break;
+
+
+
+
+			 //
+		 case  CONST_qnmCfgId_null:
+			 pContent->tmpInternal.usCnt_mems++;
+			 break;
+		 default:
+		 {
+			 int  ii = 0;
+		 }
+		 break;
+		 }
+		 //
+
+	 }
+							   break;
+
+
+	 default:
+		 break;
+	 }
+
+	 iErr = 0;
+ errLabel:
+	 return  iErr;
+ }
+
+
 
 
 ///
@@ -8400,6 +8596,7 @@ errLabel:
 		  if  (  data2Stream(  CONST_qyDataType_char,  CONST_qnmCfgId_mem,  0,  0,  &ptr,  &len  )  )  goto  errLabel;
 		  //
 		  if  (  data2Stream(  CONST_qyDataType_l64,  CONST_qnmCfgId_messengerId,  (  void  *  )&pResp->mems[i].idInfo.ui64Id,  0,  &ptr,  &len  )  )  goto  errLabel;
+		  //
 		  if  (  pResp->mems[i].usRunningStatus  )  if  (  data2Stream(  CONST_qyDataType_short,  CONST_qnmCfgId_usRunningStatus,  (  void  *  )pResp->mems[i].usRunningStatus,  0,  &ptr,  &len  )  )  goto  errLabel;
 		  if  (  pResp->mems[i].ulIp  )  if  (  data2Stream(  CONST_qyDataType_long,  CONST_qnmCfgId_ulIp,  (  void  *  )pResp->mems[i].ulIp,  0,  &ptr,  &len  )  )  goto  errLabel;
 		  if  (  pResp->mems[i].ulDetectedIp  )  if  (  data2Stream(  CONST_qyDataType_long,  CONST_qnmCfgId_ulDetectedIp,  (  void  *  )pResp->mems[i].ulDetectedIp,  0,  &ptr,  &len  )  )  goto  errLabel;

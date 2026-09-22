@@ -2757,7 +2757,7 @@ typedef  struct  __confLayoutStatus_t {
 				 ConfLayoutParam									confLayoutParam;
 
 				 //
-				 ConfTmpCtrl										unused_confTmpCtrl;
+				 //ConfTmpCtrl										unused_confTmpCtrl;
 				 //unsigned  char										ucbNoVDownload;		//  2026/06/25
 
 				 //
@@ -3946,6 +3946,10 @@ typedef  struct  __refreshRecentFriendsReq_h_t						{									//  ×ÜµÄÁªÏ
 				 REFRESH_RECENTFRIEND_REQ_h							mems[CONST_maxCnt_recentFriends];
 }		 REFRESH_RECENTFRIENDS_REQ_h;
 
+//
+
+
+
 
 //
 typedef  struct  __at_refreshRecentFriendReq_n_t {
@@ -4021,7 +4025,46 @@ typedef  struct  __at_refreshRecentFriendsResp_n_t {									//  ×ÜµÄÁªÏ�
 }		 AT_REFRESH_RECENTFRIENDS_RESP_n;
 
 
+////////////////////////////////////////////////////
 
+typedef  struct  __anRefreshRecentFriendReq1_h_t {									//  µ¥¸öÁªÏµÈËµÄË¢ÐÂÇëÇó
+	QY_MESSENGER_ID									idInfo;
+	__int64											tLastRefreshedTime_misServ;			//  ±íÃ÷¸ÃÁªÏµÈËÊÇÊ²Ã´Ê±¼ä£¨·þÎñÆ÷Ê±¼ä£©µÄ×´Ì¬
+
+	struct {
+		unsigned  long										ulIp;
+		unsigned  long										ulDetectedIp;
+		unsigned  short									usRunningStatus;
+
+		//
+		__int64											conf_ui64Id;
+	}												resp;
+
+}				 AnRefreshRecentFriendReq1_h;
+
+//
+typedef  struct  __anrefreshRecentFriendsReq1_h_t {									//  ×ÜµÄÁªÏµÈËµÄË¢ÐÂÇëÇó
+	unsigned  int										uiType;
+	//
+	unsigned  char										ucbResp;
+	//
+	__int64											tLastRefreshedTime_misServ;			//  ÉÏ´ÎµÄË¢ÐÂ¹¤×÷µÄ·þÎñÆ÷Ê±¼ä¡£
+	unsigned  short									usCnt;
+	AnRefreshRecentFriendReq1_h							mems[CONST_maxCnt_recentFriends];
+
+	//
+	struct {
+		unsigned  short  usCnt_mems;
+	}	tmpInternal;
+
+
+}		 AnRefreshRecentFriendsReq1_h;
+
+
+
+
+
+//////////////////////////////////////////////////////////
 
 //
 typedef  struct  __qisIntervalParams_t								{										//  2005/06/10
@@ -4839,6 +4882,10 @@ typedef  union	 __imContentU_t										{												//
 				 REFRESH_RECENTFRIENDS_RESP_h						refreshRecentFriendsResp;
 
 				 //
+				 AnRefreshRecentFriendsReq1_h						anRefreshRecentFriendsReq1;
+
+
+				 //
 				 AnKeepaliveReq										anKeepaliveReq;									//  2026/07/24
 
 				 //
@@ -4989,7 +5036,12 @@ typedef  union	 __imContentU_nh_t									{												//  2010/07/29
 #define		CONST_misMsgType_resp								(  CONST_misMsgType_base  +  131	 )	//  iocp·
 #define		CONST_misMsgType_talk								(  CONST_misMsgType_base  +  132	 )	//  
 #define		CONST_misMsgType_task								(  CONST_misMsgType_base  +  133	 )	//  
-//
+
+
+#define		CONST_misMsgType_outputReq							(  CONST_misMsgType_base  +  150  )		//  691  )
+																										//
+#define		CONST_misMsgType_outputTask							(  CONST_misMsgType_base  +  153  )		//  690  )	//  robot
+
 //
 #define		CONST_misMsgType_isSendOk							(  CONST_misMsgType_base  +  250	 )	//  iocp iocp tranNo. messenger outputQ iocp,tranNo starttime
 #define		CONST_misMsgType_sendOk								(  CONST_misMsgType_base  +  251	 )	//  MGR tranNo. messenger iocp, tranNoºÍstarttime
@@ -5034,7 +5086,7 @@ typedef  union	 __imContentU_nh_t									{												//  2010/07/29
 //
 #define		CONST_misMsgType_applyForTalkerShadow_qmc			(  CONST_misMsgType_base  +  678  )	//  2012/04/23. 由墙发起,请求dlgTalk生成一个影子窗口
 //
-#define		CONST_misMsgType_displayRecentFriends_qmc			(  CONST_misMsgType_base  +  679  )
+
 
 
 //
@@ -5042,10 +5094,10 @@ typedef  union	 __imContentU_nh_t									{												//  2010/07/29
 #define		CONST_misMsgType_notifyTaskEnd_qmc					(  CONST_misMsgType_base  +  681  )	//  2009/04/28
 #define		CONST_misMsgType_procGps_qmc						(  CONST_misMsgType_base  +  682  )	//  2012/04/20
 //
-#define		CONST_misMsgType_outputTask							(  CONST_misMsgType_base  +  690  )	//  robot
-//
-#define		CONST_misMsgType_outputReq							(  CONST_misMsgType_base  +  691  )
 // 
+#define		CONST_misMsgType_displayRecentFriends_qmc			(  CONST_misMsgType_base  +  685  )
+#define		CONST_misMsgType_displayRecentFriends1_qmc			(  CONST_misMsgType_base  +  686  )
+
 
 
 
@@ -5765,6 +5817,15 @@ typedef  struct  __misMsgDisplayRecentFriendsQmc_t				{
 
 }		 MIS_MSG_displayRecentFriends_qmc;
 
+//
+typedef  struct  __misMsgDisplayRecentFriends1Qmc_t {
+				 MACRO_misMsg_common
+				 //
+				 AnRefreshRecentFriendsReq1_h						resp;
+
+}		 MIS_MSG_displayRecentFriends1_qmc;
+
+
 
 
 //
@@ -6095,6 +6156,7 @@ typedef  union  __misMsgU_t										{
 				MIS_MSG_applyForTalkerShadow_qmc				applyForTalkerShadow_qmc;	//  2012/04/23
 				//
 				MIS_MSG_displayRecentFriends_qmc				displayRecentFriends_qmc;
+				MIS_MSG_displayRecentFriends1_qmc				displayRecentFriends1_qmc;	//  2026/09/17
 
 				//
 				MIS_MSG_procVideo_qmc							procVideo;					//  2009/03/24
@@ -6585,6 +6647,11 @@ int  tmpHandler_stream2TransferAudioData(  CTX_stream2Data * pCtx, void  *  p0, 
 
 int  transferAudioDataResp2Stream(  unsigned  int  uiStreamId,  TRANSFER_AUDIO_dataResp  *  pReq,  char  *  buf,  unsigned  int  *  uiBufSize  );
 int  tmpHandler_stream2TransferAudioDataResp(  CTX_stream2Data * pCtx, void  *  p0,  void  *  p1,  unsigned  int  uiStreamId,  QY_CFGITEM_ntoh_U  *  p2  );
+
+//
+int  anRefreshRecentFriendsReq12Stream(unsigned  int  uiStreamId, AnRefreshRecentFriendsReq1_h* pReq, char* buf, unsigned  int* uiBufSize);
+int  tmpHandler_stream2AnRefreshRecentFriendsReq1(CTX_stream2Data* pCtx, void* p0, void* p1, unsigned  int  uiStreamId, QY_CFGITEM_ntoh_U* pItem);
+
 
 //
 int  remoteAssistReq2Stream(  unsigned  int  uiStreamId,  REMOTE_ASSIST_REQ  *  pReq,  char  *  buf,  unsigned  int  *  uiBufSize  );
