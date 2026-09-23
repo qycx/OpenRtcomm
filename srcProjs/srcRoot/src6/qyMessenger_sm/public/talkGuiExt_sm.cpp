@@ -7,7 +7,7 @@
 #include	"CDlgTalk_qt.h"
 
 
-int TalkGuiExt_sm::refreshTransmissionMode(void* hDlgTalkParam, void* pm_var)
+int TalkGuiExt_sm::unused_refreshTransmissionMode(void* hDlgTalkParam, void* pm_var)
 {
 	CDlgTalk_qt* pTalk = (CDlgTalk_qt*)CDlgTalk_qt::find((WId)hDlgTalkParam);
 	if (!pTalk)  return  -1;

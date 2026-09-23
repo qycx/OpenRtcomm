@@ -103,6 +103,10 @@ int  dlgMcClientLogon_OnOK_qt(CQmcLogin* pDlg, char * m_server, LPTSTR  m_name, 
 	_sntprintf(m_var.cntCfg[m_var.iSeqNoSelected].passwd, mycountof(m_var.cntCfg[m_var.iSeqNoSelected].passwd), m_passwd);
 
  	memcpy(&pQyMc->cfg.dynCfg.cnt, &m_var.cntCfg[m_var.iSeqNoSelected], sizeof(QNM_CNT_CFG));
+	//
+	if (!pQyMc->cfg.dynCfg.cnt.usCntPort) {
+		pQyMc->cfg.dynCfg.cnt.usCntPort = DEFAULT_qyPort_mis;
+	}
 
 	//  2010/01/09
 	{
@@ -390,7 +394,7 @@ BOOL CALLBACK myEnumWindowsProc_singleInstance(HWND hwnd, LPARAM lParam);
 	if (!loadCusModules(pQyMc)) {
 		pQyMc->bCusModulesLoaded = TRUE;
 		//  2007/12/31
-		if (initCusModules(pProcInfo)) {
+		if (initCusModules(pQyMc)) {
 			qyShowInfo1(CONST_qyShowType_qwmComm, 0, (char*)(""), _T("IsClient"), 0, _T(""), _T(""), _T("initCusModules failed."));
 			goto  errLabel;
 		}

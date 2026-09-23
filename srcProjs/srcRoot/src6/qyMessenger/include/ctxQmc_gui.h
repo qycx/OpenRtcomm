@@ -244,7 +244,7 @@ public:
 
 
 	//
-	virtual  int  displayRecentFriends(MIS_MSG_displayRecentFriends_qmc* pMsg);
+	virtual  int  displayRecentFriends(MIS_MSGU* pMsg);
 
 	//
 	virtual  int  confKeyChanged(HWND  hDlgTalk)

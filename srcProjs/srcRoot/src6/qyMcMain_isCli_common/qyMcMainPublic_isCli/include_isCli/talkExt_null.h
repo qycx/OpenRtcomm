@@ -21,7 +21,7 @@ class TalkExt_null : public TalkExtTmpl {
 	}
 
 	//
-	virtual int switchTransmissionMode(__int64 talkerId, int  iTaskId,  atbool  bNoVDownloadVal)
+	virtual int cli_switchTransmissionMode(__int64 talkerId, int  iTaskId,  atbool  bNoVDownloadVal)
 	{
 		return  0;
 	}
@@ -39,10 +39,12 @@ class TalkExt_null : public TalkExtTmpl {
 	}
 
 	//
+#if  0
 	virtual int refreshTransmissionMode()
 	{
 		return  0;
 	}
+#endif 
 	
 
 	//
@@ -53,6 +55,11 @@ class TalkExt_null : public TalkExtTmpl {
 
 	//
 	virtual int  getConfLayoutStatus(HWND  hDlgTalk, int  iTaskId, ConfLayoutStatus* pStatus, LPCTSTR  hint)
+	{
+		return  0;
+	}
+
+	virtual int getConfTmpCtrl(HWND  hDlgTalk, int  iTaskId, ConfTmpCtrl* pConfTmpCtrl)
 	{
 		return  0;
 	}

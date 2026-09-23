@@ -108,6 +108,14 @@ int  myWaitForQThread_infinite(  QY_qThreadProcInfo_common  *  pQThread,  LPCTST
 	}				  
 
 	//
+#ifdef  __DEBUG__
+	if (i > 5) {
+		int  ii = 0;
+		}
+#endif 
+
+
+	//
 	if  (  i  ==  nTries  )  {	//  2013/08/02							  	
 		TCHAR  tBuf[128];
 		_sntprintf(  tBuf,  mycountof(  tBuf  ),  _T(  "%s: waitFor failed. l113"  ),  hint  );

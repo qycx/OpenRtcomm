@@ -96,7 +96,7 @@ bool  bSupported_aiResize()
 
 
 //
-extern "C" DWORD WINAPI mcThreadProc_doPre_toPlayVideo(LPVOID lpParameter)
+extern "C" DWORD WINAPI unused_mcThreadProc_doPre_toPlayVideo(LPVOID lpParameter)
 {
 	CCtxQyMc* pQyMc = g_pQyMc;
 	CCtxQmc* pProcInfo = (CCtxQmc  *  )pQyMc->get_pProcInfo();

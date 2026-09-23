@@ -3634,6 +3634,19 @@ errLabel:
 			//
 			break;
 #endif 
+			//
+		case  CONST_anCommType_refreshRecentFriendsReq1:
+			lenInBytes = uiBufSize - lenInBytes_addr;
+			//
+			if (anRefreshRecentFriendsReq12Stream(pContent->uiType, &pContent->anRefreshRecentFriendsReq1, ptr, (unsigned  int*)&lenInBytes))  goto  errLabel;
+		
+			lenInBytes += lenInBytes_addr;
+			//
+			iErr = 0;  goto  errLabel;
+
+			//	  )
+			break;
+
 
 
 		default:
@@ -4109,12 +4122,17 @@ errLabel:
 						  int  ii = 0;
 						  }
 						  break;
+					case  CONST_anCommType_refreshRecentFriendsReq1: {
+						int  ii = 0;
+					}
+						break;
 					default:
 
 						  //
-						  #ifdef  __DEBUG__
-								  traceLogA((char*)"qyntohRouteTalkData 得到了非长流的数据包, uiType %d, size %d", uiType, size);
-						  #endif
+						TCHAR  tBuf[128];
+						  _sntprintf(tBuf,mycountof(tBuf),  _T(  "qyntohRouteTalkData failed: get unprocessed pkt, uiContentType %d, size %d"  ), uiContentType, size);
+						  showInfo_open(0, 0, 0, tBuf);
+						  //
 						  goto  errLabel;
 
 						  //
@@ -4454,6 +4472,15 @@ errLabel:
 					  if (atStream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2AnKeepaliveReq, 0, &pContent->anKeepaliveReq))  goto  errLabel;
 					  break;
 					  //
+				case  CONST_anCommType_refreshRecentFriendsReq1:
+					memset(&pContent->anRefreshRecentFriendsReq1, 0, sizeof(pContent->anRefreshRecentFriendsReq1));
+					if (atStream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2AnRefreshRecentFriendsReq1, 0, &pContent->anRefreshRecentFriendsReq1))  goto  errLabel;
+					//
+					if (pContent->anRefreshRecentFriendsReq1.usCnt) {
+						int  ii = 0;
+					}
+
+					break;
 				default:
 					   TCHAR  tBuf[128];
 					   _sntprintf(  tBuf,  mycountof(  tBuf  ),  _T(  "qyntohRouteTalkData failed: uiContentType %d %s, error"  ),  uiContentType,  qyGetDesByType1(  CONST_qyCommTypeTable_en,  uiContentType  )  );  

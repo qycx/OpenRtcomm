@@ -12,6 +12,16 @@ extern  "C"  __declspec(dllexport)  int getSize_SAVE_av_procInfo()
 {
 	mySAVE_av_procInfo* p = nullptr;
 
+	//
+#ifdef  _DEBUG
+	int  ii = sizeof(SAVE_av_procInfo);
+
+#endif 
+
+
+
+
+	//
 	int size = sizeof(mySAVE_av_procInfo);
 
 	//

@@ -1604,7 +1604,7 @@ void SetTitleBar(CString title) {
 			   //
 			   pkts[0].head.uiSampleTimeInMs  =  timeGetTime(  );
 			   //
-			   pFuncs->pf_BufferCB_av(  pProcInfo,  iIndex_screenCapProcInfo,  &var,  pkts[0].head.uiSampleTimeInMs,  (  BYTE  *  )pAvRecord->pBits,  pAvRecord->bmpInfo.bmiHeader.biSizeImage  );
+			   pFuncs->pf_BufferCB_av(  pProcInfo,  iIndex_screenCapProcInfo,  &var,  pkts[0].head.uiSampleTimeInMs,  (  BYTE  *  )pAvRecord->pBits,  pAvRecord->bmpInfo.bmiHeader.biSizeImage, mynull  );
 
 
 			   //

@@ -79,7 +79,7 @@ public:
     virtual int confData_exit();
     
     //
-    virtual int switchTransmissionMode(__int64 talkerId, int  iTaskId,  atbool  bNoVDownloadVal)  =  mynull;
+    virtual int cli_switchTransmissionMode(__int64 talkerId, int  iTaskId,  atbool  bNoVDownloadVal)  =  mynull;
 
     //    
     //  对传输终端,不下载video. 
@@ -96,6 +96,8 @@ public:
     //
     virtual int  getConfLayoutStatus(HWND  hDlgTalk, int  iTaskId, ConfLayoutStatus* pStatus, LPCTSTR  hint) = mynull;
 
+    //
+    virtual int getConfTmpCtrl(HWND  hDlgTalk, int  iTaskId, ConfTmpCtrl* pConfTmpCtrl) = mynull;
 
 };
 

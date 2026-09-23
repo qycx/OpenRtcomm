@@ -1736,6 +1736,21 @@ int  procMsgInput_mgr_resp(  void  *  pQyMcParam,  void  *  pSgiParam,  MC_VAR_i
 					   traceLogA(  (char*)  "qPostMsgAndTrigger failed"  );  goto  errLabel;
 				   }
 				   break;
+				   //
+			 case  CONST_anCommType_refreshRecentFriendsReq1: {
+				   if (!isRcOk(pMsgInput->usCode))  goto  errLabel;
+				   //
+				   if (!pContent->anRefreshRecentFriendsReq1.ucbResp)  goto  errLabel;
+				   //
+				   msgLen += sizeof(pContent->anRefreshRecentFriendsReq1);
+				   //
+				   if (qPostMsgAndTrigger(pMsg, msgLen, &pProcInfo->displayQ, _T("procMsgInput_mgr_resp 1"))) {
+					   traceLogA((char*)"qPostMsgAndTrigger failed");  goto  errLabel;
+				   }
+				   //
+				   }
+				   break;
+				   //
 			 case  CONST_imCommType_refreshWebContactsInfo:
 				   if  (  !isRcOk(  pMsgInput->usCode  )  )  goto  errLabel;
 				   //

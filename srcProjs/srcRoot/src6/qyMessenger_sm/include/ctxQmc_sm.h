@@ -310,7 +310,7 @@ public:
 		virtual int  do_mainWnd_OnTimer(HWND  hMainWnd, void* pVar, UINT  nIDEvent);
 
 		//
-		virtual  int  displayRecentFriends(MIS_MSG_displayRecentFriends_qmc* pMsg);
+		virtual  int  displayRecentFriends(MIS_MSGU* pMsgU);
 				
 		//
 		virtual  int  confKeyChanged(HWND  hDlgTalk);

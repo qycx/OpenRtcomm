@@ -2096,40 +2096,78 @@ void CMainFrame::cut_talk_list(WinObjUser user) {
     this->activateWindow();
 }
 
-int  CMainFrame::displayRecentFriends(MIS_MSG_displayRecentFriends_qmc* pMsg)
+int  CMainFrame::displayRecentFriends(MIS_MSGU  *  pMsgU)
 {
-    WinTalkList* pTalkList = (WinTalkList*)ui->stackedWidgetContact->widget(0);
-    for (int j = 0; j < pMsg->resp.usCnt; j++)
-    {
-        if (pMsg->resp.mems[j].usRunningStatus != CONST_usRunningStatus_online) {
-            pTalkList->updateTalkItem(pMsg->resp.mems[j].idInfo.ui64Id, pMsg->resp.mems[j].usRunningStatus);
+    if (pMsgU->uiType == CONST_misMsgType_displayRecentFriends_qmc) {
+        MIS_MSG_displayRecentFriends_qmc* pMsg = &pMsgU->displayRecentFriends_qmc;
+
+            WinTalkList* pTalkList = (WinTalkList*)ui->stackedWidgetContact->widget(0);
+        for (int j = 0; j < pMsg->resp.usCnt; j++)
+        {
+            if (pMsg->resp.mems[j].usRunningStatus != CONST_usRunningStatus_online) {
+                pTalkList->updateTalkItem(pMsg->resp.mems[j].idInfo.ui64Id, pMsg->resp.mems[j].usRunningStatus);
+            }
+            else if (pMsg->resp.mems[j].usRunningStatus == CONST_usRunningStatus_online) {
+                pTalkList->updateTalkItem(pMsg->resp.mems[j].idInfo.ui64Id, pMsg->resp.mems[j].usRunningStatus);
+            }
         }
-        else if (pMsg->resp.mems[j].usRunningStatus == CONST_usRunningStatus_online) {
-            pTalkList->updateTalkItem(pMsg->resp.mems[j].idInfo.ui64Id, pMsg->resp.mems[j].usRunningStatus);
+
+        WinContactsList* pContactsList = (WinContactsList*)ui->stackedWidgetContact->widget(1);
+        for (int i = 0; i < pMsg->resp.usCnt; i++)
+        {
+            if (pMsg->resp.mems[i].usRunningStatus != CONST_usRunningStatus_online) {
+                pContactsList->updateContactItem(pMsg->resp.mems[i].idInfo.ui64Id, pMsg->resp.mems[i].usRunningStatus);
+            }
+            else if (pMsg->resp.mems[i].usRunningStatus == CONST_usRunningStatus_online) {
+                pContactsList->updateContactItem(pMsg->resp.mems[i].idInfo.ui64Id, pMsg->resp.mems[i].usRunningStatus);
+            }
+        }
+
+        for (int i = 0; i < pMsg->resp.usCnt; i++)
+        {
+            if (pMsg->resp.mems[i].usRunningStatus != CONST_usRunningStatus_online) {
+                this->updateSearchItem(pMsg->resp.mems[i].idInfo.ui64Id, pMsg->resp.mems[i].usRunningStatus);
+            }
+            else if (pMsg->resp.mems[i].usRunningStatus == CONST_usRunningStatus_online) {
+                this->updateSearchItem(pMsg->resp.mems[i].idInfo.ui64Id, pMsg->resp.mems[i].usRunningStatus);
+            }
         }
     }
+    else  if (pMsgU->uiType == CONST_misMsgType_displayRecentFriends1_qmc) {
+        MIS_MSG_displayRecentFriends1_qmc* pMsg = &pMsgU->displayRecentFriends1_qmc;
 
-    WinContactsList* pContactsList = (WinContactsList*)ui->stackedWidgetContact->widget(1);
-    for (int i = 0; i < pMsg->resp.usCnt; i++) 
-    {
-        if (pMsg->resp.mems[i].usRunningStatus != CONST_usRunningStatus_online) {
-            pContactsList->updateContactItem(pMsg->resp.mems[i].idInfo.ui64Id , pMsg->resp.mems[i].usRunningStatus);
+        WinTalkList* pTalkList = (WinTalkList*)ui->stackedWidgetContact->widget(0);
+        for (int j = 0; j < pMsg->resp.usCnt; j++)
+        {
+            if (pMsg->resp.mems[j].resp.usRunningStatus != CONST_usRunningStatus_online) {
+                pTalkList->updateTalkItem(pMsg->resp.mems[j].idInfo.ui64Id, pMsg->resp.mems[j].resp.usRunningStatus);
+            }
+            else if (pMsg->resp.mems[j].resp.usRunningStatus == CONST_usRunningStatus_online) {
+                pTalkList->updateTalkItem(pMsg->resp.mems[j].idInfo.ui64Id, pMsg->resp.mems[j].resp.usRunningStatus);
+            }
         }
-        else if (pMsg->resp.mems[i].usRunningStatus == CONST_usRunningStatus_online) {
-            pContactsList->updateContactItem(pMsg->resp.mems[i].idInfo.ui64Id , pMsg->resp.mems[i].usRunningStatus);
+
+        WinContactsList* pContactsList = (WinContactsList*)ui->stackedWidgetContact->widget(1);
+        for (int i = 0; i < pMsg->resp.usCnt; i++)
+        {
+            if (pMsg->resp.mems[i].resp.usRunningStatus != CONST_usRunningStatus_online) {
+                pContactsList->updateContactItem(pMsg->resp.mems[i].idInfo.ui64Id, pMsg->resp.mems[i].resp.usRunningStatus);
+            }
+            else if (pMsg->resp.mems[i].resp.usRunningStatus == CONST_usRunningStatus_online) {
+                pContactsList->updateContactItem(pMsg->resp.mems[i].idInfo.ui64Id, pMsg->resp.mems[i].resp.usRunningStatus);
+            }
+        }
+
+        for (int i = 0; i < pMsg->resp.usCnt; i++)
+        {
+            if (pMsg->resp.mems[i].resp.usRunningStatus != CONST_usRunningStatus_online) {
+                this->updateSearchItem(pMsg->resp.mems[i].idInfo.ui64Id, pMsg->resp.mems[i].resp.usRunningStatus);
+            }
+            else if (pMsg->resp.mems[i].resp.usRunningStatus == CONST_usRunningStatus_online) {
+                this->updateSearchItem(pMsg->resp.mems[i].idInfo.ui64Id, pMsg->resp.mems[i].resp.usRunningStatus);
+            }
         }
     }
-
-    for (int i = 0; i < pMsg->resp.usCnt; i++)
-    {
-        if (pMsg->resp.mems[i].usRunningStatus != CONST_usRunningStatus_online) {
-            this->updateSearchItem(pMsg->resp.mems[i].idInfo.ui64Id, pMsg->resp.mems[i].usRunningStatus);
-        }
-        else if (pMsg->resp.mems[i].usRunningStatus == CONST_usRunningStatus_online) {
-            this->updateSearchItem(pMsg->resp.mems[i].idInfo.ui64Id, pMsg->resp.mems[i].usRunningStatus);
-        }
-    }
-
 
     return  0;
 }

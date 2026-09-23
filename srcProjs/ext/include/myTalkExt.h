@@ -22,7 +22,7 @@ class myTalkExt : public TalkExtTmpl {
 	}
 
 	//
-	virtual int switchTransmissionMode(__int64 talkerId, int  iTaskId, atbool  bNoVDownloadVal);
+	virtual int cli_switchTransmissionMode(__int64 talkerId, int  iTaskId, atbool  bNoVDownloadVal);
 
 
 	//
@@ -47,6 +47,11 @@ class myTalkExt : public TalkExtTmpl {
 		return  0;
 	}
 
+	//
+	virtual int getConfTmpCtrl(HWND  hDlgTalk, int  iTaskId, ConfTmpCtrl* pConfTmpCtrl)
+	{
+		return  0;
+	}
 
 
 };

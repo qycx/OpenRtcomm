@@ -196,7 +196,120 @@ errLabel:
 	 }
 	 if  (  !pContent  )  goto  errLabel;
 
-	 switch  (  pContent->uiType  )  {				   
+	 //
+	 if (pContent->uiType == CONST_anCommType_refreshRecentFriendsReq1) {
+		 int  ii = 0;
+	 }
+
+
+
+	 //
+	 switch  (  pContent->uiType  )  {		
+			 case  CONST_anCommType_refreshRecentFriendsReq1: {
+
+				 AnRefreshRecentFriendsReq1_h* pResp;
+				 QM_OBJQ_MEM							mem;
+				 COMMON_PARAM							commonParam;
+				 AnRefreshRecentFriendReq1_h* pRespMem;
+
+				 pResp = &pContent->anRefreshRecentFriendsReq1;
+
+				 if (pResp->usCnt > mycountof(pResp->mems))  goto  errLabel;
+
+				 //
+				 if (pProcInfo->cfg.pDebugStatusInfo->bDbgDetail) {
+					 qyShowInfo1(CONST_qyShowType_qwmComm, 0, (char*)(""), pProcInfo->who_showInfo, 0, _T(""), _T(""), _T("    anRefreshRecentFriendsResp.207 cnt %d"), pResp->usCnt, pMsgInput->uiTranNo);
+				 }
+
+				 //
+				 if (!pResp->usCnt)  break;	//  Ã»Ê²Ã´¿É×öµÄ
+
+				 //
+#ifdef  __DEBUG__
+				   //printRefreshRecentFriendsResp(  pResp  );
+#endif
+
+				   //
+				 MIS_MSG_displayRecentFriends1_qmc		msg_drf;
+				 memset(&msg_drf, 0, sizeof(msg_drf));
+				 msg_drf.uiType = CONST_misMsgType_displayRecentFriends1_qmc;
+				 AnRefreshRecentFriendsReq1_h& newStatus = msg_drf.resp;		//  ÕâÀï¿ÉÒÔ´æ·ÅºÍobjQ
+				 //memset(  &newStatus,  0,  sizeof(  newStatus  )  );
+
+				 //
+				 for (i = 0; i < pResp->usCnt; i++) {
+					 pRespMem = &pResp->mems[i];
+					 //
+					 if (!pRespMem->resp.usRunningStatus
+						 && !pRespMem->resp.ulIp
+						 && !pRespMem->resp.ulDetectedIp)
+					 {
+						 continue;		//  Õâ±íÃ÷Ã»ÓÐÈÎºÎÄÚÈÝ
+					 }
+
+					 //printQmObjQ(  (  QM_OBJQ  *  )pMisCnt->pObjQ  );
+
+					 if (findQMemByKey(0, pMisCnt->pObjQ, &pRespMem->idInfo, &mem)) {
+						 traceLogA((char*)"refreshRecentFriendsResp: findQMemKey failed, %I64u", pRespMem->idInfo.ui64Id);
+						 continue;
+					 }
+					 QMEM_MESSENGER_CLI* pRecentFriend;
+					 pRecentFriend = (QMEM_MESSENGER_CLI*)mem.pQMemObj;
+
+					 //
+					 bool  bSame = false;
+
+					 if (pRespMem->resp.usRunningStatus == pRecentFriend->usRunningStatus
+						 && pRespMem->resp.ulIp == pRecentFriend->ulIp
+						 && pRespMem->resp.ulDetectedIp == pRecentFriend->ulDetectedIp)
+					 {
+						 bSame = true;
+					 }
+					 else {
+
+						 //
+						 if (pRespMem->resp.usRunningStatus) {
+#ifdef  __DEBUG__
+							 //  traceLogA(  (char*)  "%I64uµÄ×´Ì¬ÓÉ %S ×ªÎª %S",  pRecentFriend->idInfo.ui64Id,  qyGetDesByType1(  CONST_usRunningStatusTable_en,  pRecentFriend->usRunningStatus  ),  qyGetDesByType1(  CONST_usRunningStatusTable_en,  pRespMem->usRunningStatus  )  );
+#endif
+							 pRecentFriend->usRunningStatus = pRespMem->resp.usRunningStatus;
+						 }
+						 if (pRespMem->resp.ulIp)  pRecentFriend->ulIp = pRespMem->resp.ulIp;
+						 if (pRespMem->resp.ulDetectedIp)  pRecentFriend->ulDetectedIp = pRespMem->resp.ulDetectedIp;
+					 }
+					 //
+					 pRecentFriend->tLastRefreshedTickCnt_misServ = (time_t)pResp->tLastRefreshedTime_misServ;
+					 //
+					 if (!bSame
+						 || !pRecentFriend->bRefreshed_byGui)
+					 {
+						 //  
+						 memcpy(&newStatus.mems[newStatus.usCnt], &pResp->mems[i], sizeof(newStatus.mems[0]));
+						 newStatus.usCnt++;
+					 }
+					 //
+					 continue;
+				 }
+
+				 //
+				 if (newStatus.usCnt) {
+					 qPostMsg(&msg_drf, sizeof(msg_drf), &pQyMc->gui.processQ, _T("procMsgInput_display_resp"));
+					 PostMessage(pQyMc->gui.hMainWnd, CONST_qyWm_postComm, CONST_qyWmParam_msgArrive, 0);
+				 }
+
+				 // 
+				 // 
+#if 0
+				 MACRO_makeCommonParam3(pCtx, pMisCnt, &newStatus, commonParam);
+				 qTraverse(&pCtx->displayedObjQ, tmpHandler_notifyMessengerStatusChanged, &commonParam, 0);
+#endif 
+
+				 //
+				 pMisCnt->refreshRecentFriends.tLastRefreshedTime_misServ = (time_t)pResp->tLastRefreshedTime_misServ;
+
+				 }
+				 break;
+
 		     case  CONST_imCommType_refreshRecentFriendsResp:  {
 			
 				   REFRESH_RECENTFRIENDS_RESP_h		*	pResp;

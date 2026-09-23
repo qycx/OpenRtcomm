@@ -45,14 +45,14 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin\</OutDir>
+    <OutDir>..\..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin\</OutDir>
     <IntDir>..\..\..\..\..\..\..\VS2012\$(Platform)\o\isCliHelp_common\$(Configuration)\</IntDir>
     <IncludePath>$(IncludePath);$(DXSDK_DIR)include</IncludePath>
     <TargetName>isCliHelp_common</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin\</OutDir>
+    <OutDir>..\..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin\</OutDir>
     <IntDir>..\..\..\..\..\..\..\VS2012\$(Platform)\o\isCliHelp_common\$(Configuration)\</IntDir>
     <IncludePath>$(IncludePath);$(DXSDK_DIR)include</IncludePath>
     <TargetName>isCliHelp_common</TargetName>
@@ -70,8 +70,8 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ModuleDefinitionFile>.\isCliHelp.def</ModuleDefinitionFile>
-      <AdditionalDependencies>qyBaseLib.lib;qyEncLib.lib;winmm.lib;vfw32.lib;strmiids.lib;Dmoguids.lib;msdmo.lib;wmcodecdspuuid.lib;help_webRtc.lib;dxgi.lib;ancPktProcess.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\lib;..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin</AdditionalLibraryDirectories>
+      <AdditionalDependencies>qyBaseLib.lib;qyEncLib.lib;winmm.lib;vfw32.lib;strmiids.lib;Dmoguids.lib;msdmo.lib;wmcodecdspuuid.lib;help_webRtc.lib;dxgi.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\lib;..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin</AdditionalLibraryDirectories>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -100,8 +100,8 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <ModuleDefinitionFile>.\isCliHelp.def</ModuleDefinitionFile>
-      <AdditionalDependencies>qyBaseLib.lib;qyEncLib.lib;winmm.lib;vfw32.lib;strmiids.lib;Dmoguids.lib;msdmo.lib;wmcodecdspuuid.lib;help_webRtc.lib;dxgi.lib;ancPktProcess.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\lib;..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin</AdditionalLibraryDirectories>
+      <AdditionalDependencies>qyBaseLib.lib;qyEncLib.lib;winmm.lib;vfw32.lib;strmiids.lib;Dmoguids.lib;msdmo.lib;wmcodecdspuuid.lib;help_webRtc.lib;dxgi.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\lib;..\..\..\..\..\..\VS2012\$(Platform)\$(Configuration)\bin</AdditionalLibraryDirectories>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -569,6 +569,9 @@
     <ResourceCompile Include="isCliHelp.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\ancProjs\ancPktProcess\ancPktProcess.vcxproj">
+      <Project>{6bb53c59-ccd7-4cb0-84a3-57aa575afc1f}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\atPublic\ancCore\ancCore.vcxproj">
       <Project>{9bd2de03-f6a9-42c2-aba7-c6e568ee8bf5}</Project>
     </ProjectReference>

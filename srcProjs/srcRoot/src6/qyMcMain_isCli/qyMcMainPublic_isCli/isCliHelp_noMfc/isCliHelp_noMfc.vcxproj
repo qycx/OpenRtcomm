@@ -197,6 +197,7 @@
     <ClCompile Include="..\..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\dyn_isCliD3d_public.cpp" />
     <ClCompile Include="..\..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\dyn_others.cpp" />
     <ClCompile Include="..\..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\findOrgMsgAndProcess_is.cpp" />
+    <ClCompile Include="..\..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\getPeerImages_forD3d.cpp" />
     <ClCompile Include="..\..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\getPlayerByIndex.cpp" />
     <ClCompile Include="..\..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\getTalkerDesc.cpp" />
     <ClCompile Include="..\..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\help_getDlgTalkVar.cpp" />
@@ -280,7 +281,6 @@
     <ClCompile Include="..\public_isCli\dlgSelectAvDevProc.cpp" />
     <ClCompile Include="..\public_isCli\dyn_isCliSaveAv.cpp" />
     <ClCompile Include="..\public_isCli\dyn_messengerHelp.cpp" />
-    <ClCompile Include="..\public_isCli\getPeerImages_forD3d.cpp" />
     <ClCompile Include="..\public_isCli\hlslFunc.cpp" />
     <ClCompile Include="..\public_isCli\imObjHash.cpp" />
     <ClCompile Include="..\public_isCli\mcThreadProc_rtsp.cpp" />

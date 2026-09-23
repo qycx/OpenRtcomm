@@ -3086,12 +3086,26 @@ errLabel:
 							 QY_TRANSFORM* p = &pTask->pTransforms[i];
 							 int  size = pProcInfo->av.sizeof_mySaveAvProcInfo;
 							 p->pSaver = (SAVE_av_procInfo*)mymalloc(size);
+							 //
+							 if (1) {
+								 _sntprintf(tBuf, mycountof(tBuf), _T("initMisMsg: l3090, mymalloc for mySaveAvProcInfo, size %d"), size);
+								 showInfo_open(0, 0, 0, tBuf);
+							 }
+							 //
 							 if (!p->pSaver) {
-								 showInfo_open0(0, 0, _T(""));
+								 //
+								 pProcInfo->status.memStatus.nTimes_mymallocFailed_mySaveAvProcInfo++;
+								 //
+								 _sntprintf(tBuf, mycountof(tBuf), _T("initMisMsg: l3097, mymalloc failed, size %d"), size);
+								 showInfo_open(0, 0, 0, tBuf);
+								 //
 								 goto  errLabel;
 							 }
 							 memset(p->pSaver, 0, size);
-							 if (initSaver(false, t, pMsg->task.addr_logicalPeer.idInfo.ui64Id,  pMsg->task.iTaskId, CONST_saverType_trans, i, (TCHAR*)_T("initMisMsg:"), p->pSaver))  goto  errLabel;
+							 if (initSaver(false, t, pMsg->task.addr_logicalPeer.idInfo.ui64Id, pMsg->task.iTaskId, CONST_saverType_trans, i, (TCHAR*)_T("initMisMsg:"), p->pSaver)) {
+								 showInfo_open(0, 0, 0, _T("initMisMsg.initSaver failed"));
+								 goto  errLabel;
+							 }
 							 p->bInited_saver = true;
 							 
 							 //

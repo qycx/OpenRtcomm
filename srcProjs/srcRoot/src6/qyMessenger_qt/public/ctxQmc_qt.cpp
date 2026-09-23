@@ -1073,30 +1073,60 @@ int  CCtxQmc_qt::do_mainWnd_OnTimer(HWND  hMainWnd, void* pVar, UINT  nIDEvent)
 
 
 //
-int  CCtxQmc_qt::displayRecentFriends(MIS_MSG_displayRecentFriends_qmc* pMsg)
+int  CCtxQmc_qt::displayRecentFriends(MIS_MSGU*pMsgU)
 {
     //
     int  iErr = -1;
 
-    //
-    printRefreshRecentFriendsResp(&pMsg->resp,_T("ctxQmc.displayRecentFriends"));
-    //
-    CCtxQyMc* pQyMc = g_pQyMc;
-    CMainFrame* pMainWnd = (CMainFrame*)QWidget::find((WId)pQyMc->gui.hMainWnd);
-    if (!pMainWnd)  goto  errLabel;
+    if (pMsgU->uiType == CONST_misMsgType_displayRecentFriends_qmc) {
+        MIS_MSG_displayRecentFriends_qmc* pMsg = &pMsgU->displayRecentFriends_qmc;
 
-    pMainWnd->displayRecentFriends(pMsg);
+        //
+        printRefreshRecentFriendsResp(&pMsg->resp, _T("ctxQmc.displayRecentFriends"));
+        //
+        CCtxQyMc* pQyMc = g_pQyMc;
+        CMainFrame* pMainWnd = (CMainFrame*)QWidget::find((WId)pQyMc->gui.hMainWnd);
+        if (!pMainWnd)  goto  errLabel;
 
-    HWND hTalk_vide; hTalk_vide = m_var.hTalk_video;
+        pMainWnd->displayRecentFriends(pMsgU);
 
-    CDlgTalk_qt* pTalk; pTalk = (CDlgTalk_qt*)QWidget::find((WId)hTalk_vide);
-    if (!pTalk) goto errLabel;
+        HWND hTalk_vide; hTalk_vide = m_var.hTalk_video;
 
-    for (int j = 0; j < pMsg->resp.usCnt; j++)
-    {
-        
+        CDlgTalk_qt* pTalk; pTalk = (CDlgTalk_qt*)QWidget::find((WId)hTalk_vide);
+        if (!pTalk) goto errLabel;
+
+        for (int j = 0; j < pMsg->resp.usCnt; j++)
+        {
+
             pTalk->updateMemStatus(pMsg->resp.mems[j].idInfo.ui64Id, pMsg->resp.mems[j].usRunningStatus);
-       
+
+        }
+
+    }
+    else  if (pMsgU->uiType == CONST_misMsgType_displayRecentFriends1_qmc) {
+        MIS_MSG_displayRecentFriends1_qmc* pMsg = &pMsgU->displayRecentFriends1_qmc;
+
+        //
+        //printRefreshRecentFriendsResp(&pMsg->resp, _T("ctxQmc.displayRecentFriends"));
+        //
+        CCtxQyMc* pQyMc = g_pQyMc;
+        CMainFrame* pMainWnd = (CMainFrame*)QWidget::find((WId)pQyMc->gui.hMainWnd);
+        if (!pMainWnd)  goto  errLabel;
+
+        pMainWnd->displayRecentFriends(pMsgU);
+
+        HWND hTalk_vide; hTalk_vide = m_var.hTalk_video;
+
+        CDlgTalk_qt* pTalk; pTalk = (CDlgTalk_qt*)QWidget::find((WId)hTalk_vide);
+        if (!pTalk) goto errLabel;
+
+        for (int j = 0; j < pMsg->resp.usCnt; j++)
+        {
+
+            pTalk->updateMemStatus(pMsg->resp.mems[j].idInfo.ui64Id, pMsg->resp.mems[j].resp.usRunningStatus);
+
+        }
+
     }
 
 

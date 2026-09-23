@@ -59,17 +59,19 @@
 
 //
 // communication data type
-//////////////////////// 这里定义中最重要的ancCommType. <256
+//////////////////////// 这里定义中最重要的anCommType. <256
 //
 #define		CONST_anCommType_msgRoute								1
 #define		CONST_anCommType_mem									2		//  (  CONST_imCommType_base  +  102  )		//  
 //
 #define		CONST_anCommType_transferAudioData						4		//  (  CONST_imCommType_base  +  411  )		//  2008/04/16, 
 #define		CONST_anCommType_transferVideoData						5		//  (  CONST_imCommType_base  +  407  )		//  2008/03/15, 
+//
+#define		CONST_anCommType_refreshRecentFriendsReq1				8		//  2026/09/18
 
 
 
-//  这里定义重要的ancCommType  < 4000
+//  这里定义重要的anCommType  < 4000
 
 
 /////////////// 这里定义普通的ancCommType. CONST_anCommType_base  +  n

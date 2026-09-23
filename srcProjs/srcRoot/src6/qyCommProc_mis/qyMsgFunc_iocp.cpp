@@ -398,6 +398,10 @@ int  qyRecvMsg_iocp(MT_SOCK_IOCP * pMtSock, PER_SOCKET_CONTEXT * pPerSocketConte
 			_sntprintf(tBuf, mycountof(tBuf), _T("qyRecvMsg_iocp: bCommHeadDone, cliIndex %d"), uiCliIndex);
 			showInfo_open(0, 0, 0, tBuf);
 		}
+		//
+		if (pIoContext->msgHead.uiTranNo == 1025) {
+			int  ii = 0;
+		}
 #endif 
 		//
 		pIoContext->ucbCommHeadDone = TRUE;
@@ -465,7 +469,10 @@ int  qyRecvMsg_iocp(MT_SOCK_IOCP * pMtSock, PER_SOCKET_CONTEXT * pPerSocketConte
 	//
 #ifdef  __DEBUG__
 		//
-		if (pIoContext->msgHead.uiTranNo == 9876) {
+		if (pIoContext->msgHead.uiTranNo == 445) {
+			int  ii = 0;
+		}
+		if (pIoContext->msgHead.uiTranNo == 444) {
 			int  ii = 0;
 		}
 #endif 

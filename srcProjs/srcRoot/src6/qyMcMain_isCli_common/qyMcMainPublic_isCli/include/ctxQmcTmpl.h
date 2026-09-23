@@ -253,6 +253,11 @@ typedef  struct  __qmcStatus_									{
 
 					 }											confStatus;
 
+					 //
+					 struct {
+						 int										nTimes_mymallocFailed_mySaveAvProcInfo;
+					 }												memStatus;
+
 
 					 //
 					 struct {

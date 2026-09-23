@@ -42,7 +42,7 @@
 #if  defined(  __DEBUG__  )  &&  0
 		#define		CONST_qnmVer_is							"02617501"				//    for debug. 2015/01/01
 #else
-		#define		CONST_qnmVer_is							"02661531"				//"02661093"  //"02660997"				//  2017/10/19	"02660258"		
+		#define		CONST_qnmVer_is							"02661540"				//"02661093"  //"02660997"				//  2017/10/19	"02660258"		
 #endif
 //
 #define			CONST_qnmDbVer_is							"015003"				//  "015002"				//  2017/07/25
