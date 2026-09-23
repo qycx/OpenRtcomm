@@ -29,7 +29,7 @@ int QyMcExt_gui::getSmCfgInfo(TCHAR* cfgDirName, int cfgDirNameLen)
 		//
 		//if (m_bUseKeyToLogin_forQmcGui) 
 		{
-			_sntprintf(pQyMc->cfg.tmInitFile, mycountof(pQyMc->cfg.tmInitFile), _T("%s.%d"), pQyMc->cfg.tmInitFile, pQyMc->appParams.iSeqNoSelected_appObjPrefix);
+			//_sntprintf(pQyMc->cfg.tmInitFile, mycountof(pQyMc->cfg.tmInitFile), _T("%s.%d"), pQyMc->cfg.tmInitFile, pQyMc->appParams.iSeqNoSelected_appObjPrefix);
 
 		}
 
