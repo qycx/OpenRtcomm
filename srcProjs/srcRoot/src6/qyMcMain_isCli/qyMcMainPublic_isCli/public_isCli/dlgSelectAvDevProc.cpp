@@ -294,6 +294,7 @@ errLabel:
 	return  iErr;
 }
 
+#include <string>
 
 //
 __declspec(dllexport )  int  sm_getChosenCamera(TCHAR  *  webcam_sel, int cntof_webcam_sel)
@@ -301,6 +302,7 @@ __declspec(dllexport )  int  sm_getChosenCamera(TCHAR  *  webcam_sel, int cntof_
 	int  iErr = -1;
 
 	CCtxQyMc* pQyMc = g_pQyMc;
+	std::wstring webcam_selected;
 	
 	CCtxQmc* pProcInfo = QY_GET_procInfo_isCli();
 	FUNCS_for_isCliHelp* pFuncs = QY_GET_FUNCS_for_isCliHelp(pProcInfo);
@@ -325,14 +327,47 @@ __declspec(dllexport )  int  sm_getChosenCamera(TCHAR  *  webcam_sel, int cntof_
 	tName[0] = 0;
 	bool  bFound = false;
 
+	TCHAR  tDisplayName[256];
+	tDisplayName[0] = 0;
+	
+
+	if (!tDev[0]) {
+
+		TCHAR	tBuf[255 + 1] = _T("");
+		QY_REG	reg;
+		int		iCamCapType = 0; //CONST_camCapType_directX
+
+		reg.hKeyRoot0 = HKEY_CURRENT_USER;
+		lstrcpyn(reg.rootKey, pQyMc->cfg.pSysCfg->rootKey_qnmScheduler, mycountof(reg.rootKey));
+
+		if (!qyGetRegCfgT(reg.hKeyRoot0, reg.rootKey, (TCHAR*)_T(CONST_regValName_camCapType), (char*)tBuf, sizeof(tBuf), 0)) {
+			iCamCapType = _ttol(tBuf);
+
+			if (iCamCapType == CONST_camCapType_directX) {
+
+				if (!qyGetRegCfgT(reg.hKeyRoot0, reg.rootKey, _T(CONST_regValName_webcam_selected), (char*)tBuf, sizeof(tBuf), NULL)) {
+					webcam_selected = tBuf;
+				}
+
+			}
+		}
+		
+	}
+
+	//
+
 	int  i;
 	for (i = 0; i < mycountof(pCapStuff->rgpmVideoMenu); i++) {
 		if (!pCapStuff->rgpmVideoMenu[i])  continue;
 		tName[0] = 0;
+		tDisplayName[0] = 0;
 		//  getMonikerFriendlyName(  pCapStuff->rgpmVideoMenu[i],  tName,  mycountof(  tName  )  );
 		pFuncs->moniker.pf_getMonikerProp(pCapStuff->rgpmVideoMenu[i], CONST_moniker_FriendlyName, tName, mycountof(tName));
+		pFuncs->moniker.pf_getMonikerDisplayName(pCapStuff->rgpmVideoMenu[i], tDisplayName, mycountof(tDisplayName));
 		//_sntprintf(tBuf, mycountof(tBuf), _T("%d: %s"), i + 1, tName);
 		//((CComboBox*)GetDlgItem(idc))->InsertString(-1, tBuf);
+		
+
 
 		//
 		//traceLog((TCHAR*)_T("[%s]"), tName);
@@ -340,6 +375,8 @@ __declspec(dllexport )  int  sm_getChosenCamera(TCHAR  *  webcam_sel, int cntof_
 		//
 		if (tDev[0]) {
 			if (!_tcsnicmp(tDev, tName, lstrlen(tDev)))  continue;
+		} if (!webcam_selected.empty()) {
+			if (tDisplayName != webcam_selected) continue;
 		}
 
 		//
