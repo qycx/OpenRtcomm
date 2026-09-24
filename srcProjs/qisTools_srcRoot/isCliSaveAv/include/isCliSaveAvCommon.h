@@ -1,4 +1,4 @@
-
+﻿
 
 #ifndef  __isCliSaveAvCommon_h__
 #define  __isCliSaveAvCommon_h__	//  {
@@ -7,6 +7,12 @@
 #include	<mmreg.h>
 
 
+//
+#define		__USE_saveAv_dummy__
+
+//
+//  注：如果需要一个不做任何处理的isCliSaveAv. 就定义上面的__USE_saveAv_dummy__
+//
 
 //
 #include	"qmOpenCommon.h"
@@ -35,7 +41,7 @@ typedef  struct  __aStreamMem_t		{
 				 char     fileNamePure[256];
 
 				 //
-#define		CONST_bufSize_a_cacheBuf		4  *  1000  *  1000
+#define		CONST_bufSize_a_cacheBuf		16		//  4  *  1000  *  1000
 				 //
 				 struct {
 					 char					buf[CONST_bufSize_a_cacheBuf];
@@ -63,7 +69,10 @@ typedef  struct				{
 
 	//
 	struct {
+
+		//
 		AStreams			aStreams;
+
 	}						audio;
 	//
 	struct					{
@@ -82,7 +91,7 @@ typedef  struct				{
 		bool  flag;
 
 		//
-#define		CONST_bufSize_v_cacheBuf		8  *  1000  *  1000
+#define		CONST_bufSize_v_cacheBuf		16	//  8  *  1000  *  1000
 		//
 		struct {
 			char				buf[CONST_bufSize_v_cacheBuf];
