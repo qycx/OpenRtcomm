@@ -506,7 +506,7 @@ errLabel:
 		   else  {
 			     QMEM_MESSENGER_CLI	*	pQMem;
 			     pQMem  =  (  QMEM_MESSENGER_CLI  *  )mem.pQMemObj;
-				 usRunningStatus  =  pQMem->usRunningStatus;
+				 usRunningStatus  =  pQMem->mfcs.data.usRunningStatus;
 		   }
 		   //
 		   getMessengerImages(  pQyMc,  usRunningStatus,  &nImage,  &nSelectedImage  );
@@ -962,7 +962,7 @@ errLabel:
 
 			 pQMem  =  (  QMEM_MESSENGER_CLI  *  )mem.pQMemObj;
 
-			 getMessengerImages(  pQyMc,  pQMem->usRunningStatus,  &nImage,  &nSelectedImage  );
+			 getMessengerImages(  pQyMc,  pQMem->mfcs.data.usRunningStatus,  &nImage,  &nSelectedImage  );
 			 
 		 }
 
@@ -997,7 +997,7 @@ errLabel:
 			   if  (  !findQMemByObj(  0,  pParam->pMisCnt->pObjQ,  pParam->pClient,  &mem  )  &&  mem.pQMemObj  )  {
 				   QMEM_MESSENGER_CLI  *  pQMem  =  (  QMEM_MESSENGER_CLI  *  )mem.pQMemObj;
 				   //
-				   getMessengerImages(  pQyMc,  pQMem->usRunningStatus,  &nImage,  &nSelectedImage  );
+				   getMessengerImages(  pQyMc,  pQMem->mfcs.data.usRunningStatus,  &nImage,  &nSelectedImage  );
 			   }
 
 		   }

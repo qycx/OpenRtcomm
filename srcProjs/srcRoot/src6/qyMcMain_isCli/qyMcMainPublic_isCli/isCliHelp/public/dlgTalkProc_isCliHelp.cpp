@@ -1027,7 +1027,7 @@ errLabel:
 						//_sntprintf(  tDisplayBuf,  mycountof(  tDisplayBuf  ),  _T(  "%s %I64u"  ),  tDisplayBuf,  pMem->idInfo.ui64Id  );
 
 						//
-						getMessengerImages(  pQyMc,  pQMem->usRunningStatus,  &nImage,  &nSelectedImage  );
+						getMessengerImages(  pQyMc,  pQMem->mfcs.data.usRunningStatus,  &nImage,  &nSelectedImage  );
 						//
 						i  =  0;  myListCtrl_InsertItem(  hListCtrl,  pParam->nItem,  tDisplayBuf,  nImage  );
 						_sntprintf(  tBuf,  mycountof(  tBuf  ),  _T(  "%I64u"  ),  pMem->idInfo.ui64Id  );

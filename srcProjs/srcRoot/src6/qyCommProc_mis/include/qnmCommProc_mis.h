@@ -414,6 +414,7 @@ typedef  struct  __policyImAuthCond_t								{
 }		 POLICY_imAuthCond;
 
 
+
 typedef  struct  __qyMessengerPcInfo_t								{
 				 int												id;
 
@@ -421,11 +422,12 @@ typedef  struct  __qyMessengerPcInfo_t								{
 				 QY_MESSENGER_ID									idInfo;
 				 //
 				 //
-				 unsigned  int										uiType;
+				 unsigned  int										uiDevType;
 				 //
 				 int												iPlatformId;
 				 //
-				 TCHAR												pcName[255  +  1];
+				 TCHAR												pcName[255  +  1];		//  device name
+				 //
 				 TCHAR												domainName[255  +  1];
 				 TCHAR												osUsrName[255  +  1];
 				 //
@@ -434,6 +436,18 @@ typedef  struct  __qyMessengerPcInfo_t								{
 }		 QY_MESSENGER_PCINFO;
 
 
+//
+//
+typedef  struct  __hfcsPktLoss_t {
+	// 
+	ushort	 			a_pktLoss_bp;
+	ushort 				v_pktLoss_bp;
+}		 HfcsPktLoss;
+
+
+
+
+//
 typedef  struct  __qyMessengerInfo_t								{
 
 				 unsigned  int										uiType;										//  messengerType, me, messenger, group
@@ -453,8 +467,22 @@ typedef  struct  __qyMessengerInfo_t								{
 				 char												detectedIp[CONST_qyMaxIpLen  +  1];
 
 				 unsigned  short									usLangId;
-				 //
+				 
+				 //				 
 				 unsigned  int										uiDevType;
+				 WCHAR												devName[128];
+
+				 //
+				 struct {
+					 //
+					 HfcsPktLoss									pktLoss;
+					 //
+					 DWORD											dwTickCnt_refreshed;
+					 //
+				 }													confRtStatus;
+
+
+
 				 //
 				 WCHAR												messengerName[64  +  1];
 
@@ -1155,7 +1183,7 @@ typedef  struct  __qyCommAuthInfo_mis_t							{
 				 unsigned  short								usAuthCmd;
 
 				 //
-				 int											iAppType;								//  2011/03/27
+				 int											iAppType1;								//  2011/03/27
 				 int											iCustemId;
 				 unsigned  int									uiChannelType;							//  2007/07/08
 
@@ -4027,28 +4055,129 @@ typedef  struct  __at_refreshRecentFriendsResp_n_t {									//  ×ÜµÄÁªÏ�
 
 ////////////////////////////////////////////////////
 
+typedef  struct  _imObj_slfcsdata_t {
+	unsigned  int						uiDevType;
+	TCHAR						devName[128];
+
+}	ImObjLfcsData;
+
+//Low frequencyChangingState
+typedef  struct  __imObjLfcs_t {
+				 ImObjLfcsData		data;
+				 unsigned  int		tn;
+}		 ImObjLfcs;
+
+typedef  struct  __imObj_mfcsData_t {
+				 unsigned  long										ulIp;
+				 unsigned  long										ulDetectedIp;
+				 unsigned  short									usRunningStatus;
+
+				 //
+				 __int64											conf_ui64Id;
+
+}		 ImObjMfcsData;
+
+//MidiumFrequencyChangingState
+typedef  struct  __imObjMfcs_t {
+	ImObjMfcsData		data;
+	unsigned  int		tn;
+}		 ImObjMfcs;
+
+typedef  struct  __hfcs_cliNetStat_t {
+	unsigned  int										uiInSpeedInKbps;								//  bps
+	unsigned  int										uiOutSpeedInKbps;
+	//
+}		 Hfcs_cliNetStat;
+
+
+//
+typedef  struct  __imObjHfcsData_t {
+	Hfcs_cliNetStat		t, f, a, v;
+	//, op;
+
+	//
+	//
+	HfcsPktLoss				pktLoss;
+
+
+
+}		 ImObjHfcsData;
+
+//
+typedef  struct  __hfcsCliNetStats_n_t {
+				 atbyte  t_i;
+				 atbyte  t_o;
+				 atbyte  f_i;
+				 atbyte  f_o;
+				 atbyte  a_i;
+				 atbyte  a_o;
+				 atbyte  v_i;
+				 atbyte  v_o;
+
+
+}		 HfcsCliNetStats_n;
+
+
+//HighFrequencyChangingState
+typedef struct  __imObjHfcs_t {
+				ImObjHfcsData	data;
+				unsigned  int	tn;
+}		ImObjHfcs;
+
+
+
+
+//
 typedef  struct  __anRefreshRecentFriendReq1_h_t {									//  µ¥¸öÁªÏµÈËµÄË¢ÐÂÇëÇó
 	QY_MESSENGER_ID									idInfo;
-	__int64											tLastRefreshedTime_misServ;			//  ±íÃ÷¸ÃÁªÏµÈËÊÇÊ²Ã´Ê±¼ä£¨·þÎñÆ÷Ê±¼ä£©µÄ×´Ì¬
 
+	//
+	__int64											unused_tLastRefreshedTime_misServ;			//  ±íÃ÷¸ÃÁªÏµÈËÊÇÊ²Ã´Ê±¼ä£¨·þÎñÆ÷Ê±¼ä£©µÄ×´Ì¬
+
+	//
 	struct {
+		unsigned  int  lfcs_tn;
+		unsigned  int  mfcs_tn;
+		unsigned  int  hfcs_tn;
+	}	req;
+
+
+	//
+	struct {
+		//
+		ImObjLfcs					lfcs;
+		ImObjMfcs					mfcs;
+		ImObjHfcs					hfcs;
+
+
+		//
+#if  0
 		unsigned  long										ulIp;
 		unsigned  long										ulDetectedIp;
 		unsigned  short									usRunningStatus;
 
 		//
 		__int64											conf_ui64Id;
+#endif 
 	}												resp;
 
 }				 AnRefreshRecentFriendReq1_h;
+
+
+//
+
+
 
 //
 typedef  struct  __anrefreshRecentFriendsReq1_h_t {									//  ×ÜµÄÁªÏµÈËµÄË¢ÐÂÇëÇó
 	unsigned  int										uiType;
 	//
 	unsigned  char										ucbResp;
+		
 	//
-	__int64											tLastRefreshedTime_misServ;			//  ÉÏ´ÎµÄË¢ÐÂ¹¤×÷µÄ·þÎñÆ÷Ê±¼ä¡£
+	__int64											unused_tLastRefreshedTime_misServ;			//  ÉÏ´ÎµÄË¢ÐÂ¹¤×÷µÄ·þÎñÆ÷Ê±¼ä¡£
+
+	//
 	unsigned  short									usCnt;
 	AnRefreshRecentFriendReq1_h							mems[CONST_maxCnt_recentFriends];
 
@@ -4104,6 +4233,27 @@ typedef  struct  __anKeepalive_t {
 
 				 //
 }		 AnKeepaliveReq;
+
+
+//
+typedef  struct {
+	atbyte		a_pktLoss;
+	atbyte		v_pktLoss;
+}  HfcsPktLoss_n;
+
+//
+typedef  struct  __anReportConfRtStatus_t {
+				 unsigned  int										uiType;
+				 	
+				 unsigned  char										ucbResp;
+
+				 //
+				 HfcsPktLoss										pktLoss;
+
+
+
+}		 AnReportConfRtStatus;
+
 
 
 //
@@ -4887,6 +5037,9 @@ typedef  union	 __imContentU_t										{												//
 
 				 //
 				 AnKeepaliveReq										anKeepaliveReq;									//  2026/07/24
+
+				 //
+				 AnReportConfRtStatus								anReportConfRtStatus;
 
 				 //
 				 CONF_req											confReq;
@@ -6781,6 +6934,10 @@ int  tmpHandler_stream2RefreshImObjMemInfo(CTX_stream2Data* pCtx, void* p0, void
 //
 int  anKeepaliveReq2Stream(unsigned  int  uiStreamId, AnKeepaliveReq* pReq, char* buf, unsigned  int* uiBufSize);
 int  tmpHandler_stream2AnKeepaliveReq(CTX_stream2Data* pCtx, void* p0, void* p1, unsigned  int  uiStreamId, QY_CFGITEM_ntoh_U* pItem);
+
+//
+int  anReportConfRtStatus2Stream(unsigned  int  uiStreamId, AnReportConfRtStatus* pReq, char* buf, unsigned  int* uiBufSize);
+int  tmpHandler_stream2AnReportConfRtStatus(CTX_stream2Data* pCtx, void* p0, void* p1, unsigned  int  uiStreamId, QY_CFGITEM_ntoh_U* pItem);
 
 
 

@@ -2366,7 +2366,7 @@ errLabel:
 
 	memset(  &rcd,  0,  sizeof(  rcd  )  );
 	//
-	rcd.uiType  =  pProcInfo->uiDevType;
+	rcd.uiDevType  =  pProcInfo->uiDevType;
 	//
 	//
 	rcd.iPlatformId  =  pQyMc->env.iPlatformId;

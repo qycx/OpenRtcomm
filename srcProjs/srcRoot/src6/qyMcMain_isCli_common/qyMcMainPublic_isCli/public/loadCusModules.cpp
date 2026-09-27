@@ -732,7 +732,7 @@ int  loadCusModules(void* pQyMcParam)
 	if (pQyMc->cusModules.pEnc_vpl) {
 		CUS_MODULE_U* pModule = pQyMc->cusModules.pEnc_vpl;
 		if (pModule && pModule->common.bLoaded) {
-			if (pModule->compress.pf_qdcGetSpsPps) {
+			if (pModule->compress.pf_qdcGetProp) {
 				//
 				pModule->compress.pf_qdcGetProp(CONST_adcPropId_getModuleInfo, mynull, &param_getModuleInfo);
 				//
@@ -744,6 +744,7 @@ int  loadCusModules(void* pQyMcParam)
 		}
 	}
 	//
+	int gen;		gen = 0;
 	bool bUse_msdk;  bUse_msdk = true;
 	//
 	bool bIntelGpu;
@@ -751,15 +752,14 @@ int  loadCusModules(void* pQyMcParam)
 	deviceId = 0;
 	bIntelGpu = bDetectIntelGPU(deviceId);
 	if (bIntelGpu) {
-		int gen;
 		gen = getIntelGPUGen(deviceId);
 		//
 		_sntprintf(tBuf, mycountof(tBuf), _T("intelGrp gen: %d."), gen);
 		showInfo_open(0, 0, 0, tBuf);
 
-		//  为判断是否使用vpl, 还需要检查api版本号。只有>=2.2才能用vpl. 否则，用msdk
+		//  为判断是否使用vpl, 还需要检查api版本号。只有>2.2才能用vpl. 否则，用msdk
 		//
-		if (gen >= 9
+		if (gen >= 12
 			&& param_getModuleInfo.usMajor >= 2
 			//&&  param_getModuleInfo.usMinor >=2  
 			)
@@ -779,15 +779,12 @@ int  loadCusModules(void* pQyMcParam)
 
 	  //
 	pQyMc->bUse_msdk = bUse_msdk;
+	// 
 	//
+	_sntprintf(tBuf, mycountof(tBuf), _T("bIntelGrp %d, gen %d, vpl.ver(%d,%d)"), (int)bIntelGpu, gen, (int)param_getModuleInfo.usMajor,  (int)param_getModuleInfo.usMinor);
+	_sntprintf(tBuf, mycountof(tBuf), _T("%s. %s"), tBuf, bUse_msdk ? _T("use msdk") : _T("use vpl"));
 	//
-	if (bUse_msdk) {
-		showInfo_open(0, 0, 0, _T("use msdk"));
-	}
-	else {
-		showInfo_open(0, 0, 0, _T("use vpl"));
-
-	}
+	showInfo_open(0, 0, 0, tBuf);
 
 
 

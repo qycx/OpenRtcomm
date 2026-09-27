@@ -920,7 +920,10 @@ typedef  struct  __qnmCommAuthInfo_t							{
 #define		CONST_qnmCfgId_mac									(  CONST_qnmCfgId_base_common  +  2300  )				//  
 #define		CONST_qnmCfgId_ulIp									(  CONST_qnmCfgId_base_common  +  2301  )				//  ulIp 
 #define		CONST_qnmCfgId_ip6									(  CONST_qnmCfgId_base_common  +  2302  )				//  reserved
-#define		CONST_qnmCfgId_pcName								(  CONST_qnmCfgId_base_common  +  2303  )
+//
+#define		CONST_qnmCfgId_devName								(  CONST_qnmCfgId_base_common  +  2303  )
+#define		CONST_qnmCfgId_pcName								CONST_qnmCfgId_devName
+//
 #define		CONST_qnmCfgId_domainName							(  CONST_qnmCfgId_base_common  +  2304  )
 #define		CONST_qnmCfgId_osUsrName							(  CONST_qnmCfgId_base_common  +  2305  )
 #define		CONST_qnmCfgId_langId								(  CONST_qnmCfgId_base_common  +  2306  )
@@ -1012,6 +1015,8 @@ typedef  struct  __qnmCommAuthInfo_t							{
 //
 #define		CONST_qnmCfgId_usMaxMemsPerSnd						(  CONST_qnmCfgId_base_common  +  3120  )				//  2007/08/26
 #define		CONST_qnmCfgId_iRole								(  CONST_qnmCfgId_base_common  +  3122  )				//  2007/08/26, ½ÇÉ«
+//
+
 
 
 // 3500 - 3999

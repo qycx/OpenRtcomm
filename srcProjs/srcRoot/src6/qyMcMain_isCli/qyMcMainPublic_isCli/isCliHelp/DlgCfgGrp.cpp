@@ -326,7 +326,7 @@ int  tmpHandler_bFillUsrs_myDb(  void  *  p0,  void  *  p1,  void  *  p2  )
 			 lstrcpyn(  pQMem->displayName,  displayName,  mycountof(  pQMem->displayName  )  );		//  2007/09/02
 
 			 //
-			 getMessengerImages(  pQyMc,  pQMem->usRunningStatus,  &nImage,  &nSelectedImage  );
+			 getMessengerImages(  pQyMc,  pQMem->mfcs.data.usRunningStatus,  &nImage,  &nSelectedImage  );
 
 			 //  2017/08/08
 			 if  (  pParam->ucbNoMe  )  {

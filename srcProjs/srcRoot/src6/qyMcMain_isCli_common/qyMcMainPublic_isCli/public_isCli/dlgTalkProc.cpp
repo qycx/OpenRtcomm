@@ -4676,6 +4676,34 @@ int postToCloseWnd(HWND  hWnd,  TCHAR* hint)
 				}
 			}
 		}
+
+		//
+		if (!(m_var.loopCtrl_timer % 3)) {
+			bool  bReport = false;
+			if (m_var.av.taskInfo.bTaskExists
+				&& !m_var.av.taskInfo.ucbStarter
+				&& m_var.av.taskInfo.ucbVideoConference)
+			{
+				bReport = true;
+			}
+			//
+#ifdef  __DEBUG__
+			if (1) {
+				bReport = true;
+				traceLog((TCHAR*)_T("Test: bReport set to true"));
+				//
+				pProcInfo->cfg.pDebugStatusInfo->bTest_startMediaChannel = true;
+			}
+#endif 
+			//
+			if  (  bReport )
+			{
+				report_conf_rtStatus( hDlgTalk, &m_var,_T("l4685"));
+				//int  send_conf_rtStatus(HWND  hDlgTalk_mgr, DLG_TALK_var* pMgrVar, LPCTSTR  hint)
+
+
+			}
+		}
 	
 
 
@@ -7921,6 +7949,41 @@ int  send_confState_retrieveAll_req(  HWND  hDlgTalk_mgr,  DLG_TALK_var  *  pMgr
 
 	return  0;
 }
+
+//
+int  report_conf_rtStatus(HWND  hDlgTalk_mgr, DLG_TALK_var* pMgrVar, LPCTSTR  hint)
+{
+	if (!hint)  hint = _T("");
+
+	if (!isTalkerShadowMgr(pMgrVar->addr))  return  -1;
+	MIS_CNT* pMisCnt = (MIS_CNT*)pMgrVar->pMisCnt;
+	if (!pMisCnt)  return  -1;
+
+	//
+	AnReportConfRtStatus  cs = { 0 };
+
+	cs.uiType = CONST_anCommType_reportConfRtStatus;// confState;
+	cs.pktLoss.a_pktLoss_bp = 9;
+	cs.pktLoss.v_pktLoss_bp = 10;
+
+	//
+	//
+	MACRO_prepareForTran();
+	unsigned  char  ucFlg = 0;
+	unsigned  int  channelType = CONST_channelType_media;
+	//
+	//
+	postMsg2Mgr_mc(pMisCnt, NULL, CONST_misMsgType_outputReq, ucFlg, CONST_qyCmd_sendReq, tStartTran, uiTranNo, 0, (char*)&cs, sizeof(cs), 0, 0, channelType);
+
+	//
+	TCHAR  tBuf[128];
+	_sntprintf(tBuf, mycountof(tBuf), _T("report_conf_rtStatus to srv: %s"), hint);
+	showInfo_open0(0, 0, tBuf);
+
+
+	return  0;
+}
+
 
 
 //

@@ -280,7 +280,7 @@
 
 //
 #define		CONST_usIntervalInS_getIntervalParams				30									//  È¡²ÎÊýÅäÖÃ£¬ 30
-#define		CONST_usIntervalInS_refreshRecentFriends			20									//  Ë¢ÐÂ×î½üÁªÏµÈË×´Ì¬µÄ¼ä¸ô, 20
+#define		CONST_usIntervalInS_refreshRecentFriends			10			//20									//  Ë¢ÐÂ×î½üÁªÏµÈË×´Ì¬µÄ¼ä¸ô, 20
 #define		CONST_usIntervalInS_refreshContactList				120									//  Ë¢ÐÂÁªÏµÈËÃûµ¥µÄ¼ä¸ô, 120
 
 //

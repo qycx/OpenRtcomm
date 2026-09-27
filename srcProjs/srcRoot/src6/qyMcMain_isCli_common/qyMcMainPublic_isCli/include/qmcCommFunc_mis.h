@@ -424,7 +424,10 @@ struct  __misCnt_t													{
 																												//		recentFriend pRecentFriends
 																												//		pRecentFriends
 				 struct												{
-                     time_t											tLastRefreshedTime_misServ;
+					 //
+                     time_t											unused_tLastRefreshedTime_misServ;
+
+					 //
 				 	 DWORD											dwLastTickCnt;									//  
 					 //
 					 bool											bRefreshAtOnce;
@@ -629,16 +632,24 @@ typedef  struct											{
 //
 typedef  struct  __qMemMessenger_cli_t					{										//  2007/06/03, ´ËÎªÔÚclientµÄ¹ÜÀí¶ÓÁÐµÄ½Úµã±íÊ¾¡£
 	
+				 //
 				 QY_MESSENGER_ID						idInfo;
 
 				 unsigned  int							uiType;
 
 				 //
+				 ImObjLfcs								lfcs;
+				 ImObjMfcs								mfcs;
+				 ImObjHfcs								hfcs;
+
+				 //
+#if  0
 				 unsigned  short						usRunningStatus;
 				 unsigned  long							ulIp;
 				 unsigned  long							ulDetectedIp;
 				 
 				 time_t									tLastRefreshedTickCnt_misServ;
+#endif 
 
 				 //
 				 bool									bRefreshed_byGui;
@@ -647,6 +658,7 @@ typedef  struct  __qMemMessenger_cli_t					{										//  2007/06/03, ´ËÎªÔ
 				 TCHAR									talkerDesc[128  +  1];					//  
 				 TCHAR									displayName[64  +  1];					//  2007/09/02
 
+				 //
 				 QY_imObj_rules							rules;									//  2010/08/17
 				 struct									{										//  2011/04/09
 					 QY_imObj_rules						rules;									//  专门为视频客服临时设置的策略.

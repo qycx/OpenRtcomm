@@ -1108,6 +1108,16 @@ errLabel:
 				  startChannel(pProcInfo, pMisCnt, getChannelByType(pMisCnt, uiChannelType), _T("media: taskExists_av true, try to startChannels"));
 			  }
 		  }
+		  
+		  //
+#ifdef  __DEBUG__
+		  if (pProcInfo->cfg.pDebugStatusInfo->bTest_startMediaChannel) {
+			  MIS_CNT* pMisCnt = (MIS_CNT*)pProcInfo->getMisCntByName(_T(""));
+			  if (!pMisCnt)  break;
+
+			  startChannel(pProcInfo, pMisCnt, getChannelByType(pMisCnt, uiChannelType), _T("media: bTest_startMediaChannel true, try to startChannels"));
+		  }
+#endif 
 
 
 

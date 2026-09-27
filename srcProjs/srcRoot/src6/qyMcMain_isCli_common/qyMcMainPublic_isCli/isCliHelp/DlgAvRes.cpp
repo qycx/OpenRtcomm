@@ -1987,7 +1987,7 @@ int  tmp_addTvItem(  CDlgAvRes  *  pDlg,  QY_MESSENGER_ID  *  pIdInfo_mem,  HTRE
 		   else  {
 			     QMEM_MESSENGER_CLI	*	pQMem;
 			     pQMem  =  (  QMEM_MESSENGER_CLI  *  )mem.pQMemObj;
-				 usRunningStatus  =  pQMem->usRunningStatus;
+				 usRunningStatus  =  pQMem->mfcs.data.usRunningStatus;
 		   }
 		   //
 		   getMessengerImages(  pQyMc,  usRunningStatus,  &nImage,  &nSelectedImage  );
@@ -2136,7 +2136,7 @@ int  tmp_refreshTvItem(  CDlgAvRes  *  pDlg,  QY_MESSENGER_ID  *  pIdInfo_mem,  
 		   else  {
 			     QMEM_MESSENGER_CLI	*	pQMem;
 			     pQMem  =  (  QMEM_MESSENGER_CLI  *  )mem.pQMemObj;
-				 usRunningStatus  =  pQMem->usRunningStatus;
+				 usRunningStatus  =  pQMem->mfcs.data.usRunningStatus;
 		   }
 		   //
 		   getMessengerImages(  pQyMc,  usRunningStatus,  &nImage,  &nSelectedImage  );
