@@ -639,6 +639,15 @@
     <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\wgcCapObj.cpp">
       <Filter>qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\qyCommProc\getCfgVal.cpp">
+      <Filter>qyCommProc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\getPeerImages_forD3d.cpp">
+      <Filter>qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\setSaveMsgFlg.cpp">
+      <Filter>qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtTranslation Include="qymessenger_qt_zh.ts" />
@@ -955,6 +964,9 @@
     </Filter>
     <Filter Include="qyMcMainPublic">
       <UniqueIdentifier>{966d01fc-f0ac-48ca-80c2-ce978a4b7bff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyCommProc">
+      <UniqueIdentifier>{39b136c9-71c4-40d8-8a7a-c52dc793a326}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

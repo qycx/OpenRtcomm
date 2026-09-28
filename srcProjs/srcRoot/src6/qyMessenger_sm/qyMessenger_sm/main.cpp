@@ -403,10 +403,7 @@ int chkIfSmAlive()
 //
 bool  bUse_icCap(TCHAR* smCfgFile);
 
-__declspec(dllexport)  int  setSaveMsgFlg(CCtxQmc* pProcInfo1, BOOL  bEnable)
-{
-	return  -1;
-}
+
 
 //
 int main(int argc, char* argv[])

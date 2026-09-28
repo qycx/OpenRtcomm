@@ -664,6 +664,9 @@
     <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\getPeerImages_forD3d.cpp">
       <Filter>qyMcMain_isCli_common\public_isCli</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\setSaveMsgFlg.cpp">
+      <Filter>qyMcMain_isCli_common\public_isCli</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtTranslation Include="qymessenger_qt_zh.ts" />

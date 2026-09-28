@@ -281,6 +281,7 @@
     <ClCompile Include="..\..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\qyMcMainMediaProc_decVideo_rtsp.cpp" />
     <ClCompile Include="..\..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\saveAvProc.cpp" />
     <ClCompile Include="..\..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\sei_packet.cpp" />
+    <ClCompile Include="..\..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\setSaveMsgFlg.cpp" />
     <ClCompile Include="..\..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\showMsg_d3d.cpp" />
     <ClCompile Include="..\..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\smplFunc_a.cpp" />
     <ClCompile Include="..\..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\smplFunc_v.cpp" />

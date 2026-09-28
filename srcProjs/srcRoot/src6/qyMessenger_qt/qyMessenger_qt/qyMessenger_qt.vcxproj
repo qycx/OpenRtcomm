@@ -181,6 +181,7 @@
     <ClCompile Include="..\..\atCommProc_nc\anProtocol.cpp" />
     <ClCompile Include="..\..\atCommProc_nc\gpuFunc.cpp" />
     <ClCompile Include="..\..\qyCommProc\displayShortTime.cpp" />
+    <ClCompile Include="..\..\qyCommProc\getCfgVal.cpp" />
     <ClCompile Include="..\..\qyCommProc\mySaveSecret.cpp" />
     <ClCompile Include="..\..\qyCommProc\protectDataFunc.cpp" />
     <ClCompile Include="..\..\qyCommProc\qnmAssetsTemp.cpp" />
@@ -377,6 +378,7 @@
     <ClCompile Include="..\..\qyMcMain_isCli\qyMcMainPublic_isCli\public_isCli\qmcMasterSlave.cpp" />
     <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\findOrgMsgAndProcess_is.cpp" />
     <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\getMenuStatus_frame_cli.cpp" />
+    <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\getPeerImages_forD3d.cpp" />
     <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\getTalkerDesc.cpp" />
     <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\help_getDlgTalkVar.cpp" />
     <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\hkFunc.cpp" />
@@ -446,6 +448,7 @@
     <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\QyPlaySound_wave.cpp" />
     <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\refreshConfLayout.cpp" />
     <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\saveAvProc.cpp" />
+    <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\setSaveMsgFlg.cpp" />
     <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\shareDynBmp_closeTaskAv.cpp" />
     <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\showMsg_d3d.cpp" />
     <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\talkExtTmpl.cpp" />
