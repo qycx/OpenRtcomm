@@ -1174,7 +1174,7 @@ int  displayContent_imObjs_isClient_myDb(  void  *  p0,  void  *  p1,  void  *  
 		   else  {
 			     QMEM_MESSENGER_CLI	*	pQMem;
 			     pQMem  =  (  QMEM_MESSENGER_CLI  *  )mem.pQMemObj;
-				 usRunningStatus  =  pQMem->usRunningStatus;
+				 usRunningStatus  =  pQMem->mfcs.data.usRunningStatus;
 		   }
 		   //
 		   getMessengerImages(  pQyMc,  usRunningStatus,  &nImage,  &nSelectedImage  );

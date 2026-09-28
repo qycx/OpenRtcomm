@@ -52,6 +52,15 @@
 //
 #define		CONST_anCfgId_conf_ui64Id								40		
 
+//
+#define		CONST_anCfgId_lfcs_tn									50			//  2026/09/23
+#define		CONST_anCfgId_mfcs_tn									51
+#define		CONST_anCfgId_hfcs_tn									52
+#define		CONST_anCfgId_hfcs_cliNetstats							53			//
+#define		CONST_anCfgId_hfcs_cliPktLoss							54
+
+
+
 
 /////这里定义普通的cfgId.  CONST_anCfgId_base_common  +  n
 

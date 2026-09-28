@@ -314,6 +314,15 @@ errLabel:
 							 }
 							 if  (  !(  pChannel  =  getChannelByType(  pMisCnt,  uiChannelType  )  )  )  break;
 
+							 //
+#ifdef  __DEBUG__
+							 if (pMsg->input.uiTranNo == 345) {
+								 int  ii = 0;
+							 }
+#endif 
+
+
+							 //
 							 if  (  isUcFlgResp(  pMsg->input.ucFlg  )  )  {
 								 if  (  procMsgInput_mgr_resp(  pQyMc,  pSci,  pProcInfo,  &pMsg->input,  len,  &ctx,  pChannel  )  )  break;							 
 								}

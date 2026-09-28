@@ -1123,7 +1123,7 @@ int  CCtxQmc_qt::displayRecentFriends(MIS_MSGU*pMsgU)
         for (int j = 0; j < pMsg->resp.usCnt; j++)
         {
 
-            pTalk->updateMemStatus(pMsg->resp.mems[j].idInfo.ui64Id, pMsg->resp.mems[j].resp.usRunningStatus);
+            pTalk->updateMemStatus(pMsg->resp.mems[j].idInfo.ui64Id, pMsg->resp.mems[j].resp.mfcs.data.usRunningStatus);
 
         }
 

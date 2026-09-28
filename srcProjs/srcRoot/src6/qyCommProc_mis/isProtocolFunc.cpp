@@ -692,7 +692,7 @@ errLabel:
 #if  0
 	 if  (  pAuthInfo->uiObjType  &&  data2Stream(  CONST_qyDataType_long,  CONST_qnmCfgId_uiObjType,  (  void  *  )pAuthInfo->uiObjType,  0,  &ptr,  &len  )  )  goto  errLabel;
 #endif
-	 if  (  pAuthInfo->iAppType  &&  data2Stream(  CONST_qyDataType_long,  CONST_qnmCfgId_iAppType,  (  void  *  )pAuthInfo->iAppType,  0,  &ptr,  &len  )  )  goto  errLabel;		//  2011/03/27
+	 if  (  pAuthInfo->iAppType1  &&  data2Stream(  CONST_qyDataType_long,  CONST_qnmCfgId_iAppType,  (  void  *  )pAuthInfo->iAppType1,  0,  &ptr,  &len  )  )  goto  errLabel;		//  2011/03/27
 	 if  (  pAuthInfo->iCustemId  &&  data2Stream(  CONST_qyDataType_long,  CONST_qnmCfgId_iCustemId,  (  void  *  )pAuthInfo->iCustemId,  0,  &ptr,  &len  )  )  goto  errLabel;
 	 if  (  pAuthInfo->uiChannelType  &&  data2Stream(  CONST_qyDataType_long,  CONST_qnmCfgId_uiChannelType,  (  void  *  )pAuthInfo->uiChannelType,  0,  &ptr,  &len  )  )  goto  errLabel;	//  2007/07/08
 
@@ -796,7 +796,7 @@ errLabel:
 #endif
 			 case  CONST_qnmCfgId_iAppType:							//  2011/03/27
 				   if  (  getFieldData_long(  pItem,  &lVal  )  )  goto  errLabel;
-				   pAuthInfo->iAppType  =  lVal;
+				   pAuthInfo->iAppType1  =  lVal;
 				   break;
 			 case  CONST_qnmCfgId_iCustemId:
 				   if  (  getFieldData_long(  pItem,  &lVal  )  )  goto  errLabel;
@@ -3883,6 +3883,10 @@ errLabel:
 			case  CONST_imCommType_anKeepaliveReq:
 				  if (anKeepaliveReq2Stream(pContent->uiType, &pContent->anKeepaliveReq, stream_pBuf, (unsigned int*)&lenInBytes))goto  errLabel;
 				  break;
+			case  CONST_anCommType_reportConfRtStatus:
+				if (anReportConfRtStatus2Stream(pContent->uiType, &pContent->anReportConfRtStatus, stream_pBuf, (unsigned int*)&lenInBytes))goto  errLabel;
+
+				break;
 				    
 				  //
 			default:
@@ -4474,13 +4478,24 @@ errLabel:
 					  //
 				case  CONST_anCommType_refreshRecentFriendsReq1:
 					memset(&pContent->anRefreshRecentFriendsReq1, 0, sizeof(pContent->anRefreshRecentFriendsReq1));
-					if (atStream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2AnRefreshRecentFriendsReq1, 0, &pContent->anRefreshRecentFriendsReq1))  goto  errLabel;
+					if (atStream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2AnRefreshRecentFriendsReq1, 0, &pContent->anRefreshRecentFriendsReq1)) {
+						goto  errLabel;
+					}
 					//
 					if (pContent->anRefreshRecentFriendsReq1.usCnt) {
 						int  ii = 0;
 					}
-
+										
+					//
 					break;
+				case  CONST_anCommType_reportConfRtStatus:
+					memset(&pContent->anReportConfRtStatus, 0, sizeof(pContent->anReportConfRtStatus));
+					if (atStream2Data(&ptr, &size, filterStream_is, tmpHandler_stream2AnReportConfRtStatus, 0, &pContent->anReportConfRtStatus)) {
+						goto  errLabel;
+					}
+					//
+					break;
+
 				default:
 					   TCHAR  tBuf[128];
 					   _sntprintf(  tBuf,  mycountof(  tBuf  ),  _T(  "qyntohRouteTalkData failed: uiContentType %d %s, error"  ),  uiContentType,  qyGetDesByType1(  CONST_qyCommTypeTable_en,  uiContentType  )  );  

@@ -442,7 +442,7 @@ int  tmpHandler_bFillImGrpMem_confCtrl_myDb(  void  *  p0,  void  *  p1,  void  
 			 lstrcpyn(  pQMem->displayName,  displayName,  mycountof(  pQMem->displayName  )  );		//  2007/09/02
 
 			 //
-			 getMessengerImages(  pQyMc,  pQMem->usRunningStatus,  &nImage,  &nSelectedImage  );
+			 getMessengerImages(  pQyMc,  pQMem->mfcs.data.usRunningStatus,  &nImage,  &nSelectedImage  );
 
 			 //
 			 if  (  pConfCtrl  )  {

@@ -390,7 +390,12 @@ typedef  struct  __sampleGrabberCbCache_t						{
 }		 SAMPLE_grabberCb_cache;
 
 //
-class  Param_BufferCB_av;
+#ifdef  __cplusplus
+	class  Param_BufferCB_av;
+#else
+	#define	Param_BufferCB_av	void
+#endif 
+
 //
 typedef  HRESULT  (  *  PF_BufferCB_av  )(  void  *  pProcInfoParam,  int  iIndex_capProcInfo,  void  *  pSampleGrabberCbVar,  int  iSampleTimeInMs,  BYTE  *  pBuffer,  long  BufferLen, Param_BufferCB_av  *  pParam  );
 

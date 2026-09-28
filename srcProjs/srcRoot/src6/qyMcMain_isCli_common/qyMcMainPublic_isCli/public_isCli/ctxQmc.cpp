@@ -1459,7 +1459,9 @@ int CCtxQmc::dlgTalk_confStart_post(HWND  hDlgTalk, LPCTSTR  hint)
 	//
 	chkTasksStatus(&this->status.tasksStatus,_T(""));
 	//
-	if (this->status.tasksStatus.bTaskExists_av) {
+	if (this->status.tasksStatus.bTaskExists_av
+		) 
+	{
 		this->av.bNeedStartChannel_a = true;
 		//
 		q2PostMsgAndTrigger(mynull, 0, &this->realTimeMediaQ2, _T(""));

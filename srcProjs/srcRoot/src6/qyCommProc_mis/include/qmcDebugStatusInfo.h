@@ -134,8 +134,10 @@ typedef  struct  __qmc_debugStatusInfo_t								{															//  2009/02/27
 						 atbool											bDbgDetaul_wgc_BufferCB_av;
 						 //
 						 unsigned  char									bDbgDetail_keepAlive;
+						 
 						 //
 						 unsigned  char									bTest_noLocData;
+						 unsigned  char									bTest_startMediaChannel;
 
 						 //
 						 unsigned  char									bDbgDetail_my_inStream;
@@ -152,6 +154,10 @@ typedef  struct  __qmc_debugStatusInfo_t								{															//  2009/02/27
 
 						 //
 						 unsigned  char									bDbgDetail_ntoh;
+
+						 //
+						 unsigned  char									bDbgDetail_refreshFcs;
+
 
 						 //
 						 unsigned  char									bDbgDetail_encV;

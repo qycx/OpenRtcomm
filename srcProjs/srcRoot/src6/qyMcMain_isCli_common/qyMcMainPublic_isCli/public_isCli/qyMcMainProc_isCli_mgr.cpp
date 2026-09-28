@@ -1523,6 +1523,15 @@ int  procMsgInput_mgr_resp(  void  *  pQyMcParam,  void  *  pSgiParam,  MC_VAR_i
 
 	 if  (  !isUcFlgResp(  pMsgInput->ucFlg  )  )  goto  errLabel;
 	 
+	 //
+#ifdef  __DEBUG__
+	 if (pMsgInput->uiTranNo == 345) {
+		 int  ii = 0;
+	 }
+#endif 
+
+
+
 	 //  traceLogA(  (char*)  ""  );
 	 if  (  !pMsgInput->ucbConvrted  )  {
 	 
@@ -1536,7 +1545,9 @@ int  procMsgInput_mgr_resp(  void  *  pQyMcParam,  void  *  pSgiParam,  MC_VAR_i
 		 {
 			 MIS_MSG_routeTalkData  *  pAddrTalkData	=	(  MIS_MSG_routeTalkData  *  )&pMsg->data;
 			 //
-			 if  (  qyntohRouteTalkData(  pMsgInput->ucFlg,  (  char  *  )&pMsgInput->data,  pMsgInput->lenInBytes,  &pAddrTalkData->route,  (  IM_CONTENTU  *  )pAddrTalkData->buf,  tHintBuf,  mycountof(  tHintBuf  )  )  )  goto  errLabel;    
+			 if (qyntohRouteTalkData(pMsgInput->ucFlg, (char*)&pMsgInput->data, pMsgInput->lenInBytes, &pAddrTalkData->route, (IM_CONTENTU*)pAddrTalkData->buf, tHintBuf, mycountof(tHintBuf))) {
+				 goto  errLabel;
+			 }
 			 if  (  tHintBuf[0]  )  qyShowInfo1(  CONST_qyShowType_qwmComm,  0,  (char*)  (  ""  ),  _T(  ""  ),  0,  _T(  ""  ),  _T(  ""  ),  _T(  "    %s"  ),  tHintBuf  );
 			 //
 			 msgLen  +=  offsetof(  MIS_MSG_routeTalkData,  buf  );
@@ -1550,7 +1561,9 @@ int  procMsgInput_mgr_resp(  void  *  pQyMcParam,  void  *  pSgiParam,  MC_VAR_i
 				   goto  errLabel;
 			   }
 
-			   if  (  qyntohRouteTalkData(  pMsgInput->ucFlg,  (  char  *  )&pMsgInput->data,  pMsgInput->lenInBytes,  NULL,  (  IM_CONTENTU  *  )&pMsg->data,  tHintBuf,  mycountof(  tHintBuf  )  )  )  goto  errLabel;    
+			   if (qyntohRouteTalkData(pMsgInput->ucFlg, (char*)&pMsgInput->data, pMsgInput->lenInBytes, NULL, (IM_CONTENTU*)&pMsg->data, tHintBuf, mycountof(tHintBuf))) {
+				   goto  errLabel;
+			   }
 			   if  (  tHintBuf[0]  )  qyShowInfo1(  CONST_qyShowType_qwmComm,  0,  (char*)  (  ""  ),  _T(  ""  ),  0,  _T(  ""  ),  _T(  ""  ),  _T(  "    %s"  ),  tHintBuf  );
 			   //
 			   pContent  =  (  IM_CONTENTU  *  )&pMsg->data;				
@@ -1584,6 +1597,9 @@ int  procMsgInput_mgr_resp(  void  *  pQyMcParam,  void  *  pSgiParam,  MC_VAR_i
 	 //
 #ifdef  __DEBUG__
 	 if (pContent->uiType == CONST_imCommType_confReq) {
+		 int  ii = 0;
+	 }
+	 if (pMsgInput->uiTranNo == 345) {
 		 int  ii = 0;
 	 }
 #endif 

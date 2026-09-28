@@ -655,6 +655,15 @@
     <ClCompile Include="..\..\qyMcMainPublic\qyMcExtTmpl.cpp">
       <Filter>qyMcMainPublic</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\qyCommProc\getCfgVal.cpp">
+      <Filter>qyCommProc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\procSendFunc.cpp">
+      <Filter>qyMcMain_isCli_common\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\getPeerImages_forD3d.cpp">
+      <Filter>qyMcMain_isCli_common\public_isCli</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtTranslation Include="qymessenger_qt_zh.ts" />
@@ -963,6 +972,9 @@
     </Filter>
     <Filter Include="qyMcMainPublic">
       <UniqueIdentifier>{3d6a082f-8c34-4575-bfef-14387c550eb3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qyCommProc">
+      <UniqueIdentifier>{a7643a1b-8195-46ef-a85c-620034012c3e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

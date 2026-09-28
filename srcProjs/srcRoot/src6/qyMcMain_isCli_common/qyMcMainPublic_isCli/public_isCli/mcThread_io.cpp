@@ -238,6 +238,9 @@ extern "C" DWORD WINAPI mcThreadProc_mis_snd(LPVOID lpParameter)
 					if (pMsg->req.usCode == CONST_atCmd_getCfgs) {
 						int  ii = 0;
 					}
+					if (pMsg->req.uiTranNo == 345) {
+						int ii = 0;
+					}
 #endif
 
 
@@ -686,8 +689,11 @@ extern "C" DWORD WINAPI mcThreadProc_mis_io(LPVOID lpParameter)
 
 			//
 #ifdef  __DEBUG__
-			if (msgHead.uiTranNo == 9876) {
+			if (msgHead.uiTranNo == 345) {
 				int  ii = 0;
+				if (isUcFlgResp(msgHead.ucFlg)) {
+					int  iii = 0;
+				}
 			}
 			if (0) {
 				if (pChannel->uiType == CONST_channelType_rtMedia) {

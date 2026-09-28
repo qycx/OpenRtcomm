@@ -751,6 +751,69 @@ errLabel:
 
 
  ///
+ // flow rate
+ static uint8_t fr_encode_kbps(uint32_t kbps)
+ {
+	 uint32_t units;
+
+	 if (kbps <= 99u)                    /* 线性区：最高位 0，最多表示 100Kbps */
+		 return (uint8_t)(kbps & 0x7Fu);
+
+	 units = kbps / 100u;                /* 单位区：以 100Kbps 为一档，向下取整 */
+	 if (units >= 126u)                  /* 超出低 7 位能表示的档数 -> 全 1 */
+		 return 0xFFu;
+
+	 return (uint8_t)(0x80u | units);
+ }
+
+
+ /* 字节 -> Kbps */
+ static uint32_t fr_value_kbps(uint8_t code)
+ {
+	 if (code == 0xFFu) {
+		 return 12700u;                      /* 饱和: >= 12700 Kbps */
+	 }
+	 if (code < 0x80u) {
+		 return (uint32_t)code;              /* 0 ~ 99 Kbps, 精确值 */
+	 }
+	 return (uint32_t)(code - 0x80u) * 100u; /* >= 100 Kbps, 所在档下界 */
+ }
+
+
+
+ ////////////////////////
+ /*--------------------------------------------------------------
+	 * 万分比(bp) -> 1 字节
+	 * -------------------------------------------------------------- */
+ static uint8_t plr_encode_bp(uint16_t bp)
+ {
+	 uint16_t units;
+
+	 if (bp < 100u) {
+		 return (uint8_t)bp;                 /* 0.00% ~ 0.99%, 最高位 0 */
+	 }
+
+	 units = bp / 100u;                      /* 转成百分比, 向下取整 */
+	 if (units >= 127u) {
+		 return 0xFFu;                       /* >= 127% -> 全 1 */
+	 }
+	 return (uint8_t)(0x80u | units);        /* >= 1%, 最高位 1 */
+ }
+
+ /*--------------------------------------------------------------
+* 1 字节 -> 万分比(bp), 返回该档下界
+*--------------------------------------------------------------*/
+ static uint16_t plr_value_bp(uint8_t code)
+ {
+	 if (code == 0xFFu) {
+		 return 12700u;                      /* 饱和: >= 127%, 真值可能更大 */
+	 }
+	 if (code < 0x80u) {
+		 return (uint16_t)code;              /* 0.00% ~ 0.99%, 精确值 */
+	 }
+	 return (uint16_t)((uint16_t)(code - 0x80u) * 100u);   /* 整百分比, 下界 */
+ }
+
 
   //
  int  anRefreshRecentFriendsReq12Stream(unsigned  int  uiStreamId, AnRefreshRecentFriendsReq1_h* pReq, char* buf, unsigned  int* uiBufSize)
@@ -794,20 +857,99 @@ errLabel:
 			 if (pMem->idInfo.ui64Id) {			//  2009/05/31
 				 if (data2Stream(CONST_qyDataType_l64, CONST_qnmCfgId_messengerId, (void*)&pMem->idInfo.ui64Id, sizeof(pMem->idInfo.ui64Id), &ptr, &len))  goto  errLabel;
 			 }
-			 //  2012/01/09
+			 
+			 if (!pReq->ucbResp) {
+				 //  2012/01/09
+				 if (pMem->req.lfcs_tn) {
+					 if (data2Stream(CONST_qyDataType_long, CONST_anCfgId_lfcs_tn, (void*)pMem->req.lfcs_tn, 0, &ptr, &len))  goto  errLabel;
+
+				 }
+				 if (pMem->req.mfcs_tn) {
+					 if (data2Stream(CONST_qyDataType_long, CONST_anCfgId_mfcs_tn, (void*)pMem->req.mfcs_tn, 0, &ptr, &len))  goto  errLabel;
+
+				 }
+				 if (pMem->req.hfcs_tn) {
+					 if (data2Stream(CONST_qyDataType_long, CONST_anCfgId_hfcs_tn, (void*)pMem->req.hfcs_tn, 0, &ptr, &len))  goto  errLabel;
+				 }
+			 }
 
 
-
-
+			 //
 			 if (pReq->ucbResp) {
 
-				 if (pMem->resp.usRunningStatus)  if (data2Stream(CONST_qyDataType_short, CONST_qnmCfgId_usRunningStatus, (void*)pMem->resp.usRunningStatus, 0, &ptr, &len))  goto  errLabel;
-				 if (pMem->resp.ulIp)  if (data2Stream(CONST_qyDataType_long, CONST_qnmCfgId_ulIp, (void*)pMem->resp.ulIp, 0, &ptr, &len))  goto  errLabel;
-				 if (pMem->resp.ulDetectedIp)  if (data2Stream(CONST_qyDataType_long, CONST_qnmCfgId_ulDetectedIp, (void*)pMem->resp.ulDetectedIp, 0, &ptr, &len))  goto  errLabel;
 				 //
-				 if (pMem->resp.conf_ui64Id) {
-					 if (data2Stream(CONST_qyDataType_l64, CONST_anCfgId_conf_ui64Id, (void*)&pMem->resp.conf_ui64Id, sizeof(pMem->resp.conf_ui64Id), &ptr, &len))  goto  errLabel;
+				 if (pMem->resp.lfcs.tn) {
+					 if (pMem->resp.lfcs.data.uiDevType) {
+						 if (data2Stream(CONST_qyDataType_long, CONST_qnmCfgId_uiDevType_from, (void*)pMem->resp.lfcs.data.uiDevType, 0, &ptr, &len))  goto  errLabel;
+					 }
+					 //
+					 if (pMem->resp.lfcs.data.devName[0]) {
+						 if (data2Stream(CONST_qyDataType_wStr, CONST_qnmCfgId_devName, pMem->resp.lfcs.data.devName, lstrlen(pMem->resp.lfcs.data.devName), &ptr, &len))  goto  errLabel;
+					 }
+					 //
+					 if (data2Stream(CONST_qyDataType_long, CONST_anCfgId_lfcs_tn, (void*)pMem->resp.lfcs.tn, 0, &ptr, &len))  goto  errLabel;
+
 				 }
+
+				 //
+				 if (pMem->resp.mfcs.tn) {
+					 //
+					 if (pMem->resp.mfcs.data.usRunningStatus)  if (data2Stream(CONST_qyDataType_short, CONST_qnmCfgId_usRunningStatus, (void*)pMem->resp.mfcs.data.usRunningStatus, 0, &ptr, &len))  goto  errLabel;
+					 if (pMem->resp.mfcs.data.ulIp)  if (data2Stream(CONST_qyDataType_long, CONST_qnmCfgId_ulIp, (void*)pMem->resp.mfcs.data.ulIp, 0, &ptr, &len))  goto  errLabel;
+					 if (pMem->resp.mfcs.data.ulDetectedIp)  if (data2Stream(CONST_qyDataType_long, CONST_qnmCfgId_ulDetectedIp, (void*)pMem->resp.mfcs.data.ulDetectedIp, 0, &ptr, &len))  goto  errLabel;
+					 //
+					 if (pMem->resp.mfcs.data.conf_ui64Id) {
+						 if (data2Stream(CONST_qyDataType_l64, CONST_anCfgId_conf_ui64Id, (void*)&pMem->resp.mfcs.data.conf_ui64Id, sizeof(pMem->resp.mfcs.data.conf_ui64Id), &ptr, &len))  goto  errLabel;
+					 }
+					 //
+					 if (pMem->resp.mfcs.tn) {
+						 if (data2Stream(CONST_qyDataType_long, CONST_anCfgId_mfcs_tn, (void*)pMem->resp.mfcs.tn, 0, &ptr, &len))  goto  errLabel;
+
+					 }
+				 }
+
+				 //
+				 if (pMem->resp.hfcs.tn) 
+				 {
+					 {
+						 HfcsCliNetStats_n  nn;
+						 int  ii = sizeof(nn);
+						 printf("kk\n");
+
+						 //
+						 //
+						 nn.t_i = fr_encode_kbps(pMem->resp.hfcs.data.t.uiInSpeedInKbps);
+						 nn.t_o = fr_encode_kbps(pMem->resp.hfcs.data.t.uiOutSpeedInKbps);
+						 nn.f_i = fr_encode_kbps(pMem->resp.hfcs.data.f.uiInSpeedInKbps);
+						 nn.f_o = fr_encode_kbps(pMem->resp.hfcs.data.f.uiOutSpeedInKbps);
+						 nn.a_i = fr_encode_kbps(pMem->resp.hfcs.data.a.uiInSpeedInKbps);
+						 nn.a_o = fr_encode_kbps(pMem->resp.hfcs.data.a.uiOutSpeedInKbps);
+						 nn.v_i = fr_encode_kbps(pMem->resp.hfcs.data.v.uiInSpeedInKbps);
+						 nn.v_o = fr_encode_kbps(pMem->resp.hfcs.data.v.uiOutSpeedInKbps);
+						 //
+						 if (data2Stream(CONST_qyDataType_lData, CONST_anCfgId_hfcs_cliNetstats, &nn, sizeof(nn), &ptr, &len))goto  errLabel;
+					 }
+
+					 //  hai you diu bao lv
+						 //
+					 {
+						 HfcsPktLoss_n  nn;
+						 memset(&nn, 0, sizeof(nn));
+						 int  ii; ii = sizeof(nn);
+						 //
+						 nn.a_pktLoss = plr_encode_bp(pMem->resp.hfcs.data.pktLoss.a_pktLoss_bp);
+						 nn.v_pktLoss = plr_encode_bp(pMem->resp.hfcs.data.pktLoss.v_pktLoss_bp);
+
+						 if (data2Stream(CONST_qyDataType_lData, CONST_anCfgId_hfcs_cliPktLoss, &nn, sizeof(nn), &ptr, &len))goto  errLabel;
+					 }
+					 //
+					 if (pMem->resp.hfcs.tn) {
+						 if (data2Stream(CONST_qyDataType_long, CONST_anCfgId_hfcs_tn, (void*)pMem->resp.hfcs.tn, 0, &ptr, &len))  goto  errLabel;
+
+					 }
+
+				 }
+
 
 			 }
 
@@ -897,23 +1039,127 @@ errLabel:
 			 break;
 			 //
 		 case  CONST_qnmCfgId_messengerId:			//  2009/05/31
-			 if (getFieldData_l64(pItem, (__int64*)&pMem->idInfo.ui64Id))  goto  errLabel;
+			 if (getFieldData_l64(pItem, (__int64*)&pMem->idInfo.ui64Id)) {
+				 goto  errLabel;
+			 }
 			 break;
+		 case  CONST_anCfgId_lfcs_tn:
+			 if (!pContent->ucbResp) {
+				 if (getFieldData_long(pItem, (long*)&pMem->req.lfcs_tn)) {
+					 goto  errLabel;
+				 }
+
+			 }
+			 else {
+				 if (getFieldData_long(pItem, (long*)&pMem->resp.lfcs.tn)) {
+					 goto  errLabel;
+				 }
+
+			 }
+			 break;
+		 case  CONST_anCfgId_mfcs_tn:
+			 if (!pContent->ucbResp) {
+				 if (getFieldData_long(pItem, (long*)&pMem->req.mfcs_tn)) {
+					 goto  errLabel;
+				 }
+
+			 }
+			 else {
+				 if (getFieldData_long(pItem, (long*)&pMem->resp.mfcs.tn)) {
+					 goto  errLabel;
+				 }
+
+			 }
+			 break;
+
+		 case  CONST_anCfgId_hfcs_tn:
+			 if (!pContent->ucbResp) {
+				 if (getFieldData_long(pItem, (long*)&pMem->req.hfcs_tn)) {
+					 goto  errLabel;
+				 }
+
+			 }
+			 else {
+				 if (getFieldData_long(pItem, (long*)&pMem->resp.hfcs.tn)) {
+					 goto  errLabel;
+				 }
+
+			 }
+			 break;
+
+			 //
+		 case  CONST_qnmCfgId_uiDevType_from:
+			 if (getFieldData_long(pItem, (long*)&pMem->resp.lfcs.data.uiDevType)) {
+				 goto  errLabel;
+			 }
+			 break;
+		 case  CONST_qnmCfgId_devName:
+			 if (getFieldData_wStr(pItem, pMem->resp.lfcs.data.devName, mycountof(pMem->resp.lfcs.data.devName))) {
+				 goto  errLabel;
+			 }
+			 break;
+
 			 //  2012/01/09
 		 case  CONST_qnmCfgId_usRunningStatus:
-			 if (getFieldData_short(pItem, (short*)&pMem->resp.usRunningStatus))  goto  errLabel;
+			 if (getFieldData_short(pItem, (short*)&pMem->resp.mfcs.data.usRunningStatus)) {
+				 goto  errLabel;
+			 }
 			 break;
 		 case  CONST_qnmCfgId_ulIp:
-			 if (getFieldData_long(pItem, (long*) &pMem->resp.ulIp))  goto  errLabel;
+			 if (getFieldData_long(pItem, (long*)&pMem->resp.mfcs.data.ulIp)) {
+				 goto  errLabel;
+			 }
 			 break;
 		 case  CONST_qnmCfgId_ulDetectedIp:
-			 if (getFieldData_long(pItem, (long*) &pMem->resp.ulDetectedIp))  goto  errLabel;
+			 if (getFieldData_long(pItem, (long*)&pMem->resp.mfcs.data.ulDetectedIp)) {
+				 goto  errLabel;
+			 }
 			 break;
 		 case  CONST_anCfgId_conf_ui64Id:
-			 if (getFieldData_l64(pItem, (__int64*)&pMem->resp.conf_ui64Id))  goto  errLabel;
+			 if (getFieldData_l64(pItem, (__int64*)&pMem->resp.mfcs.data.conf_ui64Id)) {
+				 goto  errLabel;
+			 }
 			 //
 			 break;
 
+			 //
+		 case  CONST_anCfgId_hfcs_cliNetstats: {
+			 char  buf[128];
+			 unsigned  int bufSize;
+			 bufSize = sizeof(buf);
+			 if (getFieldData_lData(pItem, buf, &bufSize)) {
+				 goto  errLabel;
+			 }
+			 HfcsCliNetStats_n  nn;
+			 memcpy(&nn, buf, min(sizeof(nn), bufSize));
+			 //
+			 pMem->resp.hfcs.data.t.uiInSpeedInKbps = fr_value_kbps(nn.t_i);
+			 pMem->resp.hfcs.data.t.uiOutSpeedInKbps = fr_value_kbps(nn.t_o);
+			 pMem->resp.hfcs.data.f.uiInSpeedInKbps = fr_value_kbps(nn.f_i);
+			 pMem->resp.hfcs.data.f.uiOutSpeedInKbps = fr_value_kbps(nn.f_o);
+			 pMem->resp.hfcs.data.a.uiInSpeedInKbps = fr_value_kbps(nn.a_i);
+			 pMem->resp.hfcs.data.a.uiOutSpeedInKbps = fr_value_kbps(nn.a_o);
+			 pMem->resp.hfcs.data.v.uiInSpeedInKbps = fr_value_kbps(nn.v_i);
+			 pMem->resp.hfcs.data.v.uiOutSpeedInKbps = fr_value_kbps(nn.v_o);
+
+			 //
+			 int  ii = 0;
+
+		 }
+
+
+			 break;
+		 case  CONST_anCfgId_hfcs_cliPktLoss: {
+			 HfcsPktLoss_n  nn;
+			 unsigned  int size = sizeof(nn);
+			 if (getFieldData_lData(pItem, (char*)&nn, &size)) {
+				 goto  errLabel;
+			 }
+			 //
+			 pMem->resp.hfcs.data.pktLoss.a_pktLoss_bp = plr_value_bp(nn.a_pktLoss);
+			 pMem->resp.hfcs.data.pktLoss.v_pktLoss_bp = plr_value_bp(nn.v_pktLoss);
+		 }
+											break;
 
 
 
@@ -5998,10 +6244,13 @@ errLabel:
 	 if  (  data2Stream(  CONST_qyDataType_long,  CONST_qnmCfgId_start,  (  void  *  )uiStreamId,  0,  &ptr,  &len  )  )  goto  errLabel;
 	 //
 	 //
-	 if  (  data2Stream(  CONST_qyDataType_long,  CONST_qnmCfgId_uiDevType_from,  (  void  *  )pPcInfo->uiType,  0,  &ptr,  &len  )  )  goto  errLabel;
+	 if  (  data2Stream(  CONST_qyDataType_long,  CONST_qnmCfgId_uiDevType_from,  (  void  *  )pPcInfo->uiDevType,  0,  &ptr,  &len  )  )  goto  errLabel;
+	 //
 	 if  (  data2Stream(  CONST_qyDataType_long,  CONST_qnmCfgId_iPlatformId,  (  void  *  )pPcInfo->iPlatformId,  0,  &ptr,  &len  )  )  goto  errLabel;
 	 //
 	 if  (  data2Stream(  CONST_qyDataType_wStr,  CONST_qnmCfgId_pcName,  pPcInfo->pcName,  lstrlen(  pPcInfo->pcName  ),  &ptr,  &len  )  )  goto  errLabel;
+
+	 //
 	 if  (  data2Stream(  CONST_qyDataType_wStr,  CONST_qnmCfgId_domainName,  pPcInfo->domainName,  lstrlen(  pPcInfo->domainName  ),  &ptr,  &len  )  )  goto  errLabel;
 	 if  (  data2Stream(  CONST_qyDataType_wStr,  CONST_qnmCfgId_osUsrName,  pPcInfo->osUsrName,  lstrlen(  pPcInfo->osUsrName  ),  &ptr,  &len  )  )  goto  errLabel;
 
@@ -6034,7 +6283,7 @@ errLabel:
 	 switch  (  tmp_cfgId  )  {
 			 case  CONST_qnmCfgId_uiDevType_from:
 				   if  (  getFieldData_long(  pItem,  &lVal  )  )  goto  errLabel;
-				   pPcInfo->uiType  =  lVal;
+				   pPcInfo->uiDevType  =  lVal;
 				   break;
 			 case  CONST_qnmCfgId_iPlatformId:
 				   if  (  getFieldData_long(  pItem,  &lVal  )  )  goto  errLabel;
@@ -7103,7 +7352,114 @@ errLabel:
 
 
 
+	 //
 
+ int  anReportConfRtStatus2Stream(unsigned  int  uiStreamId, AnReportConfRtStatus* pReq, char* buf, unsigned  int* uiBufSize)
+ {
+	 int				iErr = -1;
+	 int				i = 0;
+	 char* ptr = buf;
+	 unsigned  int		len = *uiBufSize;
+
+	 if (!pReq)  return  -1;
+	 if (!buf)  return  -1;
+
+	 //
+	 if (data2Stream(CONST_qyDataType_long, CONST_qnmCfgId_start, (void*)uiStreamId, 0, &ptr, &len))  goto  errLabel;
+
+	 //
+	 if (pReq->ucbResp) {
+		 if (data2Stream(CONST_qyDataType_char, CONST_qnmCfgId_ucbResp, (void*)pReq->ucbResp, 0, &ptr, &len))goto  errLabel;
+	 }
+
+	 //
+	 HfcsPktLoss_n  nn;
+	 memset(&nn, 0, sizeof(nn));
+	 int  ii; ii = sizeof(nn);
+	 //
+	 nn.a_pktLoss = plr_encode_bp(pReq->pktLoss.a_pktLoss_bp);
+	 nn.v_pktLoss = plr_encode_bp(pReq->pktLoss.v_pktLoss_bp);
+
+	 if (data2Stream(CONST_qyDataType_lData, CONST_anCfgId_hfcs_cliPktLoss, &nn, sizeof(nn), &ptr, &len))goto  errLabel;
+
+	 //
+	 if (data2Stream(CONST_qyDataType_long, CONST_qnmCfgId_null, 0, 0, &ptr, &len))  goto  errLabel;
+
+	 //
+	 iErr = 0;
+ errLabel:
+	 if (!iErr) {
+		 *uiBufSize = *uiBufSize - len;
+	 }
+	 return  iErr;
+ }
+
+
+
+ int  tmpHandler_stream2AnReportConfRtStatus(CTX_stream2Data* pCtx, void* p0, void* p1, unsigned  int  uiStreamId, QY_CFGITEM_ntoh_U* pItem)
+ {
+	 int						iErr = -1;
+	 //  p0;
+	 AnReportConfRtStatus* pReq = (AnReportConfRtStatus*)p1;
+	 //  QY_CFGITEM				*	pItem		=	(  QY_CFGITEM  *  )p2;
+	 //  long						lVal;
+
+	 if (!pReq)  goto  errLabel;
+
+	 //
+
+	 //
+	 unsigned  short  tmp_cfgId;
+	 memcpy(&tmp_cfgId, &pItem->head.cfgId, sizeof(short));
+
+	 switch (uiStreamId) {
+	 case  CONST_anCommType_reportConfRtStatus:
+
+		 switch (tmp_cfgId) {
+		 case  CONST_qnmCfgId_start:  //  2017/07/26
+			 pReq->uiType = uiStreamId;
+			 break;
+
+			 //			 
+
+			 //
+		 case  CONST_qnmCfgId_ucbResp:
+			 if (getFieldData_char(pItem, (char*)&pReq->ucbResp)) {
+				 goto  errLabel;
+			 }
+			 break;
+			 //
+		 case  CONST_anCfgId_hfcs_cliPktLoss: {
+			 HfcsPktLoss_n  nn;
+			 unsigned  int size = sizeof(nn);
+			 if (getFieldData_lData(pItem, (char*) & nn, &size)) {
+				 goto  errLabel;
+			 }
+			 //
+			 pReq->pktLoss.a_pktLoss_bp = plr_value_bp(nn.a_pktLoss);
+			 pReq->pktLoss.v_pktLoss_bp = plr_value_bp(nn.v_pktLoss);
+		 }
+			  break;
+			 //
+		 default:
+			 break;
+
+		 }
+		 break;
+	 default:
+		 break;
+	 }
+
+	 iErr = 0;
+ errLabel:
+	 return  iErr;
+ }
+
+
+
+
+
+ //////////////////////
 ///
  int  imGrpEx2Stream(  unsigned  int  uiStreamId,  IM_GRP_EX  *  pReq,  char  *  buf,  unsigned  int  *  uiBufSize  )
 {

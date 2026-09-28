@@ -599,6 +599,15 @@ long long GetFlag() {
 #include <mutex>
 std::mutex lockM;
 
+//
+#ifdef  __USE_saveAv_dummy__
+
+extern  "C"  __declspec(dllexport)  int  doSaveAv(SAVE_av_procInfo* pSaveParam, SAVE_av_pktU* pSp, BOOL* pbExists_pSvp, CTX_mc_saveAv* pCtx)
+{
+	return  doSaveAv_test(pSaveParam, pSp, pbExists_pSvp, pCtx);
+}
+
+#else  
 
 //  想调用doSaveAv_test, 请参看  bUse_saveAvTest(pQyMc->cfg.smCfgFile);
 //
@@ -1499,6 +1508,8 @@ errLabel:
 	return  iErr;
 }
 
+#endif 
+
 
 //  2015/02/17
 //extern  "C"  __declspec(dllexport)  int  doSaveAv_new(SAVE_av_procInfo * pSaveParam, SAVE_av_pktU * pSp, BOOL * pbExists_pSvp, CTX_mc_saveAv * pCtx)
@@ -1863,33 +1874,42 @@ extern  "C"  __declspec(dllexport)  int  doSaveAv_test(SAVE_av_procInfo * pSaveP
 	char								buf[256] = "";
 	TCHAR								outputFileName[255] = _T("");
 	
+	//
+	bool  bDummy = false;
+#ifdef  __USE_saveAv_dummy__
+	bDummy = true;
+#endif 
 
 	//
+#if  0
 	if (pSave->common.iType != CONST_saverType_trans) {
 		return  -1;
 	}
+#endif 
 
 
 	//
 	TCHAR* capScreenDir = _T("d:\\tttbbb\\124\\");
 	//capScreenDir = pSave->common.tDir;
-	if (!bDir(capScreenDir)) {
-		//
-		g_pGuiOpen->pf_showInfo(0, 0, _T("doSaveAv_test failed, bDir(capScreenDir) false"));
-		//
-		goto  errLabel;
-	}
-	_sntprintf(tmpDirName, mycountof(tmpDirName), _T("%s\\%s_tmp\\"), (capScreenDir), pSave->common.pureFileName_prefix);
-	if (!bDir(tmpDirName)) {
-		if (!CreateDirectory(tmpDirName, NULL)) {
-			int  tmperr = GetLastError();
-			//ERROR_ALREADY_EXISTS
+	if (!bDummy) {
+		if (!bDir(capScreenDir)) {
+			//
+			g_pGuiOpen->pf_showInfo(0, 0, _T("doSaveAv_test failed, bDir(capScreenDir) false"));
+			//
 			goto  errLabel;
 		}
+		_sntprintf(tmpDirName, mycountof(tmpDirName), _T("%s\\%s_tmp\\"), (capScreenDir), pSave->common.pureFileName_prefix);
+		if (!bDir(tmpDirName)) {
+			if (!CreateDirectory(tmpDirName, NULL)) {
+				int  tmperr = GetLastError();
+				//ERROR_ALREADY_EXISTS
+				goto  errLabel;
+			}
+		}
+		//
+		_sntprintf(outputFileName, mycountof(outputFileName), _T("%s\\%s.mp4"), capScreenDir, pSave->common.pureFileName_prefix);
+		lstrcpyn(pSave->common.fullOutputFileName, outputFileName, mycountof(pSave->common.fullOutputFileName));
 	}
-	//
-	_sntprintf(outputFileName, mycountof(outputFileName), _T("%s\\%s.mp4"), capScreenDir,  pSave->common.pureFileName_prefix);
-	lstrcpyn(pSave->common.fullOutputFileName, outputFileName, mycountof(pSave->common.fullOutputFileName));
 
 	//
 	TCHAR								tName[128] = _T("");
@@ -1941,6 +1961,11 @@ extern  "C"  __declspec(dllexport)  int  doSaveAv_test(SAVE_av_procInfo * pSaveP
 #ifdef  _DEBUG
 		//traceLog(_T("saveThread: svp->uiLen %d, len %d "), pSvp->uiLen, len);
 #endif
+		//
+		if (bDummy) {
+			continue;
+		}
+
 
 		//		
 		if (!pSp->common.bAudio) {
@@ -1960,78 +1985,81 @@ extern  "C"  __declspec(dllexport)  int  doSaveAv_test(SAVE_av_procInfo * pSaveP
 			}
 
 			//
-			if (!pSave->video.fp) {
-
-				//
-				//iFourcc_file  =  pSave->video.tv.vh_compress.bih.biCompression;	 
-				//if  (  iFourcc_file  ==  CONST_fourcc_vp8_bad  )  iFourcc_file  =  CONST_fourcc_vp80;
-				iFourcc_file = pSp->vPkt.iFourcc;// CONST_fourcc_h264;
-				//
-				lstrcpyn(tName, _T("v_"), mycountof(tName));
-				//
-				switch (iFourcc_file) {
-				case  CONST_fourcc_h264:
-					_sntprintf(fileName, mycountof(fileName), _T("%s%s.264"), tmpDirName, tName);
-					break;
-				case  CONST_fourcc_HEVC:
-					_sntprintf(fileName, mycountof(fileName), _T("%s%s.265"), tmpDirName, tName);
-					break;
-				default:
-					//
-					char  fourccStr[4 + 1];
-					TCHAR  tBuf[128];
-					iFourcc2Str(iFourcc_file, fourccStr, mycountof(fourccStr));
-					_sntprintf(tBuf, mycountof(tBuf), _T("doSaveAv failed: %S not supported"), (fourccStr));
-					g_pGuiOpen->pf_showInfo(0, 0, tBuf);
-					goto  errLabel;
-					break;
-				}
-
-				//
-				{
-					time_t  t;
-					time(&t);
-					pSave->video.tStartToSave = t;
-					lstrcpyn(pSave->video.fileName, fileName, mycountof(pSave->video.fileName));
-				}
-
-				//
-				pSave->video.fp = _tfopen(fileName, _T("wb"));
 				if (!pSave->video.fp) {
-					g_pGuiOpen->pf_showInfo(0, 0, _T("doSaveAv failed, fopen failed, l1999"));
-					goto  errLabel;
-				}
-			}
 
-			//
+					//
+					//iFourcc_file  =  pSave->video.tv.vh_compress.bih.biCompression;	 
+					//if  (  iFourcc_file  ==  CONST_fourcc_vp8_bad  )  iFourcc_file  =  CONST_fourcc_vp80;
+					iFourcc_file = pSp->vPkt.iFourcc;// CONST_fourcc_h264;
+					//
+					lstrcpyn(tName, _T("v_"), mycountof(tName));
+					//
+					switch (iFourcc_file) {
+					case  CONST_fourcc_h264:
+						_sntprintf(fileName, mycountof(fileName), _T("%s%s.264"), tmpDirName, tName);
+						break;
+					case  CONST_fourcc_HEVC:
+						_sntprintf(fileName, mycountof(fileName), _T("%s%s.265"), tmpDirName, tName);
+						break;
+					default:
+						//
+						char  fourccStr[4 + 1];
+						TCHAR  tBuf[128];
+						iFourcc2Str(iFourcc_file, fourccStr, mycountof(fourccStr));
+						_sntprintf(tBuf, mycountof(tBuf), _T("doSaveAv failed: %S not supported"), (fourccStr));
+						g_pGuiOpen->pf_showInfo(0, 0, tBuf);
+						goto  errLabel;
+						break;
+					}
+
+					//
+					{
+						time_t  t;
+						time(&t);
+						pSave->video.tStartToSave = t;
+						lstrcpyn(pSave->video.fileName, fileName, mycountof(pSave->video.fileName));
+					}
+
+					//
+					pSave->video.fp = _tfopen(fileName, _T("wb"));
+					if (!pSave->video.fp) {
+						g_pGuiOpen->pf_showInfo(0, 0, _T("doSaveAv failed, fopen failed, l1999"));
+						goto  errLabel;
+					}
+				}
+
+
+				//
 #if  1  //def  _DEBUG
-		_sntprintf(tBuf,mycountof(tBuf),  _T("saveThread: v, pts %d,  svp->uiLen %d, len %d "), pSvp->uiPts,  pSvp->uiLen, len);
-		g_pGuiOpen->pf_showInfo(0, _T("pts123"), tBuf);
+				_sntprintf(tBuf, mycountof(tBuf), _T("saveThread: v, pts %d,  svp->uiLen %d, len %d "), pSvp->uiPts, pSvp->uiLen, len);
+				g_pGuiOpen->pf_showInfo(0, _T("pts123"), tBuf);
 #endif 
 
 
-			//
-			switch (iFourcc_file) {
-			case  CONST_fourcc_h264:
-			case  CONST_fourcc_HEVC:
 				//
-				TCHAR  tBuf[128];
-				_sntprintf(tBuf, mycountof(tBuf), _T("doSaveAv: %d bytes\n"), pSvp->uiLen);
-				OutputDebugString(tBuf);
-				//
-				//  dumpVideo(  dirName,  fileName,  pSvp->buf,  pSvp->uiLen  );
-				//if (fwrite(pSvp->buf, pSvp->uiLen, 1, pSave->video.fp) != 1)  goto  errLabel;
-				if (saveAv_v_fwrite(pSvp->buf, pSvp->uiLen, 1, pSave)) {
-					g_pGuiOpen->pf_showInfo(0, 0, _T("doSaveAv failed, saveAv_v_fwrite failed, l2023"));
-					goto  errLabel;
-				}
-				break;
+				switch (iFourcc_file) {
+				case  CONST_fourcc_h264:
+				case  CONST_fourcc_HEVC:
+					//
+					TCHAR  tBuf[128];
+					_sntprintf(tBuf, mycountof(tBuf), _T("doSaveAv: %d bytes\n"), pSvp->uiLen);
+					OutputDebugString(tBuf);
+					//
+					//  dumpVideo(  dirName,  fileName,  pSvp->buf,  pSvp->uiLen  );
+					//if (fwrite(pSvp->buf, pSvp->uiLen, 1, pSave->video.fp) != 1)  goto  errLabel;
+					if (saveAv_v_fwrite(pSvp->buf, pSvp->uiLen, 1, pSave)) {
+						g_pGuiOpen->pf_showInfo(0, 0, _T("doSaveAv failed, saveAv_v_fwrite failed, l2023"));
+						goto  errLabel;
+					}
+					break;
 
-			default:
-				g_pGuiOpen->pf_showInfo(0, 0, _T("doSaveAv failed, iFourcc_file err, l2029"));
-				goto  errLabel;
-				break;
-			}
+				default:
+					g_pGuiOpen->pf_showInfo(0, 0, _T("doSaveAv failed, iFourcc_file err, l2029"));
+					goto  errLabel;
+					break;
+				}
+
+			
 
 			//
 			pSave->common.video.frame_cnt++;

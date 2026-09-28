@@ -1517,6 +1517,8 @@ int  dlgTalk_requestToOp(HWND  hDlgTalk_mgr, int op, int  bSaveState = true);
 
  //
  int  send_confState_retrieveAll_req(  HWND  hDlgTalk_mgr,  DLG_TALK_var  *  pMgrVar,  LPCTSTR  hint  );
+ //
+ int  report_conf_rtStatus(HWND  hDlgTalk_mgr, DLG_TALK_var* pMgrVar, LPCTSTR  hint);
 
 
 //

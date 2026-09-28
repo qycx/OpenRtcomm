@@ -180,7 +180,9 @@ errLabel:
 	 int					i;
      MIS_CNT			*	pMisCnt		=	(  MIS_CNT  *  )pMsgInput->pMisCnt;
 	 IM_CONTENTU	*	pContent	=	NULL;
+	 TCHAR					tBuf[128];
 	 	 						     
+	 //
 	 if  (  !pMisCnt  ||  !pMsgInput  )  return  -1;
 	 if  (  !isUcFlgResp(  pMsgInput->ucFlg  )  )  return  -1;	
 
@@ -217,8 +219,34 @@ errLabel:
 				 if (pResp->usCnt > mycountof(pResp->mems))  goto  errLabel;
 
 				 //
-				 if (pProcInfo->cfg.pDebugStatusInfo->bDbgDetail) {
-					 qyShowInfo1(CONST_qyShowType_qwmComm, 0, (char*)(""), pProcInfo->who_showInfo, 0, _T(""), _T(""), _T("    anRefreshRecentFriendsResp.207 cnt %d"), pResp->usCnt, pMsgInput->uiTranNo);
+				 if (pProcInfo->cfg.pDebugStatusInfo->bDbgDetail_refreshFcs) {
+					 _sntprintf(tBuf,mycountof(tBuf),  _T("    anRefreshRecentFriendsResp.207 cnt %d"), pResp->usCnt, pMsgInput->uiTranNo);
+					 showInfo_open(0, 0, 0, tBuf);
+					 //
+					 for (i = 0; i < pResp->usCnt; i++) {
+						 pRespMem = &pResp->mems[i];
+						 //
+						 _sntprintf(tBuf, mycountof(tBuf), _T("%I64u:"), pRespMem->idInfo.ui64Id);
+						 //
+						 _sntprintf(tBuf, mycountof(tBuf), _T("%s lfcs_tn %d: devType %d, devName %s"), tBuf, pRespMem->resp.lfcs.tn, pRespMem->resp.lfcs.data.uiDevType, pRespMem->resp.lfcs.data.devName);
+						 showInfo_open(0, 0, 0, tBuf);
+						 tBuf[0] = 0;
+						 _sntprintf(tBuf, mycountof(tBuf), _T("%s mfcs_tn %d: usStatus %d, ulIp %d, dectedIP %d, confId %I64u"), 
+							 tBuf, pRespMem->resp.mfcs.tn, (int)pRespMem->resp.mfcs.data.usRunningStatus, pRespMem->resp.mfcs.data.ulIp, pRespMem->resp.mfcs.data.ulDetectedIp, 
+							 pRespMem->resp.mfcs.data.conf_ui64Id);
+						 showInfo_open(0, 0, 0, tBuf);
+						 tBuf[0] = 0;
+						 _sntprintf(tBuf, mycountof(tBuf), _T("%s htcs_tn %d: t(%d,%d) f(%d,%d) a(%d,%d) v(%d,%d)"),
+							 tBuf, pRespMem->resp.hfcs.tn, pRespMem->resp.hfcs.data.t.uiInSpeedInKbps, pRespMem->resp.hfcs.data.t.uiOutSpeedInKbps,
+							 pRespMem->resp.hfcs.data.f.uiInSpeedInKbps, pRespMem->resp.hfcs.data.f.uiOutSpeedInKbps,
+							 pRespMem->resp.hfcs.data.a.uiInSpeedInKbps, pRespMem->resp.hfcs.data.a.uiOutSpeedInKbps,
+							 pRespMem->resp.hfcs.data.v.uiInSpeedInKbps, pRespMem->resp.hfcs.data.v.uiOutSpeedInKbps
+						 );
+						 _sntprintf(tBuf, mycountof(tBuf), _T("%s a_loss %d, v_loss %d"), tBuf, pRespMem->resp.hfcs.data.pktLoss.a_pktLoss_bp, pRespMem->resp.hfcs.data.pktLoss.v_pktLoss_bp);
+
+						 //
+						 showInfo_open(0, 0, 0, tBuf);
+					 }
 				 }
 
 				 //
@@ -240,9 +268,9 @@ errLabel:
 				 for (i = 0; i < pResp->usCnt; i++) {
 					 pRespMem = &pResp->mems[i];
 					 //
-					 if (!pRespMem->resp.usRunningStatus
-						 && !pRespMem->resp.ulIp
-						 && !pRespMem->resp.ulDetectedIp)
+					 if (!pRespMem->resp.mfcs.data.usRunningStatus
+						 && !pRespMem->resp.mfcs.data.ulIp
+						 && !pRespMem->resp.mfcs.data.ulDetectedIp)
 					 {
 						 continue;		//  Õâ±íÃ÷Ã»ÓÐÈÎºÎÄÚÈÝ
 					 }
@@ -257,28 +285,40 @@ errLabel:
 					 pRecentFriend = (QMEM_MESSENGER_CLI*)mem.pQMemObj;
 
 					 //
+					 if (pRespMem->resp.lfcs.tn) {
+						 pRecentFriend->lfcs = pRespMem->resp.lfcs;
+					 }
+					 if (pRespMem->resp.mfcs.tn) {
+						 pRecentFriend->mfcs = pRespMem->resp.mfcs;
+					 }
+					 if (pRespMem->resp.hfcs.tn) {
+						 pRecentFriend->hfcs = pRespMem->resp.hfcs;
+					 }
+
+
+					 //
 					 bool  bSame = false;
 
-					 if (pRespMem->resp.usRunningStatus == pRecentFriend->usRunningStatus
-						 && pRespMem->resp.ulIp == pRecentFriend->ulIp
-						 && pRespMem->resp.ulDetectedIp == pRecentFriend->ulDetectedIp)
+					 if (pRespMem->resp.mfcs.data.usRunningStatus == pRecentFriend->mfcs.data.usRunningStatus
+						 && pRespMem->resp.mfcs.data.ulIp == pRecentFriend->mfcs.data.ulIp
+						 && pRespMem->resp.mfcs.data.ulDetectedIp == pRecentFriend->mfcs.data.ulDetectedIp)
 					 {
 						 bSame = true;
 					 }
 					 else {
 
 						 //
-						 if (pRespMem->resp.usRunningStatus) {
+						 if (pRespMem->resp.mfcs.data.usRunningStatus) {
 #ifdef  __DEBUG__
 							 //  traceLogA(  (char*)  "%I64uµÄ×´Ì¬ÓÉ %S ×ªÎª %S",  pRecentFriend->idInfo.ui64Id,  qyGetDesByType1(  CONST_usRunningStatusTable_en,  pRecentFriend->usRunningStatus  ),  qyGetDesByType1(  CONST_usRunningStatusTable_en,  pRespMem->usRunningStatus  )  );
 #endif
-							 pRecentFriend->usRunningStatus = pRespMem->resp.usRunningStatus;
+							 pRecentFriend->mfcs.data.usRunningStatus = pRespMem->resp.mfcs.data.usRunningStatus;
 						 }
-						 if (pRespMem->resp.ulIp)  pRecentFriend->ulIp = pRespMem->resp.ulIp;
-						 if (pRespMem->resp.ulDetectedIp)  pRecentFriend->ulDetectedIp = pRespMem->resp.ulDetectedIp;
+						 if (pRespMem->resp.mfcs.data.ulIp)  pRecentFriend->mfcs.data.ulIp = pRespMem->resp.mfcs.data.ulIp;
+						 if (pRespMem->resp.mfcs.data.ulDetectedIp)  pRecentFriend->mfcs.data.ulDetectedIp = pRespMem->resp.mfcs.data.ulDetectedIp;
 					 }
 					 //
-					 pRecentFriend->tLastRefreshedTickCnt_misServ = (time_t)pResp->tLastRefreshedTime_misServ;
+					 //pRecentFriend->tLastRefreshedTickCnt_misServ = (time_t)pResp->tLastRefreshedTime_misServ;
 					 //
 					 if (!bSame
 						 || !pRecentFriend->bRefreshed_byGui)
@@ -305,7 +345,7 @@ errLabel:
 #endif 
 
 				 //
-				 pMisCnt->refreshRecentFriends.tLastRefreshedTime_misServ = (time_t)pResp->tLastRefreshedTime_misServ;
+				 pMisCnt->refreshRecentFriends.unused_tLastRefreshedTime_misServ = (time_t)pResp->unused_tLastRefreshedTime_misServ;
 
 				 }
 				 break;
@@ -363,9 +403,9 @@ errLabel:
 						//
 						bool  bSame = false;
 
-						if (pRespMem->usRunningStatus == pRecentFriend->usRunningStatus
-							&& pRespMem->ulIp == pRecentFriend->ulIp
-							&& pRespMem->ulDetectedIp == pRecentFriend->ulDetectedIp)
+						if (pRespMem->usRunningStatus == pRecentFriend->mfcs.data.usRunningStatus
+							&& pRespMem->ulIp == pRecentFriend->mfcs.data.ulIp
+							&& pRespMem->ulDetectedIp == pRecentFriend->mfcs.data.ulDetectedIp)
 						{
 							bSame = true;
 							}
@@ -376,13 +416,13 @@ errLabel:
 #ifdef  __DEBUG__
 								//  traceLogA(  (char*)  "%I64uµÄ×´Ì¬ÓÉ %S ×ªÎª %S",  pRecentFriend->idInfo.ui64Id,  qyGetDesByType1(  CONST_usRunningStatusTable_en,  pRecentFriend->usRunningStatus  ),  qyGetDesByType1(  CONST_usRunningStatusTable_en,  pRespMem->usRunningStatus  )  );
 #endif
-								pRecentFriend->usRunningStatus = pRespMem->usRunningStatus;
+								pRecentFriend->mfcs.data.usRunningStatus = pRespMem->usRunningStatus;
 							}
-							if (pRespMem->ulIp)  pRecentFriend->ulIp = pRespMem->ulIp;
-							if (pRespMem->ulDetectedIp)  pRecentFriend->ulDetectedIp = pRespMem->ulDetectedIp;
+							if (pRespMem->ulIp)  pRecentFriend->mfcs.data.ulIp = pRespMem->ulIp;
+							if (pRespMem->ulDetectedIp)  pRecentFriend->mfcs.data.ulDetectedIp = pRespMem->ulDetectedIp;
 						}
 						//
-						pRecentFriend->tLastRefreshedTickCnt_misServ  =  (  time_t  )pResp->tLastRefreshedTime_misServ;
+						//pRecentFriend->tLastRefreshedTickCnt_misServ  =  (  time_t  )pResp->tLastRefreshedTime_misServ;
 						//
 						if (!bSame
 							|| !pRecentFriend->bRefreshed_byGui)
@@ -406,7 +446,7 @@ errLabel:
 				   MACRO_makeCommonParam3(  pCtx,  pMisCnt,  &newStatus,  commonParam  );
 				   qTraverse(  &pCtx->displayedObjQ,  tmpHandler_notifyMessengerStatusChanged,  &commonParam,  0  );				   
 
-				   pMisCnt->refreshRecentFriends.tLastRefreshedTime_misServ  =  (  time_t  )pResp->tLastRefreshedTime_misServ;
+				   pMisCnt->refreshRecentFriends.unused_tLastRefreshedTime_misServ  =  (  time_t  )pResp->tLastRefreshedTime_misServ;
 
 				  }
 				  break;

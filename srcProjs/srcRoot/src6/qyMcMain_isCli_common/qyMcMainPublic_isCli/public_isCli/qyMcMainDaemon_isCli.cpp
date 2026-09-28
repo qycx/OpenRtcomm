@@ -700,7 +700,7 @@ errLabel:
 
 
 	 //  authInfo
-	 pAuthInfo->iAppType  =  pQyMc->iAppType;
+	 pAuthInfo->iAppType1  =  pQyMc->iAppType;
 
 	 //
 	 safeStrnCpy(  qnmVerStr(  pSci->cfg.iServiceId  ),  pAuthInfo->ver,  mycountof(  pAuthInfo->ver  )  );
@@ -3091,7 +3091,12 @@ errLabel:
 
 
 
+#ifdef  __DEBUG__
+ bool  g_bUse_refreshRecentFriends_new = true;
+#else
+
  bool  g_bUse_refreshRecentFriends_new = false;
+#endif
 
 
 
@@ -3151,7 +3156,7 @@ errLabel:
 	memset(  &req,  0,  sizeof(  req  )  );
 	//
 	req.uiType  =  CONST_imCommType_refreshRecentFriendsReq;
-	req.tLastRefreshedTime_misServ  =  pMisCnt->refreshRecentFriends.tLastRefreshedTime_misServ;
+	req.tLastRefreshedTime_misServ  =  pMisCnt->refreshRecentFriends.unused_tLastRefreshedTime_misServ;
 	
 	uiQCnt  =  pMisCnt->recentFriendQ.uiQNodes;
 	//  traceLogA(  (char*)  "startToRefreshRecentFriends: mycountof( mems ) %d",  mycountof(  req.mems  )  );
@@ -3187,7 +3192,9 @@ errLabel:
 		 pQMemObj  =  (  QMEM_MESSENGER_CLI  *  )mem.pQMemObj;
 		 		 
 		 req.mems[req.usCnt].idInfo.ui64Id  =  msg.idInfo.ui64Id;
-		 req.mems[req.usCnt].tLastRefreshedTime_misServ  =  pQMemObj->tLastRefreshedTickCnt_misServ;
+		 //
+		 //req.mems[req.usCnt].tLastRefreshedTime_misServ  =  pQMemObj->tLastRefreshedTickCnt_misServ;
+		 //
 		 req.usCnt  ++  ;
 	}
 	//
@@ -3260,7 +3267,7 @@ int  startToRefreshRecentFriends_new(MIS_CNT* pMisCnt, MIS_MSGU* pMsgBuf)
 	memset(&req, 0, sizeof(req));
 	//
 	req.uiType = CONST_anCommType_refreshRecentFriendsReq1;
-	req.tLastRefreshedTime_misServ = pMisCnt->refreshRecentFriends.tLastRefreshedTime_misServ;
+	req.unused_tLastRefreshedTime_misServ = pMisCnt->refreshRecentFriends.unused_tLastRefreshedTime_misServ;
 
 	uiQCnt = pMisCnt->recentFriendQ.uiQNodes;
 	//  traceLogA(  (char*)  "startToRefreshRecentFriends: mycountof( mems ) %d",  mycountof(  req.mems  )  );
@@ -3295,8 +3302,17 @@ int  startToRefreshRecentFriends_new(MIS_CNT* pMisCnt, MIS_MSGU* pMsgBuf)
 		}
 		pQMemObj = (QMEM_MESSENGER_CLI*)mem.pQMemObj;
 
+		if (req.usCnt >= mycountof(req.mems)) {
+			break;
+		}
+		AnRefreshRecentFriendReq1_h* pMem;  pMem = &req.mems[req.usCnt];
 		req.mems[req.usCnt].idInfo.ui64Id = msg.idInfo.ui64Id;
-		req.mems[req.usCnt].tLastRefreshedTime_misServ = pQMemObj->tLastRefreshedTickCnt_misServ;
+		//
+		//req.mems[req.usCnt].tLastRefreshedTime_misServ = pQMemObj->tLastRefreshedTickCnt_misServ;
+		pMem->req.lfcs_tn = pQMemObj->lfcs.tn;
+		pMem->req.mfcs_tn = pQMemObj->mfcs.tn;
+		pMem->req.hfcs_tn = pQMemObj->hfcs.tn;
+		//
 		req.usCnt++;
 	}
 	//
@@ -3304,6 +3320,16 @@ int  startToRefreshRecentFriends_new(MIS_CNT* pMisCnt, MIS_MSGU* pMsgBuf)
 
 	//
 	MACRO_prepareForTran();
+
+	//
+#ifdef  __DEBUG__
+	if (1) {
+		if (req.usCnt) {
+			uiTranNo = 345;
+		}
+		}
+#endif 
+
 
 	//
 	int  misMsgType = CONST_misMsgType_req;
@@ -3889,7 +3915,7 @@ errLabel:
 							   
 							   if  (  !findQMemByKey(  0,  (  QM_OBJQ  *  )pMisCnt->pObjQ,  &pMisCnt->idInfo,  &mem  )  )  {
 								   //	 
-								   (  (  QMEM_MESSENGER_CLI  *  )mem.pQMemObj  )->usRunningStatus  =  CONST_usRunningStatus_offline;
+								   (  (  QMEM_MESSENGER_CLI  *  )mem.pQMemObj  )->mfcs.data.usRunningStatus  =  CONST_usRunningStatus_offline;
 
 								   pMisCnt->status.usRunningStatus  =  CONST_usRunningStatus_offline;
 							   
@@ -4267,7 +4293,7 @@ errLabel:
 					 //if ((lenInBytes = qyntohImLStream(0, ptr, pStream)) < 0)  goto  errLabel;
 
 					 //
-					 ChkLogonIdReq resp;
+					 ChkLogonIdReq resp = { 0 };
 					 if (qyntohRouteTalkData(0, ptr, len, nullptr, (IM_CONTENTU*)&resp, (TCHAR*)_T(""), 0)) {
 						 //goto  errLabel;
 						 //  收到了错误的数据包，重新来一次
@@ -4408,7 +4434,7 @@ errLabel:
 	 pQMem  =  (  QMEM_MESSENGER_CLI  *  )mem.pQMemObj;
 
 	 //  (  (  QMEM_MESSENGER_CLI  *  )mem.pQMemObj  )->usRunningStatus  =  CONST_usRunningStatus_online;
-	 pQMem->usRunningStatus  =  CONST_usRunningStatus_online;
+	 pQMem->mfcs.data.usRunningStatus  =  CONST_usRunningStatus_online;
 
 	 pMisCnt->status.usRunningStatus  =  CONST_usRunningStatus_online;	//  2007/08/31
 

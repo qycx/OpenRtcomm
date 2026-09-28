@@ -61,6 +61,8 @@
 #define		CONST_imCommType_getCfgsReq								(  CONST_imCommType_base  +  110  )		//  2011/01/30
 //
 #define		CONST_imCommType_anKeepaliveReq							(  CONST_imCommType_base  +  111  )		//  2026/07/24
+//
+
 
 //
 #define		CONST_imCommType_qisCaReq								(  CONST_imCommType_base  +  120  )		//  
@@ -132,6 +134,7 @@
 #define		CONST_imCommType_confLayoutParam						(  CONST_imCommType_base  +  436  )		//
 #define		CONST_imCommType_confNvrInfo							(  CONST_imCommType_base  +  437  )
 #define		CONST_imCommType_confLayoutStatus						(  CONST_imCommType_base  +  438  )		//  2023/12/30
+#define		CONST_anCommType_reportConfRtStatus						(  CONST_imCommType_base  +  439  )		//  2026/
 
 
 //

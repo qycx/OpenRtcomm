@@ -637,6 +637,10 @@ int  CCtxQmc_gui::initVar_post(void* p0, void* p1, void* p2)
 	pProcInfo->cfg.pDebugStatusInfo->bDbgDetail_ntoh = get_bCfgVal(pQyMc->cfg.smCfgFile, _T("bDbgDetail_ntoh"));
 
 	//
+	pProcInfo->cfg.pDebugStatusInfo->bDbgDetail_refreshFcs = get_bCfgVal(pQyMc->cfg.smCfgFile, _T("bDbgDetail_refreshFcs"));
+
+
+	//
 #ifdef  __DEBUG__
 		//
 		if  (  1  )  {	

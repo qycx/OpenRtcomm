@@ -469,7 +469,7 @@ int  qyRecvMsg_iocp(MT_SOCK_IOCP * pMtSock, PER_SOCKET_CONTEXT * pPerSocketConte
 	//
 #ifdef  __DEBUG__
 		//
-		if (pIoContext->msgHead.uiTranNo == 445) {
+		if (pIoContext->msgHead.uiTranNo == 345) {
 			int  ii = 0;
 		}
 		if (pIoContext->msgHead.uiTranNo == 444) {
