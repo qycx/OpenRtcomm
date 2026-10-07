@@ -326,9 +326,11 @@
     <ClCompile Include="..\..\..\qyCommProc\getCfgVal.cpp">
       <Filter>qyCommProc</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\isCliHelp\public\dlgPolicyIsClient_help.cpp" />
     <ClCompile Include="..\..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\getPeerImages_forD3d.cpp" />
     <ClCompile Include="..\..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\setSaveMsgFlg.cpp">
+      <Filter>qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\dlgPolicyIsClient_help.cpp">
       <Filter>qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli</Filter>
     </ClCompile>
   </ItemGroup>

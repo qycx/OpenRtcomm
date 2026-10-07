@@ -362,11 +362,11 @@ int  getDefault_audioPlayCfg(int  level, AUDIO_PLAY_CFG* pAudioPlayCfg)
 }
 
 
-__declspec(dllexport) int  initPolicyAvParams()	//  要在登陆后立即运行此函数. 2011/10/22
+__declspec(dllexport) int  initPolicyAvParams(CCtxQmc  *  pProcInfo)	//  要在登陆后立即运行此函数. 2011/10/22
 {
 	//MC_VAR_isCli* pProcInfo = QY_GET_procInfo_isCli();
 	CCtxQyMc* pQyMc = g_pQyMc;
-	CCtxQmc* pProcInfo = (CCtxQmc*)pQyMc->get_pProcInfo();
+	//CCtxQmc* pProcInfo = (CCtxQmc*)pQyMc->get_pProcInfo();
 	if (!pProcInfo)  return  -1;
 	//QY_MC* pQyMc = pProcInfo->pQyMc;
 	//

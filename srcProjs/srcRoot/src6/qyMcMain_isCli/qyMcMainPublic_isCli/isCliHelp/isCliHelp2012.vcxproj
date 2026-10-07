@@ -216,7 +216,6 @@
     <ClCompile Include="..\..\..\qyMcMainPublic_mfc\QyFile.cpp" />
     <ClCompile Include="..\..\..\qyMcMainPublic_mfc\QyRcdset.cpp" />
     <ClCompile Include="..\..\..\qyMcMainPublic_mfc\QyStatic.cpp" />
-    <ClCompile Include="..\..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\isCliHelp\public\dlgPolicyIsClient_help.cpp" />
     <ClCompile Include="..\..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\isCliHelp\public\get_conf_stat.cpp" />
     <ClCompile Include="..\..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\isCliProcs\dbFuncs\myDb\qmCommonDbFunc_myDb_isCli.cpp" />
     <ClCompile Include="..\..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\isCliProcs\dbFuncs\myDb\qmCommonDbFunc_myDb_isCli_mfc.cpp" />
@@ -242,6 +241,7 @@
     <ClCompile Include="..\..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\confKey.cpp" />
     <ClCompile Include="..\..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\d3dWallProc_isCliHelp.cpp" />
     <ClCompile Include="..\..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\dec_parseEncVPkt_i.cpp" />
+    <ClCompile Include="..\..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\dlgPolicyIsClient_help.cpp" />
     <ClCompile Include="..\..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\dlgTalkProc_tmpFunc.cpp" />
     <ClCompile Include="..\..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\dlgTalk_procVideo.cpp" />
     <ClCompile Include="..\..\..\qyMcMain_isCli_common\qyMcMainPublic_isCli\public_isCli\dlgTalk_share.cpp" />

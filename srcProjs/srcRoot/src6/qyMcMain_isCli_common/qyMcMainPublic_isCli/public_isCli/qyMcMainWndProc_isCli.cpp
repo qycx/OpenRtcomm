@@ -810,6 +810,20 @@ int  dlgTalk_qPostMsg(  HWND  hDlgTalk,  Q_ELEM_T  *  pQElem,  unsigned  int  si
 
 												   break;
 											   }
+											   if (pContent->uiType == CONST_imCommType_confLayoutStatus) {
+												   //
+												   int ii = 0;
+												   //
+												   if (pContent->confLayoutStatus.confLayoutParam.enlargeParam.ui64Id) {
+													   //if (bAmplification) 
+													   {
+														   pProcInfo->m_ipcProc.op.idInfo.ui64Id = pContent->confLayoutStatus.confLayoutParam.enlargeParam.ui64Id;
+													   }
+												   }
+
+												   //
+												   break;
+											   }
 											   //  2015/08/05
 											   if  (  pContent->uiType  ==  CONST_imCommType_transferFileReq  
 												   &&  pContent->transferFileReq.usSubtype  ==  CONST_procOfflineResSubtype_download  )

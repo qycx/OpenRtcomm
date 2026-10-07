@@ -6099,7 +6099,7 @@ errLabel:
 				  //
 #ifdef  __DEBUG__
 				  //
-				  if (0) {
+				  if (10) {
 					  param.ucb2Streams = pQyMc->appParams.ucb2Streams_forDbg;
 					  param.talkerPolicy.conf_iFourcc = pQyMc->appParams.conf_iFourcc_forDbg;
 

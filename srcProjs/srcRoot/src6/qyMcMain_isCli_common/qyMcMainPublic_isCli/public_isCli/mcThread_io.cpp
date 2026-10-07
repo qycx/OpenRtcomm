@@ -689,7 +689,7 @@ extern "C" DWORD WINAPI mcThreadProc_mis_io(LPVOID lpParameter)
 
 			//
 #ifdef  __DEBUG__
-			if (msgHead.uiTranNo == 345) {
+			if (msgHead.uiTranNo == 876) {
 				int  ii = 0;
 				if (isUcFlgResp(msgHead.ucFlg)) {
 					int  iii = 0;

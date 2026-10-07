@@ -3091,12 +3091,8 @@ errLabel:
 
 
 
-#ifdef  __DEBUG__
+ //
  bool  g_bUse_refreshRecentFriends_new = true;
-#else
-
- bool  g_bUse_refreshRecentFriends_new = false;
-#endif
 
 
 
@@ -3115,11 +3111,10 @@ errLabel:
 	TCHAR									tBuf[128];
 
 	//  2026/09/17
-#ifdef  __DEBUG__
 	if (g_bUse_refreshRecentFriends_new) {
 		return  startToRefreshRecentFriends_new(pMisCnt, pMsgBuf);
 	}
-#endif 
+
 
 
 	//

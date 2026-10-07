@@ -184,7 +184,7 @@ __declspec(  dllexport  ) int  viewRemotePtzControl(  HWND  hParent,  HWND  hCur
 
 //
  __declspec(  dllexport  )  int  showDlgPolicyIsClient(  HWND  hParent  );
- __declspec(  dllexport  ) int  initPolicyAvParams(  );
+ __declspec(  dllexport  ) int  initPolicyAvParams( CCtxQmc  *  pProcInfo );
  //
  __declspec(  dllexport  ) int  myGetAvCompressorCfg(  unsigned  int  uiCapType,  unsigned  int  uiSubCapType,  int  iCapUsage,  int  level,  AV_COMPRESSOR_CFG  *  pCompressor  );
  //

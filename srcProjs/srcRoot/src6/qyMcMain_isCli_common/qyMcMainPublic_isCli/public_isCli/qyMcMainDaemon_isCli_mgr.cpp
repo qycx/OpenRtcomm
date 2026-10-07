@@ -316,7 +316,7 @@ errLabel:
 
 							 //
 #ifdef  __DEBUG__
-							 if (pMsg->input.uiTranNo == 345) {
+							 if (pMsg->input.uiTranNo == 876) {
 								 int  ii = 0;
 							 }
 #endif 
