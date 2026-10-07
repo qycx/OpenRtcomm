@@ -1894,6 +1894,19 @@ int chkXtResp()
     CCtxQmc_sm* pProcInfo = (CCtxQmc_sm  *  )QY_GET_procInfo_isCli();
     
     //
+#if  1
+    {
+        bool  bVal;
+        bVal = get_bCfgVal((TCHAR*)_T("d:\\qycx\\cli_smCfg.ini"), (TCHAR*)_T("bTest_noChkXt"));
+        if (bVal) {
+            showInfo_open(0, _T("test"), 0, _T("bTest_noChkXt in cli_smCfg.ini set to true"));
+            return  0;
+        }
+    }
+#endif 
+
+
+    //
 #ifdef  __DEBUG__
     //
     if (pProcInfo->m_var.b_app_noChkXtResp_forDebug) {

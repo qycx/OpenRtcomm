@@ -1266,8 +1266,11 @@ int CCtxQmc_gui::do_mainWnd_OnTimer(HWND  hMainWnd, void* pVar, UINT  nIDEvent)
   }
 
   if (pQyMc->iAppType == CONST_qyAppType_client) {
+	  MC_VAR_isCli* pProcInfo = (MC_VAR_isCli*)pQyMc->get_pProcInfo();
+	  if (!pProcInfo)  goto  errLabel;
+
 	  //  要在登陆后立即运行此函数. 2011/10/22
-	  if (initPolicyAvParams())  goto  errLabel;
+	  if (initPolicyAvParams(pProcInfo))  goto  errLabel;
   }
 
 

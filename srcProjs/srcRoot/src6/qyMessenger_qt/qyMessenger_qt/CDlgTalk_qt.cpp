@@ -3676,10 +3676,16 @@ void CDlgTalk_qt::send_selLayoutType(int x, int y) {
     MIS_CNT* pMisCnt = pProcInfo->getMisCntByName(_T(""));
     if (!pMisCnt)  return;
 
+    //
+    showInfo_open(0, 0, 0, _T("dlgTalk_qt.send_selLayoutType(x,y) called"));
+
+    //
     ConfLayoutParam  confLayoutParam = { 0 };
     //confLayoutParam = pTc->videoConference.confLayoutParam;
     //if (!confLayoutParam.ui64Id)  break;
     //
+
+
 
     confLayoutParam.phoneEnlargeParam.x = x;
     confLayoutParam.phoneEnlargeParam.y = y;
@@ -4940,6 +4946,10 @@ void CDlgTalk_qt::send_selLayoutType(QString str) {
     MIS_CNT* pMisCnt = pProcInfo->getMisCntByName(_T(""));
     if (!pMisCnt)  return;
 
+    //
+    showInfo_open(0, 0, 0, _T("dlgTalk_qt.send_selLayoutType(str) called"));
+
+    //
     ConfLayoutParam  confLayoutParam = { 0 };
     //confLayoutParam = pTc->videoConference.confLayoutParam;
     //if (!confLayoutParam.ui64Id)  break;
@@ -5015,6 +5025,10 @@ void CDlgTalk_qt::ShowListMenu() {
 
     NvrInfo* pNvrInfo = &pProcInfo->m_ipcProc.op.nvrInfo;
 
+    //
+    showInfo_open(0, 0, 0, _T("dlgTalk_qt.showListMenu called"));
+
+    //
     if (pNvrInfo->usCnt > 0) {
         QAction* actionAll = m_menuBall->addAction(CONST_ALL_Txt);
         _sntprintf(tBuf, mycountof(tBuf), _T("%d|%S|%s"), -1, "", _T("(所有)"));

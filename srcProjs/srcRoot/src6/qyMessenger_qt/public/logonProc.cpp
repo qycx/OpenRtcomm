@@ -411,7 +411,7 @@ BOOL CALLBACK myEnumWindowsProc_singleInstance(HWND hwnd, LPARAM lParam);
 	if (pQyMc->iAppType == CONST_qyAppType_client)
 	{
 		//  要在登陆后立即运行此函数. 2011/10/22
-		if (initPolicyAvParams() != 0) goto errLabel;
+		if (initPolicyAvParams(pProcInfo) != 0) goto errLabel;
 	}
 
 	if (pProcInfo->m_iCtxType != CONST_ctxType_qmc) goto errLabel;
