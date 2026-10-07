@@ -43,3 +43,16 @@
 /VS2010/Win32/o/rtspCli/Debug
 /VS2010/Win32/o/rtspCli/Release
 /VS2010/Win32/o/rtspCliHelp
+
+# MSVC IDE build artifacts (previously committed by mistake)
+*.bsc
+*.pch
+*.sdf
+*.ilk
+*.VC.db
+*.vc.db
+*.cod
+*.sbr
+*.iobj
+*.ipdb
+*.exp
